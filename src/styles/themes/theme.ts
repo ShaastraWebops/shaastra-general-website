@@ -1,4 +1,4 @@
-import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 // import  {boxStyles as Box} from "./components/boxStyles"
 import  {drawerStyles as Drawer} from "./components/drawerStyles"
 import { buttonStyles as Button } from "./components/buttonStyles";
@@ -38,18 +38,18 @@ export const theme = extendTheme(
       link: "#6cd4ff",
     },
     components: {
-      Box: {
-        baseStyle: ({ colorMode }) => ({
-          bg: colorMode === "dark" ? "green" : "green.500",
-          color: colorMode === "dark" ? "gray.800" : "white",
-          textTransform: "uppercase",
-          fontWeight: "semibold",
-          letterSpacing: "0.02em",
-          padding: "4px",
-          borderRadius: "2px",
-          fontSize: "12px",
-        }),
-      },
+      // Box: {
+      //   baseStyle: ({ colorMode }) => ({
+      //     bg: colorMode === "dark" ? "green" : "green.500",
+      //     color: colorMode === "dark" ? "gray.800" : "white",
+      //     textTransform: "uppercase",
+      //     fontWeight: "semibold",
+      //     letterSpacing: "0.02em",
+      //     padding: "4px",
+      //     borderRadius: "2px",
+      //     fontSize: "12px",
+      //   }),
+      // },
       Button,
       Drawer,
     },

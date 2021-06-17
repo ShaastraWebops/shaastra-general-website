@@ -3,7 +3,7 @@ import { mode, whiten } from "@chakra-ui/theme-tools";
 export const drawerStyles = {
     baseStyle: (props) => ({
         dialog: {
-          bg: mode("white", "primary.450")(props),
+          bg: mode("highlight.300", "primary.450")(props),
         },
       }),
     sizes: {},
