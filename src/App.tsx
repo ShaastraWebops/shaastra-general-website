@@ -1,11 +1,17 @@
-import * as React from "react"
-import { ChakraProvider } from "@chakra-ui/react"
-import {theme} from "./styles/themes/theme"
-import "./styles/App.css"
-import AppRoutes from "./components/AppRoutes"
+import * as React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "./styles/themes/theme";
+import "./styles/App.css";
+import Loader from "./components/shared/Loader";
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <AppRoutes />
-  </ChakraProvider>
-)
+const AppRoutes = React.lazy(() => import("./components/AppRoutes"));
+
+export const App = () => {
+  return (
+    <React.Suspense fallback={<Loader />}>
+      <ChakraProvider theme={theme}>
+        <AppRoutes />
+      </ChakraProvider>
+    </React.Suspense>
+  );
+};

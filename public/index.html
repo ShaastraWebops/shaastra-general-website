@@ -10,15 +10,59 @@
       content="Get to know more about the annual technical fest of IIT Madras"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    
+
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script>
       const year = new Date().getFullYear() + 1;
       document.title = "Shaastra " + year;
-    </script>
+      </script>
     <title>Shaastra</title>
+      <!-- <script>
+        if (
+          localStorage.getItem("chakra-ui-color-mode") === "dark"
+        ) {
+          document
+            .querySelector("#loader-logo")
+            .setAttribute("src", "Dice_Alone_Outline_Light_animated.svg");
+            console.log(document
+            .querySelector("#loader-logo"));
+        }
+  
+        if (localStorage.getItem("chakra-ui-color-mode") === "light") {
+          document
+            .querySelector("#loader-logo")
+            .setAttribute("src", "Dice_Alone_Outline_Black_animated.svg");
+        }
+      </script> -->
+
+    <style>
+
+      html, body {
+        margin: 0;
+      }
+
+      .loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100vw;
+        /* background-color: #1a202c; */
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loader">
+        <img
+          id="loader-logo"
+          src="Dice_Alone_Outline_Black_animated.svg"
+          height="100"
+          width="auto"
+        />
+      </div>
+    </div>
+
   </body>
 </html>

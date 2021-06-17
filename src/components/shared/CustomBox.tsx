@@ -9,7 +9,7 @@ interface Props {
 
 const CustomBox = (props: Props) => {
 
-    const bg = useColorModeValue("highlight", "primary.default")
+    const bg = useColorModeValue("highlight.200", "primary.default")
 
     return (
         <Box bg={bg}>
