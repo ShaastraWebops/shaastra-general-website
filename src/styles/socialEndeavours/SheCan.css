@@ -1,0 +1,184 @@
+/* she can */
+#she-can{
+    scroll-snap-align: start;
+}
+.she-can-intro{
+    position: relative;
+    display: flex;
+    padding: 10rem 8rem;
+    padding-top: 2rem;
+    padding-right: 0;
+    margin: 1rem 4rem;
+    justify-content: space-between;
+}
+.she-can-heading{
+    color: var(--green);
+    font-family: 'Paytone One', sans-serif;
+    /* font-size: 150px; */
+    font-size: 9.9vw;
+    letter-spacing: 10px;
+    transform: translateY(20%);
+}
+.she-can-heading:hover{
+    line-height: 10rem;
+    letter-spacing: 25px;
+    color: var(--pink);
+    transition: all .5s ease;
+}
+
+
+
+.she-can-logo{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
+
+.wrap{
+    width: 60%;
+    position: relative;
+}
+.she-can-intro-info{
+    /* width: 60%; */
+    width: 90%;
+    z-index: 2;
+    background-color: var(--pink);
+    color: var(--brown);
+    font-weight: 500;
+    padding: 4rem;
+    text-align: right;
+    margin: auto;
+    /* margin: 0 2rem; */
+}
+.she-can-backdiv{
+    position: absolute;
+    z-index: -10;
+    left: 5%;
+    background-color: var(--green);
+    height: 100%;
+    width: 90%;
+}
+
+.wrap-image{
+    position: relative;
+    margin: auto;
+    width: 70%;
+}
+
+.she-can-backdiv-image{
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+    background-color: var(--pink);
+    /* height: 500px;
+    width: 1000px; */
+    /* height: 33vw;
+    width: 66vw; */
+    height: 100%;
+    width: 100%;
+}
+
+
+.she-can-recog{
+    margin-top: 10rem;
+    padding: 1rem;
+    background-image: url("../../images/socialEndeavours/recogBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.recog-info-child  a:hover{
+    color: var(--green);
+}
+
+.recog-heading{
+    color: var(--brown);
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+    margin: 6rem auto;
+    margin-bottom: 0;
+}
+@keyframes headslide{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.recog-info{
+    color: var(--dblue);
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.recog-info-child{
+    width: 60%;
+    margin-bottom: 6rem;
+}
+.moe{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+@media screen and (max-width: 950px)
+{
+    .she-can-recog{
+        padding: 1vw;
+    }
+    .recog-info{
+        width: 100%;
+        font-weight: bold;
+    }
+    .recog-info-child{
+        width: 100%;
+    }
+    .title{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 950px)
+{
+    .she-can-intro{
+        padding: 0%;
+        flex-direction: column;
+        row-gap: 8rem;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .she-can-intro-info{
+        padding: 2rem;
+    }
+    .she-can-heading{
+        font-size: 12vw;
+        line-height: 12vw;
+    }
+}
+@media screen and (max-width: 850px)
+{
+    .recog-heading{
+        margin: 0;
+        font-size: 3rem;
+    }
+    .she-can-heading{
+        font-size: 25vw;
+        line-height: 25vw;
+    }
+    .she-can-intro-info{
+        width: 100%;
+        font-size: 2.75vw;
+        margin: 0%;
+        padding: 2rem;
+    }
+    .recog-info-child{
+        font-size: 5rem;
+    }
+    #link-she-can{
+        padding: 2rem;
+    }
+}

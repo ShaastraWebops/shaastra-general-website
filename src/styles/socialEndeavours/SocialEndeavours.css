@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --green: #00a787;
+    --green-bg: #00a7889c;
+    --dblue: #0e101b;
+    --pink: #fee9e1;
+    --blue: #6cd4ff;
+    --brown: #2c262a;
+    --box-shadow: #6cffe7cc;
+    --pink-bg: #fee9e1b0;
+    --blue-bg: #6cd3ff70;
+    --blue-bg2: #6cd3ff33;
+    --dblue-bg: #0e101bc9;
+}
+html{
+    margin: 0%;
+    overflow-x: hidden;
+    padding: 0%;
+}
+/* html{
+    scroll-snap-type: y mandatory;
+} */
+
+.body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    color: var(--pink);
+    /* font-size: 25px; */
+    font-size: 1.65vw;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+
+/*cursor*/
+/* 
+.cursor{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid white;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-link{
+    transform: scale(2);
+    background-color: black;
+} */
+
+
+/*newspaper layout */
+hr{
+    background-color: var(--brown);
+    height: 2px;
+    border: none;
+}
+
+.title{
+    margin: 2rem 0;
+}
+.info{
+    font-size: 1.65vw;
+}
+.info > p:nth-child(odd){
+    font-size: 4rem;
+    font-family: 'Archivo Black', sans-serif;
+    line-height: 4.5rem;
+    margin: 2rem 0;
+}
+.info > p:nth-child(even)
+{
+    margin-bottom: 2rem;
+}
+.info > a{
+    font-weight: bold;
+}
+.alt{
+    align-self: flex-end;
+    text-align: right;
+}
+
+
+.sec-heading{
+    font-family: 'Paytone One', sans-serif;
+    /* font-size: 150px; */
+    font-size: 9.9vw;
+    letter-spacing: 10px;
+}
+
+
+
+
+/*heading*/
+.header{
+    padding: 2rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.heading{
+    background-image: url("../../images/socialEndeavours/mainHeader.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin: 4rem 2rem ;
+    margin-bottom: 1rem;
+    padding: 5rem;
+    font-family: 'Archivo Black', sans-serif;
+    /* font-size: 70px; */
+    color: var(--pink);
+    font-size: 5vw;
+    letter-spacing: 10px;
+    word-spacing: 20px;
+    transition: all .5s ease;
+}
+
+
+.heading:hover{
+    transform: scale(0.9);
+}
+
+.section-link{
+    border-bottom: 5px solid var(--blue);
+    display: flex;
+    width: 50%;
+    /* font-size: 18px; */
+    font-size: 1.188vw;
+    padding: 2rem 4rem;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1050px)
+{
+    .section-link{
+        flex-direction: column;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 750px)
+{
+    .body{
+        font-size: 4vw;
+    }
+    .section-link{
+        width: 90%;
+        font-size: 2vw;
+    }
+    .heading{
+        width: 100%;
+        padding: 1rem;
+        margin: 2rem;
+        margin-bottom: 0;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+    }
+    .header{
+        padding: 0;
+        margin-top: 6vw;
+    }
+    .info{
+        font-size: 3vw;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: var(--blue);
+    line-height: 20px;
+    letter-spacing: 5px;
+    transition: all .5s ease;
+}
+
+.heading > a:hover{
+    color: var(--pink);
+}
+
+/*intro*/
+.heading-intro{
+    margin: 6rem 2rem;
+    /* font-size: 50px; */
+    font-size: 3.3vw;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.intro{
+    position: relative;
+    width: 100vw;
+    margin: 8rem 0;
+    padding: 2rem 6rem;
+    padding-bottom: 10rem;
+    text-align: center;
+    scroll-snap-align: start;
+    z-index: 1;
+    overflow-x: hidden;
+    margin-bottom: 15rem;
+    font-size: 1.75vw;
+}
+
+/* intro bg animation */
+.bg{
+    animation: slide 3s ease-in-out infinite alternate;
+    overflow-x: hidden;
+    background-image: linear-gradient(-60deg, var(--green) 50%,  var(--blue) 50%);
+    bottom: 0;
+    top: 0;
+    left: -50%;
+    right: -50%;
+    z-index: -1;
+    opacity: 0.1;
+    position: absolute;
+}
+.bg1{
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+.bg2{
+    animation-duration: 5s;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateX(-25%);
+    }
+    100%{
+        transform: translateX(25%);
+    }
+   
+}
+@media screen and (max-width: 950px)
+{
+    .intro{
+        margin-bottom: 0%;
+    }
+}
+@media screen and (max-width: 750px)
+{
+    .heading-intro{
+        font-size: 5vw;
+    }
+    .intro{
+        padding: 2rem;
+        padding-bottom: 4rem;
+        font-size: 4vw;
+        margin-bottom: 0;
+    }
+}
+
+
