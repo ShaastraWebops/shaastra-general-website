@@ -14,18 +14,22 @@
 .she-can-heading{
     color: var(--green);
     font-family: 'Paytone One', sans-serif;
+    transition: all 0.6s ease-out;
     /* font-size: 150px; */
     font-size: 9.9vw;
     letter-spacing: 10px;
     transform: translateY(20%);
 }
 .she-can-heading:hover{
-    line-height: 10rem;
+    line-height: 14rem;
     letter-spacing: 25px;
     color: var(--pink);
-    transition: all .5s ease;
 }
-
+.she-can-heading-hover-light{
+    line-height: 14rem;
+    letter-spacing: 25px;
+    color: var(--brown);
+}
 
 
 .she-can-logo{
@@ -89,7 +93,7 @@
 }
 
 .recog-info-child  a:hover{
-    color: var(--green);
+    color: var(--brown);
 }
 
 .recog-heading{
@@ -120,27 +124,33 @@
     width: 60%;
     margin-bottom: 6rem;
 }
+.recog-info-child:nth-child(2)
+{
+    width: 80%;
+}
 .moe{
+    align-content: space-between;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
 }
 
-@media screen and (max-width: 950px)
+#link-she-can a:hover{
+    color: var(--dblue);
+}
+
+@media screen and (max-width: 1100px)
 {
-    .she-can-recog{
-        padding: 1vw;
-    }
-    .recog-info{
-        width: 100%;
-        font-weight: bold;
-    }
-    .recog-info-child{
-        width: 100%;
-    }
     .title{
-        font-size: 15px;
+        font-size: 5vw;
     }
+    .info{
+        font-size: 3vw;
+    }
+    .recog-info-child:nth-child(2)
+    {
+    width: 80%;
+    }   
 }
 @media screen and (max-width: 950px)
 {
@@ -158,9 +168,33 @@
         font-size: 12vw;
         line-height: 12vw;
     }
+    .she-can-recog{
+        padding: 1vw;
+    }
+    .recog-info{
+        width: 100%;
+        font-weight: bold;
+    }
+    .recog-info-child{
+        width: 100%;
+    }
+    .title{
+        font-size: 15px;
+    }
 }
 @media screen and (max-width: 850px)
 {
+    .she-can{
+        margin: 0%;
+        margin-top: 8vw;
+    }
+    .she-can-intro{
+        padding: 0%;
+        margin: 0;
+    }
+    .wrap{
+        width: 100%;
+    }
     .recog-heading{
         margin: 0;
         font-size: 3rem;
@@ -171,14 +205,49 @@
     }
     .she-can-intro-info{
         width: 100%;
-        font-size: 2.75vw;
+        font-size: 4vw;
+        text-align: center;
         margin: 0%;
-        padding: 2rem;
+        padding: 8vw;
     }
-    .recog-info-child{
-        font-size: 5rem;
+    .she-can-backdiv{
+        width: 100%;
+    }
+    .she-can-recog{
+        margin: 18vw 0;
+        margin-bottom: 5vw;
+    }
+    .recog-heading{
+        margin: 5vw 0;
+        padding: 0%;
+        font-size: 15vw;
+    }
+    .recog-info-child .title{
+        font-size: 8vw;
+    }
+    .recog-info{
+        margin-bottom: 0vw;
     }
     #link-she-can{
         padding: 2rem;
+    }
+    .info{
+        font-size: 7vw;
+    }
+    .info p{
+        padding: 2vw;
+    }
+    .info p:nth-child(odd){
+        font-size: 10vw;
+        line-height: 15vw;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .info{
+        padding: 0%;
+    }
+    #link-she-can a:hover{
+        line-height: 10vw;
     }
 }

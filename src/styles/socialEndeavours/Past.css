@@ -28,55 +28,26 @@
     background-color: var(--green);
 }
 .even{
-    z-index: 2;
     margin-right: 2rem;
     align-self: flex-end;
     text-align: right;
+    position: relative;
 }
-
+.even .info{
+    z-index: 5;
+}
 #bubble-bg{
-    z-index: 1;
+    z-index: -1;
     overflow-y: hidden;
-    transform: translateY(110%);
+    overflow-x: hidden;
+    transform: translateX(-48%);
     padding: 0%;
     margin: 0;
     position: absolute;
     width: 100vw;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
-@media screen and (max-width: 1050px)
-{
-    #bubble-bg{
-        transform: translateY(130%);
-    }
-    .even{
-        align-self: center;
-        width: 90%;
-        margin-bottom: 10rem;
-    }
-}
-
-@media screen and (max-width: 850px)
-{
-    #past{
-        padding: 0%;
-    }
-    .past{
-        padding: 0;
-    }
-    .campaigns{
-        margin: 0;
-    }
-    .campaigns-child{
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-    #bubble-bg{
-        transform: translateY(140%);
-    }
-}
 
 .pledge-grid{
    display: flex;
@@ -84,6 +55,7 @@
    justify-content: center;
    background-color: var(--green);
    z-index: 5;
+   color: var(--dblue);
 }
 
 .pledge-grid:hover{
@@ -101,4 +73,72 @@
     display: flex;
     justify-content: center;
     opacity: 0.8;
+}
+
+@media screen and (max-width: 1050px)
+{
+    .even{
+        align-self: center;
+        width: 90%;
+        margin-bottom: 10rem;
+    }
+    .campaigns-child .info{
+        font-size: 3vw;
+    }
+    .pledge-grid{
+        font-size: 4vw;
+        padding: 2vw;
+    }
+    .pledge-grid:hover{
+        line-height: 5vw;
+    }
+    #bubble-bg{
+        transform: translateX(-9%);
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+    #past{
+        padding: 0%;
+    }
+    .past{
+        padding: 2vw;
+        margin-bottom: 8vw;
+        text-align: center;
+        font-size: 10vw;
+    }
+    .campaigns{
+        margin: 0;
+    }
+    .campaigns-child{
+        width: 100%;
+        padding: 2vw;
+        margin: 0;
+    }
+    .campaigns-child .info{
+        font-size: 5vw;
+    }
+    .pledge-grid{
+        font-size: 5vw;
+    }
+    .pledge-grid:hover{
+        line-height: 10vw;
+    }
+    .even{
+        padding: 2vw;
+        text-align: center;
+    }
+    #bubble-bg{
+        transform: translateX(-2%);
+    }
+    .campaigns div:last-child{
+        margin-top: 4vw;
+    }
+    .pledge-grid-image{
+        padding: 0%;
+    }
+    .campaigns-child:first-child{
+        width: 60%;
+    }
 }

@@ -10,7 +10,7 @@
     --blue: #6cd4ff;
     --brown: #2c262a;
     --box-shadow: #6cffe7cc;
-    --pink-bg: #fee9e1b0;
+    --pink-bg: #fee9e1de;
     --blue-bg: #6cd3ff70;
     --blue-bg2: #6cd3ff33;
     --dblue-bg: #0e101bc9;
@@ -20,9 +20,7 @@ html{
     overflow-x: hidden;
     padding: 0%;
 }
-/* html{
-    scroll-snap-type: y mandatory;
-} */
+
 
 .body{
     overflow-x: hidden;
@@ -37,23 +35,6 @@ html{
 }
 
 
-/*cursor*/
-/* 
-.cursor{
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    border: 2px solid white;
-    transform: translate(-50%, -50%);
-}
-
-.cursor-link{
-    transform: scale(2);
-    background-color: black;
-} */
-
-
 /*newspaper layout */
 hr{
     background-color: var(--brown);
@@ -63,6 +44,7 @@ hr{
 
 .title{
     margin: 2rem 0;
+    font-weight: bold;
 }
 .info{
     font-size: 1.65vw;
@@ -108,19 +90,20 @@ hr{
 }
 
 .heading{
-    background-image: url("../../images/socialEndeavours/mainHeader.jpg");
+    background-image: url("../../images/socialEndeavours/mainHeader5.jpg");
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    margin: 4rem 2rem ;
+    /* margin: 4rem 2rem ; */
+    margin: 4.5vw 2.2vw;
     margin-bottom: 1rem;
-    padding: 5rem;
+    padding: 5vw;
     font-family: 'Archivo Black', sans-serif;
     /* font-size: 70px; */
     color: var(--pink);
     font-size: 5vw;
-    letter-spacing: 10px;
-    word-spacing: 20px;
+    letter-spacing: 0.625rem;
+    word-spacing: 1.25rem;
     transition: all .5s ease;
 }
 
@@ -130,7 +113,7 @@ hr{
 }
 
 .section-link{
-    border-bottom: 5px solid var(--blue);
+    border-bottom: 2px solid var(--blue);
     display: flex;
     width: 50%;
     /* font-size: 18px; */
@@ -141,27 +124,36 @@ hr{
 
 @media only screen and (max-width: 1050px)
 {
+    .heading{
+        text-align: center;
+        font-size: 8vw;
+        width: 100%;
+        margin-top: 10vw;
+    }
     .section-link{
+        width: 90%;
         flex-direction: column;
-        font-size: 2vw;
+        font-size: 5vw;
     }
 }
 
 @media screen and (max-width: 750px)
 {
     .body{
-        font-size: 4vw;
+        font-size: 8vw;
     }
     .section-link{
         width: 90%;
-        font-size: 2vw;
+        font-size: 5vw;
     }
     .heading{
+        text-align: center;
+        font-size: 8vw;
         width: 100%;
         padding: 1rem;
-        margin: 2rem;
+        margin: 15vw;
         margin-bottom: 0;
-        height: 15vh;
+        height: 50vw;
         display: flex;
         align-items: center;
     }
@@ -188,9 +180,10 @@ a:hover{
     color: var(--pink);
 }
 
+
 /*intro*/
 .heading-intro{
-    margin: 6rem 2rem;
+    margin: 8rem 2rem;
     /* font-size: 50px; */
     font-size: 3.3vw;
     font-weight: bold;
@@ -200,14 +193,14 @@ a:hover{
 .intro{
     position: relative;
     width: 100vw;
-    margin: 8rem 0;
+    margin: 4rem 0;
     padding: 2rem 6rem;
     padding-bottom: 10rem;
     text-align: center;
     scroll-snap-align: start;
     z-index: 1;
     overflow-x: hidden;
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
     font-size: 1.75vw;
 }
 
@@ -241,23 +234,37 @@ a:hover{
     }
    
 }
+@media screen and (max-width: 1050px)
+{
+    .intro{
+        padding: 1vw 3vw;
+        padding-bottom: 4rem;
+        font-size: 4vw;
+        margin-bottom: 0;
+    }
+    .heading-intro{
+        font-size: 10vw;
+        margin: 15vw 2vw;
+    }
+}
 @media screen and (max-width: 950px)
 {
     .intro{
         margin-bottom: 0%;
     }
 }
-@media screen and (max-width: 750px)
+/* @media screen and (max-width: 750px)
 {
     .heading-intro{
-        font-size: 5vw;
+        font-size: 10vw;
+        margin: 15vw 2vw;
     }
     .intro{
-        padding: 2rem;
+        padding: 1vw 3vw;
         padding-bottom: 4rem;
         font-size: 4vw;
         margin-bottom: 0;
     }
 }
-
+ */
 

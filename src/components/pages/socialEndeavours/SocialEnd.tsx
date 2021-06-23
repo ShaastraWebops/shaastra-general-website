@@ -68,19 +68,6 @@ Events()
                     <div className="she-can-heading sec-heading">
                             SHE <br /> CAN
                     </div>
-                   {/* <div className="she-can-backdiv"></div>
-                    <div className="she-can-intro-info">
-                        <p>
-                        She Can is centred around women's empowerment by giving them access to information about the vast ocean of 
-                        opportunities available to them. 
-                        We hope to motivate them to explore and figure out their dreams and aspirations and enable them to make 
-                        these dreams a reality with whatever assistance we can provide in this regard, and show the world that 
-                        She Can achieve all her goals with the right nudge. 
-                        Our mission is to pave the way for the empowerment
-                        of women through skill development and career guidance.​
-                        </p>
-                    </div>
-                   </div> */}
                    <div className="wrap">
                    <div className="she-can-backdiv"></div>
                     <div className="she-can-intro-info">
@@ -97,41 +84,39 @@ Events()
                    </div>
                    </div>
                 <Grid templateColumns="repeat(7,1fr)" templateRows="repeat(4,1fr)" columnGap="3rem" textAlign="center"
-                rowGap="3rem" margin="5rem 4rem" marginBottom="10rem">
-                     <GridItem colSpan={[7,7,3,3]} rowSpan={[1,1,4,4]} colStart={1} 
-                     display="flex" alignItems="center" justifyContent="center" padding="4rem"
-                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw","4vw","2.31vw","2.31vw"]}> 
+                rowGap="3rem" margin={["25vw 0","25vw 4vw","25vw 4vw","5rem 4rem"]} color="var(--dblue)"
+                marginBottom={["15vw","8vw","8vw","10rem"]}>
+                     <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,4]} colStart={1} 
+                     display="flex" alignItems="center" justifyContent="center" padding={["2vw","2vw","2vw","4rem"]}
+                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw","4vw","4vw","2.31vw"]}> 
                          Only 13 percent of all Indian women have more than primary education. This situation has to be improved 
                          to uplift women. Skills and education to match today's industry and economy have to be mastered by women to 
                          thrive. 
                      </GridItem>   
-                     <GridItem colSpan={[7,7,2,2]} colStart={[1,1,4,4]} rowSpan={[1,1,2,2]}
+                     <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                     backgroundColor="#00a787" borderRadius="24px"> 
+                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw", "4vw", "4vw","1.65vw"]}> 
                          By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
                      version of themselves, as equal and valued members of their families, society, and the world at large.
                      </GridItem>
-                     <GridItem rowSpan={[1,1,2,2]} rowStart={3} colSpan={[7,7,4,4]} colStart={[1,1,4,4]} 
+                     <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} 
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw","4vw","1.98vw","1.98vw"]}>
+                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw","4vw","4vw","1.98vw"]}>
                         We aim to motivate and drive women to explore new realms of possibilities and career options. 
                      The notion of womanhood being just narrowed to motherhood and homemakers cannot be justified at the present age.
                      </GridItem>
-                     <GridItem rowSpan={[1,1,2,2]} colStart={[1,1,6,6]} colSpan={[7,7,2,2]} rowStart={[4,4,1,1]}
+                     <GridItem rowSpan={[1,1,1,2]} colStart={[1,1,1,6]} colSpan={[7,7,7,2]} rowStart={[4,4,4,1]}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                     backgroundColor="#00a787" borderRadius="24px">
+                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw", "4vw", "4vw","1.65vw"]}>
                           'She Can' campaign desires to be the foundation of such a dream, Women to reach their complete 
                          potential and to contribute to society through her achievement.
                      
                      </GridItem>
                 </Grid>
                    <div id="she-can-logo"> 
-                   <Image src={sheCanLogo} margin="auto" boxSize="70%"></Image>
+                   <Image src={sheCanLogo} margin="auto" height="227px" width="475px" padding="5px 0" 
+                   alt="she can logo" boxSize={["100%","100%","70%","70%"]}></Image>
                    </div>
-               {/* <div className="wrap-image">
-                <div className="she-can-backdiv-image"></div>
-                    <Image margin="0 auto" objectFit="cover" src={img} id="she-can-image-one" zIndex="0" position="relative"></Image>
-               </div> */}
                 <div className="she-can-recog">
                     <div className="recog-heading">
                         Recognition
@@ -149,7 +134,7 @@ Events()
                                     working in the unorganized sector.
                                 </p>
                                 <a href="https://www.ndtv.com/education/iit-madras-students-campaign-she-can-empower-women-during-pandemic"
-                               target="_blank">
+                               target="_blank" rel="noopener">
                                    Read the article
                                </a>
                             </div>
@@ -158,8 +143,10 @@ Events()
                             <hr />
                             <div className="title">MINISTRY OF EDUCATION</div>
                             <div className="info moe">
-                                <Image objectFit="cover" boxSize="60%" src={moeOne}></Image>
-                                <Image objectFit="cover" boxSize="60%" src={moeTwo} alignSelf="flex-end"></Image>
+                                <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="4px"
+                                boxSize={["100%","100%","100%","80%","50%"]} src={moeOne}></Image>
+                                <Image objectFit="cover" alt="tweet" height="603px" width="737px" padding="4px"
+                                boxSize={["100%","100%","100%","80%","50%"]} src={moeTwo} alignSelf="flex-end"></Image>
                             </div>
                         </div>
                         <div className="recog-info-child odd three">
@@ -181,37 +168,41 @@ Events()
                                     upcoming  months", said Shvetha Sivaprasad, strategist of the publicity team of Shaastra.
                                 </p>
                                 <a href="https://www.thehindu.com/news/cities/chennai/iit-m-students-launch-she-can-campaign/article33496089.ece"
-                                target="_blank">Read the article</a>
+                                target="_blank" rel="noopener">Read the article</a>
                             </div>
                         </div>
                         <div className="recog-info-child alt four">
                             <hr />
                             <div className="title">DTNEXT.IN</div>
                             <div className="info">
-                                <Image src={dtnext}></Image>
+                                <Image src={dtnext} alt="article" height="145px" width="336px" padding="4px"
+                                w="fit-content" h="full"></Image>
                                 <a href="https://www.dtnext.in/News/City/2021/01/08050455/1270350/IITM-students-organise-women-empowerment-programme.vpf"
-                                target="_blank">Read the article</a>
+                                target="_blank" rel="noopener">Read the article</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <Grid templateColumns="repeat(2, 1fr)" 
-                        templateRows="repeat(2,1fr)" rowGap="2rem" columnGap="3rem"
-                        width="80%" margin="8rem auto">
-                            <GridItem display="flex" rowSpan={2}  
+                        templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]} rowGap="2rem" columnGap="3rem"
+                        width="80%" margin={["8vw auto","8vw auto","8vw auto","8rem auto"]}>
+                            <GridItem display="flex" rowSpan={[1,1,1,2]}  colSpan={[2,2,2,1]}
                             backgroundColor="#00a7889c" borderRadius="24px"  id="link-she-can"
                             alignItems="center" justifyContent="center">
-                                <a href="https://www.youtube.com/watch?v=9_ZsXmRUPfE" target="_blank">Campaign Launch Video</a>
+                                <a href="https://www.youtube.com/watch?v=9_ZsXmRUPfE" rel="noopener"
+                                target="_blank">Campaign Launch Video</a>
                             </GridItem>
-                            <GridItem rowSpan={1}  display="flex" padding="1rem"
+                            <GridItem rowSpan={1}  display="flex" padding="1rem" colSpan={[2,2,2,1]}
                              backgroundColor="#00a7889c" borderRadius="24px" id="link-she-can"
                              alignItems="center" justifyContent="center">
-                                <a href="https://www.youtube.com/watch?v=4GYNmmNt2v8" target="_blank">DD National Interview </a>
+                                <a href="https://www.youtube.com/watch?v=4GYNmmNt2v8" rel="noopener"
+                                target="_blank">DD National Interview </a>
                             </GridItem>
-                            <GridItem rowSpan={1} display="flex" padding="1rem"
+                            <GridItem rowSpan={1} display="flex" padding="1rem" colSpan={[2,2,2,1]}
                              backgroundColor="#00a7889c" borderRadius="24px" id="link-she-can"
                              alignItems="center" justifyContent="center">
-                                <a href="https://www.shecan.shaastra.org/" target="_blank">For More Info</a>
+                                <a href="https://www.shecan.shaastra.org/" rel="noopener"
+                                target="_blank">For More Info</a>
                             </GridItem>
                 </Grid>
             </section>
@@ -223,21 +214,23 @@ Events()
                 is aimed at empowering the visually impaired and enabling them to achieve their full potential. The initiative,
                 which began in July 2020, has currently impacted over 200 visually impaired students in and around Chennai.
                 </div>
-                <Grid templateColumns="repeat(4,1fr)" templateRows={["repeat(5,1fr)","repeat(3,1fr)" ]}
-                width="80%" margin="8rem auto" columnGap="4rem" rowGap={["1rem","1rem","2rem","2rem"]}>
-                    <GridItem colStart={[1,1,2,2]} colSpan={[4,4,2,2]} display="flex"
-                    justifyContent="center" alignItems="center">
+                <Grid templateColumns="repeat(4,1fr)" templateRows={["repeat(5,1fr)","repeat(5,1fr)","repeat(5,1fr)","repeat(3,1fr)"]}
+                width="80%" margin={["4vw auto","4vw auto","4vw auto","8rem auto"]} columnGap="4rem" rowGap={["2vw","2vw","2vw","2rem"]}>
+                    <GridItem colStart={[1,1,1,2]} colSpan={[4,4,4,2]} display="flex"
+                    justifyContent="center" alignItems="center" fontSize={["5vw","5vw","5vw","1.65vw"]}>
                         <p className="blink-info-back">Impacted 200+ students across 4 schools in Chennai through Social inclusion and 
                             Personality development programmes</p>
                     </GridItem>
-                    <GridItem rowStart={2} colSpan={[4,4,2,2]}><Image src={blinkOne}></Image></GridItem>
-                    <GridItem colStart={[1,1,3,3]} colSpan={[4,4,2,2]}><Image src={blinkTwo}></Image></GridItem>
-                    <GridItem colStart={1} colSpan={[4,4,2,2]} display="flex"
-                    justifyContent="center" alignItems="center">
+                    <GridItem rowStart={2} colSpan={[4,4,4,2]}><Image src={blinkOne} alt="blink" 
+                    height="183px" width="274px" h="100%" w="fit-content"></Image></GridItem>
+                    <GridItem colStart={[1,1,1,3]} colSpan={[4,4,4,2]}><Image src={blinkTwo} height="183px" width="274px" 
+                    h="100%" w="fit-content" alt="blink"></Image></GridItem>
+                    <GridItem colStart={1} colSpan={[4,4,4,2]} display="flex"
+                    justifyContent="center" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
                         <p className="blink-info-back">Impacted 100+ adults through Career Development programs</p>
                     </GridItem>
-                    <GridItem colStart={[1,1,3,3]} colSpan={[4,4,2,2]} display="flex"
-                    justifyContent="center" alignItems="center">
+                    <GridItem colStart={[1,1,1,3]} colSpan={[4,4,4,2]} display="flex"
+                    justifyContent="center" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
                         <p className="blink-info-back">300+ People pledged to donate their eyes.</p>
                     </GridItem>
                 </Grid>
@@ -273,35 +266,37 @@ Events()
                         and many more. 
                         </div>
                     </div>
-                    <Image src={pledgeSmall} position="absolute" top="-7%" left="30%"></Image>
-                    <Grid templateRows="repeat(2,1fr)" templateColumns="repeat(3,1fr)" textAlign="center" 
-                    margin="auto" marginBottom="4rem" rowGap="2rem" columnGap="1rem">
-                        <GridItem className="pledge-grid">
+                    <Image src={pledgeSmall} alt="logo" position="absolute" h="189px" w="340px" zIndex="-1" opacity={["0.4","0.4","1","1"]}
+                    top={["6%","7%","5%","9%","2%"]} left={["0%","35%","25%","55%","65%"]}></Image>
+                    <Grid templateRows={["repeat(6,1fr)","repeat(6,1fr)","repeat(6,1fr)","repeat(2,1fr)"]} 
+                    templateColumns="repeat(3,1fr)" textAlign="center" 
+                    margin="auto" marginBottom="4rem" rowGap={["1vw","1vw","1vw","2rem"]} columnGap="1rem">
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
                             20,000+ books donated
                         </GridItem>
-                        <GridItem className="pledge-grid">
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
                             25+ Libraries created
                         </GridItem>
-                        <GridItem className="pledge-grid">
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
                             20+ Media Articles
                         </GridItem>
-                        <GridItem className="pledge-grid">
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
                             1 National TV coverage
                         </GridItem>
-                        <GridItem className="pledge-grid pledge-grid-image">
-                            <Image src={pledge} boxSize="80%"></Image>
+                        <GridItem className="pledge-grid pledge-grid-image" colSpan={[3,3,3,1]}>
+                            <Image src={pledge} alt="Pledge a Book" h="fit-content" w="fit-content"></Image>
                         </GridItem>
-                        <GridItem className="pledge-grid">
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
                             10+ Marquee pledges
                         </GridItem>
                     </Grid>
-                  
-                    <div id="bubble-bg">
-                            {/* <Image src={bubblesOne} width="90vw" height="500px" fit="cover" ></Image> */}
-                            <Image src={bubblesTwo} width={["100vw","100vw","90vw", "90vw"]} height={["70vw","70vw","38.9vw","38.9vw"]} fit="cover"></Image>
-                            <Image src={bubblesThree} width={["100vw","100vw","90vw", "90vw"]} height={["70vw","70vw","38.9vw","38.9vw"]} fit="cover"></Image>
-                    </div>
                     <div className="campaigns-child even">
+                    <div id="bubble-bg">
+                            <Image src={bubblesTwo} alt="background" width="1040px" height="780px"
+                            w={["100vw","100vw","100vw", "100vw"]} h={["160vw","150vw","150vw","70vw","38.9vw"]} fit="cover"></Image>
+                            <Image src={bubblesThree} alt="background" width="1080" height="1080"
+                            w={["100vw","100vw","100vw", "100vw"]} h={["160vw","150vw","150vw","70vw","38.9vw"]} fit="cover"></Image>
+                    </div>
                             <hr />
                             <div className="info">
                                 <p>Bubbles</p>
@@ -321,7 +316,8 @@ Events()
                                 The campaign will also include activities to promote hygiene awareness in schools and other public places in Chennai.
                             </div>
                     </div>
-                    <div><Image src={bubblesOne} boxSize="70%"></Image></div>
+                    <div><Image src={bubblesOne} alt="poster" height="540px" width='540px'
+                    boxSize={["100%","100%","100%","70%"]}></Image></div>
                 </div>
             </section>
             <script src="./script.tsx"></script>
