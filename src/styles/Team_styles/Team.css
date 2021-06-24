@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@650&display=swap");
+.ContentBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 50px;
+  box-sizing: border-box;
+}
+.ContentBox h1 {
+  font-size: 4em;
+  font-family: "Quicksand";
+  font-weight: 650;
+}
+.ContentBox p {
+  max-width: 700px;
+}
+.imageContainer {
+  position: relative;
+  width: 100vw;
+  height: 600px;
+  overflow-y: visible;
+  overflow-x: clip;
+  margin: 50px 0;
+}
+.imageSlider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 415px;
+  display: flex;
+  animation: moveSlider 10s linear infinite;
+}
+.imageContainer .imageSlider:hover {
+  animation-play-state: paused;
+}
+@keyframes moveSlider {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -1200px;
+  }
+}
+.imageSlider .col {
+  width: 140px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 -20px;
+  z-index: 0;
+}
+.imageSlider .col:hover {
+  z-index: 2;
+}
+.imageSlider .col:nth-of-type(even) {
+  transform: translateY(80px);
+}
+.DetailCards {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0 50px;
+}
+.DetailCards .navbar {
+  width: 1515px;
+  position: relative;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+  transition: 0.5s;
+}
+.DetailCards .navbar button {
+  margin-right: 30px;
+  padding: 7px 15px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.DetailCards .navbar #marker {
+  height: 3px;
+  background-color: dodgerblue;
+  position: absolute;
+  bottom: 0;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+.DetailCards .CardBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.DetailCards .CardBox .Card {
+  margin: 20px 30px;
+}
+.imageSlider .col:nth-of-type(2) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(8) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(14) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(20) .sliderImgBox .profileCard {
+  background-color: rgb(0, 173, 43);
+  box-shadow: 0px 14px 34px 4px rgb(0, 173, 43, 0.54);
+}
+.imageSlider .col:nth-of-type(3) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(9) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(15) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(21) .sliderImgBox .profileCard {
+  background-color: rgb(0, 109, 173);
+  box-shadow: 0px 14px 34px 4px rgb(0, 109, 173, 0.54);
+}
+.imageSlider .col:nth-of-type(4) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(10) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(16) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(22) .sliderImgBox .profileCard {
+  background-color: rgb(95, 0, 173);
+  box-shadow: 0px 14px 34px 4px rgb(95, 0, 173, 0.54);
+}
+.imageSlider .col:nth-of-type(5) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(11) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(17) .sliderImgBox .profileCard {
+  background-color: rgb(240, 68, 0);
+  box-shadow: 0px 14px 34px 4px rgb(240, 68, 0, 0.54);
+}
+.imageSlider .col:nth-of-type(6) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(12) .sliderImgBox .profileCard,
+.imageSlider .col:nth-of-type(18) .sliderImgBox .profileCard {
+  background-color: rgb(186, 0, 223);
+  box-shadow: 0px 14px 34px 4px rgb(186, 0, 223, 0.54);
+}
+.Card:nth-of-type(2) .profileCard::before,
+.Card:nth-of-type(8) .profileCard::before,
+.Card:nth-of-type(14) .profileCard::before,
+.Card:nth-of-type(20) .profileCard::before {
+  background-color: rgb(0, 173, 43);
+}
+.Card:nth-of-type(3) .profileCard::before,
+.Card:nth-of-type(9) .profileCard::before,
+.Card:nth-of-type(15) .profileCard::before,
+.Card:nth-of-type(21) .profileCard::before {
+  background-color: rgb(0, 109, 173);
+}
+.Card:nth-of-type(4) .profileCard::before,
+.Card:nth-of-type(10) .profileCard::before,
+.Card:nth-of-type(16) .profileCard::before,
+.Card:nth-of-type(22) .profileCard::before {
+  background-color: rgb(95, 0, 173);
+}
+.Card:nth-of-type(5) .profileCard::before,
+.Card:nth-of-type(11) .profileCard::before,
+.Card:nth-of-type(17) .profileCard::before {
+  background-color: rgb(240, 68, 0);
+}
+.Card:nth-of-type(6) .profileCard::before,
+.Card:nth-of-type(12) .profileCard::before,
+.Card:nth-of-type(18) .profileCard::before {
+  background-color: rgb(186, 0, 223);
+}
+@media screen and (max-width: 600px) {
+  .ContentBox {
+    padding: 100px 25px;
+  }
+  .ContentBox h1 {
+    line-height: 1.2em;
+    margin-bottom: 30px;
+  }
+  .ContentBox p {
+    margin: 0 5px;
+  }
+  .imageContainer {
+    height: 500px;
+  }
+  .imageContainer .sliderImgBox:hover .profileCard {
+    transform: scale(0.7) rotate(-45deg);
+  }
+  .DetailCards {
+    padding: 0 25px;
+  }
+  .DetailCards .CardBox .Card {
+    margin: 20px 0px;
+  }
+  .DetailCards .Card:hover .imageBox img {
+    top: -100%;
+  }
+  .DetailCards .Card:hover .imageBox .profileDescription {
+    top: -100%;
+  }
+  .CardBox .Card .profileCard::before {
+    bottom: -1px;
+  }
+  .DetailCards .navbar {
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
