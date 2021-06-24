@@ -1,4 +1,5 @@
 import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center} from "@chakra-ui/react";
+import {ArrowBackIcon,ArrowForwardIcon} from "@chakra-ui/icons";
 import * as React from "react";
 import CustomBox from "../../shared/CustomBox";
 import EXHB2 from "../../../images/Exhibitions/exhb_2.png";
@@ -12,11 +13,21 @@ const MotionBox = motion<BoxProps>(Box);
 
 const Exhibitions = ()=>{
 
+  const [current,setCurrent] = React.useState(0);
+  const length = CauroselImages.length;
+
+  const prevSlide = ()=>{
+        setCurrent(current ===0 ? length-1 : current-1)
+  }
+  const nextSlide = ()=>{
+    setCurrent(current === length-1 ? 0 : current+1)
+}
     return(
       <CustomBox>
      
        <Particles options={ options } height="30%" className="App-particles__container" />
   
+       
        <Container maxW={'7xl'}>
         <Stack
           align={'center'}
@@ -86,8 +97,39 @@ const Exhibitions = ()=>{
           </Flex>
         </Stack>
       </Container>
+      <Container maxW={'5xl'} className="slider" mb={5}>
+       <Center>
+       <ArrowBackIcon className="left-arrow" onClick={prevSlide}/>
+        <ArrowForwardIcon className="right-arrow" onClick={nextSlide} />
+          {
+            CauroselImages.map((img,index)=>{
+              return(
+               
+               <div
+               className={index===current ? 'slide active':'slide'}
+               key = {index}
+               >
+                  {
+                   index === current && (<Image
+                    alt={'Hero Image'}
+                    fit={'cover'}
+                    align={'center'}
+                    w={['100%']}
+                    h={'400px'}
+                    borderRadius="10px"
+                    src={img}
+    
+                  />)
+                  }
+               </div>
+    
+              )
+            })
+          }
+       </Center>
+       </Container>
      
-      <Container maxW={'7xl'}>
+      <Container maxW={'7xl'} mt={4}>
       <Center>
       <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]}> 
         {
