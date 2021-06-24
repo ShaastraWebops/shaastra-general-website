@@ -11,7 +11,6 @@ const AppRoutes = (props: Props) => {
     return (
         <Router>
             <Route exact path="/" component={Home} />
-            <Route exact path="/spons" component={Spons}/>
         </Router>
     )
 }
