@@ -36,7 +36,7 @@ const CustomDrawer = (props: Props) => {
           <DrawerCloseButton variant="unstyled" mt={3} mr={3} p={2} outline="none" borderRadius="50%" size={closeButtonSize}/>
         </DrawerHeader>
         <DrawerBody>
-          {/* <Spons/> */}
+
         </DrawerBody>
       </DrawerContent>
     </Drawer>
