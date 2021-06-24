@@ -1,0 +1,38 @@
+html{
+    margin: 0%;
+    overflow-x: hidden;
+    padding: 0%;
+}
+
+.body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    /* font-size: 25px; */
+    font-size: 1.65vw;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.App-particles__container {
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 0;
+  }
+  .App-particles__container canvas {
+    transition: 0.2s all ease-in-out;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  .readmore{
+    float: inline-end;
+    color: aquamarine;
+  }
+  
