@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Flex, Heading } from "@chakra-ui/layout";
+import { Flex, Heading, Text } from "@chakra-ui/layout";
 import {
   Drawer,
   DrawerBody,
@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/modal";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { useBreakpointValue } from "@chakra-ui/media-query";
+import { Link } from "react-router-dom";
 
 interface Props {
   isOpen: boolean;
@@ -17,8 +18,8 @@ interface Props {
 }
 
 const CustomDrawer = (props: Props) => {
-  const closeButtonSize = useBreakpointValue({ base: "lg", lg: "xl" });
   const { isOpen } = useDisclosure({ isOpen: props.isOpen });
+  const closeButtonSize = useBreakpointValue({ base: "lg", lg: "xl" });
 
   return (
     <Drawer
@@ -35,7 +36,7 @@ const CustomDrawer = (props: Props) => {
           alignItems="center"
           flexDirection="row"
         >
-          <Heading fontWeight="normal" p={3}>Our Menu</Heading>
+          <Heading as="h3" size="lg" p={3}>Our Menu</Heading>
           <DrawerCloseButton
             variant="unstyled"
             mt={3}
@@ -46,8 +47,21 @@ const CustomDrawer = (props: Props) => {
             size={closeButtonSize}
           />
         </DrawerHeader>
-        <DrawerBody>
-
+        <DrawerBody overflowY="scroll">
+          <Flex flexDirection="row" justifyContent="center" alignItems="center" flex={1}>
+            <Flex flexDirection="column" justifyContent="flex-start" height="90%" flex={1}>
+              <Text className="menu-text" fontSize={{ base: 28, lg: 40 }} fontFamily={{lg: "monospace"}} fontStyle={{ base: "normal", lg: "italic" }}  pl={{ base: 3, lg: 12 }} p={3} mb={{ base: 3, lg: 8 }}><Link to="/">Events and Workshops</Link></Text>
+              <Text className="menu-text" fontSize={{ base: 28, lg: 40 }} fontFamily={{lg: "monospace"}} fontStyle={{ base: "normal", lg: "italic" }}  pl={{ base: 3, lg: 12 }} p={3} mb={{ base: 3, lg: 8 }}><Link to="/">Exhibitions</Link></Text>
+              <Text className="menu-text" fontSize={{ base: 28, lg: 40 }} fontFamily={{lg: "monospace"}} fontStyle={{ base: "normal", lg: "italic" }}  pl={{ base: 3, lg: 12 }} p={3} mb={{ base: 3, lg: 8 }}><Link to="/">Shaastra Nights</Link></Text>
+              <Text className="menu-text" fontSize={{ base: 28, lg: 40 }} fontFamily={{lg: "monospace"}} fontStyle={{ base: "normal", lg: "italic" }}  pl={{ base: 3, lg: 12 }} p={3} mb={{ base: 3, lg: 8 }}><Link to="/">Schools</Link></Text>
+              <Text className="menu-text" fontSize={{ base: 28, lg: 40 }} fontFamily={{lg: "monospace"}} fontStyle={{ base: "normal", lg: "italic" }}  pl={{ base: 3, lg: 12 }} p={3} mb={{ base: 3, lg: 8 }}><Link to="/">Speakers</Link></Text>
+              <Text className="menu-text" fontSize={{ base: 28, lg: 40 }} fontFamily={{lg: "monospace"}} fontStyle={{ base: "normal", lg: "italic" }}  pl={{ base: 3, lg: 12 }} p={3} mb={{ base: 3, lg: 8 }}><Link to="/">Sponsors</Link></Text>
+              <Text className="menu-text" fontSize={{ base: 28, lg: 40 }} fontFamily={{lg: "monospace"}} fontStyle={{ base: "normal", lg: "italic" }}  pl={{ base: 3, lg: 12 }} p={3} mb={{ base: 3, lg: 8 }}><Link to="/">Team</Link></Text>
+            </Flex>
+            <Flex display={{base: "none", lg: "flex"}} justifyContent="center" alignItems="center" flex={1}>
+              Hello
+            </Flex>
+          </Flex>
         </DrawerBody>
       </DrawerContent>
     </Drawer>
