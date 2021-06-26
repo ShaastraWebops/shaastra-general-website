@@ -1,0 +1,13 @@
+.sj {
+    align-items: flex-end;
+}
+
+.sj-side-nav {
+    background-color: red;
+    font-size: larger;
+    width: fit-content;
+}
+
+.sj-events-content {
+    color: green;
+}
