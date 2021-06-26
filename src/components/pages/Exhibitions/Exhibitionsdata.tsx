@@ -1,7 +1,6 @@
-import { IOptions, RecursivePartial } from "react-tsparticles";
+
 
 import EXHB1 from "../../../images/Exhibitions/exhb_1.png";
-import EXHB2 from "../../../images/Exhibitions/exhb_2.png";
 import EXHB3 from "../../../images/Exhibitions/exhb_3.png";
 import EXHB4 from "../../../images/Exhibitions/exhb_4.png";
 import EXHB5 from "../../../images/Exhibitions/exhb_5.png";
@@ -14,7 +13,7 @@ import EXHB11 from "../../../images/Exhibitions/exhb_11.png";
 import EXHB12 from "../../../images/Exhibitions/exhb_12.png";
 import EXHB13 from "../../../images/Exhibitions/exhb_13.png";
 
-export const CauroselImages = [EXHB2,EXHB3,EXHB4,EXHB8,EXHB9,EXHB10,EXHB11,EXHB12];
+export const CauroselImages = [EXHB3,EXHB4,EXHB9,EXHB10,EXHB11,EXHB12];
 
 interface exhibitions{
     id: string,
@@ -51,6 +50,12 @@ export const exhibitions : exhibitions[] =[
       image : EXHB5
     },
     {
+      id : "4",
+      year:"2018",
+      title : "Bike Expo",
+      image : EXHB8
+    },
+    {
       id:"4",
       year : "2019",
       title:"International exhibits from the US",
@@ -69,74 +74,4 @@ export const exhibitions : exhibitions[] =[
     }
   ];
 
-  export const options : RecursivePartial<IOptions> = { 
-    interactivity: {
-    detectsOn: "canvas",
-    events: {
-      onClick: {
-        enable: true,
-        mode: "push",
-      },
-      onHover: {
-        enable: true,
-        mode: "repulse",
-      },
-      resize: true,
-    },
-    modes: {
-      bubble: {
-        distance: 400,
-        duration: 5,
-        opacity: 0.8,
-        size: 40,
-      },
-      push: {
-        quantity: 4,
-      },
-      repulse: {
-        distance: 200,
-        duration: 0.6,
-      },
-    },
-  },particles: {
-    color: {
-      value: "#a83232",
-    },
-    links: {
-      color: "#a84232",
-      distance: 150,
-      enable: true,
-      opacity: 0.5,
-      width: 1,
-    },
-    collisions: {
-      enable: true,
-    },
-    move: {
-      direction: "none",
-      enable: true,
-      outMode: "bounce",
-      random: false,
-      speed: 5,
-      straight: false,
-    },
-    number: {
-      density: {
-        enable: true,
-        value_area: 800,
-      },
-      value: 80,
-    },
-    opacity: {
-      value: 0.5,
-    },
-    shape: {
-      type: "triangle",
-    },
-    size: {
-      random: true,
-      value: 5,
-    },
-  },
-  detectRetina: true}
   

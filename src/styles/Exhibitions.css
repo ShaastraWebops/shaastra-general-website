@@ -1,19 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:ital,wght@1,200&display=swap');
+
 html{
     margin: 0%;
     overflow-x: hidden;
     padding: 0%;
 }
 
-.body{
+body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     position: relative;
-    font-size: 25px;
-    font-size: 1.65vw;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
 }
+
+h1,h2,h3,h4{
+  font-family: 'Poppins', sans-serif;
+}
+p{
+  /* font-weight:50px ; */
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
 
 .App-particles__container {
     overflow: hidden;
@@ -24,18 +34,41 @@ html{
     right: 0px;
     z-index: 0;
   }
-  .App-particles__container canvas {
-    transition: 0.2s all ease-in-out;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
+  
+  .Card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    
+  }
+  .Tag{
+    position: absolute;
+    top: 5px;
+    left: 40%;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .card-img{
+    margin-top: 20%;
+  }
+  .overview {
+    background-color:#373b69 ;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in;
+  }
+ 
+  .Card:hover .overview {
+    transform: translateY(0);
   }
 
-  .readmore{
-    float: inline-end;
-    color: aquamarine;
-  }
-  
   .slider{
     position : relative;
     height: 100vh;
@@ -46,24 +79,26 @@ html{
 
   .right-arrow{
     position: absolute;
-    top: 50%;
-    right: 0%;
+    top: 47%;
+    right: 25%;
     font-size: 3rem;
-    background-color: grey;
+    background-color:lightskyblue;    
+    border-radius: 100%;
     color: black;
-    z-index: 10;
+    z-index: 0;
     cursor: pointer;
     user-select: none;
   }
 
   .left-arrow{
     position: absolute;
-    top: 50%;
-    left: 32px;
+    top: 47%;
+    left: 25%;
     font-size: 3rem;
-    background-color: grey;
+    background-color:lightskyblue;
+    border-radius: 100%;
     color: black;
-    z-index: 10;
+    z-index: 0;
     cursor: pointer;
     user-select: none;
   }
@@ -77,5 +112,49 @@ html{
     opacity:1;
     transition-duration: 1s;
     transform : scale(1.08);
+
+  }
+
+  .CarouselImg{
+
+    width: 600px;
+    height : 400px;
+  }
+
+  @media screen and (max-width:700px){
+
+    .left-arrow{
+      position: absolute;
+      top: 47%;
+      left: 5%;
+      font-size: 2.5rem;
+      background-color:lightskyblue;
+      border-radius: 100%;
+      color : black;
+      z-index: 1;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .CarouselImg{
+
+      width: 300px;
+      height : 200px;
+    }
+  
+
+    .right-arrow{
+      position: absolute;
+      top: 47%;
+      right: 5%;
+      font-size: 2.5rem;
+      background-color:lightskyblue;    
+      border-radius: 100%;
+      color: black;
+      z-index: 1;
+      cursor: pointer;
+      user-select: none;
+    }
+  
 
   }

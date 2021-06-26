@@ -1,15 +1,19 @@
-import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center} from "@chakra-ui/react";
-import {ArrowBackIcon,ArrowForwardIcon} from "@chakra-ui/icons";
+import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center, TextProps} from "@chakra-ui/react";
+import {ChevronLeftIcon,ChevronRightIcon} from "@chakra-ui/icons";
 import * as React from "react";
 import CustomBox from "../../shared/CustomBox";
 import EXHB2 from "../../../images/Exhibitions/exhb_2.png";
-import Particles from "react-tsparticles";
 import "../../../styles/Exhibitions.css";
-import { options, exhibitions,CauroselImages } from "./Exhibitionsdata";
+import {  exhibitions,CauroselImages } from "./Exhibitionsdata";
 import Card from "./Card";
 import { motion ,AnimatePresence } from 'framer-motion';
+import Footer from "../../shared/Footer";
+import ParticlesBg from 'particles-bg';
 
-const MotionBox = motion<BoxProps>(Box);
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
+const MotionChevronLeftIcon = motion(ChevronLeftIcon);
+const MotionChevronRightIcon = motion(ChevronRightIcon);
 
 const Exhibitions = ()=>{
 
@@ -24,41 +28,43 @@ const Exhibitions = ()=>{
 }
     return(
       <CustomBox>
-     
-       <Particles options={ options } height="30%" className="App-particles__container" />
-  
+       <Container maxW={'7xl'}  >
+      <div className="App-particles__container">
+       <ParticlesBg color="#ff006f" num={200} type="cobweb" bg={true}/>
+       </div>
        
-       <Container maxW={'7xl'}>
+       
         <Stack
           align={'center'}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 20, md: 28 }}
           direction={{ base: 'column', md: 'row' }}>
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-            <Heading
+          <Center>
+              <Heading
               lineHeight={1.1}
               fontWeight={600}
               fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
-              <Text
-                as={'h1'}
-                position={'relative'}
-                _after={{
-                  content: "''",
-                  width: 'full',
-                  height: '30%',
-                  position: 'absolute',
-                  bottom: 1,
-                  left: 0,
-                  bg: 'red.400',
-                  zIndex: -1,
-                }}>
-                 Exhibitions
-              </Text>
+              <MotionText as={'h1'}
+                  initial={{x: "-100vw" }}
+                  animate = {{x: 0}}
+                  transition={{duration : "1"}}
+                  className = "Exhibitions"
+              >
+                EXHIBITIONS
+              </MotionText>
+
             </Heading>
-            <Heading as={'h1'}>
+              </Center>
+              <MotionBox
+              initial = {{opacity : 0}}
+              animate = {{opacity : 1}}
+              transition ={{delay: 1.5,duration : "1.5" }}>
+              <Heading as={'h1'} mb={"3"}>
                 About Us
               </Heading>
-            <Text fontSize="lg">
+               <Text as={"p"}
+                >
                  Shaastra Exhibitions is a platform to showcase cutting Edge technology.
                  Exhibitions provide an opportunity for a large number of buyers and sellers in an industry to interact with
                  each other.
@@ -68,6 +74,7 @@ const Exhibitions = ()=>{
                   They offer an unparalleled and ideal opportunity to showcase innovative products to a broad
                  spectrum of people.
             </Text>
+              </MotionBox>
           </Stack>
           <Flex
             flex={1}
@@ -83,7 +90,9 @@ const Exhibitions = ()=>{
               rounded={'2xl'}
               boxShadow={'2xl'}
               width={'full'}
-              overflow={'hidden'}>
+              overflow={'hidden'}
+              mt={["0px","60px"]}
+              >
               
               <Image
                 alt={'Hero Image'}
@@ -96,38 +105,8 @@ const Exhibitions = ()=>{
             </MotionBox>
           </Flex>
         </Stack>
+        
       </Container>
-      <Container maxW={'5xl'} className="slider" mb={5}>
-       <Center>
-       <ArrowBackIcon className="left-arrow" onClick={prevSlide}/>
-        <ArrowForwardIcon className="right-arrow" onClick={nextSlide} />
-          {
-            CauroselImages.map((img,index)=>{
-              return(
-               
-               <div
-               className={index===current ? 'slide active':'slide'}
-               key = {index}
-               >
-                  {
-                   index === current && (<Image
-                    alt={'Hero Image'}
-                    fit={'cover'}
-                    align={'center'}
-                    w={['100%']}
-                    h={'400px'}
-                    borderRadius="10px"
-                    src={img}
-    
-                  />)
-                  }
-               </div>
-    
-              )
-            })
-          }
-       </Center>
-       </Container>
      
       <Container maxW={'7xl'} mt={4}>
       <Center>
@@ -135,16 +114,59 @@ const Exhibitions = ()=>{
         {
           exhibitions.map(item => {
             return(
-              
+              <MotionBox
+              whileHover={{ scale: 1.1}}
+              initial = {{opacity : 0}}
+              animate = {{opacity : 1}}
+              transition ={{delay: 2,duration : "1.5" }}
+              className="Card"
+              >
               <Card data={item} />
-             
+              </MotionBox>
             )
           })
         }
         </SimpleGrid>
       </Center>
-        </Container>
+      </Container>
+        <Center className="slider" mb={5}>
+        <MotionChevronLeftIcon
+         whileHover={{ scale: 1.1 }}
+         whileTap={{ scale: 0.9 }}
+         className="left-arrow" onClick={prevSlide}
+         />
+        <MotionChevronRightIcon 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="right-arrow" onClick={nextSlide} />
+          {
+            CauroselImages.map((img,index)=>{
+              return(
+               
+               <Center
+               className={index===current ? 'slide active':'slide'}
+               key = {index}
+               >
+                  {
+                   index === current && (<Image
+                    alt={'Carousel Image'}
+                    fit={'cover'}
+                    align={'center'}
+                    className="CarouselImg"
+                    borderRadius="10px"
+                    src={img}
+    
+                  />)
+                  }
+               </Center>
+    
+              )
+            })
+          }
+       </Center>
+       <Footer></Footer>
      </CustomBox>
+    
     );
 
 }

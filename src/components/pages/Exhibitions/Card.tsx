@@ -2,75 +2,48 @@ import * as React from "react";
 import { 
   Stack,
   Box,
-  BoxProps,
-  Heading,
+  Text,
   Image,
   Tag,
-  Center,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  Button
+  Heading,
+ 
 } from "@chakra-ui/react";
-import { motion } from 'framer-motion';
-
-const MotionBox = motion<BoxProps>(Box);
 
 const Card = ({data}) =>{
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const finalRef = React.useRef()as React.MutableRefObject<HTMLInputElement>
-
     return(
        
-        <MotionBox
-          ref={finalRef} tabIndex={-1} aria-label="Focus moved to this box"
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{ duration: "2"}}
+        <Box
           maxW={'270px'}
           w={'full'}
           boxShadow={'2xl'}
           rounded={'md'}
-          overflow={'hidden'}>
+          overflow={'hidden'}
+          h={'100%'}
+          p={0}
+          >
+
           <Image
             h={'200px'}
             w={'full'}
             src={data.image}
+            className="card-img"
           />
           <Box  p={6}>
             <Stack spacing={1} align={'center'}>
-              <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
-              <Tag size="lg">{data.year}</Tag> - {data.title}
-              </Heading>
+              <Text as={'h1'} className="Tag" p={1}>
+              <Tag size="lg" bg={["secondary.500","secondary.100"]}
+              color={["highlight.100","highlight.100"]}>{data.year}</Tag>
+              </Text>
+              <Text>{data.title}</Text>
+              <Box className="overview">
+              <Heading mb={2} p={2} >Description</Heading>
+              <Text as={"h4"} size={"4"}>{data.description}</Text>
+            </Box>
             </Stack>
-            <Center>
-            <Button mt={4} onClick={onOpen} >
-             Read More
-            </Button>
-            </Center>
-            <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose} isCentered>
-              <ModalOverlay />
-              <ModalContent>
-                <ModalHeader>{data.title}</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                  {data.description}
-                </ModalBody>
-                <ModalFooter>
-                  <Button colorScheme="blue" mr={3} onClick={onClose}>
-                    Close
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
+          
           </Box>
-        </MotionBox>
+        </Box>
        
         )
 }
