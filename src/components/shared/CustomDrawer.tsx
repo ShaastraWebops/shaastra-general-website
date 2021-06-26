@@ -9,6 +9,8 @@ import {
   DrawerOverlay,
 } from "@chakra-ui/modal";
 import { useDisclosure } from "@chakra-ui/hooks";
+import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { useBreakpointValue } from "@chakra-ui/media-query";
 
 interface Props {
@@ -47,6 +49,11 @@ const CustomDrawer = (props: Props) => {
           />
         </DrawerHeader>
         <DrawerBody>
+        <Flex align="center" justify="center" height="100%">
+                        <Button>
+                            <Link to="/main">WEBSITE</Link>
+                        </Button>
+                    </Flex>
 
         </DrawerBody>
       </DrawerContent>
