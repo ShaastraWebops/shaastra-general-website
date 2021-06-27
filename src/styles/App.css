@@ -1,3 +1,7 @@
+:root{
+    --chakra-shadows-outline: none !important;
+}
+
 html, body{
     scroll-behavior: smooth;
     margin: 0;
@@ -20,4 +24,8 @@ html, body{
 
 .menu-text:hover{
     padding-left: 70px;
+}
+
+.menu-desc a:hover {
+    background-color: #00000035 !important;
 }
