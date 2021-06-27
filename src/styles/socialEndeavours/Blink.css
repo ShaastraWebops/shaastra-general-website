@@ -1,13 +1,14 @@
 /*blink*/
 .blink{
     scroll-snap-align: start;
-    background-image: linear-gradient(90deg, transparent 50%, var(--blue-bg2) 50%);
+    background-image: linear-gradient(90deg, transparent 50%, var(--blue-bg) 50%);
     padding: 5rem 0;
-    margin: 5rem 0;
+    margin: 5rem 4rem;
 }
 .blink > .sec-heading{
     margin: auto;
-    width: 40%;
+    text-align: center;
+    width: 100%;
     color: var(--pink);
     animation: blink 1s ease infinite;
 }
@@ -37,6 +38,10 @@
     transition: all .5s ease;
 }
 
+#blink-image{
+    height: 100%;
+    width: 100%;
+}
 
 .blink-info-back{
     background-color: var(--pink-bg);
@@ -52,34 +57,40 @@
 }
 .blink-info-light{
     font-weight: bold;
-    background-color: var(--blue-bg2);
+    background-color: var(--blue-bg);
     padding: 4rem;
     border-radius: 24px;
     color: var(--dblue);
     text-align: left;
 }
 .blink-info-dark{
+    font-weight: bold;
     background-color: var(--dblue-bg);
-    padding: 4rem;
+    padding: 4.4vw;
     border-radius: 24px;
     color: var(--blue);
-    text-align: center;
+    text-align: right;
 }
 
 .blink-main-info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 2rem;
 }
 .blink-main-info > div{
     width: 45%;
 }
-.blink-main-info b{
-    color: var(--pink);
-}
-.blink-main-info > div:last-child{
+
+
+.blink-stats{
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+.blink-stats .blink-info-back{
+    width: 50%;
 }
 
 @media screen and (max-width: 1050px)
@@ -87,6 +98,7 @@
     .blink-info{
         margin-top: 3vw;
         font-size: 3vw;
+        width: 90%;
     }
     .blink .sec-heading{
         font-size: 20vw;
@@ -96,12 +108,20 @@
     }
     .blink-info-back{
         font-size: 2vw;
+        padding: 2vw;
+    }
+    .blink-main-info{
+        font-size: 2vw;
+    }
+    .blink-info-dark, .blink-info-light{
+        font-size: 2vw;
     }
 }
 
 @media screen and (max-width: 950px)
 {
     .blink{
+        margin: 2rem 0;
         margin-bottom: 2vw;
     }
     .blink .sec-heading{
@@ -130,9 +150,22 @@
     }
     .blink-info-light{
         background-color: var(--blue-bg);
+        border-radius: 0%;
+    }
+    .blink-info-dark, .blink-main-info > .blink-info-back{
+        border-radius: 0%;
+        text-align: center;
     }
     .blink-info-back{
-        padding: 6vw;
+        padding: 4vw;
         font-size: 4vw;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .blink-info-light, .blink-info-dark{
+        font-size: 4vw;
+        padding: 4vw;
+        border-radius: 24px;
     }
 }

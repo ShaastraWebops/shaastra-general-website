@@ -1,12 +1,13 @@
 #past{
     /* background-image: url("../../images/socialEndeavours/pastBg.jpg"); */
-    padding: 4rem;
+    /* padding: 4rem; */
+    margin: 0 4rem;
+    overflow: hidden;
 }
 
 .past{
     color: var(--pink);
-    font-size: 9vw;
-    padding: 2rem;
+    font-size: 7.5vw;
 }
 
 .campaigns{
@@ -14,15 +15,10 @@
     display: flex;
     flex-direction: column;
     row-gap: 6rem;
-    margin-top: 6rem;
+    margin-top: 4vw;
 }
 .campaigns-child{
     width: 50%;
-}
-.campaigns-child p:hover{
-    color: var(--blue);
-    letter-spacing: 5px;
-    transition: all .5s ease;
 }
 .campaigns-child hr{
     background-color: var(--green);
@@ -32,15 +28,28 @@
     align-self: flex-end;
     text-align: right;
     position: relative;
+    width: 100%;
+}
+
+.campaigns-child:first-child{
+    width: 100%;
+}
+.campaigns-child:first-child .info{
+    width: 50%;
 }
 .even .info{
     z-index: 5;
+    width: 80%;
+    margin-left: 15vw;
+    margin-top: 2vw;
+    margin-bottom: 4vw;
+    font-weight: 600;
 }
 #bubble-bg{
     z-index: -1;
     overflow-y: hidden;
     overflow-x: hidden;
-    transform: translateX(-48%);
+    transform: translateX(-2%);
     padding: 0%;
     margin: 0;
     position: absolute;
@@ -59,41 +68,47 @@
 }
 
 .pledge-grid:hover{
-    color: var(--blue);
+    color: var(--pink);
     line-height: 20px;
     letter-spacing: 5px;
     transition: all .5s ease;
 }
 
-.pledge-grid-image{
-    background-color: transparent;
-}
-
-.campaigns > div:last-child{
+#flex{
     display: flex;
-    justify-content: center;
-    opacity: 0.8;
+    width: 100%;
+    justify-content: space-between;
 }
-
+#pledge{
+    align-self: center;
+}
 @media screen and (max-width: 1050px)
 {
     .even{
         align-self: center;
-        width: 90%;
         margin-bottom: 10rem;
-    }
+        margin-right: 0%;
+        padding: 0%;
+    }   
     .campaigns-child .info{
         font-size: 3vw;
     }
+    .info{
+        margin: 0%;
+    }
     .pledge-grid{
-        font-size: 4vw;
-        padding: 2vw;
+        font-size: 3vw;
+        padding: 3vw;
     }
     .pledge-grid:hover{
         line-height: 5vw;
     }
     #bubble-bg{
-        transform: translateX(-9%);
+        transform: translateX(5%);
+    }
+    #bubbles-image{
+        height: 100%;
+        width: 100%;
     }
 }
 
@@ -101,19 +116,22 @@
 {
     #past{
         padding: 0%;
+        margin: 0;
+        margin-top: 10vw;
     }
     .past{
         padding: 2vw;
-        margin-bottom: 8vw;
+        margin-bottom: 15vw;
         text-align: center;
         font-size: 10vw;
     }
     .campaigns{
         margin: 0;
+        row-gap: 10vw;
     }
     .campaigns-child{
         width: 100%;
-        padding: 2vw;
+        padding: 0vw;
         margin: 0;
     }
     .campaigns-child .info{
@@ -126,19 +144,53 @@
         line-height: 10vw;
     }
     .even{
-        padding: 2vw;
+        padding: 0;
         text-align: center;
     }
-    #bubble-bg{
-        transform: translateX(-2%);
+    .even .info{
+        padding: 2vw;
+        width: 100%;
+        margin-left: 0;
     }
-    .campaigns div:last-child{
+    #bubble-bg{
+        transform: translateX(0%);
+    }
+    .campaigns > div:last-child{
         margin-top: 4vw;
     }
-    .pledge-grid-image{
-        padding: 0%;
+    .campaigns-child:first-child{
+        text-align: center;
+        margin: auto;
+    }
+    #bubbles-image{
+        height: 100%;
+        width: 100%;
+    }
+    #flex{
+        flex-direction: column;
+    }
+    .campaigns-child:first-child .info{
+        width: 80%;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    .campaigns-child{
+        font-weight: 600;
     }
     .campaigns-child:first-child{
-        width: 60%;
+        text-align: center;
+        width: 100%;
+        margin-top: 5vw;
+    }
+    .campaigns-child:first-child p{
+        margin: 6vw;
+    }
+}
+@media screen and (max-width: 1050px)
+{
+    .even{
+        margin-right: 0vw;
     }
 }

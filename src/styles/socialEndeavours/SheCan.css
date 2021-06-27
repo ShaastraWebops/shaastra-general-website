@@ -1,7 +1,5 @@
 /* she can */
-#she-can{
-    scroll-snap-align: start;
-}
+
 .she-can-intro{
     position: relative;
     display: flex;
@@ -15,13 +13,12 @@
     color: var(--green);
     font-family: 'Paytone One', sans-serif;
     transition: all 0.6s ease-out;
-    /* font-size: 150px; */
     font-size: 9.9vw;
     letter-spacing: 10px;
     transform: translateY(20%);
 }
 .she-can-heading:hover{
-    line-height: 14rem;
+    line-height: 15vw;
     letter-spacing: 25px;
     color: var(--pink);
 }
@@ -44,16 +41,14 @@
     position: relative;
 }
 .she-can-intro-info{
-    /* width: 60%; */
     width: 90%;
     z-index: 2;
-    background-color: var(--pink);
+    background-color: var(--pink-bg);
     color: var(--brown);
     font-weight: 500;
     padding: 4rem;
     text-align: right;
     margin: auto;
-    /* margin: 0 2rem; */
 }
 .she-can-backdiv{
     position: absolute;
@@ -75,33 +70,36 @@
     opacity: 0.8;
     z-index: -1;
     background-color: var(--pink);
-    /* height: 500px;
-    width: 1000px; */
-    /* height: 33vw;
-    width: 66vw; */
     height: 100%;
     width: 100%;
 }
 
-
+#she-can-image{
+    height: 100%;
+    width: 100%;
+}
 .she-can-recog{
-    margin-top: 10rem;
     padding: 1rem;
-    background-image: url("../../images/socialEndeavours/recogBg.jpg");
+    /* background-image: url("../../images/socialEndeavours/recogBg2.jpg"); */
+    /* background-color: #e4e4e4c5; */
+    background-color: #fee9e198;
+    /* background-image: linear-gradient(60deg, var(--blue-bg2), var(--green));
+    border-radius: 24px; */
+    margin: 0 4rem;
+    padding: 3rem;
+    margin-top: 10rem;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.recog-info-child  a:hover{
-    color: var(--brown);
-}
 
 .recog-heading{
-    color: var(--brown);
+    color: var(--dblue);
     width: 90%;
     font-family: 'Roboto', sans-serif;
     font-size: 5rem;
-    margin: 6rem auto;
+    padding: 0 2rem;
+    /* margin: 2rem auto; */
     margin-bottom: 0;
 }
 @keyframes headslide{
@@ -112,45 +110,89 @@
         transform: translateX(0%);
     }
 }
+@keyframes headslideRev{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
 .recog-info{
     color: var(--dblue);
-    width: 90%;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    /* margin: 2rem auto; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
     overflow-x: hidden;
 }
 .recog-info-child{
-    width: 60%;
+    width: 100%;
+    padding: 2vw;
     margin-bottom: 6rem;
 }
 .recog-info-child:nth-child(2)
 {
-    width: 80%;
+    width: 90%;
 }
 .moe{
-    align-content: space-between;
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    align-items: center;
 }
 
-#link-she-can a:hover{
+.two{
+    grid-row-start: 2;
+    grid-column-start: 1;
+}
+
+.link-she-can a:hover{
     color: var(--dblue);
 }
 
 @media screen and (max-width: 1100px)
 {
+    .she-can-heading{
+        font-size: 15vw;
+    }
     .title{
         font-size: 5vw;
     }
     .info{
         font-size: 3vw;
     }
+    .moe{
+        flex-direction: column;
+    }
+    .recog-info{
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto;
+    }
     .recog-info-child:nth-child(2)
     {
     width: 80%;
-    }   
+    } 
+    .she-can-intro{
+        margin: 5rem 0;
+        margin-bottom: 0;
+    }
+    .she-can-intro{
+        flex-direction: column;
+        padding: 0%;
+        row-gap: 8rem;
+        margin: 15vw auto;
+        margin-top: 5vw;
+        align-items: center;
+    }
+    .she-can-intro-info{
+        font-size: 2vw;
+    }
+    #she-can-grid{
+        font-size: 2.5vw;
+        padding: 1vw;
+    }
 }
 @media screen and (max-width: 950px)
 {
@@ -172,7 +214,6 @@
         padding: 1vw;
     }
     .recog-info{
-        width: 100%;
         font-weight: bold;
     }
     .recog-info-child{
@@ -189,7 +230,6 @@
         margin-top: 8vw;
     }
     .she-can-intro{
-        padding: 0%;
         margin: 0;
     }
     .wrap{
@@ -203,12 +243,15 @@
         font-size: 25vw;
         line-height: 25vw;
     }
+    #she-can-grid{
+        font-weight: bold;
+    }
     .she-can-intro-info{
         width: 100%;
         font-size: 4vw;
         text-align: center;
         margin: 0%;
-        padding: 8vw;
+        padding: 15vw 8vw;
     }
     .she-can-backdiv{
         width: 100%;
@@ -218,9 +261,10 @@
         margin-bottom: 5vw;
     }
     .recog-heading{
-        margin: 5vw 0;
+        margin: 5vw auto;
         padding: 0%;
-        font-size: 15vw;
+        font-size: 12vw;
+        text-align: center;
     }
     .recog-info-child .title{
         font-size: 8vw;
@@ -228,18 +272,26 @@
     .recog-info{
         margin-bottom: 0vw;
     }
-    #link-she-can{
+    .recog-info-child:nth-child(2){
+        width: 100%;
+    }
+    .link-she-can{
         padding: 2rem;
+        font-size: 5vw;
     }
     .info{
-        font-size: 7vw;
+        font-size: 5vw;
     }
     .info p{
         padding: 2vw;
     }
     .info p:nth-child(odd){
         font-size: 10vw;
-        line-height: 15vw;
+        line-height: 12vw;
+    }
+    .moe{
+        flex-direction: column;
+        align-items: center;
     }
 }
 @media screen and (max-width: 600px)
@@ -247,7 +299,15 @@
     .info{
         padding: 0%;
     }
-    #link-she-can a:hover{
+    .link-she-can a:hover{
         line-height: 10vw;
+    }
+    .she-can-heading:hover{
+        line-height: 30vw;
+        letter-spacing: 3vw;
+    }
+    #she-can-grid{
+        font-size: 6vw;
+        padding: 4vw;
     }
 }

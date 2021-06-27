@@ -12,15 +12,25 @@ const Events = () => {
         const blinkInfoBack: NodeListOf<HTMLElement> = document.querySelectorAll(".blink-info-back")!;
         const bold: NodeListOf<HTMLElement> = document.querySelectorAll("b")!;
         const pastHead: HTMLElement = document.querySelector(".past")!;
+        const introHeading: HTMLElement = document.querySelector(".heading-intro")!;
+        const sheCanBackDiv: HTMLElement = document.querySelector(".she-can-backdiv")!;
+        const sheCanGrid: NodeListOf<HTMLElement> = document.querySelectorAll("#she-can-grid")!;
         
         if('chakra-ui-light' === body.classList[0])
         {
             mainBody.style.color = "var(--dblue)";
+            introHeading.style.color = "var(--dblue)";
+            sheCanHeading.style.color = "var(--dblue)";
             sheCanHeading.addEventListener("mouseenter", () => {
-               sheCanHeading.style.color = "var(--dblue)"
+               sheCanHeading.style.color = "var(--dblue-bg)"
             })
             sheCanHeading.addEventListener("mouseleave", () => {
-                sheCanHeading.style.color ="var(--green)"
+                sheCanHeading.style.color ="var(--dblue)"
+            });
+            sheCanBackDiv.style.backgroundColor = "var(--blue-bg)"
+            sheCanGrid.forEach(el => {
+                el.style.backgroundColor = "var(--blue-bg)"
+                el.style.color = "var(--dblue)"
             })
             blink.style.color = "var(--dblue)";
             blinkBg.style.backgroundImage = "linear-gradient(90deg, transparent 50%, var(--blue-bg) 50%)"
@@ -28,20 +38,28 @@ const Events = () => {
             blinkInfoBack.forEach(el => {
                 el.style.backgroundColor = "var(--pink)"
             })
-            bold.forEach(el => {el.style.color = "var(--green)"})
+            // bold.forEach(el => {el.style.color = "var(--green)"})
                 pastHead.style.color = "var(--pink)"
                 pastHead.style.backgroundColor = "var(--brown)"
+                pastHead.style.padding = "2vw";
                 
         }
         mode.addEventListener("click", () => {
              if(body.classList[0] === 'chakra-ui-dark')
              {
                 mainBody.style.color = "var(--dblue)";
+                introHeading.style.color = "var(--dblue)";
+                sheCanHeading.style.color = "var(--dblue)";
                 sheCanHeading.addEventListener("mouseenter", () => {
-                    sheCanHeading.style.color = "var(--dblue)"
+                    sheCanHeading.style.color = "var(--dblue-bg)"
                 })
                 sheCanHeading.addEventListener("mouseleave", () => {
-                    sheCanHeading.style.color ="var(--green)"
+                    sheCanHeading.style.color ="var(--dblue)"
+                })
+                sheCanBackDiv.style.backgroundColor = "var(--blue-bg)"
+                sheCanGrid.forEach(el => {
+                    el.style.backgroundColor = "var(--blue-bg)"
+                    el.style.color = "var(--dblue)"
                 })
                 blink.style.color = "var(--dblue)";
                 blinkBg.style.backgroundImage = "linear-gradient(90deg, transparent 50%, var(--blue-bg) 50%)"
@@ -49,28 +67,35 @@ const Events = () => {
                 blinkInfoBack.forEach(el => {
                     el.style.backgroundColor = "var(--pink)"
                 })
-                bold.forEach(el => {el.style.color = "var(--green)"})
                 pastHead.style.color = "var(--pink)"
                 pastHead.style.backgroundColor = "var(--brown)"
+                pastHead.style.padding = "2vw";
              }
              else
              {
                 mainBody.style.color = "var(--pink)";
+                introHeading.style.color = "var(--blue)";
+                sheCanHeading.style.color = "var(--green)"
                 sheCanHeading.addEventListener("mouseenter", () => {
                     sheCanHeading.style.color = "var(--pink)"
                 })
                 sheCanHeading.addEventListener("mouseleave", () => {
                     sheCanHeading.style.color ="var(--green)"
                 })
+                sheCanBackDiv.style.backgroundColor = "var(--green)"
+                sheCanGrid.forEach(el => {
+                    el.style.backgroundColor = "var(--green)"
+                    el.style.color = "var(--pink)";
+                })
                     blink.style.color = "var(--pink)";
-                    blinkBg.style.backgroundImage = "linear-gradient(90deg, transparent 50%, var(--blue-bg2) 50%)"
+                    blinkBg.style.backgroundImage = "linear-gradient(90deg, transparent 50%, var(--blue-bg) 50%)"
                     blinkInfo.style.backgroundColor ="var(--pink-bg)"
                     blinkInfoBack.forEach(el => {
                         el.style.backgroundColor = "var(--pink-bg)"
                     })
-                    bold.forEach(el => {el.style.color = "var(--pink)"})
                         pastHead.style.color = "var(--pink)"
                         pastHead.style.backgroundColor = "transparent"
+                        pastHead.style.padding = "0%";
              }
         })
     }
@@ -85,27 +110,31 @@ const Events = () => {
 
         var slidehead: HTMLElement = document.querySelector(".recog-heading")!;
         dist = window.innerHeight - slidehead.getBoundingClientRect().top;
-        if(dist > 50)
+        if(dist > 30)
         {
-            slidehead.style.animation = "headslide 3s ease";    
+            slidehead.style.animation = "headslide 2s ease";    
         }
 
-        var slideIn: NodeListOf<HTMLElement> = document.querySelectorAll(".recog-info-child");
-        slideIn.forEach(el => {
-            switch(el.classList[2])
-            {
-                case 'one': 
-                case 'two':
-                case 'four':
-                case 'three':  dist = window.innerHeight - el.getBoundingClientRect().top;
-                if(dist > 50) el.style.animation = "headslide 2s ease"; break;
-            }
+        var slideIn: HTMLElement = document.querySelector(".one")!;
+        dist = window.innerHeight - slideIn.getBoundingClientRect().top;
+        if(dist > 30) slideIn.style.animation = "headslide 2s ease";
 
-        })
+        slideIn = document.querySelector(".two")!;
+        dist = window.innerHeight - slideIn.getBoundingClientRect().top;
+        if(dist > 50) slideIn.style.animation = "headslideRev 2s ease ";
+
+        slideIn = document.querySelector(".three")!;
+        dist = window.innerHeight - slideIn.getBoundingClientRect().top;
+        if(dist > 30) slideIn.style.animation = "headslide 2s ease";
+
+        slideIn = document.querySelector(".four")!;
+        dist = window.innerHeight - slideIn.getBoundingClientRect().top;
+        if(dist > 30) slideIn.style.animation = "headslideRev 2s ease";
+
 
         var past: HTMLElement = document.querySelector(".past")!;
         dist = window.innerHeight - past.getBoundingClientRect().top;
-        if(dist > 40) past.style.animation = "headslide 3s ease"
+        if(dist > 0) past.style.animation = "headslide 3s ease"
 
     })
 

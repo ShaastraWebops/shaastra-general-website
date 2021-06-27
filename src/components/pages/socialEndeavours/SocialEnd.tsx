@@ -11,6 +11,7 @@ import { Image, Grid, GridItem } from "@chakra-ui/react";
 import img from "../../../images/socialEndeavours/sheCan.png"
 import moeOne from "../../../images/socialEndeavours/moeOne.png"
 import moeTwo from "../../../images/socialEndeavours/moeTwo.png"
+import moeTwo2 from "../../../images/socialEndeavours/moeTwo2.png"
 import dtnext from "../../../images/socialEndeavours/dtnext.png"
 import blinkOne from "../../../images/socialEndeavours/blinkOne.jpg"
 import blinkTwo from "../../../images/socialEndeavours/blinkTwo.jpg"
@@ -33,8 +34,7 @@ const Social = (props: Props) => {
     
    
 Events()
-
-    return( 
+    return(
         <div className="body">
             <Header></Header>
          <div className="header">
@@ -83,40 +83,68 @@ Events()
                     </div>
                    </div>
                    </div>
-                <Grid templateColumns="repeat(7,1fr)" templateRows="repeat(4,1fr)" columnGap="3rem" textAlign="center"
-                rowGap="3rem" margin={["25vw 0","25vw 4vw","25vw 4vw","5rem 4rem"]} color="var(--dblue)"
+                <Grid templateColumns="repeat(7,1fr)" templateRows="repeat(4,1fr)" columnGap="3vw" textAlign="center"
+                rowGap="3vw" margin={["25vw 0","20vw 4vw","25vw 4vw","4rem 4rem"]} color="var(--pink)" 
                 marginBottom={["15vw","8vw","8vw","10rem"]}>
-                     <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,4]} colStart={1} 
-                     display="flex" alignItems="center" justifyContent="center" padding={["2vw","2vw","2vw","4rem"]}
-                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw","4vw","4vw","2.31vw"]}> 
+                    <GridItem id="she-can-logo" colSpan={[7,7,7,3]} display="flex" justifyContent="center" alignItems="center">
+                        <Image src={sheCanLogo} height="227px" width="475px" padding="0" w="100%"
+                    alt="she can logo" borderRadius={["0","0","0","24px"]}></Image>
+                    </GridItem>
+                    <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]} id="she-can-grid" backgroundColor="var(--green)"
+                     display="flex" alignItems="center" justifyContent="center" padding="2rem" borderRadius={["0","0","0","24px"]}
+                      fontSize={["4vw", "4vw", "4vw","1.75vw"]}> 
+                         By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
+                     version of themselves, as equal and valued members of their families, society, and the world at large.
+                     </GridItem>
+                     <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,3]} colStart={1} id="she-can-grid" 
+                     display="flex" alignItems="center" justifyContent="center" padding="4rem"
+                     backgroundColor="var(--green)" borderRadius={["0","0","0","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}> 
                          Only 13 percent of all Indian women have more than primary education. This situation has to be improved 
                          to uplift women. Skills and education to match today's industry and economy have to be mastered by women to 
                          thrive. 
                      </GridItem>   
-                     <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]}
-                     display="flex" alignItems="center" justifyContent="center" padding="2rem"
+                     {/* <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]} id="she-can-grid"
+                     display="flex" alignItems="center" justifyContent="center" padding="2rem" rowStart={1}
                      backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw", "4vw", "4vw","1.65vw"]}> 
                          By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
                      version of themselves, as equal and valued members of their families, society, and the world at large.
-                     </GridItem>
-                     <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} 
+                     </GridItem> */}
+                     <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} id="she-can-grid"
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw","4vw","4vw","1.98vw"]}>
+                     backgroundColor="var(--green)" borderRadius={["0","0","0","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}>
                         We aim to motivate and drive women to explore new realms of possibilities and career options. 
                      The notion of womanhood being just narrowed to motherhood and homemakers cannot be justified at the present age.
                      </GridItem>
                      <GridItem rowSpan={[1,1,1,2]} colStart={[1,1,1,6]} colSpan={[7,7,7,2]} rowStart={[4,4,4,1]}
-                     display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw", "4vw", "4vw","1.65vw"]}>
+                     display="flex" alignItems="center" justifyContent="center" padding="2rem" id="she-can-grid"
+                     backgroundColor="var(--green)" borderRadius={["0","0","0","24px"]} fontSize={["4vw", "4vw", "4vw","1.75vw"]}>
                           'She Can' campaign desires to be the foundation of such a dream, Women to reach their complete 
                          potential and to contribute to society through her achievement.
                      
                      </GridItem>
                 </Grid>
-                   <div id="she-can-logo"> 
-                   <Image src={sheCanLogo} margin="auto" height="227px" width="475px" padding="5px 0" 
-                   alt="she can logo" boxSize={["100%","100%","70%","70%"]}></Image>
-                   </div>
+                <Grid templateColumns="repeat(2, 1fr)" 
+                        templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]} rowGap="2rem" columnGap="3rem"
+                        width="80%" margin={["8vw auto","8vw auto","8vw auto","8rem auto"]}>
+                            <GridItem display="flex" rowSpan={[1,1,1,2]}  colSpan={[2,2,2,1]} textAlign="center"
+                            backgroundColor="var(--green)" borderRadius="24px"  id="she-can-grid" className="link-she-can"
+                            alignItems="center" justifyContent="center">
+                                <a href="https://www.youtube.com/watch?v=9_ZsXmRUPfE" rel="noopener"
+                                target="_blank">Campaign Launch Video</a>
+                            </GridItem>
+                            <GridItem rowSpan={1}  display="flex" padding="1rem" colSpan={[2,2,2,1]}
+                             backgroundColor="var(--green)" borderRadius="24px" className="link-she-can" id="she-can-grid"
+                             alignItems="center" justifyContent="center">
+                                <a href="https://www.youtube.com/watch?v=4GYNmmNt2v8" rel="noopener"
+                                target="_blank">DD National Interview </a>
+                            </GridItem>
+                            <GridItem rowSpan={1} display="flex" padding="1rem" colSpan={[2,2,2,1]}
+                             backgroundColor="var(--green)" borderRadius="24px" className="link-she-can" id="she-can-grid"
+                             alignItems="center" justifyContent="center">
+                                <a href="https://www.shecan.shaastra.org/" rel="noopener"
+                                target="_blank">For More Info</a>
+                            </GridItem>
+                </Grid>
                 <div className="she-can-recog">
                     <div className="recog-heading">
                         Recognition
@@ -143,10 +171,10 @@ Events()
                             <hr />
                             <div className="title">MINISTRY OF EDUCATION</div>
                             <div className="info moe">
-                                <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="4px"
-                                boxSize={["100%","100%","100%","80%","50%"]} src={moeOne}></Image>
-                                <Image objectFit="cover" alt="tweet" height="603px" width="737px" padding="4px"
-                                boxSize={["100%","100%","100%","80%","50%"]} src={moeTwo} alignSelf="flex-end"></Image>
+                                <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="8px"
+                                boxSize={["100%","100%","100%","80%","100%"]} src={moeOne}></Image>
+                                <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="8px"
+                                boxSize={["100%","100%","100%","80%","100%"]} src={moeTwo2}></Image>
                             </div>
                         </div>
                         <div className="recog-info-child odd three">
@@ -163,10 +191,6 @@ Events()
                                     The IIT students conducted financial literacy sessions for over 85 working women in Marathi 
                                     and Tamil during lockdown.
                                 </p>
-                                <p>Banking Concepts</p>
-                                <p>"We will be teaching them details about concepts like budgeting and banking in the 
-                                    upcoming  months", said Shvetha Sivaprasad, strategist of the publicity team of Shaastra.
-                                </p>
                                 <a href="https://www.thehindu.com/news/cities/chennai/iit-m-students-launch-she-can-campaign/article33496089.ece"
                                 target="_blank" rel="noopener">Read the article</a>
                             </div>
@@ -175,15 +199,15 @@ Events()
                             <hr />
                             <div className="title">DTNEXT.IN</div>
                             <div className="info">
-                                <Image src={dtnext} alt="article" height="145px" width="336px" padding="4px"
-                                w="fit-content" h="full"></Image>
+                                <Image src={dtnext} alt="article" height="145px" width="336px" padding="4px 0" id="she-can-image"
+                                marginBottom="2vw"></Image>
                                 <a href="https://www.dtnext.in/News/City/2021/01/08050455/1270350/IITM-students-organise-women-empowerment-programme.vpf"
                                 target="_blank" rel="noopener">Read the article</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Grid templateColumns="repeat(2, 1fr)" 
+                {/* <Grid templateColumns="repeat(2, 1fr)" 
                         templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]} rowGap="2rem" columnGap="3rem"
                         width="80%" margin={["8vw auto","8vw auto","8vw auto","8rem auto"]}>
                             <GridItem display="flex" rowSpan={[1,1,1,2]}  colSpan={[2,2,2,1]}
@@ -204,7 +228,7 @@ Events()
                                 <a href="https://www.shecan.shaastra.org/" rel="noopener"
                                 target="_blank">For More Info</a>
                             </GridItem>
-                </Grid>
+                </Grid> */}
             </section>
 
             <section className="blink b" id="blink">
@@ -214,32 +238,66 @@ Events()
                 is aimed at empowering the visually impaired and enabling them to achieve their full potential. The initiative,
                 which began in July 2020, has currently impacted over 200 visually impaired students in and around Chennai.
                 </div>
-                <Grid templateColumns="repeat(4,1fr)" templateRows={["repeat(5,1fr)","repeat(5,1fr)","repeat(5,1fr)","repeat(3,1fr)"]}
-                width="80%" margin={["4vw auto","4vw auto","4vw auto","8rem auto"]} columnGap="4rem" rowGap={["2vw","2vw","2vw","2rem"]}>
+                <Grid templateColumns="repeat(4,1fr)" templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]}
+                width="93%" margin={["4vw auto","4vw auto","4vw auto","0rem auto"]} columnGap="4rem" rowGap={["2vw","2vw","2vw","2rem"]}>
                     <GridItem colStart={[1,1,1,2]} colSpan={[4,4,4,2]} display="flex"
                     justifyContent="center" alignItems="center" fontSize={["5vw","5vw","5vw","1.65vw"]}>
                         <p className="blink-info-back">Impacted 200+ students across 4 schools in Chennai through Social inclusion and 
                             Personality development programmes</p>
                     </GridItem>
                     <GridItem rowStart={2} colSpan={[4,4,4,2]}><Image src={blinkOne} alt="blink" 
-                    height="183px" width="274px" h="100%" w="fit-content"></Image></GridItem>
+                    height="183px" width="274px" id="blink-image"></Image></GridItem>
                     <GridItem colStart={[1,1,1,3]} colSpan={[4,4,4,2]}><Image src={blinkTwo} height="183px" width="274px" 
-                    h="100%" w="fit-content" alt="blink"></Image></GridItem>
-                    <GridItem colStart={1} colSpan={[4,4,4,2]} display="flex"
-                    justifyContent="center" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
+                     alt="blink" id="blink-image"></Image></GridItem>
+                    {/* <GridItem colStart={1} colSpan={[4,4,4,2]} display="flex"
+                    justifyContent="flex-start" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
                         <p className="blink-info-back">Impacted 100+ adults through Career Development programs</p>
                     </GridItem>
                     <GridItem colStart={[1,1,1,3]} colSpan={[4,4,4,2]} display="flex"
-                    justifyContent="center" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
+                    justifyContent="flex-end" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
                         <p className="blink-info-back">300+ People pledged to donate their eyes.</p>
+                    </GridItem> */}
+                </Grid>
+                <Grid templateRows="repeat(2,1fr)" templateColumns="repeat(2,1fr)" columnGap="4vw" padding="4vw" rowGap="4vw">
+                    <GridItem className="blink-info-back" colSpan={[2,2,2,1]} rowSpan={[1,1,1,2]}>
+                    Impacted 100+ adults through Career Development programs
+                    </GridItem>
+                    <GridItem className="blink-info-back" colSpan={[2,2,2,1]} rowSpan={[1,1,1,2]} alignItems="center" 
+                    display="flex"  justifyContent="center">
+                    300+ People pledged to donate their eyes.
                     </GridItem>
                 </Grid>
-                <div className="blink-main-info">
+                {/* <div className="blink-main-info">
+                    <div className="blink-info-back">
+                    Impacted 100+ adults through Career Development programs
+                    </div>
+                    <div className="blink-info-back">
+                    300+ People pledged to donate their eyes.
+                    </div>
+                </div> */}
+                <Grid templateColumns="repeat(2,1fr)" templateRows="repeat(2,1fr)" columnGap="4vw" padding="3vw" rowGap="4vw">
+                    <GridItem className="blink-info-light" colSpan={[2,2,2,1]} rowSpan={[1,1,1,2]}>
+                    3D printed interactive puzzles (TacToys) for primary and secondary school students to make 
+                    Braille learning fun and interactive. A revised and well-rounded pedagogy for the visually impaired. 
+                    Personality Development and dramatics workshops have been conducted for primary and secondary school 
+                    students across Chennai. Plans are in place to conduct a 2-day career development workshop 
+                    during Shaastra to spread awareness about the career opportunities available to the visually impaired.
+                    </GridItem>
+                    <GridItem className="blink-info-dark" colSpan={[2,2,2,1]} rowSpan={[1,1,1,2]} alignItems="center" 
+                    display="flex"  justifyContent="center">
+                    Through this social initiative, Team BLINK aims to embolden and enable the visually challenged to forge 
+                    their own path and achieve great success in their lives and careers. <br /><br />
+                     Our long term goal is to create a well-rounded
+                    curriculum in as many blind schools as possible, where they not only use our braille puzzles but also focus on other 
+                    aspects like confidence, personality development and other fun activities.
+                    </GridItem>
+                </Grid>
+                {/* <div className="blink-main-info">
                     <div className="blink-info-light">
-                    <b>3D printed interactive puzzles (TacToys) </b>for primary and secondary school students to make 
-                    Braille learning fun and interactive. <b>A revised and well-rounded pedagogy </b>for the visually impaired. 
-                    <b>Personality Development and dramatics workshops </b>have been conducted for primary and secondary school 
-                    students across Chennai. Plans are in place to conduct a <b>2-day career development workshop </b>
+                    3D printed interactive puzzles (TacToys) for primary and secondary school students to make 
+                    Braille learning fun and interactive. A revised and well-rounded pedagogy for the visually impaired. 
+                    Personality Development and dramatics workshops have been conducted for primary and secondary school 
+                    students across Chennai. Plans are in place to conduct a 2-day career development workshop 
                     during Shaastra to spread awareness about the career opportunities available to the visually impaired.
                     </div>
                     <div className="blink-info-dark">
@@ -249,7 +307,7 @@ Events()
                     curriculum in as many blind schools as possible, where they not only use our braille puzzles but also focus on other 
                     aspects like confidence, personality development and other fun activities.
                     </div>
-                </div>
+                </div> */}
             </section>
 
             <section id="past">
@@ -259,45 +317,49 @@ Events()
                 <div className="campaigns">
                     <div className="campaigns-child">
                         <hr />
+                        <div id="flex">
                         <div className="info">
-                        <p>Pledge a book</p>
-                        Pledge a book tackled a problem of unavailability of books in underprivileged areas. We established 20 
-                        libraries across different cities. Received support from eminent personalities like The Dalai Lama, Sachin Tendulkar,
-                        and many more. 
+                            <p>Pledge a book</p>
+                            Pledge a book tackled a problem of unavailability of books in underprivileged areas. We established 20 
+                            libraries across different cities. Received support from eminent personalities like The Dalai Lama, Sachin Tendulkar,
+                            and many more. 
+                        </div>
+                        <Image src={pledgeSmall} alt="logo" h="189px" w="340px" zIndex="-1" id="pledge"></Image>
                         </div>
                     </div>
-                    <Image src={pledgeSmall} alt="logo" position="absolute" h="189px" w="340px" zIndex="-1" opacity={["0.4","0.4","1","1"]}
-                    top={["6%","7%","5%","9%","2%"]} left={["0%","35%","25%","55%","65%"]}></Image>
-                    <Grid templateRows={["repeat(6,1fr)","repeat(6,1fr)","repeat(6,1fr)","repeat(2,1fr)"]} 
+                    
+
+                    <Grid templateRows={["repeat(5,1fr)","repeat(5,1fr)","repeat(5,1fr)","repeat(3,1fr)"]} 
                     templateColumns="repeat(3,1fr)" textAlign="center" 
-                    margin="auto" marginBottom="4rem" rowGap={["1vw","1vw","1vw","2rem"]} columnGap="1rem">
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
+                    margin="auto" marginBottom={["0","0","0","4rem"]} rowGap="1rem" columnGap="1rem" width="100%">
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} borderRadius={["0","0","0","24px"]}
+                        padding="4rem 0.5vw">
                             20,000+ books donated
                         </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} colStart={[1,1,1,3]} borderRadius={["0","0","0","24px"]}
+                         padding="4rem 0.5vw">
                             25+ Libraries created
                         </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} rowStart={[3,3,3,2]} borderRadius={["0","0","0","24px"]}
+                        colStart={[1,1,1,2]} padding="4rem 0.5vw">
+                        1 National TV coverage
+                        </GridItem>
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} rowStart={[4,4,4,3]} borderRadius={["0","0","0","24px"]}
+                        padding="4rem 0.5vw">
                             20+ Media Articles
                         </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
-                            1 National TV coverage
-                        </GridItem>
-                        <GridItem className="pledge-grid pledge-grid-image" colSpan={[3,3,3,1]}>
-                            <Image src={pledge} alt="Pledge a Book" h="fit-content" w="fit-content"></Image>
-                        </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]}>
+                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} colStart={[1,1,1,3]} borderRadius={["0","0","0","24px"]}
+                        rowStart={[5,5,5,3]} padding="4rem 0.5vw">
                             10+ Marquee pledges
                         </GridItem>
                     </Grid>
                     <div className="campaigns-child even">
                     <div id="bubble-bg">
                             <Image src={bubblesTwo} alt="background" width="1040px" height="780px"
-                            w={["100vw","100vw","100vw", "100vw"]} h={["160vw","150vw","150vw","70vw","38.9vw"]} fit="cover"></Image>
+                            w={["100vw","100vw","100vw", "100vw"]} h={["165vw","150vw","150vw","75vw","32vw"]} fit="cover"></Image>
                             <Image src={bubblesThree} alt="background" width="1080" height="1080"
-                            w={["100vw","100vw","100vw", "100vw"]} h={["160vw","150vw","150vw","70vw","38.9vw"]} fit="cover"></Image>
+                            w={["100vw","100vw","100vw", "100vw"]} h={["165vw","150vw","150vw","75vw","32vw"]} fit="cover"></Image>
                     </div>
-                            <hr />
                             <div className="info">
                                 <p>Bubbles</p>
                                 With the motivation of creating an impact in both social and economic capacities, Shaastra has come up with - 
@@ -307,8 +369,8 @@ Events()
                                 and washing hands is the foremost aspect in maintaining hygiene. We notice that most underprivileged schools 
                                 do not take this seriously and avoid buying handwash.
                                 <br /><br />
-                                Also, in today’s world, resources are being depleted at an alarming rate and waste generated has also increased
-                                exponentially; the most feasible solution to this problem is to recycle and reuse.
+                                Also, in today’s world, resources are being depleted at an alarming rate and waste generated has also 
+                                increased exponentially; the most feasible solution to this problem is to recycle and reuse.
                                 <br /><br />
                                 Under the campaign Bubbles, Shaastra aims to collaborate with hotels, companies and organizations from where we seek to
                                 collect leftover used soap bars, These soap bars will  then be treated and recycled into hand wash solutions that will 
@@ -316,8 +378,7 @@ Events()
                                 The campaign will also include activities to promote hygiene awareness in schools and other public places in Chennai.
                             </div>
                     </div>
-                    <div><Image src={bubblesOne} alt="poster" height="540px" width='540px'
-                    boxSize={["100%","100%","100%","70%"]}></Image></div>
+                    {/* <div><Image src={bubblesOne} alt="poster" height="540px" width='540px' id="bubbles-image"></Image></div> */}
                 </div>
             </section>
             <script src="./script.tsx"></script>
