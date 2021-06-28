@@ -271,12 +271,11 @@ function EventsHome() {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Tech and Innovation fair is one of the flagship events in Shaastra that scouts for budding entrepreneurs by providing a
+            platform to develop tech based projects and enhance their potential to grow into a  commercial product. TIF envisions
+            leveraging IIT Madras’s rich startup ecosystem in its mission to promote innovation and address the dearth of hardcore tech startups in India
           </Text>
-          <Center marginTop='2px'>
+          <Center marginTop='3'>
             <Text fontSize="2xl"><Link as={ReachLink} to="/tif">Explore TIF</Link></Text>
           </Center>
           </Box>
