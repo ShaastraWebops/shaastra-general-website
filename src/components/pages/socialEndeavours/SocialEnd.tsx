@@ -30,9 +30,6 @@ interface Props{
 }
 
 const Social = (props: Props) => {
-
-    
-   
 Events()
     return(
         <div className="body">
@@ -87,18 +84,18 @@ Events()
                 rowGap="3vw" margin={["25vw 0","20vw 4vw","25vw 4vw","4rem 4rem"]} color="var(--pink)" 
                 marginBottom={["15vw","8vw","8vw","10rem"]}>
                     <GridItem id="she-can-logo" colSpan={[7,7,7,3]} display="flex" justifyContent="center" alignItems="center">
-                        <Image src={sheCanLogo} height="227px" width="475px" padding="0" w="100%"
-                    alt="she can logo" borderRadius={["0","0","0","24px"]}></Image>
+                        <Image src={sheCanLogo} height="227px" width="475px" padding="0" w="fit-content" margin="auto"
+                    alt="she can logo" borderRadius={["0","0","24px","24px"]}></Image>
                     </GridItem>
                     <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]} id="she-can-grid" backgroundColor="var(--green)"
-                     display="flex" alignItems="center" justifyContent="center" padding="2rem" borderRadius={["0","0","0","24px"]}
+                     display="flex" alignItems="center" justifyContent="center" padding="2rem" borderRadius={["0","0","24px","24px"]}
                       fontSize={["4vw", "4vw", "4vw","1.75vw"]}> 
                          By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
                      version of themselves, as equal and valued members of their families, society, and the world at large.
                      </GridItem>
                      <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,3]} colStart={1} id="she-can-grid" 
                      display="flex" alignItems="center" justifyContent="center" padding="4rem"
-                     backgroundColor="var(--green)" borderRadius={["0","0","0","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}> 
+                     backgroundColor="var(--green)" borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","2vw","2vw"]}> 
                          Only 13 percent of all Indian women have more than primary education. This situation has to be improved 
                          to uplift women. Skills and education to match today's industry and economy have to be mastered by women to 
                          thrive. 
@@ -111,13 +108,13 @@ Events()
                      </GridItem> */}
                      <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} id="she-can-grid"
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                     backgroundColor="var(--green)" borderRadius={["0","0","0","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}>
+                     backgroundColor="var(--green)" borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}>
                         We aim to motivate and drive women to explore new realms of possibilities and career options. 
                      The notion of womanhood being just narrowed to motherhood and homemakers cannot be justified at the present age.
                      </GridItem>
                      <GridItem rowSpan={[1,1,1,2]} colStart={[1,1,1,6]} colSpan={[7,7,7,2]} rowStart={[4,4,4,1]}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem" id="she-can-grid"
-                     backgroundColor="var(--green)" borderRadius={["0","0","0","24px"]} fontSize={["4vw", "4vw", "4vw","1.75vw"]}>
+                     backgroundColor="var(--green)" borderRadius={["0","0","24px","24px"]} fontSize={["4vw", "4vw", "4vw","1.75vw"]}>
                           'She Can' campaign desires to be the foundation of such a dream, Women to reach their complete 
                          potential and to contribute to society through her achievement.
                      
@@ -171,10 +168,10 @@ Events()
                             <hr />
                             <div className="title">MINISTRY OF EDUCATION</div>
                             <div className="info moe">
-                                <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="8px"
-                                boxSize={["100%","100%","100%","80%","100%"]} src={moeOne}></Image>
-                                <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="8px"
-                                boxSize={["100%","100%","100%","80%","100%"]} src={moeTwo2}></Image>
+                                <Image objectFit="cover" alt="tweet" height="475px" width="730px"
+                                boxSize={"100%"} src={moeOne}></Image>
+                                {/* <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="8px"
+                                boxSize={["100%","100%","100%","80%","100%"]} src={moeTwo2}></Image> */}
                             </div>
                         </div>
                         <div className="recog-info-child odd three">
@@ -200,7 +197,7 @@ Events()
                             <div className="title">DTNEXT.IN</div>
                             <div className="info">
                                 <Image src={dtnext} alt="article" height="145px" width="336px" padding="4px 0" id="she-can-image"
-                                marginBottom="2vw"></Image>
+                                marginBottom="6vw"></Image>
                                 <a href="https://www.dtnext.in/News/City/2021/01/08050455/1270350/IITM-students-organise-women-empowerment-programme.vpf"
                                 target="_blank" rel="noopener">Read the article</a>
                             </div>

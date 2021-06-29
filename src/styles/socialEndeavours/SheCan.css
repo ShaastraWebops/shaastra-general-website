@@ -128,13 +128,9 @@
     overflow-x: hidden;
 }
 .recog-info-child{
-    width: 100%;
     padding: 2vw;
-    margin-bottom: 6rem;
-}
-.recog-info-child:nth-child(2)
-{
-    width: 90%;
+    margin: 0;
+    margin-bottom: 2rem;
 }
 .moe{
     justify-content: space-between;
@@ -194,7 +190,7 @@
         padding: 1vw;
     }
 }
-@media screen and (max-width: 950px)
+/* @media screen and (max-width: 600px)
 {
     .she-can-intro{
         padding: 0%;
@@ -222,18 +218,26 @@
     .title{
         font-size: 15px;
     }
-}
-@media screen and (max-width: 850px)
+} */
+@media screen and (max-width: 800px)
 {
     .she-can{
         margin: 0%;
         margin-top: 8vw;
     }
     .she-can-intro{
+        padding: 0%;
+        flex-direction: column;
+        row-gap: 8rem;
+        /* margin: 0 auto; */
         margin: 0;
+        align-items: center;
     }
     .wrap{
         width: 100%;
+    }
+    .title{
+        font-size: 15px;
     }
     .recog-heading{
         margin: 0;
@@ -243,7 +247,13 @@
         font-size: 25vw;
         line-height: 25vw;
     }
+    .she-can-heading:hover{
+        line-height: 30vw;
+        letter-spacing: 3vw;
+    }
     #she-can-grid{
+        font-size: 6vw;
+        padding: 4vw;
         font-weight: bold;
     }
     .she-can-intro-info{
@@ -251,12 +261,14 @@
         font-size: 4vw;
         text-align: center;
         margin: 0%;
+        /* padding: 2rem; */
         padding: 15vw 8vw;
     }
     .she-can-backdiv{
         width: 100%;
     }
     .she-can-recog{
+        padding: 1vw;
         margin: 18vw 0;
         margin-bottom: 5vw;
     }
@@ -266,14 +278,15 @@
         font-size: 12vw;
         text-align: center;
     }
+    .recog-info-child{
+        width: 100%;
+    }
     .recog-info-child .title{
         font-size: 8vw;
     }
     .recog-info{
         margin-bottom: 0vw;
-    }
-    .recog-info-child:nth-child(2){
-        width: 100%;
+        font-weight: bold;
     }
     .link-she-can{
         padding: 2rem;
@@ -281,6 +294,7 @@
     }
     .info{
         font-size: 5vw;
+        padding: 0%;
     }
     .info p{
         padding: 2vw;
@@ -293,8 +307,14 @@
         flex-direction: column;
         align-items: center;
     }
+    .link-she-can a:hover{
+        line-height: 10vw;
+    }
+    .she-can-logo{
+        width: 100%;
+    }
 }
-@media screen and (max-width: 600px)
+/* @media screen and (max-width: 600px)
 {
     .info{
         padding: 0%;
@@ -310,4 +330,4 @@
         font-size: 6vw;
         padding: 4vw;
     }
-}
+} */

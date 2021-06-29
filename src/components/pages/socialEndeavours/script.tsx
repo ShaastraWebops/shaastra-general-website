@@ -1,9 +1,8 @@
 
 const Events = () => {
-
     var body: HTMLElement = document.querySelector("body")!;
     window.onload = (e) => {
-        var mode: HTMLElement | null = document.querySelector(".chakra-button")!
+        var mode: HTMLElement = document.querySelector(".chakra-button")!
         const mainBody: HTMLElement = document.querySelector(".body")!;
         const sheCanHeading: HTMLElement = document.querySelector(".she-can-heading")!;
         const blink: HTMLElement = document.querySelector(".blink .sec-heading")!;
@@ -15,7 +14,6 @@ const Events = () => {
         const introHeading: HTMLElement = document.querySelector(".heading-intro")!;
         const sheCanBackDiv: HTMLElement = document.querySelector(".she-can-backdiv")!;
         const sheCanGrid: NodeListOf<HTMLElement> = document.querySelectorAll("#she-can-grid")!;
-        
         if('chakra-ui-light' === body.classList[0])
         {
             mainBody.style.color = "var(--dblue)";
@@ -45,6 +43,7 @@ const Events = () => {
                 
         }
         mode.addEventListener("click", () => {
+            console.log("e")
              if(body.classList[0] === 'chakra-ui-dark')
              {
                 mainBody.style.color = "var(--dblue)";
@@ -104,6 +103,7 @@ const Events = () => {
         var dist = window.innerHeight - sheCan.getBoundingClientRect().top;
         if(dist > 150)
         {
+            console.log(sheCan.style.transform)
             sheCan.style.transform = "translate(-5%,5%)";
             sheCan.style.transition = "all 0.5s ease";
         }
