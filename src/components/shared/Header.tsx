@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Box, Flex } from "@chakra-ui/layout";
-import CustomDrawer from "./CustomDrawer";
+import CustomDrawer from "./Drawer/CustomDrawer";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { ColorModeSwitcher } from "../../styles/themes/ColorModeSwitcher";
 import { HamburgerIcon } from "@chakra-ui/icons";
