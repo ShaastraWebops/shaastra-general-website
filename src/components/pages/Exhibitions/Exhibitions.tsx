@@ -1,4 +1,4 @@
-import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center, TextProps} from "@chakra-ui/react";
+import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center, TextProps, useColorModeValue} from "@chakra-ui/react";
 import {ChevronLeftIcon,ChevronRightIcon} from "@chakra-ui/icons";
 import * as React from "react";
 import CustomBox from "../../shared/CustomBox";
@@ -19,6 +19,8 @@ const Exhibitions = ()=>{
 
   const [current,setCurrent] = React.useState(0);
   const length = CauroselImages.length;
+  const textcolor = useColorModeValue("teal.500", "#ED64A6");
+  const particlescolor = useColorModeValue("#2C7A7B","#81E6D9");
 
   const prevSlide = ()=>{
         setCurrent(current ===0 ? length-1 : current-1)
@@ -30,7 +32,7 @@ const Exhibitions = ()=>{
       <CustomBox>
        <Container maxW={'7xl'}  >
       <div className="App-particles__container">
-       <ParticlesBg color="#ff006f" num={200} type="cobweb" bg={true}/>
+       <ParticlesBg color={particlescolor} num={150} type="cobweb" bg={true}/>
        </div>
        
        
@@ -50,6 +52,7 @@ const Exhibitions = ()=>{
                   animate = {{x: 0}}
                   transition={{duration : "1"}}
                   className = "Exhibitions"
+                  textShadow="1px 1px #ff0000"
               >
                 EXHIBITIONS
               </MotionText>
@@ -64,6 +67,7 @@ const Exhibitions = ()=>{
                 About Us
               </Heading>
                <Text as={"p"}
+               color={textcolor}
                 >
                  Shaastra Exhibitions is a platform to showcase cutting Edge technology.
                  Exhibitions provide an opportunity for a large number of buyers and sellers in an industry to interact with
@@ -115,7 +119,6 @@ const Exhibitions = ()=>{
           exhibitions.map(item => {
             return(
               <MotionBox
-              whileHover={{ scale: 1.1}}
               initial = {{opacity : 0}}
               animate = {{opacity : 1}}
               transition ={{delay: 2,duration : "1.5" }}
@@ -147,6 +150,8 @@ const Exhibitions = ()=>{
                className={index===current ? 'slide active':'slide'}
                key = {index}
                >
+                 <Box>
+                
                   {
                    index === current && (<Image
                     alt={'Carousel Image'}
@@ -158,6 +163,8 @@ const Exhibitions = ()=>{
     
                   />)
                   }
+
+                </Box>
                </Center>
     
               )
