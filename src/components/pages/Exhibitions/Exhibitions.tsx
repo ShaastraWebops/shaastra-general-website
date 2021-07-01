@@ -20,7 +20,12 @@ const Exhibitions = ()=>{
   const [current,setCurrent] = React.useState(0);
   const length = CauroselImages.length;
   const textcolor = useColorModeValue("teal.500", "#ED64A6");
-  const particlescolor = useColorModeValue("#2C7A7B","#81E6D9");
+
+  const Variants ={
+    
+  }
+
+  const CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
 
   const prevSlide = ()=>{
         setCurrent(current ===0 ? length-1 : current-1)
@@ -32,33 +37,35 @@ const Exhibitions = ()=>{
       <CustomBox>
        <Container maxW={'7xl'}  >
       <div className="App-particles__container">
-       <ParticlesBg color={particlescolor} num={150} type="cobweb" bg={true}/>
+       <ParticlesBg color={"#C53030"} num={150} type="cobweb" bg={true}/>
        </div>
-       
-       
-        <Stack
-          align={'center'}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}
-          direction={{ base: 'column', md: 'row' }}>
-          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Center>
+
+      <Container pt={{ base:20, md: 20 }}>
+      <Center>
               <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
+              fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
               <MotionText as={'h1'}
                   initial={{x: "-100vw" }}
                   animate = {{x: 0}}
                   transition={{duration : "1"}}
-                  className = "Exhibitions"
-                  textShadow="1px 1px #ff0000"
+                  className = "Title"
               >
                 EXHIBITIONS
               </MotionText>
 
             </Heading>
               </Center>
+      </Container>
+        
+        <Stack
+          align={'center'}
+          spacing={{ base: 8, md: 10 }}
+          my={5}
+          p={15}
+          direction={{ base: 'column', md: 'row' }}>
+          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
               <MotionBox
               initial = {{opacity : 0}}
               animate = {{opacity : 1}}
@@ -79,7 +86,9 @@ const Exhibitions = ()=>{
                  spectrum of people.
             </Text>
               </MotionBox>
+
           </Stack>
+
           <Flex
             flex={1}
             justify={'center'}
@@ -111,17 +120,36 @@ const Exhibitions = ()=>{
         </Stack>
         
       </Container>
-     
+      
+      <Container maxW={'7xl'}  m={2} p={2}>
+      <Center >
+              <Heading
+              fontWeight={300}
+              fontSize={{ base: 'lg', sm: '3xl', lg: '3xl' }}>
+              <MotionText as={'h1'}
+                  className = "Title"
+              >
+              PREVIOUS EXHIBITIONS
+              </MotionText>
+
+            </Heading>
+            </Center>
+      </Container>
+     <AnimatePresence exitBeforeEnter>
+       
       <Container maxW={'7xl'} mt={4}>
       <Center>
       <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]}> 
         {
-          exhibitions.map(item => {
+
+          exhibitions.map( (item,index) => {
+            let i = index%3;
             return(
               <MotionBox
-              initial = {{opacity : 0}}
-              animate = {{opacity : 1}}
-              transition ={{delay: 2,duration : "1.5" }}
+              
+              initial = {CardAnimations[i]}
+              animate = {{x: 0 , opacity:1}}
+              transition ={{ease: "easeOut", duration : "2" }}
               className="Card"
               >
               <Card data={item} />
@@ -132,6 +160,7 @@ const Exhibitions = ()=>{
         </SimpleGrid>
       </Center>
       </Container>
+     </AnimatePresence>
         <Center className="slider" mb={5}>
         <MotionChevronLeftIcon
          whileHover={{ scale: 1.1 }}
@@ -150,9 +179,11 @@ const Exhibitions = ()=>{
                className={index===current ? 'slide active':'slide'}
                key = {index}
                >
-                 <Box>
                 
-                  {
+                 <MotionBox
+                 whileHover={{scale : 1.1}}
+                 >
+                 {
                    index === current && (<Image
                     alt={'Carousel Image'}
                     fit={'cover'}
@@ -163,8 +194,7 @@ const Exhibitions = ()=>{
     
                   />)
                   }
-
-                </Box>
+                 </MotionBox>
                </Center>
     
               )
