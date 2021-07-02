@@ -8,6 +8,7 @@
 .past{
     color: var(--pink);
     font-size: 7.5vw;
+    text-align: center;
 }
 
 .campaigns{
@@ -44,6 +45,9 @@
     margin-top: 2vw;
     margin-bottom: 4vw;
     font-weight: 600;
+}
+.even .info p{
+    margin-bottom: 4rem;
 }
 #bubble-bg{
     z-index: -1;
@@ -86,8 +90,8 @@
 {
     .even{
         align-self: center;
+        margin:0%;
         margin-bottom: 10rem;
-        margin-right: 0%;
         padding: 0%;
     }   
     .campaigns-child .info{
@@ -104,7 +108,7 @@
         line-height: 5vw;
     }
     #bubble-bg{
-        transform: translateX(5%);
+        transform: translateX(0%);
     }
     #bubbles-image{
         height: 100%;

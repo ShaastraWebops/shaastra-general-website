@@ -14,6 +14,7 @@ const Events = () => {
         const introHeading: HTMLElement = document.querySelector(".heading-intro")!;
         const sheCanBackDiv: HTMLElement = document.querySelector(".she-can-backdiv")!;
         const sheCanGrid: NodeListOf<HTMLElement> = document.querySelectorAll("#she-can-grid")!;
+        const bubble: HTMLElement = document.querySelector("#bubble-bg")!;
         if('chakra-ui-light' === body.classList[0])
         {
             mainBody.style.color = "var(--dblue)";
@@ -25,10 +26,10 @@ const Events = () => {
             sheCanHeading.addEventListener("mouseleave", () => {
                 sheCanHeading.style.color ="var(--dblue)"
             });
-            sheCanBackDiv.style.backgroundColor = "var(--blue-bg)"
+            sheCanBackDiv.style.backgroundColor = "var(--dblue-bg)"
             sheCanGrid.forEach(el => {
-                el.style.backgroundColor = "var(--blue-bg)"
-                el.style.color = "var(--dblue)"
+                el.style.backgroundColor = "var(--dblue)"
+                el.style.color = "var(--pink)"
             })
             blink.style.color = "var(--dblue)";
             blinkBg.style.backgroundImage = "linear-gradient(90deg, transparent 50%, var(--blue-bg) 50%)"
@@ -40,6 +41,7 @@ const Events = () => {
                 pastHead.style.color = "var(--pink)"
                 pastHead.style.backgroundColor = "var(--brown)"
                 pastHead.style.padding = "2vw";
+            bubble.style.opacity = "0.65"
                 
         }
         mode.addEventListener("click", () => {
@@ -55,10 +57,10 @@ const Events = () => {
                 sheCanHeading.addEventListener("mouseleave", () => {
                     sheCanHeading.style.color ="var(--dblue)"
                 })
-                sheCanBackDiv.style.backgroundColor = "var(--blue-bg)"
+                sheCanBackDiv.style.backgroundColor = "var(--dblue-bg)"
                 sheCanGrid.forEach(el => {
-                    el.style.backgroundColor = "var(--blue-bg)"
-                    el.style.color = "var(--dblue)"
+                    el.style.backgroundColor = "var(--dblue)"
+                    el.style.color = "var(--pink)"
                 })
                 blink.style.color = "var(--dblue)";
                 blinkBg.style.backgroundImage = "linear-gradient(90deg, transparent 50%, var(--blue-bg) 50%)"
@@ -69,6 +71,7 @@ const Events = () => {
                 pastHead.style.color = "var(--pink)"
                 pastHead.style.backgroundColor = "var(--brown)"
                 pastHead.style.padding = "2vw";
+                bubble.style.opacity = "0.65"
              }
              else
              {
@@ -95,6 +98,7 @@ const Events = () => {
                         pastHead.style.color = "var(--pink)"
                         pastHead.style.backgroundColor = "transparent"
                         pastHead.style.padding = "0%";
+                        bubble.style.opacity = "0.3"
              }
         })
     }

@@ -8,24 +8,18 @@ import Events from "./script"
 
 import { Image, Grid, GridItem } from "@chakra-ui/react";
 
-import img from "../../../images/socialEndeavours/sheCan.png"
 import moeOne from "../../../images/socialEndeavours/moeOne.png"
-import moeTwo from "../../../images/socialEndeavours/moeTwo.png"
-import moeTwo2 from "../../../images/socialEndeavours/moeTwo2.png"
 import dtnext from "../../../images/socialEndeavours/dtnext.png"
 import blinkOne from "../../../images/socialEndeavours/blinkOne.jpg"
 import blinkTwo from "../../../images/socialEndeavours/blinkTwo.jpg"
-import bubblesOne from "../../../images/socialEndeavours/bubblesOne.png"
 import bubblesTwo from "../../../images/socialEndeavours/bubblesTwo.png"
 import bubblesThree from "../../../images/socialEndeavours/bubblesThree.png"
-import pledge from "../../../images/socialEndeavours/pledge.png"
 import pledgeSmall from "../../../images/socialEndeavours/pledgeSmall.png"
 import sheCanLogo from "../../../images/socialEndeavours/sheCanLogo.jpeg"
 
 import CustomBox from "../../shared/CustomBox";
 import Header from "../../shared/Header";
 import Footer from "../../shared/Footer";
-import { useEffect } from "react";
 interface Props{
 }
 
@@ -82,7 +76,7 @@ Events()
                    </div>
                 <Grid templateColumns="repeat(7,1fr)" templateRows="repeat(4,1fr)" columnGap="3vw" textAlign="center"
                 rowGap="3vw" margin={["25vw 0","20vw 4vw","25vw 4vw","4rem 4rem"]} color="var(--pink)" 
-                marginBottom={["15vw","8vw","8vw","10rem"]}>
+                marginBottom={["15vw","8vw","8vw","6rem"]}>
                     <GridItem id="she-can-logo" colSpan={[7,7,7,3]} display="flex" justifyContent="center" alignItems="center">
                         <Image src={sheCanLogo} height="227px" width="475px" padding="0" w="fit-content" margin="auto"
                     alt="she can logo" borderRadius={["0","0","24px","24px"]}></Image>
@@ -122,7 +116,7 @@ Events()
                 </Grid>
                 <Grid templateColumns="repeat(2, 1fr)" 
                         templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]} rowGap="2rem" columnGap="3rem"
-                        width="80%" margin={["8vw auto","8vw auto","8vw auto","8rem auto"]}>
+                        width="80%" margin={["8vw auto","8vw auto","8vw auto","0rem auto"]}>
                             <GridItem display="flex" rowSpan={[1,1,1,2]}  colSpan={[2,2,2,1]} textAlign="center"
                             backgroundColor="var(--green)" borderRadius="24px"  id="she-can-grid" className="link-she-can"
                             alignItems="center" justifyContent="center">
