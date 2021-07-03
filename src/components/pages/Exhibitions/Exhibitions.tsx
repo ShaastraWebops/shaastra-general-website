@@ -6,12 +6,13 @@ import EXHB2 from "../../../images/Exhibitions/exhb_2.png";
 import "../../../styles/Exhibitions.css";
 import {  exhibitions,CauroselImages } from "./Exhibitionsdata";
 import Card from "./Card";
-import { motion ,AnimatePresence } from 'framer-motion';
+import { motion ,useAnimation } from 'framer-motion';
 import Footer from "../../shared/Footer";
 import ParticlesBg from 'particles-bg';
+import { useInView } from "react-intersection-observer";
 
-const MotionBox = motion(Box);
-const MotionText = motion(Text);
+const MotionBox = motion<BoxProps>(Box);
+const MotionText = motion<TextProps>(Text);
 const MotionChevronLeftIcon = motion(ChevronLeftIcon);
 const MotionChevronRightIcon = motion(ChevronRightIcon);
 
@@ -19,63 +20,94 @@ const Exhibitions = ()=>{
 
   const [current,setCurrent] = React.useState(0);
   const length = CauroselImages.length;
-  const textcolor = useColorModeValue("teal.500", "#ED64A6");
+  const textcolor = useColorModeValue("#00A878", "#00A878");
+  const {ref,inView} = useInView();
+  const animation = useAnimation();
+  const CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
 
-  const Variants ={
+  React.useEffect(()=>{
+
+    if(inView){
+      animation.start({
+          x:0,
+          opacity:1,
+          transition: { duration: 1 }
+      })
+    }else{
+      animation.start( (i : any) =>
+        CardAnimations[i]
+      )
+    }
+
+  }, [inView] )
+
+  const Titlevariants = {
+    lhidden:{
+      x: "-100vw" 
+    },
+    final : {
+      x: 0,
+      transition:{
+        duration : "1",
+      }
+    },
     
   }
 
-  const CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
+  const AboutusVariants = {
+    hidden : {
+      opacity : 0
+    },
+    visible : {
+      opacity : 1,
+      transition:{
+        duration : "2",
+        delay : 1
+      }
+    }
+
+  }
 
   const prevSlide = ()=>{
         setCurrent(current ===0 ? length-1 : current-1)
   }
   const nextSlide = ()=>{
     setCurrent(current === length-1 ? 0 : current+1)
-}
+  }
+
     return(
       <CustomBox>
-       <Container maxW={'7xl'}  >
-      <div className="App-particles__container">
-       <ParticlesBg color={"#C53030"} num={150} type="cobweb" bg={true}/>
-       </div>
+       <Container maxW={'7xl'} >
+        <div className="App-particles__container">
+        <ParticlesBg color={"#40606e"} num={150} type="cobweb" bg={true}/>
+        </div>
 
-      <Container pt={{ base:20, md: 20 }}>
-      <Center>
-              <Heading
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
-              <MotionText as={'h1'}
-                  initial={{x: "-100vw" }}
-                  animate = {{x: 0}}
-                  transition={{duration : "1"}}
-                  className = "Title"
-              >
-                EXHIBITIONS
-              </MotionText>
-
-            </Heading>
-              </Center>
-      </Container>
-        
-        <Stack
+        <Heading lineHeight={1.1} fontWeight={600} fontSize={"5xl"}>
+        <Center pt={{ base:20, md: 20 }} mb={5}>
+        <MotionText as={'h1'}
+            initial={"lhidden"}
+            animate = {"final"}
+            variants={Titlevariants}
+            className = "Title" > EXHIBITIONS </MotionText>
+          </Center>
+  
+          </Heading>
+          <Stack
           align={'center'}
           spacing={{ base: 8, md: 10 }}
-          my={5}
-          p={15}
+          my={5} p={15}
           direction={{ base: 'column', md: 'row' }}>
+
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+
               <MotionBox
-              initial = {{opacity : 0}}
-              animate = {{opacity : 1}}
-              transition ={{delay: 1.5,duration : "1.5" }}>
-              <Heading as={'h1'} mb={"3"}>
+              initial = {"hidden"}
+              animate = {"visible"}
+              variants = {AboutusVariants}>
+              <Heading as={'h1'} mb={"3"} color={"#6CD4FF"}>
                 About Us
               </Heading>
-               <Text as={"p"}
-               color={textcolor}
-                >
+               <Text as={"p"} color={textcolor} >
                  Shaastra Exhibitions is a platform to showcase cutting Edge technology.
                  Exhibitions provide an opportunity for a large number of buyers and sellers in an industry to interact with
                  each other.
@@ -84,7 +116,7 @@ const Exhibitions = ()=>{
                   glimpse into the  latest developments in technology
                   They offer an unparalleled and ideal opportunity to showcase innovative products to a broad
                  spectrum of people.
-            </Text>
+                </Text>
               </MotionBox>
 
           </Stack>
@@ -98,7 +130,9 @@ const Exhibitions = ()=>{
             <MotionBox
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              position={'relative'}
+              initial = {"hidden"}
+              animate = {"visible"}
+              variants = {AboutusVariants}
               height={'300px'}
               rounded={'2xl'}
               boxShadow={'2xl'}
@@ -106,7 +140,6 @@ const Exhibitions = ()=>{
               overflow={'hidden'}
               mt={["0px","60px"]}
               >
-              
               <Image
                 alt={'Hero Image'}
                 fit={'cover'}
@@ -118,38 +151,31 @@ const Exhibitions = ()=>{
             </MotionBox>
           </Flex>
         </Stack>
-        
+
       </Container>
       
-      <Container maxW={'7xl'}  m={2} p={2}>
-      <Center >
-              <Heading
+     <Heading
               fontWeight={300}
-              fontSize={{ base: 'lg', sm: '3xl', lg: '3xl' }}>
-              <MotionText as={'h1'}
+              fontSize={"3xl"}
+              m={[2,5]} p={[2,5]}
+             >
+               <Center >
+              <MotionText as={'h2'}
                   className = "Title"
-              >
-              PREVIOUS EXHIBITIONS
-              </MotionText>
-
+              >PREVIOUS EXHIBITIONS</MotionText>
+             </Center>
             </Heading>
-            </Center>
-      </Container>
-     <AnimatePresence exitBeforeEnter>
        
-      <Container maxW={'7xl'} mt={4}>
       <Center>
-      <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]}> 
+      <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref}> 
         {
 
           exhibitions.map( (item,index) => {
             let i = index%3;
             return(
               <MotionBox
-              
-              initial = {CardAnimations[i]}
-              animate = {{x: 0 , opacity:1}}
-              transition ={{ease: "easeOut", duration : "2" }}
+              custom = {i}
+              animate = {animation}
               className="Card"
               >
               <Card data={item} />
@@ -159,9 +185,8 @@ const Exhibitions = ()=>{
         }
         </SimpleGrid>
       </Center>
-      </Container>
-     </AnimatePresence>
-        <Center className="slider" mb={5}>
+
+        <Center className="slider" mb={2}>
         <MotionChevronLeftIcon
          whileHover={{ scale: 1.1 }}
          whileTap={{ scale: 0.9 }}
