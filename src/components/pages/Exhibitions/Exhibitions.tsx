@@ -39,6 +39,12 @@ const Exhibitions = ()=>{
       )
     }
 
+    const timer =  setInterval(()=>{
+      setCurrent((prev)=>{ return prev+1 === length ? 0 : prev +1 });
+    },5000)
+
+    return ()=> clearInterval(timer);
+
   }, [inView] )
 
   const Titlevariants = {
@@ -69,10 +75,10 @@ const Exhibitions = ()=>{
   }
 
   const prevSlide = ()=>{
-        setCurrent(current ===0 ? length-1 : current-1)
+        setCurrent(current ===0 ? length-1 : current-1);
   }
   const nextSlide = ()=>{
-    setCurrent(current === length-1 ? 0 : current+1)
+    setCurrent(current === length-1 ? 0 : current+1);
   }
 
     return(
