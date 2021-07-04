@@ -1,86 +1,99 @@
-import { Box, Flex, Slider, SliderFilledTrack, SliderThumb, SliderTrack, Button, BoxProps } from "@chakra-ui/react";
+import { Box, Flex, Slider, SliderFilledTrack, SliderTrack, Button, BoxProps, useColorModeValue, useMediaQuery, Divider } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 import * as React from "react"
 import { useState } from "react";
 import CustomBox from "../../shared/CustomBox"
-import { AnHourofCode } from "./AnHourofCode";
-import { BrainSqueeze } from "./BrainSqueeze";
-import { ChessTournament } from "./ChessTournament";
-import { JuniorMakeathon } from "./JuniorMakeathon";
-import { JuniorsNights } from "./JuniorsNights";
-import { OnlineScavengerHunt } from "./OnlineScavengerHunt";
-import { ReverseCoding } from "./ReverseCoding";
-import { ShaastraArtChallenge } from "./ShaastraArtChallenge";
-import { ShaastraJuniors } from "./ShaastraJuniors";
-import { Spark } from "./Spark";
+import { Card } from "./Card";
 import "../../../styles/ShaastraJuniors/index.css";
 
 import { motion } from "framer-motion";
+import { shaastraJunoirsData } from "./Data";
+import { ArrowForwardIcon, QuestionIcon } from "@chakra-ui/icons";
 
 const MotionBox = motion<BoxProps>(Box);
 
 const ShaastraJuniorsPage = () => {
-    const events = ['Spark', 'Shaastra Art Challenge', 'Junior Make-a-thon', 'Online Scavenger Hunt', 'BrainSqueeze', 'Chess Tournament', 'An Hour of Code', 'Reverse Coding', 'Juniors Nights']
     const [value, setValue] = useState(0);
+    const bgNav = useColorModeValue("(#fee9e1,secondary.100,highlight.300)","(highlight,secondary.300,#262c2a)");
+    const bgButton = useColorModeValue("white","primary.default");
+    const bgProgress = useColorModeValue("secondary.300,#6cd4ff", ",#6cd4ff, secondary.300");
+    const [isNotSmallerScreen] = useMediaQuery("(min-width:800px)");
 
+    if(isNotSmallerScreen)
+        return (
+            <CustomBox>
+                <Flex flexDirection={"column"} justifyContent={"strech"} alignItems="center" paddingTop={'80px'} minHeight={"100vh"}>
+                <Flex width={"100%"}>
+                    <Slider
+                        getAriaValueText={() => shaastraJunoirsData[value].title}
+                        value={value}
+                        min={0}
+                        max={shaastraJunoirsData.length - 1}
+                        step={1}
+                        isReadOnly = {true}
+                        cursor={"unset"}
+                        height={'10px'}
+                    >
+                        <SliderTrack>
+                            <SliderFilledTrack bgGradient={`linear(to-l, ${bgProgress})`}/>
+                        </SliderTrack>
+                    </Slider>
+                </Flex>
+                <Flex flex={1} width={"100%"} alignItems={"stretch"} justifyContent={"start"} padding={"10px"}>
+                    <Flex
+                    flexDirection={"column"}
+                    justifyContent={"space-evenly"}
+                    margin={"20px"}
+                    padding={"10px"}
+                    height={"550px"}
+                    bgGradient={`radial${bgNav}`}
+                    borderRadius={"20px"}
+                    width={"250px"}
+                    >
+                        {shaastraJunoirsData.map((_events, index) => 
+                            index === 0 ? 
+                            <Button
+                              leftIcon={<QuestionIcon/>}
+                              onClick={() => setValue(index)}
+                              bg={bgButton}
+                              size={"lg"}
+                              _hover={{ bg: {bgButton} }}
+                               >
+                                {_events.title}
+                            </Button>
+                            : (value === index ? 
+                            <Button bg={bgButton} size={"md"} _hover={{ bg: {bgButton} }} rightIcon={<ArrowForwardIcon />}>
+                                {_events.title}
+                            </Button>
+                            : <Button
+                                onClick={() => setValue(index)}
+                                variant="ghost"
+                                _hover={{ bg: "none" }}
+                                size={"md"}
+                                textColor={"black"}
+                                >
+                                <MotionBox
+                                    whileHover={{ scale: 1.3 }}
+                                >{_events.title}</MotionBox>
+                            </Button>))}
+                    </Flex>
+                    <Flex flex={1}>
+                        <Card data={shaastraJunoirsData[value]}/>
+                    </Flex>
+                </Flex>
+                </Flex>
+            </CustomBox>
+        )
+    
     return (
         <CustomBox>
-            <Flex flexDirection={"column"} justifyContent={"strech"} alignItems="center" height="100vh" padding={'80px 50px'}>
-              <Flex padding={"10px"} width={"100%"}>
-                <Slider
-                    getAriaValueText={() => events[value]}
-                    value={value}
-                    min={0}
-                    max={events.length}
-                    step={1}
-                    isReadOnly = {true}
-                    cursor={"unset"}
-                    height={'30px'}
-                >
-                    <SliderTrack>
-                        <SliderFilledTrack/>
-                    </SliderTrack>
-                    <SliderThumb boxSize={6}>
-                        <Box>
-                            <MotionBox
-                            whileHover={{ scale: 2.0 }}
-                            >
-                                <Flex color={"black"}>{value + 1}</Flex>
-                            </MotionBox>
-                        </Box>
-                    </SliderThumb>
-                </Slider>
-              </Flex>
-              <Flex flex={1} width={"100%"} alignItems={"stretch"} justifyContent={"start"} padding={"10px"} height={"100%"}>
-                <Flex flexDirection={"column"} justifyContent={"space-evenly"} padding={"0 10px"} height={"100%"}>
-                    <Button onClick={() => setValue(0)} variant="ghost" _hover={{ bg: "none" }} size={"lg"}>
-                        <MotionBox
-                            whileHover={{ scale: 1.5 }}
-                        >Shaastra Juniors</MotionBox>
-                    </Button>
-                    {events.map((_events, index) => 
-                        value === index + 1 ? <Button>{_events}</Button> :
-                        <Button onClick={() => setValue(index + 1)} variant="ghost" _hover={{ bg: "none" }} size={"lg"}>
-                            <MotionBox
-                                whileHover={{ scale: 1.3 }}
-                            >{_events}</MotionBox>
-                        </Button>)}
-                </Flex>
-                <Flex flex={1}>
-                    {value === 0 && <ShaastraJuniors/>}
-                    {value === 1 && <Spark/>}
-                    {value === 2 && <ShaastraArtChallenge/>}
-                    {value === 3 && <JuniorMakeathon/>}
-                    {value === 4 && <OnlineScavengerHunt/>}
-                    {value === 5 && <BrainSqueeze/>}
-                    {value === 6 && <ChessTournament/>}
-                    {value === 7 && <AnHourofCode/>}
-                    {value === 8 && <ReverseCoding/>}
-                    {value === 9 && <JuniorsNights/>}
-                </Flex>
-              </Flex>
+            <Flex paddingTop={'60px'} flexDirection={"column"}>
+                {shaastraJunoirsData.map((_item) => 
+                    <Card data={_item}/>
+                )}
             </Flex>
         </CustomBox>
-    )
+    );
 }
 
 export default ShaastraJuniorsPage;
