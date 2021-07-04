@@ -18,19 +18,6 @@ const Team = (props: Props) => {
   );
 
   let Profiles = [
-    // {
-    //   name: "JULIA ROBERT",
-    //   role: "Core",
-    //   desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quidem enim commodi suscipit! Sunt consectetur, libero, consequuntur ducimus nulla sit repellendus incidunt eius architecto adipisci voluptates praesentium obcaecati ut est?",
-    //   imgURL:photos.be17b022,
-    // social_inks: {
-    //     twitter: "#",
-    //     linkedIn: "#",
-    //     github: "#",
-    //     mailIzd: "abc@gmail.com",
-    //   },
-    //   dept: "competitions",
-    // },
     {
       name: "Nitish Gupta",
       role: "core",
@@ -61,7 +48,7 @@ const Team = (props: Props) => {
     {
       mailId: "ed18b057@smail.iitm.ac.in",
       name: "Rohit Survase",
-      dept: "Concept and Design",
+      dept: "Concept & Design",
       social_links: {
         instagram: "https://www.instagram.com/_rohitsurvase",
         linkedIn: "https://www.linkedin.com/in/Rohit Survase",
@@ -100,7 +87,7 @@ const Team = (props: Props) => {
     {
       mailId: "cs18b050@smail.iitm.ac.in",
       name: "Aniswar Srivatsa Krishna",
-      dept: "Events",
+      dept: "Events & Workshops",
       social_links: {
         facebook: "https://www.facebook.com/aniswarsrivatsak/",
         shastraMailId: "aniswar@shaastra.org",
@@ -131,6 +118,19 @@ const Team = (props: Props) => {
       },
       desc: "Being part of the Core organizing team of India's largest completely student-run festival is an overwhelming and fantastic experience to say the least. Shaastra has remained an integral part of my Insti life and has provided innumerous cherishable memories. ",
       imgURL: photos.me18b145,
+    },
+    {
+      mailId: "ed18b031@smail.iitm.ac.in",
+      name: "Siddhant Toknekar",
+      dept: "Evolve",
+      social_links: {
+        instagram: "https://www.instagram.com/token_taker/",
+        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
+        shastraMailId: "siddhant@shaastra.org",
+        contact: "9130213213",
+      },
+      desc: "Having been a part of Shaastra right from my very first semester at IIT Madras, it would be fair to say that the fest has essentially shaped my personal and professional life as an IITM student. The friends I have made, the managerial skills I have learnt and the last but not the least the memories I have made over the last three Shaastras have moulded me into the person I am today! ",
+      imgURL: photos.ed18b031,
     },
     {
       mailId: "ce18b060@smail.iitm.ac.in",
@@ -172,7 +172,7 @@ const Team = (props: Props) => {
     {
       mailId: "ed18b050@smail.iitm.ac.in",
       name: "Rutvik Baxi",
-      dept: "Operations and Infrastructure Planning",
+      dept: "Operations & Infrastructure Planning",
       social_links: {
         linkedIn: "https://www.linkedin.com/in/rutvik-baxi",
         instagram: "https://www.instagram.com/baaxzzeee/",
@@ -220,6 +220,31 @@ const Team = (props: Props) => {
       imgURL: photos.ee18b138,
     },
     {
+      mailId: "ed18b053@smail.iitm.ac.in",
+      name: "Shivam Maheshwari",
+      dept: "Quality Management System",
+      social_links: {
+        linkedIn: "https://www.linkedin.com/in/shivam-maheshwari",
+        shastraMailId: "Shivam@shaastra.org",
+        contact: "6264115563",
+      },
+      desc: "My 'Shaastra Journey' started in my first year when I became Events-workshop manager & OIP-VIP care coordinator. Next year I applied for the Head position in OIP, and currently, I am QMS Core. I aspire to bring upon relevant changes to strengthen the quality of Shaastra and enjoy the very process:)",
+      imgURL: photos.ed18b053,
+    },
+    {
+      mailId: "ep18b005@smail.iitm.ac.in",
+      name: "Baibhabi Patnaik ",
+      dept: "Shows & Exhibitions",
+      social_links: {
+        linkedIn: "https://www.linkedin.com/in/baibhabi-patnaik-b1563419b",
+        instagram: "https://www.instagram.com/baibhabi_musical",
+        shastraMailId: "baibhabi@shaastra.org",
+        contact: "+91 9989591690",
+      },
+      desc: "For my love of interacting with people, two years at Shaastra and counting have suited me well. The experience has been wholesome and loaded with learnings and memories. The team is family, and we have an amazing time here, organizing all innovation under one umbrella!",
+      imgURL: photos.ep18b005,
+    },
+    {
       mailId: "ch18b036@smail.iitm.ac.in",
       name: "Aman Kumar",
       dept: "Shows & Exhibitions",
@@ -233,22 +258,9 @@ const Team = (props: Props) => {
       imgURL: photos.ch18b036,
     },
     {
-      mailId: "ep18b005@smail.iitm.ac.in",
-      name: "Baibhabi Patnaik ",
-      dept: "Shows & Exhibitions ",
-      social_links: {
-        linkedIn: "https://www.linkedin.com/in/baibhabi-patnaik-b1563419b",
-        instagram: "https://www.instagram.com/baibhabi_musical",
-        shastraMailId: "baibhabi@shaastra.org",
-        contact: "+91 9989591690",
-      },
-      desc: "For my love of interacting with people, two years at Shaastra and counting have suited me well. The experience has been wholesome and loaded with learnings and memories. The team is family, and we have an amazing time here, organizing all innovation under one umbrella!",
-      imgURL: photos.ep18b005,
-    },
-    {
       mailId: "be18b026@smail.iitm.ac.in",
       name: "Nithish Venkatesh",
-      dept: "Spons and PR",
+      dept: "Sponsorship and PR",
       social_links: {
         linkedIn: "https://linkedin.com/in/nithish-venkatesh",
         instagram: "https://www.instagram.com/nithyanandaa ",
@@ -261,7 +273,7 @@ const Team = (props: Props) => {
     {
       mailId: "ch18b037@smail.iitm.ac.in",
       name: "Anandlogesh R R",
-      dept: "Sponsorship & PR",
+      dept: "Sponsorship and PR",
       social_links: {
         linkedIn: "https://www.linkedin.com/in/anandlogesh-r-r/",
         instagram: "https://www.instagram.com/the_a.r.r._/",
@@ -283,35 +295,10 @@ const Team = (props: Props) => {
       desc: "Being a part of shaastra is always like a ride in rollercoaster, fun and enjoyable. Being a part of this team meant everything to me , like I always say its never a bug, its always a undocumented feature.",
       imgURL: photos.be19b012,
     },
-    {
-      mailId: "ed18b053@smail.iitm.ac.in",
-      name: "Shivam Maheshwari",
-      dept: "Quality Management Systems",
-      social_links: {
-        linkedIn: "https://www.linkedin.com/in/shivam-maheshwari",
-        shastraMailId: "Shivam@shaastra.org",
-        contact: "6264115563",
-      },
-      desc: "My 'Shaastra Journey' started in my first year when I became Events-workshop manager & OIP-VIP care coordinator. Next year I applied for the Head position in OIP, and currently, I am QMS Core. I aspire to bring upon relevant changes to strengthen the quality of Shaastra and enjoy the very process:)",
-      imgURL: photos.ed18b053,
-    },
-    {
-      mailId: "ed18b031@smail.iitm.ac.in",
-      name: "Siddhant Toknekar",
-      dept: "Evolve",
-      social_links: {
-        instagram: "https://www.instagram.com/token_taker/",
-        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
-        shastraMailId: "siddhant@shaastra.org",
-        contact: "9130213213",
-      },
-      desc: "Having been a part of Shaastra right from my very first semester at IIT Madras, it would be fair to say that the fest has essentially shaped my personal and professional life as an IITM student. The friends I have made, the managerial skills I have learnt and the last but not the least the memories I have made over the last three Shaastras have moulded me into the person I am today! ",
-      imgURL: photos.ed18b031,
-    },
   ];
   let i = 0;
 
-  const [marker, setMarker] = React.useState({ width: "48px", left: "0px" });
+  const [marker, setMarker] = React.useState({ width: "70px", left: "0px" });
   const [navbarPosition, setNavbarPosition] = React.useState(0);
   const [type, setType] = React.useState("all");
 
@@ -454,17 +441,17 @@ const Team = (props: Props) => {
           <button onClick={handleClick} data-type="Evolve">
             Evolve
           </button>
-          <button
-            onClick={handleClick}
-            data-type="Operations & Infrastructure Planning"
-          >
-            Operations & Infrastructure Planning
-          </button>
           <button onClick={handleClick} data-type="Finance">
             Finance
           </button>
           <button onClick={handleClick} data-type="Publicity">
             Publicity
+          </button>
+          <button
+            onClick={handleClick}
+            data-type="Operations & Infrastructure Planning"
+          >
+            Operations & Infrastructure Planning
           </button>
           <button onClick={handleClick} data-type="Quality Management System">
             Quality Management System
@@ -472,8 +459,8 @@ const Team = (props: Props) => {
           <button onClick={handleClick} data-type="Shows & Exhibitions">
             Shows & Exhibitions
           </button>
-          <button onClick={handleClick} data-type="Spons and PR">
-            Spons and PR
+          <button onClick={handleClick} data-type="Sponsorship and PR">
+            Sponsorship and PR
           </button>
           <span
             id="marker"
