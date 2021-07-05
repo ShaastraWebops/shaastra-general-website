@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+
+#flip {
+  position: relative;
+  left: 0%;
+  height: 52px;
+  width: 190px;
+}
+#panel {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+  max-width: 90%;
+  margin: 30px auto;
+}
+#about {
+  font-size: 30px;
+  font-weight: 700;
+  // font-style: oblique;
+  // font-family: 'Source Sans Pro', sans-serif;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  transition: 0.3s;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+.boxx {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 87%;
+  transform: translate(7%, 0%);
+  font-size: 18px;
+  font-weight: 800;
+  font-family: "Source Sans Pro", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Tooltip text */
+
+@media (prefers-color-schme:dark){
+  img{
+    
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  // background: ;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  min-height: 80px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: -22%;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.tooltiptext {
+  background: linear-gradient(230deg, #9abd5c, #4970b4);
+  background-size: 400% 400%;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  -webkit-animation: back 6s ease infinite;
+  -moz-animation: back 6s ease infinite;
+  animation: back 6s ease infinite;
+}
+
+@-webkit-keyframes back {
+  0% {
+    background-position: 0% 14%;
+  }
+  50% {
+    background-position: 100% 87%;
+  }
+  100% {
+    background-position: 0% 14%;
+  }
+}
+@-moz-keyframes back {
+  0% {
+    background-position: 0% 14%;
+  }
+  50% {
+    background-position: 100% 87%;
+  }
+  100% {
+    background-position: 0% 14%;
+  }
+}
+@keyframes back {
+  0% {
+    background-position: 0% 14%;
+  }
+  50% {
+    background-position: 100% 87%;
+  }
+  100% {
+    background-position: 0% 14%;
+  }
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+@import "https://fonts.googleapis.com/css?family=Do+Hyeon";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@315&family=Ubuntu&display=swap");
+// $color-box-1: #381515;
+$color-box-2: #0f2c5e;
+$color-box-3: #27377c;
+
+// $color-box-6: #89aff1;
+// $color-box-7: #ffa600;
+
+// .text{
+//   color: #000;
+// }
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@315&display=swap");
+
+.card__collection {
+  position: relative;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  font-family: "Do Hyeon", sans-serif;
+
+  .cards {
+    width: 250px;
+    height: 321px;
+    display: block;
+    background-size: cover;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    margin: 10px;
+  }
+}
+
+.cards--three {
+  position: relative;
+  z-index: 10;
+
+  &:hover {
+    .cards--three__rect-1 {
+      left: 10%;
+
+      .shadow-1 {
+        left: -20%;
+      }
+
+      .text {
+        color: #000;
+        float: left;
+        font-size: 14px;
+        // font-family: 'Oswald', sans-serif;
+        font-family: "Oswald", sans-serif;
+        font-family: "Ubuntu", sans-serif;
+      }
+    }
+
+    .cards--three__rect-2 {
+      left: 60%;
+
+      &:before {
+        left: -100%;
+      }
+
+      &:after {
+        left: 80%;
+      }
+
+      .shadow-2 {
+        left: -10%;
+      }
+    }
+
+    .cards--three__circle {
+      transform: scale(1);
+
+      &:before {
+        transform: scale(0.9);
+      }
+    }
+
+    .cards--three__list {
+      li {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__rect-1 {
+    border-radius: 9px;
+
+    background: #fff;
+    width: 200px;
+    height: 110px;
+    transform: skewX(-20deg);
+    display: block;
+    position: absolute;
+    top: 73%;
+    opacity: 0.9;
+    left: -100%;
+    z-index: 8;
+    transition: all 0.3s ease-in;
+
+    p {
+      font-size: 20px;
+      color: #fff;
+      transform: skewX(20deg);
+      line-height: 6rem;
+    }
+
+    .shadow-1 {
+      border-radius: 9px;
+      background-image: linear-gradient( 109.6deg,  rgba(96,221,142,1) 11.2%, rgba(24,138,141,1) 91.1% );
+
+      width: 230px;
+      height: 100px;
+      display: block;
+      position: absolute;
+      left: -200%;
+      z-index: -1;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  &__rect-2 {
+    width: 100px;
+    height: 70px;
+    background: #fff;
+    position: absolute;
+    top: 65%;
+    left: 1000%;
+    opacity: 0.9;
+    transform: skewX(-20deg);
+    z-index: 8;
+    transition: all 0.3s ease-in;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 40px;
+      background: linear-gradient(to bottom left,#959992,#e4e4d9);
+      opacity: 1;
+      position: absolute;
+      left: 500%;
+      top: 10%;
+      transition: all 0.1s ease-in;
+    }
+
+    .shadow-2 {
+      border-top-left-radius: 9px;
+      background: linear-gradient(to bottom left,#215f00,#e4e4d9);
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: -10%;
+      left: 500%;
+      transition: all 0.3s ease-in;
+      transition-delay: 0.3s;
+    }
+  }
+}

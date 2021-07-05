@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/modal";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { useBreakpointValue } from "@chakra-ui/media-query";
+import  Spons  from '../pages/spons';
 
 interface Props {
   isOpen: boolean;
@@ -29,25 +30,13 @@ const CustomDrawer = (props: Props) => {
     >
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerHeader
-          as={Flex}
-          justifyContent="space-between"
-          alignItems="center"
-          flexDirection="row"
-        >
+        <DrawerHeader as={Flex} justifyContent="space-between" alignItems="center" flexDirection="row">
           <Heading fontWeight="normal" p={3}>Our Menu</Heading>
-          <DrawerCloseButton
-            variant="unstyled"
-            mt={3}
-            mr={3}
-            p={2}
-            outline="none"
-            borderRadius="50%"
-            size={closeButtonSize}
-          />
+          
+          <DrawerCloseButton variant="unstyled" mt={3} mr={3} p={2} outline="none" borderRadius="50%" size={closeButtonSize}/>
         </DrawerHeader>
         <DrawerBody>
-
+          {/* <Spons/> */}
         </DrawerBody>
       </DrawerContent>
     </Drawer>

@@ -24,7 +24,6 @@ const Home = (props: Props) => {
     <CustomBox>
       <Flex flexDirection={"column"} justifyContent="center" alignItems="center" minH="100vh" p={3}>
         <VStack spacing={8}>
-          {/* <img src={"./../../images/logo/animated/looped/Dice_Outline_Light_animated.svg"} alt="Shaastra Logo" /> */}
           <Logo height="100" width="auto" />
           <Text>
             Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
