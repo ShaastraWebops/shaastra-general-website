@@ -41,7 +41,7 @@ function Spons() {
                 <br />
                 <div className="main-boxx">
                     <div className="card__collection clear-fix mitesh">
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={Astra} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -52,7 +52,7 @@ function Spons() {
                             </span>
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={Atlasian} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -64,7 +64,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={Boeing} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -76,7 +76,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={CAT} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -88,7 +88,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={KLA} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -100,7 +100,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={Mahindra} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -112,7 +112,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={Salesforces} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -123,7 +123,7 @@ function Spons() {
                             </span>
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={foxmula} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -135,7 +135,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={innovaccer} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -147,7 +147,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={kamal} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -159,7 +159,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={LT} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -171,7 +171,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={mtx} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -183,7 +183,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={subex} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
@@ -195,8 +195,8 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
-                            <img src={surana} className="img-responsive" alt="" />
+                        <div className="cards cards--three" id="photo">
+                            <img src={surana} className="img-responsive" alt="" id="surana"/>
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
                                 <p className="text">SURANA & SURANA</p>
@@ -207,7 +207,7 @@ function Spons() {
 
                         </div>
 
-                        <div className="cards cards--three">
+                        <div className="cards cards--three" id="photo">
                             <img src={Wells} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>

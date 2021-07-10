@@ -64,7 +64,8 @@ html {
   position: absolute;
   z-index: 1;
   top: 100%;
-  left: -22%;
+  left: -23%;
+  margin-top: 13px;
 }
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 .tooltiptext {
@@ -132,6 +133,12 @@ $color-box-3: #27377c;
 // }
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@315&display=swap");
 
+#photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card__collection {
   position: relative;
   display: block;
@@ -144,7 +151,7 @@ $color-box-3: #27377c;
 
   .cards {
     width: 250px;
-    height: 321px;
+    height: 320px;
     display: block;
     background-size: cover;
     float: left;
@@ -152,7 +159,13 @@ $color-box-3: #27377c;
     overflow: hidden;
     background-position: center;
     margin: 10px;
+    margin-bottom: 40px;
   }
+}
+
+#surana{
+  // height: 200px;
+  margin-bottom: 75px;
 }
 
 .cards--three {
