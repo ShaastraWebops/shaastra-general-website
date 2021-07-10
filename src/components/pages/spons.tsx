@@ -1,7 +1,8 @@
 import React from 'react'
 // import ParticleBackground from './particle';
-import './spons.scss';
-import './button.scss';
+import '../../styles/button.scss';
+import '../../styles/spons.scss';
+import '../../styles/tooltip.scss';
 import Astra from '../../images/logo/static/Astra.svg'
 import Atlasian from '../../images/logo/static/Atlasian.svg'
 import Boeing from '../../images/logo/static/Boeing.svg'
