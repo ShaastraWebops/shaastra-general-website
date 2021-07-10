@@ -20,6 +20,7 @@ html{
     margin: 0%;
     overflow-x: hidden;
     padding: 0%;
+    z-index: -3;
 }
 
 
@@ -29,7 +30,7 @@ html{
     padding: 0;
     box-sizing: border-box;
     position: relative;
-    color: var(--pink);
+    /* color: var(--pink); */
     /* font-size: 25px; */
     font-size: 1.65vw;
     font-family: 'Montserrat', sans-serif; 
@@ -86,7 +87,9 @@ b{
 /*heading*/
 .header{
     padding: 2rem;
-    margin: auto;
+    margin: 0;
+    padding-top: 0%;
+    z-index: -1;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -101,7 +104,8 @@ b{
     background-repeat: no-repeat;
     /* margin: 4rem 2rem ; */
     /* margin: 4.5vw 2.2vw; */
-    margin: 4.5vw 0;
+    /* margin: 4.5vw 0; */
+    /* margin-top: 6vw; */
     width: 100vw;
     text-align: center;
     margin-bottom: 1rem;
@@ -116,10 +120,6 @@ b{
     transition: all .5s ease;
 }
 
-
-.heading:hover{
-    transform: scale(0.9);
-}
 
 .section-link{
     border-bottom: 2px solid var(--blue);
@@ -195,19 +195,27 @@ a:hover{
 
 /*intro*/
 .heading-intro{
-    margin: 8rem 2rem;
+    margin: 5rem 2rem;
     /* font-size: 50px; */
-    font-size: 3.3vw;
+    font-size: 4vw;
     font-weight: bold;
+    /* color: var(--blue); */
+}
+.light{
+    color: var(--dblue);
+}
+.dark{
+    color: var(--pink);
+}
+.blue{
     color: var(--blue);
 }
-
 .intro{
     position: relative;
     width: 100vw;
     margin: 4rem 0;
     padding: 2rem 6rem;
-    padding-bottom: 6rem;
+    padding-bottom: 8rem;
     text-align: center;
     scroll-snap-align: start;
     z-index: 1;

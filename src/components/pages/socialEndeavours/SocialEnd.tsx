@@ -6,7 +6,7 @@ import "../../../styles/socialEndeavours/Blink.css"
 import "../../../styles/socialEndeavours/Past.css"
 import Events from "./script"
 
-import { Image, Grid, GridItem } from "@chakra-ui/react";
+import { Image, Grid, GridItem, useColorModeValue } from "@chakra-ui/react";
 
 import moeOne from "../../../images/socialEndeavours/moeOne.png"
 import dtnext from "../../../images/socialEndeavours/dtnext.png"
@@ -17,18 +17,23 @@ import bubblesThree from "../../../images/socialEndeavours/bubblesThree.png"
 import pledgeSmall from "../../../images/socialEndeavours/pledgeSmall.png"
 import sheCanLogo from "../../../images/socialEndeavours/sheCanLogo.jpeg"
 
-import CustomBox from "../../shared/CustomBox";
+import CustomBox from "./CustomBoxSE";
 import Header from "../../shared/Header";
 import Footer from "../../shared/Footer";
+import { useState } from "react";
 interface Props{
 }
 
 const Social = (props: Props) => {
+    const Class = useColorModeValue("light" , "dark")
+    const headClass = useColorModeValue("dblue", "blue")
+    const backClass = useColorModeValue("darkblue", "green")
+    const backDivClass = useColorModeValue("bgdblue","green")
 Events()
     return(
         <div className="body">
-            <Header></Header>
-         <div className="header">
+            <CustomBox>
+         <div className={`header ${Class}`}>
                 <div className="heading">
                 SOCIAL ENDEAVOURS
                 </div>
@@ -40,11 +45,11 @@ Events()
             </div>
 
             <div>
-            <section className="intro">
+            <section className={`intro ${Class}`}>
                 <div className="bg"></div>
                 <div className="bg bg1"></div>
                 <div className="bg bg2"></div>
-                <h2 className ="heading-intro">SHAASTRA - SOCIAL IMPACT</h2>
+                <h2 className ={`heading-intro ${headClass}`} > SOCIAL IMPACT</h2>
                 Every year, Shaastra conducts a social campaign in an attempt to give back to society and create as big of an impact 
                 on the lives of the people that we can with the audience that Shaastra amasses. <br /> Over the past years, we have 
                 successfully carried out several campaigns such as SheCan, a campaign centered around upliftment of women, Blink, 
@@ -56,11 +61,11 @@ Events()
 
             <section className="she-can" id="she-can">
                 <div className="she-can-intro">
-                    <div className="she-can-heading sec-heading">
+                    <div className={`she-can-heading sec-heading ${headClass}`}>
                             SHE <br /> CAN
                     </div>
                    <div className="wrap">
-                   <div className="she-can-backdiv"></div>
+                   <div className={`she-can-backdiv ${backDivClass}`}></div>
                     <div className="she-can-intro-info">
                         <p>
                         She Can is centred around women's empowerment by giving them access to information about the vast ocean of 
@@ -81,15 +86,15 @@ Events()
                         <Image src={sheCanLogo} height="227px" width="475px" padding="0" w="fit-content" margin="auto"
                     alt="she can logo" borderRadius={["0","0","24px","24px"]}></Image>
                     </GridItem>
-                    <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]} id="she-can-grid" backgroundColor="var(--green)"
+                    <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]} id="she-can-grid" className={`${backClass}`}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem" borderRadius={["0","0","24px","24px"]}
                       fontSize={["4vw", "4vw", "4vw","1.75vw"]}> 
                          By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
                      version of themselves, as equal and valued members of their families, society, and the world at large.
                      </GridItem>
-                     <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,3]} colStart={1} id="she-can-grid" 
+                     <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,3]} colStart={1} id="she-can-grid" className={`${backClass}`}
                      display="flex" alignItems="center" justifyContent="center" padding="4rem"
-                     backgroundColor="var(--green)" borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","2vw","2vw"]}> 
+                      borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","2vw","2vw"]}> 
                          Only 13 percent of all Indian women have more than primary education. This situation has to be improved 
                          to uplift women. Skills and education to match today's industry and economy have to be mastered by women to 
                          thrive. 
@@ -100,37 +105,37 @@ Events()
                          By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
                      version of themselves, as equal and valued members of their families, society, and the world at large.
                      </GridItem> */}
-                     <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} id="she-can-grid"
+                     <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} id="she-can-grid" className={`${backClass}`}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                     backgroundColor="var(--green)" borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}>
+                      borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}>
                         We aim to motivate and drive women to explore new realms of possibilities and career options. 
                      The notion of womanhood being just narrowed to motherhood and homemakers cannot be justified at the present age.
                      </GridItem>
-                     <GridItem rowSpan={[1,1,1,2]} colStart={[1,1,1,6]} colSpan={[7,7,7,2]} rowStart={[4,4,4,1]}
-                     display="flex" alignItems="center" justifyContent="center" padding="2rem" id="she-can-grid"
-                     backgroundColor="var(--green)" borderRadius={["0","0","24px","24px"]} fontSize={["4vw", "4vw", "4vw","1.75vw"]}>
+                     <GridItem rowSpan={[1,1,1,2]} colStart={[1,1,1,6]} colSpan={[7,7,7,2]} rowStart={[4,4,4,1]} 
+                     display="flex" alignItems="center" justifyContent="center" padding="2rem" id="she-can-grid"className={`${backClass}`}
+                     borderRadius={["0","0","24px","24px"]} fontSize={["4vw", "4vw", "4vw","1.75vw"]}>
                           'She Can' campaign desires to be the foundation of such a dream, Women to reach their complete 
                          potential and to contribute to society through her achievement.
                      
                      </GridItem>
                 </Grid>
-                <Grid templateColumns="repeat(2, 1fr)" 
+                <Grid templateColumns="repeat(2, 1fr)"  color="var(--pink)" 
                         templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]} rowGap="2rem" columnGap="3rem"
-                        width="80%" margin={["8vw auto","8vw auto","8vw auto","0rem auto"]}>
+                        margin={["25vw 0","20vw 4vw","25vw 4vw","4rem 4rem"]}>
                             <GridItem display="flex" rowSpan={[1,1,1,2]}  colSpan={[2,2,2,1]} textAlign="center"
-                            backgroundColor="var(--green)" borderRadius="24px"  id="she-can-grid" className="link-she-can"
+                             borderRadius="24px"  id={`she-can-grid ${backClass}`} className={`link-she-can ${backClass}`}
                             alignItems="center" justifyContent="center">
                                 <a href="https://www.youtube.com/watch?v=9_ZsXmRUPfE" rel="noopener"
                                 target="_blank">Campaign Launch Video</a>
                             </GridItem>
                             <GridItem rowSpan={1}  display="flex" padding="1rem" colSpan={[2,2,2,1]}
-                             backgroundColor="var(--green)" borderRadius="24px" className="link-she-can" id="she-can-grid"
+                             borderRadius="24px" className={`link-she-can ${backClass}`} id={`she-can-grid ${backClass}`}
                              alignItems="center" justifyContent="center">
                                 <a href="https://www.youtube.com/watch?v=4GYNmmNt2v8" rel="noopener"
                                 target="_blank">DD National Interview </a>
                             </GridItem>
                             <GridItem rowSpan={1} display="flex" padding="1rem" colSpan={[2,2,2,1]}
-                             backgroundColor="var(--green)" borderRadius="24px" className="link-she-can" id="she-can-grid"
+                              borderRadius="24px" className={`link-she-can ${backClass}`} id={`she-can-grid ${backClass}`}
                              alignItems="center" justifyContent="center">
                                 <a href="https://www.shecan.shaastra.org/" rel="noopener"
                                 target="_blank">For More Info</a>
@@ -162,8 +167,8 @@ Events()
                             <hr />
                             <div className="title">MINISTRY OF EDUCATION</div>
                             <div className="info moe">
-                                <Image objectFit="cover" alt="tweet" height="475px" width="730px"
-                                boxSize={"100%"} src={moeOne}></Image>
+                                {/* <Image objectFit="cover" alt="tweet" height="475px" width="730px"
+                                boxSize={"100%"} src={moeOne}></Image> */}
                                 {/* <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="8px"
                                 boxSize={["100%","100%","100%","80%","100%"]} src={moeTwo2}></Image> */}
                             </div>
@@ -190,8 +195,8 @@ Events()
                             <hr />
                             <div className="title">DTNEXT.IN</div>
                             <div className="info">
-                                <Image src={dtnext} alt="article" height="145px" width="336px" padding="4px 0" id="she-can-image"
-                                marginBottom="6vw"></Image>
+                                {/* <Image src={dtnext} alt="article" height="145px" width="336px" padding="4px 0" id="she-can-image"
+                                marginBottom="6vw"></Image> */}
                                 <a href="https://www.dtnext.in/News/City/2021/01/08050455/1270350/IITM-students-organise-women-empowerment-programme.vpf"
                                 target="_blank" rel="noopener">Read the article</a>
                             </div>
@@ -223,7 +228,7 @@ Events()
             </section>
 
             <section className="blink b" id="blink">
-                <div className="sec-heading">BLINK</div>
+                <div className={`sec-heading ${headClass}`}>BLINK</div>
                 <div className="blink-info intro-info">
                 BLINK, the social campaign of Shaastra 2020, continues Shaastra's rich legacy of grassroots social impact and
                 is aimed at empowering the visually impaired and enabling them to achieve their full potential. The initiative,
@@ -249,7 +254,7 @@ Events()
                         <p className="blink-info-back">300+ People pledged to donate their eyes.</p>
                     </GridItem> */}
                 </Grid>
-                <Grid templateRows="repeat(2,1fr)" templateColumns="repeat(2,1fr)" columnGap="4vw" padding="4vw" rowGap="4vw">
+                <Grid templateRows="repeat(2,1fr)" templateColumns="repeat(2,1fr)" columnGap="4vw" padding="3vw" rowGap="4vw">
                     <GridItem className="blink-info-back" colSpan={[2,2,2,1]} rowSpan={[1,1,1,2]}>
                     Impacted 100+ adults through Career Development programs
                     </GridItem>
@@ -302,7 +307,7 @@ Events()
             </section>
 
             <section id="past">
-                <div className="sec-heading past">
+                <div className={`sec-heading past ${backClass}`}>
                     PAST CAMPAIGNS
                 </div>
                 <div className="campaigns">
@@ -320,36 +325,36 @@ Events()
                     </div>
                     
 
-                    <Grid templateRows={["repeat(5,1fr)","repeat(5,1fr)","repeat(5,1fr)","repeat(3,1fr)"]} 
+                    <Grid templateRows="repeat(5,1fr)"
                     templateColumns="repeat(3,1fr)" textAlign="center" 
-                    margin="auto" marginBottom={["0","0","0","4rem"]} rowGap="1rem" columnGap="1rem" width="100%">
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} borderRadius={["0","0","0","24px"]}
-                        padding="4rem 0.5vw">
+                    margin="auto" marginBottom={["0","0","0","4rem"]} rowGap="1rem" columnGap="1rem" width={["100%","100%", "100%", "60%"]}>
+                        <GridItem className="pledge-grid" colSpan={3} borderRadius={["0","0","0","24px"]}
+                        padding="1rem 0.5vw">
                             20,000+ books donated
                         </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} colStart={[1,1,1,3]} borderRadius={["0","0","0","24px"]}
-                         padding="4rem 0.5vw">
+                        <GridItem className="pledge-grid" colSpan={3}  borderRadius={["0","0","0","24px"]}
+                         padding="1rem 0.5vw">
                             25+ Libraries created
                         </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} rowStart={[3,3,3,2]} borderRadius={["0","0","0","24px"]}
-                        colStart={[1,1,1,2]} padding="4rem 0.5vw">
+                        <GridItem className="pledge-grid" colSpan={3} borderRadius={["0","0","0","24px"]}
+                        colStart={1} padding="1rem 0.5vw">
                         1 National TV coverage
                         </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} rowStart={[4,4,4,3]} borderRadius={["0","0","0","24px"]}
-                        padding="4rem 0.5vw">
+                        <GridItem className="pledge-grid" colSpan={3}  borderRadius={["0","0","0","24px"]}
+                        padding="1rem 0.5vw" colStart={1}>
                             20+ Media Articles
                         </GridItem>
-                        <GridItem className="pledge-grid" colSpan={[3,3,3,1]} colStart={[1,1,1,3]} borderRadius={["0","0","0","24px"]}
-                        rowStart={[5,5,5,3]} padding="4rem 0.5vw">
+                        <GridItem className="pledge-grid" colSpan={3} colStart={1} borderRadius={["0","0","0","24px"]}
+                        rowStart={[5,5,5,3]} padding="1rem 0.5vw">
                             10+ Marquee pledges
                         </GridItem>
                     </Grid>
                     <div className="campaigns-child even">
-                    <div id="bubble-bg">
-                            <Image src={bubblesTwo} alt="background" width="1040px" height="780px"
-                            w={["100vw","100vw","100vw", "100vw"]} h={["165vw","150vw","150vw","75vw","32vw"]} fit="cover"></Image>
-                            <Image src={bubblesThree} alt="background" width="1080" height="1080"
-                            w={["100vw","100vw","100vw", "100vw"]} h={["165vw","150vw","150vw","75vw","32vw"]} fit="cover"></Image>
+                    <div id="bubble-bg" className={`${backClass}`}>
+                            <Image src={bubblesTwo} alt="background" width="1040px" height="780px" id="bubble-pic" 
+                            w="120vw" h={["165vw","150vw","150vw","75vw","32vw"]} fit="cover"></Image>
+                            <Image src={bubblesThree} alt="background" width="1080" height="1080" id="bubble-pic" 
+                            w="120vw" h={["165vw","150vw","150vw","75vw","32vw"]} fit="cover"></Image>
                     </div>
                             <div className="info">
                                 <p>Bubbles</p>
@@ -372,9 +377,10 @@ Events()
                     {/* <div><Image src={bubblesOne} alt="poster" height="540px" width='540px' id="bubbles-image"></Image></div> */}
                 </div>
             </section>
-            <script src="./script.tsx"></script>
+            {/* <script src="./script.tsx"></script> */}
             <Footer></Footer>
-        </div>
+        </CustomBox>
+         </div>
     )
 }
 

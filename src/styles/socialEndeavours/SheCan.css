@@ -1,5 +1,10 @@
 /* she can */
-
+#she-can .dblue{
+    color: var(--dblue);
+}
+#she-can .dblue:hover{
+    color: var(--dblue-bg);
+}
 .she-can-intro{
     position: relative;
     display: flex;
@@ -39,6 +44,7 @@
 .wrap{
     width: 60%;
     position: relative;
+    z-index: 4;
 }
 .she-can-intro-info{
     width: 90%;
@@ -52,19 +58,26 @@
 }
 .she-can-backdiv{
     position: absolute;
-    z-index: -10;
+    z-index: -1;
     left: 5%;
     background-color: var(--green);
     height: 100%;
     width: 90%;
 }
-
+.bgdblue{
+    background-color: var(--dblue-bg);
+}
 .wrap-image{
     position: relative;
     margin: auto;
     width: 70%;
 }
-
+.darkblue{
+    background-color: var(--dblue);
+}
+.green{
+    background-color: var(--green);
+}
 .she-can-backdiv-image{
     position: absolute;
     opacity: 0.8;
@@ -85,14 +98,16 @@
     background-color: #fee9e198;
     /* background-image: linear-gradient(60deg, var(--blue-bg2), var(--green));
     border-radius: 24px; */
-    margin: 0 4rem;
+    margin: 0;
     padding: 3rem;
     margin-top: 10rem;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-
+#darkblue{
+    color: var(--pink);
+}
 .recog-heading{
     color: var(--dblue);
     width: 90%;
@@ -187,7 +202,7 @@
     }
     #she-can-grid{
         font-size: 2.5vw;
-        padding: 1vw;
+        padding: 4vw;
     }
 }
 /* @media screen and (max-width: 600px)

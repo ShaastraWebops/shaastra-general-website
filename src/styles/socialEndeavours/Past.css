@@ -1,10 +1,17 @@
 #past{
     /* background-image: url("../../images/socialEndeavours/pastBg.jpg"); */
     /* padding: 4rem; */
-    margin: 0 4rem;
+    margin: 0;
     overflow: hidden;
 }
-
+#past .darkblue
+{
+    background-color: var(--brown);
+}
+#past .green
+{
+    background-color: transparent;
+}
 .past{
     color: var(--pink);
     font-size: 7.5vw;
@@ -16,10 +23,12 @@
     display: flex;
     flex-direction: column;
     row-gap: 6rem;
+    /* margin: 0 4rem; */
     margin-top: 4vw;
 }
 .campaigns-child{
     width: 50%;
+    margin: 0;
 }
 .campaigns-child hr{
     background-color: var(--green);
@@ -33,7 +42,8 @@
 }
 
 .campaigns-child:first-child{
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 .campaigns-child:first-child .info{
     width: 50%;
@@ -48,19 +58,33 @@
 }
 .even .info p{
     margin-bottom: 4rem;
+    opacity: 1;
+}
+#bubble-pic{
+    opacity: 0.4;
+    margin: 0%;
+    z-index: 3;
 }
 #bubble-bg{
-    z-index: -1;
+    z-index: 2;
     overflow-y: hidden;
     overflow-x: hidden;
-    transform: translateX(-2%);
+    left: 0%;
+    transform: translateX(0%);
     padding: 0%;
     margin: 0;
     position: absolute;
-    width: 100vw;
-    opacity: 0.3;
+    width: 200vw;
 }
-
+.even .darkblue{
+    background-color: var(--brown);
+    opacity: 0.4;
+}
+.even .green
+{
+    background-color: white;
+    opacity: 0.5;
+}
 
 .pledge-grid{
    display: flex;
@@ -82,9 +106,17 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
+}
+#flex .info{
+    width: 60%;
 }
 #pledge{
+    z-index: 2;
+    size: 100%;
+    margin: 0 2rem;
     align-self: center;
+    justify-self: center;
 }
 @media screen and (max-width: 1050px)
 {
