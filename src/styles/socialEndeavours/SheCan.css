@@ -160,7 +160,7 @@
 }
 
 .link-she-can a:hover{
-    color: var(--dblue);
+    color: var(--blue-bg);
 }
 
 @media screen and (max-width: 1100px)
