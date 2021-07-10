@@ -17,8 +17,6 @@
 #about {
   font-size: 30px;
   font-weight: 700;
-  // font-style: oblique;
-  // font-family: 'Source Sans Pro', sans-serif;
 }
 .tooltip {
   position: relative;
@@ -40,22 +38,15 @@ html {
 }
 /* Tooltip text */
 
-@media (prefers-color-schme:dark){
-  img{
-    
-  }
-}
-
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted #000000;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 300px;
-  // background: ;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -65,7 +56,7 @@ html {
   z-index: 1;
   top: 100%;
   left: -23%;
-  margin-top: 13px;
+  // margin-top: 13px;
 }
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 .tooltiptext {
@@ -113,6 +104,7 @@ html {
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
+
 }
 .img-responsive {
   max-width: 100%;
@@ -125,12 +117,7 @@ html {
 $color-box-2: #0f2c5e;
 $color-box-3: #27377c;
 
-// $color-box-6: #89aff1;
-// $color-box-7: #ffa600;
 
-// .text{
-//   color: #000;
-// }
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@315&display=swap");
 
 #photo{
@@ -148,19 +135,19 @@ $color-box-3: #27377c;
   flex-wrap: wrap;
   padding: 10px;
   font-family: "Do Hyeon", sans-serif;
+}
 
-  .cards {
-    width: 250px;
-    height: 320px;
-    display: block;
-    background-size: cover;
-    float: left;
-    position: relative;
-    overflow: hidden;
-    background-position: center;
-    margin: 10px;
-    margin-bottom: 40px;
-  }
+.card__collection .cards {
+  width: 250px;
+  height: 320px;
+  display: block;
+  background-size: cover;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  margin: 10px;
+  margin-bottom: 40px;
 }
 
 #surana{

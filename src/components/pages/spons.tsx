@@ -2,25 +2,25 @@ import React from 'react'
 // import ParticleBackground from './particle';
 import './spons.scss';
 import './button.scss';
-import Astra from './Astra.svg'
-import Atlasian from './Atlasian.svg'
-import Boeing from './Boeing.svg'
-import CAT from './CAT.svg'
-import KLA from './KLA.svg'
-import Mahindra from './Mahindra.svg'
-import Salesforces from './Salesforce.svg'
-import Wells from './Wells_Fargo.svg';
-import foxmula from './foxmula.png';
-import innovaccer from './innovaccer.png';
-import kamal from './kamal_wears.png';
-import LT from './L&T.jpg';
-import mtx from './mtx.png';
-import subex from './subex.png';
-import surana from './surana.png';
+import Astra from '../../images/logo/static/Astra.svg'
+import Atlasian from '../../images/logo/static/Atlasian.svg'
+import Boeing from '../../images/logo/static/Boeing.svg'
+import CAT from '../../images/logo/static/CAT.svg'
+import KLA from '../../images/logo/static/KLA.svg'
+import Mahindra from '../../images/logo/static/Mahindra.svg'
+import Salesforces from '../../images/logo/static/Salesforce.svg'
+import Wells from '../../images/logo/static/Wells_Fargo.svg'
+import foxmula from '../../images/logo/static/foxmula.png'
+import innovaccer from '../../images/logo/static/innovaccer.png'
+import kamal from '../../images/logo/static/kamal_wears.png'
+import LT from '../../images/logo/static/L&T.jpg'
+import mtx from '../../images/logo/static/mtx.png'
+import subex from '../../images/logo/static/subex.png'
+import surana from '../../images/logo/static/surana.png'
 import Header from '../shared/Header';
 import Footer from '../shared/Footer';
 import CustomBox from '../shared/CustomBox';
-import catl from './caterpillar22.png'
+import catl from '../../images/logo/static/caterpillar22.png'
 
 var script = document.createElement('script');
 
@@ -77,7 +77,7 @@ function Spons() {
                         </div>
 
                         <div className="cards cards--three" id="photo">
-                            <img src={CAT} className="img-responsive" alt="" />
+                            <img src={catl} className="img-responsive" alt="" />
                             <span className="cards--three__rect-1">
                                 <span className="shadow-1"></span>
                                 <p className="text">CATERPILLAR</p>
