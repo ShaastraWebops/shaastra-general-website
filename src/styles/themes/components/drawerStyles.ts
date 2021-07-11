@@ -1,4 +1,4 @@
-import { mode, whiten } from "@chakra-ui/theme-tools";
+import { mode } from "@chakra-ui/theme-tools";
 
 export const drawerStyles = {
     baseStyle: (props) => ({

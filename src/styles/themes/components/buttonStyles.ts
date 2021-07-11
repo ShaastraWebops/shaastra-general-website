@@ -1,4 +1,3 @@
-import { mode, whiten, darken } from "@chakra-ui/theme-tools";
 
 export const buttonStyles = {
     sizes: {},
