@@ -15,7 +15,7 @@ const MotionBox = motion<BoxProps>(Box);
 const ShaastraJuniorsPage = () => {
     const [value, setValue] = useState(0);
     const bgNav = useColorModeValue("(#fee9e1,secondary.100,highlight.300)","(highlight,secondary.300,#262c2a)");
-    const bgButton = useColorModeValue("white","primary.default");
+    const bgButton = useColorModeValue("white","#2c262a");
     const bgProgress = useColorModeValue("secondary.300,#6cd4ff", ",#6cd4ff, secondary.300");
     const [isNotSmallerScreen] = useMediaQuery("(min-width:800px)");
 
@@ -46,9 +46,9 @@ const ShaastraJuniorsPage = () => {
                     margin={"20px"}
                     padding={"10px"}
                     height={"550px"}
-                    bgGradient={`radial${bgNav}`}
+                    bgGradient={`linear(to-l, ${bgProgress})`}
                     borderRadius={"20px"}
-                    width={"250px"}
+                    width={"280px"}
                     >
                         {shaastraJunoirsData.map((_events, index) => 
                             index === 0 ? 
@@ -62,18 +62,24 @@ const ShaastraJuniorsPage = () => {
                                 {_events.title}
                             </Button>
                             : (value === index ? 
-                            <Button bg={bgButton} size={"md"} _hover={{ bg: {bgButton} }} rightIcon={<ArrowForwardIcon />}>
+                            <Button
+                             bg={bgButton}
+                             size={"lg"}
+                             _hover={{ bg: {bgButton} }}
+                            //  rightIcon={<ArrowForwardIcon />}
+                            >
                                 {_events.title}
                             </Button>
                             : <Button
                                 onClick={() => setValue(index)}
                                 variant="ghost"
                                 _hover={{ bg: "none" }}
-                                size={"md"}
+                                size={"lg"}
                                 textColor={"black"}
+                                justifyContent={"left"}
                                 >
                                 <MotionBox
-                                    whileHover={{ scale: 1.3 }}
+                                    whileHover={{ scale: 1.2 }}
                                 >{_events.title}</MotionBox>
                             </Button>))}
                     </Flex>
