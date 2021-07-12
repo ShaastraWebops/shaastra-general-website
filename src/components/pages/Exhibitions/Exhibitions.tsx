@@ -1,10 +1,10 @@
-import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center, TextProps, useColorModeValue} from "@chakra-ui/react";
-import {ChevronLeftIcon,ChevronRightIcon} from "@chakra-ui/icons";
+import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center, TextProps, useColorModeValue, VStack} from "@chakra-ui/react";
+// import {ChevronLeftIcon,ChevronRightIcon} from "@chakra-ui/icons";
 import * as React from "react";
 import CustomBox from "../../shared/CustomBox";
 import EXHB2 from "../../../images/Exhibitions/exhb_2.png";
 import "../../../styles/Exhibitions.css";
-import {  exhibitions,CauroselImages } from "./Exhibitionsdata";
+import {  exhibitions,CauroselImages, Titlevariants, AboutusVariants, AboutusData } from "./Exhibitionsdata";
 import Card from "./Card";
 import { motion ,useAnimation } from 'framer-motion';
 import Footer from "../../shared/Footer";
@@ -13,18 +13,19 @@ import { useInView } from "react-intersection-observer";
 
 const MotionBox = motion<BoxProps>(Box);
 const MotionText = motion<TextProps>(Text);
-const MotionChevronLeftIcon = motion(ChevronLeftIcon);
-const MotionChevronRightIcon = motion(ChevronRightIcon);
+// const MotionChevronLeftIcon = motion(ChevronLeftIcon);
+// const MotionChevronRightIcon = motion(ChevronRightIcon);
 
 const Exhibitions = ()=>{
 
   const [current,setCurrent] = React.useState(0);
   const length = CauroselImages.length;
-  const textcolor = useColorModeValue("#00A878", "#00A878");
   const {ref,inView} = useInView();
   const animation = useAnimation();
   const CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
+  const Titlecolor = useColorModeValue("#0080ff","#00d0ff");
 
+  console.log(window.innerWidth)
   React.useEffect(()=>{
 
     if(inView){
@@ -47,33 +48,6 @@ const Exhibitions = ()=>{
 
   }, [inView] )
 
-  const Titlevariants = {
-    lhidden:{
-      x: "-100vw" 
-    },
-    final : {
-      x: 0,
-      transition:{
-        duration : "1",
-      }
-    },
-    
-  }
-
-  const AboutusVariants = {
-    hidden : {
-      opacity : 0
-    },
-    visible : {
-      opacity : 1,
-      transition:{
-        duration : "2",
-        delay : 1
-      }
-    }
-
-  }
-
   const prevSlide = ()=>{
         setCurrent(current ===0 ? length-1 : current-1);
   }
@@ -85,7 +59,7 @@ const Exhibitions = ()=>{
       <CustomBox>
        <Container maxW={'7xl'} >
         <div className="App-particles__container">
-        <ParticlesBg color={"#40606e"} num={150} type="cobweb" bg={true}/>
+        <ParticlesBg color={"#4492b3"} num={150} type="cobweb" bg={true}/>
         </div>
 
         <Heading lineHeight={1.1} fontWeight={600} fontSize={"5xl"}>
@@ -94,7 +68,8 @@ const Exhibitions = ()=>{
             initial={"lhidden"}
             animate = {"final"}
             variants={Titlevariants}
-            className = "Title" > EXHIBITIONS </MotionText>
+            className = "Title"
+             color={Titlecolor}> EXHIBITIONS </MotionText>
           </Center>
   
           </Heading>
@@ -110,18 +85,11 @@ const Exhibitions = ()=>{
               initial = {"hidden"}
               animate = {"visible"}
               variants = {AboutusVariants}>
-              <Heading as={'h1'} mb={"3"} color={"#6CD4FF"}>
+              <Heading as={'h1'} mb={"3"}>
                 About Us
               </Heading>
-               <Text as={"p"} color={textcolor} >
-                 Shaastra Exhibitions is a platform to showcase cutting Edge technology.
-                 Exhibitions provide an opportunity for a large number of buyers and sellers in an industry to interact with
-                 each other.
-                 They are responsible for conveying the ideas of the participants from a 
-                  technologically practical perspective and as well as give the audience a 
-                  glimpse into the  latest developments in technology
-                  They offer an unparalleled and ideal opportunity to showcase innovative products to a broad
-                 spectrum of people.
+               <Text>
+                 {AboutusData}
                 </Text>
               </MotionBox>
 
@@ -139,10 +107,9 @@ const Exhibitions = ()=>{
               initial = {"hidden"}
               animate = {"visible"}
               variants = {AboutusVariants}
-              height={'300px'}
+               height={["full","300px"]}
               rounded={'2xl'}
               boxShadow={'2xl'}
-              width={'full'}
               overflow={'hidden'}
               mt={["0px","60px"]}
               >
@@ -159,21 +126,20 @@ const Exhibitions = ()=>{
         </Stack>
 
       </Container>
-      
-     <Heading
-              fontWeight={300}
-              fontSize={"3xl"}
-              m={[2,5]} p={[2,5]}
-             >
-               <Center >
-              <MotionText as={'h2'}
-                  className = "Title"
-              >PREVIOUS EXHIBITIONS</MotionText>
-             </Center>
-            </Heading>
+           
        
       <Center>
-      <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref}> 
+      <VStack>
+      <Heading
+              fontWeight={300}
+              fontSize={"3xl"}
+               m={[2,5]} 
+              className = "Title"
+              color={Titlecolor}
+             >
+              PREVIOUS EXHIBITIONS
+            </Heading>
+      <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5}> 
         {
 
           exhibitions.map( (item,index) => {
@@ -183,6 +149,7 @@ const Exhibitions = ()=>{
               custom = {i}
               animate = {animation}
               className="Card"
+              key= {index}
               >
               <Card data={item} />
               </MotionBox>
@@ -190,9 +157,10 @@ const Exhibitions = ()=>{
           })
         }
         </SimpleGrid>
+      </VStack>
       </Center>
 
-        <Center className="slider" mb={2}>
+        {/* <Center className="slider" mb={2}>
         <MotionChevronLeftIcon
          whileHover={{ scale: 1.1 }}
          whileTap={{ scale: 0.9 }}
@@ -231,7 +199,22 @@ const Exhibitions = ()=>{
               )
             })
           }
-       </Center>
+       </Center> */}
+       {/* <SimpleGrid columns={[1,1,2,3]}  spacingX={1} spacingY={1}  m={5}>
+          {
+            CauroselImages.map((img,index)=>{
+              return(
+                  <Image
+                    alt={'Carousel Image'}
+                    className="CarouselImg"
+                    borderRadius="10px"
+                    src={img}
+                    margin={-1}
+                  />
+              )
+            })
+          }
+        </SimpleGrid> */}
        <Footer></Footer>
      </CustomBox>
     

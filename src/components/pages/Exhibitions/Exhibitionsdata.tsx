@@ -1,5 +1,3 @@
-
-
 import EXHB1 from "../../../images/Exhibitions/exhb_1.png";
 import EXHB3 from "../../../images/Exhibitions/exhb_3.png";
 import EXHB4 from "../../../images/Exhibitions/exhb_4.png";
@@ -14,6 +12,42 @@ import EXHB12 from "../../../images/Exhibitions/exhb_12.png";
 import EXHB13 from "../../../images/Exhibitions/exhb_13.png";
 
 export const CauroselImages = [EXHB3,EXHB4,EXHB9,EXHB10,EXHB11,EXHB12];
+
+export const Titlevariants = {
+  lhidden:{
+    x: "-100vw" 
+  },
+  final : {
+    x: 0,
+    transition:{
+      duration : "1",
+    }
+  },
+  
+}
+
+export const AboutusVariants = {
+  hidden : {
+    opacity : 0
+  },
+  visible : {
+    opacity : 1,
+    transition:{
+      duration : "2",
+      delay : 1
+    }
+  }
+
+}
+
+export const AboutusData = `Shaastra Exhibitions is a platform to showcase cutting Edge technology.
+Exhibitions provide an opportunity for a large number of buyers and sellers in an industry to interact with
+each other.
+They are responsible for conveying the ideas of the participants from a 
+ technologically practical perspective and as well as give the audience a 
+ glimpse into the  latest developments in technology
+ They offer an unparalleled and ideal opportunity to showcase innovative products to a broad
+spectrum of people.`;
 
 interface exhibitions{
     id: string,
