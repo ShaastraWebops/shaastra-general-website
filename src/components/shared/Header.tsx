@@ -23,7 +23,7 @@ const Header = (props: Props) => {
     const HeaderLogo = useColorModeValue(LogoBlack, LogoWhite)
     const height = useBreakpointValue({ base: "33", lg: "40" })
   return (
-    <Flex w="100vw" position="absolute" p={3} flexDirection="row" justifyContent="space-between" alignItems="center" height="min">
+    <Flex w="98vw" position="absolute" p={0} flexDirection="row" justifyContent="space-between" alignItems="center" height="min">
       <CustomDrawer onClose={onClose} isOpen={isOpen} />
       <Link to="/" >
         <HeaderLogo height={height} width="88" />

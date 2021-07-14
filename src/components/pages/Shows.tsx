@@ -13,7 +13,7 @@ export default function Shows() {
                 Shows
             </Heading>
             <Center data-aos="zoom-in">
-                <Image src="https://dummyimage.com/600x400/000/fff" borderRadius="8" />
+                <Image src="/shows_1.png" borderRadius="8" />
             </Center>
             <Center margin="20px 0">
                 <Text width="80%" data-aos="fade-right" textAlign="justify">
@@ -24,12 +24,12 @@ export default function Shows() {
             <Grid templateColumns={`repeat(${cols || 2}, 1fr)`} justifyItems="center" padding="0 10px" rowGap="5">
                 <GridItem>
                     <Center>
-                        <Image borderRadius="8" data-aos="zoom-in" width="80%" src="https://dummyimage.com/1240x1080/000/fff" />
+                        <Image borderRadius="8" data-aos="zoom-in" width="80%" src="/shows_2.png" />
                     </Center>
                 </GridItem>
                 <GridItem>
                     <Center>
-                        <Image borderRadius="8" data-aos="zoom-in" width="80%" src="https://dummyimage.com/1240x1080/000/fff" />
+                        <Image borderRadius="8" data-aos="zoom-in" width="80%" src="/shows_3.png" />
                     </Center>
                 </GridItem>
             </Grid>

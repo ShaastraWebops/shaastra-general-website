@@ -97,12 +97,12 @@ import { faFacebookSquare, faLinkedinIn, faTwitterSquare, faInstagramSquare } fr
 
 const sections = [
     {
-        imgUrl: "https://dummyimage.com/600x400/000/fff",
+        imgUrl: "/envisage_1.png",
         title: "About Us",
         desc: "The Annual Technical Festival of IIT Madras, Shaastra introduced a technologically aided cultural show in the year 2013, capitalizing on the entertainment factor. This techno – cultural show was named Envisage and today it is India’s first and only student organised techno-entertainment show. The projects exhibited by Envisage attract a bunch of not-so-technically oriented guests too. The projects are designed in conformity with the tagline of Envisage – “Technology meets Entertainment”. Alongside conducting the show on 1st day of Shaastra, a number of other interactive projects and video games are also developed and exhibited to a vast crowd at KV Stalls during Shaastra. Over the past few years Envisage has been exploring and presenting projects at various avenues like IIM Bangalore, Anna University and in several other universities as part of Samparks, Publicity event of Shaastra. The coming version marks the entry of Envisage into its very 10th year.",
     },
     {
-        imgUrl: "https://dummyimage.com/600x400/000/fff",
+        imgUrl: "/envisage_2.png",
         title: "Vision",
         desc: "As the tagline “Where Technology Meets Entertainment” suggests, we inspire and enable students to explore their creative and engineering skills through various technical projects for the techno cultural show and the tech exhibition during Shaastra.",
     },
@@ -150,7 +150,7 @@ export default function Main() {
                         <br />
                         <Grid data-aos={`fade-${index % 2 === 0 ? "right" : "left"}`} templateColumns="repeat(2, 1fr)">
                             <GridItem order={index % 2 === 0 ? 0 : 2}>
-                                <Text textAlign="justify" fontSize="xl">
+                                <Text textAlign="justify" fontSize="xl" style={{fontFamily: "monospace"}} >
                                     {desc}
                                 </Text>
                             </GridItem>
@@ -227,22 +227,22 @@ export default function Main() {
                 <Grid templateColumns="repeat(4, 1fr)">
                     <GridItem textAlign="center">
                         <a href="https://www.facebook.com/Envisage.IITM">
-                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="fade-right" icon={faFacebookSquare} />
+                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="zoom-in" icon={faFacebookSquare} />
                         </a>
                     </GridItem>
                     <GridItem textAlign="center">
                         <a href="https://www.linkedin.com/">
-                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="fade-up" icon={faLinkedinIn} />
+                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="zoom-in" icon={faLinkedinIn} />
                         </a>
                     </GridItem>
                     <GridItem textAlign="center">
                         <a href=" https://www.instagram.com/envisageiitmadras/">
-                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="fade-down" icon={faInstagramSquare} />
+                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="zoom-in" icon={faInstagramSquare} />
                         </a>
                     </GridItem>
                     <GridItem textAlign="center">
                         <a href="https://twitter.com">
-                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="fade-left" icon={faTwitterSquare} />
+                            <FontAwesomeIcon className="h-eff" size="4x" data-aos="zoom-in" icon={faTwitterSquare} />
                         </a>
                     </GridItem>
                 </Grid>

@@ -13,7 +13,7 @@ const AppRoutes = (props: Props) => {
     return (
         <Router>
             <Route exact path="/" component={Home} /> 
-            <Route path="/main" component={Main} />
+            <Route path="/envisage" component={Main} />
             <Route path="/project/:id" component={Project} />
             <Route path="/shows" component={Shows} />
 
