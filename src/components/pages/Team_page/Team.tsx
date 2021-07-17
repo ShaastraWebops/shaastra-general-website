@@ -437,11 +437,7 @@ const Team = (props: Props) => {
         </div>
         <div className={`DetailCards ${colorTheme}`}>
           {navbar ? (
-            <button
-              onClick={handleFilter}
-              className="FilterBtn"
-              style={{ backgroundColor: "crimson" }}
-            >
+            <button onClick={handleFilter} className="FilterBtn">
               <FaTimes /> CLOSE
             </button>
           ) : (

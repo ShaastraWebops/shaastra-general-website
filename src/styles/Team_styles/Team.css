@@ -289,10 +289,27 @@
     font-weight: 600;
     letter-spacing: 1px;
     color: #fff;
-    background-color: rgb(0, 132, 255);
     outline: none;
-    border: none;
+    border: 2px solid rgb(255, 0, 203);
     border-radius: 5px;
+    transition: 0.2s;
+  }
+  .DetailCards.light .FilterBtn {
+    color: #000;
+  }
+  .DetailCards.dark .FilterBtn {
+    color: #fff;
+  }
+  .FilterBtn:hover,
+  .FilterBtn:active {
+    color: #fff !important;
+    background: rgb(255, 0, 203);
+    background: linear-gradient(
+      164deg,
+      rgba(255, 0, 203, 1) 0%,
+      rgba(89, 29, 255, 1) 100%
+    );
+    border: 2px solid rgb(255, 0, 203, 0);
   }
   .DetailCards {
     position: relative;
@@ -321,14 +338,31 @@
     background-color: #3c3c3c;
   }
   .DetailCards .navbar::before {
-    left: 6px;
+    left: 0px;
+    height: 100%;
+    border-radius: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 0, 203, 1) 0%,
+      rgba(89, 29, 255, 1) 100%
+    );
+  }
+  .DetailCards .navbar::before {
+    background: linear-gradient(180deg, #e91e63 0%, #673ab7 100%);
+  }
+  .DetailCards .navbar button {
+    color: #fff !important;
   }
   .DetailCards.light .navbar #marker {
-    background: linear-gradient(90deg, #fff, #fff0);
+    background: linear-gradient(90deg, #e91e63 0%, #673ab7 100%);
     border-radius: 0;
   }
   .DetailCards.dark .navbar #marker {
-    background: linear-gradient(90deg, #0e101b, #0e101b00);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 0, 203, 1) 0%,
+      rgba(89, 29, 255, 1) 100%
+    );
     border-radius: 0;
   }
   .DetailCards .navbar #marker span {
