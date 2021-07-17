@@ -62,10 +62,9 @@ export const exhibitions : exhibitions[] =[
       id : "1",
       year:"2016",
       title : "Vintage Car Exhibition",
-      description : `Shaastra 2016 unveiled the spectacular technological advancements in automobile history 
-      with its very own Vintage Car Exhibition in collaboration with the Madras Heritage Motoring Club.
-      Presented automobiles such as, Austin 8, 1952 Topolino, Morris 1000, Morris 8,
-      which have been the marvels of technology bringing about a revolution in the automobile.`,
+      description : `In collaboration with the Madras Heritage Motoring Club,
+       We Presented  a vintage car exhibition. Some automobiles such as, Austin 8, 1952 Topolino, which
+       brought about revolution in the industry was presented. `,
       image : EXHB1
     },
     {
@@ -79,7 +78,7 @@ export const exhibitions : exhibitions[] =[
     {
       id : "3",
       year:"2018",
-      title : "Defence and aerospace models from ISRO",
+      title : "Defence and Aerospace models from ISRO",
       description:"ISRO - GSLV and PSLV models were exhibited at Shaastra Exhibitions.",
       image : EXHB5
     },
@@ -87,23 +86,24 @@ export const exhibitions : exhibitions[] =[
       id : "4",
       year:"2018",
       title : "Bike Expo",
+      description : "Shaastra 2018 unveiled the spectacular technological advancements in motorcycle history with its Bike Expo.",
       image : EXHB8
     },
     {
       id:"4",
       year : "2019",
-      title:"International exhibits from the US",
+      title:"International Expo",
+      description : `Shaastra for the first time ever, presents International Exhibitions, in association with the US Consulate General of Chennai. 
+      The International Exhibits was on three broad perspectives – Academics, Research and Business. `,
       image : EXHB7
     },
     {
       id:"5",
       year : "2020",
       title:"Defence Expo",
-      description:`The Defence Expo was an exhibition of the products of nascent defence technology start-ups, 
-      established manufacturers, Defence PSUs and the Indian Armed Forces. It was conducted over 
-      the course of the 4 days of Shaastra 2020.  The Expo provided exposure to Defence Technology 
-      for the audience. BrahMos - a model missile, Rodella - Unmanned Aerial Vehicle and models 
-      from Boeing and Ashok Leyland were also exhibited.`,
+      description:`The Defence Expo was an exhibition of the products of nascent defence technology start-ups,
+      established manufacturers,Defence PSUs and the Indian Armed Forces.It was conducted over the course of the 4 days of Shaastra 2020.
+      The Expo provided exposure to Defence Technology for the audience.`,
       image : EXHB6
     }
   ];

@@ -44,7 +44,9 @@ const Card = ({data}) =>{
               <Text className="cardtext" >{data.title}</Text>
               </Center>
               <Box className="overview" bg={Descriptionbg} color="#ffffff">
-              <Heading mb={2} p={3} >Description</Heading>
+              <Heading as={'h3'} mb={"3"} fontSize={"2xl"}>
+               {data.title}
+              </Heading>
               <Text as={"h4"} size={"4"} >{data.description}</Text>
             </Box>
             </Stack>

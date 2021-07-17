@@ -23,7 +23,7 @@ const Exhibitions = ()=>{
   const {ref,inView} = useInView();
   const animation = useAnimation();
   const CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
-  const Titlecolor = useColorModeValue("#0080ff","#00d0ff");
+  const Titlecolor = useColorModeValue("#1c72c7","#00d0ff");
 
   console.log(window.innerWidth)
   React.useEffect(()=>{
@@ -128,7 +128,7 @@ const Exhibitions = ()=>{
       </Container>
            
        
-      <Center>
+      <Center mb={5}>
       <VStack>
       <Heading
               fontWeight={300}
@@ -139,7 +139,7 @@ const Exhibitions = ()=>{
              >
               PREVIOUS EXHIBITIONS
             </Heading>
-      <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5}> 
+        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5}> 
         {
 
           exhibitions.map( (item,index) => {
