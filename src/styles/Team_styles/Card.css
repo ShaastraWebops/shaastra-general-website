@@ -57,6 +57,8 @@
 .Card .imageBox .profileDescription p {
   text-indent: 30px;
   position: relative;
+  text-align: justify;
+  height: 100%;
 }
 .Card .imageBox .profileDescription svg {
   position: absolute;
@@ -117,5 +119,5 @@
 .Card .profileCard div p {
   text-align: center;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
 }

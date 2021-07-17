@@ -8,10 +8,13 @@ import "../../../styles/Team_styles/Team.css";
 import Card from "./Card";
 import SliderImgBox from "./SliderImgBox";
 import photos from "./photos";
+import { FaFilter, FaTimes } from "react-icons/fa";
 
 interface Props {}
 
 const Team = (props: Props) => {
+  const colorTheme = useColorModeValue("light", "dark");
+
   const Logo = useColorModeValue(
     DiceOutlineDarkAnimated,
     DiceOutlineLightAnimated
@@ -31,6 +34,32 @@ const Team = (props: Props) => {
       },
       desc: "***NOT MY DESCRIPTION***\nI would suggest to remove this part, because this way it wont be a same template for everyone. The positions can give anyone fair bit of idea as to what is the role of that particular person.",
       imgURL: photos.be17b022,
+    },
+    {
+      mailId: "be19b012@smail.iitm.ac.in",
+      name: "Abhishek sv",
+      dept: "Webops",
+      social_links: {
+        instagram: "https://www.instagram.com/abhi_shx_25/",
+        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
+        shastraMailId: "abhisheksv@shaastra.org",
+        contact: "8300682565",
+      },
+      desc: "Being a part of shaastra is always like a ride in rollercoaster, fun and enjoyable. Being a part of this team meant everything to me , like I always say its never a bug, its always a undocumented feature.",
+      imgURL: photos.be19b012,
+    },
+    {
+      mailId: "be19b012@smail.iitm.ac.in",
+      name: "Shobham",
+      dept: "Webops",
+      social_links: {
+        instagram: "https://www.instagram.com/abhi_shx_25/",
+        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
+        shastraMailId: "abhisheksv@shaastra.org",
+        contact: "8300682565",
+      },
+      desc: "Being a part of shaastra is always like a ride in rollercoaster, fun and enjoyable. Being a part of this team meant everything to me , like I always say its never a bug, its always a undocumented feature.",
+      imgURL: photos.be19b012,
     },
     {
       mailId: "ce19b029@smail.iitm.ac.in",
@@ -55,7 +84,7 @@ const Team = (props: Props) => {
         shastraMailId: "rohit@shaastra.org",
         contact: "7020250404",
       },
-      desc: "Shaastra has always been special to me. The experience that I have had being in Shaastra will be cherished throughout my life.Meeting wonderful seniors,juniors and peers had made my time in Shaastra extremely special.",
+      desc: "Shaastra has always been special to me. The experience that I have had being in Shaastra will be cherished throughout my life. Meeting wonderful seniors,juniors and peers had made my time in Shaastra extremely special.",
       imgURL: photos.ed18b057,
     },
     {
@@ -282,195 +311,286 @@ const Team = (props: Props) => {
       desc: "Some parts of truth and a dash of pure lie makes the perfect lie.",
       imgURL: photos.ch18b037,
     },
-    {
-      mailId: "be19b012@smail.iitm.ac.in",
-      name: "Abhishek sv",
-      dept: "Webops",
-      social_links: {
-        instagram: "https://www.instagram.com/abhi_shx_25/",
-        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
-        shastraMailId: "abhisheksv@shaastra.org",
-        contact: "8300682565",
-      },
-      desc: "Being a part of shaastra is always like a ride in rollercoaster, fun and enjoyable. Being a part of this team meant everything to me , like I always say its never a bug, its always a undocumented feature.",
-      imgURL: photos.be19b012,
-    },
   ];
   let i = 0;
 
-  const [marker, setMarker] = React.useState({ width: "70px", left: "0px" });
-  const [navbarPosition, setNavbarPosition] = React.useState(0);
+  const [marker, setMarker] = React.useState({
+    top: window.innerWidth > 700 ? "44px" : "13px",
+  });
+
+  const [navbar, setNavbar] = React.useState(
+    window.innerWidth < 700 ? false : true
+  );
+
   const [type, setType] = React.useState("all");
+
+  const handleFilter = () => {
+    if (navbar) setNavbar(false);
+    else setNavbar(true);
+  };
 
   const handleClick = (e) => {
     setType(e.target.attributes[0].value);
-    if (window.innerWidth > 600) {
-      if (
-        e.target.offsetLeft - window.innerWidth / 1.5 > 0 &&
-        1725 > window.innerWidth
-      ) {
-        setNavbarPosition(-1 * (e.target.offsetLeft - window.innerWidth / 1.5));
-        console.log(navbarPosition);
-      } else {
-        setNavbarPosition(0);
-      }
-    }
     setMarker({
-      width: e.target.offsetWidth + "px",
-      left: e.target.offsetLeft + "px",
+      top: e.target.offsetTop + "px",
     });
   };
 
   return (
     <CustomBox>
-      <div className="ContentBox">
-        <h1>Meet Our Team</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, nam
-          accusantium laudantium alias blanditiis est quis temporibus quam illo
-          nisi eveniet odit ea ipsa beatae expedita iste quia tempore ratione!
-        </p>
-      </div>
-      <div className="imageContainer">
-        <div className="imageSlider">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
-            i += 4;
-            i = i % 22;
-
-            // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
-            // console.log(
-            //   Profiles[i],
-            //   Profiles[21 - i],
-            //   Profiles[(i + 4) % 22],
-            //   Profiles[(28 - i) % 22]
-            // );
-            return (
-              <>
-                <div className="col">
-                  <SliderImgBox profile={Profiles[i]} />
-                  <SliderImgBox profile={Profiles[(i + 1) % 22]} />
-                </div>
-              </>
-            );
-          })}
-          {
-            <div className="col">
-              <SliderImgBox profile={Profiles[11]} />
-              <SliderImgBox profile={Profiles[12]} />
-            </div>
-          }
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
-            i += 4;
-            i = i % 22;
-
-            // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
-            // console.log(
-            //   Profiles[i],
-            //   Profiles[21 - i],
-            //   Profiles[(i + 4) % 22],
-            //   Profiles[(28 - i) % 22]
-            // );
-            return (
-              <>
-                <div className="col">
-                  <SliderImgBox profile={Profiles[i]} />
-                  <SliderImgBox profile={Profiles[(i + 1) % 22]} />
-                </div>
-              </>
-            );
-          })}
-          {
-            <div className="col">
-              <SliderImgBox profile={Profiles[11]} />
-              <SliderImgBox profile={Profiles[12]} />
-            </div>
-          }
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
-            i += 4;
-            i = i % 22;
-
-            // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
-            // console.log(
-            //   Profiles[i],
-            //   Profiles[21 - i],
-            //   Profiles[(i + 4) % 22],
-            //   Profiles[(28 - i) % 22]
-            // );
-            return (
-              <>
-                <div className="col">
-                  <SliderImgBox profile={Profiles[i]} />
-                  <SliderImgBox profile={Profiles[(i + 1) % 22]} />
-                </div>
-              </>
-            );
-          })}
-          {
-            <div className="col">
-              <SliderImgBox profile={Profiles[11]} />
-              <SliderImgBox profile={Profiles[12]} />
-            </div>
-          }
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div className="ContentBox">
+          <h1>Meet Our Team</h1>
+          <p>
+            Meet the Men and Women who worked countless hours behind the scenes
+            to bring you the Spectacle, that is India's biggest
+            Techno-Managerial Fest.
+          </p>
         </div>
-      </div>
-      <div className="DetailCards">
-        <div
-          className="navbar"
-          style={{
-            left: navbarPosition + "px",
-          }}
-        >
-          <button onClick={handleClick} data-type="all">
-            All
-          </button>
-          <button
-            onClick={handleClick}
-            data-type="Co-Curricular Affairs Secretary"
-          >
-            Co-Curricular Affairs Secretary
-          </button>
-          <button onClick={handleClick} data-type="Concept & Design">
-            Concept & Design
-          </button>
-          <button onClick={handleClick} data-type="Envisage">
-            Envisage
-          </button>
-          <button onClick={handleClick} data-type="Events & Workshops">
-            Events & Workshops
-          </button>
-          <button onClick={handleClick} data-type="Evolve">
-            Evolve
-          </button>
-          <button onClick={handleClick} data-type="Finance">
-            Finance
-          </button>
-          <button onClick={handleClick} data-type="Publicity">
-            Publicity
-          </button>
-          <button
-            onClick={handleClick}
-            data-type="Operations & Infrastructure Planning"
-          >
-            Operations & Infrastructure Planning
-          </button>
-          <button onClick={handleClick} data-type="Quality Management System">
-            Quality Management System
-          </button>
-          <button onClick={handleClick} data-type="Shows & Exhibitions">
-            Shows & Exhibitions
-          </button>
-          <button onClick={handleClick} data-type="Sponsorship and PR">
-            Sponsorship and PR
-          </button>
-          <span
-            id="marker"
-            style={{ width: marker.width, left: marker.left }}
-          ></span>
+        <div className="imageContainer">
+          <div className="imageSlider">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
+              i += 4;
+              i = i % 22;
+
+              // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
+              // console.log(
+              //   Profiles[i],
+              //   Profiles[21 - i],
+              //   Profiles[(i + 4) % 22],
+              //   Profiles[(28 - i) % 22]
+              // );
+              return (
+                <>
+                  <div className="col">
+                    <SliderImgBox profile={Profiles[i]} />
+                    <SliderImgBox profile={Profiles[(i + 1) % 22]} />
+                  </div>
+                </>
+              );
+            })}
+            {
+              <div className="col">
+                <SliderImgBox profile={Profiles[22]} />
+                <SliderImgBox profile={Profiles[12]} />
+              </div>
+            }
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
+              i += 4;
+              i = i % 22;
+
+              // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
+              // console.log(
+              //   Profiles[i],
+              //   Profiles[21 - i],
+              //   Profiles[(i + 4) % 22],
+              //   Profiles[(28 - i) % 22]
+              // );
+              return (
+                <>
+                  <div className="col">
+                    <SliderImgBox profile={Profiles[i]} />
+                    <SliderImgBox profile={Profiles[(i + 1) % 22]} />
+                  </div>
+                </>
+              );
+            })}
+            {
+              <div className="col">
+                <SliderImgBox profile={Profiles[11]} />
+                <SliderImgBox profile={Profiles[22]} />
+              </div>
+            }
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
+              i += 4;
+              i = i % 22;
+
+              // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
+              // console.log(
+              //   Profiles[i],
+              //   Profiles[21 - i],
+              //   Profiles[(i + 4) % 22],
+              //   Profiles[(28 - i) % 22]
+              // );
+              return (
+                <>
+                  <div className="col">
+                    <SliderImgBox profile={Profiles[i]} />
+                    <SliderImgBox profile={Profiles[(i + 1) % 22]} />
+                  </div>
+                </>
+              );
+            })}
+            {
+              <div className="col">
+                <SliderImgBox profile={Profiles[22]} />
+                <SliderImgBox profile={Profiles[12]} />
+              </div>
+            }
+          </div>
         </div>
-        <div className="CardBox">
-          {Profiles.map((profile) => {
-            return <Card type={type} profile={profile} />;
-          })}
+        <div className={`DetailCards ${colorTheme}`}>
+          {navbar ? (
+            <button
+              onClick={handleFilter}
+              className="FilterBtn"
+              style={{ backgroundColor: "crimson" }}
+            >
+              <FaTimes /> CLOSE
+            </button>
+          ) : (
+            <button onClick={handleFilter} className="FilterBtn">
+              <FaFilter /> FILTER
+            </button>
+          )}
+          <div
+            className="navbar"
+            style={{
+              display: navbar ? "flex" : "none",
+            }}
+          >
+            <button
+              style={{
+                color: type === "all" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="all"
+            >
+              All
+            </button>
+            <button
+              style={{
+                color:
+                  type === "Co-Curricular Affairs Secretary" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Co-Curricular Affairs Secretary"
+            >
+              Co-Curricular Affairs Secretary
+            </button>
+            <button
+              style={{
+                color: type === "Webops" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Webops"
+            >
+              Webops
+            </button>
+            <button
+              style={{
+                color: type === "Concept & Design" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Concept & Design"
+            >
+              Concept & Design
+            </button>
+            <button
+              style={{
+                color: type === "Envisage" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Envisage"
+            >
+              Envisage
+            </button>
+            <button
+              style={{
+                color: type === "Events & Workshops" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Events & Workshops"
+            >
+              Events & Workshops
+            </button>
+            <button
+              style={{
+                color: type === "Evolve" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Evolve"
+            >
+              Evolve
+            </button>
+            <button
+              style={{
+                color: type === "Finance" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Finance"
+            >
+              Finance
+            </button>
+            <button
+              style={{
+                color: type === "Publicity" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Publicity"
+            >
+              Publicity
+            </button>
+            <button
+              style={{
+                color:
+                  type === "Operations & Infrastructure Planning"
+                    ? "#000"
+                    : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Operations & Infrastructure Planning"
+            >
+              Operations & Infrastructure Planning
+            </button>
+            <button
+              style={{
+                color: type === "Quality Management System" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Quality Management System"
+            >
+              Quality Management System
+            </button>
+            <button
+              style={{
+                color: type === "Shows & Exhibitions" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Shows & Exhibitions"
+            >
+              Shows & Exhibitions
+            </button>
+            <button
+              style={{
+                color: type === "Sponsorship and PR" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Sponsorship and PR"
+            >
+              Sponsorship and PR
+            </button>
+            <span
+              id="marker"
+              style={{
+                top: marker.top,
+              }}
+            >
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div className="CardBox">
+            {Profiles.map((profile) => {
+              return <Card type={type} profile={profile} />;
+            })}
+          </div>
         </div>
       </div>
     </CustomBox>
