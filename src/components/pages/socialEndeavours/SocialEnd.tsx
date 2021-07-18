@@ -8,7 +8,7 @@ import Events from "./script"
 
 import { Image, Grid, GridItem, useColorModeValue } from "@chakra-ui/react";
 
-import moeOne from "../../../images/socialEndeavours/moeOne.png"
+import moeOne from "../../../images/socialEndeavours/moeOne.png";
 import dtnext from "../../../images/socialEndeavours/dtnext.png"
 import blinkOne from "../../../images/socialEndeavours/blinkOne.jpg"
 import blinkTwo from "../../../images/socialEndeavours/blinkTwo.jpg"

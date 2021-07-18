@@ -28,6 +28,7 @@ html{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    padding-bottom: 20px;
     box-sizing: border-box;
     position: relative;
     /* color: var(--pink); */
@@ -129,6 +130,10 @@ b{
     font-size: 1.188vw;
     padding: 2rem 4rem;
     justify-content: space-between;
+}
+
+.section-link a:hover{
+    color: var(--blue);
 }
 
 @media only screen and (max-width: 1050px)
