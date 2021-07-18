@@ -1,5 +1,5 @@
 /* she can */
-#she-can .dblue{
+/* #she-can .dblue{
     color: var(--dblue);
 }
 #she-can .dblue:hover{
@@ -234,7 +234,7 @@
         font-size: 15px;
     }
 } */
-@media screen and (max-width: 800px)
+/* @media screen and (max-width: 800px)
 {
     .she-can{
         margin: 0%;
@@ -245,7 +245,7 @@
         flex-direction: column;
         row-gap: 8rem;
         /* margin: 0 auto; */
-        margin: 0;
+        /* margin: 0;
         align-items: center;
     }
     .wrap{
@@ -277,7 +277,7 @@
         text-align: center;
         margin: 0%;
         /* padding: 2rem; */
-        padding: 15vw 8vw;
+        /* padding: 15vw 8vw;
     }
     .she-can-backdiv{
         width: 100%;
@@ -286,8 +286,8 @@
         padding: 1vw;
         margin: 18vw 0;
         margin-bottom: 5vw;
-    }
-    .recog-heading{
+    } */
+    /* .recog-heading{
         margin: 5vw auto;
         padding: 0%;
         font-size: 12vw;
@@ -317,8 +317,8 @@
     .info p:nth-child(odd){
         font-size: 10vw;
         line-height: 12vw;
-    }
-    .moe{
+    } */
+    /* .moe{
         flex-direction: column;
         align-items: center;
     }
@@ -327,8 +327,8 @@
     }
     .she-can-logo{
         width: 100%;
-    }
-}
+    } */
+/* } */ 
 /* @media screen and (max-width: 600px)
 {
     .info{

@@ -1,9 +1,9 @@
-#past{
+/* #past{
     /* background-image: url("../../images/socialEndeavours/pastBg.jpg"); */
     /* padding: 4rem; */
     margin: 0;
     overflow: hidden;
-}
+/* }
 #past .darkblue
 {
     background-color: var(--brown);
@@ -47,8 +47,8 @@
 }
 .campaigns-child:first-child .info{
     width: 50%;
-}
-.even .info{
+} */
+/* .even .info{
     z-index: 5;
     width: 80%;
     margin-left: 15vw;
@@ -222,11 +222,11 @@
     }
     .campaigns-child:first-child p{
         margin: 6vw;
-    }
-}
-@media screen and (max-width: 1050px)
+    } */
+} */
+/* @media screen and (max-width: 1050px)
 {
     .even{
         margin-right: 0vw;
     }
-}
+} */
