@@ -25,8 +25,8 @@ function EventsHome() {
 
 
   return (
-    <Box overflowX='hidden' maxWidth='100%' height='100vh'>
-    <CustomBox>  
+    <Box overflowX='hidden' maxWidth='100%'>
+    <CustomBox> 
         <Center h='300px'>
           <Heading
           fontWeight={600}
@@ -86,7 +86,7 @@ function EventsHome() {
           flexDirection="column"
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }} marginRight={8}>
-          <Heading marginTop="1" textAlign='center'>
+          <Heading marginTop="1" textAlign='center' color={'yellow.400'}>
            Events
           </Heading>
           <Text textAlign = 'center'
@@ -99,7 +99,10 @@ function EventsHome() {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </Text>
-            <Text fontSize="2xl" textAlign='center' marginTop={8}><Link as={ReachLink} to="/events">Explore Events</Link></Text>
+            <Text fontSize="2xl" textAlign='center' marginTop={8}  
+           _hover={{
+               color: "teal.500",
+  }}><Link as={ReachLink} to="/events">Explore Events</Link></Text>
           </Box>
       </Box>
       {/*Workshops*/}
@@ -146,7 +149,7 @@ function EventsHome() {
           flexDirection="column"
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }} marginRight={8}>
-          <Heading marginTop="1" textAlign='center'>
+          <Heading marginTop="1" textAlign='center' color={'yellow.400'}>
            Workshops
           </Heading>
           <Text
@@ -159,7 +162,10 @@ function EventsHome() {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </Text>
-            <Text fontSize="2xl" textAlign='center' marginTop={8}><Link as={ReachLink} to="/workshops">Explore Workshops</Link></Text>
+            <Text fontSize="2xl" textAlign='center' marginTop={8}  _hover={{
+               color: "teal.500",
+              }}><Link as={ReachLink} to="/workshops"
+            >Explore Workshops</Link></Text>
           </Box>
       </Box>
       {/*Summit*/}
@@ -204,7 +210,7 @@ function EventsHome() {
           flexDirection="column"
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }} marginRight={8}>
-          <Heading marginTop="1" textAlign='center'>
+          <Heading marginTop="1" textAlign='center' color={'yellow.400'}>
            Summit
           </Heading>
           <Text
@@ -218,7 +224,10 @@ function EventsHome() {
              which include college students, personnel from startups and professionals are ensured to
             get an all-round experience. Every year Summit ventures into a unique and relevant theme to contribute to the developments in these fields of technology and to create an impact on society. 
           </Text>
-            <Text fontSize="2xl" textAlign='center' marginTop={8}><Link as={ReachLink} to="/summit">Explore Summit</Link></Text>
+            <Text fontSize="2xl" textAlign='center' marginTop={8}  _hover={{
+               color: "teal.500",
+  }}><Link as={ReachLink} to="/summit"
+           >Explore Summit</Link></Text>
           </Box>
       </Box>
       {/*Tif*/}
@@ -263,7 +272,7 @@ function EventsHome() {
           flexDirection="column"
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }} marginRight={8}>
-          <Heading marginTop="1" textAlign='center'>
+          <Heading marginTop="1" textAlign='center' color={'yellow.400'}>
            Tech and Innovation Fair
           </Heading>
           <Text
@@ -275,11 +284,14 @@ function EventsHome() {
             platform to develop tech based projects and enhance their potential to grow into a  commercial product. TIF envisions
             leveraging IIT Madras’s rich startup ecosystem in its mission to promote innovation and address the dearth of hardcore tech startups in India
           </Text>
-            <Text fontSize="2xl" textAlign='center' marginTop={8}><Link as={ReachLink} to="/tif">Explore TIF</Link></Text>
+            <Text fontSize="2xl" textAlign='center' marginTop={8} _hover={{
+               color: "teal.500",
+  }}><Link as={ReachLink} to="/tif" 
+            >Explore TIF</Link></Text>
           </Box>
       </Box>
      </VStack>
-    </CustomBox>
+     </CustomBox>
     </Box>
   )
 }
