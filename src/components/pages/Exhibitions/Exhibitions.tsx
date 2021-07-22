@@ -25,7 +25,6 @@ const Exhibitions = ()=>{
   const CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
   const Titlecolor = useColorModeValue("#1c72c7","#00d0ff");
 
-  console.log(window.innerWidth)
   React.useEffect(()=>{
 
     if(inView){
@@ -48,16 +47,16 @@ const Exhibitions = ()=>{
 
   }, [inView] )
 
-  const prevSlide = ()=>{
-        setCurrent(current ===0 ? length-1 : current-1);
-  }
-  const nextSlide = ()=>{
-    setCurrent(current === length-1 ? 0 : current+1);
-  }
+  // const prevSlide = ()=>{
+  //       setCurrent(current ===0 ? length-1 : current-1);
+  // }
+  // const nextSlide = ()=>{
+  //   setCurrent(current === length-1 ? 0 : current+1);
+  // }
 
     return(
       <CustomBox>
-       <Container maxW={'7xl'} >
+       <Container maxW={'7xl'} className="AboutUsContainer">
         <div className="App-particles__container">
         <ParticlesBg color={"#4492b3"} num={150} type="cobweb" bg={true}/>
         </div>
@@ -69,7 +68,7 @@ const Exhibitions = ()=>{
             animate = {"final"}
             variants={Titlevariants}
             className = "Title"
-             color={Titlecolor}> EXHIBITIONS </MotionText>
+            color={Titlecolor}> EXHIBITIONS </MotionText>
           </Center>
   
           </Heading>
@@ -77,7 +76,7 @@ const Exhibitions = ()=>{
           align={'center'}
           spacing={{ base: 8, md: 10 }}
           my={5} p={15}
-          direction={{ base: 'column', md: 'row' }}>
+          direction={{ base: 'column-reverse', md: 'row' }}>
 
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
 
@@ -108,6 +107,7 @@ const Exhibitions = ()=>{
               animate = {"visible"}
               variants = {AboutusVariants}
                height={["full","300px"]}
+               width ={["full","90%"]}
               rounded={'2xl'}
               boxShadow={'2xl'}
               overflow={'hidden'}
@@ -115,7 +115,7 @@ const Exhibitions = ()=>{
               >
               <Image
                 alt={'Hero Image'}
-                fit={'cover'}
+                fit={"cover"}
                 align={'center'}
                 w={'100%'}
                 h={'100%'}
@@ -127,11 +127,10 @@ const Exhibitions = ()=>{
 
       </Container>
            
-       
       <Center mb={5}>
       <VStack>
       <Heading
-              fontWeight={300}
+              fontWeight={500}
               fontSize={"3xl"}
                m={[2,5]} 
               className = "Title"
@@ -139,7 +138,7 @@ const Exhibitions = ()=>{
              >
               PREVIOUS EXHIBITIONS
             </Heading>
-        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5}> 
+        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5} pb={20}> 
         {
 
           exhibitions.map( (item,index) => {

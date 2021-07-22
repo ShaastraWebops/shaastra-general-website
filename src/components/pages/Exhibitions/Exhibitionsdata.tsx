@@ -101,8 +101,8 @@ export const exhibitions : exhibitions[] =[
       id:"5",
       year : "2020",
       title:"Defence Expo",
-      description:`The Defence Expo was an exhibition of the products of nascent defence technology start-ups,
-      established manufacturers,Defence PSUs and the Indian Armed Forces.It was conducted over the course of the 4 days of Shaastra 2020.
+      description:`The Defence Expo was an exhibition of the products of nascent defence technology start-ups,established
+      manufacturers,Defence PSUs and the Indian Armed Forces.It was conducted over the course of the 4 days of Shaastra 2020.
       The Expo provided exposure to Defence Technology for the audience.`,
       image : EXHB6
     }
