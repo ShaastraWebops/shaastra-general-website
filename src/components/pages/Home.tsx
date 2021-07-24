@@ -10,8 +10,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
-import "swiper/swiper-bundle"
-import "swiper/swiper-bundle.esm.browser"
+import "swiper/swiper-bundle";
+import "swiper/swiper-bundle.esm.browser";
 import { Link } from "react-router-dom";
 import atkins from "../../images/Peter_Atkins.jpg";
 import shaastra_juniors from "../../images/shaastra_juniors.png";
@@ -27,47 +27,67 @@ const Home = (props: Props) => {
     DiceOutlineLightAnimated
   );
   // const color = useColorModeValue("secondary", "link")
-  const plain = useColorModeValue("black", "white")
+  const plain = useColorModeValue("black", "white");
 
-  const [sideNavBar_marker, setSideNavBar_marker] =
-    React.useState("calc(200px / 6)");
+  const [sideNavBar_marker, setSideNavBar_marker] = React.useState(
+    window.innerWidth > 600 ? 200 / 6 : (window.innerWidth - 150) / 6 - 5
+  );
 
   const update_sidenav_marker = (e) => {
-    // console.log(e);
-    //  (e.target.scrollTop / 720)*
-    setTimeout(() => {}, 500);
-    if (e.target.scrollTop < window.innerHeight - 20 && e.target.scrollTop >= 0)
-      setSideNavBar_marker(
-        `calc(calc(200px / 6) + 0*calc(calc(200px / 6) + 30px))`
-      );
-    else if (
+    var screenWidthSpacing = (window.innerWidth - 150) / 6;
+
+    if (
+      e.target.scrollTop < window.innerHeight - 20 &&
+      e.target.scrollTop >= 0
+    ) {
+      console.log(window.innerWidth);
+      if (window.innerWidth > 600) {
+        console.log("600+");
+        setSideNavBar_marker(200 / 6 + 0 * (200 / 6 + 30));
+      } else {
+        console.log("600-");
+        setSideNavBar_marker(screenWidthSpacing - 5);
+      }
+    } else if (
       e.target.scrollTop < 2 * window.innerHeight - 20 &&
       e.target.scrollTop >= window.innerHeight - 20
     )
-      setSideNavBar_marker(
-        `calc(calc(200px / 6) + 1*calc(calc(200px / 6) + 30px))`
-      );
+      if (window.innerWidth > 600)
+        setSideNavBar_marker(200 / 6 + 1 * (200 / 6 + 30));
+      else
+        setSideNavBar_marker(
+          screenWidthSpacing - 5 + 1 * (screenWidthSpacing + 30)
+        );
     else if (
       e.target.scrollTop < 3 * window.innerHeight - 20 &&
       e.target.scrollTop >= 2 * window.innerHeight - 20
     )
-      setSideNavBar_marker(
-        `calc(calc(200px / 6) + 2*calc(calc(200px / 6) + 30px))`
-      );
+      if (window.innerWidth > 600)
+        setSideNavBar_marker(200 / 6 + 2 * (200 / 6 + 30));
+      else
+        setSideNavBar_marker(
+          screenWidthSpacing - 5 + 2 * (screenWidthSpacing + 30)
+        );
     else if (
       e.target.scrollTop < 4 * window.innerHeight - 20 &&
       e.target.scrollTop >= 3 * window.innerHeight - 20
     )
-      setSideNavBar_marker(
-        `calc(calc(200px / 6) + 3*calc(calc(200px / 6) + 30px))`
-      );
+      if (window.innerWidth > 600)
+        setSideNavBar_marker(200 / 6 + 3 * (200 / 6 + 30));
+      else
+        setSideNavBar_marker(
+          screenWidthSpacing - 5 + 3 * (screenWidthSpacing + 30)
+        );
     else if (
       e.target.scrollTop < 5 * window.innerHeight - 20 &&
       e.target.scrollTop >= 4 * window.innerHeight - 20
     )
-      setSideNavBar_marker(
-        `calc(calc(200px / 6) + 4*calc(calc(200px / 6) + 30px))`
-      );
+      if (window.innerWidth > 600)
+        setSideNavBar_marker(200 / 6 + 4 * (200 / 6 + 30));
+      else
+        setSideNavBar_marker(
+          screenWidthSpacing - 5 + 4 * (screenWidthSpacing + 30)
+        );
   };
 
   const speaker_navigationPrevRef = React.useRef(null);
@@ -83,9 +103,15 @@ const Home = (props: Props) => {
         <div className={`Home_sideNavBar ${plain}`}>
           <span
             className="Home_sideNavBar_marker"
-            style={{
-              top: sideNavBar_marker,
-            }}
+            style={
+              window.innerWidth > 600
+                ? {
+                    top: sideNavBar_marker,
+                  }
+                : {
+                    left: sideNavBar_marker,
+                  }
+            }
           ></span>
           <a href="#landing_page">
             <span>01</span>
@@ -103,7 +129,7 @@ const Home = (props: Props) => {
             <span>05</span>
           </a>
         </div>
-        <section id="landing_page" className="Home_landingPage">
+        <section id="landing_page" className={`Home_landingPage ${plain}`}>
           <div className="ContentBox">
             <h1>SHAASTRA 2022</h1>
             <p>
@@ -136,22 +162,29 @@ const Home = (props: Props) => {
           </div>
         </section>
         <section id="who_are_we" className="Home_whoAreWe">
-        <div id="heading">
-            WHO ARE WE?
-          </div>
+          <h1 id="heading">WHO ARE WE?</h1>
           <div id="text">
-          Shaastra is the annual technical festival of the Indian Institute of Technology Madras (IITM), Chennai, India. 
-          <br /><br />
-          The Sanskrit word ‘Shaastra’ means science and the festival accordingly consists of various engineering, science, 
-          and technology competitions, summits, lectures, video conferences, exhibitions, demonstrations, and workshops. The 
-          festival is traditionally held over four days and four nights during the first week of January. It has so far seen 
-          twenty-one editions, having started in its current avatar in the year 2000. 
-          <br /><br />
-          Shaastra is entirely student-managed 
-          and is the first such event in the world to be ISO 9001:2015 certified.
+            Shaastra is the annual technical festival of the Indian Institute of
+            Technology Madras (IITM), Chennai, India.
+            <br />
+            <br />
+            The Sanskrit word ‘Shaastra’ means science and the festival
+            accordingly consists of various engineering, science, and technology
+            competitions, summits, lectures, video conferences, exhibitions,
+            demonstrations, and workshops. The festival is traditionally held
+            over four days and four nights during the first week of January. It
+            has so far seen twenty-one editions, having started in its current
+            avatar in the year 2000.
+            <br />
+            <br />
+            Shaastra is entirely student-managed and is the first such event in
+            the world to be ISO 9001:2015 certified.
           </div>
         </section>
-        <section id="workshop_events" className="Home_WorkshopsEvents">
+        <section
+          id="workshop_events"
+          className={`Home_WorkshopsEvents ${plain}`}
+        >
           <h1>WORKSHOP & EVENTS</h1>
           <div className="speaker_swiper_container">
             <Swiper
@@ -162,48 +195,79 @@ const Home = (props: Props) => {
               }}
               loop={true}
               pagination={{ el: events_paginationRef.current, clickable: true }}
-              breakpoints={{
-                200: {
-                  slidesPerView: 1
-                },
-                850: {
-                  slidesPerView: 4
-                }
-              }}
+              slidesPerView={window.innerWidth > 600 ? "auto" : 1}
+              // breakpoints={{
+              //   200: {
+              //     slidesPerView: 1,
+              //   },
+              //   850: {
+              //     slidesPerView: 4,
+              //   },
+              // }}
             >
               <SwiperSlide>
                 <img src={shaastra_juniors} alt="" />
                 <div className="contentBox">
                   <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Doloribus voluptatum ipsam, velit aperiam similique,
+                    recusandae impedit quo nemo iste harum dolorum molestias ea
+                    veniam sed reprehenderit quisquam autem at sit.
+                  </p>
+                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={shaastra_juniors} alt="" />
                 <div className="contentBox">
                   <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Doloribus voluptatum ipsam, velit aperiam similique,
+                    recusandae impedit quo nemo iste harum dolorum molestias ea
+                    veniam sed reprehenderit quisquam autem at sit.
+                  </p>
+                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={shaastra_juniors} alt="" />
                 <div className="contentBox">
                   <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Doloribus voluptatum ipsam, velit aperiam similique,
+                    recusandae impedit quo nemo iste harum dolorum molestias ea
+                    veniam sed reprehenderit quisquam autem at sit.
+                  </p>
+                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={shaastra_juniors} alt="" />
                 <div className="contentBox">
                   <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Doloribus voluptatum ipsam, velit aperiam similique,
+                    recusandae impedit quo nemo iste harum dolorum molestias ea
+                    veniam sed reprehenderit quisquam autem at sit.
+                  </p>
+                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={shaastra_juniors} alt="" />
                 <div className="contentBox">
                   <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Doloribus voluptatum ipsam, velit aperiam similique,
+                    recusandae impedit quo nemo iste harum dolorum molestias ea
+                    veniam sed reprehenderit quisquam autem at sit.
+                  </p>
+                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -235,11 +299,11 @@ const Home = (props: Props) => {
               }}
               breakpoints={{
                 200: {
-                  slidesPerView: 1
+                  slidesPerView: 1,
                 },
                 850: {
-                  slidesPerView: 4
-                }
+                  slidesPerView: 4,
+                },
               }}
             >
               <SwiperSlide>
@@ -293,7 +357,7 @@ const Home = (props: Props) => {
           </div>
           <Link to="/">SEE MORE</Link>
         </section>
-        <section id="testimonials" className="Home_Testimonials">
+        <section id="testimonials" className={`Home_Testimonials ${plain}`}>
           <h1>TESTIMONIALS</h1>
           <div className={`testimonial_card_container ${plain}`}>
             <div className={`testimonialWrapper ${plain}`}>
