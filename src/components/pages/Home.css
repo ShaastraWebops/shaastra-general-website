@@ -30,6 +30,9 @@
   border-radius: 4px;
   z-index: 0;
 }
+.black::before{
+  background-color: black;
+}
 .Home_sideNavBar .Home_sideNavBar_marker {
   position: absolute;
   left: -1px;
@@ -75,6 +78,9 @@
   background: #0e101b;
   z-index: 0;
 }
+.black a::before{
+  background-color: white;
+}
 section {
   width: 100%;
   height: 100vh;
@@ -82,6 +88,12 @@ section {
   position: relative;
   scroll-snap-align: start;
   padding-left: 150px;
+}
+@media screen and (max-width: 500px)
+{
+  .Home_sideNavBar{
+    left: 2vw;
+  }
 }
 /* Home_landingPage */
 .Home_landingPage {
@@ -162,8 +174,68 @@ section {
     transform: translateY(-5);
   }
 }
+@media screen and (max-width: 1200px)
+{
+  /* .Home_landingPage h1{
+    font-size: 25vw;
+  } */
+  .Home_landingPage .ContentBox p{
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width:800px)
+{
+    .Home_landingPage{
+        padding-right: 8vw;
+    }
+    .Home_landingPage h1{
+        /* line-height: 10vw; */
+        margin-bottom: 2vw;
+    }
+}
+@media screen and (max-width:600px)
+{
+    .Home_landingPage{
+        padding-left: 20vw;
+    }
+    .Home_landingPage .ContentBox h1{
+      line-height: 15vw;
+    }
+    .Home_landingPage .Follow{
+      bottom: 20vw;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    .Home_landingPage{
+      padding-left: 12vw;
+    }
+    .Home_landingPage .ContentBox h1{
+      letter-spacing: 2px;
+      font-size: 15vw;
+    }
+    .Home_landingPage .Follow{
+      bottom: 30vw;
+    }
+}
+@media screen and (max-width: 350px)
+{
+  .Home_landingPage{
+    padding-left: 14vw;
+  }
+  .Home_landingPage .ContentBox p{
+    font-size: 4vw;
+  }
+}
+@media screen and (max-width:300px) {
+  .Home_landingPage .Follow{
+    left: 10vw;
+    bottom: 35vw;
+    width: 100%;
+  }
+}
 /* Home_whoAreWe */
-.Home_whoAreWe {
+/* .Home_whoAreWe {
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 1) 0%,
@@ -188,8 +260,88 @@ section {
   letter-spacing: 1px;
   max-width: 700px;
   margin: 40px 0;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.Home_whoAreWe{
+    margin: 0%;
+    padding: 0%;
+    width: 100vw;
+    padding: 10px 0;
+    overflow-x: hidden;
 }
-
+.Home_whoAreWe{
+    padding-top: 5vw;
+    background-image: url("../../images/whoAreWeBg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.Home_whoAreWe #heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vw;
+    font-weight: bold;
+    text-align: center;
+}
+.Home_whoAreWe #text{
+    width: 55%;
+    text-align: center;
+    font-size: 1.5vw;
+    padding-bottom: 8vw;
+    margin: 6vw auto;
+}
+@media screen and (max-width: 1000px)
+{
+  .Home_whoAreWe{
+    padding-top: 30vh;
+  }
+  .Home_whoAreWe #heading{
+    font-size: 6vw;
+  }
+  .Home_whoAreWe #text{
+    font-size: 3vw;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 800px)
+{
+  .Home_whoAreWe{
+    padding-top:10vh;
+  }
+    .Home_whoAreWe #text{
+        font-size: 3vw;
+        width: 80%;
+    }
+}
+@media screen and (max-width:600px)
+{
+    .Home_whoAreWe{
+        padding-top: 14vh;
+    }
+    .Home_whoAreWe #heading{
+        font-size: 7vw;
+    }
+    .Home_whoAreWe #text{
+        width: 70%;
+        font-size: 3vw;
+    }
+}
+@media screen and (max-width:450px)
+{
+  .Home_whoAreWe{
+    padding: 15vh 0;
+  }
+    .Home_whoAreWe #heading{
+        font-size: 9vw;
+        margin-left: 4vw;
+    }
+    .Home_whoAreWe #text{
+      margin-left: 4vw;
+      text-align: left;
+      font-size: 4vw;
+        width: 100%;
+        padding: 8vw;
+    }
+}
 /* Home_WorkshopsEvents and Home_Speakers */
 .Home_Speakers,
 .Home_WorkshopsEvents {
@@ -349,6 +501,24 @@ section {
 .Home_WorkshopsEvents a:hover {
   letter-spacing: 2px;
 }
+.Home_Speakers .black{
+  color: white;
+}
+@media screen and (max-width: 500px)
+{
+  .Home_Speakers h1, .Home_WorkshopsEvents h1{
+    font-size: 8vw;
+    margin-top: 5vw;
+  }
+  .speaker_swiper_container{
+    padding: 2vw;
+    width: 100%;
+  }
+  .swiper-slide{
+    width: 100%;
+    margin-right: 0%;
+  }
+}
 /* Home_Testimonials */
 .Home_Testimonials {
   display: flex;
@@ -497,4 +667,36 @@ section {
   margin-right: 15px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
+}
+.Home_Testimonials .black{
+  color: white;
+}
+.Home_Testimonials .testimonial_card_container .black::before
+{
+  border-color: black;
+}
+.Home_Testimonials
+  .testimonialWrapper
+  .testimonial_card_cover
+  .black:after
+  {
+    border-color: black;
+  }
+  .Home_Testimonials
+  .testimonialWrapper
+  .testimonial_card_cover
+  .black:before {
+    background-color: black;
+  }
+@media screen and (max-width: 600px)
+{
+  .Home_Testimonials {
+    padding-left: 10vw;
+  }
+}
+@media screen and (max-width: 400px)
+{
+  .Home_Testimonials h1{
+    font-size: 10vw;
+  }
 }

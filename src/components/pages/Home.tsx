@@ -10,6 +10,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
+import "swiper/swiper-bundle"
+import "swiper/swiper-bundle.esm.browser"
 import { Link } from "react-router-dom";
 import atkins from "../../images/Peter_Atkins.jpg";
 import shaastra_juniors from "../../images/shaastra_juniors.png";
@@ -25,6 +27,7 @@ const Home = (props: Props) => {
     DiceOutlineLightAnimated
   );
   // const color = useColorModeValue("secondary", "link")
+  const plain = useColorModeValue("black", "white")
 
   const [sideNavBar_marker, setSideNavBar_marker] =
     React.useState("calc(200px / 6)");
@@ -77,7 +80,7 @@ const Home = (props: Props) => {
   return (
     <CustomBox>
       <div onScroll={update_sidenav_marker} className="Home">
-        <div className="Home_sideNavBar">
+        <div className={`Home_sideNavBar ${plain}`}>
           <span
             className="Home_sideNavBar_marker"
             style={{
@@ -133,37 +136,40 @@ const Home = (props: Props) => {
           </div>
         </section>
         <section id="who_are_we" className="Home_whoAreWe">
-          <h1>WHO ARE WE ?</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est autem
-            eos ad corporis modi quia voluptatum iure amet, necessitatibus vitae
-            dolores impedit ex fugiat itaque. Molestiae quia labore vitae
-            assumenda. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Est autem eos ad corporis modi quia voluptatum iure amet,
-            necessitatibus vitae dolores impedit ex fugiat itaque. Molestiae
-            quia labore vitae assumenda. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Est autem eos ad corporis modi quia voluptatum
-            iure amet, necessitatibus vitae dolores impedit ex fugiat itaque.
-            Molestiae quia labore vitae assumenda. Est autem eos ad corporis
-            modi quia voluptatum iure amet, necessitatibus vitae dolores impedit
-            ex fugiat itaque. Molestiae quia labore vitae assumenda. Est autem
-            eos ad corporis modi quia voluptatum iure amet, necessitatibus vitae
-            dolores impedit ex fugiat itaque. Molestiae quia labore vitae
-            assumenda.
-          </p>
+        <div id="heading">
+            WHO ARE WE?
+          </div>
+          <div id="text">
+          Shaastra is the annual technical festival of the Indian Institute of Technology Madras (IITM), Chennai, India. 
+          <br /><br />
+          The Sanskrit word ‘Shaastra’ means science and the festival accordingly consists of various engineering, science, 
+          and technology competitions, summits, lectures, video conferences, exhibitions, demonstrations, and workshops. The 
+          festival is traditionally held over four days and four nights during the first week of January. It has so far seen 
+          twenty-one editions, having started in its current avatar in the year 2000. 
+          <br /><br />
+          Shaastra is entirely student-managed 
+          and is the first such event in the world to be ISO 9001:2015 certified.
+          </div>
         </section>
         <section id="workshop_events" className="Home_WorkshopsEvents">
           <h1>WORKSHOP & EVENTS</h1>
           <div className="speaker_swiper_container">
             <Swiper
               spaceBetween={50}
-              slidesPerView={4}
               navigation={{
                 prevEl: events_navigationPrevRef.current,
                 nextEl: events_navigationNextRef.current,
               }}
               loop={true}
               pagination={{ el: events_paginationRef.current, clickable: true }}
+              breakpoints={{
+                200: {
+                  slidesPerView: 1
+                },
+                850: {
+                  slidesPerView: 4
+                }
+              }}
             >
               <SwiperSlide>
                 <img src={shaastra_juniors} alt="" />
@@ -213,12 +219,11 @@ const Home = (props: Props) => {
           </div>
           <Link to="/">SEE MORE</Link>
         </section>
-        <section id="speakers" className="Home_Speakers">
-          <h1>SPEAKERS</h1>
-          <div className="speaker_swiper_container">
+        <section id="speakers" className={`Home_Speakers`}>
+          <h1 className={`${plain}`}>SPEAKERS</h1>
+          <div className={`speaker_swiper_container`}>
             <Swiper
               spaceBetween={50}
-              slidesPerView={4}
               navigation={{
                 prevEl: speaker_navigationPrevRef.current,
                 nextEl: speaker_navigationNextRef.current,
@@ -227,6 +232,14 @@ const Home = (props: Props) => {
               pagination={{
                 el: speaker_paginationRef.current,
                 clickable: true,
+              }}
+              breakpoints={{
+                200: {
+                  slidesPerView: 1
+                },
+                850: {
+                  slidesPerView: 4
+                }
               }}
             >
               <SwiperSlide>
@@ -282,10 +295,10 @@ const Home = (props: Props) => {
         </section>
         <section id="testimonials" className="Home_Testimonials">
           <h1>TESTIMONIALS</h1>
-          <div className="testimonial_card_container">
-            <div className="testimonialWrapper">
+          <div className={`testimonial_card_container ${plain}`}>
+            <div className={`testimonialWrapper ${plain}`}>
               <div className="testimonial_card_cover">
-                <div className="testimonial_card">
+                <div className={`testimonial_card ${plain}`}>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Porro, doloremque odio? Perferendis quibusdam ut unde quo
@@ -302,7 +315,7 @@ const Home = (props: Props) => {
                 </div>
               </div>
               <div className="testimonial_card_cover">
-                <div className="testimonial_card">
+                <div className={`testimonial_card ${plain}`}>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Porro, doloremque odio? Perferendis quibusdam ut unde quo
@@ -319,7 +332,7 @@ const Home = (props: Props) => {
                 </div>
               </div>
               <div className="testimonial_card_cover">
-                <div className="testimonial_card">
+                <div className={`testimonial_card ${plain}`}>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Porro, doloremque odio? Perferendis quibusdam ut unde quo
@@ -336,7 +349,7 @@ const Home = (props: Props) => {
                 </div>
               </div>
               <div className="testimonial_card_cover">
-                <div className="testimonial_card">
+                <div className={`testimonial_card ${plain}`}>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Porro, doloremque odio? Perferendis quibusdam ut unde quo
@@ -353,7 +366,7 @@ const Home = (props: Props) => {
                 </div>
               </div>
               <div className="testimonial_card_cover">
-                <div className="testimonial_card">
+                <div className={`testimonial_card ${plain}`}>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Porro, doloremque odio? Perferendis quibusdam ut unde quo
@@ -370,7 +383,7 @@ const Home = (props: Props) => {
                 </div>
               </div>
               <div className="testimonial_card_cover">
-                <div className="testimonial_card">
+                <div className={`testimonial_card ${plain}`}>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Porro, doloremque odio? Perferendis quibusdam ut unde quo
