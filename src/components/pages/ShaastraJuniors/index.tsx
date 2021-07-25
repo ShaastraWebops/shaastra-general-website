@@ -39,23 +39,23 @@ const ShaastraJuniorsPage = () => {
                         </SliderTrack>
                     </Slider>
                 </Flex>
-                <Flex flex={1} width={"100%"} alignItems={"stretch"} justifyContent={"start"} padding={"10px"}>
+                <Flex flex={1} width={"100%"} alignItems={"stretch"} justifyContent={"start"} padding={"10px"} height={"100%"}>
                     <Flex
                     flexDirection={"column"}
                     justifyContent={"space-evenly"}
                     margin={"20px"}
                     padding={"10px"}
-                    height={"550px"}
-                    bgGradient={`linear(to-l, ${bgProgress})`}
-                    borderRadius={"20px"}
-                    width={"280px"}
+                    //height={"100%"}
+                    //bgGradient={`linear(to-l, ${bgProgress})`}
+                    //borderRadius={"20px"}
+                    //width={"280px"}
                     >
                         {shaastraJunoirsData.map((_events, index) => 
                             index === 0 ? 
                             <Button
                               leftIcon={<QuestionIcon/>}
                               onClick={() => setValue(index)}
-                              bg={bgButton}
+                              //bg={bgButton}
                               size={"lg"}
                               _hover={{ bg: {bgButton} }}
                                >
@@ -63,7 +63,7 @@ const ShaastraJuniorsPage = () => {
                             </Button>
                             : (value === index ? 
                             <Button
-                             bg={bgButton}
+                             //bg={bgButton}
                              size={"lg"}
                              _hover={{ bg: {bgButton} }}
                             //  rightIcon={<ArrowForwardIcon />}
@@ -75,8 +75,8 @@ const ShaastraJuniorsPage = () => {
                                 variant="ghost"
                                 _hover={{ bg: "none" }}
                                 size={"lg"}
-                                textColor={"black"}
-                                justifyContent={"left"}
+                                //textColor={"black"}
+                                //justifyContent={"left"}
                                 >
                                 <MotionBox
                                     whileHover={{ scale: 1.2 }}

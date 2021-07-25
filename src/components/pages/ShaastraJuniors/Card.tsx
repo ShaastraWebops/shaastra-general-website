@@ -23,8 +23,8 @@ export const Card = ({data}) => {
                     >
                         <Text
                           padding={"15px"}
-                          bgGradient={`linear(to-l, ${bgTitle})`}
-                          bgClip="text"
+                          //bgGradient={`linear(to-l, ${bgTitle})`}
+                          //bgClip="text"
                           fontWeight="extrabold"
                         >
                             {data.title}
