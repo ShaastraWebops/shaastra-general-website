@@ -8,26 +8,101 @@ import {
   VStack,
   Image,
   Link,
-  StackDivider
 } from "@chakra-ui/react";
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import { Link as ReachLink } from "react-router-dom"
 import summit from '../../../images/EventsWorkshops/summit/summit_5.jpg'
 import tif from '../../../images/EventsWorkshops/tif/tif_4.png'
+import Particles from "react-tsparticles";
+import '../../../styles/particles.css'
+import CustomBox from "../../shared/CustomBox";
 
-
-
- import CustomBox from "../../shared/CustomBox";
-
+ 
 
 function EventsHome() {
-
-
-
+ 
   return (
-    <Box overflowX='hidden' maxWidth='100%'>
-    <CustomBox> 
+    <Box>
+    <CustomBox>  
         <Center h='300px'>
+          <Particles
+          className='particles'
+        id="tsparticles"
+        options={{
+          fpsLimit: 60,
+          interactivity: {
+            detectsOn: "canvas",
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 400,
+                duration: 2,
+                opacity: 0.8,
+                size: 40,
+              },
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#FECD1A",
+            },
+            links: {
+              color: '#FECD1A',
+              distance: 150,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
+            collisions: {
+              enable: true,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outMode: "bounce",
+              random: false,
+              speed: 6,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                value_area:900,
+              },
+              value:60,
+            },
+            opacity: {
+              value: 1,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              random: true,
+              value: 5,
+            },
+          },
+          detectRetina: true,
+        }}
+      />
+   
           <Heading
           fontWeight={600}
           fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
@@ -41,6 +116,7 @@ function EventsHome() {
       <VStack
   spacing={10}
   align="stretch"
+  paddingBottom={8}
 >
   {/*Events*/}
       <Box
@@ -94,15 +170,15 @@ function EventsHome() {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Have you ever wanted to work on modeling a real airplane?  Do "hacking" scenes in movies and TV Shows make you 
+            roll your eyes? Shaastra brings you several events every year. Some of the events conducted last year as a 
+            part of Shaastra were Boeing Aeromodelling Competition, Global Biotech Council, Shaastra Programming Contest. 
+            Capture the Flag (CTF) and many more.
           </Text>
-            <Text fontSize="2xl" textAlign='center' marginTop={8}  
+            {/*<Text fontSize="2xl" textAlign='center' marginTop={8}  
            _hover={{
                color: "teal.500",
-  }}><Link as={ReachLink} to="/events">Explore Events</Link></Text>
+  }}><Link as={ReachLink} to="/events">Explore Events</Link></Text>*/}
           </Box>
       </Box>
       {/*Workshops*/}
@@ -157,15 +233,15 @@ function EventsHome() {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg" textAlign='center'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+           As a part of Shaastra, we conduct several workshops every year, ranging over multiple topics. 
+           Some of the workshops that were conducted last year were Introduction to Data Science and Machine Learning, 
+           Cryptocurrency, and blockchain, How to Design a Mars Rover, Parallel Programming with Python, 
+           Make a chat app using Socket.io, Node.js, and MongoDB, and many more.
           </Text>
-            <Text fontSize="2xl" textAlign='center' marginTop={8}  _hover={{
+            {/*<Text fontSize="2xl" textAlign='center' marginTop={8}  _hover={{
                color: "teal.500",
               }}><Link as={ReachLink} to="/workshops"
-            >Explore Workshops</Link></Text>
+            >Explore Workshops</Link></Text>*/}
           </Box>
       </Box>
       {/*Summit*/}

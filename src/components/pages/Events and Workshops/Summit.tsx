@@ -134,7 +134,7 @@ function Summit() {
            modern day technology in legal practice by organising a one of a kind Moot court.</Text>
            </Box>
           </Stack>
-          <SimpleGrid minChildWidth="320px" spacing="40px" marginTop={12}>
+          <SimpleGrid minChildWidth="320px" spacing="40px" marginTop={12} paddingBottom={12}>
             <Box>
               <Center>
           <Image src={summit5} alt="summit_5" w="301px" h="301px" objectFit='fill'></Image>

@@ -187,7 +187,7 @@ function Tif() {
           </Text>
         </Heading>
           </Center>
-          <SimpleGrid minChildWidth="320px" spacing="40px" marginBottom={10} marginTop={10}>
+          <SimpleGrid minChildWidth="320px" spacing="40px" marginBottom={10} marginTop={10} paddingBottom={12}>
               <Center>
           <Image src={tif5} alt="tif_5" w="301px" h="301px" objectFit='fill'></Image>
           <Box zIndex="-1" width="350px" position="absolute" height="350px">
