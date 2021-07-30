@@ -314,7 +314,7 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
-          <Link to="/speakers">Speakers</Link>
+          <Link to="/Speaker">Speakers</Link>
         </Box>
         <Box
           className="menu-text"
@@ -442,7 +442,7 @@ export const DrawerMobileMenuItems = () => {
           <Link to="/social-endeavours">Social Endeavours</Link>
         </Box>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
-          <Link to="/speakers">Speakers</Link>
+          <Link to="/Speaker">Speakers</Link>
         </Box>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/sponsors">Sponsors</Link>
