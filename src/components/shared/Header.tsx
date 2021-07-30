@@ -30,6 +30,7 @@ const Header = (props: Props) => {
       justifyContent="space-between"
       alignItems="center"
       height="min"
+      zIndex="2"
     >
       <CustomDrawer onClose={onClose} isOpen={isOpen} />
       <Link to="/">
