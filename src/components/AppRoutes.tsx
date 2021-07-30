@@ -1,5 +1,6 @@
 import * as React from "react"
 import {BrowserRouter as Router, Route} from "react-router-dom"
+import Exhibitions from "./pages/Exhibitions/Exhibitions"
 import Home from "./pages/Home"
 import Envisage from "./pages/Envisage"
 import Shows from "./pages/Shows"
@@ -16,6 +17,7 @@ const AppRoutes = (props: Props) => {
             <Route path="/envisage" component={Envisage} />
             <Route path="/project/:id" component={Project} />
             <Route path="/shows" component={Shows} />
+            <Route exact path="/exhibitions" component={Exhibitions} />
         </Router>
     )
 }
