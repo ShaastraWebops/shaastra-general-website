@@ -3,15 +3,32 @@ import { Heading, Image, Center, Text, Grid, GridItem, Container, useBreakpointV
 import { ListItem, ListIcon, List } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import CustomBox from "../shared/CustomBox";
+import { ReactComponent as LogoBlack } from "./../../images/shows/Shows_black.svg"
+import { ReactComponent as LogoWhite } from "./../../images/shows/Shows_white.svg"
+// import { ColorModeSwitcher } from "../../styles/themes/ColorModeSwitcher";
+import { useColorModeValue } from "@chakra-ui/color-mode";
+import { Link } from "react-router-dom";
+// import { Center, Square, Circle } from "@chakra-ui/react"
+
+
 
 export default function Shows() {
     const cols = useBreakpointValue({ base: 1, md: 2 });
+    const HeaderLogo = useColorModeValue(LogoBlack, LogoWhite)
+    const height = useBreakpointValue({ base: "50", lg: "40" })
 
     return (
-        <CustomBox>
-            <Heading textAlign="center" marginBottom="10" data-aos="fade-left" textTransform="uppercase" textDecor="underline">
-                Shows
-            </Heading>
+        
+        <CustomBox >
+            <Center  h="100px" >
+                <HeaderLogo height={height} width="88" />
+            </Center>
+            {/* <Link to="/" >
+                
+            </Link> */}
+            {/* <Heading textAlign="center" marginBottom="10" data-aos="fade-left" textTransform="uppercase" textDecor="underline">
+                <HeaderLogo height={height} width="200" />
+            </Heading> */}
             <Center data-aos="zoom-in">
                 <Image src="/shows_1.png" borderRadius="8" width="80%" />
             </Center>
