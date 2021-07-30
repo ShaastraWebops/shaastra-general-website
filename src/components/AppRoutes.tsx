@@ -6,6 +6,7 @@ import Envisage from "./pages/Envisage"
 import Shows from "./pages/Shows"
 import Project from "./pages/Project";
 import Team from "./pages/Team_page/Team";
+import ShaastraJuniorsPage from "./pages/ShaastraJuniors"
 
 interface Props {}
 
@@ -18,6 +19,7 @@ const AppRoutes = (props: Props) => {
             <Route path="/shows" component={Shows} />
             <Route exact path="/exhibitions" component={Exhibitions} />
             <Route exact path="/team" component={Team} />
+            <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
         </Router>
     )
 }
