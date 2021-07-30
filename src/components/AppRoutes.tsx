@@ -7,6 +7,7 @@ import Shows from "./pages/Shows"
 import Project from "./pages/Project";
 import Team from "./pages/Team_page/Team";
 import ShaastraJuniorsPage from "./pages/ShaastraJuniors"
+import Social from "./pages/socialEndeavours/SocialEnd"
 
 interface Props {}
 
@@ -20,6 +21,7 @@ const AppRoutes = (props: Props) => {
             <Route exact path="/exhibitions" component={Exhibitions} />
             <Route exact path="/team" component={Team} />
             <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
+            <Route exact path ="/social-endeavours" component={Social} />
         </Router>
     )
 }
