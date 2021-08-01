@@ -91,6 +91,9 @@ import { Heading, useBreakpointValue, useColorModeValue, Grid, GridItem, Contain
 import "../../main.css";
 import { Link } from "react-router-dom";
 import CustomBox from "../shared/CustomBox";
+import { ReactComponent as LogoBlack } from "./../../images/envisage/Envisage_black.svg"
+import { ReactComponent as LogoWhite } from "./../../images/envisage/Envisage_white (1).svg"
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faLinkedinIn, faTwitterSquare, faInstagramSquare } from "@fortawesome/free-brands-svg-icons";
@@ -129,6 +132,9 @@ const data = [
 export default function Main() {
     const bg = useColorModeValue("black", "white");
     const wd = useBreakpointValue({ base: "100%", md: "60%" });
+    const height = useBreakpointValue({ base: "60", lg: "50" })
+    const HeaderLogo = useColorModeValue(LogoBlack, LogoWhite)
+    
     const cols = useBreakpointValue({ base: 1, md: 3 });
     const beforesDisplay = useBreakpointValue({ base: "none", md: "block" });
     console.log(cols);
@@ -137,9 +143,12 @@ export default function Main() {
             <br />
             <br />
             <br />
-            <Heading color="#00AB74" size="xl" textAlign="center">
+            {/* <Heading color="#00AB74" size="xl" textAlign="center">
                 ENVISAGE
-            </Heading>
+            </Heading> */}
+            <Center  h="100px" >
+                <HeaderLogo height={height} width="188" />
+            </Center>
 
             <Flex padding="0 20px" className="sections--container" direction="column" minHeight="80vh">
                 {sections.map(({ title, desc, imgUrl }, index) => (

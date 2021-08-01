@@ -15,13 +15,13 @@ import { Link } from "react-router-dom";
 export default function Shows() {
     const cols = useBreakpointValue({ base: 1, md: 2 });
     const HeaderLogo = useColorModeValue(LogoBlack, LogoWhite)
-    const height = useBreakpointValue({ base: "50", lg: "40" })
+    const height = useBreakpointValue({ base: "60", lg: "50" })
 
     return (
         
         <CustomBox >
             <Center  h="100px" >
-                <HeaderLogo height={height} width="88" />
+                <HeaderLogo height={height} width="188" />
             </Center>
             {/* <Link to="/" >
                 
@@ -33,7 +33,7 @@ export default function Shows() {
                 <Image src="/shows_1.png" borderRadius="8" width="80%" />
             </Center>
             <Center margin="20px 0">
-                <Text width="80%" data-aos="fade-right" textAlign="justify">
+                <Text width="80%" data-aos="fade-right" textAlign="justify" fontFamily="cursive">
                 Professional shows are a fitting end to each day of Shaastra. These techno-entertainment shows, ever since their conception, have hosted artists from across the globe. Our audience counts up in thousands, which is a testament to its success and popularity. These include Mirage, a laser show by an international group, Sand Art show by world-renowned artists, Bike Stunt show by French performers and EDM (Electronic Dance Music) Night.
 
                 </Text>

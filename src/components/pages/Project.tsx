@@ -241,11 +241,11 @@ export default function Project() {
                             <Flex direction={(direction || "column") as any}>
                                 <div style={{ width }}>
                                     <Center>
-                                        <Image width="98%" src={imgUrl} alt={title} maxWidth="100%" />
+                                        <Image width="90%" src={imgUrl} alt={title} maxWidth="100%" />
                                     </Center>
                                 </div>
                                 <div style={{ width,display: 'flex', justifyContent: "center", alignItems: "center" }}>
-                                    <Text textAlign="justify">{desc}</Text>
+                                    <Text textAlign="justify" fontFamily="cursive">{desc}</Text>
                                 </div>
                             </Flex>
                         </GridItem>
