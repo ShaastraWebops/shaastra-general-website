@@ -297,7 +297,6 @@ function Spons() {
                 <br />
                 <br />
                
-
                 <Footer />
             </CustomBox>
         </>
