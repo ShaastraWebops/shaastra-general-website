@@ -90,6 +90,7 @@ import React from "react";
 import { Heading, useBreakpointValue, useColorModeValue, Grid, GridItem, Container, Text, Box, Center, Flex, Image } from "@chakra-ui/react";
 import "../../main.css";
 import { Link } from "react-router-dom";
+import Particles from 'react-tsparticles';
 import CustomBox from "../shared/CustomBox";
 import { ReactComponent as LogoBlack } from "./../../images/envisage/Envisage_black.svg"
 import { ReactComponent as LogoWhite } from "./../../images/envisage/Envisage_white (1).svg"
@@ -138,7 +139,93 @@ export default function Main() {
     const cols = useBreakpointValue({ base: 1, md: 3 });
     const beforesDisplay = useBreakpointValue({ base: "none", md: "block" });
     console.log(cols);
-    return (
+    return (<div className="shows1"
+    style={{
+        zIndex:1
+    }}>
+    <Particles
+        className='particles'
+        style={{
+           
+            position: "fixed",
+          width: "100%",
+          height: "100vh",
+          zIndex:0
+        }}
+      id="tsparticles"
+      options={{ 
+        fpsLimit: 60,
+        interactivity: {
+          detectsOn: "canvas",
+          events: {
+            onClick: {
+              enable: true,
+              mode: "push",
+            },
+            onHover: {
+              enable: true,
+              mode: "repulse",
+            },
+            resize: true,
+          },
+          modes: {
+            bubble: {
+              distance: 400,
+              duration: 2,
+              opacity: 0.8,
+              size: 40,
+            },
+            push: {
+              quantity: 4,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+          },
+        },
+        particles: {
+          color: {
+            value: "#ffffff",
+          },
+          links: {
+            color: "#ffffff",
+            distance: 150,
+            enable: true,
+            opacity: 0.5,
+            width: 1,
+          },
+          collisions: {
+            enable: true,
+          },
+          move: {
+            direction: "none",
+            enable: true,
+            outMode: "bounce",
+            random: false,
+            speed: 6,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+            value: 80,
+          },
+          opacity: {
+            value: 0.5,
+          },
+          shape: {
+            type: "circle",
+          },
+          size: {
+            random: true,
+            value: 5,
+          },
+        },
+        detectRetina: true, }}
+        />  
         <CustomBox>
             <br />
             <br />
@@ -165,7 +252,9 @@ export default function Main() {
                             </GridItem>
                             <GridItem verticalAlign="top">
                                 <Center>
-                                    <Image width="80%" src={imgUrl} borderRadius="8" />
+                                    <Image width="80%" src={imgUrl} borderRadius="8" style={{
+               zIndex:1
+           }}  />
                                 </Center>
                             </GridItem>
                         </Grid>
@@ -257,5 +346,6 @@ export default function Main() {
                 </Grid>
             </Container>
         </CustomBox>
+        </div>
     );
 }
