@@ -37,8 +37,6 @@ function Spons() {
                 <br />
                 <br />
                 <br />
-                {/* <h1 id="title1">Our Trustable Sponsors</h1> */}
-                {/* <span id="titlemain">Shaastra Sponsors</span> */}
                 <br />
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
                 <div className="main-boxx">                <br />
@@ -46,7 +44,7 @@ function Spons() {
                 <p id="about">About Us</p><br /><br />
                 <p className="boxx">Shaastra, ever since it's conception has been growing by leaps and bounds and this wouldn't have been achieved without the support of the student community and our corporate partners. We are continuously on the look out for long-term and mutually beneficial associations with reputed organizations from around the globe. In case your organization shares and believes in Shaastra’s vision, we would love to work out an association. We always welcome ideas, queries and criticism of any kind and hence, do feel free to contact us.</p>
                 <br /><br />
-                    <div className="card__collection clear-fix mitesh">
+                    <div className="card__collection">
                         
                         <div className="card" id="photo">
                             <div className="card-front">
@@ -54,19 +52,10 @@ function Spons() {
                             </div>
                             <div className="card-back">
                                 <p className="text"><a href="https://www.astrazeneca.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/astrazeneca/"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/astrazenecacareers/"><img alt="" src={facebook} id="www3"></img></a></p>
-                                
                             </div>
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                                 <img src={Atlasian} className="img-responsive" alt="" />
                             </div>
@@ -76,50 +65,24 @@ function Spons() {
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                                 <img src={Boeing} className="img-responsive" alt="" />
                             </div>
                             <div className="card-back">
-                            <p className="text"><a href="https://www.boeing.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/boeing/"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Boeing/"><img alt="" src={facebook} id="www3"></img></a></p>
-                                
+                            <p className="text"><a href="https://www.boeing.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/boeing/"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Boeing/"><img alt="" src={facebook} id="www3"></img></a></p> 
                             </div>
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                                 <img src={CAT} className="img-responsive" alt="" />
                             </div>
                             <div className="card-back">
                             <p className="text"><a href="https://www.caterpillar.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/caterpillar-inc/"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/caterpillarinc/"><img alt="" src={facebook} id="www3"></img></a></p>
-
                             </div>
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                                 <img src={KLA} className="img-responsive" alt="" />
                             </div>
@@ -130,14 +93,6 @@ function Spons() {
                         </div>
                         
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                             <img src={Mahindra} className="img-responsive" alt="" />
                             </div>
@@ -188,14 +143,6 @@ function Spons() {
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                             <img src={LT} className="img-responsive" id="lt" alt="" />
                             </div>
@@ -206,14 +153,6 @@ function Spons() {
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                             <img src={mtx} className="img-responsive" id="mtx" alt="" />
                             </div>
@@ -224,54 +163,24 @@ function Spons() {
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                             <img src={subex} className="img-responsive" id="subex" alt="" />
                             </div>
                             <div className="card-back">
-                                {/* <p>Hello world</p> */}
                                 <p className="text"><a href="https://www.subex.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/subex-ltd/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/SubexLimited/"><img alt="" src={facebook} id="www3"></img></a></p>
-
-
                             </div>
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                             <img src={surana} className="img-responsive" id="surana" alt="" />
                             </div>
                             <div className="card-back">
-                                {/* <p>Hello world</p> */}
                                 <p className="text"><a href="https://suranaandsurana.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/surana-&-surana-internartional-attorneys/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Surana-Surana-International-Attorneys-125263729279918/"><img alt="" src={facebook} id="www3"></img></a></p>
-                                
-
                             </div>
                         </div>
 
                         <div className="card" id="photo">
-                            {/* <img src={Atlasian} className="img-responsive" alt="" />
-                            <span className="cards--three__rect-1">
-                                <span className="shadow-1"></span>
-                                <p className="text"><a href="https://www.atlassian.com/"><img src={www} id="www1" alt=""></img></a><a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in"><img alt="" src={linkedin} id="www2"></img></a><a href="https://www.facebook.com/Atlassian/"><img alt="" src={facebook} id="www3"></img></a></p>
-                            </span>
-                            <span className="cards--three__rect-2">
-                                <span className="shadow-2"></span>
-                            </span> */}
                             <div className="card-front">
                             <img src={Wells} className="img-responsive" id="surana" alt="" />
                             </div>
