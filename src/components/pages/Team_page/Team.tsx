@@ -19,7 +19,6 @@ const Team = (props: Props) => {
     DiceOutlineDarkAnimated,
     DiceOutlineLightAnimated
   );
-
   let Profiles = [
     {
       name: "Nitish Gupta",
@@ -32,7 +31,7 @@ const Team = (props: Props) => {
         shastraMailId: "nitish.gupta@shaastra.org",
         contact: "9840903852",
       },
-      desc: "***NOT MY DESCRIPTION***\nI would suggest to remove this part, because this way it wont be a same template for everyone. The positions can give anyone fair bit of idea as to what is the role of that particular person.",
+      desc: "It has been an amazing journey for me being part of the Shaastra team for last three years. I have seen Shaastra grow leaps and bounds over the last 3 years and it gives me immense pleasure to lead the team this year. ",
       imgURL: photos.be17b022,
     },
     {
@@ -49,8 +48,8 @@ const Team = (props: Props) => {
       imgURL: photos.be19b012,
     },
     {
-      mailId: "be19b012@smail.iitm.ac.in",
-      name: "Shobham",
+      mailId: "be19b009@smail.iitm.ac.in",
+      name: "Shobhan",
       dept: "Webops",
       social_links: {
         instagram: "https://www.instagram.com/abhi_shx_25/",
@@ -58,8 +57,8 @@ const Team = (props: Props) => {
         shastraMailId: "abhisheksv@shaastra.org",
         contact: "8300682565",
       },
-      desc: "Being a part of shaastra is always like a ride in rollercoaster, fun and enjoyable. Being a part of this team meant everything to me , like I always say its never a bug, its always a undocumented feature.",
-      imgURL: photos.be19b012,
+      desc: "Shaastra gives you the raw opprutunity to engage with people with immense knowledge from different backgrounds. My journey here has gained me a lot of amazing friends and made me more versatile. Kudos to me and Shaastra!",
+      imgURL: photos.be19b009,
     },
     {
       mailId: "ce19b029@smail.iitm.ac.in",
@@ -71,7 +70,7 @@ const Team = (props: Props) => {
         shastraMailId: "charitha@shaastra.org ",
         contact: "9177679069",
       },
-      desc: "This is Charitha.S ce19b029, 2nd year undergraduate from Civil engineering department, Shaastra core - Concept and Design team\n\nShaastra is the biggest annual technical festival of the IITM. My contribution may be small but being a core I got to learn how to manage a team, how to articulate and assign tasks to the team. This helps me grow to be in a better position in both academically and professionally. This time Shaastra being online it's way too different from previous years. So it was pretty challenging to communicate with in the team and to make sure assigned tasks are done in the expected deadline.",
+      desc: "My journey in Shaastra from coord to core was really wonderful.  Gaining new skills, making new friends and leading a team with lotz of memories keeps me  motivated and being passionate towards my work.",
       imgURL: photos.ce19b029,
     },
     {
@@ -84,7 +83,7 @@ const Team = (props: Props) => {
         shastraMailId: "rohit@shaastra.org",
         contact: "7020250404",
       },
-      desc: "Shaastra has always been special to me. The experience that I have had being in Shaastra will be cherished throughout my life. Meeting wonderful seniors,juniors and peers had made my time in Shaastra extremely special.",
+      desc: "The experience that I have had being in Shaastra will be cherished throughout my life.Meeting wonderful seniors,juniors and peers had made my time in Shaastra extremely special.",
       imgURL: photos.ed18b057,
     },
     {
@@ -97,7 +96,7 @@ const Team = (props: Props) => {
         shastraMailId: "soumya@shaastra.org",
         contact: "9176415740",
       },
-      desc: "I am K.L.Soumya, an Electrical Engineering (Btech) student at IIT Madras. I have always been fascinated by technology and innovation. This is what drove me to be a part of Shaastra. I have been a part of Shaastra since my first year. I started as a volunteer for Shaastra and that is when I fell in love with Shaastra. Watching all the cool stuff that happened during those 4 days was an amazing experience. I definitely wanted to be a part of such a team and hence became a coordinator for Shaastra in my second year followed by manager in my third year and finally Core in my final year. The experience so far has been phenomenal. Being part of Shaastra, I got exposed to lot of experiences, had a sharp learning curve, found lots of friends and  had loads of fun!!",
+      desc: "I have been a part of shaastra since my first year starting with being a volunteer. That is when I fell in love with Shaastra watching all the mesmerizing events.  Being a part of shaastra for 3 years has been a great learning curve and also like being a part of a family.",
       imgURL: photos.ee18b054,
     },
     {
@@ -110,7 +109,7 @@ const Team = (props: Props) => {
         shastraMailId: "lochana@shaastra.org",
         contact: "7032377877",
       },
-      desc: "I am Lochana Janaki, a final year B. Tech Civil Engineering Student at IIT Madras. Back then in my freshie year, I was taken aback looking at the amazing technological events, shows, and many more activities put up by Shaastra. Right then, I decided to be a part of this great Team and started my journey as an Envisage Coordinator at Shaastra. This got me an opportunity to work on remarkable projects, make new friends, gain new skills and a lot of memories to cherish in my life. These experiences always boosted me and motivated me in continuing with the Team. That's how I ended up being one of the Cores at Shaastra. I am very excited to take up this new responsibility and eagerly waiting for one more amazing Shaastra ahead. ",
+      desc: "Being a part of Shaastra, gave me an amazing opportunity to work on remarkable projects, gain new skills, make new friends, and a lot of memories. These experiences constantly boosted me and motivated me in continuing with the Team.",
       imgURL: photos.ce18b003,
     },
     {
@@ -121,7 +120,7 @@ const Team = (props: Props) => {
         facebook: "https://www.facebook.com/aniswarsrivatsak/",
         shastraMailId: "aniswar@shaastra.org",
       },
-      desc: "I aim to contribute something big to society. Being part of Shaastra and conducting various events connects me to various students from colleges all over India and provides me a great platform for exchange of ideas. It also gives me an opportunity to be at the forefront of technological innovation in the country",
+      desc: "Being part of Shaastra and conducting various events connects me to students from colleges all over India, provides me a great platform to exchange ideas and an opportunity to be at the forefront of technological innovation in the country.",
       imgURL: photos.cs18b050,
     },
     {
@@ -132,7 +131,7 @@ const Team = (props: Props) => {
         instagram: "s_._vishal",
         shastraMailId: "vishal@shaastra.org",
       },
-      desc: "A fourth year student from Chemical engineering department, with special interests in statistics, control and a bunch of associated stuff hoping to contribute to a better world. My journey with Shaastra started with exposure to popular and fun events like reverse coding and I gradually worked my way up to the head of Coding&Logic managing to conduct 15 events. Aside from Shaastra being an enriching experience in terms of personal development, it is the everlasting friendships that I made which made it a memorable experience. Back here one last time have an enjoyable as well as socially impactful Shaastra for participants across the spectrum!",
+      desc: "My journey with Shaastra began with popular events like RC in my freshie year and fast-forward 2 years, I lead C&L successfully. Back here one last time to have an enjoyable and socially impactful Shaastra for participants across the spectrum!",
       imgURL: photos.ch18b020,
     },
     {
@@ -158,7 +157,7 @@ const Team = (props: Props) => {
         shastraMailId: "siddhant@shaastra.org",
         contact: "9130213213",
       },
-      desc: "Having been a part of Shaastra right from my very first semester at IIT Madras, it would be fair to say that the fest has essentially shaped my personal and professional life as an IITM student. The friends I have made, the managerial skills I have learnt and the last but not the least the memories I have made over the last three Shaastras have moulded me into the person I am today! ",
+      desc: "Having been a part of Shaastra right from my very first semester, it would be fair to say that the fest has essentially shaped my personal and professional life. The friends I have made, the managerial skills I have learnt have moulded me into the person I am today! ",
       imgURL: photos.ed18b031,
     },
     {
@@ -170,8 +169,8 @@ const Team = (props: Props) => {
         shastraMailId: "kranthi.t@shaastra.org",
         contact: "6303733655",
       },
-      desc: "Some of the memorable days in the whole year that we spend and gaining new relations that last forever.",
-      imgURL: photos.dummy,
+      desc: "Some of the memorable days in the whole year that we spend and gaining new relations that last forever. I have learned a lot during this journey and this fantasic and evergreen memories will never fade from my mind ",
+      imgURL: photos.ce18b060,
     },
     {
       mailId: "ee18b022@smail.iitm.ac.in",
@@ -182,7 +181,7 @@ const Team = (props: Props) => {
         shastraMailId: "sahithi@shaastra.org",
         contact: "9948812020",
       },
-      desc: "I have been a member of Shaastra for 3 years now. I have learnt a learnt along the way. It has been a wonderful journey with so many ups and downs. Looking forward for Shaastra'22.",
+      desc: "My 3 year Shaastra's Journey has been wonderful. It has so many ups and downs, but gladly I made it through :p Shaastra helped me to get out of my comfort zone and improve myself. Really excited for Shaastra'22.",
       imgURL: photos.ee18b022,
     },
     {
@@ -208,7 +207,7 @@ const Team = (props: Props) => {
         shastraMailId: "rutvik@shaastra.org",
         contact: "8866419419",
       },
-      desc: "My experience with Team O&IP has been nothing less than fabulous. I joined this team in my 3rd year and have made some of my best friends and nicest memories during my journey last year in organising the first ever Online Shaastra.  OIP OP🙅\u200d♂️.",
+      desc: "My experience with Team O&IP has been nothing less than fabulous. I joined this team in my 3rd year and have made some of my best friends and nicest memories while organising the first ever online Shaastra last year. OIP OP🙅‍♂️.",
       imgURL: photos.ed18b050,
     },
     {
@@ -221,7 +220,7 @@ const Team = (props: Props) => {
         shastraMailId: "shvetha@shaastra.org",
         contact: "6379764273",
       },
-      desc: "Hi, I'm Shvetha. A Malayalee settled in Chennai. Nature and the changes that happen in our environment interest me a lot. Got to explore some survival skills and the secret of having fun while making an impact, being a part of Shaastra through the last couple of years! ",
+      desc: "This was the first team that I joined in as a freshie and I could never part it and now I am heading the team. This team have taught me a lot not just technically but in all aspects. And this journey was a marvelous one and will ever be.",
       imgURL: photos.be18b013,
     },
     {
@@ -233,7 +232,7 @@ const Team = (props: Props) => {
         shastraMailId: "madhan@shaastra.org",
         contact: "6303564574",
       },
-      desc: "Heyy! This is Madhan. I love things out of context. My favourite emoji is 🙃. Being the publicity core, I feel responsible to ask you to recommend your friends to check out Shaastra. Do recommend. ",
+      desc: "I love things out of context and to do things out of the box, being a part of shaastra has given me the oppurtnity to do that and I love it for that. It has made me the person who I am today, the experience and the friend moulded be to a better version of myself ",
       imgURL: photos.ep18b006,
     },
     {
@@ -283,7 +282,7 @@ const Team = (props: Props) => {
         shastraMailId: "aman@shaastra.org",
         contact: "+91 6385140247",
       },
-      desc: "From completing assigned tasks as a coordinator to managing 30 people to fulfil my vision for my team, working for Shaastra helps develop my skillset and gives unforgettable memories of insti life.",
+      desc: "To summarise my Shaastra Journey, from coordinator to Core in S&E: Every year started with infinite ideas and a motivated team. Result was and always will be the Biggest Technical Festival and Memories + Experiences we get for life!!",
       imgURL: photos.ch18b036,
     },
     {

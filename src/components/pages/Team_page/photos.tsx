@@ -19,11 +19,15 @@ import ee18b138 from "../../../images/profiles/ee18b138.jpg";
 import ep18b005 from "../../../images/profiles/ep18b005.jpg";
 import ep18b006 from "../../../images/profiles/ep18b006.jpg";
 import me18b145 from "../../../images/profiles/me18b145.jpg";
+import be19b009 from "../../../images/profiles/be19b009.jpeg";
+import ce18b060 from "../../../images/profiles/ce18b060.jpg";
 
 import dummy from "../../../images/profile.jpg";
 
 export default {
   dummy,
+  be19b009,
+  ce18b060,
   be17b022,
   be18b013,
   be18b026,
