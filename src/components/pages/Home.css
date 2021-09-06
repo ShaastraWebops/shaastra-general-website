@@ -4,6 +4,10 @@
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  background: url("../../images/homepage_illustrations/Background_blue.png");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .Home::-webkit-scrollbar {
   display: none;
@@ -133,6 +137,10 @@ section {
 .Home_landingPage {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  background: url("../../images/homepage_illustrations/First_Page_Purple.png");
+  background-position: center;
+  background-size: cover;
 }
 .Home_landingPage .ContentBox {
   max-width: 630px;
@@ -145,6 +153,26 @@ section {
 .Home_landingPage .ContentBox p {
   font-size: 1em;
   letter-spacing: 1px;
+}
+.Home_landingPage .imgBox {
+  width: 600px;
+  height: 600px;
+  position: relative;
+}
+.Home_landingPage .imgBox img:nth-of-type(1) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  min-width: 120px;
+  object-fit: contain;
+}
+.Home_landingPage .imgBox img:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  object-fit: contain;
 }
 .Home_landingPage .Follow {
   position: absolute;
@@ -284,16 +312,19 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .Home_whoAreWe #heading {
   font-size: 4em;
   font-weight: 650;
   letter-spacing: 7px;
+  text-align: center;
 }
 .Home_whoAreWe #text {
   max-width: 600px;
   font-size: 1em;
   letter-spacing: 1px;
+  text-align: center;
 }
 /* @media screen and (max-width: 1000px) {
   .Home_whoAreWe {
@@ -366,12 +397,6 @@ section {
   padding-left: 50px;
   z-index: 0;
 }
-.Home_Speakers {
-  background: url("../../images/milky-way.png");
-  background-repeat: repeat;
-  background-position: center;
-  background-size: 500px 500px;
-}
 .Home_Speakers h1,
 .Home_WorkshopsEvents h1 {
   text-align: center;
@@ -381,7 +406,7 @@ section {
   margin-bottom: 20px;
 }
 .Home_Speakers h1 {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  /* text-shadow: 0 0 10px rgba(0, 0, 0, 1); */
 }
 .speaker_swiper_container {
   width: calc(100% - 200px);
@@ -389,7 +414,6 @@ section {
   padding: 40px;
   display: flex;
   align-items: center;
-  background-color: #06070c;
   border-radius: 10px;
 }
 .Home_WorkshopsEvents.black .speaker_swiper_container {
@@ -667,7 +691,7 @@ section {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  border-bottom: 3px solid rgb(2, 100, 199);
+  border-bottom: 3px solid #fff;
   border-style: dashed;
 }
 .Home_Testimonials .testimonialWrapper .testimonial_card_cover {
@@ -747,7 +771,7 @@ section {
   border-radius: 50%;
   background-color: #fff;
 }
-.Home_Testimonials
+.Home_Testimonials.black
   .testimonialWrapper
   .testimonial_card_cover
   .testimonial_card:before {

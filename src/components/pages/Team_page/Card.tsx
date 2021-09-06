@@ -7,6 +7,9 @@ import {
   FaEnvelope,
   FaQuoteLeft,
   FaQuoteRight,
+  FaWhatsappSquare,
+  FaWhatsapp,
+  FaInstagram,
 } from "react-icons/fa";
 // import profile from "../../../images/profile.jpg";
 import "../../../styles/Team_styles/Card.css";
@@ -63,13 +66,13 @@ const Card = (props: Props) => {
           justifyContent="space-evenly"
         >
           <a target="_blank" href={props.profile.social_links.twitter}>
-            <FaTwitter />
+            <FaWhatsapp />
           </a>
           <a target="_blank" href={props.profile.social_links.linkedIn}>
             <FaLinkedin />
           </a>
           <a target="_blank" href={props.profile.social_links.github}>
-            <FaGithub />
+            <FaInstagram />
           </a>
           <a target="_blank" href={props.profile.social_links.shastraMailId}>
             <FaEnvelope />

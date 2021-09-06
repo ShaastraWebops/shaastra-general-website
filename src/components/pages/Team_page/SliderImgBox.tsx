@@ -1,6 +1,13 @@
 import * as React from "react";
 import { Flex } from "@chakra-ui/react";
-import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaTwitter,
+  FaLinkedin,
+  FaEnvelope,
+  FaWhatsapp,
+  FaInstagram,
+} from "react-icons/fa";
 import "../../../styles/Team_styles/SliderImgBox.css";
 
 // import profileIMG from "../../../images/profile.jpg";
@@ -41,13 +48,13 @@ const SliderImgBox = (props: Props) => {
             justifyContent="space-evenly"
           >
             <a href={props.profile.social_links.twitter}>
-              <FaTwitter />
+              <FaWhatsapp />
             </a>
             <a href={props.profile.social_links.linkedIn}>
               <FaLinkedin />
             </a>
             <a href={props.profile.social_links.github}>
-              <FaGithub />
+              <FaInstagram />
             </a>
             <a href={props.profile.social_links.shastraMailId}>
               <FaEnvelope />

@@ -4,7 +4,13 @@ import { ReactComponent as DiceOutlineDarkAnimated } from "./../../images/logo/a
 import { ReactComponent as DiceOutlineLightAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Light_animated.svg";
 import "./Home.css";
 import CustomBox from "../shared/CustomBox";
-import { FaTwitterSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
+import {
+  FaTwitterSquare,
+  FaLinkedin,
+  FaInstagram,
+  FaYoutube,
+  FaYoutubeSquare,
+} from "react-icons/fa";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
@@ -16,6 +22,8 @@ import { Link } from "react-router-dom";
 import atkins from "../../images/Peter_Atkins.jpg";
 import shaastra_juniors from "../../images/shaastra_juniors.png";
 import prevArrow from "../../images/prevArrow.svg";
+import robo1 from "../../images/homepage_illustrations/Big_Robo.png";
+import robo2 from "../../images/homepage_illustrations/Small_robo.png";
 
 interface Props {}
 
@@ -139,7 +147,10 @@ const Home = (props: Props) => {
               repellendus, corporis nemo vitae deleniti iure.
             </p>
           </div>
-
+          <div className="imgBox">
+            <img src={robo2} alt="" />
+            <img src={robo1} alt="" />
+          </div>
           <span className="Home_scroll_btn">
             <span></span>
           </span>
@@ -156,7 +167,7 @@ const Home = (props: Props) => {
             </a>
             <span></span>
             <a href="#">
-              <FaTwitterSquare />
+              <FaYoutubeSquare />
             </a>
             <span></span>
           </div>

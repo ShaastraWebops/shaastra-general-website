@@ -59,6 +59,9 @@
   position: relative;
   text-align: justify;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Card .imageBox .profileDescription svg {
   position: absolute;
