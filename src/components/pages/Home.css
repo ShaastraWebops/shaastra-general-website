@@ -9,6 +9,9 @@
   background-attachment: fixed;
   background-size: cover;
 }
+.Home.black {
+  background: none;
+}
 .Home::-webkit-scrollbar {
   display: none;
 }
@@ -141,6 +144,9 @@ section {
   background: url("../../images/homepage_illustrations/First_Page_Purple.png");
   background-position: center;
   background-size: cover;
+}
+.Home_landingPage.black {
+  background: none;
 }
 .Home_landingPage .ContentBox {
   max-width: 630px;

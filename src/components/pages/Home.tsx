@@ -107,7 +107,7 @@ const Home = (props: Props) => {
 
   return (
     <CustomBox>
-      <div onScroll={update_sidenav_marker} className="Home">
+      <div onScroll={update_sidenav_marker} className={`Home ${plain}`}>
         <div className={`Home_sideNavBar ${plain}`}>
           <span
             className="Home_sideNavBar_marker"
