@@ -53,7 +53,7 @@ const ShaastraJuniorsPage = () => {
                         {shaastraJunoirsData.map((_events, index) => 
                             index === 0 ? 
                             <Button
-                              leftIcon={<QuestionIcon/>}
+                            //   leftIcon={<QuestionIcon/>}
                               onClick={() => setValue(index)}
                               //bg={bgButton}
                               size={"lg"}
