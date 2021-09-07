@@ -8,6 +8,11 @@ import Project from "./pages/Project";
 import Team from "./pages/Team_page/Team";
 import ShaastraJuniorsPage from "./pages/ShaastraJuniors"
 import Social from "./pages/socialEndeavours/SocialEnd"
+import Eventsworkshops from "./pages/Events and Workshops/EventsHome"
+import Events from './pages/Events and Workshops/Events'
+import Summit from './pages/Events and Workshops/Summit'
+import Tif from './pages/Events and Workshops/Tif'
+import Workshops from './pages/Events and Workshops/Workshops'
 
 interface Props {}
 
@@ -22,6 +27,11 @@ const AppRoutes = (props: Props) => {
             <Route exact path="/team" component={Team} />
             <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
             <Route exact path ="/social-endeavours" component={Social} />
+            <Route exact path="/eventsworkshops" component ={Eventsworkshops}/>
+            <Route exact path="/events" component ={Events}/>
+            <Route exact path="/workshops" component ={Workshops}/>
+            <Route exact path="/tif" component ={Tif}/>
+            <Route exact path="/summit" component ={Summit}/>
         </Router>
     )
 }
