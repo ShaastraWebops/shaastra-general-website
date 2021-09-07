@@ -13,6 +13,7 @@ import Events from './pages/Events and Workshops/Events'
 import Summit from './pages/Events and Workshops/Summit'
 import Tif from './pages/Events and Workshops/Tif'
 import Workshops from './pages/Events and Workshops/Workshops'
+import Spons from '../../src/components/pages/spons'
 
 interface Props {}
 
@@ -32,6 +33,7 @@ const AppRoutes = (props: Props) => {
             <Route exact path="/workshops" component ={Workshops}/>
             <Route exact path="/tif" component ={Tif}/>
             <Route exact path="/summit" component ={Summit}/>
+            <Route exact path="/spons" component={Spons}/>
         </Router>
     )
 }
