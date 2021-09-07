@@ -5,6 +5,13 @@
 #she-can .dblue:hover{
     color: var(--dblue-bg);
 }
+.she-can, .blink, #past
+{
+    height: fit-content !important;
+    width: fit-content !important;
+    margin: auto !important;
+    padding: 0% !important;
+}
 .she-can-intro{
     position: relative;
     display: flex;
