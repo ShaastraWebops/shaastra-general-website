@@ -101,7 +101,6 @@ const Home = (props: Props) => {
 
   return (
     <CustomBox>
-<<<<<<< HEAD
       <div onScroll={update_sidenav_marker} className={`Home ${plain}`}>
         <div className={`Home_sideNavBar ${plain}`}>
           <span
@@ -467,16 +466,6 @@ const Home = (props: Props) => {
           </div>
         </section>
       </div>
-=======
-      <Flex flexDirection={"column"} justifyContent="center" alignItems="center" minH="100vh" p={3}>
-        <VStack spacing={8}>
-          <Logo height="100" width="auto" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-        </VStack>
-      </Flex>
->>>>>>> spons
     </CustomBox>
   );
 };
