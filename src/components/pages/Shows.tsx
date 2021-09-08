@@ -382,10 +382,10 @@ export default function Shows() {
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: "#15f306",
           },
           links: {
-            color: "#ffffff",
+            color: "#f30a0a",
             distance: 150,
             enable: true,
             opacity: 0.5,

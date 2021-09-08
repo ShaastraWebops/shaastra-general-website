@@ -133,10 +133,13 @@ const data = [
 export default function Main() {
     const bg = useColorModeValue("black", "white");
     const wd = useBreakpointValue({ base: "100%", md: "60%" });
-    const height = useBreakpointValue({ base: "60", lg: "50" })
-    const HeaderLogo = useColorModeValue(LogoBlack, LogoWhite)
+    const height = useBreakpointValue({ base: "60", lg: "50" });
+    const h = useBreakpointValue({ base: "50%", md:"70%" });
+    const HeaderLogo = useColorModeValue(LogoBlack, LogoWhite);
+    const ss = useBreakpointValue({ base: "100%", md: "80%" });
     
     const cols = useBreakpointValue({ base: 1, md: 3 });
+    const co = useBreakpointValue({ base: 1, md: 2,lg:2 });
     const beforesDisplay = useBreakpointValue({ base: "none", md: "block" });
     console.log(cols);
     return (<div className="shows1"
@@ -186,10 +189,10 @@ export default function Main() {
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: "#f30a0a",
           },
           links: {
-            color: "#ffffff",
+            color: "#006dff",
             distance: 150,
             enable: true,
             opacity: 0.5,
@@ -233,18 +236,19 @@ export default function Main() {
             {/* <Heading color="#00AB74" size="xl" textAlign="center">
                 ENVISAGE
             </Heading> */}
-            <Center  h="100px" >
-                <HeaderLogo height={height} width="188" />
+            <Center   >
+                <HeaderLogo height={height}  width={wd} />
             </Center>
 
             <Flex padding="0 20px" className="sections--container" direction="column" minHeight="80vh">
                 {sections.map(({ title, desc, imgUrl }, index) => (
+
                     <Container minWidth="98%" className="sections__section" width={wd} margin="5">
-                        <Heading data-aos={`fade-${index % 2 === 0 ? "right" : "left"}`} as="span" color="#35D7FF" fontFamily="monospace">
+                        <Heading data-aos={`fade-${index % 2 === 0 ? "right" : "left"}`} as="span" color="#1b22f1" fontFamily="monospace">
                             {title}
                         </Heading>
                         <br />
-                        <Grid data-aos={`fade-${index % 2 === 0 ? "right" : "left"}`} templateColumns="repeat(2, 1fr)">
+                        <Grid data-aos={`fade-${index % 2 === 0 ? "right" : "left"}`} templateColumns={`repeat(${co}, 1fr)`}>
                             <GridItem order={index % 2 === 0 ? 0 : 2}>
                                 <Text textAlign="justify" fontSize="xl" style={{fontFamily: "monospace"}} >
                                     {desc}
@@ -252,7 +256,7 @@ export default function Main() {
                             </GridItem>
                             <GridItem verticalAlign="top">
                                 <Center>
-                                    <Image width="80%" src={imgUrl} borderRadius="8" style={{
+                                    <Image width={ss} height = {h} src={imgUrl} borderRadius="8"  style={{
                zIndex:1
            }}  />
                                 </Center>
@@ -265,11 +269,12 @@ export default function Main() {
                 <Container p="1" margin="1" maxW="container.xl">
                     <Box className="root" border="1px" borderColor={bg} height="80px">
                         <Flex justify="center" align="center" height="100%">
-                            <Heading color="#35D7FF" textAlign="center">
+                            <Heading color="#1b22f1" textAlign="center">
                                 Verticals
                             </Heading>
                         </Flex>
                     </Box>
+                    
                     <Grid
                         maxWidth="100%"
                         _before={{ background: bg, display: beforesDisplay }}
@@ -289,7 +294,7 @@ export default function Main() {
                             >
                                 <Link to={{ pathname: `/project/${id}`, state: { title } }}>
                                     <Container>
-                                        <Heading color="#35D7FF" size="lg" textAlign="center" verticalAlign="center">
+                                        <Heading color="#1b22f1" size="lg" textAlign="center" verticalAlign="center">
                                             {title}
                                         </Heading>
                                         <Container>
