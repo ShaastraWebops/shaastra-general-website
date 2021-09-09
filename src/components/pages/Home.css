@@ -172,6 +172,7 @@ section {
   width: 25%;
   min-width: 120px;
   object-fit: contain;
+  transition: 0.5s;
 }
 .Home_landingPage .imgBox img:nth-of-type(2) {
   position: absolute;
@@ -179,6 +180,7 @@ section {
   right: 0;
   height: 100%;
   object-fit: contain;
+  transition: 0.5s;
 }
 .Home_landingPage .Follow {
   position: absolute;
@@ -315,6 +317,7 @@ section {
   margin: 40px 0;
 } */
 .Home_whoAreWe {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -325,12 +328,30 @@ section {
   font-weight: 650;
   letter-spacing: 7px;
   text-align: center;
+  position: relative;
+  left: -50px;
 }
 .Home_whoAreWe #text {
   max-width: 600px;
   font-size: 1em;
   letter-spacing: 1px;
   text-align: center;
+  position: relative;
+  left: -50px;
+}
+.Home_whoAreWe #who_are_we_robo2 {
+  position: absolute;
+  left: 200px;
+  bottom: 0;
+  width: 200px;
+  object-fit: contain;
+}
+.Home_whoAreWe #who_are_we_robo1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 400px;
+  object-fit: contain;
 }
 /* @media screen and (max-width: 1000px) {
   .Home_whoAreWe {
@@ -344,7 +365,7 @@ section {
     width: 80%;
   }
 }
-*/
+ */
 @media screen and (max-width: 800px) {
   .Home_whoAreWe {
     padding-right: 30px;

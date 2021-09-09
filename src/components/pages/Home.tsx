@@ -4,13 +4,7 @@ import { ReactComponent as DiceOutlineDarkAnimated } from "./../../images/logo/a
 import { ReactComponent as DiceOutlineLightAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Light_animated.svg";
 import "./Home.css";
 import CustomBox from "../shared/CustomBox";
-import {
-  FaTwitterSquare,
-  FaLinkedin,
-  FaInstagram,
-  FaYoutube,
-  FaYoutubeSquare,
-} from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaYoutubeSquare } from "react-icons/fa";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
@@ -22,7 +16,7 @@ import { Link } from "react-router-dom";
 import atkins from "../../images/Peter_Atkins.jpg";
 import shaastra_juniors from "../../images/shaastra_juniors.png";
 import prevArrow from "../../images/prevArrow.svg";
-import robo1 from "../../images/homepage_illustrations/Big_Robo.png";
+import robo1 from "../../images/homepage_illustrations/Big_Robo_1.png";
 import robo2 from "../../images/homepage_illustrations/Small_robo.png";
 
 interface Props {}
@@ -173,6 +167,8 @@ const Home = (props: Props) => {
           </div>
         </section>
         <section id="who_are_we" className="Home_whoAreWe">
+          <img id="who_are_we_robo1" src={robo1} alt="" />
+          <img id="who_are_we_robo2" src={robo2} alt="" />
           <h1 id="heading">WHO ARE WE?</h1>
           <div id="text">
             Shaastra is the annual technical festival of the Indian Institute of
@@ -207,14 +203,6 @@ const Home = (props: Props) => {
               loop={true}
               pagination={{ el: events_paginationRef.current, clickable: true }}
               slidesPerView={window.innerWidth > 600 ? "auto" : 1}
-              // breakpoints={{
-              //   200: {
-              //     slidesPerView: 1,
-              //   },
-              //   850: {
-              //     slidesPerView: 4,
-              //   },
-              // }}
             >
               <SwiperSlide>
                 <img src={shaastra_juniors} alt="" />
