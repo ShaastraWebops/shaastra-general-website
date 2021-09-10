@@ -18,7 +18,6 @@ const Card = ({data}) =>{
   const Tagcolor = useColorModeValue("#00d0ff","#1c72c7");
   
     return(
-       
         <Box
           maxW={'270px'}
           w={'full'}
@@ -26,7 +25,6 @@ const Card = ({data}) =>{
           overflow={'hidden'}
           h={'100%'}
         >
-
           <Image
             h={'200px'}
             w={'full'}
@@ -40,12 +38,19 @@ const Card = ({data}) =>{
               <Text as={'h3'} className="Tag" p={1}>
               <Tag size="lg" bg={Tagcolor} className="cardtext">{data.year}</Tag>
               </Text>
-              <Text className="cardtext"   textShadow="1px 0px #00d0ff">{data.title}</Text>
+              <Text className="cardtext" 
+              style = {{
+                fontSize: "20px",
+                letterSpacing : "1px",
+                fontFamily : 'Roboto',
+                zIndex : 1
+              }} >{data.title}</Text>
               <Box className="overview" bg={Descriptionbg} color="#ffffff">
-              <Heading as={'h3'} mb={"3"} fontSize={"2xl"}   textShadow="1px 0px #00d0ff">
+              <Heading as={'h3'} mb={"3"} fontSize={"2xl"} >
                {data.title}
               </Heading>
-              <Text as={"h4"} size={"4"} >{data.description}</Text>
+              <Text as={"h4"} size={"4"} 
+              >{data.description}</Text>
             </Box>
             </Stack>
           

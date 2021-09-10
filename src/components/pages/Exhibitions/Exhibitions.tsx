@@ -87,7 +87,13 @@ const Exhibitions = ()=>{
               <Heading as={'h1'} mb={"3"}>
                 About Us
               </Heading>
-               <Text>
+               <Text 
+                style = {{
+                  fontSize: "20px",
+                  letterSpacing : "1px",
+                  fontFamily : 'Roboto',
+                  zIndex : 1
+                }}>
                  {AboutusData}
                 </Text>
               </MotionBox>
@@ -135,6 +141,7 @@ const Exhibitions = ()=>{
                m={[2,5]} 
               className = "Title"
               color={Titlecolor}
+              p={3}
              >
               PREVIOUS EXHIBITIONS
             </Heading>

@@ -17,14 +17,6 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-p{
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-family: 'Roboto', sans-serif;
-  z-index: 1;
-}
-
-
 .App-particles__container {
     overflow: hidden;
     position: absolute;
@@ -34,7 +26,11 @@ p{
     right: 0px;
     z-index: 0;
   }
-  
+  .AboutUsContainer{
+    height:100vh;
+    padding: 20px;
+    text-align: justify;
+  }
   .Card{
     position: relative;
     overflow: hidden;
@@ -42,11 +38,6 @@ p{
     text-align:center;
   }
 
-  .AboutUsContainer{
-    height:100vh;
-    padding: 20px;
-    text-align: justify;
-  }
   .overview {
     padding: 20px;
     position: absolute;
@@ -58,6 +49,8 @@ p{
     overflow-y: auto;
     transition: transform 0.3s ease-in;
     text-align:center;
+    justify-content: center;
+    align-items: center;
 
   }
 
