@@ -59,6 +59,10 @@
   font-size: 50px;
   font-weight: 700;
 }
+.maintext{
+  display: flex;
+  justify-content: center;
+}
 .tooltip {
   position: relative;
   display: inline-block;
@@ -69,6 +73,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 87%;
+  text-align: center;
   color: #777;
   transform: translate(7%, 0%);
   font-size: 22px;
@@ -85,7 +90,10 @@ html {
   display: inline-block;
   border-bottom: 1px dotted #000000;
 }
-
+.lastbtn{
+  display: flex;
+  justify-content: center;
+}
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 300px;
@@ -110,7 +118,6 @@ html {
   font-family: "Open Sans", sans-serif;
   // color: #777;
 }
-
 @-webkit-keyframes back {
   0% {
     background-position: 0% 14%;
