@@ -120,7 +120,7 @@ const Exhibitions = ()=>{
               mt={["0px","60px"]}
               >
               <Image
-                alt={'Hero Image'}
+                alt={'Display Image'}
                 fit={"cover"}
                 align={'center'}
                 w={'100%'}
@@ -137,7 +137,7 @@ const Exhibitions = ()=>{
       <VStack>
       <Heading
               fontWeight={500}
-              fontSize={"3xl"}
+              fontSize={["2xl","3xl","3xl"]}
                m={[2,5]} 
               className = "Title"
               color={Titlecolor}
