@@ -65,14 +65,14 @@ const Card = (props: Props) => {
           color="#111"
           justifyContent="space-evenly"
         >
-          <a target="_blank" href={props.profile.social_links.twitter}>
+          <a
+            target="_blank"
+            href={`https://api.whatsapp.com/send?phone=91${props.profile.social_links.contact}&text=&source=&data=&app_absent=`}
+          >
             <FaWhatsapp />
           </a>
           <a target="_blank" href={props.profile.social_links.linkedIn}>
             <FaLinkedin />
-          </a>
-          <a target="_blank" href={props.profile.social_links.github}>
-            <FaInstagram />
           </a>
           <a target="_blank" href={props.profile.social_links.shastraMailId}>
             <FaEnvelope />

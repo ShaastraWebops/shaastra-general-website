@@ -47,16 +47,16 @@ const SliderImgBox = (props: Props) => {
             color="rgba(255,255,255)"
             justifyContent="space-evenly"
           >
-            <a href={props.profile.social_links.twitter}>
+            <a
+              target="_blank"
+              href={`https://api.whatsapp.com/send?phone=91${props.profile.social_links.contact}&text=&source=&data=&app_absent=`}
+            >
               <FaWhatsapp />
             </a>
-            <a href={props.profile.social_links.linkedIn}>
+            <a target="_blank" href={props.profile.social_links.linkedIn}>
               <FaLinkedin />
             </a>
-            <a href={props.profile.social_links.github}>
-              <FaInstagram />
-            </a>
-            <a href={props.profile.social_links.shastraMailId}>
+            <a target="_blank" href={props.profile.social_links.shastraMailId}>
               <FaEnvelope />
             </a>
           </Flex>

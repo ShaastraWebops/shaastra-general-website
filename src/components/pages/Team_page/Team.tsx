@@ -338,6 +338,7 @@ const Team = (props: Props) => {
   return (
     <CustomBox>
       <div
+        className="Team"
         style={{
           display: "flex",
           flexDirection: "column",
