@@ -15,7 +15,6 @@ const CustomBox = (props: Props) => {
     <Box bg={bg}>
       <Header />
       {props.children}
-      <Footer />
     </Box>
   );
 };

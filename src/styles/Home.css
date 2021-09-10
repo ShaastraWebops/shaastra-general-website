@@ -705,6 +705,16 @@ section {
 .Home_WorkshopsEvents a:hover {
   letter-spacing: 2px;
 }
+.Home .Footer.white {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #fff4;
+  backdrop-filter: blur(2px);
+}
+.Home .Footer.white .bottom {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #fff4;
+  backdrop-filter: blur(2px);
+}
 @media screen and (max-width: 500px) {
   .Home_Speakers h1,
   .Home_WorkshopsEvents h1 {
@@ -755,6 +765,10 @@ section {
     p {
     font-size: 4vw;
     font-weight: 400;
+  }
+  .Home .Footer {
+    padding: 0 0 50px 0 !important;
+    backdrop-filter: none;
   }
 }
 /* Home_Testimonials */

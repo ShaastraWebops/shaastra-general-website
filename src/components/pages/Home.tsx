@@ -23,6 +23,7 @@ import barish from "../../images/barish.jpg";
 import John_hennessy from "../../images/John_hennessy.jpg";
 import das_nobel from "../../images/das_nobel.jpeg";
 import Raghuram_Rajan from "../../images/Raghuram_Rajan.jpg";
+import Footer from "../shared/Footer";
 
 interface Props {}
 
@@ -477,6 +478,13 @@ const Home = (props: Props) => {
             </div>
           </div>
         </section>
+        <Footer
+          designed={[
+            { name: "Rohit", mail: "cs19b038@smail.iitm.ac.in" },
+            { name: "Krithikaa", mail: "be20b020@smail.iitm.ac.in" },
+            { name: "Yogesh", mail: "bs19b034@smail.iitm.ac.in" },
+          ]}
+        />
       </div>
     </CustomBox>
   );
