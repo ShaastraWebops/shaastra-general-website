@@ -17,22 +17,24 @@ export const Card = ({data}) => {
                 <Heading
                 //  borderBottom={"dotted 4px"}
                 //  borderBottomColor={colorBorder}
-                 fontSize={isNotSmallerScreen ? "4xl" : "3xl"}>
+                 >
                     <MotionBox
                         whileHover={{ scale: 1.2 }}
                     >
                         <Text
+                          fontSize={isNotSmallerScreen ? "4xl" : "3xl"}
                           padding={"15px"}
                           //bgGradient={`linear(to-l, ${bgTitle})`}
                           //bgClip="text"
                           fontWeight="extrabold"
+                          borderBottom={`5px solid #00a878`}
                         >
                             {data.title}
                         </Text>
                     </MotionBox>
-                    <Box bgGradient={`linear(to-l, ${bgTitle})`} height={"3px"} width={"inherit"}></Box>
+                    {/* <Box bgGradient={`linear(to-l, ${bgTitle})`} height={"3px"} width={"inherit"}></Box> */}
                 </Heading>
-                <Text padding={"20px"} fontSize={isNotSmallerScreen ? "x-large" : "large"}>{data.description}</Text>
+                <Text padding={"20px"} fontSize={isNotSmallerScreen ? "x-large" : "large"} textAlign={"center"}>{data.description}</Text>
             </Flex>
             <Flex width={{base:"100%", xl: "35%"}} justifyContent={"center"}>
                 <Image src={data.image} objectFit={"contain"} boxSize={"400px"}/>
