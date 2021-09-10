@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 // import  {boxStyles as Box} from "./components/boxStyles"
-import  {drawerStyles as Drawer} from "./components/drawerStyles"
+import { drawerStyles as Drawer } from "./components/drawerStyles"
 import { buttonStyles as Button } from "./components/buttonStyles";
 
 export const theme = extendTheme(
@@ -28,12 +28,12 @@ export const theme = extendTheme(
         default: "#00A072",
       },
       highlight: {
-          100: "#ffffff",
-          200: "#fffafa",
-          300: "#f5f5f5",
-          400: "#f2f3f4",
-          500: "#ebecf0"
-        },
+        100: "#ffffff",
+        200: "#fffafa",
+        300: "#f5f5f5",
+        400: "#f2f3f4",
+        500: "#ebecf0"
+      },
       darkHighlight: "#2c262a",
       link: "#6cd4ff",
     },

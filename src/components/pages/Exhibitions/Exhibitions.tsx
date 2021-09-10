@@ -154,7 +154,7 @@ const Exhibitions = ()=>{
               <MotionBox
               custom = {i}
               animate = {animation}
-              className="Card"
+              className="ECard"
               key= {index}
               >
               <Card data={item} />
@@ -221,7 +221,7 @@ const Exhibitions = ()=>{
             })
           }
         </SimpleGrid> */}
-       <Footer></Footer>
+       <Footer designed={[{name : "Srinivas",mail :"ch19b052@smail.iitm.ac.in"}]} />
      </CustomBox>
     
     );
