@@ -87,7 +87,13 @@ const Exhibitions = ()=>{
               <Heading as={'h1'} mb={"3"}>
                 About Us
               </Heading>
-               <Text>
+               <Text 
+                style = {{
+                  fontSize: "20px",
+                  letterSpacing : "1px",
+                  fontFamily : 'Roboto',
+                  zIndex : 1
+                }}>
                  {AboutusData}
                 </Text>
               </MotionBox>
@@ -114,7 +120,7 @@ const Exhibitions = ()=>{
               mt={["0px","60px"]}
               >
               <Image
-                alt={'Hero Image'}
+                alt={'Display Image'}
                 fit={"cover"}
                 align={'center'}
                 w={'100%'}
@@ -131,10 +137,11 @@ const Exhibitions = ()=>{
       <VStack>
       <Heading
               fontWeight={500}
-              fontSize={"3xl"}
+              fontSize={["2xl","3xl","3xl"]}
                m={[2,5]} 
               className = "Title"
               color={Titlecolor}
+              p={3}
              >
               PREVIOUS EXHIBITIONS
             </Heading>
@@ -147,7 +154,7 @@ const Exhibitions = ()=>{
               <MotionBox
               custom = {i}
               animate = {animation}
-              className="Card"
+              className="ECard"
               key= {index}
               >
               <Card data={item} />
@@ -214,7 +221,7 @@ const Exhibitions = ()=>{
             })
           }
         </SimpleGrid> */}
-       <Footer></Footer>
+       <Footer designed={[{name : "Srinivas",mail :"ch19b052@smail.iitm.ac.in"}]} />
      </CustomBox>
     
     );

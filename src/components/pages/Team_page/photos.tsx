@@ -22,10 +22,7 @@ import me18b145 from "../../../images/profiles/me18b145.jpg";
 import be19b009 from "../../../images/profiles/be19b009.jpeg";
 import ce18b060 from "../../../images/profiles/ce18b060.jpg";
 
-import dummy from "../../../images/profile.jpg";
-
 export default {
-  dummy,
   be19b009,
   ce18b060,
   be17b022,

@@ -378,7 +378,9 @@ Events()
                 </div>
             </section>
             {/* <script src="./script.tsx"></script> */}
-            <Footer></Footer>
+            <Footer designed={[
+            { name: "Krithikaa", mail: "be20b020@smail.iitm.ac.in" }
+          ]}></Footer>
         </CustomBox>
          </div>
     )

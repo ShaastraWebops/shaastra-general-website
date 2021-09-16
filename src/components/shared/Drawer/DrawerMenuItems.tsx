@@ -87,37 +87,9 @@ export const DrawerDesktopMenuItems = () => {
                 fontSize: 38,
                 background: "#00000028",
               }}
-              to="/defence-tech"
+              to="/exhibitions"
             >
-              Defence Tech
-            </Link>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/exhibitions-speakers"
-            >
-              Exhibitions Speakers
-            </Link>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/others-exhibitions"
-            >
-              Others
+              Please click to go
             </Link>
           </>
         );
@@ -258,7 +230,7 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
-          Exhibitions
+          <Link to="/exhibitions">Exhibitions</Link> 
         </Box>
         <Box
           className="menu-text"
@@ -390,24 +362,9 @@ export const DrawerMobileMenuItems = () => {
             </Box>
           </AccordionPanel>
         </AccordionItem>
-        <AccordionItem border={0}>
-          <AccordionButton pl={0}>
             <Box fontSize={27} fontStyle={"normal"}>
-              Exhibitions
+              <Link to="/exhibitions">Exhibitions</Link>
             </Box>
-          </AccordionButton>
-          <AccordionPanel>
-            <Box fontSize="xl">
-              <Link to="/defence-tech">Defence Tech</Link>
-            </Box>
-            <Box fontSize="xl">
-              <Link to="/exhibitions-speakers">Exhibitions Speakers</Link>
-            </Box>
-            <Box fontSize="xl">
-              <Link to="/others-exhibitions">Others</Link>
-            </Box>
-          </AccordionPanel>
-        </AccordionItem>
         <AccordionItem border={0}>
           <AccordionButton pl={0}>
             <Box fontSize={27} fontStyle={"normal"}>

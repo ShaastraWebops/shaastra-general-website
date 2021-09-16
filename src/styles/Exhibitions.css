@@ -1,69 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
-html {
-  margin: 0%;
-  overflow-x: hidden;
-  padding: 0%;
-}
-
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  position: relative;
-}
 
 .Title {
   font-family: "Poppins", sans-serif;
 }
 
-/* p{
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-family: 'Roboto', sans-serif;
-  z-index: 1;
-} */
-
 .App-particles__container {
-  overflow: hidden;
-  position: absolute;
-  top: 50px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  z-index: 0;
-}
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 0;
+  }
+  .AboutUsContainer{
+    height:100vh;
+    padding: 20px;
+    text-align: justify;
+  }
+  .ECard{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align:center;
+  }
 
-.Card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.AboutUsContainer {
-  height: 100vh;
-  padding: 20px;
-  text-align: justify;
-}
-.overview {
-  padding: 20px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  max-height: 100%;
-  transform: translateY(100%);
-  overflow-y: auto;
-  transition: transform 0.3s ease-in;
-  text-align: center;
-}
-
-.Card:hover .cardtext {
+  .overview {
+    padding: 13px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(100%);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.ECard:hover .cardtext {
   visibility: hidden;
 }
 
-.Card:hover .overview {
+.ECard:hover .overview {
   transform: translateY(0);
   border-radius: 5px;
   height: 100%;

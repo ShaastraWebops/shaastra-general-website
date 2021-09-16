@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, VStack, Code, useColorModeValue, Flex } from "@chakra-ui/react";
 import { ReactComponent as DiceOutlineDarkAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Dark_animated.svg";
 import { ReactComponent as DiceOutlineLightAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Light_animated.svg";
-import "./Home.css";
+import "../../styles/Home.css";
 import CustomBox from "../shared/CustomBox";
 import { FaLinkedin, FaInstagram, FaYoutubeSquare } from "react-icons/fa";
 import SwiperCore, { Navigation, Pagination } from "swiper";
@@ -16,8 +16,14 @@ import { Link } from "react-router-dom";
 import atkins from "../../images/Peter_Atkins.jpg";
 import shaastra_juniors from "../../images/shaastra_juniors.png";
 import prevArrow from "../../images/prevArrow.svg";
-import robo1 from "../../images/homepage_illustrations/Big_Robo_1.png";
-import robo2 from "../../images/homepage_illustrations/Small_robo.png";
+import robos from "../../images/homepage_illustrations/robo.png";
+import robo1 from "../../images/homepage_illustrations/big_robo_without_black_circle.png";
+import robo2 from "../../images/homepage_illustrations/small_robo_without_black.png";
+import barish from "../../images/barish.jpg";
+import John_hennessy from "../../images/John_hennessy.jpg";
+import das_nobel from "../../images/das_nobel.jpeg";
+import Raghuram_Rajan from "../../images/Raghuram_Rajan.jpg";
+import Footer from "../shared/Footer";
 
 interface Props {}
 
@@ -31,7 +37,7 @@ const Home = (props: Props) => {
   // const color = useColorModeValue("secondary", "link")
   const plain = useColorModeValue("black", "white");
 
-  const [sideNavBar_marker, setSideNavBar_marker] = React.useState(
+  const [sideNavBar_marker, setSideNavBar_marker] = React.useState<number>(
     window.innerWidth > 600 ? 200 / 6 : (window.innerWidth - 150) / 6 - 5
   );
 
@@ -131,19 +137,36 @@ const Home = (props: Props) => {
             <span>05</span>
           </a>
         </div>
-        <section id="landing_page" className={`Home_landingPage ${plain}`}>
+        <section
+          id="landing_page"
+          style={{
+            backgroundPosition: `calc(100% + ${
+              window.innerWidth < 800 ? 800 - window.innerWidth : 0
+            }) 50%`,
+          }}
+          className={`Home_landingPage ${plain}`}
+        >
           <div className="ContentBox">
             <h1>SHAASTRA 2022</h1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut,
-              esse? Ratione nobis dignissimos veniam neque doloremque
-              perspiciatis sunt, nostrum aliquam, dolor odit amet tempora
-              repellendus, corporis nemo vitae deleniti iure.
-            </p>
+            {window.innerWidth < 800 ? (
+              <></>
+            ) : (
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut,
+                esse? Ratione nobis dignissimos veniam neque doloremque
+                perspiciatis sunt, nostrum aliquam, dolor odit amet tempora
+                repellendus, corporis nemo vitae deleniti iure.
+              </p>
+            )}
           </div>
           <div className="imgBox">
-            <img src={robo2} alt="" />
-            <img src={robo1} alt="" />
+            <img src={robos} alt="" />
+            {/* <div className="robo2">
+              <img src={robo2} alt="" />
+            </div>
+            <div className="robo1">
+              <img src={robo1} alt="" />
+            </div> */}
           </div>
           <span className="Home_scroll_btn">
             <span></span>
@@ -152,15 +175,24 @@ const Home = (props: Props) => {
           <div className="Follow">
             <p>FOLLOW US</p>
             <span></span>
-            <a href="#">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/shaastra_iitm/?hl=en"
+            >
               <FaInstagram />
             </a>
             <span></span>
-            <a href="#">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/company/shaastra-iit-madras/?originalSubdomain=in"
+            >
               <FaLinkedin />
             </a>
             <span></span>
-            <a href="#">
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UCgY2ugmW-BV2nMRFu-0qPZA"
+            >
               <FaYoutubeSquare />
             </a>
             <span></span>
@@ -170,7 +202,7 @@ const Home = (props: Props) => {
           <img id="who_are_we_robo1" src={robo1} alt="" />
           <img id="who_are_we_robo2" src={robo2} alt="" />
           <h1 id="heading">WHO ARE WE?</h1>
-          <div id="text">
+          <p id="text">
             Shaastra is the annual technical festival of the Indian Institute of
             Technology Madras (IITM), Chennai, India.
             <br />
@@ -186,7 +218,7 @@ const Home = (props: Props) => {
             <br />
             Shaastra is entirely student-managed and is the first such event in
             the world to be ISO 9001:2015 certified.
-          </div>
+          </p>
         </section>
         <section
           id="workshop_events"
@@ -266,7 +298,7 @@ const Home = (props: Props) => {
                     recusandae impedit quo nemo iste harum dolorum molestias ea
                     veniam sed reprehenderit quisquam autem at sit.
                   </p>
-                  <Link to="/">SEE MORE</Link>
+                  <Link to="/events">SEE MORE</Link>
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -280,9 +312,9 @@ const Home = (props: Props) => {
               <img src={prevArrow} alt="" />
             </div>
           </div>
-          <Link to="/">SEE MORE</Link>
+          <Link to="/events">SEE MORE</Link>
         </section>
-        <section id="speakers" className={`Home_Speakers`}>
+        <section id="speakers" className={`Home_Speakers ${plain}`}>
           <h1 className={`${plain}`}>SPEAKERS</h1>
           <div className={`speaker_swiper_container`}>
             <Swiper
@@ -354,7 +386,7 @@ const Home = (props: Props) => {
               <img src={prevArrow} alt="" />
             </div>
           </div>
-          <Link to="/">SEE MORE</Link>
+          <Link to="/speakers">SEE MORE</Link>
         </section>
         <section id="testimonials" className={`Home_Testimonials ${plain}`}>
           <h1>TESTIMONIALS</h1>
@@ -363,16 +395,18 @@ const Home = (props: Props) => {
               <div className="testimonial_card_cover">
                 <div className={`testimonial_card ${plain}`}>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro, doloremque odio? Perferendis quibusdam ut unde quo
-                    dolore sit ullam veritatis, incidunt harum dolor nam dolorum
-                    nobis consectetur error sapiente quod.
+                    It was a great privilege and honor to participate in
+                    Shaastra 2021. Science has no borders and sharing the
+                    knowledge of scientific advances is a joy, especially to a
+                    talented and appreciative audience, like for Shaastra.
                   </p>
                   <div className="profile">
-                    <div className="imgBox"></div>
+                    <div className="imgBox">
+                      <img src={barish} alt="" />
+                    </div>
                     <div className="contentBox">
-                      <h3>Famous Person</h3>
-                      <p>CEO of Company</p>
+                      <h3>Dr. Barry Barish</h3>
+                      <p>Noble Prize in Physics, 2017</p>
                     </div>
                   </div>
                 </div>
@@ -380,16 +414,22 @@ const Home = (props: Props) => {
               <div className="testimonial_card_cover">
                 <div className={`testimonial_card ${plain}`}>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro, doloremque odio? Perferendis quibusdam ut unde quo
-                    dolore sit ullam veritatis, incidunt harum dolor nam dolorum
-                    nobis consectetur error sapiente quod.
+                    Thanks to the team at Shaastra 2021 for organizing a
+                    terrific event. I enjoyed the interview and a special thanks
+                    to the interviewer who did such an excellent job preparing.
+                    Thanks to the IIT madras students who asked excellent
+                    questions.
                   </p>
                   <div className="profile">
-                    <div className="imgBox"></div>
+                    <div className="imgBox">
+                      <img src={John_hennessy} alt="" />
+                    </div>
                     <div className="contentBox">
-                      <h3>Famous Person</h3>
-                      <p>CEO of Company</p>
+                      <h3>Dr. John Hennessy</h3>
+                      <p>
+                        Chairman, Alphabet <br />
+                        Inc., Turing Awardee
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -397,16 +437,18 @@ const Home = (props: Props) => {
               <div className="testimonial_card_cover">
                 <div className={`testimonial_card ${plain}`}>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro, doloremque odio? Perferendis quibusdam ut unde quo
-                    dolore sit ullam veritatis, incidunt harum dolor nam dolorum
-                    nobis consectetur error sapiente quod.
+                    It was an honor to connect with students from the IIT
+                    campuses especially from Indian Institute of Technology,
+                    Madras. Thank you for hosting me. Our Maverick Quantum AI
+                    team is committed to hiring 500 IITians in the next 3 years.
                   </p>
                   <div className="profile">
-                    <div className="imgBox"></div>
+                    <div className="imgBox">
+                      <img src={das_nobel} alt="" />
+                    </div>
                     <div className="contentBox">
-                      <h3>Famous Person</h3>
-                      <p>CEO of Company</p>
+                      <h3>Das Nobel</h3>
+                      <p>Founder & CEO at MTX Group</p>
                     </div>
                   </div>
                 </div>
@@ -414,50 +456,21 @@ const Home = (props: Props) => {
               <div className="testimonial_card_cover">
                 <div className={`testimonial_card ${plain}`}>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro, doloremque odio? Perferendis quibusdam ut unde quo
-                    dolore sit ullam veritatis, incidunt harum dolor nam dolorum
-                    nobis consectetur error sapiente quod.
+                    I spoke to the students at IIT Madras on a range of issues.
+                    I was impessed with how prepared they were. This is so
+                    refreshingly different from my student days. We are making
+                    progress !
                   </p>
                   <div className="profile">
-                    <div className="imgBox"></div>
-                    <div className="contentBox">
-                      <h3>Famous Person</h3>
-                      <p>CEO of Company</p>
+                    <div className="imgBox">
+                      <img src={Raghuram_Rajan} alt="" />
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="testimonial_card_cover">
-                <div className={`testimonial_card ${plain}`}>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro, doloremque odio? Perferendis quibusdam ut unde quo
-                    dolore sit ullam veritatis, incidunt harum dolor nam dolorum
-                    nobis consectetur error sapiente quod.
-                  </p>
-                  <div className="profile">
-                    <div className="imgBox"></div>
                     <div className="contentBox">
-                      <h3>Famous Person</h3>
-                      <p>CEO of Company</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="testimonial_card_cover">
-                <div className={`testimonial_card ${plain}`}>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro, doloremque odio? Perferendis quibusdam ut unde quo
-                    dolore sit ullam veritatis, incidunt harum dolor nam dolorum
-                    nobis consectetur error sapiente quod.
-                  </p>
-                  <div className="profile">
-                    <div className="imgBox"></div>
-                    <div className="contentBox">
-                      <h3>Famous Person</h3>
-                      <p>CEO of Company</p>
+                      <h3>Raghuram Rajan</h3>
+                      <p>
+                        Former Governor of <br />
+                        the Reserve Bank of India
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -465,6 +478,13 @@ const Home = (props: Props) => {
             </div>
           </div>
         </section>
+        <Footer
+          designed={[
+            { name: "Rohit", mail: "cs19b038@smail.iitm.ac.in" },
+            { name: "Krithikaa", mail: "be20b020@smail.iitm.ac.in" },
+            { name: "Yogesh", mail: "bs19b034@smail.iitm.ac.in" },
+          ]}
+        />
       </div>
     </CustomBox>
   );

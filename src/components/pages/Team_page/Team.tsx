@@ -9,6 +9,7 @@ import Card from "./Card";
 import SliderImgBox from "./SliderImgBox";
 import photos from "./photos";
 import { FaFilter, FaTimes } from "react-icons/fa";
+import Footer from "../../shared/Footer";
 
 interface Props {}
 
@@ -335,9 +336,15 @@ const Team = (props: Props) => {
     });
   };
 
+  interface Value {
+    footerBack?: "currentcolor";
+    creditsBack?: "currentcolor";
+  }
+
   return (
     <CustomBox>
       <div
+        className="Team"
         style={{
           display: "flex",
           flexDirection: "column",
@@ -588,6 +595,14 @@ const Team = (props: Props) => {
           </div>
         </div>
       </div>
+      <Footer
+        designed={[
+          {
+            name: "Rohit",
+            mail: "cs19b038@smail.iitm.ac.in",
+          },
+        ]}
+      />
     </CustomBox>
   );
 };

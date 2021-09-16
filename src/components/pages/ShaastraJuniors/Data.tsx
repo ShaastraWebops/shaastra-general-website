@@ -1,12 +1,13 @@
+import sj from "../../../images/JuniorShaastra/sj.jpg"
 import spark from "../../../images/JuniorShaastra/spark_2.jpg";
-import shaastra_art_challenge from "../../../images/JuniorShaastra/shaastra_art_challenge_2.jpg";
+import shaastra_art_challenge from "../../../images/JuniorShaastra/shaastra_art_challenge.png";
 import junior_makeathon from "../../../images/JuniorShaastra/junior_make-a-thon.jpg";
-import online_scavenger_hunt from "../../../images/JuniorShaastra/spark_1.png";
+import online_scavenger_hunt from "../../../images/JuniorShaastra/online_scavenger_hunt.jpg";
 import brain_squeeze from "../../../images/JuniorShaastra/brain_squeeze.jpg";
-import chess_tournament from "../../../images/JuniorShaastra/chess_tournament_2.jpg";
-import an_hour_of_code from "../../../images/JuniorShaastra/chess_tournament_1.png";
-import reverse_codeing from "../../../images/JuniorShaastra/shaastra_art_challenge_1.jpeg";
-import juniors_nights from "../../../images/JuniorShaastra/shaastra_art_challenge_1.jpeg"
+import chess_tournament from "../../../images/JuniorShaastra/chess_tournament.jpg";
+import an_hour_of_code from "../../../images/JuniorShaastra/an_hour_of_code.jpg";
+import reverse_codeing from "../../../images/JuniorShaastra/reverse_codeing.jpg";
+import juniors_nights from "../../../images/JuniorShaastra/juniors_nights.png"
 
 interface shaastraJunior{
     id: number,
@@ -25,7 +26,7 @@ export const shaastraJunoirsData: shaastraJunior[] = [
                      every student yearning for more. Shaastra Juniors is conducted online so each and every student can participate from the comfort 
                      of their home. Shaastra Juniors has special trophies for the beat school and excellent students, 
                      with schools competing against one another to win the Shaastra Juniors Championship`,
-       image: spark
+       image: sj
     },
     {
         id: 1,
