@@ -31,7 +31,7 @@ const Social = (props: Props) => {
     const backDivClass = useColorModeValue("bgdblue","green")
 Events()
     return(
-        <div className="body">
+        <div className="body social">
             <CustomBox>
          <div className={`header ${Class}`}>
                 <div className="heading">
@@ -99,12 +99,6 @@ Events()
                          to uplift women. Skills and education to match today's industry and economy have to be mastered by women to 
                          thrive. 
                      </GridItem>   
-                     {/* <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]} id="she-can-grid"
-                     display="flex" alignItems="center" justifyContent="center" padding="2rem" rowStart={1}
-                     backgroundColor="#00a787" borderRadius="24px" fontSize={["4vw", "4vw", "4vw","1.65vw"]}> 
-                         By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
-                     version of themselves, as equal and valued members of their families, society, and the world at large.
-                     </GridItem> */}
                      <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} id="she-can-grid" className={`${backClass}`}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
                       borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}>
@@ -167,10 +161,6 @@ Events()
                             <hr />
                             <div className="title">MINISTRY OF EDUCATION</div>
                             <div className="info moe">
-                                {/* <Image objectFit="cover" alt="tweet" height="475px" width="730px"
-                                boxSize={"100%"} src={moeOne}></Image> */}
-                                {/* <Image objectFit="cover" alt="tweet" height="475px" width="730px" padding="8px"
-                                boxSize={["100%","100%","100%","80%","100%"]} src={moeTwo2}></Image> */}
                             </div>
                         </div>
                         <div className="recog-info-child odd three">
@@ -203,28 +193,7 @@ Events()
                         </div>
                     </div>
                 </div>
-                {/* <Grid templateColumns="repeat(2, 1fr)" 
-                        templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]} rowGap="2rem" columnGap="3rem"
-                        width="80%" margin={["8vw auto","8vw auto","8vw auto","8rem auto"]}>
-                            <GridItem display="flex" rowSpan={[1,1,1,2]}  colSpan={[2,2,2,1]}
-                            backgroundColor="#00a7889c" borderRadius="24px"  id="link-she-can"
-                            alignItems="center" justifyContent="center">
-                                <a href="https://www.youtube.com/watch?v=9_ZsXmRUPfE" rel="noopener"
-                                target="_blank">Campaign Launch Video</a>
-                            </GridItem>
-                            <GridItem rowSpan={1}  display="flex" padding="1rem" colSpan={[2,2,2,1]}
-                             backgroundColor="#00a7889c" borderRadius="24px" id="link-she-can"
-                             alignItems="center" justifyContent="center">
-                                <a href="https://www.youtube.com/watch?v=4GYNmmNt2v8" rel="noopener"
-                                target="_blank">DD National Interview </a>
-                            </GridItem>
-                            <GridItem rowSpan={1} display="flex" padding="1rem" colSpan={[2,2,2,1]}
-                             backgroundColor="#00a7889c" borderRadius="24px" id="link-she-can"
-                             alignItems="center" justifyContent="center">
-                                <a href="https://www.shecan.shaastra.org/" rel="noopener"
-                                target="_blank">For More Info</a>
-                            </GridItem>
-                </Grid> */}
+               
             </section>
 
             <section className="blink b" id="blink">
@@ -245,14 +214,6 @@ Events()
                     height="183px" width="274px" id="blink-image"></Image></GridItem>
                     <GridItem colStart={[1,1,1,3]} colSpan={[4,4,4,2]}><Image src={blinkTwo} height="183px" width="274px" 
                      alt="blink" id="blink-image"></Image></GridItem>
-                    {/* <GridItem colStart={1} colSpan={[4,4,4,2]} display="flex"
-                    justifyContent="flex-start" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
-                        <p className="blink-info-back">Impacted 100+ adults through Career Development programs</p>
-                    </GridItem>
-                    <GridItem colStart={[1,1,1,3]} colSpan={[4,4,4,2]} display="flex"
-                    justifyContent="flex-end" alignItems="center" fontSize={["8vw","8vw","6vw","1.65vw"]}>
-                        <p className="blink-info-back">300+ People pledged to donate their eyes.</p>
-                    </GridItem> */}
                 </Grid>
                 <Grid templateRows="repeat(2,1fr)" templateColumns="repeat(2,1fr)" columnGap="4vw" padding="3vw" rowGap="4vw">
                     <GridItem className="blink-info-back" colSpan={[2,2,2,1]} rowSpan={[1,1,1,2]}>
@@ -263,14 +224,6 @@ Events()
                     300+ People pledged to donate their eyes.
                     </GridItem>
                 </Grid>
-                {/* <div className="blink-main-info">
-                    <div className="blink-info-back">
-                    Impacted 100+ adults through Career Development programs
-                    </div>
-                    <div className="blink-info-back">
-                    300+ People pledged to donate their eyes.
-                    </div>
-                </div> */}
                 <Grid templateColumns="repeat(2,1fr)" templateRows="repeat(2,1fr)" columnGap="4vw" padding="3vw" rowGap="4vw">
                     <GridItem className="blink-info-light" colSpan={[2,2,2,1]} rowSpan={[1,1,1,2]}>
                     3D printed interactive puzzles (TacToys) for primary and secondary school students to make 
@@ -288,22 +241,7 @@ Events()
                     aspects like confidence, personality development and other fun activities.
                     </GridItem>
                 </Grid>
-                {/* <div className="blink-main-info">
-                    <div className="blink-info-light">
-                    3D printed interactive puzzles (TacToys) for primary and secondary school students to make 
-                    Braille learning fun and interactive. A revised and well-rounded pedagogy for the visually impaired. 
-                    Personality Development and dramatics workshops have been conducted for primary and secondary school 
-                    students across Chennai. Plans are in place to conduct a 2-day career development workshop 
-                    during Shaastra to spread awareness about the career opportunities available to the visually impaired.
-                    </div>
-                    <div className="blink-info-dark">
-                    Through this social initiative, Team BLINK aims to embolden and enable the visually challenged to forge 
-                    their own path and achieve great success in their lives and careers. <br /><br />
-                     Our long term goal is to create a well-rounded
-                    curriculum in as many blind schools as possible, where they not only use our braille puzzles but also focus on other 
-                    aspects like confidence, personality development and other fun activities.
-                    </div>
-                </div> */}
+                
             </section>
 
             <section id="past">
@@ -374,10 +312,9 @@ Events()
                                 The campaign will also include activities to promote hygiene awareness in schools and other public places in Chennai.
                             </div>
                     </div>
-                    {/* <div><Image src={bubblesOne} alt="poster" height="540px" width='540px' id="bubbles-image"></Image></div> */}
+                   
                 </div>
             </section>
-            {/* <script src="./script.tsx"></script> */}
             <Footer designed={[
             { name: "Krithikaa", mail: "be20b020@smail.iitm.ac.in" }
           ]}></Footer>
