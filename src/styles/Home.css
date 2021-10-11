@@ -90,7 +90,7 @@
 .black a::before {
   background-color: white;
 }
-section {
+.Home section {
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -99,13 +99,8 @@ section {
   padding-left: 150px;
 }
 @media screen and (max-width: 900px) {
-  section {
+  .Home section {
     padding-left: 100px;
-  }
-}
-@media screen and (max-width: 600px) {
-  section {
-    padding: 0 30px !important;
   }
 }
 @media screen and (max-width: 600px) {
@@ -715,6 +710,12 @@ section {
   border-top: 1px solid #fff4;
   backdrop-filter: blur(2px);
 }
+@media screen and (max-width: 600px) {
+  .Home .Footer {
+    padding: 0 0 50px 0 !important;
+    backdrop-filter: none;
+  }
+}
 @media screen and (max-width: 500px) {
   .Home_Speakers h1,
   .Home_WorkshopsEvents h1 {
@@ -766,10 +767,6 @@ section {
     font-size: 4vw;
     font-weight: 400;
   }
-  .Home .Footer {
-    padding: 0 0 50px 0 !important;
-    backdrop-filter: none;
-  }
 }
 /* Home_Testimonials */
 .Home_Testimonials {
@@ -794,6 +791,7 @@ section {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow-x: scroll;
   overflow-y: hidden;
 }
@@ -1014,5 +1012,21 @@ section {
     .testimonial_card_cover:nth-child(even)
     .testimonial_card:before {
     bottom: calc(100% + 22px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Home_landingPage {
+    padding: 0 30px;
+  }
+  .Home_Testimonials {
+    padding: 0 30px;
+  }
+  .Home_Speakers,
+  .Home_WorkshopsEvents {
+    padding: 0 30px;
+  }
+  .Home_whoAreWe {
+    padding: 0 30px;
   }
 }

@@ -33,39 +33,69 @@ const Footer = (props: Props) => {
         <div className="Contact">
           <h3>Contact Us : </h3>
           <p>
-            Person Name :
-            <a href="#">
-              <FaEnvelope /> mailId@shaastra.org
+            {window.innerWidth < 600 ? <br /> : <span>General : </span>}
+            <a href="mailto:sec_cocur@shaastra.org">
+              <FaEnvelope /> sec_cocur@shaastra.org
             </a>
           </p>
-
           <p>
-            Person Name :
-            <a href="#">
-              <FaEnvelope /> mailId@shaastra.org
+            {window.innerWidth < 600 ? (
+              <br />
+            ) : (
+              <span>Student Relations : </span>
+            )}
+            <a href="mailto:juniors@shaastra.org">
+              <FaEnvelope /> juniors@shaastra.org
+            </a>
+          </p>
+          <p>
+            {window.innerWidth < 600 ? (
+              <br />
+            ) : (
+              <span>Sponsors Relations : </span>
+            )}
+            <a href="mailto:spons@shaastra.org">
+              <FaEnvelope /> spons@shaastra.org
             </a>
           </p>
         </div>
         <div className="DesignedBy">
           <h3>For issues related to the website, contact : </h3>
-          {props.designed.map((item) => {
-            return (
-              <>
-                <p>
-                  {item.name} :
-                  <a href={"mailto:" + item.mail}>
-                    <FaEnvelope /> {item.mail}
-                  </a>
-                </p>
-              </>
-            );
-          })}
+          <p>
+            {window.innerWidth < 600 ? <br /> : <span>Webops Team : </span>}
+            <a href="mailto:webops@shaastra.org">
+              <FaEnvelope /> webops@shaastra.org
+            </a>
+          </p>
+          <p>
+            {window.innerWidth < 600 ? <br /> : <span>Abhishek sv : </span>}
+            <a href="mailto:abhisheksv@shaastra.org">
+              <FaEnvelope /> abhisheksv@shaastra.org
+            </a>
+          </p>
+          <p>
+            {window.innerWidth < 600 ? (
+              <br />
+            ) : (
+              <span>Shobhan Karthick : </span>
+            )}
+            <a href="mailto:shobhankarthick@shaastra.org">
+              <FaEnvelope /> shobhankarthick@shaastra.org
+            </a>
+          </p>
         </div>
       </div>
       <div className="bottom">
         <p>
-          Ⓒ Developed by Web Operations | Shaastra | IIT Madras <br /> All
-          Rights Reserved
+          Ⓒ Developed by{" "}
+          {props.designed.map((item, key) => {
+            if (key == 0) {
+              return item.name;
+            } else {
+              return ", " + item.name;
+            }
+          })}{" "}
+          | Web Operations | Shaastra | IIT Madras. All Rights Reserved
         </p>
         <div className="Follow">
           <p>FOLLOW US</p>

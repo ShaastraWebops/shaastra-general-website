@@ -43,7 +43,7 @@
   letter-spacing: 2px;
   font-size: 22px;
   position: relative;
-  left: -10px;
+  /* left: -10px; */
   margin-bottom: 10px;
 }
 .Footer .top .Contact p,
@@ -52,7 +52,7 @@
   letter-spacing: 2px;
   font-size: 14px;
   position: relative;
-  left: -5px;
+  /* left: -5px; */
   text-transform: uppercase;
 }
 .Footer .top .Contact a,
@@ -110,6 +110,9 @@
   font-weight: 500;
 }
 .Footer .bottom .Follow {
+  width: 220px;
+  min-width: 220px;
+  margin-left: 40px;
   position: relative;
   display: flex;
   align-items: center;
@@ -147,15 +150,16 @@
     display: none;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .Footer {
-    padding: 0 0 0 0 !important;
+    padding: 0 0 0 0;
     backdrop-filter: none;
     background-color: rgba(0, 0, 0, 0.4);
   }
   .Footer .top {
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 100px;
   }
   .Footer .top .Contact {
     margin-bottom: 20px;
@@ -189,11 +193,21 @@
     text-align: center;
     margin-top: 10px;
   }
+  .Footer .bottom .Follow {
+    width: fit-content;
+    min-width: fit-content;
+  }
   .Footer .bottom .Follow p {
     display: none;
   }
   .Footer .bottom .Follow span:nth-of-type(1),
   .Footer .bottom .Follow span:nth-last-of-type(1) {
     display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Footer .top {
+    padding: 20px 15px;
   }
 }
