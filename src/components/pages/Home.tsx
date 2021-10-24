@@ -4,7 +4,12 @@ import { ReactComponent as DiceOutlineDarkAnimated } from "./../../images/logo/a
 import { ReactComponent as DiceOutlineLightAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Light_animated.svg";
 import "../../styles/Home.css";
 import CustomBox from "../shared/CustomBox";
-import { FaLinkedin, FaInstagram, FaYoutubeSquare } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaYoutubeSquare,
+  FaYoutube,
+} from "react-icons/fa";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
@@ -24,6 +29,22 @@ import John_hennessy from "../../images/John_hennessy.jpg";
 import das_nobel from "../../images/das_nobel.jpeg";
 import Raghuram_Rajan from "../../images/Raghuram_Rajan.jpg";
 import Footer from "../shared/Footer";
+import Hennessy from "../../images/Speaker/hennessy.jpg";
+import Radhakrishnan from "../../images/Speaker/radhakrishnan.jpg";
+import Rajan from "../../images/Speaker/rajan.jpg";
+import Robo from "../../images/Speaker/robothespian.jpg";
+import Soumya from "../../images/Speaker/soumya_swaminathan.jpg";
+import Yunus from "../../images/Speaker/yunus.jpg";
+import Capture from "../../images/Speaker/Capture.jpg";
+import Robert from "../../images/Speaker/robert.jpg";
+import Event1 from "../../images/events_1.png";
+import Event2 from "../../images/events_2.png";
+import Event3 from "../../images/events_3.png";
+import Event4 from "../../images/events_4.png";
+import Workshop1 from "../../images/workshop_1.png";
+import Workshop2 from "../../images/workshop_2.png";
+import Workshop3 from "../../images/workshop_3.png";
+import Workshop4 from "../../images/workshop_4.png";
 
 interface Props {}
 
@@ -152,10 +173,12 @@ const Home = (props: Props) => {
               <></>
             ) : (
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut,
-                esse? Ratione nobis dignissimos veniam neque doloremque
-                perspiciatis sunt, nostrum aliquam, dolor odit amet tempora
-                repellendus, corporis nemo vitae deleniti iure.
+                Welcome to the Official website of first ISO certified
+                student-run technical festival, Shaastra! Here, we will take you
+                through all the amazing things you can do with us, from earning
+                lakhs of money by winning events, to fireside chats with your
+                favorite celebrities. So, what are you waiting for? Go ahead and
+                explore what we have to offer.
               </p>
             )}
           </div>
@@ -237,81 +260,119 @@ const Home = (props: Props) => {
               slidesPerView={window.innerWidth > 600 ? "auto" : 1}
             >
               <SwiperSlide>
-                <img src={shaastra_juniors} alt="" />
+                <img src={Workshop1} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Doloribus voluptatum ipsam, velit aperiam similique,
-                    recusandae impedit quo nemo iste harum dolorum molestias ea
-                    veniam sed reprehenderit quisquam autem at sit.
+                    1. Make a chat app using Socket.io, Node.js and MongoDB
+                    <br /> 2. Web Development in Python with Flask <br /> 3.
+                    Creative Coding
                   </p>
                   <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={shaastra_juniors} alt="" />
+                <img src={Event1} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
+                  <h3>Capture the Flag (CTF)</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Doloribus voluptatum ipsam, velit aperiam similique,
-                    recusandae impedit quo nemo iste harum dolorum molestias ea
-                    veniam sed reprehenderit quisquam autem at sit.
+                    Do "hacking" scenes in movies and TV Shows make you roll
+                    your eyes? Do you want to see what exploiting real life
+                    vulnerabilities in real life systems is like? Shaastra CTF
+                    ...
+                  </p>
+                  <Link to="/events">SEE MORE</Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Workshop2} alt="" />
+                <div className="contentBox">
+                  <p>
+                    1. Introduction to FPGA <br />
+                    2. CPU and GPU Parallel Computing <br />
+                    3. Quantum Computing
                   </p>
                   <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={shaastra_juniors} alt="" />
+                <img src={Event2} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
+                  <h3>Caterpillar IDP</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Doloribus voluptatum ipsam, velit aperiam similique,
-                    recusandae impedit quo nemo iste harum dolorum molestias ea
-                    veniam sed reprehenderit quisquam autem at sit.
+                    Are you a person who is curious about problem solving? Yes,
+                    you heard that right, you are at the right place. With mind
+                    blogging problem statements at our stake and with the
+                    collaboration of Caterpillar India Pvt ltd, we ...
+                  </p>
+                  <Link to="/events">SEE MORE</Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Workshop3} alt="" />
+                <div className="contentBox">
+                  <p>
+                    1. Introduction to Arduino and IOT <br />
+                    2. Circuit Simulation and PCB Design <br />
+                    3. Hacking Processors : An Unconventional Hacking
+                    Methodology
                   </p>
                   <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={shaastra_juniors} alt="" />
+                <img src={Event3} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
+                  <h3>Rapid Chess</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Doloribus voluptatum ipsam, velit aperiam similique,
-                    recusandae impedit quo nemo iste harum dolorum molestias ea
-                    veniam sed reprehenderit quisquam autem at sit.
+                    The event is Blitz Chess. The event is going to be held on
+                    Chess.com. Both opponents get 3min+2sec each for the chess
+                    game. A player can win only if he checkmates the opponent or
+                    the opponent's time ...
+                  </p>
+                  <Link to="/events">SEE MORE</Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Workshop4} alt="" />
+                <div className="contentBox">
+                  <p>
+                    1. Stepping into the world of robotics <br />
+                    2. Python Algorithms for Robotics <br />
+                    3. Control of Robot Arm using Inverse Kinematics
                   </p>
                   <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={shaastra_juniors} alt="" />
+                <img src={Event4} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
+                  <h3>Boeing Aeromodelling Competition</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Doloribus voluptatum ipsam, velit aperiam similique,
-                    recusandae impedit quo nemo iste harum dolorum molestias ea
-                    veniam sed reprehenderit quisquam autem at sit.
+                    Have you ever wanted to work on modelling a real aeroplane?
+                    Shaastra brings you, The BOEING NATIONAL AEROMODELLING
+                    COMPETITION, conducted in ...
                   </p>
                   <Link to="/events">SEE MORE</Link>
                 </div>
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="swiperControllers">
-            <div className="swiper-prev-con" ref={events_navigationPrevRef}>
-              <img src={prevArrow} alt="" />
+          {window.innerHeight > 300 ? (
+            <div className="swiperControllers">
+              <div className="swiper-prev-con" ref={events_navigationPrevRef}>
+                <img src={prevArrow} alt="" />
+              </div>
+              <div
+                className="swiper-pagination"
+                ref={events_paginationRef}
+              ></div>
+              <div className="swiper-next-con" ref={events_navigationNextRef}>
+                <img src={prevArrow} alt="" />
+              </div>
             </div>
-            <div className="swiper-pagination" ref={events_paginationRef}></div>
-            <div className="swiper-next-con" ref={events_navigationNextRef}>
-              <img src={prevArrow} alt="" />
-            </div>
-          </div>
+          ) : (
+            "Swipe right ->"
+          )}
           <Link to="/events">SEE MORE</Link>
         </section>
         <section id="speakers" className={`Home_Speakers ${plain}`}>
@@ -341,35 +402,88 @@ const Home = (props: Props) => {
                 <img src={atkins} alt="" />
                 <div className="contentBox">
                   <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <p>FRSC, Prolific Author of popular chemistry textbooks</p>
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=0G_-1SGhYTA&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=3"
+                  >
+                    <FaYoutube />
+                  </a>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={atkins} alt="" />
+                <img src={Hennessy} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <h3>Dr John Hennessy</h3>
+                  <p>
+                    Chairman of Alphabet Inc., Eminent Computer Scientist,
+                    Turing Award, 2017
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=_ebUDIsbqkc&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=2"
+                    target="_blank"
+                  >
+                    <FaYoutube />
+                  </a>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={atkins} alt="" />
+                <img src={Radhakrishnan} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <h3>Dr K. Radhakrishnan</h3>
+
+                  <p>Former Chairman, ISRO</p>
+                  <a
+                    href="https://www.youtube.com/watch?v=Wv_sea0tMrc&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X"
+                    target="_blank"
+                  >
+                    <FaYoutube />
+                  </a>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={atkins} alt="" />
+                <img src={Robo} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <h3>RoboThespian and Cleo</h3>
+
+                  <p>World’s First Acting Humanoid Robots</p>
+                  <a href="" target="_blank">
+                    <FaYoutube />
+                  </a>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={atkins} alt="" />
+                <img src={Soumya} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
-                  <p>Professor of Chemistry at the University of Oxford</p>
+                  <h3>Dr Soumya Swaminathan,</h3>
+
+                  <p>Chief Scientist, World Health Organisation (WHO)</p>
+                  <a href="" target="_blank">
+                    <FaYoutube />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Capture} alt="" />
+                <div className="contentBox">
+                  <h3>Dr Joachim Frank</h3>
+                  <p>Nobel Prize in Chemistry, 2017</p>
+                  <a href="" target="_blank">
+                    <FaYoutube />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Robert} alt="" />
+                <div className="contentBox">
+                  <h3>Mr Robert C. Martin</h3>
+                  <p>American Software Engineer, Popular Author</p>
+                  <a
+                    href="https://www.youtube.com/watch?v=FlbDg_iBCkw&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=7"
+                    target="_blank"
+                  >
+                    <FaYoutube />
+                  </a>
                 </div>
               </SwiperSlide>
             </Swiper>
