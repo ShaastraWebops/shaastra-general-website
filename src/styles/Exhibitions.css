@@ -35,7 +35,7 @@
     transform: translateY(100%);
     overflow-y: auto;
     transition: transform 0.3s ease-in;
-    text-align:center;
+    text-align: justify;
     justify-content: center;
     align-items: center;
   }
