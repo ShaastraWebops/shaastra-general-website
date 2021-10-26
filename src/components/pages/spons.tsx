@@ -25,14 +25,20 @@ import catl from "../../images/logo/static/caterpillar22.png";
 import www from "../../images/logo/static/www.png";
 import linkedin from "../../images/logo/static/linkedin (1).png";
 import facebook from "../../images/logo/static/facebook.png";
+import { useColorModeValue } from "@chakra-ui/color-mode";
+import { invertScale } from "framer-motion/types/value/use-inverted-scale";
 
 function Spons() {
+  const theme = useColorModeValue("white","black");
   return (
     <>
       <CustomBox>
         <Header />
         <div className="sponsBox">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
           <br />
           <br />
           <br />
@@ -46,21 +52,20 @@ function Spons() {
             <br />
             <div className="aboutus">
               <p id="about">About Us</p>
-
             </div>
             <br />
             <br />
             <div className="maintextspons">
               <p className="boxx">
-                Shaastra, ever since it's conception has been growing by leaps and
-                bounds and this wouldn't have been achieved without the support of
-                the student community and our corporate partners. We are
-                continuously on the look out for long-term and mutually beneficial
-                associations with reputed organizations from around the globe. In
-                case your organization shares and believes in Shaastra’s vision, we
-                would love to work out an association. We always welcome ideas,
-                queries and criticism of any kind and hence, do feel free to contact
-                us.
+                Shaastra, ever since it's conception has been growing by leaps
+                and bounds and this wouldn't have been achieved without the
+                support of the student community and our corporate partners. We
+                are continuously on the look out for long-term and mutually
+                beneficial associations with reputed organizations from around
+                the globe. In case your organization shares and believes in
+                Shaastra’s vision, we would love to work out an association. We
+                always welcome ideas, queries and criticism of any kind and
+                hence, do feel free to contact us.
               </p>
             </div>
             <br />
@@ -125,7 +130,20 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                  <img src={CAT} className="img-responsive" alt="" />
+                  <img
+                    src={CAT}
+                    className="img-responsive"
+                    alt=""
+                    style={
+                      theme == "black"
+                        ? {
+                            filter: "invert(1)",
+                          }
+                        : {
+                            filter: "invert(0)",
+                          }
+                    }
+                  />
                 </div>
                 <div className="card-back">
                   <p className="text">
@@ -225,6 +243,15 @@ function Spons() {
                     className="img-responsive"
                     id="inno"
                     alt=""
+                    style={
+                      theme == "black"
+                        ? {
+                            filter: "invert(1)",
+                          }
+                        : {
+                            filter: "invert(0)",
+                          }
+                    }
                   />
                 </div>
                 <div className="card-back">
@@ -244,7 +271,12 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                  <img src={kamal} className="img-responsive" id="kamal" alt="" />
+                  <img
+                    src={kamal}
+                    className="img-responsive"
+                    id="kamal"
+                    alt=""
+                  />
                 </div>
                 <div className="card-back">
                   <p className="text">
@@ -301,7 +333,12 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                  <img src={subex} className="img-responsive" id="subex" alt="" />
+                  <img
+                    src={subex}
+                    className="img-responsive"
+                    id="subex"
+                    alt=""
+                  />
                 </div>
                 <div className="card-back">
                   <p className="text">
@@ -318,7 +355,7 @@ function Spons() {
                 </div>
               </div>
 
-              <div className="card" id="photo">
+              {/* <div className="card" id="photo">
                 <div className="card-front">
                   <img
                     src={surana}
@@ -340,7 +377,7 @@ function Spons() {
                     </a>
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="card" id="photo">
                 <div className="card-front">
@@ -392,9 +429,7 @@ function Spons() {
           <br />
         </div>
         <Footer
-          designed={[
-            { name: "Mitesh", mail: "ce20b025@smail.iitm.ac.in" },
-          ]}
+          designed={[{ name: "Mitesh", mail: "ce20b025@smail.iitm.ac.in" }]}
         />
       </CustomBox>
     </>
