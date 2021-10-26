@@ -19,18 +19,18 @@ const Card = ({data}) =>{
   
     return(
         <Box
-          maxW={'270px'}
+          maxW={'300px'}
           w={'full'}
           rounded={'md'}
           overflow={'hidden'}
-          h={'100%'}
+          h={'400px'}
         >
           <Image
-            h={'200px'}
-            w={'full'}
+            h={'270px'}
+            w={'auto'}
             src={data.image}
             p={2}
-            rounded="3xl"
+            rounded="2xl"
             className="card-img"
           />
           <Box  p={2}  fontSize={"15px"} fontWeight={500}>
@@ -45,12 +45,14 @@ const Card = ({data}) =>{
                 fontFamily : 'Roboto',
                 zIndex : 1
               }} >{data.title}</Text>
-              <Box className="overview" bg={Descriptionbg} color="#ffffff">
-              <Heading as={'h3'} mb={"3"} fontSize={"2xl"} >
+              <Box className="overview" bg={Descriptionbg} color="#ffffff" m={2} p={2}>
+             <Center flexDirection={'column'} h={'270px'} p={2}>
+             <Heading as={'h3'} mb={"3"} fontSize={"2xl"} >
                {data.title}
               </Heading>
-              <Text as={"h4"} size={"4"} 
+              <Text as={"h4"} p={4} fontSize={'sm'}
               >{data.description}</Text>
+             </Center>
             </Box>
             </Stack>
           
