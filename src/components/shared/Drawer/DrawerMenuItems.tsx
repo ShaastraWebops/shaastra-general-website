@@ -4,76 +4,17 @@ import {
   AccordionItem,
   AccordionPanel,
 } from "@chakra-ui/accordion";
-import { Flex, Text as Box } from "@chakra-ui/layout";
+import { Flex, Spacer, Text as Box } from "@chakra-ui/layout";
+import { time } from "console";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { textChangeRangeNewSpan } from "typescript";
 
 export const DrawerDesktopMenuItems = () => {
   const [menu, setMenu] = useState<string>("e&w");
 
   const menuItems = () => {
     switch (menu) {
-      case "e&w":
-        return (
-          <>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/events"
-            >
-              Events
-            </Link>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/summit"
-            >
-              Summit
-            </Link>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/tif"
-            >
-              TiF
-            </Link>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/workshops"
-            >
-              Workshops
-            </Link>
-          </>
-        );
       case "exhibitions":
         return (
           <>
@@ -84,114 +25,66 @@ export const DrawerDesktopMenuItems = () => {
                 borderRadius: 8,
                 padding: 5,
                 marginBottom: 5,
-                fontSize: 38,
+                fontSize: 24,
                 background: "#00000028",
               }}
               to="/exhibitions"
-            >
-              Please click to go
-            </Link>
+            ></Link>
           </>
         );
       case "shaastra-nights":
         return (
           <>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/shows"
-            >
-              Shows
-            </Link>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/envisage"
-            >
-              Envisage
-            </Link>
+            <Flex flexDirection="column" justifyContent="flex-start">
+              <Box
+                letterSpacing="normal"
+                padding-left="8px"
+                _hover={{
+                  padding: "8px",
+                  fontSize: "26",
+                  letterSpacing: "6px",
+                }}
+              >
+                <Link
+                  style={{
+                    textAlign: "center",
+                    width: "60%",
+                    borderRadius: 8,
+                    padding: 8,
+                    marginBottom: 5,
+                    fontSize: 24,
+                    background: "#00000028",
+                  }}
+                  to="/shows"
+                >
+                  Shows
+                </Link>
+              </Box>
+              <Box
+                letterSpacing="normal"
+                _hover={{
+                  padding: "8px",
+                  fontSize: "26",
+                  letterSpacing: "6px",
+                }}
+              >
+                <Link
+                  style={{
+                    textAlign: "center",
+                    width: "60%",
+                    borderRadius: 8,
+                    padding: 8,
+                    marginBottom: 5,
+                    fontSize: 24,
+                    background: "#00000028",
+                  }}
+                  to="/envisage"
+                >
+                  Envisage
+                </Link>
+              </Box>
+            </Flex>
           </>
-        );
-      case "schools":
-        return (
-          <>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/shaastra-juniors"
-            >
-              Shaastra Juniors
-            </Link>
-            <Link
-              style={{
-                textAlign: "center",
-                width: "60%",
-                borderRadius: 8,
-                padding: 5,
-                marginBottom: 5,
-                fontSize: 38,
-                background: "#00000028",
-              }}
-              to="/jmt"
-            >
-              JMT
-            </Link>
-          </>
-        );
-      case "click":
-        return (
-          <Link
-            style={{
-              textAlign: "center",
-              width: "60%",
-              borderRadius: 8,
-              padding: 5,
-              marginBottom: 5,
-              fontSize: 38,
-              background: "#00000028",
-            }}
-            to="/workshops"
-          >
-            Please click to go
-          </Link>
-        );
-      default:
-        return (
-          <Link
-            style={{
-              textAlign: "center",
-              width: "60%",
-              borderRadius: 8,
-              padding: 5,
-              marginBottom: 5,
-              fontSize: 38,
-              background: "#00000028",
-            }}
-            to="/workshops"
-          >
-            Please hover to see options
-          </Link>
         );
     }
   };
@@ -206,68 +99,77 @@ export const DrawerDesktopMenuItems = () => {
       >
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
-          onMouseOver={() => setMenu("e&w")}
-          fontSize={40}
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          onMouseOver={() => setMenu("Home")}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
-          p={3}
+          pl={6}
+          p={2}
           pr={12}
           mb={4}
         >
-          Events and Workshops
+          <Link to="/">Home</Link>
         </Box>
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("exhibitions")}
-          fontSize={40}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
-          p={3}
+          pl={6}
+          p={2}
           pr={12}
           mb={4}
         >
-          <Link to="/exhibitions">Exhibitions</Link> 
+          <Link to="/exhibitions">Exhibitions</Link>
         </Box>
+        <Spacer />
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
+          _hover={{
+            color: "#cccccc",
+            padding: "8px",
+            marginBottom: "20px",
+            letterSpacing: "7px",
+          }}
           onMouseOver={() => setMenu("shaastra-nights")}
-          fontSize={40}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
+          pl={6}
           p={3}
           pr={12}
           mb={4}
         >
           Shaastra Nights
+          {menuItems()}
         </Box>
+        <div style={{ color: "white", border: "0.5px" }} />
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("schools")}
-          fontSize={40}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
+          pl={6}
           p={3}
           pr={12}
           mb={4}
         >
-          Schools
+          <Link to="/shaastra-juniors"> Schools</Link>
         </Box>
+        <Box _hover={{}}></Box>
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("click")}
-          fontSize={40}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
+          pl={6}
           p={3}
           pr={12}
           mb={4}
@@ -276,12 +178,12 @@ export const DrawerDesktopMenuItems = () => {
         </Box>
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
-          onMouseOver={() => setMenu("click")}
-          fontSize={40}
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          onMouseOver={() => setMenu("Click")}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
+          pl={6}
           p={3}
           pr={12}
           mb={4}
@@ -290,12 +192,12 @@ export const DrawerDesktopMenuItems = () => {
         </Box>
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("click")}
-          fontSize={40}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
+          pl={6}
           p={3}
           pr={12}
           mb={4}
@@ -304,29 +206,18 @@ export const DrawerDesktopMenuItems = () => {
         </Box>
         <Box
           className="menu-text"
-          _hover={{ background: "#00000050" }}
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("click")}
-          fontSize={40}
+          fontSize={28}
           fontFamily={"monospace"}
           fontStyle={"italic"}
-          pl={12}
+          pl={6}
           p={3}
           pr={12}
           mb={4}
         >
           <Link to="/team">Team</Link>
         </Box>
-      </Flex>
-      <Flex
-        display={{ base: "none", lg: "flex" }}
-        flexDirection={"column"}
-        justifyContent="center"
-        alignItems="center"
-        flex={1}
-        height={"auto"}
-        className="menu-desc"
-      >
-        {menuItems()}
       </Flex>
     </>
   );
@@ -341,30 +232,12 @@ export const DrawerMobileMenuItems = () => {
       flex={1}
     >
       <Accordion allowToggle>
-        <AccordionItem border={0}>
-          <AccordionButton pl={0}>
-            <Box fontSize={27} fontStyle={"normal"}>
-              Events and Workshops
-            </Box>
-          </AccordionButton>
-          <AccordionPanel>
-            <Box fontSize="xl">
-              <Link to="/events">Events</Link>
-            </Box>
-            <Box fontSize="xl">
-              <Link to="/summit">Summit</Link>
-            </Box>
-            <Box fontSize="xl">
-              <Link to="/tif">TiF</Link>
-            </Box>
-            <Box fontSize="xl">
-              <Link to="/workshops">Workshops</Link>
-            </Box>
-          </AccordionPanel>
-        </AccordionItem>
-            <Box fontSize={27} fontStyle={"normal"}>
-              <Link to="/exhibitions">Exhibitions</Link>
-            </Box>
+        <Box fontSize={27} fontStyle={"normal"}>
+          <Link to="/">Home</Link>
+        </Box>
+        <Box fontSize={27} fontStyle={"normal"}>
+          <Link to="/exhibitions">Exhibitions</Link>
+        </Box>
         <AccordionItem border={0}>
           <AccordionButton pl={0}>
             <Box fontSize={27} fontStyle={"normal"}>
@@ -381,19 +254,9 @@ export const DrawerMobileMenuItems = () => {
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem border={0}>
-          <AccordionButton pl={0}>
-            <Box fontSize={27} fontStyle={"normal"}>
-              Schools
-            </Box>
-          </AccordionButton>
-          <AccordionPanel>
-            <Box fontSize="xl">
-              <Link to="/shaastra-juniors">Shaastra Juniors</Link>
-            </Box>
-            <Box fontSize="xl">
-              <Link to="/jmt">JMT</Link>
-            </Box>
-          </AccordionPanel>
+          <Box fontSize={27} fontStyle={"normal"}>
+            <Link to="/shaastra-juniors">School</Link>
+          </Box>
         </AccordionItem>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/social-endeavours">Social Endeavours</Link>
