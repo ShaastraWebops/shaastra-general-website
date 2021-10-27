@@ -6,6 +6,7 @@ import { SJHome } from "./SJHome";
 import { SJSponsers } from "./SJSponsers";
 import { StatsCard } from "./SJStatsCard";
 import { SJEvents } from "./SJEvents";
+import Footer from "../../shared/Footer";
 
 const ShaastraJuniors = () => {
   const bgColor = useColorModeValue("#fee9e1", "unset");
@@ -34,6 +35,14 @@ const ShaastraJuniors = () => {
         <SJEvents />
         <SJSponsers />
       </Flex>
+      <Footer
+        designed={[
+          {
+            name: "Janith M S",
+            mail: "mm19b035@smail.iitm.ac.in",
+          },
+        ]}
+      />
     </CustomBox>
   );
 };
