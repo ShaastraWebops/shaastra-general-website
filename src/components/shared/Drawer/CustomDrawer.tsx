@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Flex, Heading, } from "@chakra-ui/layout";
+import { Flex, Heading } from "@chakra-ui/layout";
 import {
   Drawer,
   DrawerBody,
@@ -10,7 +10,10 @@ import {
 } from "@chakra-ui/modal";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { useBreakpointValue } from "@chakra-ui/media-query";
-import { DrawerDesktopMenuItems, DrawerMobileMenuItems } from "./DrawerMenuItems";
+import {
+  DrawerDesktopMenuItems,
+  DrawerMobileMenuItems,
+} from "./DrawerMenuItems";
 
 interface Props {
   isOpen: boolean;
@@ -22,12 +25,7 @@ const CustomDrawer = (props: Props) => {
   const closeButtonSize = useBreakpointValue({ base: "lg", lg: "xl" });
 
   return (
-    <Drawer
-      placement="right"
-      onClose={props.onClose}
-      isOpen={isOpen}
-      size="full"
-    >
+    <Drawer placement="right" onClose={props.onClose} isOpen={isOpen} size="md">
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader
@@ -36,7 +34,15 @@ const CustomDrawer = (props: Props) => {
           alignItems="center"
           flexDirection="row"
         >
-          <Heading as="h3" size="lg" p={3} pl={{ base: 0, lg: 3 }}>Our Menu</Heading>
+          <Heading
+            as="h3"
+            size="lg"
+            p={3}
+            color="#03a9f4"
+            pl={{ base: 0, lg: 3 }}
+          >
+            Our Menu
+          </Heading>
           <DrawerCloseButton
             variant="unstyled"
             mt={3}
@@ -47,12 +53,18 @@ const CustomDrawer = (props: Props) => {
             size={closeButtonSize}
           />
         </DrawerHeader>
-        <DrawerBody maxHeight={"calc(100vh - 92px)"} overflowY="scroll">
-          <Flex flexDirection="row" justifyContent="center" alignItems="center" flex={1}>
-            {window.innerWidth > 600 ?
-              <DrawerDesktopMenuItems /> :
+        <DrawerBody maxHeight={"calc(100vh - 92px)"}>
+          <Flex
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+            flex={1}
+          >
+            {window.innerWidth > 600 ? (
+              <DrawerDesktopMenuItems />
+            ) : (
               <DrawerMobileMenuItems />
-            }
+            )}
           </Flex>
         </DrawerBody>
       </DrawerContent>
