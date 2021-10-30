@@ -19,11 +19,10 @@ import "swiper/swiper-bundle";
 import "swiper/swiper-bundle.esm.browser";
 import { Link } from "react-router-dom";
 import atkins from "../../images/Peter_Atkins.jpg";
-import shaastra_juniors from "../../images/shaastra_juniors.png";
 import prevArrow from "../../images/prevArrow.svg";
-import robos from "../../images/homepage_illustrations/robo.png";
-import robo1 from "../../images/homepage_illustrations/big_robo_without_black_circle.png";
-import robo2 from "../../images/homepage_illustrations/small_robo_without_black.png";
+import robos1 from "../../images/homepage_illustrations/ROBOS.png";
+import robo1 from "../../images/homepage_illustrations/big.png";
+import robo2 from "../../images/homepage_illustrations/small ribi.png";
 import barish from "../../images/barish.jpg";
 import John_hennessy from "../../images/John_hennessy.jpg";
 import das_nobel from "../../images/das_nobel.jpeg";
@@ -31,16 +30,18 @@ import Raghuram_Rajan from "../../images/Raghuram_Rajan.jpg";
 import Footer from "../shared/Footer";
 import Hennessy from "../../images/Speaker/hennessy.jpg";
 import Radhakrishnan from "../../images/Speaker/radhakrishnan.jpg";
-import Rajan from "../../images/Speaker/rajan.jpg";
 import Robo from "../../images/Speaker/robothespian.jpg";
 import Soumya from "../../images/Speaker/soumya_swaminathan.jpg";
-import Yunus from "../../images/Speaker/yunus.jpg";
 import Capture from "../../images/Speaker/Capture.jpg";
 import Robert from "../../images/Speaker/robert.jpg";
 import Event1 from "../../images/events_1.png";
 import Event2 from "../../images/events_2.png";
 import Event3 from "../../images/events_3.png";
 import Event4 from "../../images/events_4.png";
+import Event6 from "../../images/events_6.png";
+import Event7 from "../../images/events_7.png";
+import Event8 from "../../images/events_8.png";
+import Event9 from "../../images/events_9.png";
 import Workshop1 from "../../images/workshop_1.png";
 import Workshop2 from "../../images/workshop_2.png";
 import Workshop3 from "../../images/workshop_3.png";
@@ -55,7 +56,7 @@ const Home = (props: Props) => {
     DiceOutlineDarkAnimated,
     DiceOutlineLightAnimated
   );
-  // const color = useColorModeValue("secondary", "link")
+
   const plain = useColorModeValue("black", "white");
 
   const [sideNavBar_marker, setSideNavBar_marker] = React.useState<number>(
@@ -69,12 +70,9 @@ const Home = (props: Props) => {
       e.target.scrollTop < window.innerHeight - 20 &&
       e.target.scrollTop >= 0
     ) {
-      console.log(window.innerWidth);
       if (window.innerWidth > 600) {
-        console.log("600+");
         setSideNavBar_marker(200 / 6 + 0 * (200 / 6 + 30));
       } else {
-        console.log("600-");
         setSideNavBar_marker(screenWidthSpacing - 5);
       }
     } else if (
@@ -125,6 +123,11 @@ const Home = (props: Props) => {
   const events_navigationPrevRef = React.useRef(null);
   const events_navigationNextRef = React.useRef(null);
   const events_paginationRef = React.useRef(null);
+
+  const [scrollLeft, setScrollLeft] = React.useState({
+    left: 0,
+    right: 100,
+  });
 
   return (
     <CustomBox>
@@ -183,17 +186,15 @@ const Home = (props: Props) => {
             )}
           </div>
           <div className="imgBox">
-            <img src={robos} alt="" />
-            {/* <div className="robo2">
-              <img src={robo2} alt="" />
-            </div>
-            <div className="robo1">
-              <img src={robo1} alt="" />
-            </div> */}
+            <img src={robos1} alt="" />
           </div>
-          <span className="Home_scroll_btn">
-            <span></span>
-          </span>
+          {window.innerWidth > 600 ? (
+            <span className="Home_scroll_btn">
+              <span></span>
+            </span>
+          ) : (
+            <></>
+          )}
 
           <div className="Follow">
             <p>FOLLOW US</p>
@@ -218,13 +219,13 @@ const Home = (props: Props) => {
             >
               <FaYoutubeSquare />
             </a>
-            <span></span>
+            {window.innerWidth > 600 ? <span></span> : <></>}
           </div>
         </section>
         <section id="who_are_we" className="Home_whoAreWe">
           <img id="who_are_we_robo1" src={robo1} alt="" />
           <img id="who_are_we_robo2" src={robo2} alt="" />
-          <h1 id="heading">WHO ARE WE?</h1>
+          <h1 id="heading">Who Are We?</h1>
           <p id="text">
             Shaastra is the annual technical festival of the Indian Institute of
             Technology Madras (IITM), Chennai, India.
@@ -247,16 +248,26 @@ const Home = (props: Props) => {
           id="workshop_events"
           className={`Home_WorkshopsEvents ${plain}`}
         >
-          <h1>WORKSHOP & EVENTS</h1>
+          <h1>Previous Workshops & Events</h1>
           <div className="speaker_swiper_container">
+            <div className="swiper-prev-con" ref={events_navigationPrevRef}>
+              <img src={prevArrow} alt="" />
+            </div>
             <Swiper
-              spaceBetween={50}
+              spaceBetween={window.innerWidth > 600 ? 50 : 0}
               navigation={{
                 prevEl: events_navigationPrevRef.current,
                 nextEl: events_navigationNextRef.current,
               }}
               loop={true}
-              pagination={{ el: events_paginationRef.current, clickable: true }}
+              pagination={
+                window.innerWidth < 600
+                  ? {
+                      el: events_paginationRef.current,
+                      clickable: true,
+                    }
+                  : false
+              }
               slidesPerView={window.innerWidth > 600 ? "auto" : 1}
             >
               <SwiperSlide>
@@ -267,7 +278,6 @@ const Home = (props: Props) => {
                     <br /> 2. Web Development in Python with Flask <br /> 3.
                     Creative Coding
                   </p>
-                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -278,9 +288,11 @@ const Home = (props: Props) => {
                     Do "hacking" scenes in movies and TV Shows make you roll
                     your eyes? Do you want to see what exploiting real life
                     vulnerabilities in real life systems is like? Shaastra CTF
-                    ...
+                    is the event for you. Break programs, sneakily attack and
+                    search all over to find out encrypted hidden messages,
+                    fittingly called Flags. This is a one round, all online
+                    (fairly exciting) CTF event.
                   </p>
-                  <Link to="/events">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -291,7 +303,6 @@ const Home = (props: Props) => {
                     2. CPU and GPU Parallel Computing <br />
                     3. Quantum Computing
                   </p>
-                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -302,9 +313,10 @@ const Home = (props: Props) => {
                     Are you a person who is curious about problem solving? Yes,
                     you heard that right, you are at the right place. With mind
                     blogging problem statements at our stake and with the
-                    collaboration of Caterpillar India Pvt ltd, we ...
+                    collaboration of Caterpillar India Pvt ltd, we put forward
+                    the most anticipated event of Shaastra, IDP (Industry
+                    Defined Problems).
                   </p>
-                  <Link to="/events">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -316,7 +328,6 @@ const Home = (props: Props) => {
                     3. Hacking Processors : An Unconventional Hacking
                     Methodology
                   </p>
-                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -327,9 +338,10 @@ const Home = (props: Props) => {
                     The event is Blitz Chess. The event is going to be held on
                     Chess.com. Both opponents get 3min+2sec each for the chess
                     game. A player can win only if he checkmates the opponent or
-                    the opponent's time ...
+                    the opponent's time runs out first. Draw is possible due to
+                    stalemate or by insufficient pieces for checkmate. The event
+                    is to be held on 6th March.
                   </p>
-                  <Link to="/events">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -340,7 +352,6 @@ const Home = (props: Props) => {
                     2. Python Algorithms for Robotics <br />
                     3. Control of Robot Arm using Inverse Kinematics
                   </p>
-                  <Link to="/">SEE MORE</Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -350,34 +361,96 @@ const Home = (props: Props) => {
                   <p>
                     Have you ever wanted to work on modelling a real aeroplane?
                     Shaastra brings you, The BOEING NATIONAL AEROMODELLING
-                    COMPETITION, conducted in ...
+                    COMPETITION, conducted in collaboration between Boeing,
+                    Skyfi Labs, and the IITs, is a golden opportunity for all
+                    aeromodelling enthusiasts, to showcase your modelling skills
+                    at a national platform
                   </p>
-                  <Link to="/events">SEE MORE</Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Event7} alt="" />
+                <div className="contentBox">
+                  <h3>Global Biotech Council</h3>
+                  <p>
+                    GBC is a debate-based event where the participants will have
+                    to submit a write up about the topic given and the top 12
+                    teams are selected for the final round that is a debate
+                    round where they have to argue for/against the topic. The
+                    topic for debate is “Gene Therapy – Boon or Bane?”
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Event6} alt="" />
+                <div className="contentBox">
+                  <h3>Shaastra Programming Contest</h3>
+                  <p>
+                    Truth can only be found in one place: the code. We are ready
+                    with the most innovative problem situations ever, testing
+                    algorithms and implementation in every way possible. Are you
+                    ready to prove your skill and emerge a programming champion?
+                    We have online prelims and an online finals
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Event8} alt="" />
+                <div className="contentBox">
+                  <h3>Reverse Coding</h3>
+                  <p>
+                    Coders are divided by language but united by logic. Before
+                    learning the mumbo-jumbo syntax of every programming
+                    language there is to offer, first one must develop a keen
+                    sense of how to approach problems. The RC event offers a
+                    brief test on your logical and analytical skills that are
+                    essential in becoming a good coder.
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Event9} alt="" />
+                <div className="contentBox">
+                  <h3>Mouse Maze challenge</h3>
+                  <p>
+                    Mouse Maze challenge is a simple, fun, and challenging task.
+                    This is the online version of Micro Mouse Maze, where an
+                    autonomous robotic mouse is programmed to reach the center
+                    of a maze. The problem is very practical and involves a
+                    great deal of algorithmic thinking and problem solving
+                    skills.
+                  </p>
                 </div>
               </SwiperSlide>
             </Swiper>
+            <div className="swiper-next-con" ref={events_navigationNextRef}>
+              <img src={prevArrow} alt="" />
+            </div>
+            <div className="swiper-pagination" ref={events_paginationRef}></div>
           </div>
           {window.innerHeight > 300 ? (
             <div className="swiperControllers">
-              <div className="swiper-prev-con" ref={events_navigationPrevRef}>
+              {/* <div className="swiper-prev-con" ref={events_navigationPrevRef}>
                 <img src={prevArrow} alt="" />
-              </div>
-              <div
+              </div> */}
+              {/* <div
                 className="swiper-pagination"
                 ref={events_paginationRef}
-              ></div>
-              <div className="swiper-next-con" ref={events_navigationNextRef}>
+              ></div> */}
+              {/* <div className="swiper-next-con" ref={events_navigationNextRef}>
                 <img src={prevArrow} alt="" />
-              </div>
+              </div> */}
             </div>
           ) : (
             "Swipe right ->"
           )}
-          <Link to="/events">SEE MORE</Link>
         </section>
         <section id="speakers" className={`Home_Speakers ${plain}`}>
-          <h1 className={`${plain}`}>SPEAKERS</h1>
+          <h1 className={`${plain}`}>Previous Speakers</h1>
           <div className={`speaker_swiper_container`}>
+            <div className="swiper-prev-con" ref={speaker_navigationPrevRef}>
+              <img src={prevArrow} alt="" />
+            </div>
             <Swiper
               spaceBetween={50}
               navigation={{
@@ -385,10 +458,14 @@ const Home = (props: Props) => {
                 nextEl: speaker_navigationNextRef.current,
               }}
               loop={true}
-              pagination={{
-                el: speaker_paginationRef.current,
-                clickable: true,
-              }}
+              pagination={
+                window.innerWidth < 600
+                  ? {
+                      el: speaker_paginationRef.current,
+                      clickable: true,
+                    }
+                  : false
+              }
               breakpoints={{
                 200: {
                   slidesPerView: 1,
@@ -487,24 +564,28 @@ const Home = (props: Props) => {
                 </div>
               </SwiperSlide>
             </Swiper>
-          </div>
-          <div className="swiperControllers">
-            <div className="swiper-prev-con" ref={speaker_navigationPrevRef}>
+            <div className="swiper-next-con" ref={speaker_navigationNextRef}>
               <img src={prevArrow} alt="" />
             </div>
             <div
               className="swiper-pagination"
               ref={speaker_paginationRef}
             ></div>
-            <div className="swiper-next-con" ref={speaker_navigationNextRef}>
-              <img src={prevArrow} alt="" />
-            </div>
           </div>
           <Link to="/speakers">SEE MORE</Link>
         </section>
         <section id="testimonials" className={`Home_Testimonials ${plain}`}>
-          <h1>TESTIMONIALS</h1>
-          <div className={`testimonial_card_container ${plain}`}>
+          <h1>Testimonials</h1>
+          <div
+            className={`testimonial_card_container ${plain}`}
+            onScroll={(e: any) => {
+              window.innerWidth < 600 &&
+                setScrollLeft({
+                  left: e.target.scrollLeft,
+                  right: 990 - e.target.scrollLeft,
+                });
+            }}
+          >
             <div className={`testimonialWrapper ${plain}`}>
               <div className="testimonial_card_cover">
                 <div className={`testimonial_card ${plain}`}>
@@ -591,6 +672,24 @@ const Home = (props: Props) => {
               </div>
             </div>
           </div>
+          {window.innerWidth < 600 ? (
+            <>
+              <span
+                id="scrollLeft"
+                style={scrollLeft.left < 50 ? { opacity: 1 } : { opacity: 0 }}
+              >
+                {scrollLeft.left < 50 ? "Swipe right ->" : ""}
+              </span>
+              <span
+                id="scrollLeft"
+                style={scrollLeft.right < 50 ? { opacity: 1 } : { opacity: 0 }}
+              >
+                {scrollLeft.right < 50 ? "<- Swipe left" : ""}
+              </span>
+            </>
+          ) : (
+            <></>
+          )}
         </section>
         <Footer
           designed={[

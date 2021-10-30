@@ -35,10 +35,10 @@ const Footer = (props: Props) => {
           <p>
             {window.innerWidth < 600 ? <br /> : <span>General : </span>}
             <a href="mailto:sec_cocur@shaastra.org">
-              <FaEnvelope /> sec_cocur@shaastra.org
+              <FaEnvelope /> sec_cocur@smail.iitm.ac.in
             </a>
           </p>
-          <p>
+          {/* <p>
             {window.innerWidth < 600 ? (
               <br />
             ) : (
@@ -47,15 +47,15 @@ const Footer = (props: Props) => {
             <a href="mailto:juniors@shaastra.org">
               <FaEnvelope /> juniors@shaastra.org
             </a>
-          </p>
+          </p> */}
           <p>
             {window.innerWidth < 600 ? (
               <br />
             ) : (
               <span>Sponsors Relations : </span>
             )}
-            <a href="mailto:spons@shaastra.org">
-              <FaEnvelope /> spons@shaastra.org
+            <a href="mailto:sponsorship@shaastra.org">
+              <FaEnvelope /> sponsorship@shaastra.org
             </a>
           </p>
         </div>
@@ -67,7 +67,7 @@ const Footer = (props: Props) => {
               <FaEnvelope /> webops@shaastra.org
             </a>
           </p>
-          <p>
+          {/* <p>
             {window.innerWidth < 600 ? <br /> : <span>Abhishek sv : </span>}
             <a href="mailto:abhisheksv@shaastra.org">
               <FaEnvelope /> abhisheksv@shaastra.org
@@ -82,7 +82,7 @@ const Footer = (props: Props) => {
             <a href="mailto:shobhankarthick@shaastra.org">
               <FaEnvelope /> shobhankarthick@shaastra.org
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="bottom">

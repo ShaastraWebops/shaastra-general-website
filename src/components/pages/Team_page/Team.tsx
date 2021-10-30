@@ -120,6 +120,7 @@ const Team = (props: Props) => {
       social_links: {
         facebook: "https://www.facebook.com/aniswarsrivatsak/",
         shastraMailId: "aniswar@shaastra.org",
+        contact: "6383393474",
       },
       desc: "Being part of Shaastra and conducting various events connects me to students from colleges all over India, provides me a great platform to exchange ideas and an opportunity to be at the forefront of technological innovation in the country.",
       imgURL: photos.cs18b050,
@@ -131,6 +132,7 @@ const Team = (props: Props) => {
       social_links: {
         instagram: "s_._vishal",
         shastraMailId: "vishal@shaastra.org",
+        contact: "9498813221",
       },
       desc: "My journey with Shaastra began with popular events like RC in my freshie year and fast-forward 2 years, I lead C&L successfully. Back here one last time to have an enjoyable and socially impactful Shaastra for participants across the spectrum!",
       imgURL: photos.ch18b020,
@@ -143,7 +145,7 @@ const Team = (props: Props) => {
         instagram: "https://www.instagram.com/ash_twenty5/",
         linkedIn: "https://www.linkedin.com/in/ashwin-kumar-242288185/",
         shastraMailId: "ashwin@shaastra.org",
-        contact: "+91 99622 96616",
+        contact: "9962296616",
       },
       desc: "Being part of the Core organizing team of India's largest completely student-run festival is an overwhelming and fantastic experience to say the least. Shaastra has remained an integral part of my Insti life and has provided innumerous cherishable memories. ",
       imgURL: photos.me18b145,
@@ -268,7 +270,7 @@ const Team = (props: Props) => {
         linkedIn: "https://www.linkedin.com/in/baibhabi-patnaik-b1563419b",
         instagram: "https://www.instagram.com/baibhabi_musical",
         shastraMailId: "baibhabi@shaastra.org",
-        contact: "+91 9989591690",
+        contact: "9989591690",
       },
       desc: "For my love of interacting with people, two years at Shaastra and counting have suited me well. The experience has been wholesome and loaded with learnings and memories. The team is family, and we have an amazing time here, organizing all innovation under one umbrella!",
       imgURL: photos.ep18b005,
@@ -281,7 +283,7 @@ const Team = (props: Props) => {
         instagram: "https://www.instagram.com/aman_k07/",
         linkedIn: "https://www.linkedin.com/in/aman-kumar-17a0ba192/",
         shastraMailId: "aman@shaastra.org",
-        contact: "+91 6385140247",
+        contact: "6385140247",
       },
       desc: "To summarise my Shaastra Journey, from coordinator to Core in S&E: Every year started with infinite ideas and a motivated team. Result was and always will be the Biggest Technical Festival and Memories + Experiences we get for life!!",
       imgURL: photos.ch18b036,
@@ -307,6 +309,7 @@ const Team = (props: Props) => {
         linkedIn: "https://www.linkedin.com/in/anandlogesh-r-r/",
         instagram: "https://www.instagram.com/the_a.r.r._/",
         shastraMailId: "anandlogesh.rr@shaastra.org",
+        contact: "7358232804",
       },
       desc: "Some parts of truth and a dash of pure lie makes the perfect lie.",
       imgURL: photos.ch18b037,
@@ -478,15 +481,6 @@ const Team = (props: Props) => {
             </button>
             <button
               style={{
-                color: type === "Webops" ? "#000" : "#fff",
-              }}
-              onClick={handleClick}
-              data-type="Webops"
-            >
-              Webops
-            </button>
-            <button
-              style={{
                 color: type === "Concept & Design" ? "#000" : "#fff",
               }}
               onClick={handleClick}
@@ -532,15 +526,6 @@ const Team = (props: Props) => {
             </button>
             <button
               style={{
-                color: type === "Publicity" ? "#000" : "#fff",
-              }}
-              onClick={handleClick}
-              data-type="Publicity"
-            >
-              Publicity
-            </button>
-            <button
-              style={{
                 color:
                   type === "Operations & Infrastructure Planning"
                     ? "#000"
@@ -550,6 +535,15 @@ const Team = (props: Props) => {
               data-type="Operations & Infrastructure Planning"
             >
               Operations & Infrastructure Planning
+            </button>
+            <button
+              style={{
+                color: type === "Publicity" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Publicity"
+            >
+              Publicity
             </button>
             <button
               style={{
@@ -577,6 +571,15 @@ const Team = (props: Props) => {
               data-type="Sponsorship and PR"
             >
               Sponsorship and PR
+            </button>
+            <button
+              style={{
+                color: type === "Webops" ? "#000" : "#fff",
+              }}
+              onClick={handleClick}
+              data-type="Webops"
+            >
+              Webops
             </button>
             <span
               id="marker"

@@ -56,7 +56,10 @@ const SliderImgBox = (props: Props) => {
             <a target="_blank" href={props.profile.social_links.linkedIn}>
               <FaLinkedin />
             </a>
-            <a target="_blank" href={props.profile.social_links.shastraMailId}>
+            <a
+              target="_blank"
+              href={"mailto:" + props.profile.social_links.shastraMailId}
+            >
               <FaEnvelope />
             </a>
           </Flex>

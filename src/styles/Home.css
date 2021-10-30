@@ -105,6 +105,12 @@
   }
 }
 @media screen and (max-width: 600px) {
+  .Home {
+    background-position: 84% 50%;
+  }
+  .Home.black {
+    background-position: 84% 50%;
+  }
   .Home section {
     padding-left: 30px;
   }
@@ -149,7 +155,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: url("../images/homepage_illustrations/back.png");
+  background: url("../images/homepage_illustrations/back2.png");
   background-position: 100% 50%;
   background-size: cover;
   background-attachment: fixed;
@@ -172,6 +178,7 @@
 }
 .Home_landingPage .ContentBox p {
   font-size: 1em;
+  font-weight: 500;
   letter-spacing: 1px;
 }
 .Home_landingPage .imgBox {
@@ -319,6 +326,9 @@
   }
 }
 @media screen and (max-width: 600px) {
+  .Home_landingPage {
+    background-position: 84% 50%;
+  }
   .Home_landingPage .ContentBox {
     width: 100%;
   }
@@ -334,7 +344,8 @@
   .Home_landingPage .Follow {
     top: auto;
     bottom: 80px;
-    right: 10px;
+    right: auto;
+    left: auto;
   }
   .Home_scroll_btn {
     position: absolute;
@@ -380,7 +391,7 @@
 .Home_whoAreWe #heading {
   font-size: 4em;
   font-weight: 650;
-  letter-spacing: 7px;
+  letter-spacing: 2px;
   text-align: center;
   position: relative;
   left: -50px;
@@ -389,6 +400,7 @@
   max-width: 600px;
   font-size: 1em;
   letter-spacing: 1px;
+  font-weight: 500;
   text-align: center;
   position: relative;
   left: -50px;
@@ -507,18 +519,17 @@
   text-align: center;
   font-size: 3em;
   font-weight: 700;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   margin-bottom: 20px;
 }
 .speaker_swiper_container {
-  width: calc(100% - 200px);
+  width: calc(100% - 100px);
   height: 420px;
   padding: 40px;
   display: flex;
   align-items: center;
   border-radius: 10px;
 }
-
 .Home_WorkshopsEvents .speaker_swiper_container {
   height: 380px;
 }
@@ -580,15 +591,15 @@
 }
 .speaker_swiper_container .swiper-container .swiper-slide .contentBox h3 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 .speaker_swiper_container .swiper-container .swiper-slide .contentBox p {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -624,7 +635,21 @@
   p {
   text-align: center;
 }
-.swiperControllers {
+.Home_Speakers .speaker_swiper_container .swiper-prev-con,
+.Home_WorkshopsEvents .speaker_swiper_container .swiper-prev-con {
+  cursor: pointer;
+  position: relative;
+  left: -20px;
+}
+.Home_Speakers .speaker_swiper_container .swiper-next-con,
+.Home_WorkshopsEvents .speaker_swiper_container .swiper-next-con {
+  cursor: pointer;
+  transform: rotate(180deg);
+  position: relative;
+  right: -20px;
+}
+
+/* .swiperControllers {
   display: flex;
   align-items: center;
 }
@@ -647,11 +672,11 @@
 }
 .swiperControllers .swiper-next-con {
   transform: rotate(180deg);
-}
+} */
+/*
 .swiperControllers .swiper-pagination {
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 200px !important;
 }
 .swiperControllers .swiper-pagination .swiper-pagination-bullet {
   width: 15px;
@@ -686,7 +711,7 @@
   justify-content: center;
   align-items: center;
   opacity: 1;
-}
+} 
 .Home_WorkshopsEvents.black
   .swiperControllers
   .swiper-pagination
@@ -715,7 +740,7 @@
   .swiper-pagination
   .swiper-pagination-bullet-active::before {
   background-color: #00a31b;
-}
+} */
 .Home_Speakers a,
 .Home_WorkshopsEvents a {
   padding: 6px 20px 7px 20px;
@@ -761,22 +786,24 @@
     height: 100%;
   }
   .Home_Speakers .speaker_swiper_container {
-    height: 110vw;
+    height: 100vw;
     width: 100vw;
     padding: 20px;
     border-radius: 0;
   }
+  .Home_Speakers .speaker_swiper_container,
   .Home_WorkshopsEvents .speaker_swiper_container {
-    height: 90vw;
+    height: 100vw;
     width: 100vw;
-    padding: 20px;
+    padding: 10px;
     border-radius: 0;
+    position: relative;
   }
   .Home_Speakers .speaker_swiper_container .swiper-container,
   .Home_WorkshopsEvents .speaker_swiper_container .swiper-container {
     position: relative;
     height: 100% !important;
-    width: 90% !important;
+    width: 100% !important;
   }
   .Home_WorkshopsEvents
     .speaker_swiper_container
@@ -797,6 +824,72 @@
     font-size: 4vw;
     font-weight: 400;
   }
+  .Home_Speakers .speaker_swiper_container .swiper-prev-con,
+  .Home_Speakers .speaker_swiper_container .swiper-next-con,
+  .Home_WorkshopsEvents .speaker_swiper_container .swiper-prev-con,
+  .Home_WorkshopsEvents .speaker_swiper_container .swiper-next-con {
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    right: auto;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.877);
+    border-radius: 12.5px;
+    z-index: 3;
+  }
+  .Home_Speakers .speaker_swiper_container .swiper-pagination,
+  .Home_WorkshopsEvents .speaker_swiper_container .swiper-pagination {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    transform: translateX(-50%);
+  }
+  .Home_Speakers
+    .speaker_swiper_container
+    .swiper-pagination
+    .swiper-pagination-bullet,
+  .Home_WorkshopsEvents
+    .speaker_swiper_container
+    .swiper-pagination
+    .swiper-pagination-bullet {
+    margin: 0 3px;
+    background-color: rgb(90, 90, 90);
+    opacity: 0.5;
+  }
+  .Home_Speakers
+    .speaker_swiper_container
+    .swiper-pagination
+    .swiper-pagination-bullet-active,
+  .Home_WorkshopsEvents
+    .speaker_swiper_container
+    .swiper-pagination
+    .swiper-pagination-bullet-active {
+    background-color: rgb(2, 111, 219);
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  .Home_Speakers .speaker_swiper_container .swiper-next-con,
+  .Home_WorkshopsEvents .speaker_swiper_container .swiper-next-con {
+    left: auto;
+    right: 15px;
+  }
+  .Home_Speakers .speaker_swiper_container .swiper-prev-con img,
+  .Home_Speakers .speaker_swiper_container .swiper-next-con img,
+  .Home_WorkshopsEvents .speaker_swiper_container .swiper-prev-con img,
+  .Home_WorkshopsEvents .speaker_swiper_container .swiper-next-con img {
+    filter: invert(1);
+    margin: 0;
+    height: 60%;
+    object-fit: contain;
+  }
 }
 /* Home_Testimonials */
 .Home_Testimonials {
@@ -812,7 +905,7 @@
   text-align: center;
   font-size: 3em;
   font-weight: 700;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   margin-bottom: 20px;
 }
 .Home_Testimonials .testimonial_card_container {
@@ -1079,13 +1172,20 @@
     transform: translateY(0%);
   }
 
-  .Home_Testimonials::after {
+  .Home_Testimonials #scrollLeft {
     font-family: "Dancing Script", cursive;
-    content: "Swipe right ->";
     position: absolute;
     letter-spacing: 1px;
     font-size: 18px;
     bottom: calc(calc(100% - 400px) / 2 - 40px);
+    transition: 0.5s;
+  }
+  .Home_Testimonials .testimonialWrapper .testimonial_card p {
+    height: 175px;
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -1099,6 +1199,10 @@
   .Home_Speakers,
   .Home_WorkshopsEvents {
     padding: 0 30px;
+    padding-bottom: 50px;
+  }
+  .Home_Speakers a {
+    margin-top: 40px;
   }
   .Home_whoAreWe {
     padding: 0 30px;
@@ -1117,6 +1221,9 @@
   .swiperControllers .swiper-prev-con,
   .swiperControllers .swiper-next-con {
     margin: 15px 5px;
+  }
+  .Home_WorkshopsEvents {
+    padding-bottom: 20px;
   }
   @media screen and (min-height: 700px) {
     .Home_whoAreWe #text {
