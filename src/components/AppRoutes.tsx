@@ -14,7 +14,8 @@ import Summit from "./pages/Events and Workshops/Summit";
 import Tif from "./pages/Events and Workshops/Tif";
 import Workshops from "./pages/Events and Workshops/Workshops";
 import Spons from "../../src/components/pages/spons";
-import Show from "../../src/components/pages/night/Show"
+import Show from "../../src/components/pages/night/Show";
+import Speaker from "../../src/components/pages/Speaker/Speaker";
 
 interface Props {}
 
@@ -35,6 +36,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />
       <Route exact path="/sponsors" component={Spons} />
+      <Route exact path="/speakers" component={Speaker} />
     </Router>
   );
 };

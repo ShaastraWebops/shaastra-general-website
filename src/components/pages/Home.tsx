@@ -30,7 +30,7 @@ import Raghuram_Rajan from "../../images/Raghuram_Rajan.jpg";
 import Footer from "../shared/Footer";
 import Hennessy from "../../images/Speaker/hennessy.jpg";
 import Radhakrishnan from "../../images/Speaker/radhakrishnan.jpg";
-import Robo from "../../images/Speaker/robothespian.jpg";
+import Robo from "../../images/Speaker/robothespian1.jpg";
 import Soumya from "../../images/Speaker/soumya_swaminathan.jpg";
 import Capture from "../../images/Speaker/Capture.jpg";
 import Robert from "../../images/Speaker/robert.jpg";

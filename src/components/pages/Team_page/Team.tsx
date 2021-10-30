@@ -367,14 +367,6 @@ const Team = (props: Props) => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
               i += 4;
               i = i % 22;
-
-              // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
-              // console.log(
-              //   Profiles[i],
-              //   Profiles[21 - i],
-              //   Profiles[(i + 4) % 22],
-              //   Profiles[(28 - i) % 22]
-              // );
               return (
                 <>
                   <div className="col">
@@ -393,14 +385,6 @@ const Team = (props: Props) => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
               i += 4;
               i = i % 22;
-
-              // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
-              // console.log(
-              //   Profiles[i],
-              //   Profiles[21 - i],
-              //   Profiles[(i + 4) % 22],
-              //   Profiles[(28 - i) % 22]
-              // );
               return (
                 <>
                   <div className="col">
@@ -419,14 +403,6 @@ const Team = (props: Props) => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((count) => {
               i += 4;
               i = i % 22;
-
-              // console.log(i, 21 - i, (i + 4) % 22, (28 - i) % 22);
-              // console.log(
-              //   Profiles[i],
-              //   Profiles[21 - i],
-              //   Profiles[(i + 4) % 22],
-              //   Profiles[(28 - i) % 22]
-              // );
               return (
                 <>
                   <div className="col">
