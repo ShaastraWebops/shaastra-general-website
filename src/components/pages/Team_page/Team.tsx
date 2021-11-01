@@ -357,9 +357,9 @@ const Team = (props: Props) => {
         <div className="ContentBox">
           <h1>Meet Our Team</h1>
           <p>
-            Meet the Men and Women who worked countless hours behind the scenes
-            to bring you the Spectacle, that is India's biggest
-            Techno-Managerial Fest.
+            Meet the People who worked countless hours behind the scenes to
+            bring you the Spectacle, that is India's biggest Techno-Managerial
+            Fest.
           </p>
         </div>
         <div className="imageContainer">
@@ -437,70 +437,71 @@ const Team = (props: Props) => {
             }}
           >
             <button
+              data-type="all"
               style={{
                 color: type === "all" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="all"
             >
               All
             </button>
             <button
+              data-type="Co-Curricular Affairs Secretary"
               style={{
                 color:
                   type === "Co-Curricular Affairs Secretary" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Co-Curricular Affairs Secretary"
             >
               Co-Curricular Affairs Secretary
             </button>
             <button
+              data-type="Concept & Design"
               style={{
                 color: type === "Concept & Design" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Concept & Design"
             >
               Concept & Design
             </button>
             <button
+              data-type="Envisage"
               style={{
                 color: type === "Envisage" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Envisage"
             >
               Envisage
             </button>
             <button
+              data-type="Events & Workshops"
               style={{
                 color: type === "Events & Workshops" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Events & Workshops"
             >
               Events & Workshops
             </button>
             <button
+              data-type="Evolve"
               style={{
                 color: type === "Evolve" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Evolve"
             >
               Evolve
             </button>
             <button
+              data-type="Finance"
               style={{
                 color: type === "Finance" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Finance"
             >
               Finance
             </button>
             <button
+              data-type="Operations & Infrastructure Planning"
               style={{
                 color:
                   type === "Operations & Infrastructure Planning"
@@ -508,52 +509,51 @@ const Team = (props: Props) => {
                     : "#fff",
               }}
               onClick={handleClick}
-              data-type="Operations & Infrastructure Planning"
             >
               Operations & Infrastructure Planning
             </button>
             <button
+              data-type="Publicity"
               style={{
                 color: type === "Publicity" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Publicity"
             >
               Publicity
             </button>
             <button
+              data-type="Quality Management System"
               style={{
                 color: type === "Quality Management System" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Quality Management System"
             >
               Quality Management System
             </button>
             <button
+              data-type="Shows & Exhibitions"
               style={{
                 color: type === "Shows & Exhibitions" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Shows & Exhibitions"
             >
               Shows & Exhibitions
             </button>
             <button
+              data-type="Sponsorship and PR"
               style={{
                 color: type === "Sponsorship and PR" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Sponsorship and PR"
             >
               Sponsorship and PR
             </button>
             <button
+              data-type="Webops"
               style={{
                 color: type === "Webops" ? "#000" : "#fff",
               }}
               onClick={handleClick}
-              data-type="Webops"
             >
               Webops
             </button>
