@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.login 
+{
+    font-family: 'Roboto', sans-serif;
+}
+.login span 
+{
+    color: #2467a1;
+}
+.login
+{
+    backdrop-filter: blur(30px);
+    backdrop-filter: opacity(20%);
+}
+/* .login .blackG
+{
+    background-image: linear-gradient(45deg, rgba(17, 16, 19, 0.432), rgba(0, 0, 0, 0));
+} */
+.login .blackG input, .login .blackG select
+{
+    background-color: white;
+    color: black !important;
+    background-image: unset;
+    border: 2px solid black;
+}
+
+
+
+@media screen and (max-width: 900px)
+{
+    .login
+    {
+        padding: 0% !important;
+        padding-top: 10vh !important;
+    }
+    .login-main-box
+    {
+        width: 100vw !important;   
+        border-radius: unset !important;
+    }
+    .login-main-box .chakra-heading 
+    {
+        font-size: 15vw;
+    }
+    .login-image
+    {
+        display: none;
+        right: 15% !important;
+        width: 60vw !important;
+        height: auto !important;
+    }
+}

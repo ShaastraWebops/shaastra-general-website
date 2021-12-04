@@ -20,6 +20,12 @@ import EventVertical from "./pages/Events and Workshops/EventVertical"
 import EventAdmin from "./pages/Events and Workshops/AddEvent"
 import EditEvent from "./pages/Events and Workshops/EditEvent"
 import EventsAdmin from "./pages/Events and Workshops/EventsAdmin"
+import Login from "./pages/Login/Login"
+import Forgot from "./pages/Login/ForgotPassword"
+import Signup from "./pages/Login/Signup"
+import ForgotAfter from "./pages/Login/ForgotAfterLink"
+import Verify from "./pages/Login/Verify"
+import SignOut from "./pages/Login/SignOut"
 
 interface Props {}
 
@@ -46,6 +52,13 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/summit" component={Summit} />
       <Route exact path="/sponsors" component={Spons} />
       <Route exact path="/speakers" component={Speaker} />
+
+      <Route exact path="/login" component={Login}></Route>
+      <Route exact path="/signup" component={Signup}></Route>
+      <Route exact path="/forgotpassword" component={Forgot}></Route>
+      <Route exact path="/forgotpassword/:token" component={ForgotAfter}></Route>
+      <Route exact path="/verify/:token" component={Verify}></Route>
+      <Route exact path="/signout" component={SignOut}></Route>
     </Router>
   );
 };

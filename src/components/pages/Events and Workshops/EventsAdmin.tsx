@@ -46,9 +46,7 @@ const EventsAdmin = () => {
             </Flex>
             <Button width="100%" padding="1.5vw" backgroundColor="#75c9b0" marginBottom="4vh">Add Event</Button>
             <Flex width="88vw" marginBottom="4vh">
-                <Input placeholder="Search for events" onChange={(e:any) => {
-                    events?.filter
-                }}></Input>
+                <Input placeholder="Search for events"></Input>
                 <Select placeholder="Vertical" marginLeft="2vw" width="15vw">
                             <option value="AEROFEST">AeroFest</option>
                             <option value="BIOGEN">Biogen</option>

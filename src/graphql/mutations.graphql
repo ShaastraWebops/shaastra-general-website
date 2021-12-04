@@ -43,3 +43,4 @@ mutation addEvent($data: AddEventInput!){
 mutation editEvent($data: EditEventInput!, $id: String!){
   editEvent(data: $data, eventID: $id)
 }
+
