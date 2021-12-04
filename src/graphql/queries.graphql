@@ -6,8 +6,11 @@ query me{
   }
 }
 
-query getEvents{
-  getEvents{
+mutation editEvent($data: EditEventInput!, $id: String!){
+  editEvent(data: $data, eventID: $id)
+}
+query getEvents($filter : String!){
+  getEvents(filter : $filter){
     events{
     id,
   name,

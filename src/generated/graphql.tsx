@@ -364,6 +364,13 @@ export type ResetPasswordMutationVariables = Exact<{
 
 export type ResetPasswordMutation = { resetPassword: boolean };
 
+export type RegisterMutationVariables = Exact<{
+  EventID: Scalars['String'];
+}>;
+
+
+export type RegisterMutation = { register: boolean };
+
 export type CreateTeamandRegisterMutationVariables = Exact<{
   createTeamAndRegisterData: CreateTeamInput;
 }>;
@@ -398,7 +405,9 @@ export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type MeQuery = { me?: { id: string, name: string, shaastraID: string } | null | undefined };
 
-export type GetEventsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetEventsQueryVariables = Exact<{
+  filter: Scalars['String'];
+}>;
 
 
 export type GetEventsQuery = { getEvents: { events: Array<{ id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number }> } };
@@ -600,6 +609,37 @@ export function useResetPasswordMutation(baseOptions?: ApolloReactHooks.Mutation
 export type ResetPasswordMutationHookResult = ReturnType<typeof useResetPasswordMutation>;
 export type ResetPasswordMutationResult = ApolloReactCommon.MutationResult<ResetPasswordMutation>;
 export type ResetPasswordMutationOptions = ApolloReactCommon.BaseMutationOptions<ResetPasswordMutation, ResetPasswordMutationVariables>;
+export const RegisterDocument = gql`
+    mutation register($EventID: String!) {
+  register(EventID: $EventID)
+}
+    `;
+export type RegisterMutationFn = ApolloReactCommon.MutationFunction<RegisterMutation, RegisterMutationVariables>;
+
+/**
+ * __useRegisterMutation__
+ *
+ * To run a mutation, you first call `useRegisterMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRegisterMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [registerMutation, { data, loading, error }] = useRegisterMutation({
+ *   variables: {
+ *      EventID: // value for 'EventID'
+ *   },
+ * });
+ */
+export function useRegisterMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<RegisterMutation, RegisterMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<RegisterMutation, RegisterMutationVariables>(RegisterDocument, options);
+      }
+export type RegisterMutationHookResult = ReturnType<typeof useRegisterMutation>;
+export type RegisterMutationResult = ApolloReactCommon.MutationResult<RegisterMutation>;
+export type RegisterMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
 export const CreateTeamandRegisterDocument = gql`
     mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!) {
   createTeamAndRegister(data: $createTeamAndRegisterData)
@@ -765,8 +805,8 @@ export function refetchMeQuery(variables?: MeQueryVariables) {
       return { query: MeDocument, variables: variables }
     }
 export const GetEventsDocument = gql`
-    query getEvents {
-  getEvents {
+    query getEvents($filter: String!) {
+  getEvents(filter: $filter) {
     events {
       id
       name
@@ -801,10 +841,11 @@ export const GetEventsDocument = gql`
  * @example
  * const { data, loading, error } = useGetEventsQuery({
  *   variables: {
+ *      filter: // value for 'filter'
  *   },
  * });
  */
-export function useGetEventsQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetEventsQuery, GetEventsQueryVariables>) {
+export function useGetEventsQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetEventsQuery, GetEventsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
         return ApolloReactHooks.useQuery<GetEventsQuery, GetEventsQueryVariables>(GetEventsDocument, options);
       }
@@ -815,7 +856,7 @@ export function useGetEventsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHo
 export type GetEventsQueryHookResult = ReturnType<typeof useGetEventsQuery>;
 export type GetEventsLazyQueryHookResult = ReturnType<typeof useGetEventsLazyQuery>;
 export type GetEventsQueryResult = ApolloReactCommon.QueryResult<GetEventsQuery, GetEventsQueryVariables>;
-export function refetchGetEventsQuery(variables?: GetEventsQueryVariables) {
+export function refetchGetEventsQuery(variables: GetEventsQueryVariables) {
       return { query: GetEventsDocument, variables: variables }
     }
 export const GetEventDocument = gql`

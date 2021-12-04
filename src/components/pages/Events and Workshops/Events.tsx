@@ -47,21 +47,21 @@ function Events() {
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/aerofest"><Image src={Aero}></Image></Link>
+                <Link href="/events/AEROFEST"><Image src={Aero}></Image></Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                  className="vertical-timeline-element--work"
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/biogen"><Image src={Bio}></Image></Link>
+                <Link href="/events/BIOGEN"><Image src={Bio}></Image></Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                  className="vertical-timeline-element--work"
                  contentStyle={{background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/bevents"> <Image src={BE} boxSize="100%"></Image>
+                <Link href="/events/BEVENTS"> <Image src={BE} boxSize="100%"></Image>
                   BEvents</Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
@@ -69,42 +69,42 @@ function Events() {
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/cl"><Image src={Cl}></Image></Link>
+                <Link href="/events/CL"><Image src={Cl}></Image></Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                  className="vertical-timeline-element--work"
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/db"><Image src={DB}></Image></Link>
+                <Link href="/events/DB"><Image src={DB}></Image></Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                  className="vertical-timeline-element--work"
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/elecfest"><Image src={Elec}></Image></Link>
+                <Link href="/events/ELECFEST"><Image src={Elec}></Image></Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                  className="vertical-timeline-element--work"
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/ignite">Ignite</Link>
+                <Link href="/events/IGNITE">Ignite</Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                  className="vertical-timeline-element--work"
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/strategists">Strategists</Link>
+                <Link href="/events/STRATEGISTS">Strategists</Link>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                  className="vertical-timeline-element--work"
                  contentStyle={{ background: 'transparent', color: '#fff', fontSize: "1.5vw" }}
                  iconStyle={{color: '#fff' }}
               >
-                <Link href="/events/workshops">Workshops</Link>
+                <Link href="/events/WORKSHOPS">Workshops</Link>
               </VerticalTimelineElement>
             </VerticalTimeline>
          </Box>
