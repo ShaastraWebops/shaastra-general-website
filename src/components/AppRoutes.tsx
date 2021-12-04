@@ -16,6 +16,7 @@ import Workshops from "./pages/Events and Workshops/Workshops";
 import Spons from "../../src/components/pages/spons";
 import Show from "../../src/components/pages/night/Show";
 import Speaker from "../../src/components/pages/Speaker/Speaker";
+import EventVertical from "./pages/Events and Workshops/EventVertical"
 
 interface Props {}
 
@@ -30,9 +31,12 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/team" component={Team} />
       <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
       <Route exact path="/social-endeavours" component={Social} />
+
       <Route exact path="/eventsworkshops" component={Eventsworkshops} />
       <Route exact path="/events" component={Events} />
-      <Route exact path="/workshops" component={Workshops} />
+      <Route exact path="/events/:name" component={EventVertical}></Route>
+      <Route exact path="/events/admin"></Route>
+
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />
       <Route exact path="/sponsors" component={Spons} />
