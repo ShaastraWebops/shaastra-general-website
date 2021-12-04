@@ -145,6 +145,25 @@
 
 @media screen and (max-width:900px)
 {
+    .admin-events-flex, .admin-events-details-flex
+    {
+        flex-direction: column !important;
+    }
+    .admin-events-image-flex, .admin-events-image-flex img
+    {
+        width: 50vw !important;
+        height: fit-content !important;
+        align-items: center !important;
+    }
+    .admin-events-image-flex img 
+    {
+        height: 50vw !important;
+    }
+
+    .admin-events-flex p 
+    {
+        width: 90vw !important;
+    }
     .admin-add .chakra-form__label 
     {
         font-size: 5vw !important;

@@ -1,0 +1,45 @@
+mutation createUser($CreateUserInput: CreateUserInput!) {
+  createUser(data: $CreateUserInput)
+}
+
+mutation verifyUser($otp: String!) {
+   verifyUser(otp: $otp)
+}
+
+mutation login($LoginInput: LoginInput!) {
+   login(data: $LoginInput){
+       id
+       role
+       isVerified
+   }
+}
+
+mutation logoutUser {
+  logoutUser
+}
+
+mutation resendVerificationMail(
+  $requestForgotPassInput: RequestForgotPassInput!
+) {
+  resendVerificationMail(data: $requestForgotPassInput)
+}
+
+mutation resetPassword($resetPasswordInput: ResetPasswordInput!) {
+  resetPassword(data: $resetPasswordInput)
+}
+
+ mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!){
+    createTeamAndRegister(data: $createTeamAndRegisterData)
+  }
+
+mutation getPasswordOTP($email : String!){
+    getPasswordOTP(email : $email)
+}
+
+mutation addEvent($data: AddEventInput!){
+  addEvent(data: $data)
+}
+
+mutation editEvent($data: EditEventInput!, $id: String!){
+  editEvent(data: $data, eventID: $id)
+}

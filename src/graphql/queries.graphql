@@ -1,0 +1,51 @@
+query me{
+  me{
+    id
+    name
+    shaastraID
+  }
+}
+
+query getEvents{
+  getEvents{
+    events{
+    id,
+  name,
+  vertical,
+  description,
+  requirements,
+  platform,
+  firstplace,
+  secondplace,
+  thirdplace,
+  participation,
+  registrationOpenTime,
+  registrationCloseTime,
+  eventTimeFrom,
+  eventTimeTo,
+  registrationType,
+  teamSize
+  }
+  }
+}
+query getEvent($EventID: String!)
+{
+  getEvent(EventID: $EventID){
+    id,
+  name,
+  vertical,
+  description,
+  requirements,
+  platform,
+  firstplace,
+  secondplace,
+  thirdplace,
+  participation,
+  registrationOpenTime,
+  registrationCloseTime,
+  eventTimeFrom,
+  eventTimeTo,
+  registrationType,
+  teamSize
+  }
+}
