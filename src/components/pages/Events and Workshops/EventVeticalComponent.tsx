@@ -30,8 +30,11 @@ import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer';
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
 import { useCreateTeamandRegisterMutation, useRegisterMutation } from "../../../generated/graphql";
+import { useHistory } from "react-router-dom";
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
-const EventVerticalComponent = ({data} : any) => {
+const EventVerticalComponent = ({data, isAdmin} : any) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -41,10 +44,6 @@ const EventVerticalComponent = ({data} : any) => {
     const button = useColorModeValue("dark", "light")
     
     const [radio, setRadio] = useState("i")
-
-    const filter = () => {
-
-    }
     const [register] = useRegisterMutation();
     const IndividualReg = async (eventId : string) =>{
 
@@ -68,9 +67,8 @@ const EventVerticalComponent = ({data} : any) => {
         setMembers(values)
     }
     const [teamreg] = useCreateTeamandRegisterMutation();
-    
-    const Teamregistration = async (eventID : string)=>{
 
+    const Teamregistration = async (eventID : string)=>{
         await teamreg({
             variables : {
                createTeamAndRegisterData : {
@@ -88,7 +86,8 @@ const EventVerticalComponent = ({data} : any) => {
     }
 
     const buttoncolor = useColorModeValue("#ea8a94","white");
-    console.log(buttoncolor)
+
+    const history = useHistory();
 
     return(
        <Box  minHeight={"15vw"} m={2} p={2}>
@@ -109,7 +108,7 @@ const EventVerticalComponent = ({data} : any) => {
                                     </Box>
                                 </div>
                                 <div className="flip-card-back">
-                                    <Box width="15vw" padding="2vw" backgroundColor={buttoncolor} height="15vw" borderRadius="24px">
+                                    <Box width="15vw" padding="2vw" backgroundColor={buttoncolor} color="black" height="15vw" borderRadius="24px">
                                         <Heading as="h4" size={"sm"}>Points Distribution</Heading>
                                         <Flex justifyContent="space-between">
                                             <Text>1ST</Text>
@@ -134,19 +133,33 @@ const EventVerticalComponent = ({data} : any) => {
                         <Box borderRadius="24px" width="50vw" height="100%" marginLeft="15vw" className="event-desp">
                             <Flex flexDirection="column"  width="50vw" height="100%" alignItems="center" justifyContent="center">
                                     <Text width="48vw" className={font} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
+                                    <ReactMarkdown
+                                        children={data?.description!}
+                                        remarkPlugins={[remarkGfm]}
+                                    ></ReactMarkdown>
+                                       <Flex flexDirection={['column','column','row','row']}>
                                        {
-                                           data.description
-                                       }
-                                        {
-                                            data.registrationType === "NONE" ? <Text>Registration is not required for this event</Text> :
-                                            (<Box width="100%" marginTop="4vh"  height="2vw" >
-                                            <Button float={'right'} backgroundColor={buttoncolor} color='black'
-                                             onClick={
-                                                 data.registrationType === "INDIVIDUAL" ? ()=>{IndividualReg(data.id)} : onOpen
-                                             }
-                                            >REGISTER NOW</Button>
-                                            </Box>)
+                                           !isAdmin ? ( data.registrationType === "NONE" ? <Box width="100%" marginTop="4vh"  height="2vw" >
+                                           <Text float={'right'}>Registration is not required for this event</Text> 
+                                           </Box>
+                                           :
+                                           (<Box width="100%" marginTop="4vh"  height="2vw" >
+                                           <Button float={'right'} backgroundColor={buttoncolor} color='black'
+                                            onClick={
+                                                data.registrationType === "INDIVIDUAL" ? ()=>{IndividualReg(data.id)} : onOpen
+                                            }
+                                           >REGISTER NOW</Button>
+                                           </Box>)) : null
                                         }
+                                        <Box width="100%" marginTop="4vh"  height="2vw" >
+                                            <Button float={'right'} backgroundColor={buttoncolor} color='black'
+                                                    onClick={() => {
+                                                        history.push(`/eventpage/${data.id}`)
+                                                    }} >
+                                                        View Details
+                                                    </Button>
+                                         </Box>
+                                       </Flex>
                                         <Modal isOpen={isOpen} onClose={onClose}>
                                             <ModalOverlay />
                                             <ModalContent>

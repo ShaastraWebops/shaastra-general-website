@@ -77,7 +77,7 @@ const EventVertical = () => {
             {
                 data?.getEvents.events.map((event)=>{
                         return(
-                            <EventVerticalComponent data= {event} />
+                            <EventVerticalComponent data= {event} isAdmin = {false}/>
                         )
                 }) 
             }

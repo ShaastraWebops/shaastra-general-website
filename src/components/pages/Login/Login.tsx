@@ -44,7 +44,8 @@ const Login = () => {
     if(data)
     {
         if(data.login?.role === UserRole.User) localStorage.setItem("role", "User")
-        else localStorage.setItem("role", "Admin") 
+        // else 
+        //     if(data.login.role === UserRole.User) localStorage.setItem("role", "Admin") 
         onClose = () => {history.push('/')}
         return(
             <Modal isOpen={true} onClose={onClose}>
