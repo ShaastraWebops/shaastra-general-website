@@ -20,6 +20,7 @@ import EventVertical from "./pages/Events and Workshops/EventVertical"
 import EventAdmin from "./pages/Events and Workshops/AddEvent"
 import EditEvent from "./pages/Events and Workshops/EditEvent"
 import EventsAdmin from "./pages/Events and Workshops/EventsAdmin"
+import EventPage from "./pages/Events and Workshops/EventPage";
 
 interface Props {}
 
@@ -41,6 +42,8 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/admin/add" component={EventAdmin}></Route>
       <Route exact path="/admin/edit" component={EditEvent}></Route>
       <Route exact path="/admin" component={EventsAdmin}></Route>
+      <Route exact path="/eventpage/:id" component={EventPage}></Route>
+
 
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />

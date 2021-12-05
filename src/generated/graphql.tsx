@@ -29,6 +29,7 @@ export type AddEventInput = {
   registrationCloseTime?: InputMaybe<Scalars['String']>;
   registrationOpenTime?: InputMaybe<Scalars['String']>;
   registrationType: RegistraionType;
+  registrationfee?: InputMaybe<Scalars['String']>;
   requirements: Scalars['String'];
   secondplace?: InputMaybe<Scalars['String']>;
   teamSize?: InputMaybe<Scalars['Float']>;
@@ -112,6 +113,7 @@ export type Event = {
   registrationCloseTime?: Maybe<Scalars['String']>;
   registrationOpenTime?: Maybe<Scalars['String']>;
   registrationType: Scalars['String'];
+  registrationfee?: Maybe<Scalars['String']>;
   requirements?: Maybe<Scalars['String']>;
   secondplace?: Maybe<Scalars['String']>;
   teamSize: Scalars['Float'];
@@ -417,7 +419,7 @@ export type GetEventQueryVariables = Exact<{
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number } };
 
 
 export const CreateUserDocument = gql`
@@ -867,6 +869,7 @@ export const GetEventDocument = gql`
     vertical
     description
     requirements
+    pic
     platform
     firstplace
     secondplace

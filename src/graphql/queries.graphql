@@ -35,10 +35,11 @@ query getEvent($EventID: String!)
 {
   getEvent(EventID: $EventID){
     id,
-  name,
+  name,  
   vertical,
   description,
   requirements,
+  pic,
   platform,
   firstplace,
   secondplace,
