@@ -43,9 +43,16 @@ const Login = () => {
 
     if(data)
     {
+        if(data.login?.isVerified === false) history.push("/verify")
+        else
         if(data.login?.role === UserRole.User) localStorage.setItem("role", "User")
-        // else 
-        //     if(data.login.role === UserRole.User) localStorage.setItem("role", "Admin") 
+        else 
+         if(data.login?.role === UserRole.Admin)
+         { 
+             localStorage.setItem("role", "Admin") 
+             history.push("/admin")
+
+        }
         onClose = () => {history.push('/')}
         return(
             <Modal isOpen={true} onClose={onClose}>
@@ -59,20 +66,6 @@ const Login = () => {
     }
     if(error)
     {
-        if(error.message === "Oops, email not verified!")
-        {
-            onClose = () => {window.location.reload()}
-            return(
-                <Modal isOpen={true} onClose={onClose}>
-                    <ModalOverlay />
-                    <ModalContent backgroundColor="#f1aaaa" color="black">
-                        <ModalHeader>Email not verified. Check your registered Email ID for the verification link</ModalHeader>
-                        <ModalCloseButton />
-                    </ModalContent>
-                </Modal>
-            )
-        }
-        else 
          if(error.message === "Account Not Found")
          {
                 onClose = () => {history.push('/signup')}
@@ -94,7 +87,7 @@ const Login = () => {
                     <Modal isOpen={true} onClose={onClose}>
                         <ModalOverlay />
                         <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>INvalid credentials</ModalHeader>
+                            <ModalHeader>Invalid credentials</ModalHeader>
                             <ModalCloseButton />
                         </ModalContent>
                     </Modal>

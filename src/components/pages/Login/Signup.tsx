@@ -132,7 +132,13 @@ const Signup = () => {
                             if(pw === confirm)
                                 {
                                     try{
-                                        await createUser({variables: {CreateUserInput: {name: name, email: email, mobile: number, password: pw, college: college, department: branch, state: State, city: city, address: address}}})
+                                        await createUser(
+                                            {variables: {CreateUserInput: 
+                                                {name: name, email: email, mobile: number, password: pw, college: college, department: branch, state: State, city: city, address: address}}})
+                                                .then(res => {
+                                                    if(res.data?.createUser)
+                                                    history.push("/verify")
+                                                })
                                     }
                                     catch(err)
                                     {

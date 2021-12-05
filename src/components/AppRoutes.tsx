@@ -62,7 +62,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/signup" component={Signup}></Route>
       <Route exact path="/forgotpassword" component={Forgot}></Route>
       <Route exact path="/forgotpassword/:token" component={ForgotAfter}></Route>
-      <Route exact path="/verify/:token" component={Verify}></Route>
+      <Route exact path="/verify" component={Verify}></Route>
       <Route exact path="/signout" component={SignOut}></Route>
       <Route exact path="/profile" component={Profile}></Route>
       <Route exact path="/editprofile" component={EditProfile}></Route>

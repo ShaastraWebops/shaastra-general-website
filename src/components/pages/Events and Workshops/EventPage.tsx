@@ -20,7 +20,7 @@ const EventPage = () => {
     const bgcolor = useColorModeValue("#ea8a94","#ffffff")
     return (
         <CustomBox>
-             <Container maxWidth="6xl" alignItems="center" justifyItems={"center"}>
+          <Container maxWidth="6xl" alignItems="center" justifyItems={"center"} marginBottom={5} paddingBottom={2}>
           <Center>
             <Image
               h={["2%", "300px", "300px"]}
