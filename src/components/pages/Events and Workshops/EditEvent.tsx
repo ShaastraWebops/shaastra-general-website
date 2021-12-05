@@ -233,8 +233,8 @@ const EditEvent = () => {
                         <FormControl color="black" marginTop="4vh">
                             <RadioGroup value={radio} onChange={(e :any) => {setRadio(e.target.value)}}>
                                 <Radio value={RegistraionType.Individual} marginRight="2vw">Individual</Radio>
-                                <Radio value={RegistraionType.Team}>Team</Radio>
-                                <Radio value={RegistraionType.None}></Radio>
+                                <Radio value={RegistraionType.Team} marginRight="2vw">Team</Radio>
+                                <Radio value={RegistraionType.None}>None</Radio>
                             </RadioGroup>
                         </FormControl>
                         {

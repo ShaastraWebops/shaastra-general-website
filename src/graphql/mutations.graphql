@@ -28,6 +28,10 @@ mutation resetPassword($resetPasswordInput: ResetPasswordInput!) {
   resetPassword(data: $resetPasswordInput)
 }
 
+ mutation register($EventID: String!){
+    register(EventID: $EventID)
+  }
+
  mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!){
     createTeamAndRegister(data: $createTeamAndRegisterData)
   }
@@ -44,3 +48,6 @@ mutation editEvent($data: EditEventInput!, $id: String!){
   editEvent(data: $data, eventID: $id)
 }
 
+mutation editProfile($data: EditProfileInput!){
+  editProfile(data: $data)
+}

@@ -237,7 +237,7 @@
     {
         width: 100vw !important;
         display: flex !important;
-        height: 50vh !important;
+        /* height: 50vh !important; */
         flex-direction: column !important;
         justify-content: space-between;
     }
@@ -258,7 +258,7 @@
     {
         width: 100vw !important;
         display: flex !important;
-        height: 40vh !important;
+        /* height: 40vh !important; */
         flex-direction: column !important;
         justify-content: space-between;
     }

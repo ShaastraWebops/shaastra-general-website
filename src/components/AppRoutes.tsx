@@ -26,6 +26,8 @@ import Signup from "./pages/Login/Signup"
 import ForgotAfter from "./pages/Login/ForgotAfterLink"
 import Verify from "./pages/Login/Verify"
 import SignOut from "./pages/Login/SignOut"
+import Profile from "./pages/Login/Profile"
+import EditProfile from "./pages/Login/EditProfile"
 
 interface Props {}
 
@@ -59,6 +61,8 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/forgotpassword/:token" component={ForgotAfter}></Route>
       <Route exact path="/verify/:token" component={Verify}></Route>
       <Route exact path="/signout" component={SignOut}></Route>
+      <Route exact path="/profile" component={Profile}></Route>
+      <Route exact path="/editprofile" component={EditProfile}></Route>
     </Router>
   );
 };
