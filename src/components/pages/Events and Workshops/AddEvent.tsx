@@ -31,9 +31,10 @@ import * as Showdown from "showdown";
 import "../../../styles/Events.css"
 
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
-import { RegistraionType, useAddEventMutation } from "../../../generated/graphql"
+import { GetEventsDocument, RegistraionType, useAddEventMutation, useCreateEventFaqMutation } from "../../../generated/graphql"
 
 import AWS from 'aws-sdk'
+import { AddIcon, MinusIcon } from "@chakra-ui/icons"
 declare module 'react' {
     interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
       directory?: string
@@ -65,7 +66,7 @@ const EventAdmin = () => {
     const [regEn, setRegEnd] = useState("")
     const [eventStart, setEventStart] = useState("")
     const [eventEnd, setEventEnd] = useState("")
-    const [teamSize, setTeamSize] = useState("1")
+    const [teamSize, setTeamSize] = useState("")
     const [participation, setParticipation] = useState("")
     const [first, setFirst] = useState("")
     const [second, setSecond] = useState("")
@@ -111,6 +112,20 @@ const EventAdmin = () => {
       }
 
     var { isOpen, onOpen, onClose } = useDisclosure()
+
+    const [faqs, setfaqs] = React.useState([{ question: '', answer: '' }]);
+    const [addfaq] = useCreateEventFaqMutation();
+
+  const handleFqsInput = ({ index, event }: { index: number, event: React.ChangeEvent<HTMLInputElement> }) => {
+    const values = [...faqs];
+
+    if (event.target.name === 'question') {
+      values[index]['question'] = event.target.value
+    } else {
+      values[index]['answer'] = event.target.value
+    }
+    setfaqs(values)
+  }
 
     if(data)
     {
@@ -278,8 +293,8 @@ const EventAdmin = () => {
                             <Input type="file" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {
-                                    setFile(e.target.files[0]); console.log(e.target.files[0])
-                                    setNewFile(`https://shaastra.s3.ap-south-1.amazonaws.com/${e.target.files[0].name}`)
+                                    // setFile(e.target.files[0]); console.log(e.target.files[0])
+                                    // setNewFile(`https://shaastra.s3.ap-south-1.amazonaws.com/${e.target.files[0].name}`)
                                 }}
                                 ></Input>
                         </FormControl>
@@ -302,14 +317,58 @@ const EventAdmin = () => {
                             </FormControl> : null
                         }
                     </Flex>
+                    <Flex p={2}>
+                  <Heading size={'md'} m={2}>Add Fqs </Heading>
+                </Flex>
+                {
+                  faqs.map((faq, index) => {
+                    return (
+                      <React.Fragment key={index}>
+                        <Flex p={2} >
+                          <FormControl m={2}>
+
+                            <Input name="question"
+                              placeholder={'Question'}
+                              id={"faqq" + index} outline="none" color="black" 
+                              backgroundColor="transparent" borderBottom="5px solid white"
+                               value={faq.question}
+                              onChange={(event) => handleFqsInput({ index, event })} />
+                          </FormControl>
+                          <FormControl m={2}>
+                            <Input name="answer"
+                              placeholder={'Answer'}
+                              onChange={(event) => handleFqsInput({ index, event })}
+                              id={"faqa" + index}outline="none" color="black" 
+                              backgroundColor="transparent" borderBottom="5px solid white" value={faq.answer} />
+                          </FormControl>
+                          <Flex p={[0, 3]} width={'40px'} flexDirection={['column', 'row']}>
+                            {
+                              index === 0 ? null : (
+                                <Button mx={2} my={1} size={'xs'}
+                                  onClick={() => {
+                                    const values = [...faqs];
+                                    values.splice(index, 1)
+                                    setfaqs(values)
+                                  }}
+                                ><MinusIcon /></Button>
+                              )
+                            }
+                            <Button mx={2} my={1} size={'xs'}
+                              onClick={() => setfaqs([...faqs, { question: '', answer: '' }])}
+                            ><AddIcon /></Button>
+                          </Flex>
+                        </Flex>
+                        </React.Fragment>
+                    )
+                  })
+                }
                     <Button marginTop="4vh" width="100%" backgroundColor="white" color="#0e101b"
                         onClick={async (e:any) => {
                             e.preventDefault();
                             setEventType()
                             console.log(file)
-                            await UploadImageToS3WithNativeSdk(file)
+                            // await UploadImageToS3WithNativeSdk(file)
                             try{
-                                console.log(radio)
                                 await addEventMutation({
                                     variables: {
                                         data: {
@@ -321,7 +380,7 @@ const EventAdmin = () => {
                                             platform: platform,
                                             requirements: req,
                                             vertical: vertical,
-                                            pic: newFile,
+                                            pic: "newFile",
                                             finalistst: "",
                                             firstplace: first,
                                             participation: participation,
@@ -331,8 +390,25 @@ const EventAdmin = () => {
                                             registrationCloseTime: new Date(regEn).toISOString()!,
                                             registrationOpenTime: new Date(regStart).toISOString()!,
                                         }
+                                    },
+                                    refetchQueries: [{ query: GetEventsDocument, variables: { getEventsFilter: vertical} }]
+                                }).then((res) => {
+                                    if(res.data?.addEvent.id){
+                                        faqs.map(async (faq) => {
+                                            await addfaq({
+                                                variables : {
+                                                    id : res.data?.addEvent.id! ,
+                                                    data : {
+                                                        question : faq.question,
+                                                        answer : faq.answer
+                                                    }
+                                                }
+                                            }).catch(err => console.log(error))
+                                            
+                                        })
                                     }
                                 })
+
                             }
                             catch(err) {console.log(err)}
                         }}

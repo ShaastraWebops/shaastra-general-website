@@ -7,6 +7,7 @@ import CustomBox from '../../shared/CustomBox'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import moment from 'moment'
+import EventFaqs from './EventFaqs'
 
 const EventPage = () => {
     const {id} : {id : string | undefined} = useParams();
@@ -113,9 +114,11 @@ const EventPage = () => {
               </Flex>
             </Flex>
           </Flex>
-        </Container>
-
-      
+          {  data?.getEvent &&
+            <EventFaqs   event ={data?.getEvent!}  /> 
+        
+        }
+        </Container>  
     </CustomBox>
     )
 }
