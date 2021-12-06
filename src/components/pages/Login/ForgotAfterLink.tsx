@@ -31,12 +31,11 @@ import { useHistory, useParams } from "react-router"
 
 const ForgotAfter = () => {
 
-    const {token} :any = useParams()
-
     const gradient = useColorModeValue("blackG", "whiteG")
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [pw, setPw] = useState("")
+    const [otp, setOtp] = useState("")
 
     const [resetPasswordMutation, {data, loading, error}] = useResetPasswordMutation()
 
@@ -109,12 +108,13 @@ const ForgotAfter = () => {
             <Box width="60vw"  className={`${gradient} login-main-box`} height="fit-content" padding="5vw">
                     <Heading fontSize="4vw" marginBottom="6vh">Reset <span>Password</span></Heading>
                     <Input placeholder="Enter registered Email ID" type="text" marginBottom="4vh" onChange={(e:any) => {setEmail(e.target.value)}}></Input>
+                    <Input placeholder="Reset Password OTP" type="text" marginBottom="4vh" value={otp} onChange={(e:any) => {setOtp(e.target.value)}}></Input>
                     <Input placeholder="Enter new password" marginBottom="4vh" type="password" onChange={(e: any) => {setPw(e.target.value)}}></Input>
                     <Button width="100%"  backgroundColor="#2467a1" marginBottom="4vh" marginTop="6vh"
                         onClick={async (e:any) => {
                             e.preventDefault();
                             try{
-                                await resetPasswordMutation({variables: {resetPasswordInput:{email: email, otp: token, newPassword: pw}}})
+                                await resetPasswordMutation({variables: {resetPasswordInput:{email: email, otp:otp, newPassword: pw}}})
                             }
                             catch(err) {console.log(err)}
                         } }

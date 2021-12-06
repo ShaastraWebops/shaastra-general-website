@@ -40,12 +40,12 @@ const Forgot = () => {
     var { isOpen, onOpen, onClose } = useDisclosure()
     if(data)
     {
-        onClose = () => {history.push('/')}
+        onClose = () => {history.push('/resetpassword')}
         return(
             <Modal isOpen={true} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Check your registered Email ID for the link to reset your password</ModalHeader>
+                    <ModalHeader>Check your registered Email ID for the reset password OTP</ModalHeader>
                     <ModalCloseButton />
                  </ModalContent>
             </Modal>
@@ -70,7 +70,6 @@ const Forgot = () => {
             {
                 if(error.message === "Email Not found")
                 {
-                    
                 onClose = () => {history.push('/signup')}
                 return(
                     <Modal isOpen={true} onClose={onClose}>
@@ -84,7 +83,6 @@ const Forgot = () => {
                 }
                 else 
                 {
-                    
                 onClose = () => {window.location.reload()}
                 return(
                     <Modal isOpen={true} onClose={onClose}>
