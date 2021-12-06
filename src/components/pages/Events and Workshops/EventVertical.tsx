@@ -70,10 +70,10 @@ const EventVertical = () => {
                 }
                 <Text color="white" width="50vw" margin="auto" className="vertical-desp">{desp}</Text>
             </Box>
-            <Flex width="100vw" justifyContent="space-evenly" alignItems="center">
+            {/* <Flex width="100vw" justifyContent="space-evenly" alignItems="center">
                 <input type="text" className={search} />
                 <Button backgroundColor="white" className={search} color="black" onClick={filter}>Search</Button>
-            </Flex>
+            </Flex> */}
             {
                 data?.getEvents.events.map((event)=>{
                         return(
