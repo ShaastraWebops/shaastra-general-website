@@ -36,7 +36,7 @@ import remarkGfm from 'remark-gfm'
 
 const EventVerticalComponent = ({data, isAdmin} : any) => {
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    var { isOpen, onOpen, onClose } = useDisclosure()
 
     const search = useColorModeValue("border", "noBorder")
     const font = useColorModeValue("black", "white")
@@ -44,7 +44,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
     const button = useColorModeValue("dark", "light")
     
     const [radio, setRadio] = useState("i")
-    const [register] = useRegisterMutation();
+    const [register, {data : data1,error,loading}] = useRegisterMutation();
     const IndividualReg = async (eventId : string) =>{
 
         await register({
@@ -52,11 +52,10 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                 EventID : eventId
             }
         })
-        .then(()=> alert("Registered Suceesfully"))
-        .catch(err => alert(err.message))
+        .catch(err => console.log(err.message))
 
     }
-
+  
     const [members, setMembers] = React.useState<string[]>([]);
     const [teamname, setTeamname] = React.useState<string>();
 
@@ -66,7 +65,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
         values[index] = event.target.value
         setMembers(values)
     }
-    const [teamreg] = useCreateTeamandRegisterMutation();
+    const [teamreg,{data:data2, loading:loading2,error : error2}] = useCreateTeamandRegisterMutation();
 
     const Teamregistration = async (eventID : string)=>{
         await teamreg({
@@ -77,8 +76,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                    members
                } 
             }
-        }).then(()=> alert("Team succesfully registered"))
-        .catch(err => alert(err.message))
+        }).catch(err => console.log(err.message))
     }
 
     if(radio === "t" && members.length === 0){
@@ -88,6 +86,47 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
     const buttoncolor = useColorModeValue("#ea8a94","white");
 
     const history = useHistory();
+    if(data1 || data2)
+    {
+        onClose = () => {history.push('/admin')}
+        return(
+            <Modal isOpen={true} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent backgroundColor="#addfd0" color="black">
+                    <ModalHeader>Registrated Successfully</ModalHeader>
+                    <ModalCloseButton />
+                 </ModalContent>
+            </Modal>
+        )
+    }
+    if(error || error2)
+    {
+        error? onClose = () => {history.push('/login')} : onClose = () => {window.location.reload()}
+        return(
+            <Modal isOpen={true} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent backgroundColor="#f1aaaa" color="black">
+                    <ModalHeader>{error ? error.message : error2?.message}</ModalHeader>
+                    <ModalCloseButton />
+                 </ModalContent>
+            </Modal>
+        )
+    }
+    if(loading || loading2)
+    {
+        onClose = () => {history.push('/admin/add')}
+        return(
+            <Modal isOpen={true} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent backgroundColor="#e2e19c" color="black">
+                    <ModalHeader>Loading...</ModalHeader>
+                    <ModalCloseButton />
+                 </ModalContent>
+            </Modal>
+        )
+    }
+
+    
 
     return(
        <Box  minHeight={"15vw"} m={2} p={2}>
@@ -131,8 +170,8 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                             </div>
                         </div>
                         <Box borderRadius="24px" width="50vw" height="100%" marginLeft="15vw" className="event-desp">
-                            <Flex flexDirection="column"  width="50vw" height="100%" alignItems="center" justifyContent="center">
-                                    <Text width="48vw" className={font} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
+                            <Flex flexDirection="column"  width="50vw" height="100%" alignItems="center" justifyContent="center" textAlign={"justify"}>
+                                    <Text width="48vw" className={font} fontSize={["sm","lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
                                     <ReactMarkdown
                                         children={data?.description!}
                                         remarkPlugins={[remarkGfm]}
@@ -176,7 +215,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                                                         <Radio value="t">Register as Team</Radio>
                                                     </RadioGroup>
                                                 </FormControl>
-                                                    <FormControl marginTop="1.5vh">
+                                                    <FormControl marginTop="1.5vh" isRequired>
                                                         <FormLabel>Team Name</FormLabel>
                                                         <Input type="text" value={teamname} onChange={e => setTeamname(e.target.value)}></Input>
                                                         {
@@ -188,7 +227,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                                                                 return (
                                                                     <React.Fragment key={index}>
                                                                         <Flex width={'100%'}  >
-                                                                            <FormControl>
+                                                                            <FormControl isRequired>
 
                                                                                 <Flex width="100%" justifyContent="space-between">
                                                                                 <Input  id={"member" + index} placeholder={`Team Member ${index+1} Shaastra ID`} required
