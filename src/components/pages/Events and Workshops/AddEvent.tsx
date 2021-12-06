@@ -65,7 +65,7 @@ const EventAdmin = () => {
     const [regEn, setRegEnd] = useState("")
     const [eventStart, setEventStart] = useState("")
     const [eventEnd, setEventEnd] = useState("")
-    const [teamSize, setTeamSize] = useState()
+    const [teamSize, setTeamSize] = useState<number>()
     const [participation, setParticipation] = useState("")
     const [first, setFirst] = useState("")
     const [second, setSecond] = useState("")
@@ -127,7 +127,7 @@ const EventAdmin = () => {
     }
     if(error)
     {
-        onClose = () => {history.push('/admin/add')}
+        onClose = () => {window.location.reload()}
         return(
             <Modal isOpen={true} onClose={onClose}>
                 <ModalOverlay />
@@ -285,14 +285,21 @@ const EventAdmin = () => {
                         </FormControl>
                     <Flex alignItems="center" justifyContent="space-between" width="100%" className="admin-team">
                         <FormControl color="black" marginTop="4vh">
-                            <RadioGroup value={radioString} onChange={setRadioString}>
+                            <RadioGroup onChange={(e:any) => {
+                                    switch(e)
+                                    {
+                                        case "Individual": setRadio(RegistraionType.Individual); break;
+                                    case "Team": setRadio(RegistraionType.Team); break;
+                                    default: setRadio(RegistraionType.None);   
+                                    }
+                                }}>
                                 <Radio value="Individual" marginRight="2vw">Individual</Radio>
                                 <Radio value="Team" marginRight="2vw">Team</Radio>
                                 <Radio value="None">None</Radio>
                             </RadioGroup>
                         </FormControl>
                         {
-                            radio===RegistraionType.Team &&
+                            radio === RegistraionType.Team &&
                             <FormControl marginTop="4vh" width="10vw">
                                 <FormLabel color="black">Team size</FormLabel>
                                 <Input type="number" outline="none" color="black" 
@@ -305,18 +312,16 @@ const EventAdmin = () => {
                     <Button marginTop="4vh" width="100%" backgroundColor="white" color="#0e101b"
                         onClick={async (e:any) => {
                             e.preventDefault();
-                            setEventType()
                             console.log(file)
                             await UploadImageToS3WithNativeSdk(file)
                             try{
-                                console.log(radio)
                                 await addEventMutation({
                                     variables: {
                                         data: {
                                             name: name,
                                             description: desp,
-                                            eventTimeFrom: new Date(eventStart).toISOString()!,
-                                            eventTimeTo: new Date(eventEnd).toISOString()!,
+                                            eventTimeFrom: new Date(eventStart).toDateString(),
+                                            eventTimeTo: new Date(eventEnd).toDateString(),
                                             registrationType: radio,
                                             platform: platform,
                                             requirements: req,
@@ -327,9 +332,9 @@ const EventAdmin = () => {
                                             participation: participation,
                                             secondplace: second,
                                             thirdplace: third,
-                                            teamSize: teamSize,
-                                            registrationCloseTime: new Date(regEn).toISOString()!,
-                                            registrationOpenTime: new Date(regStart).toISOString()!,
+                                            teamSize: Math.round(teamSize? teamSize : 0),
+                                            registrationCloseTime: new Date(regEn).toDateString(),
+                                            registrationOpenTime: new Date(regStart).toDateString(),
                                         }
                                     }
                                 })

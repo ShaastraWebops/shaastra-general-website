@@ -46,12 +46,15 @@ import 'swiper/swiper.min.css'
 import { useEditProfileMutation, useMeQuery } from "../../../generated/graphql";
 import {useHistory} from "react-router-dom"
 import { FaSchool } from "react-icons/fa";
+import success from "../../../images/Login/login-success.svg"
+import errorSVG from "../../../images/Login/login-error.svg"
 
 SwiperCore.use([Scrollbar]);
 
 const EditProfile = () => {
 
     const {data: user, loading: userLoading, error: userError} = useMeQuery()
+    console.log(user)
 
     const history = useHistory()
 
@@ -67,6 +70,25 @@ const EditProfile = () => {
     const [editProfileMutation, {data, loading, error}] = useEditProfileMutation()
     var { isOpen, onOpen, onClose } = useDisclosure()
 
+    if(data)
+    {
+        onClose = () => {
+            window.location.reload()
+        }
+
+        return(
+            <Modal isOpen={true} onClose={onClose} isCentered>
+                <ModalOverlay />
+                <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                    <Image src={success} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                    <ModalCloseButton />
+                    <ModalBody backgroundColor="#A7EAAA" width="100%" padding="2vw">
+                        <Text textAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Details edited successfully!</Text>
+                    </ModalBody>
+                 </ModalContent>
+            </Modal>
+        )
+    }
     if(loading)
         {
             onClose = () => {}
@@ -83,15 +105,18 @@ const EditProfile = () => {
         else if(error)
         {
             onClose = () => {window.location.reload()}
-                    return(
-                        <Modal isOpen={true} onClose={onClose}>
-                            <ModalOverlay />
-                            <ModalContent backgroundColor="#f1aaaa" color="black">
-                                <ModalHeader>Error Occurred</ModalHeader>
-                                <ModalCloseButton />
-                            </ModalContent>
-                        </Modal>
-                    )
+                return(
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Some error occurred</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
+                )   
         }
     
 
@@ -105,44 +130,44 @@ const EditProfile = () => {
                     padding="4vw"
             >
                 <Heading fontSize="3.5vw" className="profile-heading">Hi! {user?.me?.name}</Heading>
-                <Flex width="100%" className="profile-main-flex">
-                    <Flex flexDirection="column" width="30vw" fontSize="1.5vw" justifyContent="space-between">
+                <Flex width="100%" className="profile-main-flex" minHeight="80vh" justifyContent="space-evenly">
+                    <Flex height={["fit-content","80vh"]} padding={["1vw", "0vw"]}  flexDirection="column" margin="auto"  width={["100%", "20vw"]} fontSize="1.5vw" justifyContent="space-between">
                         <Link href="/profile" marginBottom="4vh">Profile Details</Link>
                         <Link href="/editprofile" color="#C2C4FF">Edit Profile</Link>
-                        <Button width="fit-content" margin="auto" backgroundColor="#DB7171">Logout</Button>
+                        <Button fontSize={["5vw","1.5vw"]} onClick={(e) => {e.preventDefault(); history.push('/signout')}} width={["fit-content","100%"]} margin="auto" backgroundColor="#DB7171">Logout</Button>
                         <Image src={bg} boxSize="22vw" alignSelf="center"></Image>
                     </Flex>
                     <Flex flexDirection="column">
-                        <Box width="60vw" backgroundColor="#8294A4" fontSize="1.5vw" padding="4vw" borderRadius="24px" marginBottom="4vh">
+                        <Box width={["100%", "60vw"]} margin="auto" fontSize={["5vw","1.5vw"]} padding={["1vw", "4vw"]} borderRadius="24px" marginBottom="4vh">
                            <FormControl marginBottom="4vh">
                                <FormLabel>Name</FormLabel>
-                               <Input value={name} onChange={(e:any) => {setName(e.target.value)}} type="text"></Input>
+                               <Input color="black" value={name} placeholder={user?.me?.name} onChange={(e:any) => {setName(e.target.value)}} type="text"></Input>
                            </FormControl>
                            <FormControl marginBottom="4vh">
                                <FormLabel>Email</FormLabel>
-                               <Input value={email} onChange={(e:any) => {setEmail(e.target.value)}} type="email"></Input>
+                               <Input value={email} placeholder={user?.me?.email} onChange={(e:any) => {setEmail(e.target.value)}} type="email"></Input>
                            </FormControl>
                            <Flex marginBottom="6vh">
-                        <Select placeholder="College" marginRight="2vw" value={college} onChange={(e:any) => {setCollege(e.target.value)}}>
+                        <Select placeholder={user?.me?.college} marginRight="2vw" value={college} onChange={(e:any) => {setCollege(e.target.value)}}>
                             <option value="IITM">IITM</option>
                         </Select>
-                        <Select placeholder="Branch" value={branch} onChange={(e:any) => {setBranch(e.target.value)}}>
+                        <Select placeholder={user?.me?.department} value={branch} onChange={(e:any) => {setBranch(e.target.value)}}>
                             <option value="BE">BE</option>
                         </Select>
                     </Flex>
                     <FormControl marginBottom="4vh">
                         <FormLabel>Address</FormLabel>
-                        <Input type="text" value={address} onChange={(e:any) => {setAddress(e.target.value)}}></Input>
+                        <Input type="text" value={address} placeholder={user?.me?.address} onChange={(e:any) => {setAddress(e.target.value)}}></Input>
                     </FormControl>
                     <Flex marginBottom="6vh">
-                        <Select placeholder="State" value={State} onChange={(e:any) => {setState(e.target.value)}}>
+                        <Select placeholder={user?.me?.state} value={State} onChange={(e:any) => {setState(e.target.value)}}>
                             {
                                 Object.keys(cities).map(s => {
                                     return(<option value={s}>{s}</option>)
                                 })
                             }
                         </Select>
-                        <Select placeholder="City" marginLeft="2vw" value={city} onChange={(e:any) => {setCity(e.target.value)}}>
+                        <Select placeholder={user?.me?.city} marginLeft="2vw" value={city} onChange={(e:any) => {setCity(e.target.value)}}>
                             {
                                 cities["Kerala"].map(c => {
                                     return(<option value={c}>{c}</option>)

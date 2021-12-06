@@ -7,11 +7,15 @@ import {
 import { Flex, Spacer, Text as Box } from "@chakra-ui/layout";
 import { time } from "console";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { textChangeRangeNewSpan } from "typescript";
+import { Button } from "@chakra-ui/button";
+import { UserRole } from "../../../generated/graphql";
 
 export const DrawerDesktopMenuItems = () => {
   const [menu, setMenu] = useState<string>("e&w");
+
+  const history = useHistory()
 
   const menuItems = () => {
     switch (menu) {
@@ -125,6 +129,20 @@ export const DrawerDesktopMenuItems = () => {
         >
           <Link to="/exhibitions">Exhibitions</Link>
         </Box>
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          onMouseOver={() => setMenu("exhibitions")}
+          fontSize={28}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={2}
+          pr={12}
+          mb={4}
+        >
+          <Link to="/events">Events</Link>
+        </Box>
         <Spacer />
         <Box
           className="menu-text"
@@ -218,12 +236,46 @@ export const DrawerDesktopMenuItems = () => {
         >
           <Link to="/team">Team</Link>
         </Box>
+        {
+          localStorage.getItem("role") === "User" ? 
+            <Box
+              className="menu-text"
+              _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+              fontSize={28}
+              width="100%"
+              fontFamily={"monospace"}
+              fontStyle={"italic"}
+              pl={6}
+              p={2}
+              pr={12}
+              mb={4}
+            >
+              <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/profile") } }>Profile</Button>
+              <Button backgroundColor="#DB7171" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signout") } }>Logout</Button>
+            </Box>
+          :
+            <Box
+            className="menu-text"
+            width="100%"
+            _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+            fontSize={28}
+            fontFamily={"monospace"}
+            fontStyle={"italic"}
+            pl={6}
+            p={2}
+            pr={12}
+            mb={4}
+          >
+            <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/login") } }>Login</Button>
+          </Box>
+        }
       </Flex>
     </>
   );
 };
 
 export const DrawerMobileMenuItems = () => {
+  const history = useHistory()
   return (
     <Flex
       flexDirection="column"
@@ -237,6 +289,9 @@ export const DrawerMobileMenuItems = () => {
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/exhibitions">Exhibitions</Link>
+        </Box>
+        <Box fontSize={27} fontStyle={"normal"}>
+          <Link to="/events">Events</Link>
         </Box>
         <AccordionItem border={0}>
           <AccordionButton pl={0}>
@@ -271,6 +326,17 @@ export const DrawerMobileMenuItems = () => {
           <Link to="/team">Team</Link>
         </Box>
       </Accordion>
+      {
+        localStorage.getItem("role") === "User" ? 
+          <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+          <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/profile") } }>Profile</Button>
+          <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signout") } }>Logout</Button>
+        </Box>
+        :
+          <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+          <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/login") } }>Login</Button>
+        </Box>
+      }
     </Flex>
   );
 };

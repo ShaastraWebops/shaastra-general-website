@@ -60,9 +60,13 @@ const EditEvent = () => {
     const [selectedTab, setSelectedTab] = React.useState<"write" | "preview">("write");
     const history = useHistory()
 
-    const {data: event, loading: eventLoading, error: eventError} = useGetEventQuery({variables: {EventID: id}})
+     const {data: event, loading: eventLoading, error: eventError} = useGetEventQuery({variables: {EventID: id}})
+
+
+    console.log(event)
 
     const [radio, setRadio] = React.useState<RegistraionType>()
+    const [radioString, setRadioString] = useState(event?.getEvent.registrationType)
     const [name, setName] = React.useState(event?.getEvent.name ? event?.getEvent.name : "")
     const [vertical, setVertical] = React.useState(event?.getEvent.vertical ? event?.getEvent.vertical : "")
     const [desp, setDesp] = React.useState(event?.getEvent.description ? event?.getEvent.description : "")
@@ -80,12 +84,15 @@ const EditEvent = () => {
     const [pic, setPic] = useState(event?.getEvent.pic!)
     const [file, setFile] = useState<File>()
 
-    switch(event?.getEvent.registrationType)
-    {
-        case "Individual": setRadio(RegistraionType.Individual); break;
-        case "Team": setRadio(RegistraionType.Team); break;
-        case "None": setRadio(RegistraionType.None);
+    const setEventType = () => {
+        switch(radioString)
+                            {
+                                case "Individual": setRadio(RegistraionType.Individual); break;
+                                case "Team": setRadio(RegistraionType.Team); break;
+                                default: setRadio(RegistraionType.None);
+                            }
     }
+
 
     const [editEventMutation, {data, loading, error}] = useEditEventMutation()
 
@@ -118,12 +125,15 @@ const EditEvent = () => {
 
     if(data)
     {
-        onClose = () => {history.push('/admin/add')}
+        onClose = () => {
+            history.push('/admin')
+            window.location.reload()
+        }
         return(
             <Modal isOpen={true} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Event Added</ModalHeader>
+                    <ModalHeader>Event Edited</ModalHeader>
                     <ModalCloseButton />
                  </ModalContent>
             </Modal>
@@ -232,6 +242,7 @@ const EditEvent = () => {
                         {console.log(regStart)}
                             <FormLabel>Registration Start</FormLabel>
                             <Input type="date" outline="none" color="black"
+                            placeholder={"2021/12/30"}
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setRegStart(e.target.value)}}    
                             ></Input>
@@ -288,14 +299,21 @@ const EditEvent = () => {
                     </Flex>
                     <Flex alignItems="center" justifyContent="space-between" width="100%" className="admin-team">
                         <FormControl color="black" marginTop="4vh">
-                            <RadioGroup value={radio} onChange={(e :any) => {setRadio(e.target.value)}}>
-                                <Radio value={RegistraionType.Individual} marginRight="2vw">Individual</Radio>
-                                <Radio value={RegistraionType.Team} marginRight="2vw">Team</Radio>
-                                <Radio value={RegistraionType.None}>None</Radio>
+                            <RadioGroup onChange={(e:any) => {
+                                switch(e)
+                                {
+                                    case "Individual": setRadio(RegistraionType.Individual); break;
+                                case "Team": setRadio(RegistraionType.Team); break;
+                                default: setRadio(RegistraionType.None);   
+                                }
+                            }}>
+                                <Radio value="Individual" marginRight="2vw">Individual</Radio>
+                                <Radio value="Team" marginRight="2vw">Team</Radio>
+                                <Radio value="None">None</Radio>
                             </RadioGroup>
                         </FormControl>
                         {
-                            radio===RegistraionType.Team &&
+                            radio === RegistraionType.Team &&
                             <FormControl marginTop="4vh" width="10vw">
                                 <FormLabel color="black">Team size</FormLabel>
                                 <Input type="number" outline="none" color="black" 
@@ -308,6 +326,7 @@ const EditEvent = () => {
                     <Button marginTop="4vh" width="100%" backgroundColor="white" color="#0e101b"
                         onClick={async (e:any) => {
                             e.preventDefault();
+                            // await setEventType()
                             if(file !== undefined)
                             {
                                 await UploadImageToS3WithNativeSdk(file)
@@ -316,10 +335,10 @@ const EditEvent = () => {
                                 await editEventMutation({
                                     variables: {
                                         data: {
-                                            name: name,
+                                        name: name,
                                         description: desp,
-                                        eventTimeFrom: new Date(eventStart).toISOString()!,
-                                        eventTimeTo: new Date(eventEnd).toISOString()!,
+                                        eventTimeFrom: new Date(eventStart).toDateString(),
+                                        eventTimeTo: new Date(eventEnd).toDateString(),
                                         registrationType: radio!,
                                         platform: platform,
                                         requirements: req,
@@ -329,9 +348,9 @@ const EditEvent = () => {
                                         participation: participation,
                                         secondplace: second,
                                         thirdplace: third,
-                                        teamSize: teamSize,
-                                        registrationCloseTime: new Date(regEn).toISOString()!,
-                                        registrationOpenTime: new Date(regStart).toISOString()!,
+                                        teamSize: Math.round(teamSize),
+                                        registrationCloseTime: new Date(regEn).toDateString(),
+                                        registrationOpenTime: new Date(regStart).toDateString(),
                                         },
                                         id: id
                                     }

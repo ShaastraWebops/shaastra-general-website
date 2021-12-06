@@ -66,7 +66,7 @@ const EventPage = () => {
               </Flex>
             )}
             {
-              localStorage.getItem("role") === "Admin" && <Button width="100%" onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
+              localStorage.getItem("role") !== "Admin" && <Button width="100%" onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
             }
           </Flex>
         </Container>
