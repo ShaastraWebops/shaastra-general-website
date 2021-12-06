@@ -65,7 +65,7 @@ const EventAdmin = () => {
     const [regEn, setRegEnd] = useState("")
     const [eventStart, setEventStart] = useState("")
     const [eventEnd, setEventEnd] = useState("")
-    const [teamSize, setTeamSize] = useState()
+    const [teamSize, setTeamSize] = useState("1")
     const [participation, setParticipation] = useState("")
     const [first, setFirst] = useState("")
     const [second, setSecond] = useState("")
@@ -249,25 +249,25 @@ const EventAdmin = () => {
                     </Flex>
                     <Flex marginBottom="4vh">
                         <FormControl>
-                            <FormLabel>Participation</FormLabel>
+                            <FormLabel>Participation Points</FormLabel>
                             <Input type="text" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setParticipation(e.target.value)}}></Input>
                         </FormControl>
                         <FormControl marginLeft="2vw">
-                            <FormLabel>First</FormLabel>
+                            <FormLabel>Winner Up points</FormLabel>
                             <Input type="text" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setFirst(e.target.value)}}></Input>
                         </FormControl>
                         <FormControl marginLeft="2vw">
-                            <FormLabel>Second</FormLabel>
+                            <FormLabel>Runner Up points</FormLabel>
                             <Input type="text" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setSecond(e.target.value)}}></Input>
                         </FormControl>
                         <FormControl marginLeft="2vw">
-                            <FormLabel>Third</FormLabel>
+                            <FormLabel>Third position points</FormLabel>
                             <Input type="text" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setThird(e.target.value)}}></Input>
@@ -292,14 +292,14 @@ const EventAdmin = () => {
                             </RadioGroup>
                         </FormControl>
                         {
-                            radio===RegistraionType.Team &&
+                            radioString === "Team" ?
                             <FormControl marginTop="4vh" width="10vw">
                                 <FormLabel color="black">Team size</FormLabel>
                                 <Input type="number" outline="none" color="black" 
                                     backgroundColor="transparent" borderBottom="5px solid white"
                                     onChange={(e:any) => {setTeamSize(e.target.value)}}    
                                 ></Input>
-                            </FormControl>
+                            </FormControl> : null
                         }
                     </Flex>
                     <Button marginTop="4vh" width="100%" backgroundColor="white" color="#0e101b"
@@ -327,7 +327,7 @@ const EventAdmin = () => {
                                             participation: participation,
                                             secondplace: second,
                                             thirdplace: third,
-                                            teamSize: teamSize,
+                                            teamSize: Number(teamSize),
                                             registrationCloseTime: new Date(regEn).toISOString()!,
                                             registrationOpenTime: new Date(regStart).toISOString()!,
                                         }
