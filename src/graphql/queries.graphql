@@ -11,10 +11,21 @@ query me{
     city
     state
     registeredEvents{
+      id
       name
+      pic
       eventTimeFrom
+      eventTimeTo
       registrationType
+      yourTeam{
+        name
+        members{
+          name
+          email
+        }
+      }
     }
+   
   }
 }
 

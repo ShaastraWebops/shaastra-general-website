@@ -32,15 +32,16 @@
 }
 .profile-main-flex .swiper-slide
 {
-    background-color: rgb(95, 95, 117);
+    border-radius: 10px;
+    background-color: #C2C4FF;
     width: 15vw;
-    height: 15vw;
 }
 .profile-main-flex input, .profile-main-flex select
 {
     background-color: white;
     color: black;
 }
+
 
 
 @media screen and (max-width: 900px)
