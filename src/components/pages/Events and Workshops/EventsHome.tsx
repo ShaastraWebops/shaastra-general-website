@@ -186,10 +186,10 @@ function EventsHome() {
                 Aeromodelling Competition, Global Biotech Council, Shaastra
                 Programming Contest. Capture the Flag (CTF) and many more.
               </Text>
-              {/*<Text fontSize="2xl" textAlign='center' marginTop={8}  
+              <Text fontSize="2xl" textAlign='center' marginTop={8}  
            _hover={{
                color: "teal.500",
-  }}><Link as={ReachLink} to="/events">Explore Events</Link></Text>*/}
+  }}><Link as={ReachLink} to="/events">Explore Events</Link></Text>
             </Box>
           </Box>
           {/*Workshops*/}
@@ -264,10 +264,10 @@ function EventsHome() {
                 a Mars Rover, Parallel Programming with Python, Make a chat app
                 using Socket.io, Node.js, and MongoDB, and many more.
               </Text>
-              {/*<Text fontSize="2xl" textAlign='center' marginTop={8}  _hover={{
+              <Text fontSize="2xl" textAlign='center' marginTop={8}  _hover={{
                color: "teal.500",
-              }}><Link as={ReachLink} to="/workshops"
-            >Explore Workshops</Link></Text>*/}
+              }}><Link as={ReachLink} to="/events/WORKSHOPS"
+            >Explore Workshops</Link></Text>
             </Box>
           </Box>
           {/*Summit*/}
