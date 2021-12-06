@@ -24,6 +24,7 @@ import {
     FormErrorMessage,
     FormHelperText,
     Heading,
+    Center,
   } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
@@ -41,7 +42,8 @@ import SwiperCore, {
 import 'swiper/swiper-bundle.min.css'  
 import 'swiper/swiper.min.css'
 import { useHistory } from "react-router";
-import {useMeQuery} from "../../../generated/graphql"
+import {RegistraionType, useMeQuery} from "../../../generated/graphql"
+import moment from "moment";
 
 SwiperCore.use([Scrollbar]);
 
@@ -133,6 +135,7 @@ const Profile = () => {
                                </Flex>
                            </Flex>
                         </Box>
+                        <Heading m={2} p={2}>Registered Events</Heading>
                         <Swiper
                             scrollbar={{hide: false}}
                             slidesPerView={3}
@@ -141,14 +144,28 @@ const Profile = () => {
                             {
                                 data?.me?.registeredEvents.map(e => {
                                     return(
-                                        <SwiperSlide>
-                                            <Flex justifyContent="center" alignItems="center">
+                                            <SwiperSlide >
+                                            <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
+                                            height={"300px"} 
+                                            >
+                                            <a href={`/eventpage/${e.id}`}>
+                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderRadius={"10px"} objectFit={"fill"}></Image>
+                                                </a>
+                                                <Box color={"black"} fontWeight={"600"} p={2}>
                                                 <Text>{e.name}</Text>
-                                                <Text>{e.eventTimeFrom}</Text>
-                                                <Text>{e.registrationType}</Text>
+                                                <Flex flexDirection={"column"}>
+                                                <Text>Events Starts From</Text>
+                                                <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
+                                                {
+                                                   e.registrationType === RegistraionType.Team && e.yourTeam && (<Button
+                                                   onClick={()=> { console.log(e.yourTeam?.name)}}>View Team</Button>)
+                                                }
+                                                </Flex>
+                                                </Box>
+                                                
                                             </Flex>
                                         </SwiperSlide>
-                                    )
+                                                        )
                                 })
                             }
                         </Swiper>
