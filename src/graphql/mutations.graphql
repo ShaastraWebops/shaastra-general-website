@@ -66,3 +66,7 @@ mutation editEventFAQ($data : EditEventFAQInput! , $id: String!){
 mutation deleteEventFAQ($id: String!){
   deleteEventFAQ(EventFAQID: $id)
 }
+
+mutation leaveTeam($id: String!){
+   leaveTeam(data : $id)
+}

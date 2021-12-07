@@ -48,9 +48,8 @@
 .profile-main-flex .swiper-slide
 {
     border-radius: 10px;
-    padding-top: 2vh !important;
-    background-color: #C2C4FF;
-    width: 15vw !important;
+    background-color: #3d4363;
+    width: 20vw !important;
     height: 20vw !important;
 }
 .profile-main-flex input, .profile-main-flex select

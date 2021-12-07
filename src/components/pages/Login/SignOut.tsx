@@ -39,7 +39,6 @@ const SignOut = () => {
 
     const [logoutMutation, {data, loading, error}] = useLogoutUserMutation()
     const logout = async () => {
-        localStorage.removeItem("role")
         try{
             await logoutMutation()
         }
