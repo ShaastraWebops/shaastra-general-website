@@ -45,9 +45,16 @@ const Login = () => {
 
     if(data)
     {
+        if(data.login?.isVerified === false) history.push("/verify")
+        else
         if(data.login?.role === UserRole.User) localStorage.setItem("role", "User")
         else 
-            if(data.login?.role === UserRole.Admin) localStorage.setItem("role", "Admin") 
+         if(data.login?.role === UserRole.Admin)
+         { 
+             localStorage.setItem("role", "Admin") 
+             history.push("/admin")
+
+        }
         onClose = () => {history.push('/')}
         return(
             <Modal isOpen={true} onClose={onClose} isCentered>

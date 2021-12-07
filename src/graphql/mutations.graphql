@@ -41,7 +41,9 @@ mutation getPasswordOTP($email : String!){
 }
 
 mutation addEvent($data: AddEventInput!){
-  addEvent(data: $data)
+  addEvent(data: $data){
+    name
+  }
 }
 
 mutation editEvent($data: EditEventInput!, $id: String!){

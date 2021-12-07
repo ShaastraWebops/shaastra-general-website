@@ -24,6 +24,7 @@ import {
     FormErrorMessage,
     FormHelperText,
     Heading,
+    Center,
   } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
@@ -42,7 +43,8 @@ import SwiperCore, {
 import 'swiper/swiper-bundle.min.css'  
 import 'swiper/swiper.min.css'
 import { useHistory } from "react-router";
-import {useMeQuery} from "../../../generated/graphql"
+import {RegistraionType, useMeQuery} from "../../../generated/graphql"
+import moment from "moment";
 
 SwiperCore.use([Scrollbar]);
 
@@ -91,8 +93,8 @@ const Profile = () => {
             >
                 <Heading className="profile-heading" fontSize="3.5vw">Hi! {data?.me?.name}</Heading>
                 <Text>{data?.me?.shaastraID}</Text>
-                <Flex width="100vw" className="profile-main-flex" minHeight="80vh" justifyContent="space-evenly">
-                    <Flex height={["fit-content","80vh"]} padding={["1vw", "0vw"]}  flexDirection="column" margin="auto" alignItems="center" width={["100%", "20vw"]} fontSize="1.5vw" justifyContent="space-between">
+                <Flex width="100vw" className="profile-main-flex" alignItems="flex-start" minHeight="80vh" justifyContent="space-evenly">
+                    <Flex alignSelf="flex-start" height={["fit-content","80vh"]} padding={["1vw", "0vw"]}  flexDirection="column" alignItems="center" width={["100%", "20vw"]} fontSize="1.5vw" justifyContent="space-between">
                         <Link href="/profile" color="#C2C4FF" marginBottom="2vh">Profile Details</Link>
                         <Link href="/editprofile">Edit Profile</Link>
                         <Button fontSize={["5vw","1.5vw"]} onClick={(e) => {e.preventDefault(); history.push('/signout')}} width={["fit-content","100%"]} margin="auto" backgroundColor="#DB7171">Logout</Button>
@@ -133,47 +135,72 @@ const Profile = () => {
                                 </Flex>
                            </Flex>
                         </Box>
+                        <Heading m={2} p={2}>Registered Events</Heading>
                         <Swiper
                             scrollbar={{hide: false}}
                             slidesPerView={3}
                             spaceBetween={10}
                         >
-                            <SwiperSlide>
-                                <Flex backgroundImage={bg2} backdropBlur="100px" color="black" fontWeight="500" width="100%" height="100%" justifyContent="center" alignItems="center" flexDirection="column">
-                                    <Text>Name</Text>
-                                    <Text>6pm</Text>
-                                    <Text>Individual</Text>
-                                </Flex>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="flip-card">
+                        
+                            {
+                                data?.me?.registeredEvents.map(e => {
+                                    e.registrationType === RegistraionType.Individual ?
+                                    <SwiperSlide >
+                                            <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
+                                            height={"300px"} 
+                                            >
+                                            <a href={`/eventpage/${e.id}`}>
+                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderRadius={"10px"} objectFit={"fill"}></Image>
+                                                </a>
+                                                <Box color={"black"} fontWeight={"600"} p={2}>
+                                                <Text>{e.name}</Text>
+                                                <Flex flexDirection={"column"}>
+                                                <Text>Events Starts From</Text>
+                                                <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
+                                                </Flex>
+                                                </Box>
+                                                
+                                            </Flex>
+                                        </SwiperSlide>
+                                    :
+                                    <SwiperSlide>
+                                    <div className="flip-card">
                                     <div className="flip-card-inner">
                                         <div className="flip-card-front">
-                                            <Flex backgroundImage={bg2} backdropBlur="100px" color="black" fontWeight="500" width="100%" height="100%" justifyContent="center" alignItems="center" flexDirection="column">
-                                                <Text>Name</Text>
-                                                <Text>6pm</Text>
-                                                <Text>Team</Text>
+                                        <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
+                                            height={"300px"} 
+                                            >
+                                            <a href={`/eventpage/${e.id}`}>
+                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderRadius={"10px"} objectFit={"fill"}></Image>
+                                                </a>
+                                                <Box color={"black"} fontWeight={"600"} p={2}>
+                                                <Text>{e.name}</Text>
+                                                <Flex flexDirection={"column"}>
+                                                <Text>Events Starts From</Text>
+                                                <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
+                                                {
+                                                   e.registrationType === RegistraionType.Team && e.yourTeam && (<Button
+                                                   onClick={()=> { console.log(e.yourTeam?.name)}}>View Team</Button>)
+                                                }
+                                                </Flex>
+                                                </Box>
+                                                
                                             </Flex>
                                         </div>
                                         <div className="flip-card-back">
                                             <Flex  width="100%" height="100%" justifyContent="center" alignItems="center" flexDirection="column">
-                                                <Text>Team name</Text>
+                                                        <Text>{e.yourTeam?.name}</Text>
+                                                        {
+                                                            e.yourTeam?.members.map(m => {
+                                                                return(
+                                                                    <Text>{m.name}</Text>                                                                )
+                                                            })
+                                                        }
                                             </Flex>
                                         </div>
                                     </div>
                                 </div>
-                            </SwiperSlide>
-                            {
-                                data?.me?.registeredEvents.map(e => {
-                                    return(
-                                        <SwiperSlide>
-                                            <Flex justifyContent="center" alignItems="center" flexDirection="column">
-                                                <Text>{e.name}</Text>
-                                                <Text>{e.eventTimeFrom}</Text>
-                                                <Text>{e.registrationType}</Text>
-                                            </Flex>
-                                        </SwiperSlide>
-                                    )
+                                    </SwiperSlide>
                                 })
                             }
                         </Swiper>

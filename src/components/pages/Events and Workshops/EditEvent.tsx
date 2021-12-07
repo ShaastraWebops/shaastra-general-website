@@ -30,7 +30,7 @@ import ReactMde from "react-mde";
 import * as Showdown from "showdown";
 import { RegistraionType, useGetEventQuery } from "../../../generated/graphql"
 import "../../../styles/Events.css"
-
+import moment from 'moment'
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
 import { useEditEventMutation } from "../../../generated/graphql";
 
@@ -66,7 +66,7 @@ const EditEvent = () => {
     console.log(event)
 
     const [radio, setRadio] = React.useState<RegistraionType>()
-    const [radioString, setRadioString] = useState(event?.getEvent.registrationType)
+    const [radioString, setRadioString] = useState()
     const [name, setName] = React.useState(event?.getEvent.name ? event?.getEvent.name : "")
     const [vertical, setVertical] = React.useState(event?.getEvent.vertical ? event?.getEvent.vertical : "")
     const [desp, setDesp] = React.useState(event?.getEvent.description ? event?.getEvent.description : "")
@@ -83,16 +83,9 @@ const EditEvent = () => {
     const [third, setThird] = useState(event?.getEvent.thirdplace ? event?.getEvent.thirdplace: "")
     const [pic, setPic] = useState(event?.getEvent.pic!)
     const [file, setFile] = useState<File>()
+    const [fee, setFee] = useState(event?.getEvent.registrationfee ? event.getEvent.registrationfee : "")
 
-    const setEventType = () => {
-        switch(radioString)
-                            {
-                                case "Individual": setRadio(RegistraionType.Individual); break;
-                                case "Team": setRadio(RegistraionType.Team); break;
-                                default: setRadio(RegistraionType.None);
-                            }
-    }
-
+    
 
     const [editEventMutation, {data, loading, error}] = useEditEventMutation()
 
@@ -240,15 +233,19 @@ const EditEvent = () => {
                     <Flex width="100%">
                         <FormControl>
                         {console.log(regStart)}
-                            <FormLabel>Registration Start</FormLabel>
+                            <FormLabel>Registration Start: {moment(parseInt(event?.getEvent.registrationOpenTime!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
-                            placeholder={"2021/12/30"}
+                            placeholder="12/30/2021"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setRegStart(e.target.value)}}    
                             ></Input>
                         </FormControl>
                         <FormControl marginLeft="2vw">
-                            <FormLabel>Registration End</FormLabel>
+                            <FormLabel>Registration End: {moment(parseInt(event?.getEvent.registrationCloseTime!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setRegEnd(e.target.value)}}
@@ -257,14 +254,18 @@ const EditEvent = () => {
                     </Flex>
                     <Flex width="100%">
                         <FormControl>
-                            <FormLabel>Event Start</FormLabel>
+                            <FormLabel>Event Start: {moment(parseInt(event?.getEvent.eventTimeFrom!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setEventStart(e.target.value)}}
                             ></Input>
                         </FormControl>
                         <FormControl marginLeft="2vw">
-                            <FormLabel>Event End</FormLabel>
+                            <FormLabel>Event End: {moment(parseInt(event?.getEvent.eventTimeTo!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setEventEnd(e.target.value)}}    
@@ -297,9 +298,19 @@ const EditEvent = () => {
                                 onChange={(e:any) => {setThird(e.target.value)}}></Input>
                         </FormControl>
                     </Flex>
+                    <FormControl>
+                            <FormLabel fontSize="1.5vw">Registration fee</FormLabel>
+                            <Input 
+                                type="text" outline="none" color="black" placeholder={fee}
+                                backgroundColor="transparent" borderBottom="5px solid white"
+                                onChange={(e:any) => {setFee(e.target.value)}}    
+                            >
+                            </Input>
+                        </FormControl>
                     <Flex alignItems="center" justifyContent="space-between" width="100%" className="admin-team">
                         <FormControl color="black" marginTop="4vh">
-                            <RadioGroup onChange={(e:any) => {
+                            <Text>{event?.getEvent.registrationType}</Text>
+                            <RadioGroup value={radioString} onChange={(e:any) => {
                                 switch(e)
                                 {
                                     case "Individual": setRadio(RegistraionType.Individual); break;
@@ -351,6 +362,7 @@ const EditEvent = () => {
                                         teamSize: Math.round(teamSize),
                                         registrationCloseTime: new Date(regEn).toDateString(),
                                         registrationOpenTime: new Date(regStart).toDateString(),
+                                        registrationfee: fee
                                         },
                                         id: id
                                     }

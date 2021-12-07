@@ -29,6 +29,7 @@ export type AddEventInput = {
   registrationCloseTime?: InputMaybe<Scalars['String']>;
   registrationOpenTime?: InputMaybe<Scalars['String']>;
   registrationType: RegistraionType;
+  registrationfee?: InputMaybe<Scalars['String']>;
   requirements: Scalars['String'];
   secondplace?: InputMaybe<Scalars['String']>;
   teamSize?: InputMaybe<Scalars['Float']>;
@@ -77,6 +78,7 @@ export type EditEventInput = {
   registrationCloseTime?: InputMaybe<Scalars['String']>;
   registrationOpenTime?: InputMaybe<Scalars['String']>;
   registrationType: RegistraionType;
+  registrationfee?: InputMaybe<Scalars['String']>;
   requirements: Scalars['String'];
   secondplace?: InputMaybe<Scalars['String']>;
   teamSize?: InputMaybe<Scalars['Float']>;
@@ -85,11 +87,14 @@ export type EditEventInput = {
 };
 
 export type EditProfileInput = {
-  city?: InputMaybe<Scalars['String']>;
-  name?: InputMaybe<Scalars['String']>;
-  password?: InputMaybe<Scalars['String']>;
-  school?: InputMaybe<Scalars['String']>;
-  state?: InputMaybe<Scalars['String']>;
+  address: Scalars['String'];
+  city: Scalars['String'];
+  college: Scalars['String'];
+  department: Scalars['String'];
+  email: Scalars['String'];
+  mobile: Scalars['String'];
+  name: Scalars['String'];
+  state: Scalars['String'];
 };
 
 export type Event = {
@@ -112,6 +117,7 @@ export type Event = {
   registrationCloseTime?: Maybe<Scalars['String']>;
   registrationOpenTime?: Maybe<Scalars['String']>;
   registrationType: Scalars['String'];
+  registrationfee?: Maybe<Scalars['String']>;
   requirements?: Maybe<Scalars['String']>;
   secondplace?: Maybe<Scalars['String']>;
   teamSize: Scalars['Float'];
@@ -149,7 +155,7 @@ export type LoginInput = {
 };
 
 export type Mutation = {
-  addEvent: Scalars['Boolean'];
+  addEvent: Event;
   createEventFAQ: Scalars['Boolean'];
   createTeamAndRegister: Scalars['Boolean'];
   createUser: Scalars['Boolean'];
@@ -390,7 +396,7 @@ export type AddEventMutationVariables = Exact<{
 }>;
 
 
-export type AddEventMutation = { addEvent: boolean };
+export type AddEventMutation = { addEvent: { name: string } };
 
 export type EditEventMutationVariables = Exact<{
   data: EditEventInput;
@@ -410,7 +416,7 @@ export type EditProfileMutation = { editProfile?: boolean | null | undefined };
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ name: string, eventTimeFrom: string, registrationType: string }> } | null | undefined };
+export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ id: string, name: string, pic?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, yourTeam?: { name: string, members: Array<{ name: string, email: string }> } | null | undefined }> } | null | undefined };
 
 export type GetEventsQueryVariables = Exact<{
   filter: Scalars['String'];
@@ -424,7 +430,7 @@ export type GetEventQueryVariables = Exact<{
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number } };
 
 
 export const CreateUserDocument = gql`
@@ -711,7 +717,9 @@ export type GetPasswordOtpMutationResult = ApolloReactCommon.MutationResult<GetP
 export type GetPasswordOtpMutationOptions = ApolloReactCommon.BaseMutationOptions<GetPasswordOtpMutation, GetPasswordOtpMutationVariables>;
 export const AddEventDocument = gql`
     mutation addEvent($data: AddEventInput!) {
-  addEvent(data: $data)
+  addEvent(data: $data) {
+    name
+  }
 }
     `;
 export type AddEventMutationFn = ApolloReactCommon.MutationFunction<AddEventMutation, AddEventMutationVariables>;
@@ -817,9 +825,19 @@ export const MeDocument = gql`
     city
     state
     registeredEvents {
+      id
       name
+      pic
       eventTimeFrom
+      eventTimeTo
       registrationType
+      yourTeam {
+        name
+        members {
+          name
+          email
+        }
+      }
     }
   }
 }
@@ -919,6 +937,7 @@ export const GetEventDocument = gql`
     description
     requirements
     pic
+    registrationfee
     platform
     firstplace
     secondplace

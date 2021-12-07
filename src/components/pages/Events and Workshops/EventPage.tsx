@@ -6,6 +6,7 @@ import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
 import CustomBox from '../../shared/CustomBox'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import moment from 'moment'
 
 const EventPage = () => {
     const {id} : {id : string | undefined} = useParams();
@@ -20,18 +21,20 @@ const EventPage = () => {
     const bgcolor = useColorModeValue("#ea8a94","#ffffff")
     return (
         <CustomBox>
-             <Container maxWidth="6xl" alignItems="center" justifyItems={"center"}>
+          <Container maxWidth="6xl" alignItems="center" justifyItems={"center"} marginBottom={5} paddingBottom={2}>
           <Center>
             <Image
               h={["2%", "300px", "300px"]}
+              width={'auto'}
               objectFit={"contain"}
               src={data?.getEvent.pic ? data.getEvent.pic : bg}
+              margin={"20px"}
               p={4}
               rounded={["3xl", "3xl"]}
               className="card-img"
             />
           </Center>
-          <Center style={{  borderRadius: 8 }} backgroundColor={bgcolor}>
+          <Center style={{  borderRadius: 8 }} backgroundColor={bgcolor} p={4}>
             <Text fontWeight={"medium"} fontSize={"20px"} p={6} color={'black'}>
               <ReactMarkdown
                 children={data?.getEvent.description!}
@@ -45,9 +48,9 @@ const EventPage = () => {
           </Flex>
 
           <Flex className="events-details-box-container" >
-            <Flex className="events-details-box" backgroundColor={bgcolor}>
+            {/* <Flex className="events-details-box" backgroundColor={bgcolor}>
               <strong>Audience: &nbsp;</strong>
-            </Flex>
+            </Flex> */}
             <Flex className="events-details-box" backgroundColor={bgcolor}>
               <strong>Platform: &nbsp;</strong>
               {data?.getEvent.platform}
@@ -56,7 +59,7 @@ const EventPage = () => {
 
           <Flex className="events-details-box-container" >
             <Flex className="events-details-box" backgroundColor={bgcolor}>
-              <strong>Registration: &nbsp;</strong>
+              <strong>Registration Type: &nbsp;</strong>
               {data?.getEvent.registrationType}
             </Flex>
             {data?.getEvent.registrationType === "TEAM" && (
@@ -70,53 +73,49 @@ const EventPage = () => {
             }
           </Flex>
         </Container>
-        {/* <Stack 
-         textAlign={'center'}
-         align={'center'}
-         spacing={{ base: 8, md: 8 }}
-         py={{ base: 20, md: 20 }}>
-        <Box width="90%" p={3} m={2}>
-            <Flex width="88vw" justifyContent="space-between" alignItems="center" className="admin-events-flex">
-                <Flex flexDirection="column" alignItems="center" width="15vw" height="15vw" className="admin-events-image-flex">
-                    <Image src={bg} width="15vw" height="15vw" marginBottom="2vh"></Image>
-                    <Text as={'h3'}>{data?.getEvent.name}</Text>
+        <Container maxWidth="6xl" alignItems="center" justifyItems={"center"} color={"black"}>
+          {data?.getEvent.registrationType !== "NONE" && (
+            <Flex className="datetime-container">
+              <Flex className="datetime-head">Registrations</Flex>
+              <Flex className="datetime-box">
+                <Flex className="datetime">
+                  {moment(parseInt(data?.getEvent.registrationOpenTime!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}
                 </Flex>
-                <Box>
-                <Text width="45vw">
-                The entire globe is now turning to the biotech sector to discover answers that will 
-                                assist humanity in overcoming the current Covid problem while also preparing us for 
-                                future outbreaks. The participants will go through many levels of questions such as, 
-                                Why did the second wave of Covid in India startle the whole world? Discuss the lessons 
-                                that India may learn in order to develop an effective research ecosystem capable of detecting, 
-                                understanding, and responding to future waves.
-                </Text>
-                </Box>
+                <div style={{ width: "10%" }} className="datetime">
+                  to
+                </div>
+                <Flex className="datetime">
+                  {moment(parseInt(data?.getEvent.registrationCloseTime!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}
+                </Flex>
+              </Flex>
             </Flex>
-            <Flex width="88vw" justifyContent="space-between" alignItems="center" marginTop="2vh" className="admin-events-details-flex">
-                <Box>
-                    <Text>First: 100</Text>
-                    <Text>First: 100</Text>
-                    <Text>First: 100</Text>
-                    <Text>First: 100</Text>
-                </Box>
-                <Box>
-                    <Text>Platform: xoom</Text>
-                    <Text>Reguiremetns: asdfghj</Text>
-                    <Text>Type: Team</Text>
-                </Box>
-                <Box>
-                    <Text>Team size: 4</Text>
-                    <Text>Reg start: 1234567890</Text>
-                    <Text>Reg start: 1234567890</Text>
-                </Box>
-                <Box>
-                    <Text>Reg start: 1234567890</Text>
-                    <Text>Reg start: 1234567890</Text>
-                    <Button width="100%">Edit</Button>
-                </Box>
+          )}
+
+          <Flex className="datetime-container">
+            <Flex className="datetime-head">Event Timeline</Flex>
+            <Flex className="datetime-box">
+              <Flex className="datetime">
+                {moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
+                  "MMMM Do YYYY, h:mm a"
+                )}
+              </Flex>
+              <div style={{ width: "10%" }} className="datetime">
+                to
+              </div>
+              <Flex className="datetime">
+                {moment(parseInt(data?.getEvent.eventTimeTo!)).format(
+                  "MMMM Do YYYY, h:mm a"
+                )}
+              </Flex>
             </Flex>
-        </Box>
-    </Stack> */}
+          </Flex>
+        </Container>
+
+      
     </CustomBox>
     )
 }

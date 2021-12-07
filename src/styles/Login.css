@@ -19,9 +19,22 @@
     letter-spacing: 5px;
     transition: all 0.5s ease-in-out;
 }
+.login ::placeholder
+{
+    color: white;
+}
+.blackG ::placeholder
+{
+    color: black !important;
+}
+/* .login-main-box input, .login-main-box select 
+{
+    background-color: rgba(255, 255, 255, 0.397) !important;
+    color: white !important;
+} */
 .login .blackG input, .login .blackG select
 {
-    background-color: white;
+    background-color: white !important;
     color: black !important;
     background-image: unset;
     border: 2px solid black;
@@ -34,9 +47,11 @@
 }
 .profile-main-flex .swiper-slide
 {
-    background-color: rgb(95, 95, 117);
-    width: 15vw;
-    height: 15vw;
+    border-radius: 10px;
+    padding-top: 2vh !important;
+    background-color: #C2C4FF;
+    width: 15vw !important;
+    height: 20vw !important;
 }
 .profile-main-flex input, .profile-main-flex select
 {
@@ -44,41 +59,12 @@
     color: black;
 }
 
-.profile-main-flex .flip-card 
-{
-    perspective: 500px;
-}
-.profile-main-flex .flip-card-inner 
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-}
-.profile-main-flex .flip-card:hover .flip-card-inner
-{
-    transform: rotateY(180deg);
-}
-.profile-main-flex .flip-card-front, .profile-button-flex .flip-card-back 
-{
-    position: absolute;
-    top: 0%;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; 
-    backface-visibility: hidden !important;
-}
-.profile-button-flex .flip-card-back
-{
-    background-color: black;
-    color: white;
-    transform:rotateY(180deg);
-} 
-::placeholder
+
+.profile-button-flex ::placeholder
 {
     color: rgb(0, 0, 0) !important;
 }
+
 
 @media screen and (max-width: 900px)
 {

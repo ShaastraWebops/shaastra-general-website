@@ -32,6 +32,7 @@ import success from "../../../images/Login/login-success.svg"
 import errorSVG from "../../../images/Login/login-error.svg"
 
 import {cities} from "./cities"
+import {colleges} from "./college"
 
 const Signup = () => {
 
@@ -111,7 +112,13 @@ const Signup = () => {
                     <Input placeholder="Confirm password" marginBottom="6vh" type="password" onChange={(e:any) => {setConfirm(e.target.value)}}></Input>
                     <Flex marginBottom="6vh">
                         <Select placeholder="College" marginRight="2vw" onChange={(e:any) => {setCollege(e.target.value)}}>
-                            <option value="IITM">IITM</option>
+                            {
+                                colleges.map(o => {
+                                    return(
+                                        <option value={o["University"]}>{o["University"]}</option>
+                                    )
+                                })
+                            }
                         </Select>
                         <Select placeholder="Branch" onChange={(e:any) => {setBranch(e.target.value)}}>
                             <option value="BE">BE</option>
@@ -140,7 +147,13 @@ const Signup = () => {
                             if(pw === confirm)
                                 {
                                     try{
-                                        await createUser({variables: {CreateUserInput: {name: name, email: email, mobile: number, password: pw, college: college, department: branch, state: State, city: city, address: address}}})
+                                        await createUser(
+                                            {variables: {CreateUserInput: 
+                                                {name: name, email: email, mobile: number, password: pw, college: college, department: branch, state: State, city: city, address: address}}})
+                                                .then(res => {
+                                                    if(res.data?.createUser)
+                                                    history.push("/verify")
+                                                })
                                     }
                                     catch(err)
                                     {

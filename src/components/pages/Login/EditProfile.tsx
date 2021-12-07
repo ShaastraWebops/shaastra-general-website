@@ -32,6 +32,7 @@ import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer';
 import "../../../styles/Login.css"
 
+
 import {cities} from "./cities"
 
 import bg from "../../../images/homepage_illustrations/small ribi.png"
@@ -66,6 +67,7 @@ const EditProfile = () => {
     const [State, setState] = useState(user?.me?.state)
     const [city, setCity] = useState(user?.me?.city)
     const [address, setAddress] = useState(user?.me?.address)
+    const [mobile, setMobile] = useState(user?.me?.mobile)
 
     const [editProfileMutation, {data, loading, error}] = useEditProfileMutation()
     var { isOpen, onOpen, onClose } = useDisclosure()
@@ -143,10 +145,12 @@ const EditProfile = () => {
                                <FormLabel>Name</FormLabel>
                                <Input color="black" value={name} placeholder={user?.me?.name} onChange={(e:any) => {setName(e.target.value)}} type="text"></Input>
                            </FormControl>
+                           <Flex marginBottom="6vh">
                            <FormControl marginBottom="4vh">
                                <FormLabel>Email</FormLabel>
                                <Input value={email} placeholder={user?.me?.email} onChange={(e:any) => {setEmail(e.target.value)}} type="email"></Input>
                            </FormControl>
+                           </Flex>
                            <Flex marginBottom="6vh">
                         <Select placeholder={user?.me?.college} marginRight="2vw" value={college} onChange={(e:any) => {setCollege(e.target.value)}}>
                             <option value="IITM">IITM</option>
@@ -182,7 +186,12 @@ const EditProfile = () => {
                                 e.preventDefault();
                                 try
                                 {
-                                    await editProfileMutation({variables: {data: {city: city, name: name, school: college, state: State}}})
+                                    await editProfileMutation({variables: {data:
+                                         {
+                                            name: name!, college: college!, state: State!,city: city!,email : email! , address : address!,
+                                            department :branch!, mobile : mobile!
+
+                                        }}})
                                 }
                                 catch(err) {console.log(err)}
                             }}
