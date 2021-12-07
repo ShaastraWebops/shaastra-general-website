@@ -136,26 +136,24 @@ const Profile = () => {
                            </Flex>
                         </Box>
                         <Heading m={2} p={2}>Registered Events</Heading>
-                        <Swiper
+                         <Swiper
                             scrollbar={{hide: false}}
                             slidesPerView={3}
                             spaceBetween={10}
                         >
-                        
                             {
                                 data?.me?.registeredEvents.map(e => {
-                                    console.log(e.registrationType === RegistraionType.Individual)
                                    return(
                                     e.registrationType === RegistraionType.Individual ?
                                     <SwiperSlide >
                                             <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
-                                            height={"300px"} 
+                                            height={"300px"} color={'white'} boxShadow="5px"
                                             >
                                             <a href={`/eventpage/${e.id}`}>
-                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderRadius={"10px"} objectFit={"fill"}></Image>
+                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
                                                 </a>
-                                                <Box color={"black"} fontWeight={"600"} p={2}>
-                                                <Text>{e.name}</Text>
+                                                <Box fontWeight={"600"} p={2}>
+                                                <Text fontSize="2xl">{e.name}</Text>
                                                 <Flex flexDirection={"column"}>
                                                 <Text>Events Starts From</Text>
                                                 <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
@@ -170,12 +168,12 @@ const Profile = () => {
                                     <div className="flip-card-inner">
                                         <div className="flip-card-front">
                                         <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
-                                            height={"300px"} 
+                                            height={"300px"} color={"white"}
                                             >
                                             <a href={`/eventpage/${e.id}`}>
-                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderRadius={"10px"} objectFit={"fill"}></Image>
+                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
                                                 </a>
-                                                <Box color={"black"} fontWeight={"600"} p={2}>
+                                                <Box  fontWeight={"600"} p={2}>
                                                 <Text>{e.name}</Text>
                                                 <Flex flexDirection={"column"}>
                                                 <Text>Events Starts From</Text>
@@ -190,7 +188,7 @@ const Profile = () => {
                                             </Flex>
                                         </div>
                                         <div className="flip-card-back">
-                                            <Flex  width="100%" height="100%" justifyContent="center" alignItems="center" flexDirection="column">
+                                            <Flex  width="100%" height="100%" justifyContent="center" alignItems="center" color={"white"} flexDirection="column">
                                                         <Text>{e.yourTeam?.name}</Text>
                                                         {
                                                             e.yourTeam?.members.map(m => {
