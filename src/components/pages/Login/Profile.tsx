@@ -138,9 +138,20 @@ const Profile = () => {
                         <Heading m={2} p={2}>Registered Events</Heading>
                         <Swiper
                             scrollbar={{hide: false}}
-                            slidesPerView={3}
+                            // slidesPerView={3}
                             spaceBetween={10}
+                            breakpoints={
+                                {
+                                    300:{
+                                        slidesPerView: 1
+                                    },
+                                    1000: {
+                                        slidesPerView: 3
+                                    }
+                                }
+                            }
                         >
+                            <SwiperSlide>HEY</SwiperSlide>
                         
                             {
                                 data?.me?.registeredEvents.map(e => {

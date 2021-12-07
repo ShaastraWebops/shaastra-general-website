@@ -53,11 +53,11 @@ const SignOut = () => {
     {
         localStorage.removeItem("role")
         onClose = () => {
-            window.location.reload()  
+            history.push('/') 
         }
 
         return(
-            <Modal isOpen={isOpen} onClose={onClose} isCentered>
+            <Modal isOpen={true} onClose={onClose} isCentered>
                 <ModalOverlay />
                 <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
                     <Image src={success} margin="auto" boxSize={["50vw","20vw"]}></Image>
