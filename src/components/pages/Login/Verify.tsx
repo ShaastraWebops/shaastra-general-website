@@ -18,19 +18,23 @@ import {
     Button,
     Alert,
     AlertIcon,
+    Text,
     Image,
     Link,
+    useColorModeValue,
   } from '@chakra-ui/react'
 import "../../../styles/Login.css"
 import { useResendVerificationMailMutation, useVerifyUserMutation } from "../../../generated/graphql"
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useParams } from "react-router"
+import successSVG from "../../../images/Login/login-success.svg"
+import errorSVG from "../../../images/Login/login-error.svg"
 import Footer from "../../shared/Footer"
 import CustomBox from "../../shared/CustomBox"
-import { gradient } from "tsparticles"
 
 const Verify = () => {
+    const gradient = useColorModeValue("blackG", "whiteG")
     const [otp, setOtp] = React.useState('')
     const history = useHistory()
     const [verifyuser, {data, loading, error}] = useVerifyUserMutation()
@@ -74,11 +78,14 @@ const Verify = () => {
     {
         onClose = () => {history.push('/login')}
         return(
-            <Modal isOpen={true} onClose={onClose}>
+            <Modal isOpen={true} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Email Verified!Please login to register for workshops</ModalHeader>
+                <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                    <Image src={successSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
                     <ModalCloseButton />
+                    <ModalBody backgroundColor="#A7EAAA" width="100%" padding="2vw">
+                        <Text textAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Email verified! Please login to register for workshops</Text>
+                    </ModalBody>
                  </ModalContent>
             </Modal>
         )
@@ -104,26 +111,32 @@ const Verify = () => {
             {
                 onClose = () => {window.location.reload()}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Invalid OTP</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Invalid OTP</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )
             }
             else 
             {
                 onClose = () => {history.push('/')}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Error Occurred</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Error Occurred</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )   
             }
         }
@@ -145,7 +158,7 @@ const Verify = () => {
                         value={otp}
                         onChange={(e) => setOtp(e.target.value)}
                     />
-                    <Button width="100%"  backgroundColor="#2467a1" marginBottom="4vh"
+                    <Button width="100%"  backgroundColor="#2467a1" marginBottom="4vh" color="white"
                         onClick={handlesubmit}
                     >Verify</Button>
                     <Flex width="100%" justifyContent="space-between" >
@@ -165,7 +178,7 @@ const Verify = () => {
                             onChange={(e) => setemail(e.target.value)}
                             />
                            </FormControl> 
-                        <Button onClick = {resend}
+                        <Button onClick = {resend} color="white"
                            width ={"40%"} backgroundColor="#2467a1" marginBottom="4vh">
                          Resend Verification mail
                         </Button>

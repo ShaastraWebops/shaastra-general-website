@@ -76,7 +76,7 @@
     {
         flex-direction: column !important;
     }
-    .profile-main-flex .chakra-image 
+    .profile-main-flex .profile-image 
     {
         display: none;
     }
@@ -177,7 +177,7 @@
 .profile-main-flex .swiper-slide
 {
     width: 90vw !important;
-    height: 50vw !important;
+    height: fit-content !important;
 }
 }
 @media screen and (max-width: 300px)

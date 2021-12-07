@@ -33,6 +33,7 @@ import errorSVG from "../../../images/Login/login-error.svg"
 
 import {cities} from "./cities"
 import {colleges} from "./college"
+import { branches } from "./branches"
 
 const Signup = () => {
 
@@ -121,7 +122,13 @@ const Signup = () => {
                             }
                         </Select>
                         <Select placeholder="Branch" onChange={(e:any) => {setBranch(e.target.value)}}>
-                            <option value="BE">BE</option>
+                            {
+                                branches.map(b => {
+                                    return(
+                                        <option value={b}>{b}</option>
+                                    )
+                                })
+                            }
                         </Select>
                     </Flex>
                     <Flex marginBottom="6vh">

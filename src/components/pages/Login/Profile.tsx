@@ -98,7 +98,7 @@ const Profile = () => {
                         <Link href="/profile" color="#C2C4FF" marginBottom="2vh">Profile Details</Link>
                         <Link href="/editprofile">Edit Profile</Link>
                         <Button fontSize={["5vw","1.5vw"]} onClick={(e) => {e.preventDefault(); history.push('/signout')}} width={["fit-content","100%"]} margin="auto" backgroundColor="#DB7171">Logout</Button>
-                        <Image src={bg} boxSize="22vw" alignSelf="center"></Image>
+                        <Image className="profile-image" src={bg} boxSize="22vw" alignSelf="center"></Image>
                     </Flex>
                     <Flex flexDirection="column">
                         <Box width={["100%", "60vw"]} margin="auto" fontSize={["5vw","1.5vw"]} padding={["1vw", "4vw"]} borderRadius="24px" marginBottom="4vh">
@@ -151,7 +151,6 @@ const Profile = () => {
                                 }
                             }
                         >
-                            <SwiperSlide>HEY</SwiperSlide>
                         
                             {
                                 data?.me?.registeredEvents.map(e => {
