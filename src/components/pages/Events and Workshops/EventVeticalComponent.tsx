@@ -23,6 +23,9 @@ import {
     FormErrorMessage,
     FormHelperText,
     Heading,
+    Alert,
+    AlertIcon,
+    Center,
   } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
@@ -176,34 +179,42 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                         </div>
                         <Box borderRadius="24px" width="50vw" height="100%" marginLeft="15vw" className="event-desp">
                             <Flex flexDirection="column"  width="50vw" height="100%" alignItems="center" justifyContent="center" textAlign={"justify"}>
-                                    <Text width="48vw" className={font} fontSize={["sm","lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
+                                    <Text width="48vw" className={font} fontSize={["lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
+                                    <Text noOfLines={4}>
                                     <ReactMarkdown
                                         children={data?.description!}
                                         remarkPlugins={[remarkGfm]}
                                     ></ReactMarkdown>
-                                       <Flex flexDirection={['column','column','row','row']}>
+                                    </Text>
+                                       <Flex width={'100%'} flexDirection={['column','column','row','row']} alignContent={["center"]} justifyContent={["center","space-between"]}>
                                        {
-                                           !isAdmin ? ( data.registrationType === "NONE" ? <Box width="100%" marginTop="4vh"  height="2vw" >
-                                           <Text float={'right'}>Registration is not required for this event</Text> 
+                                           !isAdmin ? ( data.registrationType === "NONE" ? 
+                                           <Box marginTop="2vh" height="1vw" >
+                                           <Alert status='info' size={"xs"}>
+                                                <AlertIcon />
+                                                Registration is not required for this event
+                                            </Alert>
                                            </Box>
                                            :
-                                           (<Box width="100%" marginTop="4vh"  height="2vw" >
-                                           <Button float={'right'} backgroundColor={buttoncolor} color='black'
+                                           (<Box marginTop="2vh"  height="1vw" >
+                                           <Button backgroundColor={buttoncolor} color='black'
                                             onClick={
                                                 data.registrationType === "INDIVIDUAL" ? ()=>{IndividualReg(data.id)} : onOpen
                                             }
                                            >REGISTER NOW</Button>
                                            </Box>)) : null
                                         }
-                                        <Box width="100%" marginTop="4vh"  height="2vw" >
-                                            <Button float={'right'} backgroundColor={buttoncolor} color='black'
+                                        <Box  marginTop="2vh"  height="1vw" >
+                                            <Button backgroundColor={buttoncolor} color='black'
                                                     onClick={() => {
                                                         history.push(`/eventpage/${data.id}`)
                                                     }} >
                                                         View Details
                                                     </Button>
                                          </Box>
+                                      
                                        </Flex>
+
                                         <Modal isOpen={isOpen} onClose={onClose}>
                                             <ModalOverlay />
                                             <ModalContent>
