@@ -1,4 +1,4 @@
-import React from "react"
+import React, { RefObject } from "react"
 import {
     Text,
     Stack,
@@ -25,6 +25,15 @@ import {
     FormHelperText,
     Heading,
     Center,
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverBody,
+    PopoverFooter,
+    ButtonGroup,
   } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
@@ -43,7 +52,7 @@ import SwiperCore, {
 import 'swiper/swiper-bundle.min.css'  
 import 'swiper/swiper.min.css'
 import { useHistory } from "react-router";
-import {RegistraionType, useMeQuery} from "../../../generated/graphql"
+import {RegistraionType, useLeaveTeamMutation, useMeQuery} from "../../../generated/graphql"
 import moment from "moment";
 
 SwiperCore.use([Scrollbar]);
@@ -51,10 +60,9 @@ SwiperCore.use([Scrollbar]);
 const Profile = () => {
 
     const history = useHistory()
-
     const {data, loading, error} = useMeQuery()
     var { isOpen, onOpen, onClose } = useDisclosure()
-
+    const [leaveteam] = useLeaveTeamMutation();
     if(loading)
         {
             onClose = () => {}
@@ -183,7 +191,7 @@ const Profile = () => {
                                                 <Image src={e.pic!} height={"12vw"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
                                                 </a>
                                                 <Box  fontWeight={"600"} p={2}>
-                                                <Text>{e.name}</Text>
+                                                <Text fontSize="2xl">{e.name}</Text>
                                                 <Flex flexDirection={"column"}>
                                                 <Text>Events Starts From</Text>
                                                 <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
@@ -193,14 +201,56 @@ const Profile = () => {
                                             </Flex>
                                         </div>
                                         <div className="flip-card-back">
-                                            <Flex  width="100%" height="100%" justifyContent="center" alignItems="center" color={"white"} flexDirection="column">
-                                                        <Text>{e.yourTeam?.name}</Text>
+                                            <Flex  width="100%" height="100%"  alignItems="center" color={"white"} flexDirection="column">
+                                                       <Text fontSize={"2xl"} pt={2} fontWeight={"700"}>Your Team</Text>
+                                                       <Box m={1} p={2}>
+                                                       <Text>{e.yourTeam?.name}</Text>
+                                                       <Text fontSize={"2xl"} fontWeight={"700"}>Members</Text>
                                                         {
-                                                            e.yourTeam?.members.map(m => {
+                                                            e.yourTeam?.members.map((m,index) => {
                                                                 return(
-                                                                    <Text>{m.name}</Text>                                                                )
+                                                                    <Text>{index+1}. {m.name}</Text>                                                                )
                                                             })
                                                         }
+                                                        <Popover
+                                                            placement="top"
+                                                            closeOnBlur={false}
+                                                            trigger="hover"
+                                                            >
+                                                            <PopoverTrigger>
+                                                            <Button height={["25px"]} color={"white"} colorScheme={"red"} p={2} position={"absolute"} bottom={"4%"} right={"4%"}
+                                                            onClick={async ()=>{
+                                                                await leaveteam({
+                                                                    variables : {
+                                                                        id : e.yourTeam?.id!
+                                                                    }
+                                                                }).then(res =>{
+                                                                    if(res.data?.leaveTeam) {
+                                                                        window.location.reload()
+                                                                    }
+                                                                })
+                                                        }}
+                                                        >Leave Team</Button>
+                                                            </PopoverTrigger>
+                                                            <PopoverContent
+                                                                zIndex={4}
+                                                                color="white"
+                                                                bg="blue.800"
+                                                                borderColor="blue.800"
+                                                            >
+                                                                <PopoverHeader pt={4} fontWeight="bold" border="0">
+                                                                Are you sure you want to leave the team
+                                                                </PopoverHeader>
+                                                                <PopoverArrow />
+                                                                <PopoverCloseButton />
+                                                                <PopoverBody>
+                                                                 Once you leave you wont be able to join again
+                                                                </PopoverBody>
+                                                            </PopoverContent>
+                                                            </Popover>
+                                                    
+
+                                                       </Box>
                                             </Flex>
                                         </div>
                                     </div>

@@ -18,6 +18,7 @@ query me{
       eventTimeTo
       registrationType
       yourTeam{
+        id
         name
         members{
           name

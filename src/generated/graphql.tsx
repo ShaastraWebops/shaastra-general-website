@@ -436,10 +436,17 @@ export type DeleteEventFaqMutationVariables = Exact<{
 
 export type DeleteEventFaqMutation = { deleteEventFAQ: boolean };
 
+export type LeaveTeamMutationVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type LeaveTeamMutation = { leaveTeam: boolean };
+
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ id: string, name: string, pic?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, yourTeam?: { name: string, members: Array<{ name: string, email: string }> } | null | undefined }> } | null | undefined };
+export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ id: string, name: string, pic?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, yourTeam?: { id: string, name: string, members: Array<{ name: string, email: string }> } | null | undefined }> } | null | undefined };
 
 export type GetEventsQueryVariables = Exact<{
   filter: Scalars['String'];
@@ -930,6 +937,37 @@ export function useDeleteEventFaqMutation(baseOptions?: ApolloReactHooks.Mutatio
 export type DeleteEventFaqMutationHookResult = ReturnType<typeof useDeleteEventFaqMutation>;
 export type DeleteEventFaqMutationResult = ApolloReactCommon.MutationResult<DeleteEventFaqMutation>;
 export type DeleteEventFaqMutationOptions = ApolloReactCommon.BaseMutationOptions<DeleteEventFaqMutation, DeleteEventFaqMutationVariables>;
+export const LeaveTeamDocument = gql`
+    mutation leaveTeam($id: String!) {
+  leaveTeam(data: $id)
+}
+    `;
+export type LeaveTeamMutationFn = ApolloReactCommon.MutationFunction<LeaveTeamMutation, LeaveTeamMutationVariables>;
+
+/**
+ * __useLeaveTeamMutation__
+ *
+ * To run a mutation, you first call `useLeaveTeamMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useLeaveTeamMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [leaveTeamMutation, { data, loading, error }] = useLeaveTeamMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useLeaveTeamMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<LeaveTeamMutation, LeaveTeamMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<LeaveTeamMutation, LeaveTeamMutationVariables>(LeaveTeamDocument, options);
+      }
+export type LeaveTeamMutationHookResult = ReturnType<typeof useLeaveTeamMutation>;
+export type LeaveTeamMutationResult = ApolloReactCommon.MutationResult<LeaveTeamMutation>;
+export type LeaveTeamMutationOptions = ApolloReactCommon.BaseMutationOptions<LeaveTeamMutation, LeaveTeamMutationVariables>;
 export const MeDocument = gql`
     query me {
   me {
@@ -951,6 +989,7 @@ export const MeDocument = gql`
       eventTimeTo
       registrationType
       yourTeam {
+        id
         name
         members {
           name

@@ -101,7 +101,12 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
     }
     if(error || error2)
     {
-        error? onClose = () => {history.push('/login')} : onClose = () => {window.location.reload()}
+        error? onClose = () => {
+            if(error.message === "Please login to continue"){
+                history.push('/login')
+            }
+            window.location.reload()
+        } : onClose = () => {window.location.reload()}
         return(
             <Modal isOpen={true} onClose={onClose}>
                 <ModalOverlay />
