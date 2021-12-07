@@ -138,20 +138,29 @@ const Profile = () => {
                         <Heading m={2} p={2}>Registered Events</Heading>
                          <Swiper
                             scrollbar={{hide: false}}
-                            slidesPerView={3}
+                            // slidesPerView={3}
                             spaceBetween={10}
-                        >
+                            breakpoints={
+                                {
+                                    300:{
+                                        slidesPerView: 1
+                                    },
+                                    1000: {
+                                        slidesPerView: 3
+                                    }
+                                }
+                            }
+                        >                        
                             {
                                 data?.me?.registeredEvents.map(e => {
                                    return(
                                     e.registrationType === RegistraionType.Individual ?
                                     <SwiperSlide >
                                             <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
-                                            height={"300px"} color={'white'} boxShadow="5px"
+                                             color={'white'} boxShadow="5px"
                                             >
                                             <a href={`/eventpage/${e.id}`}>
-                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
-                                                </a>
+                                                <Image src={e.pic!} height={"12vw"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
                                                 <Box fontWeight={"600"} p={2}>
                                                 <Text fontSize="2xl">{e.name}</Text>
                                                 <Flex flexDirection={"column"}>
@@ -159,7 +168,7 @@ const Profile = () => {
                                                 <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
                                                 </Flex>
                                                 </Box>
-                                                
+                                                </a>
                                             </Flex>
                                         </SwiperSlide>
                                     :
@@ -171,17 +180,13 @@ const Profile = () => {
                                             height={"300px"} color={"white"}
                                             >
                                             <a href={`/eventpage/${e.id}`}>
-                                                <Image src={e.pic!} height={"150px"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
+                                                <Image src={e.pic!} height={"12vw"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
                                                 </a>
                                                 <Box  fontWeight={"600"} p={2}>
                                                 <Text>{e.name}</Text>
                                                 <Flex flexDirection={"column"}>
                                                 <Text>Events Starts From</Text>
                                                 <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
-                                                {
-                                                   e.registrationType === RegistraionType.Team && e.yourTeam && (<Button
-                                                   onClick={()=> { console.log(e.yourTeam?.name)}}>View Team</Button>)
-                                                }
                                                 </Flex>
                                                 </Box>
                                                 
