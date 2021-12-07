@@ -251,7 +251,7 @@ export const DrawerDesktopMenuItems = () => {
           <Link to="/team">Team</Link>
         </Box>
         {
-          localStorage.getItem("role") === "User" ? 
+          localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin" ? 
             <Box
               className="menu-text"
               _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
@@ -305,11 +305,7 @@ export const DrawerMobileMenuItems = () => {
           <Link to="/exhibitions">Exhibitions</Link>
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
-<<<<<<< HEAD
-          <Link to="/events">Events</Link>
-=======
           <Link to="/eventsworkshops">Events and Workshops</Link>
->>>>>>> 38fc4db03f051ba64f0cf1e203fae3abd2b6316b
         </Box>
         <AccordionItem border={0}>
           <AccordionButton pl={0}>
@@ -345,7 +341,7 @@ export const DrawerMobileMenuItems = () => {
         </Box>
       </Accordion>
       {
-        localStorage.getItem("role") === "User" ? 
+        localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin" ? 
           <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/profile") } }>Profile</Button>
           <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signout") } }>Logout</Button>
