@@ -305,11 +305,7 @@ export const DrawerMobileMenuItems = () => {
           <Link to="/exhibitions">Exhibitions</Link>
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
-<<<<<<< HEAD
-          <Link to="/events">Events</Link>
-=======
           <Link to="/eventsworkshops">Events and Workshops</Link>
->>>>>>> 38fc4db03f051ba64f0cf1e203fae3abd2b6316b
         </Box>
         <AccordionItem border={0}>
           <AccordionButton pl={0}>
