@@ -293,10 +293,29 @@
     {
         width: 50vw !important;
         font-size: 2vw !important;
+    
+    }
+    .events-vertical .event-desp .chakra-text > div > div ,.events-vertical .event-desp .chakra-text > div
+    {
+        height: fit-content !important;
+    }
+    .events-vertical .event-desp > div .chakra-text > div > div
+    {
+        margin-right: 2vw !important;
+    }
+    .events-vertical .event-desp > div .chakra-button
+    {
+        width: 100% !important;
+    }
+    .events-vertical .event-desp p
+    {
+        font-size: 5vw !important;
+        text-align: center !important;
     }
     .events-vertical .vertical-events-flex 
     {
         width: 95vw !important;
+        margin: auto !important;
         height: fit-content !important;
         /* flex-direction: column !important; */
         justify-content: space-between !important;
@@ -308,6 +327,7 @@
         /* height: 50vh !important; */
         flex-direction: column !important;
         justify-content: space-between;
+        margin-bottom: 2vh !important;
     }
     .events-vertical .event-desp-glass
     {
@@ -319,9 +339,28 @@
         padding: 2vh !important;
     }
 }
-
 @media screen and (max-width: 500px)
 {
+    .events-vertical .event-desp .chakra-text, .events-vertical .event-desp
+    {
+        width: 50vw !important;
+        font-size: 2vw !important;
+    
+    }
+    .events-vertical .event-desp .chakra-text > div > div ,.events-vertical .event-desp .chakra-text > div
+    {
+        height: fit-content !important;
+    }
+    .events-vertical .event-desp > div .chakra-button
+    {
+        margin-bottom: 1vh !important;
+        width: 100% !important;
+    }
+    .events-vertical .event-desp p
+    {
+        font-size: 5vw !important;
+        text-align: center !important;
+    }
     .events .chakra-heading
     {
         font-size: 12vw !important;
@@ -337,5 +376,13 @@
         /* height: 40vh !important; */
         flex-direction: column !important;
         justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+    .events-vertical .event-desp .chakra-text .chakra-button
+    {
+        font-size: 3.5vw !important;
     }
 }

@@ -176,7 +176,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                         </div>
                         <Box borderRadius="24px" width="50vw" height="100%" marginLeft="15vw" className="event-desp">
                             <Flex flexDirection="column"  width="50vw" height="100%" alignItems="center" justifyContent="center" textAlign={"justify"}>
-                                    <Text width="48vw" className={font} fontSize={["sm","lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
+                                    <Text textAlign="center" width="48vw" className={font} fontSize={["sm","lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
                                     <ReactMarkdown
                                         children={data?.description!}
                                         remarkPlugins={[remarkGfm]}
