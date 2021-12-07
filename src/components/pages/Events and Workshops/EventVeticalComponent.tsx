@@ -88,7 +88,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
     const history = useHistory();
     if(data1 || data2)
     {
-        onClose = () => {history.push('/admin')}
+        onClose = () => {window.location.reload()}
         return(
             <Modal isOpen={true} onClose={onClose}>
                 <ModalOverlay />
@@ -114,7 +114,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
     }
     if(loading || loading2)
     {
-        onClose = () => {history.push('/admin/add')}
+        onClose = () => {window.location.reload()}
         return(
             <Modal isOpen={true} onClose={onClose}>
                 <ModalOverlay />
