@@ -347,6 +347,10 @@
         font-size: 2vw !important;
     
     }
+    .events-vertical .event-desp .chakra-text > p 
+    {
+        max-lines: 8;
+    }
     .events-vertical .event-desp .chakra-text > div > div ,.events-vertical .event-desp .chakra-text > div
     {
         height: fit-content !important;
