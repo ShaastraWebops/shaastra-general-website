@@ -66,7 +66,7 @@ const EventAdmin = () => {
     const [regEn, setRegEnd] = useState("")
     const [eventStart, setEventStart] = useState("")
     const [eventEnd, setEventEnd] = useState("")
-    const [teamSize, setTeamSize] = useState("")
+    const [teamSize, setTeamSize] = useState(0)
     const [participation, setParticipation] = useState("")
     const [first, setFirst] = useState("")
     const [second, setSecond] = useState("")
@@ -402,7 +402,7 @@ const EventAdmin = () => {
                                             participation: participation,
                                             secondplace: second,
                                             thirdplace: third,
-                                            teamSize: parseInt(teamSize),
+                                            teamSize: teamSize,
                                             registrationCloseTime: new Date(regEn).toDateString(),
                                             registrationOpenTime: new Date(regStart).toDateString(),
                                             registrationfee: fee,

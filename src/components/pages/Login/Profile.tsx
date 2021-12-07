@@ -144,6 +144,8 @@ const Profile = () => {
                         
                             {
                                 data?.me?.registeredEvents.map(e => {
+                                    console.log(e.registrationType === RegistraionType.Individual)
+                                   return(
                                     e.registrationType === RegistraionType.Individual ?
                                     <SwiperSlide >
                                             <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
@@ -201,6 +203,7 @@ const Profile = () => {
                                     </div>
                                 </div>
                                     </SwiperSlide>
+                                   )
                                 })
                             }
                         </Swiper>
