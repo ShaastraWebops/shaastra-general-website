@@ -75,6 +75,11 @@ query getEvent($EventID: String!)
   eventTimeFrom,
   eventTimeTo,
   registrationType,
-  teamSize
+  teamSize,
+  faqs{
+    id,
+    answer,
+    question
+  }
   }
 }

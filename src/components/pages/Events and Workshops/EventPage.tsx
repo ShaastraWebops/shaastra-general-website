@@ -7,6 +7,7 @@ import CustomBox from '../../shared/CustomBox'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import moment from 'moment'
+import EventFaqs from './EventFaqs'
 
 const EventPage = () => {
     const {id} : {id : string | undefined} = useParams();
@@ -28,14 +29,13 @@ const EventPage = () => {
               width={'auto'}
               objectFit={"contain"}
               src={data?.getEvent.pic ? data.getEvent.pic : bg}
-              margin={"20px"}
+              marginTop={"50px"}
               p={4}
               rounded={["3xl", "3xl"]}
-              className="card-img"
             />
           </Center>
           <Center style={{  borderRadius: 8 }} backgroundColor={bgcolor} p={4}>
-            <Text fontWeight={"medium"} fontSize={"20px"} p={6} color={'black'}>
+            <Text fontWeight={"medium"} fontSize={"lg"} p={6} color={'black'}>
               <ReactMarkdown
                 children={data?.getEvent.description!}
                 remarkPlugins={[remarkGfm]}
@@ -113,9 +113,11 @@ const EventPage = () => {
               </Flex>
             </Flex>
           </Flex>
-        </Container>
-
-      
+          {  data?.getEvent &&
+            <EventFaqs   event ={data?.getEvent!}  /> 
+        
+        }
+        </Container>  
     </CustomBox>
     )
 }
