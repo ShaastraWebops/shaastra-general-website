@@ -88,7 +88,7 @@ export default function Main() {
                 oriented guests too. The projects are designed in conformity
                 with the tagline of Envisage – “Technology meets Entertainment”.
                 Alongside conducting the show on 1st day of Shaastra, a number
-                of other interactive projects and video games x`are also
+                of other interactive projects and video games are also
                 developed and exhibited to a vast crowd at KV Stalls during
                 Shaastra. Over the past few years Envisage has been exploring
                 and presenting projects at various avenues like IIM Bangalore,
