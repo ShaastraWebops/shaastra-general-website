@@ -27,7 +27,8 @@ import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer'
 import { useResetPasswordMutation } from "../../../generated/graphql"
 import { useHistory, useParams } from "react-router"
-
+import success from "../../../images/Login/login-success.svg"
+import errorSVG from "../../../images/Login/login-error.svg"
 
 const ForgotAfter = () => {
 
@@ -45,11 +46,14 @@ const ForgotAfter = () => {
     {
         onClose = () => {history.push('/login')}
         return(
-            <Modal isOpen={true} onClose={onClose}>
+            <Modal isOpen={true} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Password reset</ModalHeader>
+                <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                    <Image src={success} margin="auto" boxSize={["50vw","20vw"]}></Image>
                     <ModalCloseButton />
+                    <ModalBody backgroundColor="#A7EAAA" width="100%" padding="2vw">
+                        <Text textAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Password reset</Text>
+                    </ModalBody>
                  </ModalContent>
             </Modal>
         )
@@ -77,26 +81,32 @@ const ForgotAfter = () => {
                 
                 onClose = () => {history.push('/')}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Invalid OTP</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Invalid OTP</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )
             }
             else 
             {
                 onClose = () => {history.push('/')}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Error Occurred</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Error Occurred</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )  
             }
         }
@@ -111,6 +121,7 @@ const ForgotAfter = () => {
                     <Input placeholder="Reset Password OTP" type="text" marginBottom="4vh" value={otp} onChange={(e:any) => {setOtp(e.target.value)}}></Input>
                     <Input placeholder="Enter new password" marginBottom="4vh" type="password" onChange={(e: any) => {setPw(e.target.value)}}></Input>
                     <Button width="100%"  backgroundColor="#2467a1" marginBottom="4vh" marginTop="6vh"
+                        color="white"
                         onClick={async (e:any) => {
                             e.preventDefault();
                             try{

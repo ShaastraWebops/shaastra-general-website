@@ -30,7 +30,7 @@ import ReactMde from "react-mde";
 import * as Showdown from "showdown";
 import { RegistraionType, useGetEventQuery } from "../../../generated/graphql"
 import "../../../styles/Events.css"
-
+import moment from 'moment'
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
 import { useEditEventMutation } from "../../../generated/graphql";
 
@@ -60,9 +60,13 @@ const EditEvent = () => {
     const [selectedTab, setSelectedTab] = React.useState<"write" | "preview">("write");
     const history = useHistory()
 
-    const {data: event, loading: eventLoading, error: eventError} = useGetEventQuery({variables: {EventID: id}})
+     const {data: event, loading: eventLoading, error: eventError} = useGetEventQuery({variables: {EventID: id}})
+
+
+    console.log(event)
 
     const [radio, setRadio] = React.useState<RegistraionType>()
+    const [radioString, setRadioString] = useState()
     const [name, setName] = React.useState(event?.getEvent.name ? event?.getEvent.name : "")
     const [vertical, setVertical] = React.useState(event?.getEvent.vertical ? event?.getEvent.vertical : "")
     const [desp, setDesp] = React.useState(event?.getEvent.description ? event?.getEvent.description : "")
@@ -79,13 +83,9 @@ const EditEvent = () => {
     const [third, setThird] = useState(event?.getEvent.thirdplace ? event?.getEvent.thirdplace: "")
     const [pic, setPic] = useState(event?.getEvent.pic!)
     const [file, setFile] = useState<File>()
+    const [fee, setFee] = useState(event?.getEvent.registrationfee ? event.getEvent.registrationfee : "")
 
-    switch(event?.getEvent.registrationType)
-    {
-        case "Individual": setRadio(RegistraionType.Individual); break;
-        case "Team": setRadio(RegistraionType.Team); break;
-        case "None": setRadio(RegistraionType.None);
-    }
+    
 
     const [editEventMutation, {data, loading, error}] = useEditEventMutation()
 
@@ -118,12 +118,15 @@ const EditEvent = () => {
 
     if(data)
     {
-        onClose = () => {history.push('/admin/add')}
+        onClose = () => {
+            history.push('/admin')
+            window.location.reload()
+        }
         return(
             <Modal isOpen={true} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Event Added</ModalHeader>
+                    <ModalHeader>Event Edited</ModalHeader>
                     <ModalCloseButton />
                  </ModalContent>
             </Modal>
@@ -230,14 +233,19 @@ const EditEvent = () => {
                     <Flex width="100%">
                         <FormControl>
                         {console.log(regStart)}
-                            <FormLabel>Registration Start</FormLabel>
+                            <FormLabel>Registration Start: {moment(parseInt(event?.getEvent.registrationOpenTime!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
+                            placeholder="12/30/2021"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setRegStart(e.target.value)}}    
                             ></Input>
                         </FormControl>
                         <FormControl marginLeft="2vw">
-                            <FormLabel>Registration End</FormLabel>
+                            <FormLabel>Registration End: {moment(parseInt(event?.getEvent.registrationCloseTime!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setRegEnd(e.target.value)}}
@@ -246,14 +254,18 @@ const EditEvent = () => {
                     </Flex>
                     <Flex width="100%">
                         <FormControl>
-                            <FormLabel>Event Start</FormLabel>
+                            <FormLabel>Event Start: {moment(parseInt(event?.getEvent.eventTimeFrom!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setEventStart(e.target.value)}}
                             ></Input>
                         </FormControl>
                         <FormControl marginLeft="2vw">
-                            <FormLabel>Event End</FormLabel>
+                            <FormLabel>Event End: {moment(parseInt(event?.getEvent.eventTimeTo!)).format(
+                    "MMMM Do YYYY"
+                  )}</FormLabel>
                             <Input type="date" outline="none" color="black"
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setEventEnd(e.target.value)}}    
@@ -286,16 +298,33 @@ const EditEvent = () => {
                                 onChange={(e:any) => {setThird(e.target.value)}}></Input>
                         </FormControl>
                     </Flex>
+                    <FormControl>
+                            <FormLabel fontSize="1.5vw">Registration fee</FormLabel>
+                            <Input 
+                                type="text" outline="none" color="black" placeholder={fee}
+                                backgroundColor="transparent" borderBottom="5px solid white"
+                                onChange={(e:any) => {setFee(e.target.value)}}    
+                            >
+                            </Input>
+                        </FormControl>
                     <Flex alignItems="center" justifyContent="space-between" width="100%" className="admin-team">
                         <FormControl color="black" marginTop="4vh">
-                            <RadioGroup value={radio} onChange={(e :any) => {setRadio(e.target.value)}}>
-                                <Radio value={RegistraionType.Individual} marginRight="2vw">Individual</Radio>
-                                <Radio value={RegistraionType.Team} marginRight="2vw">Team</Radio>
-                                <Radio value={RegistraionType.None}>None</Radio>
+                            <Text>{event?.getEvent.registrationType}</Text>
+                            <RadioGroup value={radioString} onChange={(e:any) => {
+                                switch(e)
+                                {
+                                    case "Individual": setRadio(RegistraionType.Individual); break;
+                                case "Team": setRadio(RegistraionType.Team); break;
+                                default: setRadio(RegistraionType.None);   
+                                }
+                            }}>
+                                <Radio value="Individual" marginRight="2vw">Individual</Radio>
+                                <Radio value="Team" marginRight="2vw">Team</Radio>
+                                <Radio value="None">None</Radio>
                             </RadioGroup>
                         </FormControl>
                         {
-                            radio===RegistraionType.Team &&
+                            radio === RegistraionType.Team &&
                             <FormControl marginTop="4vh" width="10vw">
                                 <FormLabel color="black">Team size</FormLabel>
                                 <Input type="number" outline="none" color="black" 
@@ -308,6 +337,7 @@ const EditEvent = () => {
                     <Button marginTop="4vh" width="100%" backgroundColor="white" color="#0e101b"
                         onClick={async (e:any) => {
                             e.preventDefault();
+                            // await setEventType()
                             if(file !== undefined)
                             {
                                 await UploadImageToS3WithNativeSdk(file)
@@ -316,10 +346,10 @@ const EditEvent = () => {
                                 await editEventMutation({
                                     variables: {
                                         data: {
-                                            name: name,
+                                        name: name,
                                         description: desp,
-                                        eventTimeFrom: new Date(eventStart).toISOString()!,
-                                        eventTimeTo: new Date(eventEnd).toISOString()!,
+                                        eventTimeFrom: new Date(eventStart).toDateString(),
+                                        eventTimeTo: new Date(eventEnd).toDateString(),
                                         registrationType: radio!,
                                         platform: platform,
                                         requirements: req,
@@ -329,9 +359,10 @@ const EditEvent = () => {
                                         participation: participation,
                                         secondplace: second,
                                         thirdplace: third,
-                                        teamSize: teamSize,
-                                        registrationCloseTime: new Date(regEn).toISOString()!,
-                                        registrationOpenTime: new Date(regStart).toISOString()!,
+                                        teamSize: Math.round(teamSize),
+                                        registrationCloseTime: new Date(regEn).toDateString(),
+                                        registrationOpenTime: new Date(regStart).toDateString(),
+                                        registrationfee: fee
                                         },
                                         id: id
                                     }

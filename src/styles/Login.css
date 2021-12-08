@@ -13,13 +13,28 @@
     backdrop-filter: blur(30px);
     backdrop-filter: opacity(20%);
 }
-/* .login .blackG
+.login a:hover
 {
-    background-image: linear-gradient(45deg, rgba(17, 16, 19, 0.432), rgba(0, 0, 0, 0));
+    text-decoration: none;
+    letter-spacing: 5px;
+    transition: all 0.5s ease-in-out;
+}
+.login ::placeholder
+{
+    color: white;
+}
+.blackG ::placeholder
+{
+    color: black !important;
+}
+/* .login-main-box input, .login-main-box select 
+{
+    background-color: rgba(255, 255, 255, 0.397) !important;
+    color: white !important;
 } */
 .login .blackG input, .login .blackG select
 {
-    background-color: white;
+    background-color: white !important;
     color: black !important;
     background-image: unset;
     border: 2px solid black;
@@ -33,8 +48,9 @@
 .profile-main-flex .swiper-slide
 {
     border-radius: 10px;
-    background-color: #C2C4FF;
-    width: 15vw;
+    background-color: #3d4363;
+    width: 20vw !important;
+    height: 20vw !important;
 }
 .profile-main-flex input, .profile-main-flex select
 {
@@ -43,33 +59,60 @@
 }
 
 
+.profile-button-flex ::placeholder
+{
+    color: rgb(0, 0, 0) !important;
+}
+
 
 @media screen and (max-width: 900px)
 {
+    .profile-heading
+    {
+        font-size: 8vw !important;
+    }
     .profile-main-flex
     {
         flex-direction: column !important;
     }
-    .profile-main-flex .chakra-image 
+    .profile-main-flex .profile-image 
     {
         display: none;
+    }
+    .profile-main-flex .chakra-button 
+    {
+        width: fit-content;
+        font-size: 3vw;
     }
     .profile-main-flex > div:first-child
     {
         flex-direction: row !important;
         align-items: center !important;
         width: 100vw;
+        height: fit-content !important;
         margin-bottom: 4vh;
     }
     .profile-main-flex > div:first-child a 
     {
-        margin-bottom: 0;
+        margin: auto;
         font-size: 3vw;
         margin-right: 10vw;
     }
     .profile-main-flex > div:last-child > div:first-child
     {
         width: 95vw;
+    }
+    .profile-main-flex .chakra-form-control, .profile-main-flex .chakra-form-control > div
+    {
+        margin-bottom: 2vh !important;
+    }
+    .profile-main-flex p, .profile-button-flex input, .profile-button-flex select 
+    {
+        font-size: 3vw !important;
+    }
+    .profile-main-flex > div 
+    {
+        margin: auto;
     }
 
     .login
@@ -93,6 +136,18 @@
         width: 60vw !important;
         height: auto !important;
     }
+
+    .profile-main-flex .swiper, .profile-main-flex .swiper-container, .profile-main-flex .swiper-wrapper
+    {
+        width: 90vw;
+        height: fit-content;
+    }
+
+    .profile-main-flex .swiper-slide
+{
+    width: 90vw !important;
+    height: 50vw !important;
+}
 }
 
 @media screen and (max-width: 700px)
@@ -112,6 +167,17 @@
         font-size: 10vw !important;
         margin-top: 15vh;
     }
+
+    .profile-main-flex .swiper, .profile-main-flex .swiper-container, .profile-main-flex .swiper-wrapper
+{
+    width: 90vw;
+    height: fit-content;
+}
+.profile-main-flex .swiper-slide
+{
+    width: 90vw !important;
+    height: fit-content !important;
+}
 }
 @media screen and (max-width: 300px)
 {

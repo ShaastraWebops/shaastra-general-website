@@ -24,6 +24,8 @@ import {
 import "../../../styles/Login.css"
 import { useState } from "react"
 import bg from "../../../images/Login/login.svg"
+import success from "../../../images/Login/login-success.svg"
+import errorSVG from "../../../images/Login/login-error.svg"
 import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer'
 import { useGetPasswordOtpMutation, useResendVerificationMailMutation } from "../../../generated/graphql"
@@ -42,11 +44,14 @@ const Forgot = () => {
     {
         onClose = () => {history.push('/resetpassword')}
         return(
-            <Modal isOpen={true} onClose={onClose}>
+            <Modal isOpen={true} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Check your registered Email ID for the reset password OTP</ModalHeader>
+                <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                    <Image src={success} margin="auto" boxSize={["50vw","20vw"]}></Image>
                     <ModalCloseButton />
+                    <ModalBody backgroundColor="#A7EAAA" width="100%" padding="2vw">
+                        <Text textAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Check your registered email ID for reset password OTP</Text>
+                    </ModalBody>
                  </ModalContent>
             </Modal>
         )
@@ -72,26 +77,32 @@ const Forgot = () => {
                 {
                 onClose = () => {history.push('/signup')}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Email ID not registered. Kindly sign up.</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent  color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text xtAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Email ID not registered. <br />Kindly sign up.</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )
                 }
                 else 
                 {
                 onClose = () => {window.location.reload()}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Error Occurred</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent  color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text xtAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Error Occurred</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )
                 }
             }
@@ -103,6 +114,7 @@ const Forgot = () => {
                     <Heading fontSize="4vw" marginBottom="6vh">Forgot <span>Password</span></Heading>
                     <Input placeholder="Enter Email ID" marginBottom="4vh" type="email" onChange={(e:any) => {setEmail(e.target.value)}}></Input>
                     <Button width="100%"  backgroundColor="#2467a1" marginBottom="4vh" marginTop="6vh"
+                        color="white"
                         onClick={async (e:any) => {
                             e.preventDefault();
                             try{

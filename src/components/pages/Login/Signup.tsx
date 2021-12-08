@@ -28,8 +28,12 @@ import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer'
 import { useCreateUserMutation } from "../../../generated/graphql"
 import { useHistory } from "react-router"
+import success from "../../../images/Login/login-success.svg"
+import errorSVG from "../../../images/Login/login-error.svg"
 
 import {cities} from "./cities"
+import {colleges} from "./college"
+import { branches } from "./branches"
 
 const Signup = () => {
 
@@ -55,11 +59,14 @@ const Signup = () => {
     {
         onClose = () => {history.push('/')}
         return(
-            <Modal isOpen={true} onClose={onClose}>
+            <Modal isOpen={true} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Signed up successfully. <br /> Check your email for the verification link. </ModalHeader>
+                <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                    <Image src={success} margin="auto" boxSize={["50vw","20vw"]}></Image>
                     <ModalCloseButton />
+                    <ModalBody backgroundColor="#A7EAAA" width="100%" padding="2vw">
+                        <Text textAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Signed up successfully! <br />Check your Email ID for the verification link.</Text>
+                    </ModalBody>
                  </ModalContent>
             </Modal>
         )
@@ -67,10 +74,13 @@ const Signup = () => {
     if(error)
     {  onClose = () => {window.location.reload()}
             return(
-                <Modal isOpen={true} onClose={onClose}>
+                <Modal isOpen={true} onClose={onClose} isCentered>
                     <ModalOverlay />
-                    <ModalContent backgroundColor="#f1aaaa" color="black">
-                        <ModalHeader>Some error occurred</ModalHeader>
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Some error occurred</Text>
+                        </ModalBody>
                         <ModalCloseButton />
                     </ModalContent>
                 </Modal>
@@ -103,10 +113,22 @@ const Signup = () => {
                     <Input placeholder="Confirm password" marginBottom="6vh" type="password" onChange={(e:any) => {setConfirm(e.target.value)}}></Input>
                     <Flex marginBottom="6vh">
                         <Select placeholder="College" marginRight="2vw" onChange={(e:any) => {setCollege(e.target.value)}}>
-                            <option value="IITM">IITM</option>
+                            {
+                                colleges.map(o => {
+                                    return(
+                                        <option value={o["University"]}>{o["University"]}</option>
+                                    )
+                                })
+                            }
                         </Select>
                         <Select placeholder="Branch" onChange={(e:any) => {setBranch(e.target.value)}}>
-                            <option value="BE">BE</option>
+                            {
+                                branches.map(b => {
+                                    return(
+                                        <option value={b}>{b}</option>
+                                    )
+                                })
+                            }
                         </Select>
                     </Flex>
                     <Flex marginBottom="6vh">
@@ -126,7 +148,7 @@ const Signup = () => {
                         </Select>
                     </Flex>
                     <Input placeholder="Address" type="text" onChange={(e:any) => {setAddress(e.target.value)}}></Input>
-                    <Button width="100%"  backgroundColor="#2467a1" color="black" marginTop="6vh"
+                    <Button width="100%"  backgroundColor="#2467a1" color="white" marginTop="6vh"
                         onClick={async (e:any) => {
                             e.preventDefault();
                             if(pw === confirm)

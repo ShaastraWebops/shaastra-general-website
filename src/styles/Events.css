@@ -156,7 +156,7 @@
 {
     perspective: 500px;
 }
-.events-vertical .flip-card-inner
+.events-vertical .flip-card-inner, .profile-main-flex .flip-card-inner
 {
     position: absolute;
     width: 100%;
@@ -164,11 +164,11 @@
     transform-style: preserve-3d;
     transition: transform 0.8s;
 }
-.events-vertical .flip-card:hover .flip-card-inner
+.events-vertical .flip-card:hover .flip-card-inner, .profile-main-flex .flip-card:hover .flip-card-inner
 {
     transform: rotateY(180deg);
 }
-.events-vertical .flip-card-front, .events-vertical .flip-card-back 
+.events-vertical .flip-card-front, .events-vertical .flip-card-back, .profile-main-flex .flip-card-front, .profile-main-flex .flip-card-back
 {
     position: absolute;
     top: 0%;
@@ -176,6 +176,11 @@
     height: 100%;
     -webkit-backface-visibility: hidden; 
     backface-visibility: hidden !important;
+}
+.profile-main-flex .flip-card-back
+{
+    transform:rotateY(180deg);
+    color: black;
 }
 .events-vertical .flip-card-back
 {
@@ -288,10 +293,29 @@
     {
         width: 50vw !important;
         font-size: 2vw !important;
+    
+    }
+    .events-vertical .event-desp .chakra-text > div > div ,.events-vertical .event-desp .chakra-text > div
+    {
+        height: fit-content !important;
+    }
+    .events-vertical .event-desp > div .chakra-text > div > div
+    {
+        margin-right: 2vw !important;
+    }
+    .events-vertical .event-desp > div .chakra-button
+    {
+        width: 100% !important;
+    }
+    .events-vertical .event-desp p
+    {
+        font-size: 5vw !important;
+        text-align: center !important;
     }
     .events-vertical .vertical-events-flex 
     {
         width: 95vw !important;
+        margin: auto !important;
         height: fit-content !important;
         /* flex-direction: column !important; */
         justify-content: space-between !important;
@@ -303,6 +327,7 @@
         /* height: 50vh !important; */
         flex-direction: column !important;
         justify-content: space-between;
+        margin-bottom: 2vh !important;
     }
     .events-vertical .event-desp-glass
     {
@@ -314,9 +339,40 @@
         padding: 2vh !important;
     }
 }
-
 @media screen and (max-width: 500px)
 {
+    .events-vertical .event-desp .chakra-text, .events-vertical .event-desp
+    {
+        width: 50vw !important;
+        font-size: 2vw !important;
+    
+    }
+    .events-vertical .event-desp .chakra-text > p 
+    {
+        max-lines: 8;
+    }
+    .events-vertical .event-desp .chakra-text > div > div ,.events-vertical .event-desp .chakra-text > div
+    {
+        height: fit-content !important;
+    }
+    .events-vertical .event-desp > div .chakra-button
+    {
+        margin-bottom: 1vh !important;
+        width: 100% !important;
+    }
+    .events-vertical .event-desp p
+    {
+        font-size: 5vw !important;
+        text-align: center !important;
+    }
+    .events .chakra-heading
+    {
+        font-size: 12vw !important;
+    }
+    .events .vertical-timeline-element-content a 
+    {
+        font-size: 5vw !important;
+    }
     .event-main-box
     {
         width: 100vw !important;
@@ -324,5 +380,13 @@
         /* height: 40vh !important; */
         flex-direction: column !important;
         justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+    .events-vertical .event-desp .chakra-text .chakra-button
+    {
+        font-size: 3.5vw !important;
     }
 }

@@ -23,6 +23,8 @@ import {
   } from '@chakra-ui/react'
 import "../../../styles/Login.css"
 import bg from "../../../images/Login/login.svg"
+import success from "../../../images/Login/login-success.svg"
+import errorSVG from "../../../images/Login/login-error.svg"
 import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer'
 import { LoginInput, useLoginMutation, UserRole } from "../../../generated/graphql"
@@ -55,28 +57,52 @@ const Login = () => {
         }
         onClose = () => {history.push('/')}
         return(
-            <Modal isOpen={true} onClose={onClose}>
+            <Modal isOpen={true} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Logged in successfully</ModalHeader>
+                <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                    <Image src={success} margin="auto" boxSize={["50vw","20vw"]}></Image>
                     <ModalCloseButton />
+                    <ModalBody backgroundColor="#A7EAAA" width="100%" padding="2vw">
+                        <Text textAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Logged in successfully!</Text>
+                    </ModalBody>
                  </ModalContent>
             </Modal>
         )
     }
     if(error)
     {
-         if(error.message === "Account Not Found")
+        if(error.message === "Oops, email not verified!")
+        {
+            onClose = () => {history.push('/')}
+            return(
+                <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent  color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text xtAlign="center" fontSize={["4vw","2vw"]} backgroundColor="#A7EAAA" borderRadius="24px" margin="auto" color="#0a2d4d">Email not verified. Check your registered Email ID for the verification link</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
+            )
+        }
+        else 
+         
+        if(error.message.includes("Could not find any entity of type"))
          {
                 onClose = () => {history.push('/signup')}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Email ID not registered. <br /> Sign Up to continue.</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Email ID not registered. <br />Sign up to continue</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )
          }
          else
@@ -84,23 +110,29 @@ const Login = () => {
           {
             onClose = () => {window.location.reload()}
                 return(
-                    <Modal isOpen={true} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Invalid credentials</ModalHeader>
-                            <ModalCloseButton />
-                        </ModalContent>
-                    </Modal>
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                    <ModalOverlay />
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Invalid Credentials</Text>
+                        </ModalBody>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
                 )
           }
           else 
           {
             onClose = () => {window.location.reload()}
             return(
-                <Modal isOpen={true} onClose={onClose}>
+                <Modal isOpen={true} onClose={onClose} isCentered>
                     <ModalOverlay />
-                    <ModalContent backgroundColor="#f1aaaa" color="black">
-                        <ModalHeader>Some error occurred</ModalHeader>
+                    <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                        <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                        <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Some error occurred</Text>
+                        </ModalBody>
                         <ModalCloseButton />
                     </ModalContent>
                 </Modal>
@@ -136,6 +168,7 @@ const Login = () => {
                             }
                             catch(err) {console.log(err)}
                         }}
+                        color="white"
                     >Login</Button>
                     <Flex width="100%" justifyContent="space-between" >
                         <Link href="/forgotpassword">Forgot password?</Link>
