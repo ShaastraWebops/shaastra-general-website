@@ -36,103 +36,104 @@ import { useCreateTeamandRegisterMutation, useRegisterMutation } from "../../../
 import { useHistory } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import RegisterNow from "./RegisterNow";
 
 const EventVerticalComponent = ({data, isAdmin} : any) => {
 
-    var { isOpen, onOpen, onClose } = useDisclosure()
+    // var { isOpen, onOpen, onClose } = useDisclosure()
 
     const search = useColorModeValue("border", "noBorder")
     const font = useColorModeValue("black", "white")
     const gradient = useColorModeValue("blackG", "whiteG")
     const button = useColorModeValue("dark", "light")
     
-    const [radio, setRadio] = useState("i")
-    const [register, {data : data1,error,loading}] = useRegisterMutation();
-    const IndividualReg = async (eventId : string) =>{
+    // const [radio, setRadio] = useState("i")
+    // const [register, {data : data1,error,loading}] = useRegisterMutation();
+    // const IndividualReg = async (eventId : string) =>{
 
-        await register({
-            variables : {
-                EventID : eventId
-            }
-        })
-        .catch(err => console.log(err.message))
+    //     await register({
+    //         variables : {
+    //             EventID : eventId
+    //         }
+    //     })
+    //     .catch(err => console.log(err.message))
 
-    }
+    // }
   
-    const [members, setMembers] = React.useState<string[]>([]);
-    const [teamname, setTeamname] = React.useState<string>();
+    // const [members, setMembers] = React.useState<string[]>([]);
+    // const [teamname, setTeamname] = React.useState<string>();
 
-    const handleMembersInput = ({ index, event }: { index: number, event: React.ChangeEvent<HTMLInputElement> }) => {
-        const values = [...members];
+    // const handleMembersInput = ({ index, event }: { index: number, event: React.ChangeEvent<HTMLInputElement> }) => {
+    //     const values = [...members];
 
-        values[index] = event.target.value
-        setMembers(values)
-    }
-    const [teamreg,{data:data2, loading:loading2,error : error2}] = useCreateTeamandRegisterMutation();
+    //     values[index] = event.target.value
+    //     setMembers(values)
+    // }
+    // const [teamreg,{data:data2, loading:loading2,error : error2}] = useCreateTeamandRegisterMutation();
 
-    const Teamregistration = async (eventID : string)=>{
-        await teamreg({
-            variables : {
-               createTeamAndRegisterData : {
-                   eventID,
-                   name : teamname!,
-                   members
-               } 
-            }
-        }).catch(err => console.log(err.message))
-    }
+    // const Teamregistration = async (eventID : string)=>{
+    //     await teamreg({
+    //         variables : {
+    //            createTeamAndRegisterData : {
+    //                eventID,
+    //                name : teamname!,
+    //                members
+    //            } 
+    //         }
+    //     }).catch(err => console.log(err.message))
+    // }
 
-    if(radio === "t" && members.length === 0){
-        setMembers([''])
-    }
+    // if(radio === "t" && members.length === 0){
+    //     setMembers([''])
+    // }
 
     const buttoncolor = useColorModeValue("#ea8a94","white");
 
     const history = useHistory();
-    if(data1 || data2)
-    {
-        onClose = () => {window.location.reload()}
-        return(
-            <Modal isOpen={true} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent backgroundColor="#addfd0" color="black">
-                    <ModalHeader>Registrated Successfully</ModalHeader>
-                    <ModalCloseButton />
-                 </ModalContent>
-            </Modal>
-        )
-    }
-    if(error || error2)
-    {
-        error? onClose = () => {
-            if(error.message === "Please login to continue"){
-                history.push('/login')
-            }
-            window.location.reload()
-        } : onClose = () => {window.location.reload()}
-        return(
-            <Modal isOpen={true} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent backgroundColor="#f1aaaa" color="black">
-                    <ModalHeader>{error ? error.message : error2?.message}</ModalHeader>
-                    <ModalCloseButton />
-                 </ModalContent>
-            </Modal>
-        )
-    }
-    if(loading || loading2)
-    {
-        onClose = () => {window.location.reload()}
-        return(
-            <Modal isOpen={true} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent backgroundColor="#e2e19c" color="black">
-                    <ModalHeader>Loading...</ModalHeader>
-                    <ModalCloseButton />
-                 </ModalContent>
-            </Modal>
-        )
-    }
+    // if(data1 || data2)
+    // {
+    //     onClose = () => {window.location.reload()}
+    //     return(
+    //         <Modal isOpen={true} onClose={onClose}>
+    //             <ModalOverlay />
+    //             <ModalContent backgroundColor="#addfd0" color="black">
+    //                 <ModalHeader>Registrated Successfully</ModalHeader>
+    //                 <ModalCloseButton />
+    //              </ModalContent>
+    //         </Modal>
+    //     )
+    // }
+    // if(error || error2)
+    // {
+    //     error? onClose = () => {
+    //         if(error.message === "Please login to continue"){
+    //             history.push('/login')
+    //         }
+    //         window.location.reload()
+    //     } : onClose = () => {window.location.reload()}
+    //     return(
+    //         <Modal isOpen={true} onClose={onClose}>
+    //             <ModalOverlay />
+    //             <ModalContent backgroundColor="#f1aaaa" color="black">
+    //                 <ModalHeader>{error ? error.message : error2?.message}</ModalHeader>
+    //                 <ModalCloseButton />
+    //              </ModalContent>
+    //         </Modal>
+    //     )
+    // }
+    // if(loading || loading2)
+    // {
+    //     onClose = () => {window.location.reload()}
+    //     return(
+    //         <Modal isOpen={true} onClose={onClose}>
+    //             <ModalOverlay />
+    //             <ModalContent backgroundColor="#e2e19c" color="black">
+    //                 <ModalHeader>Loading...</ModalHeader>
+    //                 <ModalCloseButton />
+    //              </ModalContent>
+    //         </Modal>
+    //     )
+    // }
 
     
 
@@ -196,13 +197,17 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                                             </Alert>
                                            </Box>
                                            :
-                                           (<Box marginTop="2vh"  height="1vw" >
-                                           <Button backgroundColor={buttoncolor} color='black'
-                                            onClick={
-                                                data.registrationType === "INDIVIDUAL" ? ()=>{IndividualReg(data.id)} : onOpen
-                                            }
-                                           >REGISTER NOW</Button>
-                                           </Box>)) : null
+                                           (
+                                        //    <Box marginTop="2vh"  height="1vw" >
+                                        //    <Button backgroundColor={buttoncolor} color='black'
+                                        //     onClick={
+                                        //         data.registrationType === "INDIVIDUAL" ? ()=>{IndividualReg(data.id)} : onOpen
+                                        //     }
+                                        //    >REGISTER NOW</Button>
+                                        //    </Box>
+                                        <RegisterNow  isAdmin={isAdmin} data={data}/>
+                                           )
+                                           ) : null
                                         }
                                         <Box  marginTop="2vh"  height="1vw" >
                                             <Button backgroundColor={buttoncolor} color='black'
@@ -215,7 +220,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                                       
                                        </Flex>
 
-                                        <Modal isOpen={isOpen} onClose={onClose}>
+                                        {/* <Modal isOpen={isOpen} onClose={onClose}>
                                             <ModalOverlay />
                                             <ModalContent>
                                             <ModalHeader>Team Registration for {data.name}</ModalHeader>
@@ -295,7 +300,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                                                 </Button>
                                             </ModalFooter>
                                             </ModalContent>
-                                        </Modal>
+                                        </Modal> */}
                                     </Text>
                                     
                             </Flex>
