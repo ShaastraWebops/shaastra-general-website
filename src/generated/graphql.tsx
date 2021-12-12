@@ -133,6 +133,17 @@ export type EventFaq = {
   updatedOn: Scalars['String'];
 };
 
+export type EventPay = {
+  amount: Scalars['Float'];
+  event: Event;
+  id: Scalars['String'];
+  isPaid: Scalars['Boolean'];
+  orderId: Scalars['String'];
+  payementId?: Maybe<Scalars['String']>;
+  paymentSignature?: Maybe<Scalars['String']>;
+  user: User;
+};
+
 export type GetEventsOutput = {
   count: Scalars['Float'];
   events: Array<Event>;
@@ -168,9 +179,10 @@ export type Mutation = {
   leaveTeam: Scalars['Boolean'];
   login?: Maybe<User>;
   logoutUser: Scalars['Boolean'];
-  register: Scalars['Boolean'];
+  register: RegisterOutput;
   resendVerificationMail: Scalars['Boolean'];
   resetPassword: Scalars['Boolean'];
+  updateEventPay: Scalars['Boolean'];
   verifyUser: Scalars['Boolean'];
 };
 
@@ -253,6 +265,12 @@ export type MutationResetPasswordArgs = {
 };
 
 
+export type MutationUpdateEventPayArgs = {
+  EventId: Scalars['String'];
+  data: UpdateEventPayInput;
+};
+
+
 export type MutationVerifyUserArgs = {
   otp: Scalars['String'];
 };
@@ -284,6 +302,11 @@ export type QueryGetUsersArgs = {
   skip?: InputMaybe<Scalars['Float']>;
 };
 
+export type RegisterOutput = {
+  eventPay?: Maybe<EventPay>;
+  registered?: Maybe<Scalars['Boolean']>;
+};
+
 export enum RegistraionType {
   Individual = 'INDIVIDUAL',
   None = 'NONE',
@@ -305,6 +328,12 @@ export type Team = {
   id: Scalars['ID'];
   members: Array<User>;
   name: Scalars['String'];
+};
+
+export type UpdateEventPayInput = {
+  orderId: Scalars['String'];
+  payementId: Scalars['String'];
+  paymentSignature: Scalars['String'];
 };
 
 export type User = {
@@ -375,7 +404,15 @@ export type RegisterMutationVariables = Exact<{
 }>;
 
 
-export type RegisterMutation = { register: boolean };
+export type RegisterMutation = { register: { registered?: boolean | null | undefined, eventPay?: { orderId: string, amount: number, user: { name: string, email: string, mobile: string, address: string }, event: { id: string, name: string } } | null | undefined } };
+
+export type UpdateEventPayMutationVariables = Exact<{
+  eventId: Scalars['String'];
+  data: UpdateEventPayInput;
+}>;
+
+
+export type UpdateEventPayMutation = { updateEventPay: boolean };
 
 export type CreateTeamandRegisterMutationVariables = Exact<{
   createTeamAndRegisterData: CreateTeamInput;
@@ -654,7 +691,23 @@ export type ResetPasswordMutationResult = ApolloReactCommon.MutationResult<Reset
 export type ResetPasswordMutationOptions = ApolloReactCommon.BaseMutationOptions<ResetPasswordMutation, ResetPasswordMutationVariables>;
 export const RegisterDocument = gql`
     mutation register($EventID: String!) {
-  register(EventID: $EventID)
+  register(EventID: $EventID) {
+    registered
+    eventPay {
+      orderId
+      amount
+      user {
+        name
+        email
+        mobile
+        address
+      }
+      event {
+        id
+        name
+      }
+    }
+  }
 }
     `;
 export type RegisterMutationFn = ApolloReactCommon.MutationFunction<RegisterMutation, RegisterMutationVariables>;
@@ -683,6 +736,38 @@ export function useRegisterMutation(baseOptions?: ApolloReactHooks.MutationHookO
 export type RegisterMutationHookResult = ReturnType<typeof useRegisterMutation>;
 export type RegisterMutationResult = ApolloReactCommon.MutationResult<RegisterMutation>;
 export type RegisterMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
+export const UpdateEventPayDocument = gql`
+    mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!) {
+  updateEventPay(EventId: $eventId, data: $data)
+}
+    `;
+export type UpdateEventPayMutationFn = ApolloReactCommon.MutationFunction<UpdateEventPayMutation, UpdateEventPayMutationVariables>;
+
+/**
+ * __useUpdateEventPayMutation__
+ *
+ * To run a mutation, you first call `useUpdateEventPayMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateEventPayMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateEventPayMutation, { data, loading, error }] = useUpdateEventPayMutation({
+ *   variables: {
+ *      eventId: // value for 'eventId'
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useUpdateEventPayMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<UpdateEventPayMutation, UpdateEventPayMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<UpdateEventPayMutation, UpdateEventPayMutationVariables>(UpdateEventPayDocument, options);
+      }
+export type UpdateEventPayMutationHookResult = ReturnType<typeof useUpdateEventPayMutation>;
+export type UpdateEventPayMutationResult = ApolloReactCommon.MutationResult<UpdateEventPayMutation>;
+export type UpdateEventPayMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateEventPayMutation, UpdateEventPayMutationVariables>;
 export const CreateTeamandRegisterDocument = gql`
     mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!) {
   createTeamAndRegister(data: $createTeamAndRegisterData)

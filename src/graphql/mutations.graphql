@@ -3,15 +3,15 @@ mutation createUser($CreateUserInput: CreateUserInput!) {
 }
 
 mutation verifyUser($otp: String!) {
-   verifyUser(otp: $otp)
+  verifyUser(otp: $otp)
 }
 
 mutation login($LoginInput: LoginInput!) {
-   login(data: $LoginInput){
-       id
-       role
-       isVerified
-   }
+  login(data: $LoginInput) {
+    id
+    role
+    isVerified
+  }
 }
 
 mutation logoutUser {
@@ -28,45 +28,65 @@ mutation resetPassword($resetPasswordInput: ResetPasswordInput!) {
   resetPassword(data: $resetPasswordInput)
 }
 
- mutation register($EventID: String!){
-    register(EventID: $EventID)
+mutation register($EventID: String!) {
+  register(EventID: $EventID) {
+    registered
+    eventPay {
+      orderId
+      amount
+      user {
+        name
+        email
+        mobile
+        address
+      }
+      event {
+        id
+        name
+      }
+    }
   }
-
- mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!){
-    createTeamAndRegister(data: $createTeamAndRegisterData)
-  }
-
-mutation getPasswordOTP($email : String!){
-    getPasswordOTP(email : $email)
 }
 
-mutation addEvent($data: AddEventInput!){
-  addEvent(data: $data){
+mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!) {
+  updateEventPay(EventId: $eventId, data: $data)
+}
+
+mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!) {
+  createTeamAndRegister(data: $createTeamAndRegisterData)
+}
+
+mutation getPasswordOTP($email: String!) {
+  getPasswordOTP(email: $email)
+}
+
+mutation addEvent($data: AddEventInput!) {
+  addEvent(data: $data) {
     name
     id
   }
 }
 
-mutation editEvent($data: EditEventInput!, $id: String!){
+mutation editEvent($data: EditEventInput!, $id: String!) {
   editEvent(data: $data, eventID: $id)
 }
 
-mutation editProfile($data: EditProfileInput!){
+mutation editProfile($data: EditProfileInput!) {
   editProfile(data: $data)
 }
 
-mutation createEventFAQ($data : CreateEventFAQInput! , $id: String!){
+mutation createEventFAQ($data: CreateEventFAQInput!, $id: String!) {
   createEventFAQ(data: $data, EventID: $id)
 }
 
-mutation editEventFAQ($data : EditEventFAQInput! , $id: String!){
+mutation editEventFAQ($data: EditEventFAQInput!, $id: String!) {
   editEventFAQ(data: $data, EventFAQID: $id)
 }
 
-mutation deleteEventFAQ($id: String!){
+mutation deleteEventFAQ($id: String!) {
   deleteEventFAQ(EventFAQID: $id)
 }
 
-mutation leaveTeam($id: String!){
-   leaveTeam(data : $id)
+mutation leaveTeam($id: String!) {
+  leaveTeam(data: $id)
 }
