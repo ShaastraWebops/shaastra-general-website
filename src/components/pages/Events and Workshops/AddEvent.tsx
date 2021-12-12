@@ -405,13 +405,13 @@ const EventAdmin = () => {
                 backgroundColor="transparent"
                 borderBottom="5px solid white"
                 onChange={(e: any) => {
-                  // setFile(e.target.files[0]); console.log(e.target.files[0])
-                  // setNewFile(`https://shaastra.s3.ap-south-1.amazonaws.com/${e.target.files[0].name}`)
+                  setFile(e.target.files[0]); console.log(e.target.files[0])
+                  setNewFile(`https://shaastra.s3.ap-south-1.amazonaws.com/${e.target.files[0].name}`)
                 }}
               ></Input>
             </FormControl>
             <FormControl>
-              <FormLabel fontSize="1.5vw">Registration fee</FormLabel>
+              <FormLabel fontSize="1.5vw">Registration fee (Enter the fee in INR)</FormLabel>
               <Input
                 type="text"
                 outline="none"
@@ -546,7 +546,10 @@ const EventAdmin = () => {
               onClick={async (e: any) => {
                 e.preventDefault();
                 console.log(file);
-                // await UploadImageToS3WithNativeSdk(file)
+                await UploadImageToS3WithNativeSdk(file)
+                if(!Number(fee)){
+                  alert("Enter a valid registration fee")
+                }
                 try {
                   await addEventMutation({
                     variables: {
