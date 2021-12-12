@@ -24,6 +24,7 @@
     "@types/showdown": "^1.9.4",
     "aws-sdk": "^2.1043.0",
     "cloudinary-react": "^1.7.0",
+    "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
     "graphql": "^16.0.1",
     "moment": "^2.29.1",
