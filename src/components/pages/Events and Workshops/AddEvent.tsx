@@ -382,8 +382,8 @@ const EventAdmin = () => {
                     <Button marginTop="4vh" width="100%" backgroundColor="white" color="#0e101b"
                         onClick={async (e:any) => {
                             e.preventDefault();
-                            console.log(file)
-                            // await UploadImageToS3WithNativeSdk(file)
+                            console.log(name)
+                            await UploadImageToS3WithNativeSdk(file)
                             try{
                                 await addEventMutation({
                                     variables: {
