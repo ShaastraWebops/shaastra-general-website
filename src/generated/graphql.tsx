@@ -443,6 +443,13 @@ export type EditEventMutationVariables = Exact<{
 
 export type EditEventMutation = { editEvent: boolean };
 
+export type DeleteEventMutationVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type DeleteEventMutation = { deleteEvent: boolean };
+
 export type EditProfileMutationVariables = Exact<{
   data: EditProfileInput;
 }>;
@@ -896,6 +903,37 @@ export function useEditEventMutation(baseOptions?: ApolloReactHooks.MutationHook
 export type EditEventMutationHookResult = ReturnType<typeof useEditEventMutation>;
 export type EditEventMutationResult = ApolloReactCommon.MutationResult<EditEventMutation>;
 export type EditEventMutationOptions = ApolloReactCommon.BaseMutationOptions<EditEventMutation, EditEventMutationVariables>;
+export const DeleteEventDocument = gql`
+    mutation deleteEvent($id: String!) {
+  deleteEvent(id: $id)
+}
+    `;
+export type DeleteEventMutationFn = ApolloReactCommon.MutationFunction<DeleteEventMutation, DeleteEventMutationVariables>;
+
+/**
+ * __useDeleteEventMutation__
+ *
+ * To run a mutation, you first call `useDeleteEventMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteEventMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteEventMutation, { data, loading, error }] = useDeleteEventMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteEventMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<DeleteEventMutation, DeleteEventMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<DeleteEventMutation, DeleteEventMutationVariables>(DeleteEventDocument, options);
+      }
+export type DeleteEventMutationHookResult = ReturnType<typeof useDeleteEventMutation>;
+export type DeleteEventMutationResult = ApolloReactCommon.MutationResult<DeleteEventMutation>;
+export type DeleteEventMutationOptions = ApolloReactCommon.BaseMutationOptions<DeleteEventMutation, DeleteEventMutationVariables>;
 export const EditProfileDocument = gql`
     mutation editProfile($data: EditProfileInput!) {
   editProfile(data: $data)

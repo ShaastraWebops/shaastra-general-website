@@ -1,7 +1,7 @@
 import { Box, Flex, Stack , Image, Text, Button, Heading, Center, Container, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { useGetEventQuery } from '../../../generated/graphql'
+import { GetEventsDocument, useDeleteEventMutation, useGetEventQuery } from '../../../generated/graphql'
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
 import CustomBox from '../../shared/CustomBox'
 import ReactMarkdown from 'react-markdown'
@@ -19,6 +19,7 @@ const EventPage = () => {
             EventID : id!
         }
     })
+    const [deleteevent] = useDeleteEventMutation();
     const bgcolor = useColorModeValue("#ea8a94","#ffffff")
     return (
         <CustomBox>
@@ -68,10 +69,36 @@ const EventPage = () => {
                 {data.getEvent.teamSize}
               </Flex>
             )}
-            {
-              localStorage.getItem("role") === "Admin" && <Button width="100%" onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
-            }
           </Flex>
+          {
+              localStorage.getItem("role") === "Admin" && 
+              (<Box m={2} width={"100%"}>
+               <Flex flexDirection={["column","column","row","row"]}>
+               <Button m={2} p={2} width={["100%","100%","50%","50%"]} onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
+               <Button m={2} p={2} width={["100%","100%","50%","50%"]}
+               onClick={async()=>{
+
+                await deleteevent({
+                  variables : {
+                    id : data?.getEvent.id!
+                  },
+                  refetchQueries: [
+                    {
+                      query: GetEventsDocument,
+                      variables: { getEventsFilter: data?.getEvent.vertical },
+                    }]
+                  }).then(res => {
+                  if(res.data?.deleteEvent){
+                    history.push("/admin")
+                  }
+                })
+                .catch(err => alert(err.message))
+               }}
+               
+               >Delete</Button>
+               </Flex>
+               </Box>
+              )}
         </Container>
         <Container maxWidth="6xl" alignItems="center" justifyItems={"center"} color={"black"}>
           {data?.getEvent.registrationType !== "NONE" && (

@@ -70,6 +70,9 @@ mutation addEvent($data: AddEventInput!) {
 mutation editEvent($data: EditEventInput!, $id: String!) {
   editEvent(data: $data, eventID: $id)
 }
+mutation deleteEvent($id: String!) {
+  deleteEvent(id: $id)
+}
 
 mutation editProfile($data: EditProfileInput!) {
   editProfile(data: $data)
