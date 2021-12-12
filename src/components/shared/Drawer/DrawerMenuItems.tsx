@@ -143,7 +143,7 @@ export const DrawerDesktopMenuItems = () => {
         >
           <Link to="/exhibitions">Exhibitions</Link>
         </Box>
-        <Box
+        {/* <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("exhibitions")}
@@ -156,7 +156,7 @@ export const DrawerDesktopMenuItems = () => {
           mb={4}
         >
           <Link to="/events">Events</Link>
-        </Box>
+        </Box> */}
         <Spacer />
         <Box
           className="menu-text"
