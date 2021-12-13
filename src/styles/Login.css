@@ -55,11 +55,11 @@
 .profile-main-flex input, .profile-main-flex select
 {
     background-color: white;
-    color: black;
+    color: black !important;
 }
 
 
-.profile-button-flex ::placeholder
+.profile-button-flex ::placeholder,.profile-main-flex ::placeholder
 {
     color: rgb(0, 0, 0) !important;
 }

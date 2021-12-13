@@ -50,6 +50,9 @@ import { FaSchool } from "react-icons/fa";
 import success from "../../../images/Login/login-success.svg"
 import errorSVG from "../../../images/Login/login-error.svg"
 
+import {colleges} from "./college"
+import { branches } from "./branches"
+
 SwiperCore.use([Scrollbar]);
 
 const EditProfile = () => {
@@ -59,15 +62,15 @@ const EditProfile = () => {
 
     const history = useHistory()
 
-    const [email, setEmail] = useState(user?.me?.email)
-    const [name, setName]  = useState(user?.me?.name)
-    const [number, setNumber] = useState(user?.me?.mobile)
-    const [college, setCollege] = useState(user?.me?.college)
-    const [branch, setBranch] = useState(user?.me?.department)
-    const [State, setState] = useState(user?.me?.state)
-    const [city, setCity] = useState(user?.me?.city)
-    const [address, setAddress] = useState(user?.me?.address)
-    const [mobile, setMobile] = useState(user?.me?.mobile)
+    const [email, setEmail] = useState('')
+    const [name, setName]  = useState('')
+    const [number, setNumber] = useState('')
+    const [college, setCollege] = useState('')
+    const [branch, setBranch] = useState('')
+    const [State, setState] = useState('')
+    const [city, setCity] = useState('')
+    const [address, setAddress] = useState('')
+    const [mobile, setMobile] = useState('')
 
     const [editProfileMutation, {data, loading, error}] = useEditProfileMutation()
     var { isOpen, onOpen, onClose } = useDisclosure()
@@ -75,6 +78,7 @@ const EditProfile = () => {
     if(data)
     {
         onClose = () => {
+            history.push('/profile')
             window.location.reload()
         }
 
@@ -121,7 +125,6 @@ const EditProfile = () => {
                 )   
         }
     
-
     return(
         <CustomBox>
             <Stack
@@ -151,10 +154,22 @@ const EditProfile = () => {
                            </FormControl>
                            <Flex marginBottom="6vh">
                         <Select placeholder={user?.me?.college} marginRight="2vw" value={college} onChange={(e:any) => {setCollege(e.target.value)}}>
-                            <option value="IITM">IITM</option>
+                            {
+                                colleges.map(o => {
+                                    return(
+                                        <option value={o["University"]}>{o["University"]}</option>
+                                    )
+                                })
+                            }
                         </Select>
                         <Select placeholder={user?.me?.department} value={branch} onChange={(e:any) => {setBranch(e.target.value)}}>
-                            <option value="BE">BE</option>
+                            {
+                                branches.map(b => {
+                                    return(
+                                        <option value={b}>{b}</option>
+                                    )
+                                })
+                            }
                         </Select>
                     </Flex>
                     <FormControl marginBottom="4vh">
@@ -164,6 +179,7 @@ const EditProfile = () => {
                     <Flex marginBottom="6vh">
                         <Select placeholder={user?.me?.state} value={State} onChange={(e:any) => {setState(e.target.value)}}>
                             {
+                                
                                 Object.keys(cities).map(s => {
                                     return(<option value={s}>{s}</option>)
                                 })
@@ -171,7 +187,8 @@ const EditProfile = () => {
                         </Select>
                         <Select placeholder={user?.me?.city} marginLeft="2vw" value={city} onChange={(e:any) => {setCity(e.target.value)}}>
                             {
-                                cities["Kerala"].map(c => {
+                                user?.me?.state &&
+                                cities[user?.me?.state!].map(c => {
                                     return(<option value={c}>{c}</option>)
                                 })
                             }
@@ -186,8 +203,14 @@ const EditProfile = () => {
                                 {
                                     await editProfileMutation({variables: {data:
                                          {
-                                            name: name!, college: college!, state: State!,city: city!,email : email! , address : address!,
-                                            department :branch!, mobile : mobile!
+                                            name: name !=='' ? name! : user?.me?.name!, 
+                                            college: college !== '' ? college! : user?.me?.college!, 
+                                            state: State !== '' ? State! : user?.me?.state!,
+                                            city: city !== '' ? city! : user?.me?.city!,
+                                            email : email !== '' ? email! : user?.me?.email! , 
+                                            address : address !== '' ? address! : user?.me?.address!,
+                                            department : branch !== '' ? branch! : user?.me?.department!, 
+                                            mobile : mobile !== '' ? mobile! : user?.me?.mobile!
 
                                         }}})
                                 }

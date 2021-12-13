@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Exhibitions from "./pages/Exhibitions/Exhibitions";
 import Home from "./pages/Home";
 import Envisage from "./pages/night/Envisage";
@@ -47,9 +47,14 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/eventsworkshops" component={Eventsworkshops} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" component={EventVertical}></Route>
-      <Route exact path="/admin/add" component={EventAdmin}></Route>
-      <Route exact path="/admin/edit/:id" component={EditEvent}></Route>
-      <Route exact path="/admin" component={EventsAdmin}></Route>
+     {
+       localStorage.getItem('role') === 'ADMIN' && 
+        <Switch>
+           <Route exact path="/admin/add" component={EventAdmin}></Route>
+       <Route exact path="/admin/edit/:id" component={EditEvent}></Route>
+       <Route exact path="/admin" component={EventsAdmin}></Route>
+        </Switch>
+     }
       <Route exact path="/eventpage/:id" component={EventPage}></Route>
 
 
