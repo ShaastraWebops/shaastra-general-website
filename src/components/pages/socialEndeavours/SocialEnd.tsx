@@ -29,7 +29,54 @@ const Social = (props: Props) => {
     const headClass = useColorModeValue("dblue", "blue")
     const backClass = useColorModeValue("darkblue", "green")
     const backDivClass = useColorModeValue("bgdblue","green")
-Events()
+    React.useEffect(
+        () => {
+            var body: HTMLElement  = document.querySelector(".social")!;
+        console.log(body)
+        if(body !== null)
+        {
+            document.addEventListener("scroll", () => {
+
+                var sheCan: HTMLElement = document.querySelector(".she-can-backdiv")!;
+                if(sheCan)
+               {
+                    var dist = window.innerHeight - sheCan.getBoundingClientRect().top;
+                    if(dist > 150)
+                    {
+                        console.log(sheCan.style.transform)
+                        sheCan.style.transform = "translate(-5%,5%)";
+                        sheCan.style.transition = "all 0.5s ease";
+                    }
+                    var slidehead: HTMLElement = document.querySelector(".recog-heading")!;
+                dist = window.innerHeight - slidehead.getBoundingClientRect().top;
+                if(dist > 30)
+                {
+                    slidehead.style.animation = "headslide 2s ease";    
+                }
+        
+                var slideIn: HTMLElement = document.querySelector(".one")!;
+                dist = window.innerHeight - slideIn.getBoundingClientRect().top;
+                if(dist > 30) slideIn.style.animation = "headslide 2s ease";
+     
+        
+                slideIn = document.querySelector(".three")!;
+                dist = window.innerHeight - slideIn.getBoundingClientRect().top;
+                if(dist > 30) slideIn.style.animation = "headslide 2s ease";
+        
+                slideIn = document.querySelector(".four")!;
+                dist = window.innerHeight - slideIn.getBoundingClientRect().top;
+                if(dist > 30) slideIn.style.animation = "headslideRev 2s ease";
+        
+        
+                var past: HTMLElement = document.querySelector(".past")!;
+                dist = window.innerHeight - past.getBoundingClientRect().top;
+                if(dist > 0) past.style.animation = "headslide 3s ease"
+               }
+            })
+        }
+        }
+    )
+    
     return(
         <div className="body social">
             <CustomBox>
@@ -74,40 +121,40 @@ Events()
                         these dreams a reality with whatever assistance we can provide in this regard, and show the world that 
                         She Can achieve all her goals with the right nudge. 
                         Our mission is to pave the way for the empowerment
-                        of women through skill development and career guidance.​
+                        of women through skill development and career guidance.
                         </p>
                     </div>
                    </div>
                    </div>
-                <Grid templateColumns="repeat(7,1fr)" templateRows="repeat(4,1fr)" columnGap="3vw" textAlign="center"
+                <Grid templateColumns="repeat(7,1fr)" templateRows={["repeat(4,0.5fr)","repeat(2,0.5fr)"]} columnGap="3vw" textAlign="center"
                 rowGap="3vw" margin={["25vw 0","20vw 4vw","25vw 4vw","4rem 4rem"]} color="var(--pink)" 
                 marginBottom={["15vw","8vw","8vw","6rem"]}>
                     <GridItem id="she-can-logo" colSpan={[7,7,7,3]} display="flex" justifyContent="center" alignItems="center">
                         <Image src={sheCanLogo} height="227px" width="475px" padding="0" w="fit-content" margin="auto"
                     alt="she can logo" borderRadius={["0","0","24px","24px"]}></Image>
                     </GridItem>
-                    <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,2]} id="she-can-grid" className={`${backClass}`}
+                    <GridItem colSpan={[7,7,7,2]} colStart={[1,1,1,4]} rowSpan={[1,1,1,1]} id="she-can-grid" className={`${backClass}`}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem" borderRadius={["0","0","24px","24px"]}
-                      fontSize={["4vw", "4vw", "4vw","1.75vw"]}> 
+                      fontSize={["4vw", "4vw", "4vw","1.5vw"]}> 
                          By exposing them to new skill sets, new avenues, and new ideas, we aim to help them become the best 
                      version of themselves, as equal and valued members of their families, society, and the world at large.
                      </GridItem>
-                     <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,3]} colStart={1} id="she-can-grid" className={`${backClass}`}
-                     display="flex" alignItems="center" justifyContent="center" padding="4rem"
-                      borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","2vw","2vw"]}> 
+                     <GridItem colSpan={[7,7,7,3]} rowSpan={[1,1,1,1]} colStart={1} id="she-can-grid" className={`${backClass}`}
+                     display="flex" alignItems="center" justifyContent="center" padding="2rem"
+                      borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","4vw","1.5vw"]}> 
                          Only 13 percent of all Indian women have more than primary education. This situation has to be improved 
                          to uplift women. Skills and education to match today's industry and economy have to be mastered by women to 
                          thrive. 
                      </GridItem>   
-                     <GridItem rowSpan={[1,1,1,2]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} id="she-can-grid" className={`${backClass}`}
+                     <GridItem rowSpan={[1,1,1,1]} rowStart={3} colSpan={[7,7,7,4]} colStart={[1,1,1,4]} id="she-can-grid" className={`${backClass}`}
                      display="flex" alignItems="center" justifyContent="center" padding="2rem"
-                      borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","4vw","2vw"]}>
+                      borderRadius={["0","0","24px","24px"]} fontSize={["4vw","4vw","4vw","1.5vw"]}>
                         We aim to motivate and drive women to explore new realms of possibilities and career options. 
                      The notion of womanhood being just narrowed to motherhood and homemakers cannot be justified at the present age.
                      </GridItem>
-                     <GridItem rowSpan={[1,1,1,2]} colStart={[1,1,1,6]} colSpan={[7,7,7,2]} rowStart={[4,4,4,1]} 
+                     <GridItem rowSpan={[1,1,1,1]} colStart={[1,1,1,6]} colSpan={[7,7,7,2]} rowStart={[4,4,4,1]} 
                      display="flex" alignItems="center" justifyContent="center" padding="2rem" id="she-can-grid"className={`${backClass}`}
-                     borderRadius={["0","0","24px","24px"]} fontSize={["4vw", "4vw", "4vw","1.75vw"]}>
+                     borderRadius={["0","0","24px","24px"]} fontSize={["4vw", "4vw", "4vw","1.5vw"]}>
                           'She Can' campaign desires to be the foundation of such a dream, Women to reach their complete 
                          potential and to contribute to society through her achievement.
                      
@@ -157,12 +204,12 @@ Events()
                                </a>
                             </div>
                         </div>
-                        <div className="recog-info-child alt two">
+                        {/* <div className="recog-info-child alt two">
                             <hr />
                             <div className="title">MINISTRY OF EDUCATION</div>
                             <div className="info moe">
                             </div>
-                        </div>
+                        </div> */}
                         <div className="recog-info-child odd three">
                             <hr />
                             <div className="title">THE HINDU</div>
@@ -206,12 +253,12 @@ Events()
                 <Grid templateColumns="repeat(4,1fr)" templateRows={["repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(2,1fr)"]}
                 width="93%" margin={["4vw auto","4vw auto","4vw auto","0rem auto"]} columnGap="4rem" rowGap={["2vw","2vw","2vw","2rem"]}>
                     <GridItem colStart={[1,1,1,2]} colSpan={[4,4,4,2]} display="flex"
-                    justifyContent="center" alignItems="center" fontSize={["5vw","5vw","5vw","1.65vw"]}>
+                    justifyContent="center" alignItems="center" fontSize={["5vw","5vw","5vw","1.5vw"]}>
                         <p className="blink-info-back">Impacted 200+ students across 4 schools in Chennai through Social inclusion and 
                             Personality development programmes</p>
                     </GridItem>
                     <GridItem rowStart={2} colSpan={[4,4,4,2]}><Image src={blinkOne} alt="blink" 
-                    height="183px" width="274px" id="blink-image"></Image></GridItem>
+                    height={["183px"]} width="274px" id="blink-image"></Image></GridItem>
                     <GridItem colStart={[1,1,1,3]} colSpan={[4,4,4,2]}><Image src={blinkTwo} height="183px" width="274px" 
                      alt="blink" id="blink-image"></Image></GridItem>
                 </Grid>
@@ -265,7 +312,7 @@ Events()
 
                     <Grid templateRows="repeat(5,1fr)"
                     templateColumns="repeat(3,1fr)" textAlign="center" 
-                    margin="auto" marginBottom={["0","0","0","4rem"]} rowGap="1rem" columnGap="1rem" width={["100%","100%", "100%", "60%"]}>
+                    margin="auto" marginBottom={["0","0","0","4rem"]} rowGap="0.75rem" columnGap="1rem" width={["100%","100%", "100%", "60%"]}>
                         <GridItem className="pledge-grid" colSpan={3} borderRadius={["0","0","0","24px"]}
                         padding="1rem 0.5vw">
                             20,000+ books donated

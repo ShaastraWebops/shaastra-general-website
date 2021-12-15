@@ -157,13 +157,13 @@
     }
     .past{
         padding: 2vw;
-        margin-bottom: 15vw;
+        margin-bottom: 5vw;
         text-align: center;
         font-size: 10vw;
     }
     .campaigns{
         margin: 0;
-        row-gap: 10vw;
+        row-gap: 0vw;
     }
     .campaigns-child{
         width: 100%;
@@ -171,7 +171,16 @@
         margin: 0;
     }
     .campaigns-child .info{
-        font-size: 5vw;
+        font-size: 4vw;
+    }
+    .campaigns-child:first-child .info
+    {
+        width: 80vw !important;
+        margin-bottom: 0;
+    }
+    .campaigns-child:first-child .info p:first-child
+    {
+        font-size: 7vw;
     }
     .pledge-grid{
         font-size: 5vw;

@@ -271,7 +271,7 @@
     letter-spacing: 3vw;
   }
   #she-can-grid {
-    font-size: 6vw;
+    font-size: 4vw;
     padding: 4vw;
     font-weight: bold;
   }
@@ -295,7 +295,7 @@
     margin: 5vw auto;
     padding: 0%;
     font-size: 12vw;
-    text-align: center;
+    /* text-align: center; */
   }
   .recog-info-child {
     width: 100%;
@@ -308,7 +308,9 @@
     font-weight: bold;
   }
   .link-she-can {
-    padding: 2rem;
+    width: 80vw;
+    margin: auto;
+    padding: 1rem;
     font-size: 5vw;
   }
   .info {

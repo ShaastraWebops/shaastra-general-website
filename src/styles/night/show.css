@@ -30,7 +30,7 @@
 .vertical-timeline-element--work p
 {
     font-weight: 300 !important;
-    font-size: 1vw !important;
+    font-size: 1.5vw !important;
     margin-bottom: 0%;
     padding: 0%;
     margin-top: 0% !important;
@@ -42,11 +42,11 @@
 
 .shows-main::before
 {
-    background-image: url("../../images/showsBg.jpg");
+    background-image: url("../../images/night/shows-bg.jpg");
     background-position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 50%;
+    opacity: 80%;
     content: "";
     width: 100%;
     top: 0%;
@@ -114,33 +114,46 @@
 {
     .shows-image img 
     {
-        
-        width: 25vw !important;
-        height: 25vw !important;
+        border: none !important;
+        border-radius: 0%;
+        object-fit: cover;   
+        width: 100vw !important;
+        height: 50vw !important;
+    }
+    .shows-image
+    {
+        width: 100vw !important;
+        /* margin: 0% !important; */
+        flex-direction: column !important;
     }
     .shows-info
     {
-        width: 95vw !important;
+        width: 100vw !important;
         font-size: 5vw !important;
     }
     .shows .chakra-heading
     {
         font-size: 12vw !important;
     }
-    .shows-image
+    .shows-main .vertical-timeline
     {
         width: 95vw !important;
     }
-    .vertical-timeline
-    {
-        width: 95vw !important;
-    }
-    .vertical-timeline-element--work p
+    .shows-main .vertical-timeline-element--work p
     {
         font-size: 4vw !important;
     }
-    .vertical-timeline-element--work h3
+    .shows-main .vertical-timeline-element--work h3
     {
         font-size: 6vw !important;
+    }
+    .shows-main .vertical-timeline-element-icon, .shows-main .vertical-timeline::before, .shows-main .vertical-timeline-element-content-arrow
+    {
+        display: none;
+    }
+    .shows-main .vertical-timeline-element-content 
+    {
+        margin-left: 0%;
+        margin: auto;
     }
 }
