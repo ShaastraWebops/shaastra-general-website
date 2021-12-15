@@ -546,11 +546,11 @@ const EventAdmin = () => {
               onClick={async (e: any) => {
                 e.preventDefault();
                 console.log(file);
-                await UploadImageToS3WithNativeSdk(file)
-                if(!Number(fee)){
+                if( fee != "0" && !parseInt(fee)){
                   alert("Enter a valid registration fee")
-                }
+                }else{
                 try {
+                  await UploadImageToS3WithNativeSdk(file)
                   await addEventMutation({
                     variables: {
                       data: {
@@ -562,7 +562,7 @@ const EventAdmin = () => {
                         platform: platform,
                         requirements: req,
                         vertical: vertical,
-                        pic: "newFile",
+                        pic: newFile,
                         finalistst: "",
                         firstplace: first,
                         participation: participation,
@@ -598,6 +598,7 @@ const EventAdmin = () => {
                 } catch (err) {
                   console.log(err);
                 }
+              }
               }}
             >
               Submit
