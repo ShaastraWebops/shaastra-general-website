@@ -33,56 +33,57 @@ const Footer = (props: Props) => {
         <div className="Contact">
           <h3>Contact Us : </h3>
           <p>
-            {window.innerWidth < 600 ? <br /> : <span>General : </span>}
+            {/* {window.innerWidth < 600 ? <br /> : <span>General : </span>} */}
             <a href="mailto:sec_cocur@shaastra.org">
               <FaEnvelope /> sec_cocur@smail.iitm.ac.in
             </a>
           </p>
-          {/* <p>
-            {window.innerWidth < 600 ? (
-              <br />
-            ) : (
-              <span>Student Relations : </span>
-            )}
-            <a href="mailto:juniors@shaastra.org">
-              <FaEnvelope /> juniors@shaastra.org
-            </a>
-          </p> */}
           <p>
-            {window.innerWidth < 600 ? (
+            {/* {window.innerWidth < 600 ? (
               <br />
             ) : (
               <span>Sponsors Relations : </span>
-            )}
+            )} */}
             <a href="mailto:sponsorship@shaastra.org">
               <FaEnvelope /> sponsorship@shaastra.org
             </a>
           </p>
-        </div>
-        <div className="DesignedBy">
-          <h3>For issues related to the website, contact : </h3>
           <p>
-            {window.innerWidth < 600 ? <br /> : <span>Webops Team : </span>}
+            {/* {window.innerWidth < 600 ? <br /> : <span>Webops Team : </span>} */}
             <a href="mailto:webops@shaastra.org">
               <FaEnvelope /> webops@shaastra.org
             </a>
           </p>
-          {/* <p>
-            {window.innerWidth < 600 ? <br /> : <span>Abhishek sv : </span>}
-            <a href="mailto:abhisheksv@shaastra.org">
-              <FaEnvelope /> abhisheksv@shaastra.org
-            </a>
+          {window.innerWidth <= 1000 ? <></> : <br />}
+        </div>
+        <div className="Contact">
+          {window.innerWidth >= 900 && window.innerWidth <= 1000 ? (
+            <br />
+          ) : (
+            <></>
+          )}
+          <p className="address">
+            IITM Students Activities Trust
+            <br /> Shaastra, 1st Floor,
+            <br /> O/o Dean Of Students Office,
+            <br /> IIT Madras, Guindy Chennai,
+            <br /> Tamil Nadu 600036 India
+          </p>
+        </div>
+        <div className="DesignedBy">
+          <h3>Legal : </h3>
+          <p>
+            <a href="policies/privacy-policy">Privacy Policy</a>
           </p>
           <p>
-            {window.innerWidth < 600 ? (
-              <br />
-            ) : (
-              <span>Shobhan Karthick : </span>
-            )}
-            <a href="mailto:shobhankarthick@shaastra.org">
-              <FaEnvelope /> shobhankarthick@shaastra.org
-            </a>
-          </p> */}
+            <a href="policies/terms-conditions">Terms and Conditions</a>
+          </p>
+          <p>
+            <a href="policies/shipping-policy">Shipping Policy</a>
+          </p>
+          <p>
+            <a href="policies/return-refund-policy">Return and Refund Policy</a>
+          </p>
         </div>
       </div>
       <div className="bottom">

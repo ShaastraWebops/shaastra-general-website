@@ -29,6 +29,10 @@ import SignOut from "./pages/Login/SignOut"
 import Profile from "./pages/Login/Profile"
 import EditProfile from "./pages/Login/EditProfile"
 import EventPage from "./pages/Events and Workshops/EventPage";
+import Privacy from "./pages/Policies/Privacy";
+import TermsConditions from "./pages/Policies/TermsConditions";
+import Shipping from "./pages/Policies/Shipping";
+import Refund from "./pages/Policies/Refund";
 
 interface Props {}
 
@@ -71,6 +75,12 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/signout" component={SignOut}></Route>
       <Route exact path="/profile" component={Profile}></Route>
       <Route exact path="/editprofile" component={EditProfile}></Route>
+
+      <Route exact path="/policies/privacy-policy" component={Privacy}></Route>
+      <Route exact path="/policies/return-refund-policy" component={Refund}></Route>
+      <Route exact path="/policies/shipping-policy" component={Shipping}></Route>
+      <Route exact path="/policies/terms-conditions" component={TermsConditions}></Route>
+
     </Router>
   );
 };
