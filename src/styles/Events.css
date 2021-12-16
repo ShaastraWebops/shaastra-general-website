@@ -41,40 +41,26 @@
 }
 .admin-add .chakra-radio__control
 {
-    background-color: white;
+    background-color: rgba(180, 160, 160, 0.233);
 }
 
-.events .vertical-timeline-element::after{
-    border: none !important;
-}
-.events .vertical-timeline
+.events a:hover
 {
-    width: 80vw;
+    text-decoration: none;
+    letter-spacing: 5px;
+    transition: all 1s ease-in-out;
 }
+.events .white
+{
+    background-color: rgba(153, 151, 151, 0.24);
+} 
+
 .events-vertical span
 {
     color: #ea8a94 !important;
 }
-.events .vertical-timeline-element-content
-{
-    /* color: #ea8a94 !important; */
-    color: #ea8a94 !important;
-    font-size: 2vw !important;
-    padding: 1vw !important;
-    font-weight: bold !important;
-    backdrop-filter: blur(20px);
-    /* height: 10vw;
-    width: 25vw; */
-}
-.events .pink .vertical-timeline-element-icon
-{
-    border-color: #ea8a94 !important;
-    background-color: #ea8a94 !important;
-}
-.events .pink.vertical-timeline::before, .events .pink .vertical-timeline-element-content.bounce-in::after
-{
-    background-color: #ea8a94 !important;
-}
+
+
 .events-vertical input 
 {
     color: black ;
@@ -255,6 +241,7 @@
         width: 80vw;
     }
 
+    
     .events-vertical
     {
         width: 100vw !important;
@@ -369,9 +356,10 @@
     {
         font-size: 12vw !important;
     }
-    .events .vertical-timeline-element-content a 
+  
+    .events .events-timeline
     {
-        font-size: 5vw !important;
+        margin-top: 0%;
     }
     .event-main-box
     {
