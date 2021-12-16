@@ -84,7 +84,7 @@ const Exhibitions = ()=>{
               initial = {"hidden"}
               animate = {"visible"}
               variants = {AboutusVariants}>
-              <Heading as={'h1'} mb={"3"}>
+              <Heading as={'h1'} mb={"3"} color={Titlecolor}>
                 About Us
               </Heading>
                <Text 
@@ -133,15 +133,15 @@ const Exhibitions = ()=>{
 
       </Container>
            
-      <Center mb={5}>
+      <Container mb={3} maxW={'7xl'} >
       <VStack>
       <Heading
               fontWeight={500}
-              fontSize={["2xl","3xl","3xl"]}
                m={[2,5]} 
               className = "Title"
               color={Titlecolor}
               p={3}
+             lineHeight={1.1} fontSize={"4xl"}
              >
               PREVIOUS EXHIBITIONS
             </Heading>
@@ -164,7 +164,7 @@ const Exhibitions = ()=>{
         }
         </SimpleGrid>
       </VStack>
-      </Center>
+      </Container>
 
         {/* <Center className="slider" mb={2}>
         <MotionChevronLeftIcon

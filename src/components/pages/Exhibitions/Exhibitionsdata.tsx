@@ -73,7 +73,7 @@ export const exhibitions : exhibitions[] =[
       title : " NAO: Autonomous humanoid Robot",
       description:`Manav: India’s first 3D printed humanoid robot which was developed by 
       Diwakar Vaish of A-SET training institutes`,
-      image : EXHB13
+      image : EXHB10
     },
     {
       id : "3",
