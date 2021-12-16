@@ -30,6 +30,7 @@ const Card = ({data}) =>{
             w={'auto'}
             src={data.image}
             p={2}
+            objectFit={"cover"}
             rounded="2xl"
             className="card-img"
           />
@@ -46,8 +47,8 @@ const Card = ({data}) =>{
                 zIndex : 1
               }} >{data.title}</Text>
               <Box className="overview" bg={Descriptionbg} color="#ffffff" m={2} p={2}>
-             <Center flexDirection={'column'} h={'270px'} p={2}>
-             <Heading as={'h3'} mb={"3"} fontSize={"2xl"} >
+             <Center flexDirection={'column'} h={'270px'}>
+             <Heading as={'h3'} mb={"2"} fontSize={"2xl"} >
                {data.title}
               </Heading>
               <Text as={"h4"} p={4} fontSize={'sm'}
