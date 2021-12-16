@@ -50,6 +50,7 @@
 .blink-info-back{
     background-color: var(--pink-bg);
     padding: 4rem;
+    font-size: 1.5rem;
     border-radius: 24px;
     color: var(--dblue);
     text-align: center;
@@ -65,7 +66,7 @@
     padding: 4rem;
     border-radius: 24px;
     color: var(--dblue);
-    text-align: left;
+    text-align: center;
 }
 .blink-info-dark{
     font-weight: bold;
@@ -73,7 +74,7 @@
     padding: 4.4vw;
     border-radius: 24px;
     color: var(--blue);
-    text-align: right;
+    text-align: center;
 }
 
 .blink-main-info{
@@ -133,6 +134,11 @@
         width: 90%;
         text-align: center;
     }
+    #blink-image 
+    {
+        height: 20vh;
+        object-fit: cover;
+    }
     .blink-info{
         font-size: 4vw;
         padding: 5vw;
@@ -151,11 +157,7 @@
     .blink-main-info > div{
         width: 100%;
         padding: 20vw 4vw;
-    }
-    .blink-info-light{
-        background-color: var(--blue-bg);
-        border-radius: 0%;
-    }
+    } 
     .blink-info-dark, .blink-main-info > .blink-info-back{
         border-radius: 0%;
         text-align: center;
@@ -168,6 +170,14 @@
         font-size: 4vw;
         padding: 4vw;
         border-radius: 24px;
+    }
+    .blink-info-light
+    {
+        background-color: #468caa;
+    }
+    .blink-info-dark
+    {
+        background-color: var(--dblue);
     }
 }
 /* @media screen and (max-width: 600px)

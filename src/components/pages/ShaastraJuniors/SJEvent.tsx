@@ -19,14 +19,15 @@ export const Events = (probs: Probs) => {
   return (
     <Flex
       bgColor={cardColor}
-      mb={[10, 10, 10, 20]}
+      mb={10}
       borderRadius={10}
       boxShadow={"lg"}
-      flexDir={["column", "column", "column", "row"]}
+      flexDir={["column-reverse", "column-reverse", "column-reverse", "row"]}
     >
       <Flex
         flexDir={"column"}
-        p={10}
+        p={[2, 3, 3, 10]}
+        pb={[10, 10, 10, 10]}
         my={"auto"}
         justifyContent={"space-evenly"}
         h={"100%"}
@@ -35,7 +36,7 @@ export const Events = (probs: Probs) => {
           {probs.heading}
         </Heading>
         <Text
-          fontSize={[17, 20, 23]}
+          fontSize={18}
           mb={"auto"}
           textAlign={["center", "center", "center", "start"]}
         >
@@ -45,8 +46,9 @@ export const Events = (probs: Probs) => {
       <Image
         src={probs.image}
         minW={"30vw"}
-        objectFit={"fill"}
-        minH={"100%"}
+        w={["unset", "unset", "unset", "30vw"]}
+        minH={["100%", "100%", "100%", "unset"]}
+        objectFit={"cover"}
         borderRadius={10}
       />
     </Flex>

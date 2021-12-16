@@ -24,7 +24,7 @@ export const StatsCard = (probs: Probs) => {
         boxShadow={"xl"}
         width={"300px"}
       >
-        <Text fontSize={40}>{probs.stat}</Text>
+        <Text fontSize={60} fontWeight={"bold"} letterSpacing={"wide"}>{probs.stat}</Text>
         <Text>{probs.title}</Text>
       </Flex>
     </MotionBox>

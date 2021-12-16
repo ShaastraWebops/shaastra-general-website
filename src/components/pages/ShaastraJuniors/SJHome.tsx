@@ -52,7 +52,7 @@ export const SJHome = () => {
           py={[10, 10, 10, "unset"]}
           height={"100%"}
           textAlign={"center"}
-          fontSize={25}
+          fontSize={22}
         >
           Shaastra Juniors 2020, form Shaastra IIT Madras, is the first-ever
           completely online two-day Tech fest specially aimed at apreading

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import CustomBox from "./../../shared/CustomBox";
 import Header from "./../../shared/Header"
 import Footer from "../../shared/Footer";
@@ -6,7 +6,7 @@ import { Heading, Flex, Box, Image, useColorModeValue } from "@chakra-ui/react";
 import w from "./../../../images/night/shows_1.png";
 import q from "./../../../images/night/shows_2.png";
 import r from "./../../../images/night/shows_3.png";
-import showsBg from "./../../../images/showsBg.jpg"
+import Bg from "./../../../images/night/shows-bg.jpg"
 import event from "./script";
 import "../../../styles/night/show.css"
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
@@ -16,7 +16,14 @@ export default function Show()
 {
     const bg = useColorModeValue("light" , "dark")
 
-    event()
+    useEffect(
+        () => {
+            var headL:HTMLElement = document.getElementById("show-head-l")!
+        // var headR: HTMLElement = document.getElementById("show-head-r")!
+        headL.style.animation = "left 1.5s linear";
+        // headR.style.animation = "left 2s ease"
+        }
+    )
 
     return(
         <>
@@ -28,24 +35,25 @@ export default function Show()
                     backgroundColor="transparent" paddingTop="10vh" alignItems="center"
                 >
                     <Box width="20%" height="3vh" className={` ${bg}`} id="show-head-l"> </Box>
-                    <Heading backgroundColor="transparent" fontSize="4.5vw">SHOWS</Heading>
+                    <Heading backgroundColor="transparent" fontSize="4vw">SHOWS</Heading>
                     <Box width="20%" height="3vh"className={`${bg}`} id="show-head-r" > </Box>
                 </Flex>
                 <Box margin="auto"
-                    width="60vw" fontSize="2xl" fontWeight="600"
+                    width="80vw" fontSize="2xl" fontWeight="600"
                     textAlign="center" marginBottom="15vh"   
                     borderRadius="12px" 
                     className={`shows-info ${bg}`}
                     textColor="#0e101b" padding="8vh"
+                    backdropBlur={"30px"}
                 >
-                    The flagship event of Shaastra, Shaastra Nights, has made the former a noteworthy leader amongst parallel 
+                    The flagship event of Shaastra, <b>Shaastra Nights</b>, has made the former a noteworthy leader amongst parallel 
                     fests in the country. Shaastra Nights provide a platform for exquisite performers to display their artistic
                      prowess while giving the audience a once-in-a-lifetime opportunity to witness a confluence of technology 
                      and culture. Shaastra Nights is non-ticketed - an attribute that distinguishes it from shows akin; it 
                      enables students and the public to access quality entertainment at its finest. Behind the warranted glitz 
-                     and glamour, Shaastra Nights' true intentions shine - diversity and inclusivity. 
+                     and glamour, Shaastra Nights' true intentions shine - <b>diversity</b> and <b>inclusivity</b>. 
                      <br /> <br />
-                     Professional shows are a fitting end to each day of Shaastra. These techno-entertainment shows, ever 
+                     Professional shows are a fitting end to each day of Shaastra. These <b>techno-entertainment shows</b>, ever 
                      since their conception, have hosted artists from across the globe. Our audience counts up in thousands,
                       which is a testament to its success and popularity. These include Mirage, a laser show by an 
                       international group, Sand Art show by world-renowned artists, Bike Stunt show by French performers 
@@ -132,7 +140,7 @@ export default function Show()
                 </VerticalTimelineElement>
                 </VerticalTimeline>
            <Box backgroundColor="#0e101bc9">
-           <Footer designed={[{name : "Prithiviraj P",mail :"na19b052@smail.iitm.ac.in"}]} />
+           <Footer designed={[{name : "Krithikaa",mail :"be20b020@smail.iitm.ac.in"}]} />
            </Box>
             </Box>
             </CustomBox>

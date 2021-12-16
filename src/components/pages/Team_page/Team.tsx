@@ -50,13 +50,13 @@ const Team = (props: Props) => {
     },
     {
       mailId: "be19b009@smail.iitm.ac.in",
-      name: "Shobhan",
+      name: "Shobhan Karthick",
       dept: "Webops",
       social_links: {
-        instagram: "https://www.instagram.com/abhi_shx_25/",
-        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
-        shastraMailId: "abhisheksv@shaastra.org",
-        contact: "8300682565",
+        instagram: "https://www.instagram.com/",
+        linkedIn: "https://www.linkedin.com/in/shobhan-karthick",
+        shastraMailId: "shobhankarthick@shaastra.org",
+        contact: "6385188219",
       },
       desc: "Shaastra gives you the raw opprutunity to engage with people with immense knowledge from different backgrounds. My journey here has gained me a lot of amazing friends and made me more versatile. Kudos to me and Shaastra!",
       imgURL: photos.be19b009,
