@@ -58,31 +58,28 @@ const Footer = (props: Props) => {
               <FaEnvelope /> sponsorship@shaastra.org
             </a>
           </p>
-        </div>
-        <div className="DesignedBy">
-          <h3>For issues related to the website, contact : </h3>
           <p>
             {window.innerWidth < 600 ? <br /> : <span>Webops Team : </span>}
             <a href="mailto:webops@shaastra.org">
               <FaEnvelope /> webops@shaastra.org
             </a>
           </p>
-          {/* <p>
-            {window.innerWidth < 600 ? <br /> : <span>Abhishek sv : </span>}
-            <a href="mailto:abhisheksv@shaastra.org">
-              <FaEnvelope /> abhisheksv@shaastra.org
-            </a>
+          {window.innerWidth < 600 ? <></> : <br />}
+        </div>
+        <div className="DesignedBy">
+          <h3>Legal : </h3>
+          <p>
+            <a href="policies/privacy-policy">Privacy Policy</a>
           </p>
           <p>
-            {window.innerWidth < 600 ? (
-              <br />
-            ) : (
-              <span>Shobhan Karthick : </span>
-            )}
-            <a href="mailto:shobhankarthick@shaastra.org">
-              <FaEnvelope /> shobhankarthick@shaastra.org
-            </a>
-          </p> */}
+            <a href="policies/terms-conditions">Terms and Conditions</a>
+          </p>
+          <p>
+            <a href="policies/shipping-policy">Shipping Policy</a>
+          </p>
+          <p>
+            <a href="policies/return-refund-policy">Return and Refund Policy</a>
+          </p>
         </div>
       </div>
       <div className="bottom">
