@@ -167,6 +167,7 @@
   .Footer .top .Contact h3,
   .Footer .top .DesignedBy h3 {
     font-size: 15px;
+    text-align: left;
   }
   .Footer .top .Contact p,
   .Footer .top .DesignedBy p {

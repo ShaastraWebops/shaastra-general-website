@@ -248,7 +248,7 @@ const Home = (props: Props) => {
           id="workshop_events"
           className={`Home_WorkshopsEvents ${plain}`}
         >
-          <h1>Previous Workshops & Events</h1>
+          <h1>Past Workshops & Events</h1>
           <div className="speaker_swiper_container">
             <div className="swiper-prev-con" ref={events_navigationPrevRef}>
               <img src={prevArrow} alt="" />
@@ -466,14 +466,15 @@ const Home = (props: Props) => {
                     }
                   : false
               }
-              breakpoints={{
-                200: {
-                  slidesPerView: 1,
-                },
-                850: {
-                  slidesPerView: 4,
-                },
-              }}
+              // breakpoints={{
+              //   200: {
+              //     slidesPerView: 1,
+              //   },
+              //   850: {
+              //     slidesPerView: 4,
+              //   },
+              // }}
+              slidesPerView={"auto"}
             >
               <SwiperSlide>
                 <img src={atkins} alt="" />
@@ -621,10 +622,7 @@ const Home = (props: Props) => {
                     </div>
                     <div className="contentBox">
                       <h3>Dr. John Hennessy</h3>
-                      <p>
-                        Chairman, Alphabet <br />
-                        Inc., Turing Awardee
-                      </p>
+                      <p>Chairman, Alphabet Inc., Turing Awardee</p>
                     </div>
                   </div>
                 </div>
@@ -662,10 +660,7 @@ const Home = (props: Props) => {
                     </div>
                     <div className="contentBox">
                       <h3>Raghuram Rajan</h3>
-                      <p>
-                        Former Governor of <br />
-                        the Reserve Bank of India
-                      </p>
+                      <p>Former Governor of the Reserve Bank of India</p>
                     </div>
                   </div>
                 </div>
