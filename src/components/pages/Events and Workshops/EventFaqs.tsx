@@ -122,12 +122,14 @@ const EventFaqs = ({event} : any | null) =>{
                   <Box m={1} key={faq.id} >
                     <Flex>
                       <Box
-                        p={5}
+                        p={3}  shadow="lg"
+                        borderTopWidth="2px"
+                        borderLeftWidth={"2px"}
+                        borderRightWidth={"2px"}
                         width={"100%"}
                         borderTopRadius={"lg"}
-                        backgroundColor={"#f7797d"}
                       >
-                        <Heading size="md" textAlign={"left"}>Q : {faq.question}</Heading>
+                        <Heading size="md" textAlign={"left"} color={'gray.500'}>{faq.question}</Heading>
                         {faqId === faq.id ? (
                           <FormControl m={3}>
                             <Input
@@ -144,12 +146,12 @@ const EventFaqs = ({event} : any | null) =>{
                     </Flex>
                     <Flex>
                       <Box
-                        backgroundColor={"#FBD786"}
+                        p={3}  shadow="lg"
+                        borderWidth="2px"
                         borderBottomRadius={"lg"}
-                        p={5}
                         width={"100%"}
                       >
-                        <Text fontWeight={"semibold"} textAlign={"left"}>A : {faq.answer}</Text>
+                        <Text fontWeight={"semibold"} color={'gray.500'} textAlign={"left"}>{faq.answer}</Text>
                         {faqId === faq.id ? (
                           <FormControl m={3}>
                             <Input

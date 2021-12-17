@@ -14,6 +14,7 @@ import bronze from "../../../images/EventsWorkshops/events/bronze.png";
 import { FaTrophy } from "react-icons/fa";
 import RegisterNow from './RegisterNow'
 import Loader from '../../shared/Loader'
+import { CalendarIcon } from '@chakra-ui/icons'
 
 const EventPage = () => {
     const {id} : {id : string | undefined} = useParams();
@@ -46,18 +47,19 @@ const EventPage = () => {
               rounded={["3xl", "3xl"]}
             />
           </Center>
-          <Center style={{  borderRadius: 8 }} p={4}  shadow="lg"
+          <Flex style={{  borderRadius: 8 }} p={4}  shadow="lg"
             borderWidth="2px"
-            borderRadius="md">
+            borderRadius="md" flexDirection={'column'}>
             <Text fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}>
               <ReactMarkdown
                 children={data?.getEvent.description!}
                 remarkPlugins={[remarkGfm]}
               ></ReactMarkdown>
             </Text>
-          </Center>
+            <Flex width={"100%"} justifyItems={'flex-end'}><RegisterNow isAdmin={false} data={data?.getEvent}/></Flex>
+          </Flex>
           <Flex width={"100%"} m={2}>
-          <Box width={"100%"} float={"left"}><RegisterNow isAdmin={false} data={data?.getEvent}/></Box>
+         
           </Flex>
          
           <Flex flexDirection={'column'} width={"100%"} alignItems={'center'} justifyItems={'center'} p={2}>
@@ -87,16 +89,16 @@ const EventPage = () => {
                   <Heading>3rd Position : {data?.getEvent.thirdplace}</Heading>
                   </Flex>
                 </Center>
-                
               </Box>
-
             </Flex>
+            <Flex p={2}  color={"gray.500"} fontSize={['2xl','4xl']}>
+              <Text>Paricipation Points : <Text as='span' fontWeight={700}>{data?.getEvent.participation}</Text></Text>
+           </Flex>
+
           </Flex>
 
-        
-
          <Flex flexDirection={['column','column','row','row']} p={2} justifyContent={'space-between'}>
-         <Flex flexDirection={'column'} width={["100%","100%","50%","50%"]} p={2}>
+         <Flex flexDirection={'column'} width={["100%","100%","45%","45%"]} p={2} mb={2}>
           <Flex marginTop="12px" style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
             borderRadius="md">
            <Text fontWeight={"medium"} p={2} fontSize={"lg"} color={"gray.500"}>
@@ -136,25 +138,36 @@ const EventPage = () => {
             )}
           </Flex>
           </Flex>
-          <Flex flexDirection={'column'} width={["100%","100%","40%","40%"]}  style={{  borderRadius: 8 }} p={5}  shadow="lg"
+          <Flex flexDirection={'column'} width={["100%","100%","50%","50%"]}  style={{  borderRadius: 8 }} p={2}  shadow="lg"
             borderWidth="2px"
-            borderRadius="md" m={2} justifyContent={'space-around'} >
-                  <Heading as="h4" size={"sm"} fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}> Points Distribution</Heading>
-                  <Flex justifyContent="space-between" p={2}  color={"gray.500"}>
-                      <Text>1ST</Text>
-                      <Text>{data?.getEvent.firstplace}</Text>
-                  </Flex>
-                  <Flex justifyContent="space-between" p={2}  color={"gray.500"}>
-                      <Text>2ND</Text>
-                      <Text>{data?.getEvent.secondplace}</Text>
-                  </Flex>
-                  <Flex justifyContent="space-between" p={2}  color={"gray.500"}>
-                      <Text>3RD</Text>
-                      <Text>{data?.getEvent.thirdplace}</Text>
-                  </Flex>
-                  <Flex justifyContent="space-between" p={2}  color={"gray.500"}>
-                      <Text>PARTICIPATION</Text>
-                      <Text>{data?.getEvent.participation}</Text>
+            borderRadius="md"  justifyContent={'space-around'} className='success-stories4'>
+                  <Heading size={"lg"}><span><CalendarIcon boxSize={6}  mx={2}/></span>Timeline</Heading>
+                  <Flex  flexDirection={'column'} p={2}>
+                  {data?.getEvent.registrationType !== "NONE" && ( 
+                  <Flex flexDirection={'column'} p={2}>
+                    <Heading size={"md"}>Registrations</Heading>
+                    <Flex justifyContent="space-between" p={1}>
+                      <Text>{moment(parseInt(data?.getEvent.registrationOpenTime!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                   <Text mx={1}>to</Text>
+                    <Text mx={1}>{moment(parseInt(data?.getEvent.registrationCloseTime!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                     </Flex>
+                     </Flex>)}
+                    <Flex flexDirection={'column'}>
+                    <Heading size={"md"}>Event</Heading>
+                    <Flex justifyContent="space-between" p={2} >
+                      <Text>{moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                   <Text>to</Text>
+                    <Text>{moment(parseInt(data?.getEvent.eventTimeTo!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                     </Flex>
+                     </Flex>
                   </Flex>
               </Flex>
          </Flex>
@@ -162,8 +175,9 @@ const EventPage = () => {
               localStorage.getItem("role") === "Admin" && 
               (<Box m={2} width={"100%"}>
                <Flex flexDirection={["column","column","row","row"]}>
-               <Button m={2} p={2} width={["100%","100%","50%","50%"]} onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
+               <Button m={2} p={2} width={["100%","100%","50%","50%"]} colorScheme={"green"} onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
                <Button m={2} p={2} width={["100%","100%","50%","50%"]}
+               colorScheme={"red"}
                onClick={async()=>{
 
                 await deleteevent({
@@ -189,45 +203,6 @@ const EventPage = () => {
               )}
         </Container>
         <Container maxWidth="6xl" alignItems="center" justifyItems={"center"}>
-          {data?.getEvent.registrationType !== "NONE" && (
-            <Flex className="datetime-container" backgroundColor={"#20BDFF"} p={2} color={'black'}>
-              <Heading className="datetime-head">Registrations</Heading>
-              <Flex className="datetime-box" >
-                <Heading className="datetime" size={'md'}>
-                  {moment(parseInt(data?.getEvent.registrationOpenTime!)).format(
-                    "MMMM Do YYYY, h:mm a"
-                  )}
-                </Heading>
-                <Heading style={{ width: "10%" }} className="datetime" size={'md'}>
-                  to
-                </Heading>
-                <Heading className="datetime" size={'md'}>
-                  {moment(parseInt(data?.getEvent.registrationCloseTime!)).format(
-                    "MMMM Do YYYY, h:mm a"
-                  )}
-                </Heading>
-              </Flex>
-            </Flex>
-          )}
-
-          <Flex className="datetime-container" style={{  borderRadius: 8 }} p={2} backgroundColor={'#A5FECB'}>
-            <Heading className="datetime-head"  color={'black'}>Event Timeline</Heading>
-            <Flex className="datetime-box">
-              <Heading className="datetime" size={'md'} color={"black"}>
-                {moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
-                  "MMMM Do YYYY, h:mm a"
-                )}
-              </Heading>
-              <Heading style={{ width: "10%" }} className="datetime" size={'md'} color={"black"}>
-                to
-              </Heading>
-              <Heading className="datetime" size={'md'} color={"black"}>
-                {moment(parseInt(data?.getEvent.eventTimeTo!)).format(
-                  "MMMM Do YYYY, h:mm a"
-                )}
-              </Heading>
-            </Flex>
-          </Flex>
           {  data?.getEvent &&
             <EventFaqs   event ={data?.getEvent!}  /> 
         

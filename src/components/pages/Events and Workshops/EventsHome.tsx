@@ -156,7 +156,9 @@ function EventsHome() {
               <Heading textAlign='center' color={'#ea8a94'}>
                 Events
               </Heading>
-              <Link as={ReachLink} to="/events"><Button p={2} m={2}>Explore Events</Button></Link>
+              <Link as={ReachLink} to="/events" style={{
+                "textDecoration" : 'none'
+              }}><Button p={2} m={2}>Explore Events</Button></Link>
               </Center>
               <Box width={["100%","60%"]}>
               <Text
@@ -188,10 +190,8 @@ function EventsHome() {
             justifyItems={'center'}
             m={3}
             maxWidth={"1400px"}
-            height={"80vh"}
           >
-            
-                <Image
+           <Image
                   height={"400px"}
                   width={"90%"}
                   borderRadius='lg'
@@ -211,7 +211,9 @@ function EventsHome() {
               <Heading textAlign='center' color={'#ea8a94'}>
                Workshops
               </Heading>
-              <Link as={ReachLink} to="/events/WORKSHOPS"
+              <Link as={ReachLink} to="/events/workshops" style={{
+                'textDecoration' : 'none'
+              }}
             ><Button p={2} m={2}>Explore Workshops</Button></Link>
               </Center>
               <Box width={["100%","60%"]}>
@@ -340,7 +342,9 @@ function EventsHome() {
               <Heading textAlign='center' color={'#ea8a94'}>
               Summit
               </Heading>
-              <Link as={ReachLink} to='/summit'><Button p={2} m={2}>Explore Summit</Button></Link>
+              <Link as={ReachLink} style={{
+                'textDecoration' : 'none'
+              }} to='/summit'><Button p={2} m={2}>Explore Summit</Button></Link>
               </Center>
               <Box width={["100%","60%"]}>
               <Text
