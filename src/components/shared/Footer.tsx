@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ReactComponent as LogoBlack } from "./../../images/logo/static/Main_logo_black.svg";
-import { ReactComponent as LogoWhite } from "./../../images/logo/static/Main_logo_white.svg";
+import LogoBlack from "./../../images/logo/static/shaastra_tm_logo_black.svg";
+import LogoWhite from "./../../images/logo/static/shaastra_tm_logo_white.svg";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { useBreakpointValue } from "@chakra-ui/media-query";
 import { Link } from "react-router-dom";
@@ -23,12 +23,11 @@ interface Props {
 const Footer = (props: Props) => {
   const FooterLogo = useColorModeValue(LogoBlack, LogoWhite);
   const theme = useColorModeValue("white", "black");
-  const height = useBreakpointValue({ base: "33", lg: "40" });
   return (
     <section className={`Footer ${theme}`}>
       <div className="top">
         <Link to="/" className="FooterLogo">
-          <FooterLogo height={height} width="88" />
+          <img src={FooterLogo} />
         </Link>
         <div className="Contact">
           <h3>Contact Us : </h3>

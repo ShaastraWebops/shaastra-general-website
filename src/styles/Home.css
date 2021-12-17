@@ -605,6 +605,15 @@
   text-align: center;
   margin: 5px 0 5px 0;
 }
+.speaker_swiper_container .swiper-container .swiper-slide .contentBox ol {
+  width: fit-content;
+  margin: 0 0 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.speaker_swiper_container .swiper-container .swiper-slide .contentBox ol li {
+  width: fit-content;
+}
 .Home_Speakers
   .speaker_swiper_container
   .swiper-container
