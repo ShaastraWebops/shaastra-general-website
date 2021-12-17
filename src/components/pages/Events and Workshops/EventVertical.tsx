@@ -17,7 +17,7 @@ import Footer from '../../shared/Footer';
 
 import EventsData from "./EventsData";
 
-import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
+import bg from "../../../images/EventsWorkshops/events/bg.jpg"
 import EventVerticalComponent from "./EventVeticalComponent"
 import { Event, useGetEventsQuery } from "../../../generated/graphql";
 import bg2 from '../../../images/EventsWorkshops/events/bg2.jpg'
@@ -34,7 +34,7 @@ const EventVertical = () => {
 
     const {data , loading , error} = useGetEventsQuery({
         variables : {
-            filter : name
+            filter : name.toUpperCase()
         }
     })
     console.log(data?.getEvents.events)
@@ -51,24 +51,29 @@ const EventVertical = () => {
                 spacing={{ base: 8, md: 8 }}
                 py={{ base: 20, md: 20 }}
             >
-            <Box backgroundImage={bg} width="100vw" height="fit-content" padding="4vw" backgroundRepeat="no-repeat" backgroundPosition="center"> 
+            <Box position={"relative"} backgroundImage={bg} width="100vw" height="fit-content" padding="4vw" backgroundRepeat="no-repeat" backgroundPosition="0px 50%" backgroundSize={"cover"}> 
+            <Box color={"white"} content="" position={"absolute"} top="0" left="0" width={"100vw"} height="100%" backgroundColor={"rgba(0, 0, 0, 0.4)"}></Box>
                 {
-                    name==="AEROFEST" ? <Heading textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">AERO<span>FEST</span></Heading>
+                    name==="aerofest" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">AERO<span>FEST</span></Heading>
                     : 
-                    name==="CL" ? <Heading textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">Coding <span>&</span> Logic</Heading>
+                    name==="cl" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">Coding <span>&</span> Logic</Heading>
                     :
-                    name==="ELECFEST" ? <Heading textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">ELEC<span>FEST</span></Heading>
+                    name==="elecfest" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">ELEC<span>FEST</span></Heading>
                     :
-                    name==="DB" ? <Heading textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">Design <span>&</span> Build</Heading>
+                    name==="df" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">Design <span>&</span> Build</Heading>
                     :
-                    name==="WORKSHOPS" ? <Heading textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">{name}</Heading>
+                    name==="workshops" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">{name}</Heading>
                     :
-                    name==="BIOGEN" ? <Heading textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">BIO<span>GEN</span></Heading>
+                    name==="biogen" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">BIO<span>GEN</span></Heading>
                     :
-                    name==="BEVENTS" ? <Heading textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">B<span>Events</span></Heading>
+                    name==="bevents" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">B<span>Events</span></Heading>
+                    : 
+                    name==="ignite" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">IG<span>NITE</span></Heading>
+                    :
+                    name==="strategists" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">STRATE<span>GISTS</span></Heading>
                     : null
                 }
-                <Text color="white" width="50vw" margin="auto" className="vertical-desp">{desp}</Text>
+                <Text position={"relative"} zIndex={3} color="white" width="60vw" margin="auto" className="vertical-desp" fontWeight={"700"} fontSize={"1.2vw"}>{desp}</Text>
             </Box>
             {/* <Flex width="100vw" justifyContent="space-evenly" alignItems="center">
                 <input type="text" className={search} />

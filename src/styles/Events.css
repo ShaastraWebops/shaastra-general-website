@@ -41,40 +41,26 @@
 }
 .admin-add .chakra-radio__control
 {
-    background-color: white;
+    background-color: rgba(180, 160, 160, 0.233);
 }
 
-.events .vertical-timeline-element::after{
-    border: none !important;
-}
-.events .vertical-timeline
+.events a:hover
 {
-    width: 80vw;
+    text-decoration: none;
+    letter-spacing: 5px;
+    transition: all 1s ease-in-out;
 }
+.events .white
+{
+    background-color: rgba(153, 151, 151, 0.24);
+} 
+
 .events-vertical span
 {
     color: #ea8a94 !important;
 }
-.events .vertical-timeline-element-content
-{
-    /* color: #ea8a94 !important; */
-    color: #ea8a94 !important;
-    font-size: 2vw !important;
-    padding: 1vw !important;
-    font-weight: bold !important;
-    backdrop-filter: blur(20px);
-    /* height: 10vw;
-    width: 25vw; */
-}
-.events .pink .vertical-timeline-element-icon
-{
-    border-color: #ea8a94 !important;
-    background-color: #ea8a94 !important;
-}
-.events .pink.vertical-timeline::before, .events .pink .vertical-timeline-element-content.bounce-in::after
-{
-    background-color: #ea8a94 !important;
-}
+
+
 .events-vertical input 
 {
     color: black ;
@@ -96,8 +82,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 16px;
-    background-color: #ffffff;
+    padding: 5px;
     border-radius: 8px;
     width: 100%;
     min-width: 300px;
@@ -111,7 +96,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     gap: 16px;
     border-radius: 8px;
     margin-top: 20px;
@@ -119,7 +104,7 @@
 
 .datetime-head {
     justify-content: center;
-    background-color: #137cdd;
+    /* background-color: #137cdd; */
     padding: 16px;
     width: 100%;
     border-top-left-radius: 8px;
@@ -203,6 +188,51 @@
     color: black;
 }
 
+.success-stories1{
+    background: linear-gradient(-45deg,  #23a6d5, #23d5ab);
+    color: black;
+}
+.success-stories2{
+    background: linear-gradient(-45deg,   #ffafbd, #ffc3a0);
+    color: black;
+}
+.success-stories3{
+    background: linear-gradient(-45deg,  #cc2b5e, #753a88);
+    color: black;
+}
+.success-stories4{
+    background: linear-gradient(-45deg, #1fa2ff,#12d8fa,#a6ffcb);
+    color: black;
+}
+
+blockquote {
+    font-family: Georgia, serif;
+    text-align: justify;
+    position: relative;
+    margin: 0.5em;
+    padding: 0.5em 2em 0.5em 3em;
+}
+
+blockquote:before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 6em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+    float:right;
+    font-size:6em;
+    line-height: 1;
+    right:0;
+    bottom:-0.5em;
+    content: "\201D";
+}
+
 @media screen and (max-width: 1200px)
 {
     .event-desp p 
@@ -255,6 +285,7 @@
         width: 80vw;
     }
 
+    
     .events-vertical
     {
         width: 100vw !important;
@@ -269,10 +300,19 @@
         width: 80vw !important;
         font-size: 3vw !important;
     }
-    .events-vertical .flip-card-front > div, .events-vertical .flip-card-back > div, .events-vertical .chakra-image, .events-vertical .glass
+    /* .vertical-events-flex
     {
-        height: 30vw !important;
-        width: 30vw !important;
+        width: 100vw !important;
+    } */
+    /* .events-vertical .chakra-image, .events-vertical .glass, .vertical-events-flex > div:first-child, .vertical-events-flex > div:first-child > .chakra-image
+    {
+        height: 40vw !important;
+        width: 40vw !important;
+    } */
+    .events-vertical .glass
+    {
+        top: 0% !important;
+        left: 0% !important;
     }
     .events-vertical .event-name > p
     {
@@ -289,12 +329,12 @@
     {
         width: 60vw !important;
     }
-    .events-vertical .event-desp .chakra-text, .events-vertical .event-desp
+    /* .events-vertical .event-desp .chakra-text, .events-vertical .event-desp
     {
         width: 50vw !important;
         font-size: 2vw !important;
     
-    }
+    } */
     .events-vertical .event-desp .chakra-text > div > div ,.events-vertical .event-desp .chakra-text > div
     {
         height: fit-content !important;
@@ -303,22 +343,14 @@
     {
         margin-right: 2vw !important;
     }
-    .events-vertical .event-desp > div .chakra-button
+    /* .events-vertical .event-desp > div .chakra-button
     {
         width: 100% !important;
-    }
+    } */
     .events-vertical .event-desp p
     {
-        font-size: 5vw !important;
+        font-size: 3vw !important;
         text-align: center !important;
-    }
-    .events-vertical .vertical-events-flex 
-    {
-        width: 95vw !important;
-        margin: auto !important;
-        height: fit-content !important;
-        /* flex-direction: column !important; */
-        justify-content: space-between !important;
     }
     .event-main-box
     {
@@ -341,37 +373,34 @@
 }
 @media screen and (max-width: 500px)
 {
-    .events-vertical .event-desp .chakra-text, .events-vertical .event-desp
+    /* .events-vertical .event-desp .chakra-text
     {
         width: 50vw !important;
-        font-size: 2vw !important;
+        font-size: 1vw !important;
     
-    }
-    .events-vertical .event-desp .chakra-text > p 
-    {
-        max-lines: 8;
-    }
+    } */
     .events-vertical .event-desp .chakra-text > div > div ,.events-vertical .event-desp .chakra-text > div
     {
         height: fit-content !important;
     }
-    .events-vertical .event-desp > div .chakra-button
+    /* .events-vertical .event-desp > div .chakra-button
     {
         margin-bottom: 1vh !important;
         width: 100% !important;
-    }
+    } */
     .events-vertical .event-desp p
     {
-        font-size: 5vw !important;
+        font-size: 3vw !important;
         text-align: center !important;
     }
     .events .chakra-heading
     {
         font-size: 12vw !important;
     }
-    .events .vertical-timeline-element-content a 
+  
+    .events .events-timeline
     {
-        font-size: 5vw !important;
+        margin-top: 0%;
     }
     .event-main-box
     {
