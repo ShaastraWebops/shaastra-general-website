@@ -52,7 +52,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" component={EventVertical}></Route>
      {
-       localStorage.getItem('role') === 'ADMIN' && 
+       localStorage.getItem('role') === 'Admin' && 
         <Switch>
            <Route exact path="/admin/add" component={EventAdmin}></Route>
        <Route exact path="/admin/edit/:id" component={EditEvent}></Route>
