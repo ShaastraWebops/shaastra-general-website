@@ -72,7 +72,7 @@ const EventFaqs = ({event} : any | null) =>{
     return (
        <React.Fragment>
            {event.faqs && event?.faqs.length! > 0 ? (
-          <Container maxWidth="6xl">
+          <Box  width={"100%"}>
             <Center textAlign={"center"}>
               <Heading size={"lg"} m={4} mt="30px" color={textcolor}>
                 FREQUENTLY ASKED QUESTIONS
@@ -103,13 +103,12 @@ const EventFaqs = ({event} : any | null) =>{
                   />
                 </FormControl>
                 <Button
-                  color={"#2467a1"}
                   variant="solid"
                   border="2px solid"
                   borderColor="#2467a1"
-                  size="sm"
                   p={3}
                   m={3}
+                  size={"lg"} color={textcolor}
                   onClick={() => handleAdd()}
                 >
                   Add FAQ
@@ -117,18 +116,18 @@ const EventFaqs = ({event} : any | null) =>{
               </Flex>
             ) : null}
 
-            <Flex flexDirection={"column"} p={2}>
+            <Flex flexDirection={"column"}  width={"100%"} color={"black"}>
               {event?.faqs.map((faq) => {
                 return (
-                  <Box m={4} key={faq.id}>
+                  <Box m={1} key={faq.id} >
                     <Flex>
                       <Box
-                        p={"5"}
+                        p={5}
                         width={"100%"}
                         borderTopRadius={"lg"}
-                        backgroundColor={"#2467a1"}
+                        backgroundColor={"#f7797d"}
                       >
-                        <Heading size="md">{faq.question}</Heading>
+                        <Heading size="md" textAlign={"left"}>Q : {faq.question}</Heading>
                         {faqId === faq.id ? (
                           <FormControl m={3}>
                             <Input
@@ -145,12 +144,12 @@ const EventFaqs = ({event} : any | null) =>{
                     </Flex>
                     <Flex>
                       <Box
-                        p={"5"}
-                        width={"100%"}
-                        backgroundColor={"#f4f7c6"}
+                        backgroundColor={"#FBD786"}
                         borderBottomRadius={"lg"}
+                        p={5}
+                        width={"100%"}
                       >
-                        <Text fontWeight={"semibold"}>{faq.answer}</Text>
+                        <Text fontWeight={"semibold"} textAlign={"left"}>A : {faq.answer}</Text>
                         {faqId === faq.id ? (
                           <FormControl m={3}>
                             <Input
@@ -232,7 +231,7 @@ const EventFaqs = ({event} : any | null) =>{
                 );
               })}
             </Flex>
-          </Container>
+          </Box>
         ) : (
           <React.Fragment>
             {role === "Admin" ? (

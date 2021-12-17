@@ -8,6 +8,7 @@ import {
   VStack,
   Image,
   Link,
+  Button,
 } from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import { Link as ReachLink } from 'react-router-dom'
@@ -22,7 +23,7 @@ function EventsHome() {
   return (
     <Box>
       <CustomBox>
-        <Center h='300px'>
+        {/* <Center h='300px'>
           <Particles
             className='particles'
             id='tsparticles'
@@ -112,72 +113,59 @@ function EventsHome() {
               Workshops
             </Text>
           </Heading>
-        </Center>
-        <VStack spacing={10} align='stretch' paddingBottom={8}>
-          {/*Events*/}
-          <Box
-            marginTop={{ base: '1', sm: '5' }}
-            display='flex'
-            flexDirection={{ base: 'column', sm: 'row' }}
-            justifyContent='space-between'
+        </Center> */}
+        <Flex flexDirection={"column"} pt={{ base:20, md: 20 }}  spacing={10} alignItems={'center'} paddingBottom={8}>
+        <Center>
+        <Heading
+            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            textAlign="center"
           >
-            <Box
-              display='flex'
-              flex='1'
-              marginRight='3'
-              position='relative'
-              alignItems='center'
-            >
-              <Box
-                width={{ base: '100%', sm: '75%' }}
-                zIndex='2'
-                marginLeft={{ base: '0', sm: '10%' }}
-                marginTop='5%'
-              >
+            <Text as={"span"} display={'inline-flex'} alignItems={'center'}>
+            EVENTS<Text mx={2} as={'h2'} fontSize={['4xl','7xl']} color={"#ea8a94"}>&</Text> WORKSHOPS
+            </Text>
+          </Heading>
+         
+        </Center>
+          {/*Events*/}
+          <Flex
+            marginTop={{ base: '1', sm: '5' }}
+            p={2}
+            flexDirection={'column'}
+            width={"95%"}
+            alignItems = 'center'
+            m={3}
+            maxWidth={"1400px"}
+          >
                 <Image
+                  height={"400px"}
+                  width={"90%"}
                   borderRadius='lg'
                   src={
                     'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
                   }
                   alt='events'
-                  objectFit='contain'
+                  objectFit='cover'
                 />
-              </Box>
-              <Box
-                zIndex='1'
-                width='90%'
-                position='absolute'
-                height='100%'
-                marginLeft={{ base: '0', sm: '3%' }}
-              >
-                <Box
-                  bgGradient={useColorModeValue(
-                    'radial(orange.600 1px, transparent 1px)',
-                    'radial(orange.300 1px, transparent 1px)'
-                  )}
-                  backgroundSize='20px 20px'
-                  opacity='1'
-                  height='100%'
-                />
-              </Box>
-            </Box>
-            <Box
-              display='flex'
-              flex='1'
-              flexDirection='column'
-              justifyContent='center'
-              marginTop={{ base: '3', sm: '0' }}
-              marginRight={8}
+            <Flex
+              width={"90%"}
+              flexDirection={['column','row']}
+              // justifyContent='center'
+              p={2}
             >
-              <Heading marginTop='1' textAlign='center' color={'yellow.400'}>
+              <Center flexDirection={'column'} width={["100%","40%"]}>
+              <Heading textAlign='center' color={'#ea8a94'}>
                 Events
               </Heading>
+              <Link as={ReachLink} to="/events"><Button p={2} m={2}>Explore Events</Button></Link>
+              </Center>
+              <Box width={["100%","60%"]}>
               <Text
-                textAlign='center'
+                textAlign='left'
                 as='p'
                 marginTop='2'
                 color={useColorModeValue('gray.700', 'gray.200')}
                 fontSize='lg'
+                p={2}
               >
                 Have you ever wanted to work on modeling a real airplane? Do
                 "hacking" scenes in movies and TV Shows make you roll your eyes?
@@ -186,14 +174,68 @@ function EventsHome() {
                 Aeromodelling Competition, Global Biotech Council, Shaastra
                 Programming Contest. Capture the Flag (CTF) and many more.
               </Text>
-              <Text fontSize="2xl" textAlign='center' marginTop={8}  
-           _hover={{
-               color: "teal.500",
-  }}><Link as={ReachLink} to="/events">Explore Events</Link></Text>
-            </Box>
-          </Box>
+              </Box>
+            </Flex>
+          </Flex>
           {/*Workshops*/}
-          <Box
+        
+          <Flex
+            marginTop={{ base: '1', sm: '5' }}
+            p={2}
+            flexDirection={'column'}
+            width={"95%"}
+            alignItems = 'center'
+            justifyItems={'center'}
+            m={3}
+            maxWidth={"1400px"}
+            height={"80vh"}
+          >
+            
+                <Image
+                  height={"400px"}
+                  width={"90%"}
+                  borderRadius='lg'
+                  src={
+                    'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+                  }
+                  alt='events'
+                  objectFit='cover'
+                />
+            <Flex
+              width={"90%"}
+              flexDirection={['column','row-reverse']}
+              // justifyContent='center'
+              p={2}
+            >
+              <Center flexDirection={'column'} width={["100%","40%"]}>
+              <Heading textAlign='center' color={'#ea8a94'}>
+               Workshops
+              </Heading>
+              <Link as={ReachLink} to="/events/WORKSHOPS"
+            ><Button p={2} m={2}>Explore Workshops</Button></Link>
+              </Center>
+              <Box width={["100%","60%"]}>
+              <Text
+                textAlign='left'
+                as='p'
+                marginTop='2'
+                color={useColorModeValue('gray.700', 'gray.200')}
+                fontSize='lg'
+                p={2}
+              >
+                As a part of Shaastra, we conduct several workshops every year,
+                ranging over multiple topics. Some of the workshops that were
+                conducted last year were Introduction to Data Science and
+                Machine Learning, Cryptocurrency, and blockchain, How to Design
+                a Mars Rover, Parallel Programming with Python, Make a chat app
+                using Socket.io, Node.js, and MongoDB, and many more.
+              </Text>
+              </Box>
+            </Flex>
+          </Flex>
+         
+          
+          {/* <Box
             marginTop={{ base: '1', sm: '5' }}
             display='flex'
             flexDirection={{ base: 'column', sm: 'row' }}
@@ -248,7 +290,7 @@ function EventsHome() {
               marginRight={8}
             >
               <Heading marginTop='1' textAlign='center' color={'yellow.400'}>
-                Workshops
+               Workshops
               </Heading>
               <Text
                 as='p'
@@ -269,9 +311,60 @@ function EventsHome() {
               }}><Link as={ReachLink} to="/events/WORKSHOPS"
             >Explore Workshops</Link></Text>
             </Box>
-          </Box>
+          </Box> */}
           {/*Summit*/}
-          <Box
+          <Flex
+            marginTop={{ base: '1', sm: '5' }}
+            p={2}
+            flexDirection={'column'}
+            width={"95%"}
+            alignItems = 'center'
+            m={3}
+            maxWidth={"1400px"}
+          >
+                <Image
+                  height={["auto","400px"]}
+                  width={"90%"}
+                  borderRadius='lg'
+                  src={summit}
+                  alt='summit'
+                  objectFit='cover'
+                />
+            <Flex
+              width={"90%"}
+              flexDirection={['column','row']}
+              // justifyContent='center'
+              p={2}
+            >
+              <Center flexDirection={'column'} width={["100%","40%"]}>
+              <Heading textAlign='center' color={'#ea8a94'}>
+              Summit
+              </Heading>
+              <Link as={ReachLink} to='/summit'><Button p={2} m={2}>Explore Summit</Button></Link>
+              </Center>
+              <Box width={["100%","60%"]}>
+              <Text
+                textAlign='left'
+                as='p'
+                marginTop='2'
+                color={useColorModeValue('gray.700', 'gray.200')}
+                fontSize='lg'
+                p={2}
+              >
+                 Summit is the flagship conference of Shaastra, which provides a
+                networking platform for its participants to interact with the
+                pioneers of today, and opportunities to enhance their expertise.
+                With a line-up of lectures, panel discussions and workshops
+                spanning over 3 days, participants, which include college
+                students, personnel from startups and professionals are ensured
+                to get an all-round experience. Every year Summit ventures into
+                a unique and relevant theme to contribute to the developments in
+                these fields of technology and to create an impact on society.
+              </Text>
+              </Box>
+            </Flex>
+          </Flex>
+          {/* <Box
             marginTop={{ base: '1', sm: '5' }}
             display='flex'
             flexDirection={{ base: 'column', sm: 'row' }}
@@ -356,9 +449,61 @@ function EventsHome() {
                 </Link>
               </Text>
             </Box>
-          </Box>
+          </Box> */}
           {/*Tif*/}
-          <Box
+          <Flex
+            marginTop={{ base: '1', sm: '5' }}
+            p={2}
+            flexDirection={'column'}
+            width={"95%"}
+            alignItems = 'center'
+            m={3}
+            maxWidth={"1400px"}
+          >
+                <Image
+                  height={["auto","400px"]}
+                  width={"90%"}
+                  borderRadius='lg'
+                  src={tif}
+                  alt='tif'
+                  objectFit='cover'
+                />
+            <Flex
+              width={"90%"}
+              flexDirection={['column','row-reverse']}
+              // justifyContent='center'
+              p={2}
+            >
+              <Center flexDirection={'column'} width={["100%","40%"]}>
+              <Heading as={'h2'} fontSize={['2xl','3xl']} textAlign='center' color={'#ea8a94'}>
+              Tech and Innovation Fair
+              </Heading>
+          <Link as={ReachLink} to='/tif'
+           style={{
+             "textDecoration" : "none"
+           }}><Button p={2} m={2}> Explore TIF</Button></Link>
+              </Center>
+              <Box width={["100%","60%"]}>
+              <Text
+                textAlign='left'
+                as='p'
+                marginTop='2'
+                color={useColorModeValue('gray.700', 'gray.200')}
+                fontSize='lg'
+                p={2}
+              >
+                 Tech and Innovation fair is one of the flagship events in
+                Shaastra that scouts for budding entrepreneurs by providing a
+                platform to develop tech based projects and enhance their
+                potential to grow into a commercial product. TIF envisions
+                leveraging IIT Madras’s rich startup ecosystem in its mission to
+                promote innovation and address the dearth of hardcore tech
+                startups in India
+              </Text>
+              </Box>
+            </Flex>
+          </Flex>
+          {/* <Box
             marginTop={{ base: '1', sm: '5' }}
             display='flex'
             flexDirection={{ base: 'column', sm: 'row' }}
@@ -441,8 +586,8 @@ function EventsHome() {
                 </Link>
               </Text>
             </Box>
-          </Box>
-        </VStack>
+          </Box> */}
+        </Flex>
         <Footer
           designed={[{ name: 'Drishti', mail: 'me19b100@smail.iitm.ac.in' }]}
         />
