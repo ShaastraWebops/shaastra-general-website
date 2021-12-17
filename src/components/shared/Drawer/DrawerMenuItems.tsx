@@ -101,6 +101,23 @@ export const DrawerDesktopMenuItems = () => {
         height="90%"
         flex={1}
       >
+        {
+          localStorage.getItem('role') !== 'Admin' && localStorage.getItem('role') !== 'User' &&
+          <Box
+            className="menu-text"
+            width="100%"
+            _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+            fontSize={28}
+            fontFamily={"monospace"}
+            fontStyle={"italic"}
+            pl={6}
+            p={2}
+            pr={12}
+            mb={4}
+          >
+            <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signup") } }>Signup</Button>
+          </Box>
+        }
         <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
@@ -268,20 +285,7 @@ export const DrawerDesktopMenuItems = () => {
               <Button backgroundColor="#DB7171" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signout") } }>Logout</Button>
             </Box>
           :
-            <Box
-            className="menu-text"
-            width="100%"
-            _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
-            fontSize={28}
-            fontFamily={"monospace"}
-            fontStyle={"italic"}
-            pl={6}
-            p={2}
-            pr={12}
-            mb={4}
-          >
-            <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/login") } }>Login</Button>
-          </Box>
+          null
         }
       </Flex>
     </>
@@ -297,6 +301,12 @@ export const DrawerMobileMenuItems = () => {
       height="90%"
       flex={1}
     >
+      {
+        localStorage.getItem('role') !=='Admin' && localStorage.getItem('role') !== 'User' && 
+        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+        <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signup") } }>SignUp</Button>
+      </Box>
+      }
       <Accordion allowToggle>
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/">Home</Link>
@@ -341,14 +351,10 @@ export const DrawerMobileMenuItems = () => {
         </Box>
       </Accordion>
       {
-        localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin" ? 
+        localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin" && 
           <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/profile") } }>Profile</Button>
           <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signout") } }>Logout</Button>
-        </Box>
-        :
-          <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
-          <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/login") } }>Login</Button>
         </Box>
       }
     </Flex>

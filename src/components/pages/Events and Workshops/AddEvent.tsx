@@ -463,7 +463,7 @@ const EventAdmin = () => {
                     backgroundColor="transparent"
                     borderBottom="5px solid white"
                     onChange={(e: any) => {
-                      setTeamSize(e.target.value);
+                      setTeamSize(parseInt(e.target.value));
                     }}
                   ></Input>
                 </FormControl>
