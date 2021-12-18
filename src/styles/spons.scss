@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
-.sponsBox .ml11 {
+.sponsBox1 .ml11 {
   font-weight: 700;
   font-size: 3.5em;
 }
 
-.sponsBox .ml11 .text-wrapper {
+.sponsBox1 .ml11 .text-wrapper {
   position: relative;
   display: inline-block;
   padding-top: 0.1em;
@@ -13,7 +13,7 @@
   padding-bottom: 0.15em;
 }
 
-.sponsBox .ml11 .line {
+.sponsBox1 .ml11 .line {
   opacity: 0;
   position: absolute;
   left: 0;
@@ -23,31 +23,31 @@
   transform-origin: 0 50%;
 }
 
-.sponsBox .ml11 .line1 {
+.sponsBox1 .ml11 .line1 {
   top: 0;
   left: 0;
 }
 
-.sponsBox .ml11 .letter {
+.sponsBox1 .ml11 .letter {
   display: inline-block;
   line-height: 1em;
 }
-.sponsBox #photo {
+.sponsBox1 #photo {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.507);
   border-radius: 4px;
   margin-left: 10px auto;
 }
-.sponsBox #title1 {
+.sponsBox1 #title1 {
   font-size: 20px;
   font-family: "Otomanopee One", sans-serif;
 }
-.sponsBox .tooltip #flip {
+.sponsBox1 .tooltip #flip {
   position: relative;
   left: 0%;
   height: 52px;
   width: 190px;
 }
-.sponsBox #panel {
+.sponsBox1 #panel {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -55,26 +55,26 @@
   max-width: 90%;
   margin: 30px auto;
 }
-.sponsBox #about {
+.sponsBox1 #about {
   font-size: 50px;
   font-weight: 700;
 }
-.sponsBox .aboutus{
+.sponsBox1 .aboutus{
   display: flex;
   justify-content: center;
 }
-.sponsBox .maintextspons{
+.sponsBox1 .maintextspons{
   display: flex;
   justify-content: center;
   // align-items: center;
 }
-.sponsBox .tooltip {
+.sponsBox1 .tooltip {
   position: relative;
   display: inline-block;
   transition: 0.3s;
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
-.sponsBox .boxx {
+.sponsBox1 .boxx {
   text-align: center;
   flex-wrap: wrap;
   max-width: 87%;
@@ -83,24 +83,24 @@
   font-weight: 800;
   font-family: "Source Sans Pro", sans-serif;
 }
-.sponsBox {
+.sponsBox1 {
   scroll-behavior: smooth;
 }
 /* Tooltip text */
 
-.sponsBox .tooltip {
+.sponsBox1 .tooltip {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted #000000;
 }
 
-.sponsBox .tooltip .tooltiptext {
+.sponsBox1 .tooltip .tooltiptext {
   visibility: hidden;
   width: 300px;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 10px 0;
   min-height: 80px;
   position: absolute;
   z-index: 1;
@@ -109,7 +109,7 @@
   // margin-top: 13px;
 }
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-.sponsBox .tooltiptext {
+.sponsBox1 .tooltiptext {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;;
@@ -152,10 +152,10 @@
     background-position: 0% 14%;
   }
 }
-.sponsBox .tooltip:hover .tooltiptext {
+.sponsBox1 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-.sponsBox .img-responsive {
+.sponsBox1 .img-responsive {
   max-width: 100%;
   height: auto;
   margin-left: auto;
@@ -163,7 +163,12 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-
+#Astra{
+  margin-top: -11px;
+}
+#foxmula{
+  margin-top: 14px;
+}
 @import "https://fonts.googleapis.com/css?family=Do+Hyeon";
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@315&family=Ubuntu&display=swap");
 // $color-box-1: #381515;
@@ -172,11 +177,11 @@ $color-box-3: #27377c;
 
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@315&display=swap");
 
-.sponsBox #photo {
+.sponsBox1 #photo {
   margin: 10px auto;
 }
 
-.sponsBox .card__collection {
+.sponsBox1 .card__collection {
   position: relative;
   display: block;
   display: flex;
@@ -187,7 +192,7 @@ $color-box-3: #27377c;
   font-family: "Do Hyeon", sans-serif;
 }
 
-.sponsBox .card__collection .cards {
+.sponsBox1 .card__collection .cards {
   width: 250px;
   height: 140px;
   display: block;
@@ -200,7 +205,7 @@ $color-box-3: #27377c;
   margin-bottom: 40px;
 }
 
-.sponsBox #surana {
+.sponsBox1 #surana {
   position: relative;
   // height: 200px;
   top: 34px;
@@ -209,7 +214,7 @@ $color-box-3: #27377c;
   width: 170px;
 }
 
-.sponsBox .cards--three {
+.sponsBox1 .cards--three {
   position: relative;
   z-index: 10;
 
@@ -338,7 +343,7 @@ $color-box-3: #27377c;
   }
 }
 
-.sponsBox #titlemain {
+.sponsBox1 #titlemain {
   font-size: 45px;
   background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
   -webkit-background-clip: text;
@@ -358,7 +363,7 @@ $color-box-3: #27377c;
   }
 }
 
-.sponsBox #www1 {
+.sponsBox1 #www1 {
   position: relative;
   top: 68px;
   left: 60px;
@@ -366,7 +371,7 @@ $color-box-3: #27377c;
   width: 40px;
 }
 
-.sponsBox #www2 {
+.sponsBox1 #www2 {
   position: relative;
   height: 40px;
   width: 40px;
@@ -374,7 +379,7 @@ $color-box-3: #27377c;
   left: 135px;
 }
 
-.sponsBox #www3 {
+.sponsBox1 #www3 {
   position: relative;
   height: 40px;
   width: 40px;
@@ -383,7 +388,7 @@ $color-box-3: #27377c;
   left: 200px;
 }
 
-.sponsBox .card {
+.sponsBox1 .card {
   position: relative;
   top: 50%;
   // left: 50%;
@@ -394,14 +399,14 @@ $color-box-3: #27377c;
   perspective: 600px;
   transition: 0.5s;
 }
-.sponsBox .card:hover .card-front {
+.sponsBox1 .card:hover .card-front {
   transform: rotateX(-180deg);
 }
-.sponsBox .card:hover .card-back {
+.sponsBox1 .card:hover .card-back {
   transform: rotateX(0deg);
 }
 
-.sponsBox .card-front {
+.sponsBox1 .card-front {
   height: 100%;
   width: 100%;
   // background-image: url(https://99px.ru/sstorage/56/2013/12/image_563012130153328414049.jpg);
@@ -416,7 +421,7 @@ $color-box-3: #27377c;
   transition: 0.5s;
 }
 
-.sponsBox .card-back {
+.sponsBox1 .card-back {
   height: 100%;background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
@@ -429,33 +434,33 @@ $color-box-3: #27377c;
   transition: 0.5s;
   text-align: center;
 }
-.sponsBox .card-back h2 {
+.sponsBox1 .card-back h2 {
   // margin: 60% auto 35% auto;
   font-size: 26px;
 }
-.sponsBox .card-back h2 span {
+.sponsBox1 .card-back h2 span {
   font-size: 20px;
 }
-.sponsBox .card-back a {
+.sponsBox1 .card-back a {
   height: 20px;
   width: 20px;
   padding: 5px 5px;
   border-radius: 4px;
   line-height: 20px;
 }
-.sponsBox .card-back a:hover {
+.sponsBox1 .card-back a:hover {
   color: #000000;
   // background-color: #fff;
 }
 
-.sponsBox #inno{
+.sponsBox1 #inno{
   position: relative;
   height: 50px;
   width: 278px;
   top: 70px;
 }
 
-.sponsBox #kamal{
+.sponsBox1 #kamal{
   position: relative;
   height: 97px;
   width: 278px;
@@ -473,28 +478,28 @@ $color-box-3: #27377c;
 	}
 }
 
-.sponsBox #mtx{
+.sponsBox1 #mtx{
   position: relative;
   height: 84px;
   width: 278px;
   top: 55px;
 }
 
-.sponsBox #subex{
+.sponsBox1 #subex{
   position: relative;
   height: 70px;
   width: 240px;
   top: 70px;
 }
 
-.sponsBox #surana{
+.sponsBox1 #surana{
   position: relative;
   height: 150px;
   width: 208px;
   top: 10px;
 }
 
-.sponsBox #lt{
+.sponsBox1 #lt{
   position: relative;
   height: 140px;
   width: 278px;

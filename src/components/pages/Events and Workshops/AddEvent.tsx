@@ -550,14 +550,14 @@ const EventAdmin = () => {
                   alert("Enter a valid registration fee")
                 }else{
                 try {
-                  await UploadImageToS3WithNativeSdk(file)
+                  if(newFile !== '') await UploadImageToS3WithNativeSdk(file)
                   await addEventMutation({
                     variables: {
                       data: {
                         name: name,
                         description: desp,
-                        eventTimeFrom: new Date(eventStart).toDateString(),
-                        eventTimeTo: new Date(eventEnd).toDateString(),
+                        eventTimeFrom: eventStart ? new Date(eventStart).toDateString() : null,
+                        eventTimeTo: eventEnd ? new Date(eventEnd).toDateString(): null,
                         registrationType: radio,
                         platform: platform,
                         requirements: req,
@@ -569,8 +569,8 @@ const EventAdmin = () => {
                         secondplace: second,
                         thirdplace: third,
                         teamSize: teamSize,
-                        registrationCloseTime: new Date(regEn).toDateString(),
-                        registrationOpenTime: new Date(regStart).toDateString(),
+                        registrationCloseTime: regEn ?new Date(regEn).toDateString() : null,
+                        registrationOpenTime: regStart ? new Date(regStart).toDateString() : null,
                         registrationfee: fee,
                       },
                     },
