@@ -17,24 +17,24 @@ import Workshops from "./pages/Events and Workshops/Workshops";
 import Spons from "../../src/components/pages/spons";
 import Show from "../../src/components/pages/night/Show";
 import Speaker from "../../src/components/pages/Speaker/Speaker";
-import EventVertical from "./pages/Events and Workshops/EventVertical"
-import EventAdmin from "./pages/Events and Workshops/AddEvent"
-import EditEvent from "./pages/Events and Workshops/EditEvent"
-import EventsAdmin from "./pages/Events and Workshops/EventsAdmin"
-import Login from "./pages/Login/Login"
-import Forgot from "./pages/Login/ForgotPassword"
-import Signup from "./pages/Login/Signup"
-import ForgotAfter from "./pages/Login/ForgotAfterLink"
-import Verify from "./pages/Login/Verify"
-import SignOut from "./pages/Login/SignOut"
-import Profile from "./pages/Login/Profile"
-import EditProfile from "./pages/Login/EditProfile"
+import EventVertical from "./pages/Events and Workshops/EventVertical";
+import EventAdmin from "./pages/Events and Workshops/AddEvent";
+import EditEvent from "./pages/Events and Workshops/EditEvent";
+import EventsAdmin from "./pages/Events and Workshops/EventsAdmin";
+import Login from "./pages/Login/Login";
+import Forgot from "./pages/Login/ForgotPassword";
+import Signup from "./pages/Login/Signup";
+import ForgotAfter from "./pages/Login/ForgotAfterLink";
+import Verify from "./pages/Login/Verify";
+import SignOut from "./pages/Login/SignOut";
+import Profile from "./pages/Login/Profile";
+import EditProfile from "./pages/Login/EditProfile";
 import EventPage from "./pages/Events and Workshops/EventPage";
 import Privacy from "./pages/Policies/Privacy";
 import TermsConditions from "./pages/Policies/TermsConditions";
 import Shipping from "./pages/Policies/Shipping";
 import Refund from "./pages/Policies/Refund";
-import HomeEW from "./pages/Events and Workshops/EWHome"
+import HomeEW from "./pages/Events and Workshops/EWHome";
 interface Props {}
 
 const AppRoutes = (props: Props) => {
@@ -54,16 +54,14 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/eventsworkshops" component={HomeEW} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" component={EventVertical}></Route>
-     {
-       localStorage.getItem('role') !== 'Admin' && 
+      {localStorage.getItem("role") === "Admin" && (
         <Switch>
           <Route exact path="/admin/add" component={EventAdmin}></Route>
           <Route exact path="/admin/edit/:id" component={EditEvent}></Route>
           <Route exact path="/admin" component={EventsAdmin}></Route>
         </Switch>
-     }
+      )}
       <Route exact path="/eventpage/:id" component={EventPage}></Route>
-
 
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />
@@ -76,19 +74,29 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/resetpassword" component={ForgotAfter}></Route>
       <Route exact path="/verify" component={Verify}></Route>
       <Route exact path="/signout" component={SignOut}></Route>
-      {
-        localStorage.getItem("role") === 'User' && 
+      {localStorage.getItem("role") === "User" && (
         <Switch>
           <Route exact path="/profile" component={Profile}></Route>
           <Route exact path="/editprofile" component={EditProfile}></Route>
         </Switch>
-      }
+      )}
 
       <Route exact path="/policies/privacy-policy" component={Privacy}></Route>
-      <Route exact path="/policies/return-refund-policy" component={Refund}></Route>
-      <Route exact path="/policies/shipping-policy" component={Shipping}></Route>
-      <Route exact path="/policies/terms-conditions" component={TermsConditions}></Route>
-
+      <Route
+        exact
+        path="/policies/return-refund-policy"
+        component={Refund}
+      ></Route>
+      <Route
+        exact
+        path="/policies/shipping-policy"
+        component={Shipping}
+      ></Route>
+      <Route
+        exact
+        path="/policies/terms-conditions"
+        component={TermsConditions}
+      ></Route>
     </Router>
   );
 };

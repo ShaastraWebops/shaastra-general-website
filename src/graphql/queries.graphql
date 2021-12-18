@@ -30,8 +30,30 @@ query me{
   }
 }
 
+
 mutation editEvent($data: EditEventInput!, $id: String!){
   editEvent(data: $data, eventID: $id)
+}
+
+query getUsers($filter : GetUsersFilter!){
+  getUsers(filter : $filter){
+    count,
+    users{
+      name
+      id
+      shaastraID,
+      email
+      role,
+      isVerified,
+      verificationOTP
+      registeredEvents{
+        id
+        name
+        teamSize
+        vertical
+      }
+    }
+  }
 }
 query getEvents($filter : String!){
   getEvents(filter : $filter){
@@ -83,4 +105,11 @@ query getEvent($EventID: String!)
     question
   }
   }
+}
+
+query getUsersDataCSV{
+  getUsersDataCSV
+}
+query exportCSV($EventID: String!){
+  exportCSV(EventID : $EventID)
 }

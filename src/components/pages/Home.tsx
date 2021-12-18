@@ -46,6 +46,9 @@ import Workshop1 from "../../images/workshop_1.png";
 import Workshop2 from "../../images/workshop_2.png";
 import Workshop3 from "../../images/workshop_3.png";
 import Workshop4 from "../../images/workshop_4.png";
+// import codetochaos1 from "../../images/logo/static/codetochaos.svg";
+import codetochaos1 from "../../images/logo/static/codetochaos2.svg";
+import codetochaos2 from "../../images/logo/static/codetochaos2.svg";
 
 interface Props {}
 
@@ -58,6 +61,7 @@ const Home = (props: Props) => {
   );
 
   const plain = useColorModeValue("black", "white");
+  const codetochoas = useColorModeValue(codetochaos1, codetochaos2);
 
   const [sideNavBar_marker, setSideNavBar_marker] = React.useState<number>(
     window.innerWidth > 600 ? 200 / 6 : (window.innerWidth - 150) / 6 - 5
@@ -172,6 +176,21 @@ const Home = (props: Props) => {
         >
           <div className="ContentBox">
             <h1>SHAASTRA 2022</h1>
+            <img
+              style={
+                plain === "black"
+                  ? {
+                      filter: "invert(1)",
+                    }
+                  : {
+                      filter: "invert(0)",
+                    }
+              }
+              src={codetochoas}
+              alt=""
+              id="theme_name"
+            />
+            <p id="themeDate">13th - 16th January</p>
             {window.innerWidth < 800 ? (
               <></>
             ) : (
@@ -184,6 +203,7 @@ const Home = (props: Props) => {
                 explore what we have to offer.
               </p>
             )}
+            <Link to="/signup">Register</Link>
           </div>
           <div className="imgBox">
             <img src={robos1} alt="" />
@@ -273,11 +293,13 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Workshop1} alt="" />
                 <div className="contentBox">
-                  <p>
-                    1. Make a chat app using Socket.io, Node.js and MongoDB
-                    <br /> 2. Web Development in Python with Flask <br /> 3.
-                    Creative Coding
-                  </p>
+                  <ol type="1">
+                    <li>
+                      Make a chat app using Socket.io, Node.js and MongoDB
+                    </li>
+                    <li>Web Development in Python with Flask</li>
+                    <li>Creative Coding</li>
+                  </ol>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -298,11 +320,11 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Workshop2} alt="" />
                 <div className="contentBox">
-                  <p>
-                    1. Introduction to FPGA <br />
-                    2. CPU and GPU Parallel Computing <br />
-                    3. Quantum Computing
-                  </p>
+                  <ol type="1">
+                    <li>Introduction to FPGA</li>
+                    <li>CPU and GPU Parallel Computing</li>
+                    <li>Quantum Computing</li>
+                  </ol>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -322,12 +344,13 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Workshop3} alt="" />
                 <div className="contentBox">
-                  <p>
-                    1. Introduction to Arduino and IOT <br />
-                    2. Circuit Simulation and PCB Design <br />
-                    3. Hacking Processors : An Unconventional Hacking
-                    Methodology
-                  </p>
+                  <ol type="1">
+                    <li>Introduction to Arduino and IOT</li>
+                    <li>Circuit Simulation and PCB Design</li>
+                    <li>
+                      Hacking Processors : An Unconventional Hacking Methodology
+                    </li>
+                  </ol>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -347,11 +370,11 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Workshop4} alt="" />
                 <div className="contentBox">
-                  <p>
-                    1. Stepping into the world of robotics <br />
-                    2. Python Algorithms for Robotics <br />
-                    3. Control of Robot Arm using Inverse Kinematics
-                  </p>
+                  <ol type="1">
+                    <li>Stepping into the world of robotics</li>
+                    <li>Python Algorithms for Robotics</li>
+                    <li>Control of Robot Arm using Inverse Kinematics</li>
+                  </ol>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -525,7 +548,7 @@ const Home = (props: Props) => {
                   <h3>RoboThespian and Cleo</h3>
 
                   <p>World’s First Acting Humanoid Robots</p>
-                  <a href="" target="_blank">
+                  <a href="https://youtu.be/kLhGfEybZi4" target="_blank">
                     <FaYoutube />
                   </a>
                 </div>
@@ -536,7 +559,7 @@ const Home = (props: Props) => {
                   <h3>Dr Soumya Swaminathan,</h3>
 
                   <p>Chief Scientist, World Health Organisation (WHO)</p>
-                  <a href="" target="_blank">
+                  <a href="https://youtu.be/2-_MZbCOP88" target="_blank">
                     <FaYoutube />
                   </a>
                 </div>
@@ -546,7 +569,7 @@ const Home = (props: Props) => {
                 <div className="contentBox">
                   <h3>Dr Joachim Frank</h3>
                   <p>Nobel Prize in Chemistry, 2017</p>
-                  <a href="" target="_blank">
+                  <a href="https://youtu.be/cYs-FEUSNFw" target="_blank">
                     <FaYoutube />
                   </a>
                 </div>
@@ -692,6 +715,7 @@ const Home = (props: Props) => {
             { name: "Krithikaa", mail: "be20b020@smail.iitm.ac.in" },
             { name: "Yogesh", mail: "bs19b034@smail.iitm.ac.in" },
           ]}
+          curr_page="Home"
         />
       </div>
     </CustomBox>
