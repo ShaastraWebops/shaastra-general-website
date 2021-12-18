@@ -1,0 +1,18 @@
+.EWHome a:hover
+{
+    color: #9ab2df;
+}
+.EWHomeDesp a
+{
+    color: #9ab2df;
+    font-weight: 500;
+    font-size: 1.5vw;
+}
+
+@media screen and (max-width: 500px)
+{
+    .EWHomeDesp a
+    {
+        font-size: 4vw;
+    }
+}

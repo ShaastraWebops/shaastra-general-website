@@ -121,7 +121,7 @@ function EventsHome() {
             textAlign="center"
           >
             <Text as={"span"} display={'inline-flex'} alignItems={'center'}>
-            EVENTS<Text mx={2} as={'h2'} fontSize={['4xl','7xl']} color={"#ea8a94"}>&</Text> WORKSHOPS
+            EVENTS<Text mx={2} as={'h2'} fontSize={['4xl','7xl']} color={"#ea8a94"} className='ampersand'>&</Text> WORKSHOPS
             </Text>
           </Heading>
          
