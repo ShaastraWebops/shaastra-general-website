@@ -27,6 +27,7 @@
     "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
     "graphql": "^16.0.1",
+    "js-file-download": "^0.4.12",
     "moment": "^2.29.1",
     "node-gyp": "^3.6.1",
     "node-sass": "^4.11.0",
