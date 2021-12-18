@@ -18,13 +18,15 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
+    Center,
   } from '@chakra-ui/react'
-import { AddIcon, MinusIcon } from '@chakra-ui/icons';
+import { AddIcon, EditIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
 import {useHistory} from "react-router-dom"
 import CustomBox from '../../shared/CustomBox'
-import { useGetEventsQuery } from "../../../generated/graphql";
+import { useGetEventsQuery, useGetUsersDataCsvQuery, useGetUsersQuery } from "../../../generated/graphql";
 import EventVerticalComponent from "./EventVeticalComponent";
+import fileDownload from "js-file-download";
 
 const EventsAdmin = () => {
 
@@ -38,16 +40,38 @@ const EventsAdmin = () => {
     })
 
     var events = data?.getEvents.events;
+    const {data : data1 , error : error1, loading:loading1} = useGetUsersQuery({
+        variables : {
+            filter : {
+                role : "USER"
+            }
+        }
+    })
+    const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
 
     const history = useHistory()
 
     return(
        <CustomBox>
            <Box width="100vw" padding="2vw 6vw">
-            <Flex width="100%" justifyContent="center" marginBottom="8vh">
+            <Flex width="100%" justifyContent="center" >
                 <Heading textAlign="right" fontSize="7xl">EVENTS <br /> WORKSHOPS</Heading>
                 <Heading alignSelf="center" color="#ea8a94" fontSize="7xl">&</Heading>
             </Flex>
+            <Center p ={3} flexDirection={"column"} marginBottom="3vh">
+                <Heading m={2}>Registered Users count : {data1?.getUsers?.count}</Heading>
+                <Button
+                    p={2}
+                    m={2}
+                    onClick={() => {
+                      fileDownload(data2?.getUsersDataCSV !, `users_data.csv`);
+                    }}
+                  >
+                    <EditIcon m={2} />
+                    Download Registered Usersdata
+                  </Button>
+
+            </Center>
             <Button width="100%" padding="1.5vw" backgroundColor="#75c9b0" marginBottom="4vh" onClick={(e:any) => {history.push('/admin/add')}}>Add Event</Button>
             <Flex width="88vw" marginBottom="4vh">
                 <Select placeholder="Vertical" marginLeft="2vw" width="15vw" value={vertical} onChange={e=> setVertical(e.target.value)}>

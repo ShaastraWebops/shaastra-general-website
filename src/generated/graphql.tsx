@@ -18,19 +18,19 @@ export type Scalars = {
 
 export type AddEventInput = {
   description: Scalars['String'];
-  eventTimeFrom: Scalars['String'];
-  eventTimeTo: Scalars['String'];
+  eventTimeFrom?: InputMaybe<Scalars['String']>;
+  eventTimeTo?: InputMaybe<Scalars['String']>;
   finalistst?: InputMaybe<Scalars['String']>;
   firstplace?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
   participation?: InputMaybe<Scalars['String']>;
-  pic: Scalars['String'];
-  platform: Scalars['String'];
+  pic?: InputMaybe<Scalars['String']>;
+  platform?: InputMaybe<Scalars['String']>;
   registrationCloseTime?: InputMaybe<Scalars['String']>;
   registrationOpenTime?: InputMaybe<Scalars['String']>;
-  registrationType: RegistraionType;
+  registrationType?: InputMaybe<RegistraionType>;
   registrationfee?: InputMaybe<Scalars['String']>;
-  requirements: Scalars['String'];
+  requirements?: InputMaybe<Scalars['String']>;
   secondplace?: InputMaybe<Scalars['String']>;
   teamSize?: InputMaybe<Scalars['Float']>;
   thirdplace?: InputMaybe<Scalars['String']>;
@@ -67,19 +67,19 @@ export type EditEventFaqInput = {
 
 export type EditEventInput = {
   description: Scalars['String'];
-  eventTimeFrom: Scalars['String'];
-  eventTimeTo: Scalars['String'];
+  eventTimeFrom?: InputMaybe<Scalars['String']>;
+  eventTimeTo?: InputMaybe<Scalars['String']>;
   finalistst?: InputMaybe<Scalars['String']>;
   firstplace?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
   participation?: InputMaybe<Scalars['String']>;
-  pic: Scalars['String'];
-  platform: Scalars['String'];
+  pic?: InputMaybe<Scalars['String']>;
+  platform?: InputMaybe<Scalars['String']>;
   registrationCloseTime?: InputMaybe<Scalars['String']>;
   registrationOpenTime?: InputMaybe<Scalars['String']>;
-  registrationType: RegistraionType;
+  registrationType?: InputMaybe<RegistraionType>;
   registrationfee?: InputMaybe<Scalars['String']>;
-  requirements: Scalars['String'];
+  requirements?: InputMaybe<Scalars['String']>;
   secondplace?: InputMaybe<Scalars['String']>;
   teamSize?: InputMaybe<Scalars['Float']>;
   thirdplace?: InputMaybe<Scalars['String']>;
@@ -99,8 +99,8 @@ export type EditProfileInput = {
 
 export type Event = {
   description: Scalars['String'];
-  eventTimeFrom: Scalars['String'];
-  eventTimeTo: Scalars['String'];
+  eventTimeFrom?: Maybe<Scalars['String']>;
+  eventTimeTo?: Maybe<Scalars['String']>;
   faqs: Array<EventFaq>;
   finalistst?: Maybe<Scalars['String']>;
   firstplace?: Maybe<Scalars['String']>;
@@ -276,11 +276,18 @@ export type MutationVerifyUserArgs = {
 };
 
 export type Query = {
+  exportCSV: Scalars['String'];
   getEvent: Event;
   getEvents: GetEventsOutput;
   getUsers?: Maybe<GetUsersOutput>;
   getUsersCount: Scalars['Float'];
+  getUsersDataCSV: Scalars['String'];
   me?: Maybe<User>;
+};
+
+
+export type QueryExportCsvArgs = {
+  EventID: Scalars['String'];
 };
 
 
@@ -490,21 +497,40 @@ export type LeaveTeamMutation = { leaveTeam: boolean };
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ id: string, name: string, pic?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, yourTeam?: { id: string, name: string, members: Array<{ name: string, email: string }> } | null | undefined }> } | null | undefined };
+export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ id: string, name: string, pic?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, yourTeam?: { id: string, name: string, members: Array<{ name: string, email: string }> } | null | undefined }> } | null | undefined };
+
+export type GetUsersQueryVariables = Exact<{
+  filter: GetUsersFilter;
+}>;
+
+
+export type GetUsersQuery = { getUsers?: { count: number, users: Array<{ name: string, id: string, shaastraID: string, email: string, role: UserRole, isVerified: boolean, verificationOTP: string, registeredEvents: Array<{ id: string, name: string, teamSize: number, vertical: string }> }> } | null | undefined };
 
 export type GetEventsQueryVariables = Exact<{
   filter: Scalars['String'];
 }>;
 
 
-export type GetEventsQuery = { getEvents: { events: Array<{ id: string, name: string, pic?: string | null | undefined, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number }> } };
+export type GetEventsQuery = { getEvents: { events: Array<{ id: string, name: string, pic?: string | null | undefined, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number }> } };
 
 export type GetEventQueryVariables = Exact<{
   EventID: Scalars['String'];
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number, faqs: Array<{ id: string, answer: string, question: string }> } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, faqs: Array<{ id: string, answer: string, question: string }> } };
+
+export type GetUsersDataCsvQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetUsersDataCsvQuery = { getUsersDataCSV: string };
+
+export type ExportCsvQueryVariables = Exact<{
+  EventID: Scalars['String'];
+}>;
+
+
+export type ExportCsvQuery = { exportCSV: string };
 
 
 export const CreateUserDocument = gql`
@@ -1153,6 +1179,59 @@ export type MeQueryResult = ApolloReactCommon.QueryResult<MeQuery, MeQueryVariab
 export function refetchMeQuery(variables?: MeQueryVariables) {
       return { query: MeDocument, variables: variables }
     }
+export const GetUsersDocument = gql`
+    query getUsers($filter: GetUsersFilter!) {
+  getUsers(filter: $filter) {
+    count
+    users {
+      name
+      id
+      shaastraID
+      email
+      role
+      isVerified
+      verificationOTP
+      registeredEvents {
+        id
+        name
+        teamSize
+        vertical
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetUsersQuery__
+ *
+ * To run a query within a React component, call `useGetUsersQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetUsersQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetUsersQuery({
+ *   variables: {
+ *      filter: // value for 'filter'
+ *   },
+ * });
+ */
+export function useGetUsersQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
+      }
+export function useGetUsersLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
+        }
+export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
+export type GetUsersLazyQueryHookResult = ReturnType<typeof useGetUsersLazyQuery>;
+export type GetUsersQueryResult = ApolloReactCommon.QueryResult<GetUsersQuery, GetUsersQueryVariables>;
+export function refetchGetUsersQuery(variables: GetUsersQueryVariables) {
+      return { query: GetUsersDocument, variables: variables }
+    }
 export const GetEventsDocument = gql`
     query getEvents($filter: String!) {
   getEvents(filter: $filter) {
@@ -1268,4 +1347,75 @@ export type GetEventLazyQueryHookResult = ReturnType<typeof useGetEventLazyQuery
 export type GetEventQueryResult = ApolloReactCommon.QueryResult<GetEventQuery, GetEventQueryVariables>;
 export function refetchGetEventQuery(variables: GetEventQueryVariables) {
       return { query: GetEventDocument, variables: variables }
+    }
+export const GetUsersDataCsvDocument = gql`
+    query getUsersDataCSV {
+  getUsersDataCSV
+}
+    `;
+
+/**
+ * __useGetUsersDataCsvQuery__
+ *
+ * To run a query within a React component, call `useGetUsersDataCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetUsersDataCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetUsersDataCsvQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetUsersDataCsvQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>(GetUsersDataCsvDocument, options);
+      }
+export function useGetUsersDataCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>(GetUsersDataCsvDocument, options);
+        }
+export type GetUsersDataCsvQueryHookResult = ReturnType<typeof useGetUsersDataCsvQuery>;
+export type GetUsersDataCsvLazyQueryHookResult = ReturnType<typeof useGetUsersDataCsvLazyQuery>;
+export type GetUsersDataCsvQueryResult = ApolloReactCommon.QueryResult<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>;
+export function refetchGetUsersDataCsvQuery(variables?: GetUsersDataCsvQueryVariables) {
+      return { query: GetUsersDataCsvDocument, variables: variables }
+    }
+export const ExportCsvDocument = gql`
+    query exportCSV($EventID: String!) {
+  exportCSV(EventID: $EventID)
+}
+    `;
+
+/**
+ * __useExportCsvQuery__
+ *
+ * To run a query within a React component, call `useExportCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useExportCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useExportCsvQuery({
+ *   variables: {
+ *      EventID: // value for 'EventID'
+ *   },
+ * });
+ */
+export function useExportCsvQuery(baseOptions: ApolloReactHooks.QueryHookOptions<ExportCsvQuery, ExportCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<ExportCsvQuery, ExportCsvQueryVariables>(ExportCsvDocument, options);
+      }
+export function useExportCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ExportCsvQuery, ExportCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<ExportCsvQuery, ExportCsvQueryVariables>(ExportCsvDocument, options);
+        }
+export type ExportCsvQueryHookResult = ReturnType<typeof useExportCsvQuery>;
+export type ExportCsvLazyQueryHookResult = ReturnType<typeof useExportCsvLazyQuery>;
+export type ExportCsvQueryResult = ApolloReactCommon.QueryResult<ExportCsvQuery, ExportCsvQueryVariables>;
+export function refetchExportCsvQuery(variables: ExportCsvQueryVariables) {
+      return { query: ExportCsvDocument, variables: variables }
     }

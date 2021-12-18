@@ -1,11 +1,11 @@
-.sponsBox .fill:hover,
-.sponsBox .fill:focus {
+.sponsBox1 .fill:hover,
+.sponsBox1 .fill:focus {
   box-shadow: inset 0 0 0 2em var(--hover);
 }
 
 // Animate the size, outside
-.sponsBox .pulse:hover,
-.sponsBox .pulse:focus {
+.sponsBox1 .pulse:hover,
+.sponsBox1 .pulse:focus {
   animation: pulse 1s;
   box-shadow: 0 0 0 2em rgba(#fff,0);
 }
@@ -15,33 +15,33 @@
 }
 
 // Stack multiple shadows, one from the left, the other from the right
-.sponsBox .close:hover,
-.sponsBox .close:focus {
+.sponsBox1 .close:hover,
+.sponsBox1 .close:focus {
   box-shadow:
     inset -3.5em 0 0 0 var(--hover),
     inset 3.5em 0 0 0 var(--hover);
 }
 
 // Size can also be negative; see how it's smaller than the element
-.sponsBox .raise:hover,
-.sponsBox .raise:focus {
+.sponsBox1 .raise:hover,
+.sponsBox1 .raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }
 
 // Animating from the bottom
-.sponsBox .up:hover,
-.sponsBox .up:focus {
+.sponsBox1 .up:hover,
+.sponsBox1 .up:focus {
   box-shadow: inset 0 -3.25em 0 0 var(--hover);
 }
 
 // And from the left
-.sponsBox .slide:hover,
-.sponsBox .slide:focus {
+.sponsBox1 .slide:hover,
+.sponsBox1 .slide:focus {
   box-shadow: inset 6.5em 0 0 0 var(--hover);
 }
 
-.sponsBox .offset {
+.sponsBox1 .offset {
   box-shadow:
     0.3em 0.3em 0 0 var(--color),
     inset 0.3em 0.3em 0 0 var(--color);
@@ -65,7 +65,7 @@ $colors: (
   }
 }
 
-.sponsBox button {
+.sponsBox1 button {
   color: var(--color);
   transition: 0.25s;
 
@@ -76,12 +76,12 @@ $colors: (
   }
 }
 
-.sponsBox {
+.sponsBox1 {
   font: 300 1em 'Fira Sans', sans-serif;
   justify-content: center;
   text-align: center;
 }
-.sponsBox button {
+.sponsBox1 button {
   background: none;
   border: 2px solid;
   font: inherit;
@@ -90,4 +90,4 @@ $colors: (
   padding: 1em 2em;
 }
 
-.sponsBox h1 { font-weight: 400; }
+.sponsBox1 h1 { font-weight: 400; }
