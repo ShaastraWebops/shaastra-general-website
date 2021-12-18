@@ -12,13 +12,14 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import bg from "../../../images/EventsWorkshops/events/bg.jpg"
-import BE from "../../../images/EventsWorkshops/events/BE.jpg"
-import Aero from "../../../images/EventsWorkshops/events/Aerofest.jpeg"
-import Bio from "../../../images/EventsWorkshops/events/Biogen.jpg"
+import BE from "../../../images/EventsWorkshops/events/BE.png"
+import Aero from "../../../images/EventsWorkshops/events/Aerofest.png"
+import Bio from "../../../images/EventsWorkshops/events/Biogen.png"
 import Cl from "../../../images/EventsWorkshops/events/Coding&Logic.png"
-import DB from "../../../images/EventsWorkshops/events/Design&Build.png"
-import Elec from "../../../images/EventsWorkshops/events/Elecfest.png"
-import Strategists from "../../../images/EventsWorkshops/events/IDP.jpg"
+import DB from "../../../images/EventsWorkshops/events/Design&Build.jpeg"
+import Elec from "../../../images/EventsWorkshops/events/Elecfest.jpg"
+import Strategists from "../../../images/EventsWorkshops/events/Strategists.png"
+import Ignite from "../../../images/EventsWorkshops/events/Ignite.jpg"
 import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer';
 import "../../../styles/Events.css"
@@ -46,7 +47,7 @@ function Events() {
          </Flex>
          <Grid templateColumns={["repeat(1,1fr)","repeat(2, 1fr)"]} columnGap={"4vw"} rowGap={"4vw"} zIndex={3} width="80vw">
             <GridItem display={"flex"} height={"100%"} justifyContent={"center"} flexDirection={"column"}>
-              <Image height="25vh" width={["80vw","38vw"]} objectFit={["contain","cover"]} src={Aero}></Image>
+              <Image height="25vh" width={["80vw","38vw"]} objectFit={["cover","cover"]} src={Aero}></Image>
               <Link fontSize={["4vw","2vw"]}  href="/events/aerofest">Aerofest</Link>
             </GridItem>
             <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
@@ -67,6 +68,7 @@ function Events() {
              <Link fontSize={["4vw","2vw"]} href="/events/elecfest">Elecfest</Link>
             </GridItem>
             <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
+              <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} objectPosition={"0% 25%"} src={Ignite}></Image>
               <Link fontSize={["4vw","2vw"]} href="/events/ignite">Ignite</Link>
             </GridItem>
             <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
