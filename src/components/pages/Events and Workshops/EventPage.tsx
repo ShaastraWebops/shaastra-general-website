@@ -202,7 +202,7 @@ const EventPage = () => {
                      </Flex>)}
                     {
                       data?.getEvent.eventTimeFrom && (
-                        <Flex flexDirection={'column'}>
+                    <Flex flexDirection={'column'} p={2}>
                     <Heading size={"md"}>Event</Heading>
                     <Flex justifyContent="space-between" p={2} >
                       <Text>{moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
