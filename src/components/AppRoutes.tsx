@@ -74,7 +74,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/verify" component={Verify}></Route>
       <Route exact path="/signout" component={SignOut}></Route>
       {
-        localStorage.getItem("role") === 'USER' && 
+        localStorage.getItem("role") === 'User' && 
         <Switch>
           <Route exact path="/profile" component={Profile}></Route>
           <Route exact path="/editprofile" component={EditProfile}></Route>
