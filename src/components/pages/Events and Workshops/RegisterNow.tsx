@@ -143,17 +143,19 @@ const RegisterNow = ({ isAdmin, data }) => {
     <div>
       {!isAdmin ? (
         data.registrationType === "NONE" ? (
-          <Box marginTop="2vh" height="1vw">
+          <Box marginRight={"2vw"} marginTop="2vh" height="1vw">
             <Alert status="info" size={"xs"}>
               <AlertIcon />
               Registration is not required for this event
             </Alert>
           </Box>
         ) : (
-          <Box marginTop="2vh" height="1vw">
+          <Box marginRight={"2vw"} marginTop="2vh" height={["fit-content","fit-content","fit-content","fit-content"]}>
             <Button
-              backgroundColor={buttoncolor}
+              backgroundColor={"rgb(171, 228, 156)"}
               color="black"
+              padding={["0.5vw","0.5vw","0.5vw", "1.25vw"]}
+              fontSize={["3vw","3vw","3vw", "1vw"]}
               onClick={
                 data.registrationType === "INDIVIDUAL"
                   ? () => {

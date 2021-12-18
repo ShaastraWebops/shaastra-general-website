@@ -1,4 +1,4 @@
-import { Box, Flex, Stack , Image, Text, Button, Heading, Center, Container, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, Stack , Image, Text, Button, Heading, Center, Container, useColorModeValue, Icon } from '@chakra-ui/react'
 import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { GetEventsDocument, useDeleteEventMutation, useGetEventQuery } from '../../../generated/graphql'
@@ -8,6 +8,13 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import moment from 'moment'
 import EventFaqs from './EventFaqs'
+import gold from "../../../images/EventsWorkshops/events/gold.png";
+import silver from "../../../images/EventsWorkshops/events/silver.png";
+import bronze from "../../../images/EventsWorkshops/events/bronze.png";
+import { FaTrophy } from "react-icons/fa";
+import RegisterNow from './RegisterNow'
+import Loader from '../../shared/Loader'
+import { CalendarIcon } from '@chakra-ui/icons'
 
 const EventPage = () => {
     const {id} : {id : string | undefined} = useParams();
@@ -19,12 +26,17 @@ const EventPage = () => {
             EventID : id!
         }
     })
+  
     const [deleteevent] = useDeleteEventMutation();
     const bgcolor = useColorModeValue("#ea8a94","#ffffff")
+    if(loading)
+    return(
+      <Loader />
+    )
     return (
         <CustomBox>
           <Container maxWidth="6xl" alignItems="center" justifyItems={"center"} marginBottom={5} paddingBottom={2}>
-          <Center>
+          <Center flexDirection={['column','column','row']}>
             <Image
               h={["2%", "300px", "300px"]}
               width={'auto'}
@@ -35,47 +47,137 @@ const EventPage = () => {
               rounded={["3xl", "3xl"]}
             />
           </Center>
-          <Center style={{  borderRadius: 8 }} backgroundColor={bgcolor} p={4}>
-            <Text fontWeight={"medium"} fontSize={"lg"} p={6} color={'black'}>
+          <Flex style={{  borderRadius: 8 }} p={4}  shadow="lg"
+            borderWidth="2px"
+            borderRadius="md" flexDirection={'column'}>
+            <Text fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}>
               <ReactMarkdown
                 children={data?.getEvent.description!}
                 remarkPlugins={[remarkGfm]}
               ></ReactMarkdown>
             </Text>
-          </Center>
+            <Flex width={"100%"} justifyItems={'flex-end'}><RegisterNow isAdmin={false} data={data?.getEvent}/></Flex>
+          </Flex>
+          <Flex width={"100%"} m={2}>
+         
+          </Flex>
+         
+          <Flex flexDirection={'column'} width={"100%"} alignItems={'center'} justifyItems={'center'} p={2}>
+          <Heading fontWeight={"medium"} p={3} color={"gray.500"} display={"inline-flex"}><Icon as={FaTrophy}/> Points Distribution</Heading>
+            <Flex flexDirection={['column','row']} justifyContent={'space-evenly'} width={"100%"}>
+            <Box p={2}>
+                <Center flexDirection={'column'}>
+                <Image src={silver} />
+                <Flex  color={"gray.500"}>
+                  <Heading>2nd Position : {data?.getEvent.secondplace}</Heading>
+                  </Flex>
+                </Center>
+              </Box>
+              <Box p={2}>
+                <Center flexDirection={'column'}>
+                <Image src={gold} />
+                <Flex  color={"gray.500"}>
+                  <Heading>1st Position : {data?.getEvent.firstplace}</Heading>
+                  </Flex>
+                </Center>
+                
+              </Box>
+              <Box p={2}>
+                <Center flexDirection={'column'}>
+                <Image src={bronze} />
+                <Flex  color={"gray.500"}>
+                  <Heading>3rd Position : {data?.getEvent.thirdplace}</Heading>
+                  </Flex>
+                </Center>
+              </Box>
+            </Flex>
+            <Flex p={2}  color={"gray.500"} fontSize={['2xl','4xl']}>
+              <Text>Paricipation Points : <Text as='span' fontWeight={700}>{data?.getEvent.participation}</Text></Text>
+           </Flex>
 
-          <Flex className="events-details-box" marginTop="12px" backgroundColor={bgcolor}>
-            <strong>Requirements: &nbsp;</strong> {data?.getEvent.requirements}
+          </Flex>
+
+         <Flex flexDirection={['column','column','row','row']} p={2} justifyContent={'space-between'}>
+         <Flex flexDirection={'column'} width={["100%","100%","45%","45%"]} p={2} mb={2}>
+          <Flex marginTop="12px" style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
+            borderRadius="md">
+           <Text fontWeight={"medium"} p={2} fontSize={"lg"} color={"gray.500"}>
+           <strong>Requirements: &nbsp;</strong> {data?.getEvent.requirements}
+           </Text>
           </Flex>
 
           <Flex className="events-details-box-container" >
             {/* <Flex className="events-details-box" backgroundColor={bgcolor}>
               <strong>Audience: &nbsp;</strong>
             </Flex> */}
-            <Flex className="events-details-box" backgroundColor={bgcolor}>
+            <Flex className="events-details-box" style={{  borderRadius: 8 }} p={2}  shadow="lg"  borderWidth="2px"
+            borderRadius="md">
+              <Text fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}>
               <strong>Platform: &nbsp;</strong>
               {data?.getEvent.platform}
+              </Text>
             </Flex>
           </Flex>
 
           <Flex className="events-details-box-container" >
-            <Flex className="events-details-box" backgroundColor={bgcolor}>
+            <Flex className="events-details-box" style={{  borderRadius: 8 }} p={2}  shadow="lg"  borderWidth="2px"
+            borderRadius="md"> 
+              <Text fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}>
               <strong>Registration Type: &nbsp;</strong>
               {data?.getEvent.registrationType}
+              </Text>
             </Flex>
             {data?.getEvent.registrationType === "TEAM" && (
-              <Flex className="events-details-box" backgroundColor={bgcolor}>
+              <Flex className="events-details-box"  style={{  borderRadius: 8 }} p={4}  shadow="lg"  borderWidth="2px"
+              borderRadius="md">
+                <Text fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}>
                 <strong>Max. team size: &nbsp;</strong>
                 {data.getEvent.teamSize}
+                </Text>
               </Flex>
             )}
           </Flex>
+          </Flex>
+          <Flex flexDirection={'column'} width={["100%","100%","50%","50%"]}  style={{  borderRadius: 8 }} p={2}  shadow="lg"
+            borderWidth="2px"
+            borderRadius="md"  justifyContent={'space-around'} className='success-stories4'>
+                  <Heading size={"lg"}><span><CalendarIcon boxSize={6}  mx={2}/></span>Timeline</Heading>
+                  <Flex  flexDirection={'column'} p={2}>
+                  {data?.getEvent.registrationType !== "NONE" && ( 
+                  <Flex flexDirection={'column'} p={2}>
+                    <Heading size={"md"}>Registrations</Heading>
+                    <Flex justifyContent="space-between" p={1}>
+                      <Text>{moment(parseInt(data?.getEvent.registrationOpenTime!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                   <Text mx={1}>to</Text>
+                    <Text mx={1}>{moment(parseInt(data?.getEvent.registrationCloseTime!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                     </Flex>
+                     </Flex>)}
+                    <Flex flexDirection={'column'}>
+                    <Heading size={"md"}>Event</Heading>
+                    <Flex justifyContent="space-between" p={2} >
+                      <Text>{moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                   <Text>to</Text>
+                    <Text>{moment(parseInt(data?.getEvent.eventTimeTo!)).format(
+                    "MMMM Do YYYY, h:mm a"
+                  )}</Text>
+                     </Flex>
+                     </Flex>
+                  </Flex>
+              </Flex>
+         </Flex>
           {
               localStorage.getItem("role") === "Admin" && 
               (<Box m={2} width={"100%"}>
                <Flex flexDirection={["column","column","row","row"]}>
-               <Button m={2} p={2} width={["100%","100%","50%","50%"]} onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
+               <Button m={2} p={2} width={["100%","100%","50%","50%"]} colorScheme={"green"} onClick={(e:any)=> {e.preventDefault(); history.push( `/admin/edit/${data?.getEvent.id}`)}}>Edit</Button>
                <Button m={2} p={2} width={["100%","100%","50%","50%"]}
+               colorScheme={"red"}
                onClick={async()=>{
 
                 await deleteevent({
@@ -100,46 +202,7 @@ const EventPage = () => {
                </Box>
               )}
         </Container>
-        <Container maxWidth="6xl" alignItems="center" justifyItems={"center"} color={"black"}>
-          {data?.getEvent.registrationType !== "NONE" && (
-            <Flex className="datetime-container">
-              <Flex className="datetime-head">Registrations</Flex>
-              <Flex className="datetime-box">
-                <Flex className="datetime">
-                  {moment(parseInt(data?.getEvent.registrationOpenTime!)).format(
-                    "MMMM Do YYYY, h:mm a"
-                  )}
-                </Flex>
-                <div style={{ width: "10%" }} className="datetime">
-                  to
-                </div>
-                <Flex className="datetime">
-                  {moment(parseInt(data?.getEvent.registrationCloseTime!)).format(
-                    "MMMM Do YYYY, h:mm a"
-                  )}
-                </Flex>
-              </Flex>
-            </Flex>
-          )}
-
-          <Flex className="datetime-container">
-            <Flex className="datetime-head">Event Timeline</Flex>
-            <Flex className="datetime-box">
-              <Flex className="datetime">
-                {moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
-                  "MMMM Do YYYY, h:mm a"
-                )}
-              </Flex>
-              <div style={{ width: "10%" }} className="datetime">
-                to
-              </div>
-              <Flex className="datetime">
-                {moment(parseInt(data?.getEvent.eventTimeTo!)).format(
-                  "MMMM Do YYYY, h:mm a"
-                )}
-              </Flex>
-            </Flex>
-          </Flex>
+        <Container maxWidth="6xl" alignItems="center" justifyItems={"center"}>
           {  data?.getEvent &&
             <EventFaqs   event ={data?.getEvent!}  /> 
         

@@ -21,6 +21,7 @@ import "../../../styles/Events.css";
 import Footer from "../../shared/Footer";
 
 function Tif() {
+  const colorvariant = useColorModeValue("#1c72c7","#ABC8E1")
   return (
     <CustomBox>
       <Box>
@@ -28,18 +29,17 @@ function Tif() {
           textAlign={"center"}
           align={"center"}
           spacing={{ base: 8, md: 8 }}
-          py={{ base: 20, md: 20 }}
+          paddingTop={{ base: 20, md: 20 }}
+          marginBottom={[0,5]}
         >
           <Heading
             noOfLines={2}
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
-            lineHeight={"110%"}
             textAlign="center"
           >
-            Explore{" "}
-            <Text as={"span"} color={"orange.400"}>
-              Tech and Innovation Fair
+            <Text as={"span"} display={'inline-flex'} alignItems={'center'}>
+              Tech <Text mx={2} as={'h2'} fontSize={['5xl','7xl']} color={colorvariant}>&</Text> Innovation Fair
             </Text>
           </Heading>
           <Text color={"gray.500"} maxW={"3xl"} fontSize={"20px"} padding={2}>
@@ -49,25 +49,21 @@ function Tif() {
             commencement of a start-up.
           </Text>
         </Stack>
-        <Center marginBottom={10}>
-          <Heading fontWeight={700} lineHeight={"110%"} textAlign="center">
-            Our{"   "}
-            <Text as={"span"} color={"orange.400"}>
-              Partners
-            </Text>
-          </Heading>
-        </Center>
-        <Center>
-          <Image src={tif1} alt="tif_1" h="300px" w="600px"></Image>
-        </Center>
-        <Stack
+        <Flex
           textAlign={"center"}
           align={"center"}
+          width={'100%'}
           spacing={{ base: 8, md: 8 }}
-          py={{ base: 20, md: 20 }}
+          bgColor={"#ABC8E1"}
+          color={'black'}
+          alignItems={'center'}
+          justifyItems={'center'}
+          marginBottom={5}
+          // py={{ base: 20, md: 20 }}
         >
-          <Box shadow="lg" borderWidth="2px" marginBottom={3} marginTop={3}>
-            <Text padding={2} color={"gray.500"} maxW={"3xl"} fontSize={"17px"}>
+          <Center>
+          <Box p={2} my={3} width={'60%'}>
+            <Text padding={2}  fontSize={"17px"} fontStyle={'italic'} fontWeight={'semibold'}>
               The fair comprises multiple stages of professional guidance in the
               form of Workshops, Panel discussions and seminars based on
               entrepreneurship and management and a culmination event during
@@ -79,16 +75,30 @@ function Tif() {
               journey.
             </Text>
           </Box>
-        </Stack>
+          </Center>
+        </Flex>
+        <Center marginBottom={10} flexDirection={'column'} p={3}>
+          <Heading fontWeight={700} lineHeight={"110%"} textAlign="center" m={2}>
+            Our{"   "}
+            <Text as={"span"} color={colorvariant}>
+              Partners
+            </Text>
+          </Heading>
+          <Image src={tif1} alt="tif_1" h="300px" w="600px" p={2}></Image>
+        </Center>
+         
+
         <Center>
           <Heading fontWeight={700} lineHeight={"110%"} textAlign="center">
             Workshops and{"   "}
-            <Text as={"span"} color={"orange.400"}>
+            <Text as={"span"} color={colorvariant}>
               Seminar
             </Text>
           </Heading>
         </Center>
-        <SimpleGrid
+       <Center>
+       <SimpleGrid
+          width={"85%"}
           minChildWidth="300px"
           spacing="30px"
           marginBottom={12}
@@ -100,7 +110,8 @@ function Tif() {
               alt="tif_2"
               width="301px"
               height="301px"
-              objectFit="fill"
+              objectFit="cover"
+              rounded={'2xl'}
             ></Image>
             <Box zIndex="-1" position="absolute" height="350px" width="350px">
               <Box
@@ -120,7 +131,8 @@ function Tif() {
               alt="tif_3"
               w="301px"
               h="301px"
-              objectFit="fill"
+              objectFit="cover"
+              rounded={'2xl'}
             ></Image>
             <Box zIndex="-1" width="350px" position="absolute" height="350px">
               <Box
@@ -140,7 +152,8 @@ function Tif() {
               alt="tif_4"
               w="301px"
               h="301px"
-              objectFit="fill"
+              objectFit="cover"
+              rounded={'2xl'}
             ></Image>
             <Box zIndex="-1" width="350px" position="absolute" height="350px">
               <Box
@@ -155,17 +168,38 @@ function Tif() {
             </Box>
           </Center>
         </SimpleGrid>
+       </Center>
+        
+        {/* <Swiper
+        spaceBetween={window.innerWidth > 600 ? 50 : 0}
+        navigation={{
+          prevEl: events_navigationPrevRef.current,
+          nextEl: events_navigationNextRef.current,
+        }}
+        loop={true}
+        pagination={
+          window.innerWidth < 600
+            ? {
+                el: events_paginationRef.current,
+                clickable: true,
+              }
+            : false}
+            >
+          <SwiperSlide>
+
+          </SwiperSlide>
+        </Swiper> */}
         <Center>
           <Heading fontWeight={700} textAlign="center" lineHeight={"110%"}>
             Success{"   "}
-            <Text as={"span"} color={"orange.400"}>
+            <Text as={"span"} color={colorvariant}>
               Stories
             </Text>
           </Heading>
         </Center>
         <SimpleGrid
           textAlign={"center"}
-          columns={2}
+          columns={[1,2]}
           marginLeft={5}
           marginRight={5}
           spacing={30}
@@ -178,21 +212,25 @@ function Tif() {
             borderRadius="md"
             maxwidth={500}
             padding={2}
+            m={2}
+            className="success-stories1"
           >
             <Heading
               fontSize="xl"
               fontWeight="bold"
-              color={"gray.500"}
+              // color={"gray.500"}
               marginTop={2}
             >
               Scavenger robot to eradicate manual scavenging (1st Runners up-
               TIF 2021)
             </Heading>
-            <Text padding={2} color={"gray.500"} maxW={"3xl"}>
-              “Competition has a lot things we can learn even if we win or not,
+            <Text padding={2} maxW={"3xl"}
+            // color={"gray.500"} 
+            >
+              <blockquote>Competition has a lot things we can learn even if we win or not,
               these learnings will be useful throughout our lives. The team of
               Shaastra did a great job. The volunteers guided us patiently and
-              virtual creation of IIT Madras was great.”
+              virtual creation of IIT Madras was great.</blockquote>
               <br />
               <Text fontStyle="italic" fontWeight="bold">
                 -Harikrishnan, Team Scavenger
@@ -205,22 +243,23 @@ function Tif() {
             borderRadius="md"
             maxwidth={500}
             padding={2}
+            m={2}
+            className="success-stories2"
           >
             <Heading
               fontSize="xl"
               fontWeight="bold"
-              color={"gray.500"}
               marginTop={2}
             >
               Drowning rescue kit - Finds drowning people and launches life
               jackets for rescue (Winner TIF- 2020)
             </Heading>
-            <Text padding={2} color={"gray.500"} maxW={"3xl"}>
-              “Initially, when we got the mail saying we’ve been shortlisted for
+            <Text padding={2}  maxW={"3xl"}>
+              <blockquote>Initially, when we got the mail saying we’ve been shortlisted for
               TIF at IIT Madras, we were surprised. No one in our entire family,
               our generation, had ever seen an IIT. We got a really good mentor
               and, Tech and Innovation Fair was really supportive from Day 0. I
-              thank the entire team for everything they’ve done for us.”
+              thank the entire team for everything they’ve done for us.</blockquote>
               <br />
               <Text fontStyle="italic" fontWeight="bold">
                 -Mohammed Safi, Team Night Fury
@@ -233,24 +272,25 @@ function Tif() {
             borderRadius="md"
             maxwidth={500}
             padding={2}
+            m={2}
+            className="success-stories3"
           >
             <Heading
               fontSize="xl"
               fontWeight="bold"
-              color={"gray.500"}
               marginTop={2}
             >
               Non Invasive Measurement of Blood Glucose &Haemoglobin (Winner
               TIF-2019)
             </Heading>
-            <Text padding={2} color={"gray.500"} maxW={"3xl"}>
-              “We were working on our device for few months and always wanted to
+            <Text padding={2} maxW={'3xl'}>
+              <blockquote> We were working on our device for few months and always wanted to
               make it into a startup to help people. That’s when we came across
               Tech and Innovation Fair at Shaastra ‘19 in IIT Madras. The TIF
               platform helped us by organising workshops on IPR and Pitching. At
               the end of the day, we were also given an opportunity for
               pre-incubation at the IITM Research Park. This event helped us
-              take our product to the next phase.”
+              take our product to the next phase.</blockquote>
               <br />
               <Text fontStyle="italic" fontWeight="bold">
                 -Sriram Shreedharan, Team Leader Glucoglobin.
@@ -263,20 +303,21 @@ function Tif() {
             borderRadius="md"
             maxwidth={500}
             padding={2}
+            m={2}
+            className="success-stories4"
           >
             <Heading
               fontSize="xl"
               fontWeight="bold"
-              color={"gray.500"}
               marginTop={2}
             >
               Foldable House (Winner TIF-2018)
             </Heading>
-            <Text padding={2} color={"gray.500"} maxW={"3xl"}>
-              “We were a project prototype while we registered for Shaastra TIF
+            <Text padding={2} maxW={'3xl'}>
+              <blockquote>We were a project prototype while we registered for Shaastra TIF
               2018. TIF 2018 gave us much insights through its mentoring
               sessions and webinars. It helped us to work more aggressively on
-              our project and now its soon to be launched as a startup.”
+              our project and now its soon to be launched as a startup.</blockquote>
               <br />
               <Text fontStyle="italic" fontWeight="bold">
                 -Shree Ram, CEO & Co-founder, Modulus Housing
@@ -287,7 +328,7 @@ function Tif() {
         <Center>
           <Heading textAlign="center" fontWeight={700} lineHeight={"110%"}>
             Exhibitions and{"   "}
-            <Text as={"span"} color={"orange.400"}>
+            <Text as={"span"} color={colorvariant}>
               Research Park Visit
             </Text>
           </Heading>
@@ -305,7 +346,8 @@ function Tif() {
               alt="tif_5"
               w="301px"
               h="301px"
-              objectFit="fill"
+              objectFit="cover"
+              rounded={'2xl'}
             ></Image>
             <Box zIndex="-1" width="350px" position="absolute" height="350px">
               <Box
@@ -325,7 +367,8 @@ function Tif() {
               alt="tif_6"
               w="301px"
               h="301px"
-              objectFit="fill"
+              objectFit="cover"
+              rounded={'2xl'}
             ></Image>
             <Box zIndex="-1" width="350px" position="absolute" height="350px">
               <Box

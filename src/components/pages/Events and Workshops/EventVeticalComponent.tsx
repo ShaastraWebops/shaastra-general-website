@@ -141,8 +141,8 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
        <Box  minHeight={"15vw"} m={2} p={2}>
             <Stack spacing={8}>
                     <Box className="event-main-box" minHeight={"15vh"}>
-                    <Flex width="100vw" justifyContent="space-evenly" marginBottom="2vh" height="fit-content" className="vertical-events-flex">
-                        <div className="flip-card">
+                    <Flex width={["90vw","90vw","90vw","80vw"]} margin="auto" alignItems={"center"} justifyContent="space-evenly" marginBottom="2vh" height="fit-content" className="vertical-events-flex">
+                        {/* <div className="flip-card">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front">
                                     <Box position="relative" boxSize="15vw">
@@ -177,20 +177,30 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                                     </Box>
                                 </div>
                             </div>
-                        </div>
-                        <Box borderRadius="24px" width="50vw" height="100%" marginLeft="15vw" className="event-desp">
+                        </div> */}
+                         <Flex alignItems={"center"} justifyContent={"space-between"} flexDirection={"column"} position="relative" width={["40vw","25vw"]} height="fit-content">
+                                        <Image src={data.pic ? data.pic : bg} boxSize={["30vw","30vw","30vw","15vw"]} borderRadius="24px"></Image>
+                                        <Text width={["30vw","30vw","30vw","15vw"]} fontSize={["3vw","3vw","3vw","1.5vw"]} fontWeight="bold">{data?.name}</Text>
+                                        {/* <Box content="" position="absolute" top="0" left="0" borderRadius="24px"
+                                        opacity="0.7" backgroundImage="linear-gradient(45deg, white, #ffffff00)" 
+                                        boxSize="15vw" className="glass"></Box>
+                                        <Flex boxSize="15vw" alignItems="center" justifyContent="center" position="absolute" top="0" className="event-name">
+                                            <Text width="10vw" fontSize={"1.5vw"} fontWeight="bold" color="black">{data?.name}</Text>
+                                        </Flex> */}
+                        </Flex>
+                        <Box height="fit-content" borderRadius="24px" width={["60%","60%","60%","55vw"]} marginLeft="1vw" className="event-desp">
                             <Flex flexDirection="column"  width="50vw" height="100%" alignItems="center" justifyContent="center" textAlign={"justify"}>
-                                    <Text textAlign="center" width="48vw" className={font} fontSize={["lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
+                                    <Text textAlign="left" width={["100%","100%","100%","100%"]} className={font} fontSize={["10px","10px","md","lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
                                     <Text noOfLines={4}>
                                     <ReactMarkdown
                                         children={data?.description!}
                                         remarkPlugins={[remarkGfm]}
                                     ></ReactMarkdown>
                                     </Text>
-                                       <Flex width={'100%'} flexDirection={['column','column','row','row']} alignContent={["center"]} justifyContent={["center","space-between"]}>
+                                       <Flex height="fit-content" width={'100%'} flexDirection={['column','column','row','row']} alignContent={["center"]} justifyContent={["center","center"]}>
                                        {
                                            !isAdmin ? ( data.registrationType === "NONE" ? 
-                                           <Box marginTop="2vh" height="1vw" >
+                                           <Box marginTop="2vh" height="1vw" marginRight={"2vw"}>
                                            <Alert status='info' size={"xs"}>
                                                 <AlertIcon />
                                                 Registration is not required for this event
@@ -210,7 +220,7 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                                            ) : null
                                         }
                                         <Box  marginTop="2vh"  height="1vw" >
-                                            <Button backgroundColor={buttoncolor} color='black'
+                                            <Button fontSize={["3vw","3vw","3vw", "1vw"]} padding={["1vw", "1.25vw"]} backgroundColor={"white"} border="2px solid black" color='black'
                                                     onClick={() => {
                                                         history.push(`/eventpage/${data.id}`)
                                                     }} >

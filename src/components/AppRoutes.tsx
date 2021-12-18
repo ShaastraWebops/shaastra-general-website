@@ -54,9 +54,9 @@ const AppRoutes = (props: Props) => {
      {
        localStorage.getItem('role') === 'Admin' && 
         <Switch>
-           <Route exact path="/admin/add" component={EventAdmin}></Route>
-       <Route exact path="/admin/edit/:id" component={EditEvent}></Route>
-       <Route exact path="/admin" component={EventsAdmin}></Route>
+          <Route exact path="/admin/add" component={EventAdmin}></Route>
+          <Route exact path="/admin/edit/:id" component={EditEvent}></Route>
+          <Route exact path="/admin" component={EventsAdmin}></Route>
         </Switch>
      }
       <Route exact path="/eventpage/:id" component={EventPage}></Route>
@@ -73,8 +73,13 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/resetpassword" component={ForgotAfter}></Route>
       <Route exact path="/verify" component={Verify}></Route>
       <Route exact path="/signout" component={SignOut}></Route>
-      <Route exact path="/profile" component={Profile}></Route>
-      <Route exact path="/editprofile" component={EditProfile}></Route>
+      {
+        localStorage.getItem("role") === 'USER' && 
+        <Switch>
+          <Route exact path="/profile" component={Profile}></Route>
+          <Route exact path="/editprofile" component={EditProfile}></Route>
+        </Switch>
+      }
 
       <Route exact path="/policies/privacy-policy" component={Privacy}></Route>
       <Route exact path="/policies/return-refund-policy" component={Refund}></Route>
