@@ -550,7 +550,7 @@ const EventAdmin = () => {
                   alert("Enter a valid registration fee")
                 }else{
                 try {
-                  await UploadImageToS3WithNativeSdk(file)
+                  if(newFile !== '') await UploadImageToS3WithNativeSdk(file)
                   await addEventMutation({
                     variables: {
                       data: {
