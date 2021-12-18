@@ -33,7 +33,7 @@ import Privacy from "./pages/Policies/Privacy";
 import TermsConditions from "./pages/Policies/TermsConditions";
 import Shipping from "./pages/Policies/Shipping";
 import Refund from "./pages/Policies/Refund";
-
+import HomeEW from "./pages/Events and Workshops/EWHome"
 interface Props {}
 
 const AppRoutes = (props: Props) => {
@@ -48,7 +48,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
       <Route exact path="/social-endeavours" component={Social} />
 
-      <Route exact path="/eventsworkshops" component={Eventsworkshops} />
+      <Route exact path="/eventsworkshops" component={HomeEW} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" component={EventVertical}></Route>
      {

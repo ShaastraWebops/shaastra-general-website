@@ -69,11 +69,19 @@ function Events() {
             <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
               <Link fontSize={["4vw","2vw"]} href="/events/ignite">Ignite</Link>
             </GridItem>
+            <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
+              <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} src={Strategists}></Image> 
+              <Link fontSize={["4vw","2vw"]} href="/events/strategists">Strategists</Link>
+            </GridItem>
+            <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
+              <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} src={Cl}></Image> 
+              <Link fontSize={["4vw","2vw"]} href="/events/cl">Coding & Logic</Link>
+            </GridItem>
          </Grid>
-         <Box margin="auto" width={["80vw","40vw"]} zIndex={3} display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
+         {/* <Box margin="auto" width={["80vw","40vw"]} zIndex={3} display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
             <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} src={Strategists}></Image>
               <Link fontSize={["4vw","2vw"]} href="/events/strategists">Strategists</Link>
-            </Box>
+            </Box> */}
         </Stack>
       </Box>
       <Footer
