@@ -46,6 +46,8 @@ import Workshop1 from "../../images/workshop_1.png";
 import Workshop2 from "../../images/workshop_2.png";
 import Workshop3 from "../../images/workshop_3.png";
 import Workshop4 from "../../images/workshop_4.png";
+import codetochaos1 from "../../images/logo/static/codetochaos.svg";
+import codetochaos2 from "../../images/logo/static/codetochaos2.svg";
 
 interface Props {}
 
@@ -58,6 +60,7 @@ const Home = (props: Props) => {
   );
 
   const plain = useColorModeValue("black", "white");
+  const codetochoas = useColorModeValue(codetochaos1, codetochaos2);
 
   const [sideNavBar_marker, setSideNavBar_marker] = React.useState<number>(
     window.innerWidth > 600 ? 200 / 6 : (window.innerWidth - 150) / 6 - 5
@@ -172,6 +175,8 @@ const Home = (props: Props) => {
         >
           <div className="ContentBox">
             <h1>SHAASTRA 2022</h1>
+            <img src={codetochoas} alt="" id="theme_name" />
+            <p id="themeDate">13th - 16th January</p>
             {window.innerWidth < 800 ? (
               <></>
             ) : (
@@ -184,7 +189,7 @@ const Home = (props: Props) => {
                 explore what we have to offer.
               </p>
             )}
-            <Link to="/speakers">Register</Link>
+            <Link to="/signup">Register</Link>
           </div>
           <div className="imgBox">
             <img src={robos1} alt="" />
@@ -696,6 +701,7 @@ const Home = (props: Props) => {
             { name: "Krithikaa", mail: "be20b020@smail.iitm.ac.in" },
             { name: "Yogesh", mail: "bs19b034@smail.iitm.ac.in" },
           ]}
+          curr_page="Home"
         />
       </div>
     </CustomBox>

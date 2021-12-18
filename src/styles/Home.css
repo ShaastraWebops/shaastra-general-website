@@ -176,11 +176,36 @@
   letter-spacing: 5px;
   line-height: 1em;
 }
+.Home_landingPage .ContentBox #theme_name {
+  height: 16px;
+  margin: 10px 0;
+}
 .Home_landingPage .ContentBox p {
   font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.Home_landingPage .ContentBox a {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 6px 20px 7px 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: linear-gradient(91.69deg, #3300ff 0%, #db00ff 100%);
+  transition: 0.2s;
+  width: fit-content;
+  color: #fff;
+}
+.Home_landingPage .ContentBox a:hover {
+  letter-spacing: 2px;
+}
+.Home_landingPage .ContentBox #themeDate {
+  font-size: 1.1em;
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 .Home_landingPage .imgBox {
   max-width: 650px;
   max-height: 650px;
@@ -311,6 +336,11 @@
   .Home_landingPage h1 {
     margin-bottom: 5vw;
     text-align: center;
+  }
+  .Home_landingPage .ContentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .Home_landingPage .imgBox {
     max-width: 650px;

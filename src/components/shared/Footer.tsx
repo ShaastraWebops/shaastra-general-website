@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaInstagram,
   FaLinkedin,
+  FaPhone,
   FaTwitterSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
@@ -18,6 +19,7 @@ interface Props {
     name: String;
     mail: String;
   }[];
+  curr_page?: String;
 }
 
 const Footer = (props: Props) => {
@@ -26,11 +28,25 @@ const Footer = (props: Props) => {
   return (
     <section className={`Footer ${theme}`}>
       <div className="top">
-        <Link to="/" className="FooterLogo">
-          <img src={FooterLogo} />
-        </Link>
         <div className="Contact">
-          <h3>Contact Us : </h3>
+          <h3>NEED HELP</h3>
+          <p>
+            {props.curr_page === "Home" ? (
+              <a href="#who_are_we">About us</a>
+            ) : (
+              <Link to="/">About us</Link>
+            )}
+          </p>
+          <p>
+            <Link to="/team">Team</Link>
+          </p>
+          <p>
+            <Link to="/sponsors">Sponsors</Link>
+          </p>
+          {window.innerWidth <= 1000 ? <></> : <br />}
+        </div>
+        <div className="Contact">
+          <h3>CONTACT</h3>
           <p>
             {/* {window.innerWidth < 600 ? <br /> : <span>General : </span>} */}
             <a href="mailto:sec_cocur@shaastra.org">
@@ -56,21 +72,21 @@ const Footer = (props: Props) => {
           {window.innerWidth <= 1000 ? <></> : <br />}
         </div>
         <div className="Contact">
-          {window.innerWidth >= 900 && window.innerWidth <= 1000 ? (
-            <br />
-          ) : (
-            <></>
-          )}
-          <p className="address">
-            IITM Students Activities Trust
-            <br /> Shaastra, 1st Floor,
-            <br /> O/o Dean Of Students Office,
+          <p
+            className="address"
+            style={{
+              display: "initial",
+            }}
+          >
+            <strong>Address :</strong> IITM Students Activities Trust Shaastra,
+            <br /> 1st Floor, O/o Dean Of Students Office,
             <br /> IIT Madras, Guindy Chennai,
             <br /> Tamil Nadu 600036 India
+            <br /> Mobile : +919952729095
           </p>
         </div>
         <div className="DesignedBy">
-          <h3>Legal : </h3>
+          <h3>LEGAL</h3>
           <p>
             <a href="policies/privacy-policy">Privacy Policy</a>
           </p>
