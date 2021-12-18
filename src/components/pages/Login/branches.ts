@@ -20,6 +20,7 @@ export const branches = [
     "Mechatronics Engineering",
     "Metallurgical Engineering",
     "Mining Engineering",
+    "Naval Architechture and Ocean Engineering",
     "Petroleum Engineering",
     "Power Engineering",
     "Production Engineering",
