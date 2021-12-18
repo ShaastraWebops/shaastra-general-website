@@ -1,5 +1,6 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {Link} from "@chakra-ui/react"
 import Exhibitions from "./pages/Exhibitions/Exhibitions";
 import Home from "./pages/Home";
 import Envisage from "./pages/night/Envisage";
@@ -46,13 +47,15 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/exhibitions" component={Exhibitions} />
       <Route exact path="/team" component={Team} />
       <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
-      <Route exact path="/social-endeavours" component={Social} />
-
+      {/* <Route exact path="/social-endeavours" component={Social} /> */}
+      <Route exact path="/social-endeavours" component={() => {window.location.href = "https://unmute.shaastra.org/"; return null}}>
+        {/* <Link to="https://unmute.shaastra.org/"></Link> */}
+      </Route>
       <Route exact path="/eventsworkshops" component={HomeEW} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" component={EventVertical}></Route>
      {
-       localStorage.getItem('role') === 'Admin' && 
+       localStorage.getItem('role') !== 'Admin' && 
         <Switch>
           <Route exact path="/admin/add" component={EventAdmin}></Route>
           <Route exact path="/admin/edit/:id" component={EditEvent}></Route>
