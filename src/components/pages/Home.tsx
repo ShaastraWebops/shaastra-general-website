@@ -46,7 +46,8 @@ import Workshop1 from "../../images/workshop_1.png";
 import Workshop2 from "../../images/workshop_2.png";
 import Workshop3 from "../../images/workshop_3.png";
 import Workshop4 from "../../images/workshop_4.png";
-import codetochaos1 from "../../images/logo/static/codetochaos.svg";
+// import codetochaos1 from "../../images/logo/static/codetochaos.svg";
+import codetochaos1 from "../../images/logo/static/codetochaos2.svg";
 import codetochaos2 from "../../images/logo/static/codetochaos2.svg";
 
 interface Props {}
@@ -175,7 +176,20 @@ const Home = (props: Props) => {
         >
           <div className="ContentBox">
             <h1>SHAASTRA 2022</h1>
-            <img src={codetochoas} alt="" id="theme_name" />
+            <img
+              style={
+                plain === "black"
+                  ? {
+                      filter: "invert(1)",
+                    }
+                  : {
+                      filter: "invert(0)",
+                    }
+              }
+              src={codetochoas}
+              alt=""
+              id="theme_name"
+            />
             <p id="themeDate">13th - 16th January</p>
             {window.innerWidth < 800 ? (
               <></>
