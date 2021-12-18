@@ -13,6 +13,8 @@ export const branches = [
     'Electrical Engineering',
     "Electronics Engineering",
     "Electronics & Communication Engineering",
+    "Engineering Design",
+    "Engineering Physics",
     "Environmental Engineering",
     "Industrial Engineering",
     "Marine Engineering",
