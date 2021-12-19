@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap");
+@import url("http://fonts.cdnfonts.com/css/cgf-locust-resistance");
 .Home {
   width: 100%;
   height: 100vh;
@@ -172,13 +173,47 @@
 .Home_landingPage .ContentBox h1 {
   font-family: "Quicksand";
   font-size: 4.5em;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 5px;
-  line-height: 1em;
+  /* font-family: "CGF Locust Resistance", sans-serif; */
+  line-height: 1.1em;
+}
+.Home_landingPage .ContentBox .Theme {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.Home_landingPage .ContentBox #dash {
+  display: inline-block;
+  width: 10px;
+  height: 3px;
+  background-color: #fff;
+  margin: 0 4px;
+  border-radius: 2px;
+}
+.Home_landingPage.black .ContentBox #dash {
+  background-color: #000;
 }
 .Home_landingPage .ContentBox #theme_name {
-  height: 16px;
-  margin: 10px 0;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4em;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  /* height: 16px; */
+  font-family: "CGF Locust Resistance", sans-serif;
+}
+.Home_landingPage .ContentBox #themeDate {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.4em;
+  font-family: "CGF Locust Resistance", sans-serif;
 }
 .Home_landingPage .ContentBox p {
   font-size: 1em;
@@ -200,12 +235,6 @@
 .Home_landingPage .ContentBox a:hover {
   letter-spacing: 2px;
 }
-.Home_landingPage .ContentBox #themeDate {
-  font-size: 1.1em;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
 .Home_landingPage .imgBox {
   max-width: 650px;
   max-height: 650px;
@@ -364,16 +393,36 @@
   }
   .Home_landingPage .ContentBox h1 {
     font-size: 12vw;
-    line-height: 1.1em;
+    line-height: 1em;
     text-align: center;
+    margin-bottom: 4px;
   }
   .Home_landingPage .ContentBox p {
     font-size: 18px;
     text-align: center;
   }
+  .Home_landingPage .ContentBox .Theme {
+    margin: 0;
+    margin-top: 2px;
+    justify-content: center;
+    align-items: center;
+  }
+  #dash {
+    width: 5px;
+    height: 1.5px;
+    margin: 0 4px;
+    border-radius: 1px;
+  }
+  .Home_landingPage .ContentBox #theme_name {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .Home_landingPage .ContentBox #themeDate {
+    font-size: 12px;
+  }
   .Home_landingPage .Follow {
     top: auto;
-    bottom: 80px;
+    bottom: 60px;
     right: auto;
     left: auto;
   }
@@ -587,62 +636,46 @@
   user-select: none;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .speaker_swiper_container .swiper-container .swiper-slide .contentBox {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  padding: 10px 20px;
+  height: fit-content;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: #222;
-  /* backdrop-filter: blur(8px); */
-  transform: translateY(100%);
-  transition: 0.5s;
   color: #fff;
-}
-.speaker_swiper_container .swiper-container .swiper-slide:hover .contentBox {
-  transform: translateY(0%);
-}
-.Home_WorkshopsEvents .swiper-container .swiper-slide .contentBox {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4));
+  z-index: 3;
 }
 .Home_WorkshopsEvents.black .swiper-container .swiper-slide .contentBox *,
 .Home_Speakers.black .swiper-container .swiper-slide .contentBox * {
   color: #fff;
 }
+.speaker_swiper_container .swiper-container .swiper-slide .contentBox .left {
+  text-align: left;
+  margin-right: 10px;
+}
 .speaker_swiper_container .swiper-container .swiper-slide .contentBox h3 {
+  text-align: left;
   font-size: 18px;
+  line-height: 1.1em;
   font-weight: 600;
   letter-spacing: 2px;
-  /* text-transform: uppercase; */
-  text-align: center;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 4px;
 }
 .speaker_swiper_container .swiper-container .swiper-slide .contentBox p {
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 1px;
+  line-height: 1.2em;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
   margin: 5px 0 5px 0;
-}
-.speaker_swiper_container .swiper-container .swiper-slide .contentBox ol {
-  width: fit-content;
-  margin: 0 0 0 20px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.speaker_swiper_container .swiper-container .swiper-slide .contentBox ol li {
-  width: fit-content;
 }
 .Home_Speakers
   .speaker_swiper_container
@@ -650,11 +683,12 @@
   .swiper-slide
   .contentBox
   a {
-  font-size: 36px;
+  font-size: 30px;
   letter-spacing: 1px;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin: 0px 0 14px 0;
+  margin: 0;
+  padding: 0;
   background: none;
   transition: 0.1s;
 }
@@ -687,98 +721,6 @@
   position: relative;
   right: -20px;
 }
-/* .swiperControllers {
-  display: flex;
-  align-items: center;
-}
-.swiperControllers .swiper-prev-con,
-.swiperControllers .swiper-next-con {
-  position: relative;
-  margin: 20px;
-  cursor: pointer;
-}
-.swiperControllers .swiper-prev-con img,
-.swiperControllers .swiper-next-con img {
-  height: 30px;
-  object-fit: contain;
-}
-.Home_WorkshopsEvents.black .swiperControllers .swiper-prev-con img,
-.Home_WorkshopsEvents.black .swiperControllers .swiper-next-con img,
-.Home_Speakers.black .swiperControllers .swiper-prev-con img,
-.Home_Speakers.black .swiperControllers .swiper-next-con img {
-  filter: invert(1);
-}
-.swiperControllers .swiper-next-con {
-  transform: rotate(180deg);
-} */
-/*
-.swiperControllers .swiper-pagination {
-  position: relative;
-  width: 200px !important;
-}
-.swiperControllers .swiper-pagination .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
-  margin: 0 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgb(219, 219, 219);
-  opacity: 1;
-}
-.Home_WorkshopsEvents.black
-  .swiperControllers
-  .swiper-pagination
-  .swiper-pagination-bullet,
-.Home_Speakers.black
-  .swiperControllers
-  .swiper-pagination
-  .swiper-pagination-bullet {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgb(88, 88, 88);
-}
-.swiperControllers .swiper-pagination .swiper-pagination-bullet-active {
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(20, 255, 0, 0) 0%,
-    rgba(20, 255, 0, 0.3321) 100%
-  );
-  border: 1px solid #14ff00;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-} 
-.Home_WorkshopsEvents.black
-  .swiperControllers
-  .swiper-pagination
-  .swiper-pagination-bullet-active,
-.Home_Speakers.black
-  .swiperControllers
-  .swiper-pagination
-  .swiper-pagination-bullet-active {
-  background: radial-gradient(50% 50% at 50% 50%, 08630033 0%, #086300 100%);
-  border: 1px solid #086300;
-}
-.swiperControllers .swiper-pagination .swiper-pagination-bullet-active::before {
-  position: absolute;
-  content: "";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #14ff00;
-}
-.Home_WorkshopsEvents.black
-  .swiperControllers
-  .swiper-pagination
-  .swiper-pagination-bullet-active::before,
-.Home_Speakers.black
-  .swiperControllers
-  .swiper-pagination
-  .swiper-pagination-bullet-active::before {
-  background-color: #00a31b;
-} */
 .Home_Speakers a,
 .Home_WorkshopsEvents a {
   padding: 6px 20px 7px 20px;
@@ -842,6 +784,9 @@
     position: relative;
     height: 100% !important;
     width: 100% !important;
+  }
+  .speaker_swiper_container .swiper-container .swiper-slide .contentBox {
+    padding: 10px 15px;
   }
   .Home_WorkshopsEvents
     .speaker_swiper_container
@@ -946,27 +891,6 @@
     object-fit: contain;
     overflow: hidden;
     z-index: 0;
-  }
-  .Home_Speakers
-    .speaker_swiper_container
-    .swiper-container
-    .swiper-slide
-    .contentBox {
-    width: 100%;
-    height: fit-content;
-    /* height: calc(100% - 120x); */
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    position: relative;
-    transform: translateY(0%);
-    z-index: 1;
-  }
-  .Home_Speakers
-    .speaker_swiper_container
-    .swiper-container
-    .swiper-slide
-    .contentBox
-    a {
-    margin: 0;
   }
 }
 /* Home_Testimonials */
