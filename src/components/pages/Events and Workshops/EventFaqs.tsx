@@ -14,7 +14,15 @@ const EventFaqs = ({event} : any | null) =>{
     const [faqId, setFaqId] = React.useState("");
     const [uquestion, setQuestion] = React.useState("");
     const [uanswer, setAnswer] = React.useState("");
-  
+
+    let faqs = event?.faqs ;
+
+    faqs = faqs.filter((faq)=>{
+      if(faq.question.split("field",2).length > 1){
+        return false
+      }else  return true
+    })
+    console.log(faqs)
     const [aquestion, setAQuestion] = React.useState("");
     const [aanswer, setAAnswer] = React.useState("");
   
@@ -71,7 +79,7 @@ const EventFaqs = ({event} : any | null) =>{
     const textcolor = useColorModeValue("black","white")
     return (
        <React.Fragment>
-           {event.faqs && event?.faqs.length! > 0 ? (
+           {faqs && faqs.length! > 0 ? (
           <Box  width={"100%"}>
             <Center textAlign={"center"}>
               <Heading size={"lg"} m={4} mt="30px" color={textcolor}>
@@ -117,19 +125,19 @@ const EventFaqs = ({event} : any | null) =>{
             ) : null}
 
             <Flex flexDirection={"column"}  width={"100%"} color={"black"}>
-              {event?.faqs.map((faq) => {
+              {faqs?.map((faq) => {
                 return (
-                  <Box m={1} key={faq.id} >
+                  <Box m={2} key={faq.id} >
                     <Flex>
                       <Box
-                        p={3}  shadow="lg"
+                        p={3} shadow="lg"
                         borderTopWidth="2px"
                         borderLeftWidth={"2px"}
                         borderRightWidth={"2px"}
                         width={"100%"}
                         borderTopRadius={"lg"}
                       >
-                        <Heading size="md" textAlign={"left"} color={'gray.500'}>{faq.question}</Heading>
+                        <Heading size="lg" textAlign={"left"} color={'gray.500'}>{faq.question}</Heading>
                         {faqId === faq.id ? (
                           <FormControl m={3}>
                             <Input
