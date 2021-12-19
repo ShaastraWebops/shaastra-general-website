@@ -34,18 +34,13 @@ import Robo from "../../images/Speaker/robothespian1.jpg";
 import Soumya from "../../images/Speaker/soumya_swaminathan.jpg";
 import Capture from "../../images/Speaker/Capture.jpg";
 import Robert from "../../images/Speaker/robert.jpg";
-import Event1 from "../../images/events_1.png";
-import Event2 from "../../images/events_2.png";
-import Event3 from "../../images/events_3.png";
-import Event4 from "../../images/events_4.png";
-import Event6 from "../../images/events_6.png";
-import Event7 from "../../images/events_7.png";
-import Event8 from "../../images/events_8.png";
-import Event9 from "../../images/events_9.png";
-import Workshop1 from "../../images/workshop_1.png";
-import Workshop2 from "../../images/workshop_2.png";
-import Workshop3 from "../../images/workshop_3.png";
-import Workshop4 from "../../images/workshop_4.png";
+import Event1 from "../../images/events_1.jpg";
+import Event2 from "../../images/events_2.jpg";
+import Event3 from "../../images/events_3.jpg";
+import Event4 from "../../images/events_4.jpg";
+import Workshop1 from "../../images/workshop_1.jpg";
+import Workshop2 from "../../images/workshop_2.jpg";
+import Workshop3 from "../../images/workshop_3.jpg";
 // import codetochaos1 from "../../images/logo/static/codetochaos.svg";
 import codetochaos1 from "../../images/logo/static/codetochaos2.svg";
 import codetochaos2 from "../../images/logo/static/codetochaos2.svg";
@@ -176,31 +171,27 @@ const Home = (props: Props) => {
         >
           <div className="ContentBox">
             <h1>SHAASTRA 2022</h1>
-            <img
-              style={
-                plain === "black"
-                  ? {
-                      filter: "invert(1)",
-                    }
-                  : {
-                      filter: "invert(0)",
-                    }
-              }
-              src={codetochoas}
-              alt=""
-              id="theme_name"
-            />
-            <p id="themeDate">13th - 16th January</p>
+            <div className="Theme">
+              <h3 id="theme_name">CODE TO CHAOS</h3>
+              <p id="themeDate">
+                13th <span id="dash"></span> 16th January
+              </p>
+            </div>
             {window.innerWidth < 800 ? (
               <></>
             ) : (
               <p>
-                Welcome to the Official website of first ISO certified
+                {/* Welcome to the Official website of first ISO certified
+                student-run technical festival, Shaastra! Here, we will take you
+                through all the amazing things you can do with us, from earning
+                lakhs of money by winning events, to fireside chats with your
+                favorite celebrities. */}
+                {/* Welcome to the Official website of first ISO certified
                 student-run technical festival, Shaastra! Here, we will take you
                 through all the amazing things you can do with us, from earning
                 lakhs of money by winning events, to fireside chats with your
                 favorite celebrities. So, what are you waiting for? Go ahead and
-                explore what we have to offer.
+                explore what we have to offer. */}
               </p>
             )}
             <Link to="/signup">Register</Link>
@@ -292,158 +283,24 @@ const Home = (props: Props) => {
             >
               <SwiperSlide>
                 <img src={Workshop1} alt="" />
-                <div className="contentBox">
-                  <ol type="1">
-                    <li>
-                      Make a chat app using Socket.io, Node.js and MongoDB
-                    </li>
-                    <li>Web Development in Python with Flask</li>
-                    <li>Creative Coding</li>
-                  </ol>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={Event1} alt="" />
-                <div className="contentBox">
-                  <h3>Capture the Flag (CTF)</h3>
-                  <p>
-                    Do "hacking" scenes in movies and TV Shows make you roll
-                    your eyes? Do you want to see what exploiting real life
-                    vulnerabilities in real life systems is like? Shaastra CTF
-                    is the event for you. Break programs, sneakily attack and
-                    search all over to find out encrypted hidden messages,
-                    fittingly called Flags. This is a one round, all online
-                    (fairly exciting) CTF event.
-                  </p>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={Workshop2} alt="" />
-                <div className="contentBox">
-                  <ol type="1">
-                    <li>Introduction to FPGA</li>
-                    <li>CPU and GPU Parallel Computing</li>
-                    <li>Quantum Computing</li>
-                  </ol>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={Event2} alt="" />
-                <div className="contentBox">
-                  <h3>Caterpillar IDP</h3>
-                  <p>
-                    Are you a person who is curious about problem solving? Yes,
-                    you heard that right, you are at the right place. With mind
-                    blogging problem statements at our stake and with the
-                    collaboration of Caterpillar India Pvt ltd, we put forward
-                    the most anticipated event of Shaastra, IDP (Industry
-                    Defined Problems).
-                  </p>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={Workshop3} alt="" />
-                <div className="contentBox">
-                  <ol type="1">
-                    <li>Introduction to Arduino and IOT</li>
-                    <li>Circuit Simulation and PCB Design</li>
-                    <li>
-                      Hacking Processors : An Unconventional Hacking Methodology
-                    </li>
-                  </ol>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={Event3} alt="" />
-                <div className="contentBox">
-                  <h3>Rapid Chess</h3>
-                  <p>
-                    The event is Blitz Chess. The event is going to be held on
-                    Chess.com. Both opponents get 3min+2sec each for the chess
-                    game. A player can win only if he checkmates the opponent or
-                    the opponent's time runs out first. Draw is possible due to
-                    stalemate or by insufficient pieces for checkmate. The event
-                    is to be held on 6th March.
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Workshop4} alt="" />
-                <div className="contentBox">
-                  <ol type="1">
-                    <li>Stepping into the world of robotics</li>
-                    <li>Python Algorithms for Robotics</li>
-                    <li>Control of Robot Arm using Inverse Kinematics</li>
-                  </ol>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={Event4} alt="" />
-                <div className="contentBox">
-                  <h3>Boeing Aeromodelling Competition</h3>
-                  <p>
-                    Have you ever wanted to work on modelling a real aeroplane?
-                    Shaastra brings you, The BOEING NATIONAL AEROMODELLING
-                    COMPETITION, conducted in collaboration between Boeing,
-                    Skyfi Labs, and the IITs, is a golden opportunity for all
-                    aeromodelling enthusiasts, to showcase your modelling skills
-                    at a national platform
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Event7} alt="" />
-                <div className="contentBox">
-                  <h3>Global Biotech Council</h3>
-                  <p>
-                    GBC is a debate-based event where the participants will have
-                    to submit a write up about the topic given and the top 12
-                    teams are selected for the final round that is a debate
-                    round where they have to argue for/against the topic. The
-                    topic for debate is “Gene Therapy – Boon or Bane?”
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Event6} alt="" />
-                <div className="contentBox">
-                  <h3>Shaastra Programming Contest</h3>
-                  <p>
-                    Truth can only be found in one place: the code. We are ready
-                    with the most innovative problem situations ever, testing
-                    algorithms and implementation in every way possible. Are you
-                    ready to prove your skill and emerge a programming champion?
-                    We have online prelims and an online finals
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Event8} alt="" />
-                <div className="contentBox">
-                  <h3>Reverse Coding</h3>
-                  <p>
-                    Coders are divided by language but united by logic. Before
-                    learning the mumbo-jumbo syntax of every programming
-                    language there is to offer, first one must develop a keen
-                    sense of how to approach problems. The RC event offers a
-                    brief test on your logical and analytical skills that are
-                    essential in becoming a good coder.
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Event9} alt="" />
-                <div className="contentBox">
-                  <h3>Mouse Maze challenge</h3>
-                  <p>
-                    Mouse Maze challenge is a simple, fun, and challenging task.
-                    This is the online version of Micro Mouse Maze, where an
-                    autonomous robotic mouse is programmed to reach the center
-                    of a maze. The problem is very practical and involves a
-                    great deal of algorithmic thinking and problem solving
-                    skills.
-                  </p>
-                </div>
               </SwiperSlide>
             </Swiper>
             <div className="swiper-next-con" ref={events_navigationNextRef}>
@@ -489,21 +346,15 @@ const Home = (props: Props) => {
                     }
                   : false
               }
-              // breakpoints={{
-              //   200: {
-              //     slidesPerView: 1,
-              //   },
-              //   850: {
-              //     slidesPerView: 4,
-              //   },
-              // }}
               slidesPerView={"auto"}
             >
               <SwiperSlide>
                 <img src={atkins} alt="" />
                 <div className="contentBox">
-                  <h3>Peter Atkins</h3>
-                  <p>FRSC, Prolific Author of popular chemistry textbooks</p>
+                  <div className="left">
+                    <h3>Peter Atkins</h3>
+                    <p>FRSC, Prolific Author of popular chemistry textbooks</p>
+                  </div>
                   <a
                     target="_blank"
                     href="https://www.youtube.com/watch?v=0G_-1SGhYTA&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=3"
@@ -515,11 +366,13 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Hennessy} alt="" />
                 <div className="contentBox">
-                  <h3>Dr John Hennessy</h3>
-                  <p>
-                    Chairman of Alphabet Inc., Eminent Computer Scientist,
-                    Turing Award, 2017
-                  </p>
+                  <div className="left">
+                    <h3>Dr John Hennessy</h3>
+                    <p>
+                      Chairman of Alphabet Inc., Eminent Computer Scientist,
+                      Turing Award, 2017
+                    </p>
+                  </div>
                   <a
                     href="https://www.youtube.com/watch?v=_ebUDIsbqkc&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=2"
                     target="_blank"
@@ -531,9 +384,10 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Radhakrishnan} alt="" />
                 <div className="contentBox">
-                  <h3>Dr K. Radhakrishnan</h3>
-
-                  <p>Former Chairman, ISRO</p>
+                  <div className="left">
+                    <h3>Dr K. Radhakrishnan</h3>
+                    <p>Former Chairman, ISRO</p>
+                  </div>
                   <a
                     href="https://www.youtube.com/watch?v=Wv_sea0tMrc&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X"
                     target="_blank"
@@ -545,9 +399,10 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Robo} alt="" />
                 <div className="contentBox">
-                  <h3>RoboThespian and Cleo</h3>
-
-                  <p>World’s First Acting Humanoid Robots</p>
+                  <div className="left">
+                    <h3>RoboThespian and Cleo</h3>
+                    <p>World’s First Acting Humanoid Robots</p>
+                  </div>
                   <a href="https://youtu.be/kLhGfEybZi4" target="_blank">
                     <FaYoutube />
                   </a>
@@ -556,9 +411,10 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Soumya} alt="" />
                 <div className="contentBox">
-                  <h3>Dr Soumya Swaminathan,</h3>
-
-                  <p>Chief Scientist, World Health Organisation (WHO)</p>
+                  <div className="left">
+                    <h3>Dr Soumya Swaminathan,</h3>
+                    <p>Chief Scientist, World Health Organisation (WHO)</p>
+                  </div>
                   <a href="https://youtu.be/2-_MZbCOP88" target="_blank">
                     <FaYoutube />
                   </a>
@@ -567,8 +423,10 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Capture} alt="" />
                 <div className="contentBox">
-                  <h3>Dr Joachim Frank</h3>
-                  <p>Nobel Prize in Chemistry, 2017</p>
+                  <div className="left">
+                    <h3>Dr Joachim Frank</h3>
+                    <p>Nobel Prize in Chemistry, 2017</p>
+                  </div>
                   <a href="https://youtu.be/cYs-FEUSNFw" target="_blank">
                     <FaYoutube />
                   </a>
@@ -577,8 +435,10 @@ const Home = (props: Props) => {
               <SwiperSlide>
                 <img src={Robert} alt="" />
                 <div className="contentBox">
-                  <h3>Mr Robert C. Martin</h3>
-                  <p>American Software Engineer, Popular Author</p>
+                  <div className="left">
+                    <h3>Mr Robert C. Martin</h3>
+                    <p>American Software Engineer, Popular Author</p>
+                  </div>
                   <a
                     href="https://www.youtube.com/watch?v=FlbDg_iBCkw&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=7"
                     target="_blank"

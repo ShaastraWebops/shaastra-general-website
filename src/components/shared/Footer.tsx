@@ -27,80 +27,153 @@ const Footer = (props: Props) => {
   const theme = useColorModeValue("white", "black");
   return (
     <section className={`Footer ${theme}`}>
-      <div className="top">
-        <div className="Contact">
-          <h3>NEED HELP</h3>
-          <p>
-            {props.curr_page === "Home" ? (
-              <a href="#who_are_we">About us</a>
-            ) : (
-              <Link to="/">About us</Link>
-            )}
-          </p>
-          <p>
-            <Link to="/team">Team</Link>
-          </p>
-          <p>
-            <Link to="/sponsors">Sponsors</Link>
-          </p>
-          {window.innerWidth <= 1000 ? <></> : <br />}
+      {window.innerWidth > 600 ? (
+        <div className="top">
+          <div className="Contact">
+            <h3>NEED HELP</h3>
+            <p>
+              {props.curr_page === "Home" ? (
+                <a href="#who_are_we">About us</a>
+              ) : (
+                <Link to="/">About us</Link>
+              )}
+            </p>
+            <p>
+              <Link to="/team">Team</Link>
+            </p>
+            <p>
+              <Link to="/sponsors">Sponsors</Link>
+            </p>
+            {window.innerWidth <= 1000 ? <></> : <br />}
+          </div>
+          <div className="Contact">
+            <h3>CONTACT</h3>
+            <p>
+              <a href="mailto:outreach@shaastra.org">
+                <FaEnvelope /> outreach@shaastra.org
+              </a>
+            </p>
+            <p>
+              <a href="mailto:sponsorship@shaastra.org">
+                <FaEnvelope /> sponsorship@smail.iitm.ac.in
+              </a>
+            </p>
+            <p>
+              <a href="mailto:sec_cocur@shaastra.org">
+                <FaEnvelope /> sec_cocur@shaastra.org
+              </a>
+            </p>
+            {window.innerWidth <= 1000 ? <></> : <br />}
+          </div>
+          <div className="Contact">
+            <h3>ADDRESS</h3>
+            <p
+              className="address"
+              style={{
+                display: "initial",
+                left: "0",
+              }}
+            >
+              IITM Students Activities Trust Shaastra,
+              <br /> 1st Floor, O/o Dean Of Students Office,
+              <br /> IIT Madras, Guindy Chennai,
+              <br /> Tamil Nadu 600036 India
+              <br /> Mobile : +919952729095
+            </p>
+          </div>
+          <div className="DesignedBy">
+            <h3>LEGAL</h3>
+            <p>
+              <a href="policies/privacy-policy">Privacy Policy</a>
+            </p>
+            <p>
+              <a href="policies/terms-conditions">Terms and Conditions</a>
+            </p>
+            <p>
+              <a href="policies/shipping-policy">Shipping Policy</a>
+            </p>
+            <p>
+              <a href="policies/return-refund-policy">
+                Return and Refund Policy
+              </a>
+            </p>
+          </div>
         </div>
-        <div className="Contact">
-          <h3>CONTACT</h3>
-          <p>
-            {/* {window.innerWidth < 600 ? <br /> : <span>General : </span>} */}
-            <a href="mailto:sec_cocur@shaastra.org">
-              <FaEnvelope /> sec_cocur@smail.iitm.ac.in
-            </a>
-          </p>
-          <p>
-            {/* {window.innerWidth < 600 ? (
-              <br />
-            ) : (
-              <span>Sponsors Relations : </span>
-            )} */}
-            <a href="mailto:sponsorship@shaastra.org">
-              <FaEnvelope /> sponsorship@shaastra.org
-            </a>
-          </p>
-          <p>
-            {/* {window.innerWidth < 600 ? <br /> : <span>Webops Team : </span>} */}
-            <a href="mailto:webops@shaastra.org">
-              <FaEnvelope /> webops@shaastra.org
-            </a>
-          </p>
-          {window.innerWidth <= 1000 ? <></> : <br />}
+      ) : (
+        <div className="top">
+          <div className="topleft">
+            <div className="Contact">
+              <h3>NEED HELP</h3>
+              <p>
+                {props.curr_page === "Home" ? (
+                  <a href="#who_are_we">About us</a>
+                ) : (
+                  <Link to="/">About us</Link>
+                )}
+              </p>
+              <p>
+                <Link to="/team">Team</Link>
+              </p>
+              <p>
+                <Link to="/sponsors">Sponsors</Link>
+              </p>
+              {window.innerWidth <= 1000 ? <></> : <br />}
+            </div>
+            <div className="DesignedBy">
+              <h3>LEGAL</h3>
+              <p>
+                <a href="policies/privacy-policy">Privacy Policy</a>
+              </p>
+              <p>
+                <a href="policies/terms-conditions">Terms and Conditions</a>
+              </p>
+              <p>
+                <a href="policies/shipping-policy">Shipping Policy</a>
+              </p>
+              <p>
+                <a href="policies/return-refund-policy">
+                  Return and Refund Policy
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="Contact">
+            <h3>CONTACT</h3>
+            <p>
+              <a href="mailto:outreach@shaastra.org">
+                <FaEnvelope /> outreach@shaastra.org
+              </a>
+            </p>
+            <p>
+              <a href="mailto:sponsorship@shaastra.org">
+                <FaEnvelope /> sponsorship@smail.iitm.ac.in
+              </a>
+            </p>
+            <p>
+              <a href="mailto:sec_cocur@shaastra.org">
+                <FaEnvelope /> sec_cocur@shaastra.org
+              </a>
+            </p>
+            {window.innerWidth <= 1000 ? <></> : <br />}
+          </div>
+          <div className="Contact" style={{ marginTop: "5px" }}>
+            <h3>ADDRESS</h3>
+            <p
+              className="address"
+              style={{
+                display: "initial",
+                left: "0",
+              }}
+            >
+              IITM Students Activities Trust Shaastra,
+              <br /> 1st Floor, O/o Dean Of Students Office,
+              <br /> IIT Madras, Guindy Chennai,
+              <br /> Tamil Nadu 600036 India
+              <br /> Mobile : +919952729095
+            </p>
+          </div>
         </div>
-        <div className="Contact">
-          <p
-            className="address"
-            style={{
-              display: "initial",
-            }}
-          >
-            <strong>Address :</strong> IITM Students Activities Trust Shaastra,
-            <br /> 1st Floor, O/o Dean Of Students Office,
-            <br /> IIT Madras, Guindy Chennai,
-            <br /> Tamil Nadu 600036 India
-            <br /> Mobile : +919952729095
-          </p>
-        </div>
-        <div className="DesignedBy">
-          <h3>LEGAL</h3>
-          <p>
-            <a href="policies/privacy-policy">Privacy Policy</a>
-          </p>
-          <p>
-            <a href="policies/terms-conditions">Terms and Conditions</a>
-          </p>
-          <p>
-            <a href="policies/shipping-policy">Shipping Policy</a>
-          </p>
-          <p>
-            <a href="policies/return-refund-policy">Return and Refund Policy</a>
-          </p>
-        </div>
-      </div>
+      )}
       <div className="bottom">
         <p>
           Ⓒ Developed by{" "}

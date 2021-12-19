@@ -104,6 +104,11 @@ query getEvent($EventID: String!)
     answer,
     question
   }
+  eventtimings{
+    id
+    name
+    time
+  }
   }
 }
 

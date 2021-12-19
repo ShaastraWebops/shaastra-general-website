@@ -37,6 +37,11 @@ export type AddEventInput = {
   vertical: Scalars['String'];
 };
 
+export type AddTimingsInput = {
+  name: Scalars['String'];
+  time: Scalars['String'];
+};
+
 export type CreateEventFaqInput = {
   answer: Scalars['String'];
   question: Scalars['String'];
@@ -101,6 +106,7 @@ export type Event = {
   description: Scalars['String'];
   eventTimeFrom?: Maybe<Scalars['String']>;
   eventTimeTo?: Maybe<Scalars['String']>;
+  eventtimings: Array<Timeline>;
   faqs: Array<EventFaq>;
   finalistst?: Maybe<Scalars['String']>;
   firstplace?: Maybe<Scalars['String']>;
@@ -167,11 +173,13 @@ export type LoginInput = {
 
 export type Mutation = {
   addEvent: Event;
+  addTimings: Scalars['Boolean'];
   createEventFAQ: Scalars['Boolean'];
   createTeamAndRegister: Scalars['Boolean'];
   createUser: Scalars['Boolean'];
   deleteEvent: Scalars['Boolean'];
   deleteEventFAQ: Scalars['Boolean'];
+  deleteTimings: Scalars['Boolean'];
   editEvent: Scalars['Boolean'];
   editEventFAQ: Scalars['Boolean'];
   editProfile?: Maybe<Scalars['Boolean']>;
@@ -189,6 +197,12 @@ export type Mutation = {
 
 export type MutationAddEventArgs = {
   data: AddEventInput;
+};
+
+
+export type MutationAddTimingsArgs = {
+  data: AddTimingsInput;
+  id: Scalars['String'];
 };
 
 
@@ -215,6 +229,11 @@ export type MutationDeleteEventArgs = {
 
 export type MutationDeleteEventFaqArgs = {
   EventFAQID: Scalars['String'];
+};
+
+
+export type MutationDeleteTimingsArgs = {
+  id: Scalars['String'];
 };
 
 
@@ -335,6 +354,12 @@ export type Team = {
   id: Scalars['ID'];
   members: Array<User>;
   name: Scalars['String'];
+};
+
+export type Timeline = {
+  id: Scalars['ID'];
+  name: Scalars['String'];
+  time: Scalars['String'];
 };
 
 export type UpdateEventPayInput = {
@@ -494,6 +519,21 @@ export type LeaveTeamMutationVariables = Exact<{
 
 export type LeaveTeamMutation = { leaveTeam: boolean };
 
+export type AddTimingsMutationVariables = Exact<{
+  id: Scalars['String'];
+  data: AddTimingsInput;
+}>;
+
+
+export type AddTimingsMutation = { addTimings: boolean };
+
+export type DeleteTimingsMutationVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type DeleteTimingsMutation = { deleteTimings: boolean };
+
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -518,7 +558,7 @@ export type GetEventQueryVariables = Exact<{
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, faqs: Array<{ id: string, answer: string, question: string }> } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
 
 export type GetUsersDataCsvQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1117,6 +1157,69 @@ export function useLeaveTeamMutation(baseOptions?: ApolloReactHooks.MutationHook
 export type LeaveTeamMutationHookResult = ReturnType<typeof useLeaveTeamMutation>;
 export type LeaveTeamMutationResult = ApolloReactCommon.MutationResult<LeaveTeamMutation>;
 export type LeaveTeamMutationOptions = ApolloReactCommon.BaseMutationOptions<LeaveTeamMutation, LeaveTeamMutationVariables>;
+export const AddTimingsDocument = gql`
+    mutation addTimings($id: String!, $data: AddTimingsInput!) {
+  addTimings(id: $id, data: $data)
+}
+    `;
+export type AddTimingsMutationFn = ApolloReactCommon.MutationFunction<AddTimingsMutation, AddTimingsMutationVariables>;
+
+/**
+ * __useAddTimingsMutation__
+ *
+ * To run a mutation, you first call `useAddTimingsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddTimingsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addTimingsMutation, { data, loading, error }] = useAddTimingsMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useAddTimingsMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<AddTimingsMutation, AddTimingsMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<AddTimingsMutation, AddTimingsMutationVariables>(AddTimingsDocument, options);
+      }
+export type AddTimingsMutationHookResult = ReturnType<typeof useAddTimingsMutation>;
+export type AddTimingsMutationResult = ApolloReactCommon.MutationResult<AddTimingsMutation>;
+export type AddTimingsMutationOptions = ApolloReactCommon.BaseMutationOptions<AddTimingsMutation, AddTimingsMutationVariables>;
+export const DeleteTimingsDocument = gql`
+    mutation deleteTimings($id: String!) {
+  deleteTimings(id: $id)
+}
+    `;
+export type DeleteTimingsMutationFn = ApolloReactCommon.MutationFunction<DeleteTimingsMutation, DeleteTimingsMutationVariables>;
+
+/**
+ * __useDeleteTimingsMutation__
+ *
+ * To run a mutation, you first call `useDeleteTimingsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteTimingsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteTimingsMutation, { data, loading, error }] = useDeleteTimingsMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteTimingsMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<DeleteTimingsMutation, DeleteTimingsMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<DeleteTimingsMutation, DeleteTimingsMutationVariables>(DeleteTimingsDocument, options);
+      }
+export type DeleteTimingsMutationHookResult = ReturnType<typeof useDeleteTimingsMutation>;
+export type DeleteTimingsMutationResult = ApolloReactCommon.MutationResult<DeleteTimingsMutation>;
+export type DeleteTimingsMutationOptions = ApolloReactCommon.BaseMutationOptions<DeleteTimingsMutation, DeleteTimingsMutationVariables>;
 export const MeDocument = gql`
     query me {
   me {
@@ -1313,6 +1416,11 @@ export const GetEventDocument = gql`
       id
       answer
       question
+    }
+    eventtimings {
+      id
+      name
+      time
     }
   }
 }
