@@ -1,6 +1,8 @@
-.EWHome a:hover
+.EWHome .EWHome-circle:hover
 {
-    color: #9ab2df;
+    background-color: #9ab2df;
+    color: black;
+    border: none;
 }
 .EWHomeDesp a
 {

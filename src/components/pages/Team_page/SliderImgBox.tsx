@@ -39,7 +39,7 @@ const SliderImgBox = (props: Props) => {
         <div className="profileCard_header">
           <div>
             <h2>{props.profile.name}</h2>
-            <p>{props.profile.role}</p>
+            {/* <p>{props.profile.role}</p> */}
           </div>
           <Flex
             width="140px"
