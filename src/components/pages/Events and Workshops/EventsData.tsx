@@ -29,11 +29,12 @@ const EventsData = [
     },
     {
         vertical: "ignite",
-        desp: "Get ready for another iteration of Shaastra's famous Sci-Tech and Biz Quizzes! Exciting prizes lined up"
+        desp: "The company will come up with a problem statement which may be related to a current technical/engineering problem that the company is facing right now. The problem statement will be a simplified version of it ( easy enough for undergraduates and postgraduates to comprehend and solve). The problem statement will be given and participants will be asked to submit a report on their work which will be evaluated and the finalists will be selected. During Shaastra (January), the idea should be presented by the finalists to the judges from that company and also a working model (if needed)."
+        
     },
     {
         vertical: "strategists",
-        desp: "The company will come up with a problem statement which may be related to a current technical/engineering problem that the company is facing right now. The problem statement will be a simplified version of it ( easy enough for undergraduates and postgraduates to comprehend and solve). The problem statement will be given and participants will be asked to submit a report on their work which will be evaluated and the finalists will be selected. During Shaastra (January), the idea should be presented by the finalists to the judges from that company and also a working model (if needed)."
+        desp: "Get ready for another iteration of Shaastra's famous Sci-Tech and Biz Quizzes! Exciting prizes lined up"
     }
 ]
 

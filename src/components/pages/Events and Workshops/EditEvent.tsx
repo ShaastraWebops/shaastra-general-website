@@ -72,10 +72,10 @@ const EditEvent = () => {
     const [desp, setDesp] = React.useState(event?.getEvent.description ? event?.getEvent.description : "")
     const [platform, setPlatform] = React.useState(event?.getEvent.platform ? event?.getEvent.platform: "")
     const [req, setReq] = useState(event?.getEvent.requirements ? event?.getEvent.requirements : "")
-    const [regStart, setRegStart] = useState(event?.getEvent.registrationOpenTime ? event?.getEvent.registrationOpenTime : "2021/12/30")
-    const [regEn, setRegEnd] = useState(event?.getEvent.registrationCloseTime ? event?.getEvent.registrationCloseTime : "")
-    const [eventStart, setEventStart] = useState(event?.getEvent.eventTimeFrom ? event?.getEvent.eventTimeFrom : "")
-    const [eventEnd, setEventEnd] = useState(event?.getEvent.eventTimeTo ? event?.getEvent.eventTimeTo : "")
+    const [regStart, setRegStart] = useState("")
+    const [regEn, setRegEnd] = useState("")
+    const [eventStart, setEventStart] = useState("")
+    const [eventEnd, setEventEnd] = useState("")
     const [teamSize, setTeamSize] = useState(event?.getEvent.teamSize ? event?.getEvent.teamSize : 0)
     const [participation, setParticipation] = useState(event?.getEvent.participation ? event?.getEvent.participation : "")
     const [first, setFirst] = useState(event?.getEvent.firstplace ? event?.getEvent.firstplace : "")
@@ -236,8 +236,7 @@ const EditEvent = () => {
                             <FormLabel>Registration Start: {moment(parseInt(event?.getEvent.registrationOpenTime!)).format(
                     "MMMM Do YYYY"
                   )}</FormLabel>
-                            <Input type="date" outline="none" color="black"
-                            placeholder="12/30/2021"
+                            <Input type="date" outline="none" color="black" value={regStart}
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setRegStart(e.target.value)}}    
                             ></Input>
@@ -246,7 +245,7 @@ const EditEvent = () => {
                             <FormLabel>Registration End: {moment(parseInt(event?.getEvent.registrationCloseTime!)).format(
                     "MMMM Do YYYY"
                   )}</FormLabel>
-                            <Input type="date" outline="none" color="black"
+                            <Input type="date" outline="none" color="black" value={regEn}
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setRegEnd(e.target.value)}}
                             ></Input>
@@ -257,7 +256,7 @@ const EditEvent = () => {
                             <FormLabel>Event Start: {moment(parseInt(event?.getEvent.eventTimeFrom!)).format(
                     "MMMM Do YYYY"
                   )}</FormLabel>
-                            <Input type="date" outline="none" color="black"
+                            <Input type="date" outline="none" color="black" value={eventStart}
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setEventStart(e.target.value)}}
                             ></Input>
@@ -266,7 +265,7 @@ const EditEvent = () => {
                             <FormLabel>Event End: {moment(parseInt(event?.getEvent.eventTimeTo!)).format(
                     "MMMM Do YYYY"
                   )}</FormLabel>
-                            <Input type="date" outline="none" color="black"
+                            <Input type="date" outline="none" color="black" value={eventEnd}
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setEventEnd(e.target.value)}}    
                             ></Input>
@@ -301,7 +300,7 @@ const EditEvent = () => {
                     <FormControl>
                             <FormLabel fontSize="1.5vw">Registration fee</FormLabel>
                             <Input 
-                                type="text" outline="none" color="black" placeholder={fee}
+                                type="text" outline="none" color="black" placeholder={fee} value={fee}
                                 backgroundColor="transparent" borderBottom="5px solid white"
                                 onChange={(e:any) => {setFee(e.target.value)}}    
                             >
@@ -348,8 +347,8 @@ const EditEvent = () => {
                                         data: {
                                         name: name,
                                         description: desp,
-                                        eventTimeFrom: new Date(eventStart).toDateString(),
-                                        eventTimeTo: new Date(eventEnd).toDateString(),
+                                        eventTimeFrom: eventStart ? new Date(eventStart).toDateString() : null,
+                                        eventTimeTo:eventEnd ? new Date(eventEnd).toDateString(): null,
                                         registrationType: radio!,
                                         platform: platform,
                                         requirements: req,
@@ -360,8 +359,8 @@ const EditEvent = () => {
                                         secondplace: second,
                                         thirdplace: third,
                                         teamSize: Math.round(teamSize),
-                                        registrationCloseTime: new Date(regEn).toDateString(),
-                                        registrationOpenTime: new Date(regStart).toDateString(),
+                                        registrationCloseTime:  regEn ?new Date(regEn).toDateString() : null,
+                                        registrationOpenTime: regStart ? new Date(regStart).toDateString() : null,
                                         registrationfee: fee
                                         },
                                         id: id
