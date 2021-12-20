@@ -24,7 +24,7 @@ function Tif() {
   const colorvariant = useColorModeValue("#1c72c7","#ABC8E1")
   return (
     <CustomBox>
-      <Box>
+      <Box textAlign={'justify'}>
         <Stack
           textAlign={"center"}
           align={"center"}
@@ -63,7 +63,7 @@ function Tif() {
         >
           <Center>
           <Box p={2} my={3} width={'60%'}>
-            <Text padding={2}  fontSize={"17px"} fontStyle={'italic'} fontWeight={'semibold'}>
+            <Text padding={2}  fontSize={"17px"} textAlign={'justify'} fontWeight={'semibold'}>
               The fair comprises multiple stages of professional guidance in the
               form of Workshops, Panel discussions and seminars based on
               entrepreneurship and management and a culmination event during

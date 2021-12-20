@@ -73,7 +73,7 @@ const EventPage = () => {
               p={4}
               rounded={["3xl", "3xl"]}
             />
-            <Heading>{data?.getEvent.name}</Heading>
+            <Heading p={2} m={2}>{data?.getEvent.name}</Heading>
           </Center>
           <Flex style={{  borderRadius: 8 }} p={4}  shadow="lg"
             borderWidth="2px"
@@ -85,7 +85,7 @@ const EventPage = () => {
               ></ReactMarkdown>
             </Text>
             
-            <Flex width={"100%"} justifyContent={"flex-end"}>
+            <Flex justifyContent={"flex-end"}>
               {
                 isAdmin ? (<Button
                   padding={["0.5vw","0.5vw","0.5vw", "1.25vw"]}
@@ -128,7 +128,7 @@ const EventPage = () => {
             </Center> 
           {
            (data?.getEvent.vertical !== "WORKSHOPS")&& (data?.getEvent.firstplace || data?.getEvent.secondplace || data?.getEvent.thirdplace) && (
-              <Flex flexDirection={'column'} width={"100%"} alignItems={'center'} justifyItems={'center'} p={2}>
+              <Flex flexDirection={'column'} width={"100%"} alignItems={'center'} justifyItems={'center'}>
               <Heading fontWeight={"medium"} p={2} color={"gray.500"} display={"inline-flex"}><Icon as={FaTrophy}/>{' '} Rewards</Heading>
                 <Flex flexDirection={['column','row']} justifyContent={'space-evenly'} width={"100%"}>
                 <Box p={2}>
@@ -186,7 +186,7 @@ const EventPage = () => {
             )
           }
 
-         <Flex flexDirection={['column','column','row','row']} p={2} justifyContent={'space-between'}>
+         <Flex flexDirection={['column','column','row','row']}  justifyContent={'space-between'}>
          <Flex flexDirection={'column'} width= { "100%" } p={2} mb={2}>
            {
              otherfields?.length! > 0 && (
@@ -231,9 +231,9 @@ const EventPage = () => {
              )
            }
          {
-           data?.getEvent.earlybidoffer && data?.getEvent?.vertical ==='WORKSHOPS' && <Text m={2} className='rainbow' style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
+           data?.getEvent.earlybidoffer && data?.getEvent?.vertical ==='WORKSHOPS' && <Text className='rainbow' p={4} style={{  borderRadius: 8 }} shadow="lg"  borderWidth="2px"
             borderRadius="md" fontWeight={"medium"} fontSize={"lg"} color={"gray.500"}>
-              Hurry up !! Early Bird Sale ends on <span style={{ "fontWeight" : 600}}>December 27th 2021 11:59:59 pm</span> 
+              Hurry up !! Early Bird Sale ends on <span style={{ "fontWeight" : 600}}>December 27th 2021 11:59 pm</span> 
             </Text>  
          }
           {
@@ -334,7 +334,7 @@ const EventPage = () => {
           ) 
         }
         </Container>
-        <Container maxWidth="6xl" alignItems="center" justifyItems={"center"}  style={{  borderRadius: 8 }} p={2}  shadow="lg"
+        <Container maxWidth="6xl" alignItems="center" justifyItems={"center"}  style={{  borderRadius: 8 }}  shadow="lg"
             borderWidth="2px"
             borderRadius="md">
         <Heading size={"lg"}><span><CalendarIcon boxSize={6}  mx={2}/></span>Timeline</Heading>
@@ -343,7 +343,7 @@ const EventPage = () => {
             <Heading className="datetime-head" size={'lg'} style={{  borderRadius: 8 }} p={2}  shadow="lg"
             borderWidth="2px"
             borderRadius="md" color={'gray.500'}>Registrations</Heading>
-            <Flex className="datetime-box" p={2}>
+            <Flex className="datetime-box" alignItems={'center'} justifyItems={'center'}>
               <Heading className="datetime" size={'md'} style={{  borderRadius: 8 }} p={2}  shadow="lg"
             borderWidth="2px"
             borderRadius="md" color={'gray.500'}>
@@ -351,7 +351,7 @@ const EventPage = () => {
                   "MMMM Do YYYY"
                 )}
                 </Heading>
-                <Heading style={{ width: "10%" }} className="datetime" size={'md'} color={'gray.500'}>
+                <Heading style={{ width: "10%" }} p={2} className="datetime" size={'md'} color={'gray.500'}>
                   to
                   </Heading>
                 <Heading className="datetime" size={'md'} style={{  borderRadius: 8 }} p={2}  shadow="lg"
@@ -371,7 +371,7 @@ const EventPage = () => {
             borderWidth="2px" size={'lg'}
             borderRadius="md" color={'gray.500'}
             >Event</Heading>
-            <Flex className="datetime-box">
+            <Flex className="datetime-box" alignItems={'center'} justifyItems={'center'}>
               <Heading className="datetime" size={'md'} style={{  borderRadius: 8 }} p={2}  shadow="lg" borderWidth="2px" borderRadius="md" color={'gray.500'}>
                 {moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
                   "MMMM Do YYYY"
