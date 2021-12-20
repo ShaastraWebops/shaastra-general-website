@@ -19,6 +19,7 @@ import Cl from "../../../images/EventsWorkshops/events/Coding&Logic.png"
 import DB from "../../../images/EventsWorkshops/events/Design&Build.jpeg"
 import Elec from "../../../images/EventsWorkshops/events/Elecfest.jpg"
 import Strategists from "../../../images/EventsWorkshops/events/Strategists.png"
+import Symposium from "../../../images/EventsWorkshops/events/symposium.jpg"
 import Ignite from "../../../images/EventsWorkshops/events/Ignite.jpg"
 import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer';
@@ -69,15 +70,23 @@ function Events() {
             </GridItem>
             <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
               <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} objectPosition={"0% 25%"} src={Ignite}></Image>
-              <Link fontSize={["4vw","2vw"]} href="/events/ignite">Ignite</Link>
+              <Link fontSize={["4vw","2vw"]} href="/events/ignite">IDP</Link>
             </GridItem>
             <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
               <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} src={Strategists}></Image> 
-              <Link fontSize={["4vw","2vw"]} href="/events/strategists">Strategists</Link>
+              <Link fontSize={["4vw","2vw"]} href="/events/strategists">Quizzing</Link>
             </GridItem>
             <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
               <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} src={Cl}></Image> 
               <Link fontSize={["4vw","2vw"]} href="/events/cl">Coding & Logic</Link>
+            </GridItem>
+            <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
+              <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} src={"https://shaastra.s3.ap-south-1.amazonaws.com/Moot Court.png"}></Image> 
+              <Link fontSize={["4vw","2vw"]} href="/eventpage/ckxdasopm0024wop7cxphcidu">Moot Court</Link>
+            </GridItem>
+            <GridItem display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>
+              <Image height="25vh" width={["80vw","38vw"]} objectFit={"cover"} src={Symposium}></Image> 
+              <Link fontSize={["4vw","2vw"]} href="https://dss.shaastra.org/" target={"_blank"}>Symposium</Link>
             </GridItem>
          </Grid>
          {/* <Box margin="auto" width={["80vw","40vw"]} zIndex={3} display={"flex"} height={"max-content"} justifyContent={"center"} flexDirection={"column"}>

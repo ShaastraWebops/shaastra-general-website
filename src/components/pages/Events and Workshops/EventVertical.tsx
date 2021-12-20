@@ -60,7 +60,7 @@ const EventVertical = () => {
                     :
                     name==="elecfest" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">ELEC<span>FEST</span></Heading>
                     :
-                    name==="df" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">Design <span>&</span> Build</Heading>
+                    name==="db" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">Design <span>&</span> Build</Heading>
                     :
                     name==="workshops" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">{name}</Heading>
                     :
@@ -68,9 +68,9 @@ const EventVertical = () => {
                     :
                     name==="bevents" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">B<span>Events</span></Heading>
                     : 
-                    name==="ignite" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">IG<span>NITE</span></Heading>
+                    name==="ignite" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">I<span>DP</span></Heading>
                     :
-                    name==="strategists" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">STRATE<span>GISTS</span></Heading>
+                    name==="strategists" ? <Heading position={"relative"} zIndex={3} textTransform="uppercase" backdropBlur="20px" fontSize="7xl" color="white">Quiz<span>zing</span></Heading>
                     : null
                 }
                 <Text position={"relative"} zIndex={3} color="white" width="60vw" margin="auto" className="vertical-desp" fontWeight={"700"} fontSize={"1.2vw"}>{desp}</Text>
@@ -81,6 +81,7 @@ const EventVertical = () => {
             </Flex> */}
             {
                 data?.getEvents.events.map((event)=>{
+                    if(event.vertical === "IGNITE" && event.id === "ckxdasopm0024wop7cxphcidu" ) return null
                         return(
                             <EventVerticalComponent data= {event} isAdmin = {false}/>
                         )

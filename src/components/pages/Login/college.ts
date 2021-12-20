@@ -2988,6 +2988,10 @@ export const colleges : any = [
         "Town": "Tumkur"
     },
     {
+        "University": "Sri Sivasubramaniya Nadar College of Engineering",
+        "Town": "Chennai"
+    },
+    {
         "University": "Sri Sri University",
         "Town": "Cuttack"
     },

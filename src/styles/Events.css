@@ -241,6 +241,13 @@ blockquote:after {
     content: "\201D";
 }
 
+.event-desc a {
+    color: blue;
+}
+.event-desc a:hover {
+    text-decoration: underline;
+    font-size: x-large;
+}
 @media screen and (max-width: 1200px)
 {
     .event-desp p 
