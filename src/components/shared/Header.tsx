@@ -4,8 +4,10 @@ import CustomDrawer from "./Drawer/CustomDrawer";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { ColorModeSwitcher } from "../../styles/themes/ColorModeSwitcher";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { ReactComponent as LogoBlack } from "./../../images/logo/static/Main_logo_black.svg";
-import { ReactComponent as LogoWhite } from "./../../images/logo/static/Main_logo_white.svg";
+import { ReactComponent as LogoBlack } from "./../../images/logo/static/shaastra_tm_logo_black.svg";
+import { ReactComponent as LogoWhite } from "./../../images/logo/static/shaastra_tm_logo_white.svg";
+// import LogoBlack from "./../../images/logo/static/shaastra_tm_logo_black.svg";
+// import LogoWhite from "./../../images/logo/static/shaastra_tm_logo_white.svg";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { useBreakpointValue } from "@chakra-ui/media-query";
 import { Link } from "react-router-dom";
@@ -20,7 +22,7 @@ const Header = (props: Props) => {
   };
 
   const HeaderLogo = useColorModeValue(LogoBlack, LogoWhite);
-  const height = useBreakpointValue({ base: "33", lg: "40" });
+  const height = useBreakpointValue({ base: "56", lg: "66" });
   return (
     <Flex
       w="100%"
@@ -34,7 +36,7 @@ const Header = (props: Props) => {
     >
       <CustomDrawer onClose={onClose} isOpen={isOpen} />
       <Link to="/">
-        <HeaderLogo height={height} width="88" />
+        <HeaderLogo height={height} width="auto" />
       </Link>
       <Box>
         <ColorModeSwitcher justifySelf="flex-end" />

@@ -22,10 +22,10 @@
   align-items: center;
 }
 .Footer .top .FooterLogo {
-  height: 70px;
+  height: 120px;
   width: auto;
 }
-.Footer .top .FooterLogo svg {
+.Footer .top .FooterLogo img {
   height: 100%;
   width: auto;
   object-fit: contain;
@@ -52,7 +52,7 @@
   letter-spacing: 2px;
   font-size: 14px;
   position: relative;
-  /* left: -5px; */
+  left: -5px;
   text-transform: uppercase;
 }
 .Footer .top .Contact a,
@@ -163,17 +163,25 @@
     /* align-items: flex-start; */
     padding-left: 100px;
   }
+  .Footer .top .topleft {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
   .Footer .top .Contact {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .Footer .top .Contact h3,
   .Footer .top .DesignedBy h3 {
     font-size: 15px;
     text-align: left;
+    margin-bottom: 5px;
   }
   .Footer .top .Contact p,
   .Footer .top .DesignedBy p {
     font-size: 13px;
+    margin: 0;
   }
   .Footer .top .Contact p a,
   .Footer .top .DesignedBy p a {

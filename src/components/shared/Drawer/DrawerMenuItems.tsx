@@ -57,7 +57,7 @@ export const DrawerDesktopMenuItems = () => {
                     padding: 8,
                     marginBottom: 5,
                     fontSize: 24,
-                    background: "#00000028",
+                    background: "rgba(0, 0, 0, 0.473)",
                   }}
                   to="/shows"
                 >
@@ -80,7 +80,7 @@ export const DrawerDesktopMenuItems = () => {
                     padding: 8,
                     marginBottom: 5,
                     fontSize: 24,
-                    background: "#00000028",
+                    background: "rgba(0, 0, 0, 0.473)",
                   }}
                   to="/envisage"
                 >
@@ -196,6 +196,34 @@ export const DrawerDesktopMenuItems = () => {
           {menuItems()}
         </Box>
         <div style={{ color: "white", border: "0.5px" }} />
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          onMouseOver={() => setMenu("click")}
+          fontSize={28}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={3}
+          pr={12}
+          mb={4}
+        >
+          <Link to="/mind-trials">Mind Trials</Link>
+        </Box>
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          onMouseOver={() => setMenu("click")}
+          fontSize={28}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={3}
+          pr={12}
+          mb={4}
+        >
+          <Link to="/summit">Summit</Link>
+        </Box>
         <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
@@ -332,6 +360,12 @@ export const DrawerMobileMenuItems = () => {
             </Box>
           </AccordionPanel>
         </AccordionItem>
+        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+          <Link to="/mind-trials">Mind Trials</Link>
+        </Box>
+        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+          <Link to="/summit">Summit</Link>
+        </Box>
         <AccordionItem border={0}>
           <Box fontSize={27} fontStyle={"normal"}>
             <Link to="/shaastra-juniors">School</Link>

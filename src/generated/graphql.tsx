@@ -18,23 +18,28 @@ export type Scalars = {
 
 export type AddEventInput = {
   description: Scalars['String'];
-  eventTimeFrom: Scalars['String'];
-  eventTimeTo: Scalars['String'];
+  eventTimeFrom?: InputMaybe<Scalars['String']>;
+  eventTimeTo?: InputMaybe<Scalars['String']>;
   finalistst?: InputMaybe<Scalars['String']>;
   firstplace?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
   participation?: InputMaybe<Scalars['String']>;
-  pic: Scalars['String'];
-  platform: Scalars['String'];
+  pic?: InputMaybe<Scalars['String']>;
+  platform?: InputMaybe<Scalars['String']>;
   registrationCloseTime?: InputMaybe<Scalars['String']>;
   registrationOpenTime?: InputMaybe<Scalars['String']>;
-  registrationType: RegistraionType;
+  registrationType?: InputMaybe<RegistraionType>;
   registrationfee?: InputMaybe<Scalars['String']>;
-  requirements: Scalars['String'];
+  requirements?: InputMaybe<Scalars['String']>;
   secondplace?: InputMaybe<Scalars['String']>;
   teamSize?: InputMaybe<Scalars['Float']>;
   thirdplace?: InputMaybe<Scalars['String']>;
   vertical: Scalars['String'];
+};
+
+export type AddTimingsInput = {
+  name: Scalars['String'];
+  time: Scalars['String'];
 };
 
 export type CreateEventFaqInput = {
@@ -67,19 +72,19 @@ export type EditEventFaqInput = {
 
 export type EditEventInput = {
   description: Scalars['String'];
-  eventTimeFrom: Scalars['String'];
-  eventTimeTo: Scalars['String'];
+  eventTimeFrom?: InputMaybe<Scalars['String']>;
+  eventTimeTo?: InputMaybe<Scalars['String']>;
   finalistst?: InputMaybe<Scalars['String']>;
   firstplace?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
   participation?: InputMaybe<Scalars['String']>;
-  pic: Scalars['String'];
-  platform: Scalars['String'];
+  pic?: InputMaybe<Scalars['String']>;
+  platform?: InputMaybe<Scalars['String']>;
   registrationCloseTime?: InputMaybe<Scalars['String']>;
   registrationOpenTime?: InputMaybe<Scalars['String']>;
-  registrationType: RegistraionType;
+  registrationType?: InputMaybe<RegistraionType>;
   registrationfee?: InputMaybe<Scalars['String']>;
-  requirements: Scalars['String'];
+  requirements?: InputMaybe<Scalars['String']>;
   secondplace?: InputMaybe<Scalars['String']>;
   teamSize?: InputMaybe<Scalars['Float']>;
   thirdplace?: InputMaybe<Scalars['String']>;
@@ -99,8 +104,10 @@ export type EditProfileInput = {
 
 export type Event = {
   description: Scalars['String'];
-  eventTimeFrom: Scalars['String'];
-  eventTimeTo: Scalars['String'];
+  earlybidoffer?: Maybe<Scalars['String']>;
+  eventTimeFrom?: Maybe<Scalars['String']>;
+  eventTimeTo?: Maybe<Scalars['String']>;
+  eventtimings: Array<Timeline>;
   faqs: Array<EventFaq>;
   finalistst?: Maybe<Scalars['String']>;
   firstplace?: Maybe<Scalars['String']>;
@@ -167,11 +174,14 @@ export type LoginInput = {
 
 export type Mutation = {
   addEvent: Event;
+  addTimings: Scalars['Boolean'];
   createEventFAQ: Scalars['Boolean'];
   createTeamAndRegister: Scalars['Boolean'];
   createUser: Scalars['Boolean'];
   deleteEvent: Scalars['Boolean'];
   deleteEventFAQ: Scalars['Boolean'];
+  deleteTimings: Scalars['Boolean'];
+  earlybidoffer: Scalars['Boolean'];
   editEvent: Scalars['Boolean'];
   editEventFAQ: Scalars['Boolean'];
   editProfile?: Maybe<Scalars['Boolean']>;
@@ -189,6 +199,12 @@ export type Mutation = {
 
 export type MutationAddEventArgs = {
   data: AddEventInput;
+};
+
+
+export type MutationAddTimingsArgs = {
+  data: AddTimingsInput;
+  id: Scalars['String'];
 };
 
 
@@ -215,6 +231,17 @@ export type MutationDeleteEventArgs = {
 
 export type MutationDeleteEventFaqArgs = {
   EventFAQID: Scalars['String'];
+};
+
+
+export type MutationDeleteTimingsArgs = {
+  id: Scalars['String'];
+};
+
+
+export type MutationEarlybidofferArgs = {
+  amount: Scalars['String'];
+  eventID: Scalars['String'];
 };
 
 
@@ -276,11 +303,18 @@ export type MutationVerifyUserArgs = {
 };
 
 export type Query = {
+  exportCSV: Scalars['String'];
   getEvent: Event;
   getEvents: GetEventsOutput;
   getUsers?: Maybe<GetUsersOutput>;
   getUsersCount: Scalars['Float'];
+  getUsersDataCSV: Scalars['String'];
   me?: Maybe<User>;
+};
+
+
+export type QueryExportCsvArgs = {
+  EventID: Scalars['String'];
 };
 
 
@@ -328,6 +362,12 @@ export type Team = {
   id: Scalars['ID'];
   members: Array<User>;
   name: Scalars['String'];
+};
+
+export type Timeline = {
+  id: Scalars['ID'];
+  name: Scalars['String'];
+  time: Scalars['String'];
 };
 
 export type UpdateEventPayInput = {
@@ -487,24 +527,66 @@ export type LeaveTeamMutationVariables = Exact<{
 
 export type LeaveTeamMutation = { leaveTeam: boolean };
 
+export type AddTimingsMutationVariables = Exact<{
+  id: Scalars['String'];
+  data: AddTimingsInput;
+}>;
+
+
+export type AddTimingsMutation = { addTimings: boolean };
+
+export type DeleteTimingsMutationVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type DeleteTimingsMutation = { deleteTimings: boolean };
+
+export type EarlybidofferMutationVariables = Exact<{
+  id: Scalars['String'];
+  amount: Scalars['String'];
+}>;
+
+
+export type EarlybidofferMutation = { earlybidoffer: boolean };
+
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ id: string, name: string, pic?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, yourTeam?: { id: string, name: string, members: Array<{ name: string, email: string }> } | null | undefined }> } | null | undefined };
+export type MeQuery = { me?: { id: string, name: string, shaastraID: string, email: string, mobile: string, college: string, department: string, address: string, city: string, state: string, registeredEvents: Array<{ id: string, name: string, pic?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, yourTeam?: { id: string, name: string, members: Array<{ name: string, email: string }> } | null | undefined }> } | null | undefined };
+
+export type GetUsersQueryVariables = Exact<{
+  filter: GetUsersFilter;
+}>;
+
+
+export type GetUsersQuery = { getUsers?: { count: number, users: Array<{ name: string, id: string, shaastraID: string, email: string, role: UserRole, isVerified: boolean, verificationOTP: string, registeredEvents: Array<{ id: string, name: string, teamSize: number, vertical: string }> }> } | null | undefined };
 
 export type GetEventsQueryVariables = Exact<{
   filter: Scalars['String'];
 }>;
 
 
-export type GetEventsQuery = { getEvents: { events: Array<{ id: string, name: string, pic?: string | null | undefined, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number }> } };
+export type GetEventsQuery = { getEvents: { events: Array<{ id: string, name: string, pic?: string | null | undefined, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number }> } };
 
 export type GetEventQueryVariables = Exact<{
   EventID: Scalars['String'];
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom: string, eventTimeTo: string, registrationType: string, teamSize: number, faqs: Array<{ id: string, answer: string, question: string }> } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, earlybidoffer?: string | null | undefined, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
+
+export type GetUsersDataCsvQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetUsersDataCsvQuery = { getUsersDataCSV: string };
+
+export type ExportCsvQueryVariables = Exact<{
+  EventID: Scalars['String'];
+}>;
+
+
+export type ExportCsvQuery = { exportCSV: string };
 
 
 export const CreateUserDocument = gql`
@@ -1091,6 +1173,101 @@ export function useLeaveTeamMutation(baseOptions?: ApolloReactHooks.MutationHook
 export type LeaveTeamMutationHookResult = ReturnType<typeof useLeaveTeamMutation>;
 export type LeaveTeamMutationResult = ApolloReactCommon.MutationResult<LeaveTeamMutation>;
 export type LeaveTeamMutationOptions = ApolloReactCommon.BaseMutationOptions<LeaveTeamMutation, LeaveTeamMutationVariables>;
+export const AddTimingsDocument = gql`
+    mutation addTimings($id: String!, $data: AddTimingsInput!) {
+  addTimings(id: $id, data: $data)
+}
+    `;
+export type AddTimingsMutationFn = ApolloReactCommon.MutationFunction<AddTimingsMutation, AddTimingsMutationVariables>;
+
+/**
+ * __useAddTimingsMutation__
+ *
+ * To run a mutation, you first call `useAddTimingsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddTimingsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addTimingsMutation, { data, loading, error }] = useAddTimingsMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useAddTimingsMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<AddTimingsMutation, AddTimingsMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<AddTimingsMutation, AddTimingsMutationVariables>(AddTimingsDocument, options);
+      }
+export type AddTimingsMutationHookResult = ReturnType<typeof useAddTimingsMutation>;
+export type AddTimingsMutationResult = ApolloReactCommon.MutationResult<AddTimingsMutation>;
+export type AddTimingsMutationOptions = ApolloReactCommon.BaseMutationOptions<AddTimingsMutation, AddTimingsMutationVariables>;
+export const DeleteTimingsDocument = gql`
+    mutation deleteTimings($id: String!) {
+  deleteTimings(id: $id)
+}
+    `;
+export type DeleteTimingsMutationFn = ApolloReactCommon.MutationFunction<DeleteTimingsMutation, DeleteTimingsMutationVariables>;
+
+/**
+ * __useDeleteTimingsMutation__
+ *
+ * To run a mutation, you first call `useDeleteTimingsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteTimingsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteTimingsMutation, { data, loading, error }] = useDeleteTimingsMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteTimingsMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<DeleteTimingsMutation, DeleteTimingsMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<DeleteTimingsMutation, DeleteTimingsMutationVariables>(DeleteTimingsDocument, options);
+      }
+export type DeleteTimingsMutationHookResult = ReturnType<typeof useDeleteTimingsMutation>;
+export type DeleteTimingsMutationResult = ApolloReactCommon.MutationResult<DeleteTimingsMutation>;
+export type DeleteTimingsMutationOptions = ApolloReactCommon.BaseMutationOptions<DeleteTimingsMutation, DeleteTimingsMutationVariables>;
+export const EarlybidofferDocument = gql`
+    mutation earlybidoffer($id: String!, $amount: String!) {
+  earlybidoffer(eventID: $id, amount: $amount)
+}
+    `;
+export type EarlybidofferMutationFn = ApolloReactCommon.MutationFunction<EarlybidofferMutation, EarlybidofferMutationVariables>;
+
+/**
+ * __useEarlybidofferMutation__
+ *
+ * To run a mutation, you first call `useEarlybidofferMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useEarlybidofferMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [earlybidofferMutation, { data, loading, error }] = useEarlybidofferMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      amount: // value for 'amount'
+ *   },
+ * });
+ */
+export function useEarlybidofferMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<EarlybidofferMutation, EarlybidofferMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<EarlybidofferMutation, EarlybidofferMutationVariables>(EarlybidofferDocument, options);
+      }
+export type EarlybidofferMutationHookResult = ReturnType<typeof useEarlybidofferMutation>;
+export type EarlybidofferMutationResult = ApolloReactCommon.MutationResult<EarlybidofferMutation>;
+export type EarlybidofferMutationOptions = ApolloReactCommon.BaseMutationOptions<EarlybidofferMutation, EarlybidofferMutationVariables>;
 export const MeDocument = gql`
     query me {
   me {
@@ -1152,6 +1329,59 @@ export type MeLazyQueryHookResult = ReturnType<typeof useMeLazyQuery>;
 export type MeQueryResult = ApolloReactCommon.QueryResult<MeQuery, MeQueryVariables>;
 export function refetchMeQuery(variables?: MeQueryVariables) {
       return { query: MeDocument, variables: variables }
+    }
+export const GetUsersDocument = gql`
+    query getUsers($filter: GetUsersFilter!) {
+  getUsers(filter: $filter) {
+    count
+    users {
+      name
+      id
+      shaastraID
+      email
+      role
+      isVerified
+      verificationOTP
+      registeredEvents {
+        id
+        name
+        teamSize
+        vertical
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetUsersQuery__
+ *
+ * To run a query within a React component, call `useGetUsersQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetUsersQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetUsersQuery({
+ *   variables: {
+ *      filter: // value for 'filter'
+ *   },
+ * });
+ */
+export function useGetUsersQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
+      }
+export function useGetUsersLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
+        }
+export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
+export type GetUsersLazyQueryHookResult = ReturnType<typeof useGetUsersLazyQuery>;
+export type GetUsersQueryResult = ApolloReactCommon.QueryResult<GetUsersQuery, GetUsersQueryVariables>;
+export function refetchGetUsersQuery(variables: GetUsersQueryVariables) {
+      return { query: GetUsersDocument, variables: variables }
     }
 export const GetEventsDocument = gql`
     query getEvents($filter: String!) {
@@ -1230,10 +1460,16 @@ export const GetEventDocument = gql`
     eventTimeTo
     registrationType
     teamSize
+    earlybidoffer
     faqs {
       id
       answer
       question
+    }
+    eventtimings {
+      id
+      name
+      time
     }
   }
 }
@@ -1268,4 +1504,75 @@ export type GetEventLazyQueryHookResult = ReturnType<typeof useGetEventLazyQuery
 export type GetEventQueryResult = ApolloReactCommon.QueryResult<GetEventQuery, GetEventQueryVariables>;
 export function refetchGetEventQuery(variables: GetEventQueryVariables) {
       return { query: GetEventDocument, variables: variables }
+    }
+export const GetUsersDataCsvDocument = gql`
+    query getUsersDataCSV {
+  getUsersDataCSV
+}
+    `;
+
+/**
+ * __useGetUsersDataCsvQuery__
+ *
+ * To run a query within a React component, call `useGetUsersDataCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetUsersDataCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetUsersDataCsvQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetUsersDataCsvQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>(GetUsersDataCsvDocument, options);
+      }
+export function useGetUsersDataCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>(GetUsersDataCsvDocument, options);
+        }
+export type GetUsersDataCsvQueryHookResult = ReturnType<typeof useGetUsersDataCsvQuery>;
+export type GetUsersDataCsvLazyQueryHookResult = ReturnType<typeof useGetUsersDataCsvLazyQuery>;
+export type GetUsersDataCsvQueryResult = ApolloReactCommon.QueryResult<GetUsersDataCsvQuery, GetUsersDataCsvQueryVariables>;
+export function refetchGetUsersDataCsvQuery(variables?: GetUsersDataCsvQueryVariables) {
+      return { query: GetUsersDataCsvDocument, variables: variables }
+    }
+export const ExportCsvDocument = gql`
+    query exportCSV($EventID: String!) {
+  exportCSV(EventID: $EventID)
+}
+    `;
+
+/**
+ * __useExportCsvQuery__
+ *
+ * To run a query within a React component, call `useExportCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useExportCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useExportCsvQuery({
+ *   variables: {
+ *      EventID: // value for 'EventID'
+ *   },
+ * });
+ */
+export function useExportCsvQuery(baseOptions: ApolloReactHooks.QueryHookOptions<ExportCsvQuery, ExportCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<ExportCsvQuery, ExportCsvQueryVariables>(ExportCsvDocument, options);
+      }
+export function useExportCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ExportCsvQuery, ExportCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<ExportCsvQuery, ExportCsvQueryVariables>(ExportCsvDocument, options);
+        }
+export type ExportCsvQueryHookResult = ReturnType<typeof useExportCsvQuery>;
+export type ExportCsvLazyQueryHookResult = ReturnType<typeof useExportCsvLazyQuery>;
+export type ExportCsvQueryResult = ApolloReactCommon.QueryResult<ExportCsvQuery, ExportCsvQueryVariables>;
+export function refetchExportCsvQuery(variables: ExportCsvQueryVariables) {
+      return { query: ExportCsvDocument, variables: variables }
     }
