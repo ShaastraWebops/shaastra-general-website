@@ -72,7 +72,7 @@ const EventPage = () => {
           <Flex style={{  borderRadius: 8 }} p={4}  shadow="lg"
             borderWidth="2px"
             borderRadius="md" flexDirection={'column'}>
-            <Text fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}>
+            <Text className='event-desc' fontWeight={"medium"} fontSize={"lg"} padding={2} color={"gray.500"}>
               <ReactMarkdown
                 children={data?.getEvent.description!}
                 remarkPlugins={[remarkGfm]}
@@ -199,6 +199,16 @@ const EventPage = () => {
                })
              )
            }
+
+          {
+            data?.getEvent.registrationfee != '0' && (<Flex marginTop="12px" style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
+            borderRadius="md">
+           <Text fontWeight={"extrabold"} p={2} fontSize={"lg"} color={"gray.500"}>
+           <strong>Registration Fee :  &nbsp; ₹ {data?.getEvent.registrationfee}</strong> 
+           </Text>
+          </Flex>)
+          }
+           
           <Flex marginTop="12px" style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
             borderRadius="md">
            <Text fontWeight={"medium"} p={2} fontSize={"lg"} color={"gray.500"}>
@@ -291,7 +301,7 @@ const EventPage = () => {
             borderWidth="2px"
             borderRadius="md" color={'gray.500'}>
                 {moment(parseInt(data?.getEvent.registrationOpenTime!)).format(
-                  "MMMM Do YYYY, h:mm a"
+                  "MMMM Do YYYY"
                 )}
                 </Heading>
                 <Heading style={{ width: "10%" }} className="datetime" size={'md'} color={'gray.500'}>
@@ -301,7 +311,7 @@ const EventPage = () => {
                   borderWidth="2px"
                   borderRadius="md" color={'gray.500'}>
                   {moment(parseInt(data?.getEvent.registrationCloseTime!)).format(
-                    "MMMM Do YYYY, h:mm a"
+                    "MMMM Do YYYY"
                   )}
                    </Heading>
               </Flex>
@@ -317,7 +327,7 @@ const EventPage = () => {
             <Flex className="datetime-box">
               <Heading className="datetime" size={'md'} style={{  borderRadius: 8 }} p={2}  shadow="lg" borderWidth="2px" borderRadius="md" color={'gray.500'}>
                 {moment(parseInt(data?.getEvent.eventTimeFrom!)).format(
-                  "MMMM Do YYYY, h:mm a"
+                  "MMMM Do YYYY"
                 )}
                  </Heading>
               <Heading style={{ width: "10%" }} className="datetime" size={'md'} p={2}  shadow="lg"  color={'gray.500'}>
@@ -325,7 +335,7 @@ const EventPage = () => {
               </Heading>
               <Heading className="datetime" size={'md'} style={{  borderRadius: 8 }} p={2}  shadow="lg" borderWidth="2px" borderRadius="md" color={'gray.500'}>
                 {moment(parseInt(data?.getEvent.eventTimeTo!)).format(
-                  "MMMM Do YYYY, h:mm a"
+                  "MMMM Do YYYY"
                 )}
                  </Heading>
             </Flex>
