@@ -230,10 +230,12 @@ const EventPage = () => {
                })
              )
            }
-          <Text m={2} className='rainbow' style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
+         {
+           data?.getEvent.earlybidoffer && data?.getEvent?.vertical ==='WORKSHOPS' && <Text m={2} className='rainbow' style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
             borderRadius="md" fontWeight={"medium"} fontSize={"lg"} color={"gray.500"}>
               Hurry up !! Early Bird Sale ends on <span style={{ "fontWeight" : 600}}>December 27th 2021 11:59:59 pm</span> 
             </Text>  
+         }
           {
             data?.getEvent.registrationfee != '0' && (
             <Flex marginTop="12px" style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
@@ -241,7 +243,7 @@ const EventPage = () => {
               
            <Text fontWeight={"extrabold"} p={2} fontSize={"lg"} color={"gray.500"}>
            <strong>Registration Fee :  &nbsp; ₹ <span style={{
-             "textDecoration" : (deadline.getTime() - today.getTime()) > 0 ? "line-through" : "none"
+             "textDecoration" : data?.getEvent.earlybidoffer && (deadline.getTime() - today.getTime()) > 0 ? "line-through" : "none"
            }}>{data?.getEvent.registrationfee}</span> </strong> 
            </Text>
            { data?.getEvent.earlybidoffer && (deadline.getTime() - today.getTime()) > 0 &&
