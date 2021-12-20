@@ -9,8 +9,8 @@ const Shipping = (props: Props) => {
       <Heading pb={10}>SHIPPING &amp; DELIVERY POLICY</Heading>
       <Text>
         Please carefully review our Shipping &amp; Delivery Policy when
-        purchasing our products. This policy will apply to any order you place
-        with us.
+        purchasing our Merchandise. This policy will apply to any order you
+        place with us.
       </Text>
       <Heading fontSize={24} pt={8} textAlign={"left"}>
         WHAT ARE MY SHIPPING &amp; DELIVERY OPTIONS?
@@ -26,7 +26,8 @@ const Shipping = (props: Props) => {
       <Text>We offer free shipping on all orders</Text>
       <Text>
         Once your order is packed and dispatched we will send a email with the
-        tracking details.
+        tracking details. The minimum dispatch time is 7 working days and at
+        maximum, the order will be dispatched in 45 working days
       </Text>
       <Heading fontSize={24} pt={8} textAlign={"left"}>
         DO YOU DELIVER INTERNATIONALLY?
