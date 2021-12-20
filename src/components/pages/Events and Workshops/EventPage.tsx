@@ -1,7 +1,7 @@
-import { Box, Flex, Stack , Image, Text, Button, Heading, Center, Container, useColorModeValue, Icon } from '@chakra-ui/react'
+import { Box, Flex, Stack , Image, Text, Button, Heading, Center, Container, useColorModeValue, Icon, FormLabel, Input } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { GetEventDocument, GetEventsDocument, useDeleteEventFaqMutation, useDeleteEventMutation, useDeleteTimingsMutation, useExportCsvQuery, useGetEventQuery } from '../../../generated/graphql'
+import { GetEventDocument, GetEventsDocument, useDeleteEventFaqMutation, useDeleteEventMutation, useDeleteTimingsMutation, useEarlybidofferMutation, useExportCsvQuery, useGetEventQuery } from '../../../generated/graphql'
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
 import CustomBox from '../../shared/CustomBox'
 import ReactMarkdown from 'react-markdown'
@@ -52,13 +52,18 @@ const EventPage = () => {
       }else  return false
 
     })
+
+    const [earlybid , setEarlyBid] = useState("");
+    const [earlyBid] = useEarlybidofferMutation();
+    const today = new Date();
+    const deadline = new Date("December 27, 2021 23:59:59");
     if(error) console.log(error)
     if(loading)return( <Loader /> )
     const timeline = (data?.getEvent.registrationOpenTime) || (data?.getEvent.eventTimeFrom) ;
     return (
         <CustomBox>
           <Container maxWidth="6xl" alignItems="center" justifyItems={"center"} marginBottom={5} paddingBottom={2}>
-          <Center flexDirection={['column','column','row']}>
+          <Center flexDirection={['column']}>
             <Image
               h={["2%", "300px", "300px"]}
               width={'auto'}
@@ -68,6 +73,7 @@ const EventPage = () => {
               p={4}
               rounded={["3xl", "3xl"]}
             />
+            <Heading>{data?.getEvent.name}</Heading>
           </Center>
           <Flex style={{  borderRadius: 8 }} p={4}  shadow="lg"
             borderWidth="2px"
@@ -93,8 +99,33 @@ const EventPage = () => {
                       </Button>) : (<RegisterNow isAdmin={isAdmin} data={data?.getEvent}/>)
               }
               </Flex>
-
-          </Flex>      
+          </Flex> 
+          
+          <Center>
+          {
+              isAdmin && data?.getEvent?.vertical ==='WORKSHOPS' && (
+                <Flex flexDirection={'row'} m={2} width={"50%"} p={2}>
+                  <FormLabel mx={2}>Early Bird offer :</FormLabel>
+                  <Input width={"50%"} value={earlybid} onChange={(e)=>setEarlyBid(e.target.value) } name="earlybidoffer" type={'text'} borderBottom="5px solid white"/>
+                  <Button mx={2} onClick={async () =>{
+                     if( earlybid != "0" && !parseInt(earlybid)){
+                      alert("Enter a valid fee")
+                    }else{
+                      await earlyBid({
+                        variables : {
+                          id : data.getEvent.id,
+                          amount : earlybid
+                        }
+                      }).then(()=> window.location.reload())
+                      .catch(err => alert(err.message))
+  
+                    }
+                  }}> Submit</Button>
+                </Flex>
+                
+              )
+            }  
+            </Center> 
           {
            (data?.getEvent.vertical !== "WORKSHOPS")&& (data?.getEvent.firstplace || data?.getEvent.secondplace || data?.getEvent.thirdplace) && (
               <Flex flexDirection={'column'} width={"100%"} alignItems={'center'} justifyItems={'center'} p={2}>
@@ -199,13 +230,27 @@ const EventPage = () => {
                })
              )
            }
-
+          <Text m={2} className='rainbow' style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
+            borderRadius="md" fontWeight={"medium"} fontSize={"lg"} color={"gray.500"}>
+              Hurry up !! Early Bird Sale ends on <span style={{ "fontWeight" : 600}}>December 27th 2021 11:59:59 pm</span> 
+            </Text>  
           {
-            data?.getEvent.registrationfee != '0' && (<Flex marginTop="12px" style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
-            borderRadius="md">
+            data?.getEvent.registrationfee != '0' && (
+            <Flex marginTop="12px" style={{  borderRadius: 8 }} p={2} shadow="lg"  borderWidth="2px"
+            borderRadius="md" flexDirection={["column","column","row","row"]}>
+              
            <Text fontWeight={"extrabold"} p={2} fontSize={"lg"} color={"gray.500"}>
-           <strong>Registration Fee :  &nbsp; ₹ {data?.getEvent.registrationfee}</strong> 
+           <strong>Registration Fee :  &nbsp; ₹ <span style={{
+             "textDecoration" : (deadline.getTime() - today.getTime()) > 0 ? "line-through" : "none"
+           }}>{data?.getEvent.registrationfee}</span> </strong> 
            </Text>
+           { data?.getEvent.earlybidoffer && (deadline.getTime() - today.getTime()) > 0 &&
+           <Text fontWeight={"extrabold"} p={2} fontSize={"lg"} color={"gray.500"}>
+           <strong>Early Bird offer:  &nbsp; ₹ </strong> <span style={{
+             color : "green"
+           }}>{data?.getEvent.earlybidoffer}</span>
+           </Text>
+          }
           </Flex>)
           }
            
@@ -350,7 +395,7 @@ const EventPage = () => {
                           <Flex className="datetime-head" size={'md'} style={{  borderRadius: 8 }} px={3} shadow="lg" borderWidth="2px" borderRadius="md" color={'gray.500'} justifyItems={'center'} flexDirection={'row'} justifyContent="space-between"  m={2}>
                             <Heading size={'md'} >{timing.name}</Heading>
                             <Heading size={'md'}>{moment(parseInt(timing.time)).format(
-                            "MMMM Do YYYY hh:mm"
+                            "MMMM Do YYYY hh:mm a"
                           )}</Heading>
                            {
                          isAdmin ? ( <Button

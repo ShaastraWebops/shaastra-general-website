@@ -104,6 +104,7 @@ export type EditProfileInput = {
 
 export type Event = {
   description: Scalars['String'];
+  earlybidoffer?: Maybe<Scalars['String']>;
   eventTimeFrom?: Maybe<Scalars['String']>;
   eventTimeTo?: Maybe<Scalars['String']>;
   eventtimings: Array<Timeline>;
@@ -180,6 +181,7 @@ export type Mutation = {
   deleteEvent: Scalars['Boolean'];
   deleteEventFAQ: Scalars['Boolean'];
   deleteTimings: Scalars['Boolean'];
+  earlybidoffer: Scalars['Boolean'];
   editEvent: Scalars['Boolean'];
   editEventFAQ: Scalars['Boolean'];
   editProfile?: Maybe<Scalars['Boolean']>;
@@ -234,6 +236,12 @@ export type MutationDeleteEventFaqArgs = {
 
 export type MutationDeleteTimingsArgs = {
   id: Scalars['String'];
+};
+
+
+export type MutationEarlybidofferArgs = {
+  amount: Scalars['String'];
+  eventID: Scalars['String'];
 };
 
 
@@ -534,6 +542,14 @@ export type DeleteTimingsMutationVariables = Exact<{
 
 export type DeleteTimingsMutation = { deleteTimings: boolean };
 
+export type EarlybidofferMutationVariables = Exact<{
+  id: Scalars['String'];
+  amount: Scalars['String'];
+}>;
+
+
+export type EarlybidofferMutation = { earlybidoffer: boolean };
+
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -558,7 +574,7 @@ export type GetEventQueryVariables = Exact<{
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, earlybidoffer?: string | null | undefined, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
 
 export type GetUsersDataCsvQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1220,6 +1236,38 @@ export function useDeleteTimingsMutation(baseOptions?: ApolloReactHooks.Mutation
 export type DeleteTimingsMutationHookResult = ReturnType<typeof useDeleteTimingsMutation>;
 export type DeleteTimingsMutationResult = ApolloReactCommon.MutationResult<DeleteTimingsMutation>;
 export type DeleteTimingsMutationOptions = ApolloReactCommon.BaseMutationOptions<DeleteTimingsMutation, DeleteTimingsMutationVariables>;
+export const EarlybidofferDocument = gql`
+    mutation earlybidoffer($id: String!, $amount: String!) {
+  earlybidoffer(eventID: $id, amount: $amount)
+}
+    `;
+export type EarlybidofferMutationFn = ApolloReactCommon.MutationFunction<EarlybidofferMutation, EarlybidofferMutationVariables>;
+
+/**
+ * __useEarlybidofferMutation__
+ *
+ * To run a mutation, you first call `useEarlybidofferMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useEarlybidofferMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [earlybidofferMutation, { data, loading, error }] = useEarlybidofferMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      amount: // value for 'amount'
+ *   },
+ * });
+ */
+export function useEarlybidofferMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<EarlybidofferMutation, EarlybidofferMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<EarlybidofferMutation, EarlybidofferMutationVariables>(EarlybidofferDocument, options);
+      }
+export type EarlybidofferMutationHookResult = ReturnType<typeof useEarlybidofferMutation>;
+export type EarlybidofferMutationResult = ApolloReactCommon.MutationResult<EarlybidofferMutation>;
+export type EarlybidofferMutationOptions = ApolloReactCommon.BaseMutationOptions<EarlybidofferMutation, EarlybidofferMutationVariables>;
 export const MeDocument = gql`
     query me {
   me {
@@ -1412,6 +1460,7 @@ export const GetEventDocument = gql`
     eventTimeTo
     registrationType
     teamSize
+    earlybidoffer
     faqs {
       id
       answer

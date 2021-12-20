@@ -101,3 +101,7 @@ mutation addTimings($id : String! , $data : AddTimingsInput!){
 mutation deleteTimings($id : String!){
   deleteTimings(id : $id )
 }
+
+mutation earlybidoffer($id : String! , $amount : String!){
+  earlybidoffer(eventID : $id , amount : $amount)
+}
