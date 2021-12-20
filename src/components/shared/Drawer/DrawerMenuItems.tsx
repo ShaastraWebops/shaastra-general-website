@@ -57,7 +57,7 @@ export const DrawerDesktopMenuItems = () => {
                     padding: 8,
                     marginBottom: 5,
                     fontSize: 24,
-                    background: "#00000028",
+                    background: "rgba(0, 0, 0, 0.473)",
                   }}
                   to="/shows"
                 >
@@ -80,7 +80,7 @@ export const DrawerDesktopMenuItems = () => {
                     padding: 8,
                     marginBottom: 5,
                     fontSize: 24,
-                    background: "#00000028",
+                    background: "rgba(0, 0, 0, 0.473)",
                   }}
                   to="/envisage"
                 >
