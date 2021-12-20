@@ -99,6 +99,7 @@ query getEvent($EventID: String!)
   eventTimeTo,
   registrationType,
   teamSize,
+  earlybidoffer
   faqs{
     id,
     answer,
