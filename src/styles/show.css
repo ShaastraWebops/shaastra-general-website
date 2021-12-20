@@ -61,7 +61,9 @@ body {
 .timeline ul li div .discovery {
     margin-right: 10px;
     font-weight: 600;
-    font-size: 16px;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
 }
 .discovery1{
     height: 229px;
