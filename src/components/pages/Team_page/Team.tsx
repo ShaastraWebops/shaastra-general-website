@@ -104,8 +104,9 @@ const Team = (props: Props) => {
       mailId: "ce18b003@smail.iitm.ac.in",
       name: "Battu Lochana Janaki",
       dept: "Envisage",
-      social_links: {
+      social_links: {    
         instagram: "https://www.instagram.com/envisageiitmadras/",
+        linkedIn: "https://www.linkedin.com/in/battu-lochana-janaki-b270b31bb/",
         facebook: "https://www.facebook.com/Envisage.IITM",
         shastraMailId: "lochana@shaastra.org",
         contact: "7032377877",
@@ -119,6 +120,7 @@ const Team = (props: Props) => {
       dept: "Events & Workshops",
       social_links: {
         facebook: "https://www.facebook.com/aniswarsrivatsak/",
+        linkedIn:"https://www.linkedin.com/in/aniswar-sk/",
         shastraMailId: "aniswar@shaastra.org",
         contact: "6383393474",
       },
@@ -131,6 +133,7 @@ const Team = (props: Props) => {
       dept: "Events & Workshops",
       social_links: {
         instagram: "s_._vishal",
+         linkedIn: "https://www.linkedin.com/in/vishal-sivaraman-/",
         shastraMailId: "vishal@shaastra.org",
         contact: "9498813221",
       },
@@ -156,7 +159,7 @@ const Team = (props: Props) => {
       dept: "Evolve",
       social_links: {
         instagram: "https://www.instagram.com/token_taker/",
-        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
+        linkedIn: "https://www.linkedin.com/in/siddhant-toknekar/",
         shastraMailId: "siddhant@shaastra.org",
         contact: "9130213213",
       },
@@ -169,6 +172,7 @@ const Team = (props: Props) => {
       dept: "Finance",
       social_links: {
         instagram: "https://www.instagram.com/sonukranthy",
+          linkedIn: "https://www.linkedin.com/in/kranthi-kiran-714baa184/",
         shastraMailId: "kranthi.t@shaastra.org",
         contact: "6303733655",
       },
@@ -181,6 +185,7 @@ const Team = (props: Props) => {
       dept: "Finance",
       social_links: {
         instagram: "https://www.intsagram.com/sahithi0022",
+         linkedIn: "https://www.linkedin.com/in/sahithinune/",
         shastraMailId: "sahithi@shaastra.org",
         contact: "9948812020",
       },
