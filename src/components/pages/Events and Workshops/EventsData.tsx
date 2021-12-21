@@ -29,8 +29,11 @@ const EventsData = [
     },
     {
         vertical: "ignite",
-        desp: "The company will come up with a problem statement which may be related to a current technical/engineering problem that the company is facing right now. The problem statement will be a simplified version of it ( easy enough for undergraduates and postgraduates to comprehend and solve). The problem statement will be given and participants will be asked to submit a report on their work which will be evaluated and the finalists will be selected. During Shaastra (January), the idea should be presented by the finalists to the judges from that company and also a working model (if needed)."
-        
+        desp: `Do you want to challenge the conventions? Got the nerves to solve some real-life engineering problems? Look no further for we bring you
+        Industrially Defined Problems (IDP) which is where you help in meeting the needs of the industry. The company comes up with a problem 
+        statement and you get to solve it. Optimize the yield while minimizing the cost. It's as simple as that! Participants will be required to submit their solution, soon after which finalists will be 
+        announced after evaluation. During Shaastra, ideas/working models by the finalists are to be presented before the
+        judges. So what more are you waiting for? Register now !`
     },
     {
         vertical: "strategists",
