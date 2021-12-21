@@ -31,6 +31,7 @@ import www from "../../images/logo/static/www.png";
 import linkedin from "../../images/logo/static/linkedin (1).png";
 import MEB from "../../images/logo/static/ME-B.png";
 import MEW from "../../images/logo/static/ME-W.png";
+import CL from "../../images/logo/static/CL.png";
 import WC from "../../images/logo/static/WC.png";
 import BS from "../../images/logo/static/BS.png";
 import ADW from "../../images/logo/static/AD-W.png";
@@ -78,8 +79,88 @@ function Spons() {
             <br />
             <br />
             <div className="card__collection">
-              
-            <div className="card" id="photo">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img
+                    src={TPL}
+                    className="img-responsive"
+                    id="tata"
+                    alt=""
+                  />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.tataprojects.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/tata-projects/?originalSubdomain=in">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/OfficialTPLCommunity/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={mtx} className="img-responsive" id="mtx" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.mtxb2b.com/s/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/mtx-group/?originalSubdomain=in">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/mtxb2b/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={binance} className="img-responsive" id="binance" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.binance.com/en-IN">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/binance/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/binance/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
                 <div className="card-front">
                   <img
                     src={AMD}
@@ -111,7 +192,50 @@ function Spons() {
                   </p>
                 </div>
               </div>
-              
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img
+                    src={Wells}
+                    className="img-responsive"
+                    id="surana"
+                    alt=""
+                  />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.wellsfargo.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/wellsfargo/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/wellsfargo/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={logo2} className="img-responsive" id="ravi" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="http://www.ravikiraninfotech.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/ravikiraninfotech/?originalSubdomain=in">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/ravikiraninfo/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
               <div className="card" id="photo">
                 <div className="card-front">
                   <img src={Astra} className="img-responsive" id="Astra" alt="" />
@@ -133,17 +257,111 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                  <img src={Atlasian} className="img-responsive" alt="" />
+                  <img src={LT} className="img-responsive" id="lt" alt="" />
                 </div>
                 <div className="card-back">
                   <p className="text">
-                    <a href="https://www.atlassian.com/">
+                    <a href="https://www.larsentoubro.com/">
                       <img src={www} id="www1" alt=""></img>
                     </a>
-                    <a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in">
+                    <a href="https://www.linkedin.com/company/larsen-&-toubro-limited/?originalSubdomain=in">
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
-                    <a href="https://www.facebook.com/Atlassian/">
+                    <a href="https://www.facebook.com/LT-Construction-364964870240516/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img
+                    src={CAT}
+                    className="img-responsive"
+                    alt=""
+                    style={
+                      theme == "black"
+                        ? {
+                          filter: "invert(1)",
+                        }
+                        : {
+                          filter: "invert(0)",
+                        }
+                    }
+                  />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.caterpillar.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/caterpillar-inc/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/caterpillarinc/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={KLA} className="img-responsive" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.kla-tencor.com/company">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/klacorp/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/KLAcorp/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={Salesforces} className="img-responsive" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.salesforce.com/in/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/salesforce/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/salesforce/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img
+                    src={MEB}
+                    className="img-responsive"
+                    id="mouser"
+                    alt=""
+                  />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.mouser.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/mouser-electronics/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/mouserelectronics/">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
@@ -185,17 +403,22 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                  <img src={binance} className="img-responsive" id="binance" alt="" />
+                  <img
+                    src={surana}
+                    className="img-responsive"
+                    id="surana"
+                    alt=""
+                  />
                 </div>
                 <div className="card-back">
                   <p className="text">
-                    <a href="https://www.binance.com/en-IN">
+                    <a href="https://suranaandsurana.com/">
                       <img src={www} id="www1" alt=""></img>
                     </a>
-                    <a href="https://www.linkedin.com/company/binance/">
+                    <a href="https://www.linkedin.com/company/surana-&-surana-internartional-attorneys/">
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
-                    <a href="https://www.facebook.com/binance/">
+                    <a href="https://www.facebook.com/Surana-Surana-International-Attorneys-125263729279918">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
@@ -204,17 +427,22 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                  <img src={Boeing} className="img-responsive" alt="" />
+                  <img
+                    src={WC}
+                    className="img-responsive"
+                    id="wow"
+                    alt=""
+                  />
                 </div>
                 <div className="card-back">
                   <p className="text">
-                    <a href="https://www.boeing.com/">
+                    <a href="https://www.wowchess.com/">
                       <img src={www} id="www1" alt=""></img>
                     </a>
-                    <a href="https://www.linkedin.com/company/boeing/">
+                    <a href="https://www.linkedin.com/company/wowchess/?originalSubdomain=in">
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
-                    <a href="https://www.facebook.com/Boeing/">
+                    <a href="#">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
@@ -248,57 +476,6 @@ function Spons() {
               <div className="card" id="photo">
                 <div className="card-front">
                   <img
-                    src={CAT}
-                    className="img-responsive"
-                    alt=""
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.caterpillar.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/caterpillar-inc/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/caterpillarinc/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={foxmula} className="img-responsive" id="foxmula" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://foxmula.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/foxmula-official/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/foxmulaOfficial/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
                     src={HW}
                     className="img-responsive"
                     id="inno"
@@ -319,6 +496,73 @@ function Spons() {
                   </p>
                 </div>
               </div>
+
+              {/* <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={Atlasian} className="img-responsive" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.atlassian.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/Atlassian/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              
+
+              
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={Boeing} className="img-responsive" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://www.boeing.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/boeing/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/Boeing/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              
+
+              
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <img src={foxmula} className="img-responsive" id="foxmula" alt="" />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://foxmula.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/foxmula-official/?originalSubdomain=in">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/foxmulaOfficial/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              
 
               <div className="card" id="photo">
                 <div className="card-front">
@@ -410,145 +654,19 @@ function Spons() {
                 </div>
               </div>
 
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={KLA} className="img-responsive" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.kla-tencor.com/company">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/klacorp/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/KLAcorp/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={LT} className="img-responsive" id="lt" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.larsentoubro.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/larsen-&-toubro-limited/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/LT-Construction-364964870240516/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={Mahindra} className="img-responsive" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.mahindra.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/mahindragroup/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/MahindraRise/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={MEB}
-                    className="img-responsive"
-                    id="mouser"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.mouser.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/mouser-electronics/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/mouserelectronics/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={mtx} className="img-responsive" id="mtx" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.mtxb2b.com/s/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/mtx-group/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/mtxb2b/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={logo2} className="img-responsive" id="ravi" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="http://www.ravikiraninfotech.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/ravikiraninfotech/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/ravikiraninfo/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
+              
 
               
 
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={Salesforces} className="img-responsive" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.salesforce.com/in/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/salesforce/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/salesforce/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
+              
+
+
+
+              
+
+
+
+              
 
               <div className="card" id="photo">
                 <div className="card-front">
@@ -574,78 +692,44 @@ function Spons() {
                 </div>
               </div>
 
+              
+
+
+
+               */}
+
               <div className="card" id="photo">
                 <div className="card-front">
                   <img
-                    src={surana}
+                    src={CL}
                     className="img-responsive"
-                    id="surana"
+                    id="subex"
+                    style={
+                      theme == "black"
+                        ? {
+                          filter: "invert(0)",
+                        }
+                        : {
+                          filter: "invert(1)",
+                        }
+                    }
                     alt=""
                   />
                 </div>
                 <div className="card-back">
                   <p className="text">
-                    <a href="https://suranaandsurana.com/">
+                    <a href="https://www.cuvette.tech/">
                       <img src={www} id="www1" alt=""></img>
                     </a>
-                    <a href="https://www.linkedin.com/company/surana-&-surana-internartional-attorneys/">
+                    <a href="https://www.linkedin.com/company/cuvette-tech/">
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
-                    <a href="https://www.facebook.com/Surana-Surana-International-Attorneys-125263729279918">
+                    <a href="https://www.facebook.com/cuvette.tech/">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
                 </div>
               </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={TPL}
-                    className="img-responsive"
-                    id="tata"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.tataprojects.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/tata-projects/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/OfficialTPLCommunity/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={Wells}
-                    className="img-responsive"
-                    id="surana"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.wellsfargo.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/wellsfargo/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/wellsfargo/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
               {/* <div className="card" id="photo">
               <div className="card-front">
                 <img src={binance} className="img-responsive" alt="" />
@@ -666,35 +750,13 @@ function Spons() {
             </div> */}
 
 
-              
 
 
 
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={WC}
-                    className="img-responsive"
-                    id="wow"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.wowchess.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/wowchess/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="#">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
 
-              
+
+
+
 
             </div>
           </div>
