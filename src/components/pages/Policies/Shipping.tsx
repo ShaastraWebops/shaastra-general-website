@@ -7,6 +7,7 @@ const Shipping = (props: Props) => {
   return (
     <VStack p={10} alignItems={"stretch"}>
       <Heading pb={10}>SHIPPING &amp; DELIVERY POLICY</Heading>
+      <Text>Last updated on December 21, 2021</Text>
       <Text>
         Please carefully review our Shipping &amp; Delivery Policy when
         purchasing our Merchandise. This policy will apply to any order you
