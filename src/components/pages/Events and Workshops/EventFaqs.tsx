@@ -127,7 +127,7 @@ const EventFaqs = ({event} : any | null) =>{
             <Flex flexDirection={"column"}  width={"100%"} color={"black"}>
               {faqs?.map((faq) => {
                 return (
-                  <Box m={2} key={faq.id} >
+                  <Box m={2} key={faq.id}  paddingBottom={10}>
                     <Flex>
                       <Box
                         p={3} shadow="lg"
@@ -137,7 +137,7 @@ const EventFaqs = ({event} : any | null) =>{
                         width={"100%"}
                         borderTopRadius={"lg"}
                       >
-                        <Heading size="lg" textAlign={"left"} color={'gray.500'}>{faq.question}</Heading>
+                        <Text fontWeight={"extrabold"} color={'gray.500'} textAlign={"left"}>{faq.question}</Text>
                         {faqId === faq.id ? (
                           <FormControl m={3}>
                             <Input

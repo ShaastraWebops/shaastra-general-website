@@ -155,7 +155,7 @@ const RegisterNow = ({ isAdmin, data }) => {
               backgroundColor={"rgb(171, 228, 156)"}
               color="black"
               padding={["0.5vw","0.5vw","0.5vw", "1.25vw"]}
-              fontSize={["3vw","3vw","3vw", "1vw"]}
+              fontSize={["2vw","2vw","2vw", "1vw"]}
               onClick={
                 data.registrationType === "INDIVIDUAL"
                   ? () => {

@@ -135,10 +135,6 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
     //     )
     // }
 
-    const description = <ReactMarkdown
-                    children={data?.description!}
-                    remarkPlugins={[remarkGfm]}
-                ></ReactMarkdown> ;
 
 
     return(
@@ -195,10 +191,11 @@ const EventVerticalComponent = ({data, isAdmin} : any) => {
                         <Box height="fit-content" borderRadius="24px" width={["60%","60%","60%","55vw"]} marginLeft="1vw" className="event-desp">
                             <Flex flexDirection="column"  width="50vw" height="100%" alignItems="center" justifyContent="center" textAlign={"justify"}>
                                     <Text textAlign="left" width={["100%","100%","100%","100%"]} className={font} fontSize={["10px","10px","md","lg"]} borderRadius="24px"  padding="2vh" color="white" fontWeight="500" backdropFilter="blur(25px)">
-                                    <Text noOfLines={4}>
-                                    {
-                                        description.props.children.slice(0,400) + " ...."
-                                    }
+                                    <Text noOfLines={4} isTruncated >
+                                    <ReactMarkdown
+                                        children={data?.description!}
+                                        remarkPlugins={[remarkGfm]}
+                                    ></ReactMarkdown> 
                                     </Text>
                                        <Flex height="fit-content" width={'100%'} flexDirection={['column','column','row','row']} alignContent={["center"]} justifyContent={["center","center"]}>
                                        {

@@ -22,9 +22,14 @@ const Exhibitions = ()=>{
   const length = CauroselImages.length;
   const {ref,inView} = useInView();
   const animation = useAnimation();
-  const CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
   const Titlecolor = useColorModeValue("#1c72c7","#00d0ff");
-
+  console.log(window.innerWidth)
+  var CardAnimations;
+  if(window.innerWidth > 991){
+    CardAnimations = [{x:"-100vw"},{opacity:0},{x:"+100vw"}];
+  }else{
+     CardAnimations = [{opacity:0},{opacity:0},{opacity:0}];
+  }
   React.useEffect(()=>{
 
     if(inView){
@@ -38,12 +43,6 @@ const Exhibitions = ()=>{
         CardAnimations[i]
       )
     }
-
-    const timer =  setInterval(()=>{
-      setCurrent((prev)=>{ return prev+1 === length ? 0 : prev +1 });
-    },5000)
-
-    return ()=> clearInterval(timer);
 
   }, [inView] )
 
@@ -166,61 +165,6 @@ const Exhibitions = ()=>{
       </VStack>
       </Container>
 
-        {/* <Center className="slider" mb={2}>
-        <MotionChevronLeftIcon
-         whileHover={{ scale: 1.1 }}
-         whileTap={{ scale: 0.9 }}
-         className="left-arrow" onClick={prevSlide}
-         />
-        <MotionChevronRightIcon 
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="right-arrow" onClick={nextSlide} />
-          {
-            CauroselImages.map((img,index)=>{
-              return(
-               
-               <Center
-               className={index===current ? 'slide active':'slide'}
-               key = {index}
-               >
-                
-                 <MotionBox
-                 whileHover={{scale : 1.1}}
-                 >
-                 {
-                   index === current && (<Image
-                    alt={'Carousel Image'}
-                    fit={'cover'}
-                    align={'center'}
-                    className="CarouselImg"
-                    borderRadius="10px"
-                    src={img}
-    
-                  />)
-                  }
-                 </MotionBox>
-               </Center>
-    
-              )
-            })
-          }
-       </Center> */}
-       {/* <SimpleGrid columns={[1,1,2,3]}  spacingX={1} spacingY={1}  m={5}>
-          {
-            CauroselImages.map((img,index)=>{
-              return(
-                  <Image
-                    alt={'Carousel Image'}
-                    className="CarouselImg"
-                    borderRadius="10px"
-                    src={img}
-                    margin={-1}
-                  />
-              )
-            })
-          }
-        </SimpleGrid> */}
        <Footer designed={[{name : "Srinivas",mail :"ch19b052@smail.iitm.ac.in"}]} />
      </CustomBox>
     
