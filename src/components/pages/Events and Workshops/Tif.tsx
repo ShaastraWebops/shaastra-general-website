@@ -8,6 +8,7 @@ import {
   Image,
   SimpleGrid,
   Flex,
+  Button,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import CustomBox from "../../shared/CustomBox";
@@ -19,6 +20,7 @@ import tif5 from "../../../images/EventsWorkshops/tif/tif_6.png";
 import tif6 from "../../../images/EventsWorkshops/tif/tif_9.png";
 import "../../../styles/Events.css";
 import Footer from "../../shared/Footer";
+import { Link } from "react-router-dom";
 
 function Tif() {
   const colorvariant = useColorModeValue("#1c72c7","#ABC8E1")
@@ -48,7 +50,11 @@ function Tif() {
             product).These benchmark models can further be incubated for the
             commencement of a start-up.
           </Text>
-        </Stack>
+          <Box m={2}>
+          <a href={"https://tif.shaastra.org/"} target={"_blank"}><Button colorScheme={"blue"} borderRadius={"2xl"} m={2}>Explore Tech & Innovation Fair</Button></a>
+          </Box>
+           </Stack>
+           
         <Flex
           textAlign={"center"}
           align={"center"}
@@ -62,7 +68,7 @@ function Tif() {
           // py={{ base: 20, md: 20 }}
         >
           <Center>
-          <Box p={2} my={3} width={'60%'}>
+          <Box p={2} my={3} width={['80%','80%','60%','60%']}>
             <Text padding={2}  fontSize={"17px"} textAlign={'justify'} fontWeight={'semibold'}>
               The fair comprises multiple stages of professional guidance in the
               form of Workshops, Panel discussions and seminars based on
@@ -385,7 +391,7 @@ function Tif() {
         </SimpleGrid>
       </Box>
       <Footer
-        designed={[{ name: "Drishti", mail: "me19b100@smail.iitm.ac.in" }]}
+        designed={[{ name: "Drishti", mail: "me19b100@smail.iitm.ac.in" },{ name: "Srinivas", mail: "ch19b052@smail.iitm.ac.in" }]}
       />
     </CustomBox>
   );

@@ -227,6 +227,20 @@ export const DrawerDesktopMenuItems = () => {
         <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          onMouseOver={() => setMenu("click")}
+          fontSize={28}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={3}
+          pr={12}
+          mb={4}
+        >
+          <Link to="/tif">Tech & Innovation Fair</Link>
+        </Box>
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("schools")}
           fontSize={28}
           fontFamily={"monospace"}
@@ -366,6 +380,9 @@ export const DrawerMobileMenuItems = () => {
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/summit">Summit</Link>
         </Box>
+        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+          <Link to="/tif">Tech & Innovation Fair</Link>
+        </Box>
         <AccordionItem border={0}>
           <Box fontSize={27} fontStyle={"normal"}>
             <Link to="/shaastra-juniors">School</Link>
@@ -383,14 +400,14 @@ export const DrawerMobileMenuItems = () => {
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/team">Team</Link>
         </Box>
-      </Accordion>
-      {
-        localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin" && 
+        {
+        (localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin") && 
           <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/profile") } }>Profile</Button>
-          <Button backgroundColor="#addfd0" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signout") } }>Logout</Button>
+          <Button backgroundColor="#DB7171" color="black" width="100%" onClick={(e:any) => {e.preventDefault(); history.push("/signout") } }>Logout</Button>
         </Box>
       }
+      </Accordion>
     </Flex>
   );
 };
