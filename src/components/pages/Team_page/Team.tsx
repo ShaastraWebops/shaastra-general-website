@@ -104,8 +104,9 @@ const Team = (props: Props) => {
       mailId: "ce18b003@smail.iitm.ac.in",
       name: "Battu Lochana Janaki",
       dept: "Envisage",
-      social_links: {
+      social_links: {    
         instagram: "https://www.instagram.com/envisageiitmadras/",
+        linkedIn: "https://www.linkedin.com/in/battu-lochana-janaki-b270b31bb/",
         facebook: "https://www.facebook.com/Envisage.IITM",
         shastraMailId: "lochana@shaastra.org",
         contact: "7032377877",
