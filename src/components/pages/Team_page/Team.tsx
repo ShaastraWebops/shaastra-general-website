@@ -119,6 +119,7 @@ const Team = (props: Props) => {
       dept: "Events & Workshops",
       social_links: {
         facebook: "https://www.facebook.com/aniswarsrivatsak/",
+        linkedIn:"https://www.linkedin.com/in/aniswar-sk/",
         shastraMailId: "aniswar@shaastra.org",
         contact: "6383393474",
       },
