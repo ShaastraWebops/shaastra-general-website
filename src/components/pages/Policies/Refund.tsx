@@ -24,14 +24,6 @@ const Refund = (props: Props) => {
         changes made.
       </Text>
       <Heading fontSize={24} pt={8} textAlign={"left"}>
-        REFUNDS
-      </Heading>
-      <Text>
-        You are entitled to cancel Your Order within 7 days of purchase without
-        giving any reason for doing so. Reimbursement will happen no later than
-        14 days from the cancellation date.
-      </Text>
-      <Heading fontSize={24} pt={8} textAlign={"left"}>
         CANCELLATION PROCESS
       </Heading>
       <Text>
