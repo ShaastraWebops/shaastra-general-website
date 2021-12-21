@@ -40,7 +40,7 @@ const Home = () => {
                     <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href="/events">Events</a></Flex>
                     <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href="/events/workshops" >Workshops</a></Flex>
                     {/* <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href='/summit'>Summit</a></Flex> */}
-                    <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href="/tif">TIF</a></Flex>
+                    {/* <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href="/tif">TIF</a></Flex> */}
                 </Flex>
             </Flex>
             <Flex width={["90vw","70vw"]} margin="auto" flexDirection={"column"} className='EWHomeDesp' marginTop={"8vh"}>
@@ -107,7 +107,7 @@ const Home = () => {
                         <a href="/summit">Explore SUMMIT <ChevronRightIcon></ChevronRightIcon> </a>
                     </Text>
                 </Flex> */}
-                <Flex flexDirection={["column", "row"]} width={"100%"} justifyContent={"space-between"}  alignItems={"center"} marginBottom={"8vh"}>
+                {/* <Flex flexDirection={["column", "row"]} width={"100%"} justifyContent={"space-between"}  alignItems={"center"} marginBottom={"8vh"}>
                     <Image boxSize={["50vw","18vw"]} src={tif} objectFit={"cover"}></Image>
                     <Text
                         textAlign='left'
@@ -127,7 +127,7 @@ const Home = () => {
                         <br /> <br></br>
                         <a href="/tif">Explore TIF <ChevronRightIcon></ChevronRightIcon> </a>
                     </Text>
-                </Flex>
+                </Flex> */}
             </Flex>
             <Footer
           designed={[{ name: 'Krithikaa', mail: 'be20b020@smail.iitm.ac.in' }]}
