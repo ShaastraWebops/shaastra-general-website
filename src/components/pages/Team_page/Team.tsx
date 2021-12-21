@@ -157,7 +157,7 @@ const Team = (props: Props) => {
       dept: "Evolve",
       social_links: {
         instagram: "https://www.instagram.com/token_taker/",
-        linkedIn: "https://www.linkedin.com/in/abhishek-sv-69b67719a/",
+        linkedIn: "https://www.linkedin.com/in/siddhant-toknekar/",
         shastraMailId: "siddhant@shaastra.org",
         contact: "9130213213",
       },
