@@ -132,6 +132,7 @@ const Team = (props: Props) => {
       dept: "Events & Workshops",
       social_links: {
         instagram: "s_._vishal",
+         linkedIn: "https://www.linkedin.com/in/vishal-sivaraman-/",
         shastraMailId: "vishal@shaastra.org",
         contact: "9498813221",
       },
