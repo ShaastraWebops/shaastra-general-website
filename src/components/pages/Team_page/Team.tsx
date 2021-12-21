@@ -185,6 +185,7 @@ const Team = (props: Props) => {
       dept: "Finance",
       social_links: {
         instagram: "https://www.intsagram.com/sahithi0022",
+         linkedIn: "https://www.linkedin.com/in/sahithinune/",
         shastraMailId: "sahithi@shaastra.org",
         contact: "9948812020",
       },
