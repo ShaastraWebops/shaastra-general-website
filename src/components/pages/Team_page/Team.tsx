@@ -223,6 +223,7 @@ const Team = (props: Props) => {
       name: "Shvetha Sivaprasad",
       dept: "Publicity",
       social_links: {
+          linkedIn: "https://www.linkedin.com/in/shvetha-sivaprasad-08264217a/",
         instagram: "https://www.instagram.com/shvethasivaprasad",
         facebook: "https://www.facebook.com/Shvetha S",
         shastraMailId: "shvetha@shaastra.org",
@@ -248,6 +249,7 @@ const Team = (props: Props) => {
       name: "HARSHITHA",
       dept: "Quality Management System",
       social_links: {
+         linkedIn: "https://www.linkedin.com/in/harshitha-k-788492194/",
         instagram: "https://www.instagram.com/harshithaa_aaa",
         shastraMailId: "harshitha@shaastra.org",
         contact: "6303344798",
