@@ -55,7 +55,7 @@ const Footer = (props: Props) => {
             </p>
             <p>
               <a href="mailto:sponsorship@shaastra.org">
-                <FaEnvelope /> sponsorship@smail.iitm.ac.in
+                <FaEnvelope /> sponsorship@shaastra.org
               </a>
             </p>
             <p>
@@ -146,7 +146,7 @@ const Footer = (props: Props) => {
             </p>
             <p>
               <a href="mailto:sponsorship@shaastra.org">
-                <FaEnvelope /> sponsorship@smail.iitm.ac.in
+                <FaEnvelope /> sponsorship@shaastra.org
               </a>
             </p>
             <p>
