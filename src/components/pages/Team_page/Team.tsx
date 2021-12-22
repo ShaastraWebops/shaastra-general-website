@@ -248,6 +248,7 @@ const Team = (props: Props) => {
       name: "HARSHITHA",
       dept: "Quality Management System",
       social_links: {
+         linkedIn: "https://www.linkedin.com/in/harshitha-k-788492194/",
         instagram: "https://www.instagram.com/harshithaa_aaa",
         shastraMailId: "harshitha@shaastra.org",
         contact: "6303344798",
