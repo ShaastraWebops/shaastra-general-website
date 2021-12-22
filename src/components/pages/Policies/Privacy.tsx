@@ -33,8 +33,7 @@ const Privacy = (props: Props) => {
 
       <Text>
         The personal information that you are asked to provide, and the reasons
-        why you are asked to provide it, will be made clear to you at the point
-        we ask you to provide your personal information.
+        why you are asked to provide it, will be made clear to you at the time when we ask you to provide your personal information.
       </Text>
       <Text>
         If you contact us directly, we may receive additional information about
