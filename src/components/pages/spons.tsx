@@ -79,27 +79,9 @@ function Spons() {
             <br />
             <br />
             <div className="card__collection">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               <div className="card" id="photo">
                 <div className="card-front">
+                  <p id="sponsro">Title Sponsor</p>
                   <img
                     src={TPL}
                     className="img-responsive"
@@ -124,6 +106,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Associate Title</p>
+
                   <img src={mtx} className="img-responsive" id="mtx" alt="" />
                 </div>
                 <div className="card-back">
@@ -143,6 +127,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Platinum Sponsor</p>
+
                   <img src={binance} className="img-responsive" id="binance" alt="" />
                 </div>
                 <div className="card-back">
@@ -162,6 +148,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Diamond Sponsor</p>
+
                   <img
                     src={AMD}
                     className="img-responsive"
@@ -195,6 +183,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Gold Sponsor</p>
                   <img
                     src={Wells}
                     className="img-responsive"
@@ -219,6 +208,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Co Sponsor</p>
+
                   <img src={logo2} className="img-responsive" id="ravi" alt="" />
                 </div>
                 <div className="card-back">
@@ -238,6 +229,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Co Sponsor</p>
+
                   <img src={Astra} className="img-responsive" id="Astra" alt="" />
                 </div>
                 <div className="card-back">
@@ -257,6 +250,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Co Sponsor</p>
+
                   <img src={LT} className="img-responsive" id="lt" alt="" />
                 </div>
                 <div className="card-back">
@@ -276,6 +271,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">IDP Sponsor</p>
+
                   <img
                     src={CAT}
                     className="img-responsive"
@@ -308,6 +305,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Event Sposnor</p>
+
                   <img src={KLA} className="img-responsive" alt="" />
                 </div>
                 <div className="card-back">
@@ -327,6 +326,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Event Sposnor</p>
+
                   <img src={Salesforces} className="img-responsive" alt="" />
                 </div>
                 <div className="card-back">
@@ -346,6 +347,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Event Sposnor</p>
+
                   <img
                     src={MEB}
                     className="img-responsive"
@@ -370,6 +373,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Event Sposnor</p>
+
                   <img
                     src={ADB}
                     className="img-responsive"
@@ -403,6 +408,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Event Sposnor</p>
+
                   <img
                     src={surana}
                     className="img-responsive"
@@ -427,6 +434,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Event Sposnor</p>
+
                   <img
                     src={WC}
                     className="img-responsive"
@@ -451,6 +460,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Event Sposnor</p>
+
                   <img
                     src={BS}
                     className="img-responsive"
@@ -475,6 +486,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Juniors Sponsor</p>
+
                   <img
                     src={HW}
                     className="img-responsive"
@@ -700,6 +713,8 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
+                <p id="sponsro">Campus Ambassador Sponsor</p>
+
                   <img
                     src={CL}
                     className="img-responsive"
