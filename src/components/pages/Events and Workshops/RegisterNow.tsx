@@ -72,6 +72,23 @@ const RegisterNow = ({ isAdmin, data }) => {
   const [teamreg, { data: data2, loading: loading2, error: error2 }] =
     useCreateTeamandRegisterMutation();
   const Teamregistration = async (eventID: string) => {
+
+    if(data.id === "ckxcweoy60013y6p76ppx07rt"){
+      const accept = prompt("Privacy Policy : \n The data or the problem that is being shared under HackOlympics 2.0 shall not be shared or reused by the participants or stakeholders with anyone or any third party without prior written permission of MTX. The breach of this clause shall be considered a direct dispute between the violating individual and MTX, and is liable to legal action from MTX.\n \n Please type \"Agree\" without quotes")
+      if(accept?.toLowerCase() === "agree"){
+        await teamreg({
+          variables: {
+            createTeamAndRegisterData: {
+              eventID,
+              name: teamname!,
+              members,
+            },
+          },
+        }).catch((err) => console.log(err.message));
+      }else{
+        alert("Please agree the privacy policy")
+      }
+    }else{
     await teamreg({
       variables: {
         createTeamAndRegisterData: {
@@ -81,7 +98,8 @@ const RegisterNow = ({ isAdmin, data }) => {
         },
       },
     }).catch((err) => console.log(err.message));
-  };
+  };}
+  
 
   if (loading || loading2) {
     onClose = () => {
