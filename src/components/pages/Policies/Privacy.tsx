@@ -8,7 +8,7 @@ const Privacy = (props: Props) => {
     <VStack p={10} alignItems={"stretch"}>
       <Heading pb={10}>Privacy Policy for Shaastra 2022</Heading>
       <Text>
-        At Shaastra 2022, accessible from www.shaastra.org, one of our main
+        At Shaastra 2022, accessible from  <a href="/" >www.shaastra.org</a>, one of our main
         priorities is the privacy of our visitors. This Privacy Policy document
         contains types of information that is collected and recorded by Shaastra
         2022 and how we use it.
@@ -33,8 +33,7 @@ const Privacy = (props: Props) => {
 
       <Text>
         The personal information that you are asked to provide, and the reasons
-        why you are asked to provide it, will be made clear to you at the point
-        we ask you to provide your personal information.
+        why you are asked to provide it, will be made clear to you at the time when we ask you to provide your personal information.
       </Text>
       <Text>
         If you contact us directly, we may receive additional information about
@@ -48,7 +47,7 @@ const Privacy = (props: Props) => {
         address, and telephone number.
       </Text>
 
-      <Heading fontSize={24} pt={8} textAlign={"left"}>How we use your information</Heading>
+      <Heading fontSize={24} pt={8} textAlign={"left"}>How do we use your information</Heading>
 
       <Text>
         We use the information we collect in various ways, including to:
