@@ -76,9 +76,9 @@ const Footer = (props: Props) => {
             >
               IITM Students Activities Trust Shaastra,
               <br /> 1st Floor, O/o Dean Of Students Office,
-              <br /> IIT Madras, Guindy Chennai,
+              <br /> IIT Madras, Guindy, Chennai,
               <br /> Tamil Nadu 600036 India
-              <br /> Mobile : +919952729095
+              <br /> Mobile : +91 9952729095
             </p>
           </div>
           <div className="DesignedBy">
@@ -167,7 +167,7 @@ const Footer = (props: Props) => {
             >
               IITM Students Activities Trust Shaastra,
               <br /> 1st Floor, O/o Dean Of Students Office,
-              <br /> IIT Madras, Guindy Chennai,
+              <br /> IIT Madras, Guindy, Chennai,
               <br /> Tamil Nadu 600036 India
               <br /> Mobile : +91 9952729095
             </p>
