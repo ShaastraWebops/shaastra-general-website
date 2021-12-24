@@ -434,29 +434,32 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sposnor</p>
+                <p id="sponsro">Event Sponsor</p>
 
                   <img
-                    src={WC}
+                    src={HW}
                     className="img-responsive"
-                    id="wow"
+                    id="inno"
                     alt=""
                   />
                 </div>
                 <div className="card-back">
                   <p className="text">
-                    <a href="https://www.wowchess.com/">
+                    <a href="https://www.honeywell.com/us/en">
                       <img src={www} id="www1" alt=""></img>
                     </a>
-                    <a href="https://www.linkedin.com/company/wowchess/?originalSubdomain=in">
+                    <a href="https://www.linkedin.com/company/honeywell/">
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
-                    <a href="#">
+                    <a href="https://www.facebook.com/honeywellhome/">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
                 </div>
               </div>
+
+
+              
 
               <div className="card" id="photo">
                 <div className="card-front">
@@ -489,27 +492,26 @@ function Spons() {
                 <p id="sponsro">Event Sponsor</p>
 
                   <img
-                    src={HW}
+                    src={WC}
                     className="img-responsive"
-                    id="inno"
+                    id="wow"
                     alt=""
                   />
                 </div>
                 <div className="card-back">
                   <p className="text">
-                    <a href="https://www.honeywell.com/us/en">
+                    <a href="https://www.wowchess.com/">
                       <img src={www} id="www1" alt=""></img>
                     </a>
-                    <a href="https://www.linkedin.com/company/honeywell/">
+                    <a href="https://www.linkedin.com/company/wowchess/?originalSubdomain=in">
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
-                    <a href="https://www.facebook.com/honeywellhome/">
+                    <a href="#">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
                 </div>
               </div>
-
               {/* <div className="card" id="photo">
                 <div className="card-front">
                   <img src={Atlasian} className="img-responsive" alt="" />
