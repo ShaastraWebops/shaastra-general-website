@@ -59,8 +59,8 @@ const Footer = (props: Props) => {
               </a>
             </p>
             <p>
-              <a href="mailto:sec_cocur@shaastra.org">
-                <FaEnvelope /> sec_cocur@shaastra.org
+              <a href="mailto:sec_cocur@smail.iitm.ac.in">
+                <FaEnvelope /> sec_cocur@smail.iitm.ac.in
               </a>
             </p>
             {window.innerWidth <= 1000 ? <></> : <br />}
@@ -78,7 +78,7 @@ const Footer = (props: Props) => {
               <br /> 1st Floor, O/o Dean Of Students Office,
               <br /> IIT Madras, Guindy, Chennai,
               <br /> Tamil Nadu 600036 India
-              <br /> Mobile : +919952729095
+              <br /> Mobile : +91 9952729095
             </p>
           </div>
           <div className="DesignedBy">
@@ -150,8 +150,8 @@ const Footer = (props: Props) => {
               </a>
             </p>
             <p>
-              <a href="mailto:sec_cocur@shaastra.org">
-                <FaEnvelope /> sec_cocur@shaastra.org
+              <a href="mailto:sec_cocur@smail.iitm.ac.in">
+                <FaEnvelope /> sec_cocur@smail.iitm.ac.in
               </a>
             </p>
             {window.innerWidth <= 1000 ? <></> : <br />}

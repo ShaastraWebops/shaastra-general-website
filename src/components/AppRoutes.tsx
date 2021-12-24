@@ -4,7 +4,7 @@ import {Link} from "@chakra-ui/react"
 import Exhibitions from "./pages/Exhibitions/Exhibitions";
 import Home from "./pages/Home";
 import Envisage from "./pages/night/Envisage";
-import Shows from "./pages/night/Shows";
+// import Shows from "./pages/night/Shows";
 import Project from "./pages/night/Project";
 import Team from "./pages/Team_page/Team";
 import ShaastraJuniorsPage from "./pages/ShaastraJuniors";
@@ -35,6 +35,7 @@ import TermsConditions from "./pages/Policies/TermsConditions";
 import Shipping from "./pages/Policies/Shipping";
 import Refund from "./pages/Policies/Refund";
 import HomeEW from "./pages/Events and Workshops/EWHome";
+import Shows from "./pages/night/ShowsNew"
 interface Props {}
 
 const AppRoutes = (props: Props) => {
@@ -67,7 +68,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />
       <Route exact path="/sponsors" component={Spons} />
-      <Route exact path="/speakers" component={Speaker} />
+      {/* <Route exact path="/speakers" component={Speaker} /> */}
 
       <Route exact path="/login" component={Login}></Route>
       <Route exact path="/signup" component={Signup}></Route>

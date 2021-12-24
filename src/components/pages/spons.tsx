@@ -489,7 +489,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Juniors Sponsor</p>
+                <p id="sponsro">Event Sponsor</p>
 
                   <img
                     src={WC}

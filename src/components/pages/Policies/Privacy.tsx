@@ -47,7 +47,7 @@ const Privacy = (props: Props) => {
         address, and telephone number.
       </Text>
 
-      <Heading fontSize={24} pt={8} textAlign={"left"}>How we use your information</Heading>
+      <Heading fontSize={24} pt={8} textAlign={"left"}>How do we use your information</Heading>
 
       <Text>
         We use the information we collect in various ways, including to:

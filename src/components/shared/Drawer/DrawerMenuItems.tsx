@@ -149,6 +149,20 @@ export const DrawerDesktopMenuItems = () => {
         <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          onMouseOver={() => setMenu("Sales")}
+          fontSize={28}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={2}
+          pr={12}
+          mb={4}
+        >
+          <a href="https://sales.shaastra.org/" target={"_blank"}>Sales</a>
+        </Box>
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("exhibitions")}
           fontSize={28}
           fontFamily={"monospace"}
@@ -267,7 +281,7 @@ export const DrawerDesktopMenuItems = () => {
         >
           <Link to="/social-endeavours">Social Endeavours</Link>
         </Box>
-        <Box
+        {/* <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("Click")}
@@ -280,7 +294,7 @@ export const DrawerDesktopMenuItems = () => {
           mb={4}
         >
           <Link to="/speakers">Speakers</Link>
-        </Box>
+        </Box> */}
         <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
@@ -359,6 +373,9 @@ export const DrawerMobileMenuItems = () => {
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/eventsworkshops">Events and Workshops</Link>
         </Box>
+        <Box fontSize={27} fontStyle={"normal"}>
+          <a href="https://sales.shaastra.org/" target={'_blank'}>Sales</a>
+        </Box>
         <AccordionItem border={0}>
           <AccordionButton pl={0}>
             <Box fontSize={27} fontStyle={"normal"}>
@@ -391,9 +408,9 @@ export const DrawerMobileMenuItems = () => {
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/social-endeavours">Social Endeavours</Link>
         </Box>
-        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+        {/* <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/speakers">Speakers</Link>
-        </Box>
+        </Box> */}
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/sponsors">Sponsors</Link>
         </Box>

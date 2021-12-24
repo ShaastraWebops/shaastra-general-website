@@ -456,7 +456,7 @@ const Home = (props: Props) => {
               ref={speaker_paginationRef}
             ></div>
           </div>
-          <Link to="/speakers">SEE MORE</Link>
+          {/* <Link to="/speakers">SEE MORE</Link> */}
         </section>
         <section id="testimonials" className={`Home_Testimonials ${plain}`}>
           <h1>Testimonials</h1>

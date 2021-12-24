@@ -3542,5 +3542,9 @@ export const colleges : any = [
     {
         "University": "Yogi Vemana University",
         "Town": "Kadapa"
+    },
+    {
+        "University": "Other",
+        "Town": ""
     }
 ]
