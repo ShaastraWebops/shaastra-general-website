@@ -267,7 +267,7 @@ export const DrawerDesktopMenuItems = () => {
         >
           <Link to="/social-endeavours">Social Endeavours</Link>
         </Box>
-        <Box
+        {/* <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("Click")}
@@ -280,7 +280,7 @@ export const DrawerDesktopMenuItems = () => {
           mb={4}
         >
           <Link to="/speakers">Speakers</Link>
-        </Box>
+        </Box> */}
         <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
@@ -391,9 +391,9 @@ export const DrawerMobileMenuItems = () => {
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/social-endeavours">Social Endeavours</Link>
         </Box>
-        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+        {/* <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/speakers">Speakers</Link>
-        </Box>
+        </Box> */}
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/sponsors">Sponsors</Link>
         </Box>
