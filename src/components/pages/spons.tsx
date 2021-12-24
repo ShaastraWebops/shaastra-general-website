@@ -772,13 +772,13 @@ function Spons() {
                 </div>
                 <div className="card-back">
                   <p className="text">
-                    <a href="https://www.cuvette.tech/">
+                    <a href="https://easyshiksha.com/">
                       <img src={www} id="www1" alt=""></img>
                     </a>
-                    <a href="https://www.linkedin.com/company/cuvette-tech/">
+                    <a href="https://www.linkedin.com/company/easyshiksha/">
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
-                    <a href="https://www.facebook.com/cuvette.tech/">
+                    <a href="https://www.facebook.com/EasyShikshaIndia/">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
