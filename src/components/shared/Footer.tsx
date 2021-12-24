@@ -59,8 +59,8 @@ const Footer = (props: Props) => {
               </a>
             </p>
             <p>
-              <a href="mailto:sec_cocur@shaastra.org">
-                <FaEnvelope /> sec_cocur@shaastra.org
+              <a href="mailto:sec_cocur@smail.iitm.ac.in">
+                <FaEnvelope /> sec_cocur@smail.iitm.ac.in
               </a>
             </p>
             {window.innerWidth <= 1000 ? <></> : <br />}
