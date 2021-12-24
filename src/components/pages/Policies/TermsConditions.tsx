@@ -14,7 +14,7 @@ const TermsConditions = (props: Props) => {
       <Text>
         These terms and conditions outline the rules and regulations for the use
         of ‘SHAASTRA’ (technical fest conducted by IIT MADRAS) Website, located
-        at https://www.shaastra.org/
+        at  <a href="/" >www.shaastra.org</a>
       </Text>
       <Text>
         By accessing this website we assume you accept these terms and
