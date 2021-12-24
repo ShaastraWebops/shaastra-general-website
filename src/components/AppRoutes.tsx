@@ -53,6 +53,7 @@ const AppRoutes = (props: Props) => {
         {/* <Link to="https://unmute.shaastra.org/"></Link> */}
       </Route>
       <Route exact path="/mind-trials" component={() => {window.location.href="https://mindtrials.shaastra.org/"; return null}}></Route>
+      <Route exact path="/sales" component={() => {window.location.href="https://sales.shaastra.org/"; return null}}></Route>
       <Route exact path="/eventsworkshops" component={HomeEW} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" component={EventVertical}></Route>
