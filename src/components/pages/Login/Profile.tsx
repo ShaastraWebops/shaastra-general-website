@@ -174,7 +174,7 @@ const Profile = () => {
                                                 <Text fontSize="2xl">{e.name}</Text>
                                                 <Flex flexDirection={"column"}>
                                                 <Text>Events Starts From</Text>
-                                                <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
+                                                <Text> {moment(parseInt(e.eventTimeFrom!)).format("MMMM Do YYYY")}</Text>
                                                 </Flex>
                                                 </Box>
                                                 </a>
@@ -195,7 +195,7 @@ const Profile = () => {
                                                 <Text fontSize="2xl">{e.name}</Text>
                                                 <Flex flexDirection={"column"}>
                                                 <Text>Events Starts From</Text>
-                                                <Text> {moment(parseInt(e.eventTimeFrom)).format("MMMM Do YYYY")}</Text>
+                                                <Text> {moment(parseInt(e.eventTimeFrom!)).format("MMMM Do YYYY")}</Text>
                                                 </Flex>
                                                 </Box>
                                                 
