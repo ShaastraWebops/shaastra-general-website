@@ -173,7 +173,7 @@
 .Home_landingPage .ContentBox h1 {
   font-family: "Quicksand";
   font-size: 4.5em;
-  font-weight: 800;
+  font-weight: 650;
   letter-spacing: 5px;
   /* font-family: "CGF Locust Resistance", sans-serif; */
   line-height: 1.1em;
@@ -234,6 +234,68 @@
 }
 .Home_landingPage .ContentBox a:hover {
   letter-spacing: 2px;
+}
+#salesLink {
+  position: relative;
+  font-family: quicksand;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 2px;
+  width: fit-content;
+  color: #fff;
+  border: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+  background-color: rgb(0, 82, 235);
+}
+#salesLink::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0 !important;
+  border: 13.5px solid rgb(0, 82, 235);
+  border-left-color: transparent;
+}
+#salesLink::after {
+  content: "";
+  position: absolute;
+  right: -26px;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0 !important;
+  border: 13.5px solid rgb(0, 82, 235);
+  border-right-color: transparent;
+}
+#salesLink a {
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: none;
+  color: #fff;
+  letter-spacing: 2px;
+  background: transparent;
+}
+#salesLink a:hover {
+  letter-spacing: 2px;
+}
+@media screen and (max-width: 800px) {
+  #salesLink {
+    font-size: 13px;
+    text-align: center;
+    margin: 6px 0 8px 0;
+  }
+  #salesLink a {
+    font-size: 13px;
+    text-align: center;
+  }
 }
 .Home_landingPage .imgBox {
   max-width: 650px;
@@ -374,7 +436,7 @@
   .Home_landingPage .imgBox {
     max-width: 650px;
     max-height: 650px;
-    width: calc(100% - 40px);
+    width: calc(100% - 80px);
     position: relative;
     transform: translate(0);
     left: 0;
