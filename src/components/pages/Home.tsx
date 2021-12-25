@@ -178,10 +178,19 @@ const Home = (props: Props) => {
               </p>
             </div>
             <h3 id="salesLink">
+              Early Bird Special Offer
+              <br />
+              <a href="https://www.shaastra.org/events/workshops">WORKSHOP</a>
+              &nbsp;&&nbsp;
               <a href="https://sales.shaastra.org/" target="_blank">
-                Early Bird Special Offer
+                SALES
               </a>
+              <br />
+              Till 27th December
             </h3>
+            {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
+              for&nbsp;
+            </h3> */}
             {localStorage.getItem("role") !== "Admin" &&
               localStorage.getItem("role") !== "User" && (
                 <Link to="/signup">Register</Link>
