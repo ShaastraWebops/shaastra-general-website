@@ -180,9 +180,18 @@ const Home = (props: Props) => {
             <h3 id="salesLink">
               Early Bird Special Offer
               <br />
-              <a href="https://www.shaastra.org/events/workshops">WORKSHOP</a>
+              <a
+                href="https://www.shaastra.org/events/workshops"
+                style={{ color: "#FFFF00", fontWeight: "bold" }}
+              >
+                WORKSHOPS
+              </a>
               &nbsp;&&nbsp;
-              <a href="https://sales.shaastra.org/" target="_blank">
+              <a
+                href="https://sales.shaastra.org/"
+                target="_blank"
+                style={{ color: "#FFB6C1", fontWeight: "bold" }}
+              >
                 SALES
               </a>
               <br />
