@@ -36,6 +36,7 @@ import Shipping from "./pages/Policies/Shipping";
 import Refund from "./pages/Policies/Refund";
 import HomeEW from "./pages/Events and Workshops/EWHome";
 import Shows from "./pages/night/ShowsNew"
+import Contact from "./pages/Contact"
 interface Props {}
 
 const AppRoutes = (props: Props) => {
@@ -47,6 +48,7 @@ const AppRoutes = (props: Props) => {
       <Route path="/shows" component={Show} />
       <Route exact path="/exhibitions" component={Exhibitions} />
       <Route exact path="/team" component={Team} />
+      <Route exact path="/contact" component={Contact}></Route>
       <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
       {/* <Route exact path="/social-endeavours" component={Social} /> */}
       <Route exact path="/social-endeavours" component={() => {window.location.href = "https://unmute.shaastra.org/"; return null}}>
