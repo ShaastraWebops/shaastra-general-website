@@ -307,7 +307,7 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
-          <Link to="/sales">Sales</Link>
+          <Link to="/team">Team</Link>
         </Box>
         <Box
           className="menu-text"
@@ -321,7 +321,7 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
-          <Link to="/team">Team</Link>
+          <Link to="/contact">Contact Us</Link>
         </Box>
         {
           localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin" ? 
@@ -412,10 +412,10 @@ export const DrawerMobileMenuItems = () => {
           <Link to="/sponsors">Sponsors</Link>
         </Box>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
-          <Link to="/sales">Sales</Link>
+          <Link to="/team">Team</Link>
         </Box>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
-          <Link to="/team">Team</Link>
+          <Link to="/contact">Contact Us</Link>
         </Box>
         {
         (localStorage.getItem("role") === "User" || localStorage.getItem("role") === "Admin") && 

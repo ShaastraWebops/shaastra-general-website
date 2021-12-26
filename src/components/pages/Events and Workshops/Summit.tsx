@@ -96,7 +96,7 @@ const Summit = () => {
               theme for Summit 2021 was ARCHI-TECH which brought together the fields of architecture and technology. 
               With developments in technology like virtual reality, 3D printing and advancements in material science , 
               Shaastra Summit 2021 brought these technologies to light, to help our participants upskill in the field of 
-              architecture
+              architecture.
            </Text>
            <Text paddingBottom={"4vh"} fontSize={["3.5vw","1.5vw"]} textAlign={["center","left"]} width={["90vw","80vw"]} margin="auto" marginTop="8vh">
               Summit successfully hosted talks by Ar. Rahul Mehrotra, Ar. Brinda Somaya and other renowned architects as a 
