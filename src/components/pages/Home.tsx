@@ -177,24 +177,33 @@ const Home = (props: Props) => {
                 13th <span id="dash"></span> 16th January
               </p>
             </div>
-            {window.innerWidth < 800 ? (
-              <></>
-            ) : (
-              <p>
-                {/* Welcome to the Official website of first ISO certified
-                student-run technical festival, Shaastra! Here, we will take you
-                through all the amazing things you can do with us, from earning
-                lakhs of money by winning events, to fireside chats with your
-                favorite celebrities. */}
-                {/* Welcome to the Official website of first ISO certified
-                student-run technical festival, Shaastra! Here, we will take you
-                through all the amazing things you can do with us, from earning
-                lakhs of money by winning events, to fireside chats with your
-                favorite celebrities. So, what are you waiting for? Go ahead and
-                explore what we have to offer. */}
-              </p>
-            )}
-            <Link to="/signup">Register</Link>
+            <h3 id="salesLink">
+              Early Bird Special Offer
+              <br />
+              <a
+                href="https://www.shaastra.org/events/workshops"
+                style={{ color: "#FFFF00", fontWeight: "bold" }}
+              >
+                WORKSHOPS
+              </a>
+              &nbsp;&&nbsp;
+              <a
+                href="https://sales.shaastra.org/"
+                target="_blank"
+                style={{ color: "#FFB6C1", fontWeight: "bold" }}
+              >
+                SALES
+              </a>
+              <br />
+              Till 27th December
+            </h3>
+            {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
+              for&nbsp;
+            </h3> */}
+            {localStorage.getItem("role") !== "Admin" &&
+              localStorage.getItem("role") !== "User" && (
+                <Link to="/signup">Register</Link>
+              )}
           </div>
           <div className="imgBox">
             <img src={robos1} alt="" />

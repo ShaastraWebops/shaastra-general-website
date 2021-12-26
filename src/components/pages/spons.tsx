@@ -18,6 +18,7 @@ import LT from "../../images/logo/static/L&T.png";
 import mtx from "../../images/logo/static/mtx.png";
 import HW from "../../images/logo/static/HW.png";
 import AMD from "../../images/logo/static/AMD.png";
+import ES from "../../images/logo/static/ES.png";
 import subex from "../../images/logo/static/subex.png";
 import surana from "../../images/logo/static/surana.png";
 import Header from "../shared/Header";
@@ -742,6 +743,42 @@ function Spons() {
                       <img alt="" src={linkedin} id="www2"></img>
                     </a>
                     <a href="https://www.facebook.com/cuvette.tech/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                <p id="sponsro">Campus ambassador sponsor</p>
+
+                  <img
+                    src={ES}
+                    className="img-responsive"
+                    id="subex"
+                    style={
+                      theme == "black"
+                        ? {
+                          filter: "invert(1)",
+                        }
+                        : {
+                          filter: "invert(0)",
+                        }
+                    }
+                    alt=""
+                  />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://easyshiksha.com/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/easyshiksha/">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/EasyShikshaIndia/">
                       <img alt="" src={facebook} id="www3"></img>
                     </a>
                   </p>
