@@ -1,0 +1,31 @@
+/* .video-container-shows
+{
+    width: 100vw;
+    height: 66vh;
+    overflow: hidden;
+}
+#video-shows
+{
+    margin-left: -220px;
+} */
+#homeShowNew video 
+{
+    /* position: absolute;
+    clip: rect(0px,100px,66px,0px) !important; */
+    width: 100vw !important;
+    height: 83vh !important;
+    object-fit: cover;
+    /* -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
+  filter: opacity(90%); */
+    /* height: 66vh !important; */
+}
+
+.chakra-stack 
+{
+    padding-bottom: 0% !important;
+}
+.css-1mjzt8k>*:not(style)~*:not(style), .css-2ri6yo>*:not(style)~*:not(style)
+{
+    margin-top: 0% !important;
+}
