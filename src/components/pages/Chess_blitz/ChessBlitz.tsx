@@ -1,11 +1,77 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../styles/Chess.css";
 import Footer from "../../shared/Footer";
 import CustomBox from "../../shared/CustomBox";
 import { useColorModeValue } from "@chakra-ui/color-mode";
+import { useGetChessDetailsCsvQuery, useRegisterChessMutation } from "../../../generated/graphql";
+import { Modal, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import fileDownload from "js-file-download";
 
 function ChessBlitz() {
   const theme = useColorModeValue("white", "black");
+  const [username , setUsername] = useState('');
+  const [rating , setRating] = useState('');
+  const [title , setTitle] = useState('');
+  var { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [regitserChess , {data,loading , error}] = useRegisterChessMutation();
+  const {data : data1} = useGetChessDetailsCsvQuery();
+  const [isAdmin , setIsAdmin] = useState(false)
+  useEffect(()=>{
+    if(localStorage.getItem('role') === "Admin"){
+      setIsAdmin(true)
+    }
+  },[])
+  const handleChessRegister = async () =>{
+
+    await regitserChess({
+      variables :{
+        data :{
+          username,
+          rating,
+          title
+        }
+      }
+    }).catch(err => console.log(err))
+  }
+  if(loading)
+  {
+      onClose = () => {}
+      return(
+          <Modal isOpen={true} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent backgroundColor="#e2e19c" color="black">
+                  <ModalHeader>Loading...</ModalHeader>
+                  <ModalCloseButton />
+               </ModalContent>
+          </Modal>
+      )
+  } else if(error)
+  {
+      onClose = () => {window.location.reload()}
+              return(
+                  <Modal isOpen={true} onClose={onClose}>
+                      <ModalOverlay />
+                      <ModalContent backgroundColor="#f1aaaa" color="black">
+                          <ModalHeader>{error.message}</ModalHeader>
+                          <ModalCloseButton />
+                      </ModalContent>
+                  </Modal>
+              )
+  }else if(data?.registerChess)
+  {
+      onClose = () => {window.location.reload()}
+              return(
+                  <Modal isOpen={true} onClose={onClose}>
+                      <ModalOverlay />
+                      <ModalContent backgroundColor="#A7EAAA" color="black">
+                          <ModalHeader>Registration Successful</ModalHeader>
+                          <ModalCloseButton />
+                      </ModalContent>
+                  </Modal>
+              )
+  }
+
   return (
     <CustomBox>
       <div className="ChessBlitz">
@@ -22,7 +88,18 @@ function ChessBlitz() {
               pool of INR 85000, as well as various prizes. Don't miss out on
               your chance to play in the year's largest online blitz tournament!
             </p>
-            <button>Register now</button>
+            <form style={{'color' : "black", 'margin' : '10px'}}>
+              <input type={'text'} style={{'margin': "5px"}} value={username} onChange={(e)=> setUsername(e.target.value)} placeholder={'Username'}/>
+              <input type={'text'} style={{'margin': "5px"}} value={rating} onChange={(e)=> setRating(e.target.value)} placeholder={'Rating'}/>
+              <input type={'text'} style={{'margin': "5px"}} value={title} onChange={(e)=> setTitle(e.target.value)}  placeholder={'title'}/>
+            </form>
+            <button onClick={handleChessRegister}>Register now</button>
+           {
+             isAdmin === true ?  <button  onClick={() => {
+              fileDownload(data1?.getChessDetailsCSV!, `BlitzChess_regristants.csv`);
+            }}
+            >Download Users Data CSV</button> : null
+           }
           </div>
         </div>
         <div className="ChessBlitz_Overview">

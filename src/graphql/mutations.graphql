@@ -105,3 +105,7 @@ mutation deleteTimings($id : String!){
 mutation earlybidoffer($id : String! , $amount : String!){
   earlybidoffer(eventID : $id , amount : $amount)
 }
+
+mutation registerChess($data : registerBlitzChessInput!){
+  registerChess(data : $data)
+}
