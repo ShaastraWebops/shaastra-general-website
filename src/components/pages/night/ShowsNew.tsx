@@ -21,7 +21,6 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
-    useDisclosure,
     FormControl,
     FormLabel,
     FormErrorMessage,
@@ -38,6 +37,7 @@ import {
     PopoverFooter,
     ButtonGroup,
   } from '@chakra-ui/react'
+  import { useDisclosure } from '@chakra-ui/react'
 
   import Dan from "../../../images/night/Dan_img.jpg"
   import Gloves from "../../../images/night/Gloves02.jpg"
@@ -47,31 +47,38 @@ import {
   import Nothwind from "../../../images/night/Nothwind1.jpg"
   import Vivek from "../../../images/night/vivek patil.jpg"
   import Reverb from "../../../images/night/Reverb.jpg"
+  import Soda from "../../../images/night/Comedy Night.jpeg"
+  import About from "../../../images/night/About Us_Background.png"
 
   import Four from "../../../images/night/4.jpeg"
   import Dyskenetic from "../../../images/night/dyskenetic.jpeg"
   import Lizzie from "../../../images/night/lizzie.jpg"
   import Alex from "../../../images/night/alex mclen.jpg"
 
+  import ShowsBg from "../../../images/night/ShowsHome.mp4"
+
+  import "../../../styles/night/ShowsNew.css"
+
 const Shows = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
     return(
        <CustomBox>
            <Stack
             textAlign={'center'}
             align={'center'}
-            spacing={{ base: 8, md: 8 }}
+            // spacing={{ base: 8, md: 8 }}
             py={{ base: 20, md: 20 }}
-            padding="4vw"
+            padding={["18vw","4vw"]} 
             overflowX={"hidden"}
            >
                <Flex 
                     height={"5vh"} width="100vw" 
-                    padding="2vw" 
+                    padding="2vw"
                     justifyContent={"flex-start"} alignItems={"center"} 
-                    fontFamily={"Roboto"} fontSize={"1vw"}
+                    fontFamily={"Roboto"} fontSize={["2.5vw","1vw"]}
                     backgroundColor={"black"} color="white"
                 >
-                    <Text marginRight={"4vw"}> <a href="#home">Home</a> </Text>
+                    <Text marginRight={"4vw"}> <a href="#homeShowNew">Home</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#about">About us</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#previous">Previous shows</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#reverb">Reverb</a> </Text>
@@ -79,28 +86,36 @@ const Shows = () => {
                </Flex>
                <Flex 
                 flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
-                height="66vh" 
-                id="home"
+                height="83vh" width="100vw" marginTop={"0vw"}
+                id="homeShowNew" position={"relative"}
                >
+                   <Box className="video-container-shows" position={"absolute"} top={"0"} left="0">
+                   <video id="video-shows" src={ShowsBg} muted={true} autoPlay={true} loop={true}>
+                    </video>
+                   </Box>
+                   <Box width="100vw" height={"83vh"} position={"absolute"} top={"0"} left={"0"} content="" backgroundColor={"rgba(0, 0, 0, 0.6)"} zIndex={"1"}></Box>
                    <Heading
-                    fontSize={"3vw"}
+                    zIndex={"2"}
+                    fontSize={["6vw","3vw"]}
+                    color={"white"}
                     marginBottom={"4vh"}
                    >SHAASTRA NIGHTS</Heading>
                    <Box
                     backgroundColor={"#00F7FF"} color={"black"}
                     fontFamily={"Montserrat"} fontWeight={"bold"}
-                    padding={"1vw"}
-                    borderRadius={"12px"}
+                    padding={["2vw","1vw"]} zIndex={"2"}
+                    borderRadius={["10px","12px"]} fontSize={["2.5vw", "1vw"]}
                    >Register for shows</Box>
                </Flex>
                <Flex
                 height="100vh" width="100vw"
                 color="white"
-                id="about"
+                id="about" position={"relative"}
                 flexDirection={"column"} justifyContent={"center"} alignItems={"center"} 
                >
-                   <Heading marginBottom={"4vh"} fontSize={"3vw"}>About Us</Heading>
-                   <Text width="80%" fontSize={"1.5vw"}>
+                   <Image src={About} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
+                   <Heading marginBottom={"4vh"} fontSize={["6vw","3vw"]} zIndex={2}>About Us</Heading>
+                   <Text width="80%" fontSize={["3vw","1.5vw"]} zIndex={2}>
                     The flagship event of Shaastra, Shaastra Nights, has made the former a noteworthy leader amongst 
                     parallel fests in the country. Shaastra Nights provide a platform for exquisite performers to display 
                     their artistic prowess while giving the audience a once-in-a-lifetime opportunity to witness a confluence of 
@@ -116,25 +131,25 @@ const Shows = () => {
                  height="fit-content" width="100vw"
                  flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
                >
-                   <Heading marginBottom={"8vh"} fontSize={"3vw"} color="white">
+                   <Heading marginBottom={"8vh"} fontSize={["6vw","3vw"]} color="white">
                         Previous Shows
                    </Heading>
                    <Flex
-                    width="70%" margin="auto" marginBottom={"4vh"}
+                    width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                    >
                        <Tooltip label="Sand Art and Light Show | Shaastra 2016 - Performed by Vivek Patil: The renowned visual storyteller artist, headlined the first show. Putting together a trifecta of Light, Sand, and Speed Art, the show was a stunning visual experience." 
                         placement="right" padding="2vw" fontSize={"1vw"} backgroundColor={"#0047AB"} color="white" font-fontFamily={"Roboto"}>
-                        <Image borderRadius={'24px'} src={Vivek} boxSize={"20vw"} objectFit={"cover"}></Image>
+                        <Image borderRadius={'24px'} src={Vivek} boxSize={["35vw","20vw"]} objectFit={"cover"}></Image>
                        </Tooltip>
                        <Tooltip label="MIRAGE Laser Show | Shaastra 2019 - Performed by Vilas Nayak: A finalist of the 3rd season of India’s Got Talent, the self-taught speed painting artist mesmerized the crowd with his quick pace and stunning technique." 
                         placement="right" padding="2vw" fontSize={"1vw"} backgroundColor={"#0047AB"} color="white" font-fontFamily={"Roboto"}>
-                        <Image borderRadius={'24px'} src={Mirage} boxSize={"20vw"} objectFit={"cover"}></Image>
+                        <Image borderRadius={'24px'} src={Mirage} boxSize={["35vw","20vw"]} objectFit={"cover"}></Image>
                        </Tooltip>
                    </Flex>
                    <Flex
-                    width="70%" margin="auto" marginBottom={"4vh"}
+                      width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                    >
@@ -148,18 +163,18 @@ const Shows = () => {
                        </Tooltip>
                    </Flex>
                    <Flex
-                    width="70%" margin="auto"
+                     width={["90%","70%"]} margin="auto"
                     justifyContent={"space-between"}
                     alignItems={"center"}
                    >
                        <Tooltip label="HARMONY | Shaastra 2021 - Main Show by Sonic Snares: With his vivacious act of lush HD visuals and intoxicating beats, the brilliant Austrian artist took the audience into a world of trance." 
                         placement="right" padding="2vw" fontSize={"1vw"} backgroundColor={"#0047AB"} color="white" font-fontFamily={"Roboto"}>
-                        <Image borderRadius={'24px'} src={Harmony} boxSize={"20vw"} objectFit={"cover"}></Image>
+                        <Image borderRadius={'24px'} src={Harmony} boxSize={"20vw"} objectFit={"cover"} objectPosition={"top"}></Image>
                        </Tooltip>
-                       {/* <Tooltip label="Virtual Magic Show | Shaastra Juniors 2020 - Performed by Dan Rhodes: He blew the minds of our young audience with his savvy magic tricks. The then 16-year-old magician became an inspiration for the young crowd." 
+                       <Tooltip label="CHAOS | Shaastra 2021 - Opening Show by Sudarshan Ramamurthy: popularly known as SODA, set the mood for the comedy night with his witty humor." 
                         placement="right" padding="2vw" fontSize={"1vw"} backgroundColor={"#0047AB"} color="white" font-fontFamily={"Roboto"}>
-                        <Image borderRadius={'24px'} src={Dan} boxSize={"25vw"} objectFit={"cover"}></Image>
-                       </Tooltip> */}
+                        <Image borderRadius={'24px'} src={Soda} boxSize={"20vw"} objectFit={"cover"}></Image>
+                       </Tooltip>
                    </Flex>
                </Flex>
                <Flex width={"100vw"} height={"100vh"} marginTop={"0%"}
@@ -182,7 +197,7 @@ const Shows = () => {
                  flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
                >
                    <Flex
-                    width="70%" margin="auto" marginBottom={"4vh"}
+                    width="70%" margin="auto" marginBottom={"4vh"} paddingTop={"4vh"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                    >
