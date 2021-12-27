@@ -1,0 +1,251 @@
+.ChessBlitz {
+  width: 100%;
+}
+.ChessBlitz_landing {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #0d0305 45%, rgba(22, 6, 19, 0) 80%),
+    url("../images/ChessBlitz/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: right;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}
+.ChessBlitz_landing * {
+  font-family: "Poppins";
+}
+.ChessBlitz_landing .contentBox h1 {
+  font-size: 4.5em;
+  line-height: 1.2em;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+.ChessBlitz_landing .contentBox h2 {
+  font-size: 3.3em;
+  line-height: 1.2em;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+.ChessBlitz_landing .contentBox p {
+  max-width: 750px;
+  margin: 10px 0 20px 0;
+}
+.ChessBlitz_landing .contentBox button {
+  padding: 10px 24px 12px 24px;
+  line-height: 1em;
+  background-color: #311c1b;
+  border-radius: 4px;
+}
+.ChessBlitz_landing .contentBox button:hover {
+  background: #210d0f;
+}
+.ChessBlitz_Overview {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(-90deg, #160613 50%, rgba(27, 6, 21, 0) 70%),
+    url("../images/ChessBlitz/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 100px;
+}
+.ChessBlitz_Overview * {
+  font-family: "Poppins";
+}
+.ChessBlitz_Overview .contentBox {
+  width: 100%;
+  max-width: 600px;
+}
+.ChessBlitz_Overview .contentBox .card {
+  margin-bottom: 6px;
+}
+.ChessBlitz_Overview .contentBox .card h4 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.747);
+}
+.ChessBlitz_Overview .contentBox .card h2 {
+  font-size: 2.4em;
+  line-height: 1.3em;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+.ChessBlitz_Overview .contentBox .card h2 span {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.ChessBlitz_PrizeDistribution * {
+  font-family: "Poppins";
+}
+.ChessBlitz_PrizeDistribution {
+  padding: 50px 100px;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #060102 0%, #210d0f 100%);
+}
+.ChessBlitz_PrizeDistribution h2 {
+  font-size: 3.3em;
+  line-height: 1.2em;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+.ChessBlitz_PrizeDistribution .main_category {
+  width: 100%;
+  margin: 30px 0;
+}
+.ChessBlitz_PrizeDistribution h4 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.ChessBlitz_PrizeDistribution .main_category .cardBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.ChessBlitz_PrizeDistribution .main_category .cardBox .card {
+  background: #311c1b;
+  padding: 20px 36px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+.ChessBlitz_PrizeDistribution .main_category .cardBox .card h4 {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.ChessBlitz_PrizeDistribution .main_category .cardBox .card h3 {
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.ChessBlitz_PrizeDistribution .rated_category {
+  margin: 60px 0;
+}
+.ChessBlitz_PrizeDistribution .rated_category h4 {
+  letter-spacing: 2px;
+}
+.ChessBlitz_PrizeDistribution .rated_category .twrapper {
+  width: 100%;
+}
+.ChessBlitz_PrizeDistribution .rated_category table {
+  width: 100%;
+  margin: 20px 0;
+}
+.ChessBlitz_PrizeDistribution .rated_category table tr:nth-child(1) td {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.ChessBlitz_PrizeDistribution .rated_category table tr td {
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  text-align: center;
+}
+.ChessBlitz .Footer .top {
+  background: #160613;
+}
+.ChessBlitz .Footer .bottom {
+  background: #0d0305;
+}
+@media screen and (max-width: 800px) {
+  .ChessBlitz_landing {
+    padding: 0 30px;
+  }
+  .ChessBlitz_landing .contentBox h1 {
+    font-size: 2em;
+    line-height: 1.6em;
+    letter-spacing: 2px;
+  }
+  .ChessBlitz_landing .contentBox h2 {
+    font-size: 1.6em;
+    letter-spacing: 2px;
+  }
+  .ChessBlitz_landing .contentBox p {
+    width: 100%;
+    font-size: 14px;
+  }
+  .ChessBlitz_Overview {
+    padding: 0 20px;
+  }
+  .ChessBlitz_Overview .contentBox {
+    width: 100%;
+    max-width: 600px;
+  }
+  .ChessBlitz_Overview .contentBox .card {
+    margin-bottom: 6px;
+  }
+  .ChessBlitz_Overview .contentBox .card h4 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.747);
+  }
+  .ChessBlitz_Overview .contentBox .card h2 {
+    font-size: 2.4em;
+    line-height: 1.3em;
+    font-weight: 750;
+    letter-spacing: 2px;
+  }
+  .ChessBlitz_Overview .contentBox .card h2 span {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .ChessBlitz_PrizeDistribution {
+    padding: 40px 20px 0px 20px;
+  }
+  .ChessBlitz_PrizeDistribution h2 {
+    font-size: 1.6em;
+    letter-spacing: 2px;
+  }
+  .ChessBlitz_PrizeDistribution .main_category {
+    margin: 20px 0;
+    justify-content: space-between;
+  }
+  .ChessBlitz_PrizeDistribution h4 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .ChessBlitz_PrizeDistribution .main_category .cardBox {
+    padding: 15px 8px 0 8px;
+    justify-content: space-between;
+  }
+  .ChessBlitz_PrizeDistribution .main_category .cardBox .card {
+    width: 150px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  .ChessBlitz_PrizeDistribution .main_category .cardBox .card h3 {
+    font-size: 1.3em;
+    line-height: 1.2em;
+  }
+  .ChessBlitz_PrizeDistribution .rated_category {
+    margin: 30px 0;
+  }
+  .ChessBlitz_PrizeDistribution .rated_category h4 {
+    letter-spacing: 2px;
+  }
+  .ChessBlitz_PrizeDistribution .rated_category table {
+    width: 1200px;
+    margin: 20px 0;
+  }
+  .ChessBlitz_PrizeDistribution .rated_category .twrapper {
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
