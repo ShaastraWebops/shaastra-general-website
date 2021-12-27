@@ -61,7 +61,7 @@ function Spons() {
             <br />
             <br />
             <div className="aboutus">
-              <p id="about">About Us</p>
+              <p id="about">Our Sponsors</p>
             </div>
             <br />
             <br />

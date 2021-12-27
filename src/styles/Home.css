@@ -51,6 +51,7 @@
   position: absolute;
   width: 30px;
   height: 30px;
+  /* top: 25px; */
   border-radius: 20px;
   background: linear-gradient(180deg, #cc00ff 0%, #0075ff 100%);
   transition: 0.5s;
@@ -248,29 +249,31 @@
   border-left: none;
   border-right: none;
   background-color: rgb(0, 82, 235);
+  padding: 0 10px;
+  text-align: center;
 }
 #salesLink::before {
   content: "";
   position: absolute;
   left: -26px;
-  top: 0;
+  top: 25%;
   padding: 0;
   margin: 0;
   width: 0;
   height: 0 !important;
-  border: 13.5px solid rgb(0, 82, 235);
+  border: 20px solid rgb(0, 82, 235);
   border-left-color: transparent;
 }
 #salesLink::after {
   content: "";
   position: absolute;
   right: -26px;
-  top: 0;
+  top: 25%;
   padding: 0;
   margin: 0;
   width: 0;
   height: 0 !important;
-  border: 13.5px solid rgb(0, 82, 235);
+  border: 20px solid rgb(0, 82, 235);
   border-right-color: transparent;
 }
 #salesLink a {
@@ -484,7 +487,7 @@
   }
   .Home_landingPage .Follow {
     top: auto;
-    bottom: 60px;
+    bottom: 48px;
     right: auto;
     left: auto;
   }

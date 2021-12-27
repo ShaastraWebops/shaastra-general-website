@@ -102,7 +102,7 @@ export const shaastraJunoirsData: shaastraJunior[] = [
                      to find the answers. The question will be either to find certain tweets or to get a 
                      quote from a book, etc. In an online Scavenger Hunt, the participant must scrape the 
                      internet (such as find certain phrases in a book or title of a webpage or such) to 
-                     find certain clues and go on to reach the final point`,
+                     find certain clues and go on to reach the final point.`,
     image: online_scavenger_hunt,
   },
   {
