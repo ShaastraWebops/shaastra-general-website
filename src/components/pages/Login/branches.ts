@@ -1,6 +1,7 @@
 export const branches = [
     "Aeronautical Engineering",
     "Aerospace Engineering",
+    "Applied Mechanics",
     "Automobile Engineering",
     "Biomedical Engineering",
     "Biotechnology Engineering",

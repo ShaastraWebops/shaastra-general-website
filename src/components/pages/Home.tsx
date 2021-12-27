@@ -45,6 +45,16 @@ import Workshop3 from "../../images/workshop_3.jpg";
 import codetochaos1 from "../../images/logo/static/codetochaos2.svg";
 import codetochaos2 from "../../images/logo/static/codetochaos2.svg";
 
+import Dan from "../../images/night/Dan_img.jpg"
+import Gloves from "../../images/night/Gloves02.jpg"
+import Harmony from "../../images/night/Harmony-SonicSnares-2.jpg"
+import Heimdall from "../../images/night/Heimdall1.jpg"
+import Mirage from "../../images/night/Mirage.jpg"
+import Nothwind from "../../images/night/Nothwind1.jpg"
+import Vivek from "../../images/night/vivek patil.jpg"
+import Reverb from "../../images/night/Reverb.jpg"
+import Soda from "../../images/night/Comedy Night.jpeg"
+
 interface Props {}
 
 SwiperCore.use([Navigation, Pagination]);
@@ -156,6 +166,9 @@ const Home = (props: Props) => {
           <a href="#speakers">
             <span>04</span>
           </a>
+          {/* <a href="#pastshows">
+            <span>05</span>
+          </a> */}
           <a href="#testimonials">
             <span>05</span>
           </a>
@@ -467,6 +480,98 @@ const Home = (props: Props) => {
           </div>
           {/* <Link to="/speakers">SEE MORE</Link> */}
         </section>
+
+        <section id="pastshows" className={`Home_Speakers ${plain}`}>
+          <h1 className={`${plain}`}>Previous Shows</h1>
+          <div className={`speaker_swiper_container`}>
+            <div className="swiper-prev-con" ref={speaker_navigationPrevRef}>
+              <img src={prevArrow} alt="" />
+            </div>
+            <Swiper
+              spaceBetween={50}
+              navigation={{
+                prevEl: speaker_navigationPrevRef.current,
+                nextEl: speaker_navigationNextRef.current,
+              }}
+              loop={true}
+              pagination={
+                window.innerWidth < 600
+                  ? {
+                      el: speaker_paginationRef.current,
+                      clickable: true,
+                    }
+                  : false
+              }
+              slidesPerView={"auto"}
+            >
+              <SwiperSlide>
+                <img src={Vivek} alt="" />
+                <div className="contentBox">
+                  <div className="left">
+                    <h3>Vivek Patil</h3>
+                    <p>Sand Art Show | Shaastra 2019</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Mirage} alt="" />
+                <div className="contentBox">
+                  <div className="left">
+                    <h3>Vilas Nayak</h3>
+                    <p>
+                      MIRAGE Laser Show | Shaastra 2019
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Heimdall} alt="" />
+                <div className="contentBox">
+                  <div className="left">
+                    <h3>Heimdall</h3>
+                    <p>LASER HARP Live Performance | Shaastra 2020 </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Dan} alt="" />
+                <div className="contentBox">
+                  <div className="left">
+                    <h3>Dan Rhodes</h3>
+                    <p>Virtual Magic Show | Shaastra Juniors 2020</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Harmony} alt="" />
+                <div className="contentBox">
+                  <div className="left">
+                    <h3>Sonic Snares</h3>
+                    <p>HARMONY | Shaastra 2021</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Soda} alt="" />
+                <div className="contentBox">
+                  <div className="left">
+                    <h3>SODA</h3>
+                    <p>CHAOS | Shaastra 2021</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+            <div className="swiper-next-con" ref={speaker_navigationNextRef}>
+              <img src={prevArrow} alt="" />
+            </div>
+            <div
+              className="swiper-pagination"
+              ref={speaker_paginationRef}
+            ></div>
+          </div>
+          <Link to="/shows">SEE MORE</Link>
+        </section>
+
         <section id="testimonials" className={`Home_Testimonials ${plain}`}>
           <h1>Testimonials</h1>
           <div
