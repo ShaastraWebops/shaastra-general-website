@@ -149,6 +149,20 @@ export const DrawerDesktopMenuItems = () => {
         <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          fontSize={28}
+          onMouseOver={() => setMenu("click")}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={2}
+          pr={12}
+          mb={4}
+        >
+          <Link to="/blitz-chess">Blitz Chess</Link>
+        </Box>
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
           onMouseOver={() => setMenu("exhibitions")}
           fontSize={28}
           fontFamily={"monospace"}
@@ -372,6 +386,9 @@ export const DrawerMobileMenuItems = () => {
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/eventsworkshops">Events and Workshops</Link>
+        </Box>
+        <Box fontSize={27} fontStyle={"normal"}>
+          <Link to="/blitz-chess">Blitz Chess</Link>
         </Box>
         <AccordionItem border={0}>
           <AccordionButton pl={0}>
