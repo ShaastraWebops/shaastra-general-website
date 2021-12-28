@@ -45,15 +45,15 @@ import Workshop3 from "../../images/workshop_3.jpg";
 import codetochaos1 from "../../images/logo/static/codetochaos2.svg";
 import codetochaos2 from "../../images/logo/static/codetochaos2.svg";
 
-import Dan from "../../images/night/Dan_img.jpg"
-import Gloves from "../../images/night/Gloves02.jpg"
-import Harmony from "../../images/night/Harmony-SonicSnares-2.jpg"
-import Heimdall from "../../images/night/Heimdall1.jpg"
-import Mirage from "../../images/night/Mirage.jpg"
-import Nothwind from "../../images/night/Nothwind1.jpg"
-import Vivek from "../../images/night/vivek patil.jpg"
-import Reverb from "../../images/night/Reverb.jpg"
-import Soda from "../../images/night/Comedy Night.jpeg"
+import Dan from "../../images/night/Dan_img.jpg";
+import Gloves from "../../images/night/Gloves02.jpg";
+import Harmony from "../../images/night/Harmony-SonicSnares-2.jpg";
+import Heimdall from "../../images/night/Heimdall1.jpg";
+import Mirage from "../../images/night/Mirage.jpg";
+import Nothwind from "../../images/night/Nothwind1.jpg";
+import Vivek from "../../images/night/vivek patil.jpg";
+import Reverb from "../../images/night/Reverb.jpg";
+import Soda from "../../images/night/Comedy Night.jpeg";
 
 interface Props {}
 
@@ -69,7 +69,7 @@ const Home = (props: Props) => {
   const codetochoas = useColorModeValue(codetochaos1, codetochaos2);
 
   const [sideNavBar_marker, setSideNavBar_marker] = React.useState<number>(
-    window.innerWidth > 600 ? 200 / 6 : (window.innerWidth - 150) / 6 - 5
+    170 / 7
   );
 
   const update_sidenav_marker = (e) => {
@@ -80,7 +80,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 0
     ) {
       if (window.innerWidth > 600) {
-        setSideNavBar_marker(200 / 6 + 0 * (200 / 6 + 30));
+        setSideNavBar_marker(170 / 7 + 0 * (170 / 7 + 30));
       } else {
         setSideNavBar_marker(screenWidthSpacing - 5);
       }
@@ -89,7 +89,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(200 / 6 + 1 * (200 / 6 + 30));
+        setSideNavBar_marker(170 / 7 + 1 * (170 / 7 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 1 * (screenWidthSpacing + 30)
@@ -99,7 +99,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 2 * window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(200 / 6 + 2 * (200 / 6 + 30));
+        setSideNavBar_marker(170 / 7 + 2 * (170 / 7 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 2 * (screenWidthSpacing + 30)
@@ -109,7 +109,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 3 * window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(200 / 6 + 3 * (200 / 6 + 30));
+        setSideNavBar_marker(170 / 7 + 3 * (170 / 7 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 3 * (screenWidthSpacing + 30)
@@ -119,10 +119,20 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 4 * window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(200 / 6 + 4 * (200 / 6 + 30));
+        setSideNavBar_marker(170 / 7 + 4 * (170 / 7 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 4 * (screenWidthSpacing + 30)
+        );
+    else if (
+      e.target.scrollTop < 6 * window.innerHeight - 20 &&
+      e.target.scrollTop >= 5 * window.innerHeight - 20
+    )
+      if (window.innerWidth > 600)
+        setSideNavBar_marker(170 / 7 + 5 * (170 / 7 + 30));
+      else
+        setSideNavBar_marker(
+          screenWidthSpacing - 5 + 5 * (screenWidthSpacing + 30)
         );
   };
 
@@ -141,7 +151,12 @@ const Home = (props: Props) => {
   return (
     <CustomBox>
       <div onScroll={update_sidenav_marker} className={`Home ${plain}`}>
-        <div className={`Home_sideNavBar ${plain}`}>
+        <div
+          style={
+            window.innerWidth > 600 ? { display: "flex" } : { display: "none" }
+          }
+          className={`Home_sideNavBar ${plain}`}
+        >
           <span
             className="Home_sideNavBar_marker"
             style={
@@ -166,11 +181,11 @@ const Home = (props: Props) => {
           <a href="#speakers">
             <span>04</span>
           </a>
-          {/* <a href="#pastshows">
+          <a href="#pastshows">
             <span>05</span>
-          </a> */}
+          </a>
           <a href="#testimonials">
-            <span>05</span>
+            <span>06</span>
           </a>
         </div>
         <section
@@ -480,7 +495,6 @@ const Home = (props: Props) => {
           </div>
           {/* <Link to="/speakers">SEE MORE</Link> */}
         </section>
-
         <section id="pastshows" className={`Home_Speakers ${plain}`}>
           <h1 className={`${plain}`}>Previous Shows</h1>
           <div className={`speaker_swiper_container`}>
@@ -505,7 +519,7 @@ const Home = (props: Props) => {
               slidesPerView={"auto"}
             >
               <SwiperSlide>
-                <img src={Vivek} alt="" />
+                <img src={Vivek} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
                     <h3>Vivek Patil</h3>
@@ -514,18 +528,16 @@ const Home = (props: Props) => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={Mirage} alt="" />
+                <img src={Mirage} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
                     <h3>Vilas Nayak</h3>
-                    <p>
-                      MIRAGE Laser Show | Shaastra 2019
-                    </p>
+                    <p>MIRAGE Laser Show | Shaastra 2019</p>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={Heimdall} alt="" />
+                <img src={Heimdall} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
                     <h3>Heimdall</h3>
@@ -534,7 +546,7 @@ const Home = (props: Props) => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={Dan} alt="" />
+                <img src={Dan} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
                     <h3>Dan Rhodes</h3>
@@ -543,7 +555,11 @@ const Home = (props: Props) => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={Harmony} alt="" />
+                <img
+                  src={Harmony}
+                  alt=""
+                  style={{ objectFit: "contain", background: "#000" }}
+                />
                 <div className="contentBox">
                   <div className="left">
                     <h3>Sonic Snares</h3>
@@ -552,7 +568,7 @@ const Home = (props: Props) => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={Soda} alt="" />
+                <img src={Soda} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
                     <h3>SODA</h3>
@@ -571,7 +587,6 @@ const Home = (props: Props) => {
           </div>
           <Link to="/shows">SEE MORE</Link>
         </section>
-
         <section id="testimonials" className={`Home_Testimonials ${plain}`}>
           <h1>Testimonials</h1>
           <div
