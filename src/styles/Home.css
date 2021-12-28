@@ -812,7 +812,7 @@
 }
 @media screen and (max-width: 600px) {
   .Home .Footer {
-    padding: 0 0 50px 0 !important;
+    padding: 0 0 0px 0 !important;
     backdrop-filter: none;
   }
 }
@@ -943,7 +943,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background-color: #222;
+    background-color: #000;
     overflow: hidden;
     z-index: 0;
   }
@@ -1353,7 +1353,7 @@
   .Home_Speakers,
   .Home_WorkshopsEvents {
     padding: 0 30px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
   }
   .Home_Speakers a {
     margin-top: 40px;

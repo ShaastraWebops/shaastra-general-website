@@ -51,7 +51,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/" component={Home} />
       <Route path="/envisage" component={Envisage} />
       <Route path="/project/:id" component={Project} />
-      <Route path="/shows" component={Show} />
+      <Route path="/shows" component={Shows} />
       <Route exact path="/exhibitions" component={Exhibitions} />
       <Route exact path="/team" component={Team} />
       <Route exact path="/contact" component={Contact}></Route>

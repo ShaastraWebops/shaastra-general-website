@@ -29,3 +29,11 @@
 {
     margin-top: 0% !important;
 }
+
+/* @media screen and (max-width: 600px)
+{
+    .shows-header 
+    {
+        padding-top: 8vw;
+    }
+} */
