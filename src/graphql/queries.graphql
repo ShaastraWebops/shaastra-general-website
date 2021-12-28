@@ -99,7 +99,8 @@ query getEvent($EventID: String!)
   eventTimeTo,
   registrationType,
   teamSize,
-  earlybidoffer
+  earlybidoffer,
+  registeredUserCount
   faqs{
     id,
     answer,
@@ -118,4 +119,12 @@ query getUsersDataCSV{
 }
 query exportCSV($EventID: String!){
   exportCSV(EventID : $EventID)
+}
+
+query getChessDetailsCSV{
+  getChessDetailsCSV
+}
+
+query getPaidUsersCount{
+  getPaidUsersCount
 }

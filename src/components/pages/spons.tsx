@@ -7,6 +7,7 @@ import Astra from "../../images/logo/static/Astra.svg";
 import Atlasian from "../../images/logo/static/Atlasian.svg";
 import Boeing from "../../images/logo/static/Boeing.svg";
 import CAT from "../../images/logo/static/CAT.svg";
+import MB from "../../images/logo/static/MB.png";
 import KLA from "../../images/logo/static/KLA.svg";
 import Mahindra from "../../images/logo/static/Mahindra.svg";
 import Salesforces from "../../images/logo/static/Salesforce.svg";
@@ -107,7 +108,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Associate Title</p>
+                  <p id="sponsro">Associate Title</p>
 
                   <img src={mtx} className="img-responsive" id="mtx" alt="" />
                 </div>
@@ -128,7 +129,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Platinum Sponsor</p>
+                  <p id="sponsro">Platinum Sponsor</p>
 
                   <img src={binance} className="img-responsive" id="binance" alt="" />
                 </div>
@@ -149,7 +150,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Diamond Sponsor</p>
+                  <p id="sponsro">Diamond Sponsor<br/>Powered by </p>
 
                   <img
                     src={AMD}
@@ -184,7 +185,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Gold Sponsor</p>
+                  <p id="sponsro">Gold Sponsor</p>
                   <img
                     src={Wells}
                     className="img-responsive"
@@ -209,7 +210,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Co Sponsor</p>
+                  <p id="sponsro">Co Sponsor</p>
 
                   <img src={logo2} className="img-responsive" id="ravi" alt="" />
                 </div>
@@ -230,7 +231,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Co Sponsor</p>
+                  <p id="sponsro">Co Sponsor</p>
 
                   <img src={Astra} className="img-responsive" id="Astra" alt="" />
                 </div>
@@ -251,7 +252,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Co Sponsor</p>
+                  <p id="sponsro">Co Sponsor</p>
 
                   <img src={LT} className="img-responsive" id="lt" alt="" />
                 </div>
@@ -272,7 +273,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">IDP Sponsor</p>
+                  <p id="sponsro">IDP Sponsor</p>
 
                   <img
                     src={CAT}
@@ -306,7 +307,41 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sposnor</p>
+                  <p id="sponsro">Platform Sponsor</p>
+
+                  <img
+                    src={MB}
+                    className="img-responsive"
+                    alt=""
+                    style={
+                      theme == "black"
+                        ? {
+                          filter: "invert(1)",
+                        }
+                        : {
+                          filter: "invert(0)",
+                        }
+                    }
+                  />
+                </div>
+                <div className="card-back">
+                  <p className="text">
+                    <a href="https://mavex.club/">
+                      <img src={www} id="www1" alt=""></img>
+                    </a>
+                    <a href="https://www.linkedin.com/company/mavex-club/?originalSubdomain=in">
+                      <img alt="" src={linkedin} id="www2"></img>
+                    </a>
+                    <a href="https://www.facebook.com/mavex.in/">
+                      <img alt="" src={facebook} id="www3"></img>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="card" id="photo">
+                <div className="card-front">
+                  <p id="sponsro">Event Sposnor</p>
 
                   <img src={KLA} className="img-responsive" alt="" />
                 </div>
@@ -327,7 +362,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sposnor</p>
+                  <p id="sponsro">Event Sposnor</p>
 
                   <img src={Salesforces} className="img-responsive" alt="" />
                 </div>
@@ -348,7 +383,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sposnor</p>
+                  <p id="sponsro">Event Sposnor</p>
 
                   <img
                     src={MEB}
@@ -374,7 +409,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sposnor</p>
+                  <p id="sponsro">Event Sposnor</p>
 
                   <img
                     src={ADB}
@@ -409,7 +444,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sposnor</p>
+                  <p id="sponsro">Event Sposnor</p>
 
                   <img
                     src={surana}
@@ -435,7 +470,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sponsor</p>
+                  <p id="sponsro">Event Sponsor</p>
 
                   <img
                     src={HW}
@@ -460,11 +495,11 @@ function Spons() {
               </div>
 
 
-              
+
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sposnor</p>
+                  <p id="sponsro">Event Sposnor</p>
 
                   <img
                     src={BS}
@@ -490,7 +525,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Event Sponsor</p>
+                  <p id="sponsro">Event Sponsor</p>
 
                   <img
                     src={WC}
@@ -716,7 +751,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Campus Ambassador Sponsor</p>
+                  <p id="sponsro">Campus Ambassador Sponsor</p>
 
                   <img
                     src={CL}
@@ -752,7 +787,7 @@ function Spons() {
 
               <div className="card" id="photo">
                 <div className="card-front">
-                <p id="sponsro">Campus ambassador sponsor</p>
+                  <p id="sponsro">Campus ambassador sponsor</p>
 
                   <img
                     src={ES}

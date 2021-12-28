@@ -42,6 +42,24 @@ export type AddTimingsInput = {
   time: Scalars['String'];
 };
 
+export type BlitzChess = {
+  id: Scalars['ID'];
+  isPaid: Scalars['Boolean'];
+  orderId: Scalars['String'];
+  payementId?: Maybe<Scalars['String']>;
+  paymentSignature?: Maybe<Scalars['String']>;
+  rating: Scalars['String'];
+  title: Scalars['String'];
+  user: User;
+  username: Scalars['String'];
+};
+
+export type CapturePaymentChessInput = {
+  orderId: Scalars['String'];
+  payementId: Scalars['String'];
+  paymentSignature: Scalars['String'];
+};
+
 export type CreateEventFaqInput = {
   answer: Scalars['String'];
   question: Scalars['String'];
@@ -175,6 +193,7 @@ export type LoginInput = {
 export type Mutation = {
   addEvent: Event;
   addTimings: Scalars['Boolean'];
+  capturePaymentChess: Scalars['Boolean'];
   createEventFAQ: Scalars['Boolean'];
   createTeamAndRegister: Scalars['Boolean'];
   createUser: Scalars['Boolean'];
@@ -185,11 +204,13 @@ export type Mutation = {
   editEvent: Scalars['Boolean'];
   editEventFAQ: Scalars['Boolean'];
   editProfile?: Maybe<Scalars['Boolean']>;
+  getChessDetails: Scalars['Boolean'];
   getPasswordOTP: Scalars['Boolean'];
   leaveTeam: Scalars['Boolean'];
   login?: Maybe<User>;
   logoutUser: Scalars['Boolean'];
   register: RegisterOutput;
+  registerChess: BlitzChess;
   resendVerificationMail: Scalars['Boolean'];
   resetPassword: Scalars['Boolean'];
   updateEventPay: Scalars['Boolean'];
@@ -205,6 +226,11 @@ export type MutationAddEventArgs = {
 export type MutationAddTimingsArgs = {
   data: AddTimingsInput;
   id: Scalars['String'];
+};
+
+
+export type MutationCapturePaymentChessArgs = {
+  Input: CapturePaymentChessInput;
 };
 
 
@@ -282,6 +308,11 @@ export type MutationRegisterArgs = {
 };
 
 
+export type MutationRegisterChessArgs = {
+  data: RegisterBlitzChessInput;
+};
+
+
 export type MutationResendVerificationMailArgs = {
   data: RequestForgotPassInput;
 };
@@ -304,8 +335,11 @@ export type MutationVerifyUserArgs = {
 
 export type Query = {
   exportCSV: Scalars['String'];
+  getChessDetails: Array<BlitzChess>;
+  getChessDetailsCSV: Scalars['String'];
   getEvent: Event;
   getEvents: GetEventsOutput;
+  getPaidUsersCount: Scalars['Float'];
   getUsers?: Maybe<GetUsersOutput>;
   getUsersCount: Scalars['Float'];
   getUsersDataCSV: Scalars['String'];
@@ -398,6 +432,12 @@ export enum UserRole {
   Admin = 'ADMIN',
   User = 'USER'
 }
+
+export type RegisterBlitzChessInput = {
+  rating: Scalars['String'];
+  title: Scalars['String'];
+  username: Scalars['String'];
+};
 
 export type CreateUserMutationVariables = Exact<{
   CreateUserInput: CreateUserInput;
@@ -550,6 +590,20 @@ export type EarlybidofferMutationVariables = Exact<{
 
 export type EarlybidofferMutation = { earlybidoffer: boolean };
 
+export type RegisterChessMutationVariables = Exact<{
+  data: RegisterBlitzChessInput;
+}>;
+
+
+export type RegisterChessMutation = { registerChess: { orderId: string } };
+
+export type CapturePaymentChessMutationVariables = Exact<{
+  input: CapturePaymentChessInput;
+}>;
+
+
+export type CapturePaymentChessMutation = { capturePaymentChess: boolean };
+
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -574,7 +628,7 @@ export type GetEventQueryVariables = Exact<{
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, earlybidoffer?: string | null | undefined, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, earlybidoffer?: string | null | undefined, registeredUserCount: number, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
 
 export type GetUsersDataCsvQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -587,6 +641,16 @@ export type ExportCsvQueryVariables = Exact<{
 
 
 export type ExportCsvQuery = { exportCSV: string };
+
+export type GetChessDetailsCsvQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetChessDetailsCsvQuery = { getChessDetailsCSV: string };
+
+export type GetPaidUsersCountQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPaidUsersCountQuery = { getPaidUsersCount: number };
 
 
 export const CreateUserDocument = gql`
@@ -1268,6 +1332,70 @@ export function useEarlybidofferMutation(baseOptions?: ApolloReactHooks.Mutation
 export type EarlybidofferMutationHookResult = ReturnType<typeof useEarlybidofferMutation>;
 export type EarlybidofferMutationResult = ApolloReactCommon.MutationResult<EarlybidofferMutation>;
 export type EarlybidofferMutationOptions = ApolloReactCommon.BaseMutationOptions<EarlybidofferMutation, EarlybidofferMutationVariables>;
+export const RegisterChessDocument = gql`
+    mutation registerChess($data: registerBlitzChessInput!) {
+  registerChess(data: $data) {
+    orderId
+  }
+}
+    `;
+export type RegisterChessMutationFn = ApolloReactCommon.MutationFunction<RegisterChessMutation, RegisterChessMutationVariables>;
+
+/**
+ * __useRegisterChessMutation__
+ *
+ * To run a mutation, you first call `useRegisterChessMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRegisterChessMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [registerChessMutation, { data, loading, error }] = useRegisterChessMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useRegisterChessMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<RegisterChessMutation, RegisterChessMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<RegisterChessMutation, RegisterChessMutationVariables>(RegisterChessDocument, options);
+      }
+export type RegisterChessMutationHookResult = ReturnType<typeof useRegisterChessMutation>;
+export type RegisterChessMutationResult = ApolloReactCommon.MutationResult<RegisterChessMutation>;
+export type RegisterChessMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterChessMutation, RegisterChessMutationVariables>;
+export const CapturePaymentChessDocument = gql`
+    mutation capturePaymentChess($input: CapturePaymentChessInput!) {
+  capturePaymentChess(Input: $input)
+}
+    `;
+export type CapturePaymentChessMutationFn = ApolloReactCommon.MutationFunction<CapturePaymentChessMutation, CapturePaymentChessMutationVariables>;
+
+/**
+ * __useCapturePaymentChessMutation__
+ *
+ * To run a mutation, you first call `useCapturePaymentChessMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCapturePaymentChessMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [capturePaymentChessMutation, { data, loading, error }] = useCapturePaymentChessMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useCapturePaymentChessMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<CapturePaymentChessMutation, CapturePaymentChessMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<CapturePaymentChessMutation, CapturePaymentChessMutationVariables>(CapturePaymentChessDocument, options);
+      }
+export type CapturePaymentChessMutationHookResult = ReturnType<typeof useCapturePaymentChessMutation>;
+export type CapturePaymentChessMutationResult = ApolloReactCommon.MutationResult<CapturePaymentChessMutation>;
+export type CapturePaymentChessMutationOptions = ApolloReactCommon.BaseMutationOptions<CapturePaymentChessMutation, CapturePaymentChessMutationVariables>;
 export const MeDocument = gql`
     query me {
   me {
@@ -1461,6 +1589,7 @@ export const GetEventDocument = gql`
     registrationType
     teamSize
     earlybidoffer
+    registeredUserCount
     faqs {
       id
       answer
@@ -1575,4 +1704,74 @@ export type ExportCsvLazyQueryHookResult = ReturnType<typeof useExportCsvLazyQue
 export type ExportCsvQueryResult = ApolloReactCommon.QueryResult<ExportCsvQuery, ExportCsvQueryVariables>;
 export function refetchExportCsvQuery(variables: ExportCsvQueryVariables) {
       return { query: ExportCsvDocument, variables: variables }
+    }
+export const GetChessDetailsCsvDocument = gql`
+    query getChessDetailsCSV {
+  getChessDetailsCSV
+}
+    `;
+
+/**
+ * __useGetChessDetailsCsvQuery__
+ *
+ * To run a query within a React component, call `useGetChessDetailsCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetChessDetailsCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetChessDetailsCsvQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetChessDetailsCsvQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>(GetChessDetailsCsvDocument, options);
+      }
+export function useGetChessDetailsCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>(GetChessDetailsCsvDocument, options);
+        }
+export type GetChessDetailsCsvQueryHookResult = ReturnType<typeof useGetChessDetailsCsvQuery>;
+export type GetChessDetailsCsvLazyQueryHookResult = ReturnType<typeof useGetChessDetailsCsvLazyQuery>;
+export type GetChessDetailsCsvQueryResult = ApolloReactCommon.QueryResult<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>;
+export function refetchGetChessDetailsCsvQuery(variables?: GetChessDetailsCsvQueryVariables) {
+      return { query: GetChessDetailsCsvDocument, variables: variables }
+    }
+export const GetPaidUsersCountDocument = gql`
+    query getPaidUsersCount {
+  getPaidUsersCount
+}
+    `;
+
+/**
+ * __useGetPaidUsersCountQuery__
+ *
+ * To run a query within a React component, call `useGetPaidUsersCountQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPaidUsersCountQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPaidUsersCountQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetPaidUsersCountQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetPaidUsersCountQuery, GetPaidUsersCountQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetPaidUsersCountQuery, GetPaidUsersCountQueryVariables>(GetPaidUsersCountDocument, options);
+      }
+export function useGetPaidUsersCountLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetPaidUsersCountQuery, GetPaidUsersCountQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetPaidUsersCountQuery, GetPaidUsersCountQueryVariables>(GetPaidUsersCountDocument, options);
+        }
+export type GetPaidUsersCountQueryHookResult = ReturnType<typeof useGetPaidUsersCountQuery>;
+export type GetPaidUsersCountLazyQueryHookResult = ReturnType<typeof useGetPaidUsersCountLazyQuery>;
+export type GetPaidUsersCountQueryResult = ApolloReactCommon.QueryResult<GetPaidUsersCountQuery, GetPaidUsersCountQueryVariables>;
+export function refetchGetPaidUsersCountQuery(variables?: GetPaidUsersCountQueryVariables) {
+      return { query: GetPaidUsersCountDocument, variables: variables }
     }

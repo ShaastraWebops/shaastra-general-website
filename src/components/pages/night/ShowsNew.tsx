@@ -91,7 +91,7 @@ const Shows = () => {
            >
                <Flex 
                     height={"5vh"} width="100vw" 
-                    padding="2vw"
+                    padding="2vw" className="shows-header"
                     justifyContent={"flex-start"} alignItems={"center"} 
                     fontFamily={"Roboto"} fontSize={["2.5vw","1vw"]}
                     backgroundColor={"black"} color="white"
@@ -161,7 +161,7 @@ const Shows = () => {
                        <Tooltip size="400px" label={`
                        Sand Art and Light Show | Shaastra 2016  Performed by Vivek Patil -
                        The renowned visual storyteller artist, headlined the first show. Putting together a trifecta of Light, Sand, and Speed Art, the show was a stunning visual experience.`} 
-                        placement="right" padding="2vw" className="shows-tooltip" maxWidth={["50vw","25vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}
+                        placement="right" padding="2vw" className="shows-tooltip" maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}
                         isOpen={isLabelOpen1} 
                         >
                         <Image onMouseEnter={() => setIsLabelOpen1(true)}
@@ -171,7 +171,7 @@ const Shows = () => {
                        </Tooltip>
                        <Tooltip isOpen={isLabelOpen2}
                        label="MIRAGE Laser Show | Shaastra 2019  Performed by Vilas Nayak - A finalist of the 3rd season of India’s Got Talent, the self-taught speed painting artist mesmerized the crowd with his quick pace and stunning technique." 
-                        placement="right" padding="2vw" fontSize={["2.5vw","1vw"]} maxWidth={["50vw","25vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" fontSize={["2.75vw","1vw"]} maxWidth={["50vw","25vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen2(true)}
                                 onMouseLeave={() => setIsLabelOpen2(false)}
                                 onClick={() => setIsLabelOpen2(true)} 
@@ -185,7 +185,7 @@ const Shows = () => {
                    >
                        <Tooltip isOpen={isLabelOpen3}  
                        label="LASER HARP Live Performance | Shaastra 2020 Performed by Heimdall - Armed himself with a harp that is lit up in the colors of the visible spectrum, his oeuvre of thumping electronic music along with the vibrant light orchestration, the show was an enrapturing production." 
-                        placement="right" padding="2vw" maxWidth={["55vw","28vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" maxWidth={["55vw","28vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen3(true)}
                                 onMouseLeave={() => setIsLabelOpen3(false)}
                                 onClick={() => setIsLabelOpen3(true)} 
@@ -193,7 +193,7 @@ const Shows = () => {
                        </Tooltip>
                        <Tooltip isOpen={isLabelOpen4} 
                        label="Virtual Magic Show | Shaastra Juniors 2020 Performed by Dan Rhodes - He blew the minds of our young audience with his savvy magic tricks. The then 16-year-old magician became an inspiration for the young crowd." 
-                        placement="right" padding="2vw" maxWidth={["55vw","25vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" maxWidth={["55vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen4(true)}
                                 onMouseLeave={() => setIsLabelOpen4(false)}
                                 onClick={() => setIsLabelOpen4(true)} 
@@ -207,7 +207,7 @@ const Shows = () => {
                    >
                        <Tooltip isOpen={isLabelOpen5} 
                        label="HARMONY | Shaastra 2021 Main Show by Sonic Snares With his vivacious act of lush HD visuals and intoxicating beats, the brilliant Austrian artist took the audience into a world of trance." 
-                        placement="right" padding="2vw" maxWidth={["40vw","18vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" maxWidth={["40vw","18vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen5(true)}
                                 onMouseLeave={() => setIsLabelOpen5(false)}
                                 onClick={() => setIsLabelOpen5(true)} 
@@ -215,7 +215,7 @@ const Shows = () => {
                        </Tooltip>
                        <Tooltip isOpen={isLabelOpen6} 
                        label="CHAOS | Shaastra 2021 Opening Show by Sudarshan Ramamurthy - popularly known as SODA, set the mood for the comedy night with his witty humor." 
-                        placement="right" padding="2vw" maxWidth={["40vw","18vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" maxWidth={["40vw","18vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen6(true)}
                                 onMouseLeave={() => setIsLabelOpen6(false)}
                                 onClick={() => setIsLabelOpen6(true)} 
@@ -249,7 +249,7 @@ const Shows = () => {
                    >
                        <Tooltip isOpen={isLabelOpen7} 
                        label="ALGORAVE | Presented by Reverb - Alex McLean, Lizzie Wilson, and Abhinay Khoparzi This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
-                        placement="right" padding="2vw"maxWidth={["50vw","25vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw"maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen7(true)}
                                 onMouseLeave={() => setIsLabelOpen7(false)}
                                 onClick={() => setIsLabelOpen7(true)} 
@@ -257,7 +257,7 @@ const Shows = () => {
                        </Tooltip>
                        <Tooltip isOpen={isLabelOpen8} 
                        label="ALGORAVE | Presented by Reverb - Alex McLean, Lizzie Wilson, and Abhinay Khoparzi This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
-                        placement="right" padding="2vw" maxWidth={["50vw","25vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen8(true)}
                                 onMouseLeave={() => setIsLabelOpen8(false)}
                                 onClick={() => setIsLabelOpen8(true)} 
@@ -271,7 +271,7 @@ const Shows = () => {
                    >
                        <Tooltip isOpen={isLabelOpen9} 
                        label="REVERB ft. Dyskinetic | Shaastra Juniors 2021 The show introduced MiMu gloves to the young technophiles out there with spooky soundtracks." 
-                        placement="right" padding="2vw" maxWidth={["55vw","25vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" maxWidth={["55vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen9(true)}
                                 onMouseLeave={() => setIsLabelOpen9(false)}
                                 onClick={() => setIsLabelOpen9(true)} 
@@ -279,7 +279,7 @@ const Shows = () => {
                        </Tooltip>
                        <Tooltip isOpen={isLabelOpen10} 
                        label="ALGORAVE | Presented by Reverb - Alex McLean, Lizzie Wilson, and Abhinay Khoparzi This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
-                        placement="right" padding="2vw" maxWidth={["50vw","25vw"]} fontSize={["2.5vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        placement="right" padding="2vw" maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen10(true)}
                                 onMouseLeave={() => setIsLabelOpen10(false)}
                                 onClick={() => setIsLabelOpen10(true)} 
