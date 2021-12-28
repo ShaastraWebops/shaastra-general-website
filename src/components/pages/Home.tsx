@@ -55,6 +55,7 @@ import Vivek from "../../images/night/vivek patil.jpg"
 import Reverb from "../../images/night/Reverb.jpg"
 import Soda from "../../images/night/Comedy Night.jpeg"
 
+
 interface Props {}
 
 SwiperCore.use([Navigation, Pagination]);
@@ -478,7 +479,6 @@ const Home = (props: Props) => {
               ref={speaker_paginationRef}
             ></div>
           </div>
-          {/* <Link to="/speakers">SEE MORE</Link> */}
         </section>
 
         <section id="pastshows" className={`Home_Speakers ${plain}`}>
@@ -509,7 +509,8 @@ const Home = (props: Props) => {
                 <div className="contentBox">
                   <div className="left">
                     <h3>Vivek Patil</h3>
-                    <p>Sand Art Show | Shaastra 2019</p>
+                    <p>Sand Art Show</p>
+                    <p>Shaastra 2019</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -519,8 +520,9 @@ const Home = (props: Props) => {
                   <div className="left">
                     <h3>Vilas Nayak</h3>
                     <p>
-                      MIRAGE Laser Show | Shaastra 2019
+                      MIRAGE Laser Show
                     </p>
+                    <p>Shaastra 2019</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -529,7 +531,8 @@ const Home = (props: Props) => {
                 <div className="contentBox">
                   <div className="left">
                     <h3>Heimdall</h3>
-                    <p>LASER HARP Live Performance | Shaastra 2020 </p>
+                    <p>LASER HARP Live Performance </p>
+                    <p>Shaastra 2020</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -538,7 +541,8 @@ const Home = (props: Props) => {
                 <div className="contentBox">
                   <div className="left">
                     <h3>Dan Rhodes</h3>
-                    <p>Virtual Magic Show | Shaastra Juniors 2020</p>
+                    <p>Virtual Magic Show</p>
+                    <p>Shaastra Juniors 2020</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -547,7 +551,8 @@ const Home = (props: Props) => {
                 <div className="contentBox">
                   <div className="left">
                     <h3>Sonic Snares</h3>
-                    <p>HARMONY | Shaastra 2021</p>
+                    <p>HARMONY</p>
+                    <p>Shaastra 2021</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -556,7 +561,8 @@ const Home = (props: Props) => {
                 <div className="contentBox">
                   <div className="left">
                     <h3>SODA</h3>
-                    <p>CHAOS | Shaastra 2021</p>
+                    <p>CHAOS</p>
+                    <p>Shaastra 2021</p>
                   </div>
                 </div>
               </SwiperSlide>
