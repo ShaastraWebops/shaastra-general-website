@@ -90,7 +90,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />
       <Route exact path="/sponsors" component={Spons} />
-      <Route exact path="/chess-blitz" component={ChessBlitz} />
+      <Route exact path="/blitz-chess" component={ChessBlitz} />
       {/* <Route exact path="/speakers" component={Speaker} /> */}
 
       <Route exact path="/login" component={Login}></Route>

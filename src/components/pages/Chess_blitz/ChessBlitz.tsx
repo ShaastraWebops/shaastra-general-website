@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import fileDownload from "js-file-download";
 import dotenv from "dotenv";
+import { FaTimes } from "react-icons/fa";
 
 dotenv.config();
 
@@ -64,6 +65,13 @@ function ChessBlitz() {
     },
   ] = useCapturePaymentChessMutation();
 
+  const [popup, setPopup] = useState(false);
+  const [isAlert, setIsAlert] = useState({
+    isVisible: false,
+    message: "",
+  });
+
+  // const [regitserChess, { data, loading, error }] = useRegisterChessMutation();
   const { data: data1 } = useGetChessDetailsCsvQuery();
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
@@ -133,79 +141,156 @@ function ChessBlitz() {
     const rzp1 = new (window as any).Razorpay(options);
     rzp1.open();
   };
-  if (registerChessLoading) {
-    onClose = () => {};
-    return (
-      <Modal isOpen={true} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent backgroundColor="#e2e19c" color="black">
-          <ModalHeader>Loading...</ModalHeader>
-          <ModalCloseButton />
-        </ModalContent>
-      </Modal>
-    );
-  } else if (capturePaymentLoading) {
-    onClose = () => {};
-    return (
-      <Modal isOpen={true} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent backgroundColor="#e2e19c" color="black">
-          <ModalHeader>
-            Don't close or reload the site, until you get the payment
-            confirmation. Loading...
-          </ModalHeader>
-          <ModalCloseButton />
-        </ModalContent>
-      </Modal>
-    );
-  } else if (registerChessError) {
-    console.log(registerChessError);
-    onClose = () => {
-      window.location.reload();
+  // if (registerChessLoading) {
+  //   onClose = () => {};
+  //   return (
+  //     <Modal isOpen={true} onClose={onClose}>
+  //       <ModalOverlay />
+  //       <ModalContent backgroundColor="#e2e19c" color="black">
+  //         <ModalHeader>Loading...</ModalHeader>
+  //         <ModalCloseButton />
+  //       </ModalContent>
+  //     </Modal>
+  //   );
+  // } else if (capturePaymentLoading) {
+  //   onClose = () => {};
+  //   return (
+  //     <Modal isOpen={true} onClose={onClose}>
+  //       <ModalOverlay />
+  //       <ModalContent backgroundColor="#e2e19c" color="black">
+  //         <ModalHeader>
+  //           Don't close or reload the site, until you get the payment
+  //           confirmation. Loading...
+  //         </ModalHeader>
+  //         <ModalCloseButton />
+  //       </ModalContent>
+  //     </Modal>
+  //   );
+  // } else if (registerChessError) {
+  //   console.log(registerChessError);
+  //   onClose = () => {
+  //     window.location.reload();
+  //   };
+  //   return (
+  //     <Modal isOpen={true} onClose={onClose}>
+  //       <ModalOverlay />
+  //       <ModalContent backgroundColor="#f1aaaa" color="black">
+  //         <ModalHeader>{registerChessError.message}</ModalHeader>
+  //         <ModalCloseButton />
+  //       </ModalContent>
+  //     </Modal>
+  //   );
+  // } else if (capturePaymentError) {
+  //   onClose = () => {
+  //     window.location.reload();
+  //   };
+  //   return (
+  //     <Modal isOpen={true} onClose={onClose}>
+  //       <ModalOverlay />
+  //       <ModalContent backgroundColor="#f1aaaa" color="black">
+  //         <ModalHeader>Payment Failed</ModalHeader>
+  //         <ModalCloseButton />
+  //       </ModalContent>
+  //     </Modal>
+  //   );
+  // } else if (capturePaymentData?.capturePaymentChess) {
+  //   onClose = () => {
+  //     window.location.reload();
+  //   };
+  //   return (
+  //     <Modal isOpen={true} onClose={onClose}>
+  //       <ModalOverlay />
+  //       <ModalContent backgroundColor="#A7EAAA" color="black">
+  //         <ModalHeader>Registration Successful</ModalHeader>
+  //         <ModalCloseButton />
+  //       </ModalContent>
+  //     </Modal>
+  //   );
+  // }
+  //   }
+  // }, []);
+
+  // const handleChessRegister = async (e) => {
+  //   e.preventDefault();
+  //   await regitserChess({
+  //     variables: {
+  //       data: {
+  //         username,
+  //         rating,
+  //         title,
+  //       },
+  //     },
+  //   }).catch((err) => console.log(err));
+  // };
+
+  useEffect(() => {
+    if (registerChessLoading) {
+      setIsAlert({
+        isVisible: true,
+        message: "Loading ...",
+      });
+    }
+  }, [registerChessLoading]);
+
+  useEffect(() => {
+    if (capturePaymentLoading) {
+      setIsAlert({
+        isVisible: true,
+        message:
+          "Don't close or reload the site, until you get the payment confirmation. Loading...",
+      });
+    }
+  }, [capturePaymentLoading]);
+
+  useEffect(() => {
+    if (registerChessError) {
+      setIsAlert({
+        isVisible: true,
+        message: registerChessError.message,
+      });
+    }
+  }, [registerChessError]);
+
+  useEffect(() => {
+    if (capturePaymentError) {
+      setIsAlert({
+        isVisible: true,
+        message: "Payment Failed",
+      });
+    }
+  }, [capturePaymentError]);
+
+  useEffect(() => {
+    if (capturePaymentData?.capturePaymentChess) {
+      setIsAlert({
+        isVisible: true,
+        message: "Registration Successful",
+      });
+      setPopup(false);
+    }
+  }, [capturePaymentData]);
+
+  useEffect(() => {
+    let ticking;
+    if (isAlert.isVisible) {
+      ticking = setTimeout(() => {
+        setIsAlert({
+          isVisible: false,
+          message: "",
+        });
+      }, 5000);
+    }
+    return () => {
+      clearTimeout(ticking);
     };
-    return (
-      <Modal isOpen={true} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent backgroundColor="#f1aaaa" color="black">
-          <ModalHeader>{registerChessError.message}</ModalHeader>
-          <ModalCloseButton />
-        </ModalContent>
-      </Modal>
-    );
-  } else if (capturePaymentError) {
-    onClose = () => {
-      window.location.reload();
-    };
-    return (
-      <Modal isOpen={true} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent backgroundColor="#f1aaaa" color="black">
-          <ModalHeader>Payment Failed</ModalHeader>
-          <ModalCloseButton />
-        </ModalContent>
-      </Modal>
-    );
-  } else if (capturePaymentData?.capturePaymentChess) {
-    onClose = () => {
-      window.location.reload();
-    };
-    return (
-      <Modal isOpen={true} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent backgroundColor="#A7EAAA" color="black">
-          <ModalHeader>Registration Successful</ModalHeader>
-          <ModalCloseButton />
-        </ModalContent>
-      </Modal>
-    );
-  }
+  }, [isAlert]);
 
   return (
     <CustomBox>
-      <div className="ChessBlitz">
+      <div className={`ChessBlitz ${theme}`}>
         <div className="ChessBlitz_landing">
           <div className="contentBox">
-            <h1>CHESS BLITZ</h1>
+            <h1>BLITZ CHESS</h1>
             <h2>SHAASTRA 2022</h2>
             <p>
               This year, Shaastra, IIT Madras, is hosting the Online Blitz Open
@@ -213,45 +298,10 @@ function ChessBlitz() {
               from all over the world, including several notable grand masters.
               While we continue to fight the pandemic, we've chosen to hold the
               event online again this year. The competition offers a total prize
-              pool of INR 85000, as well as various prizes. Don't miss out on
+              pool of INR 85000, as well as various goodies. Don't miss out on
               your chance to play in the year's largest online blitz tournament!
             </p>
-            <form style={{ color: "black", margin: "10px" }}>
-              <input
-                type={"text"}
-                style={{ margin: "5px" }}
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder={"Username"}
-              />
-              <input
-                type={"text"}
-                style={{ margin: "5px" }}
-                value={rating}
-                onChange={(e) => setRating(e.target.value)}
-                placeholder={"Rating"}
-              />
-              <input
-                type={"text"}
-                style={{ margin: "5px" }}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder={"title"}
-              />
-            </form>
-            <button onClick={handleChessRegister}>Register now</button>
-            {isAdmin === true ? (
-              <button
-                onClick={() => {
-                  fileDownload(
-                    data1?.getChessDetailsCSV!,
-                    `BlitzChess_regristants.csv`
-                  );
-                }}
-              >
-                Download Users Data CSV
-              </button>
-            ) : null}
+            <button onClick={() => setPopup(true)}>Register now</button>
           </div>
         </div>
         <div className="ChessBlitz_Overview">
@@ -274,7 +324,7 @@ function ChessBlitz() {
             </div>
             <div className="card">
               <h4>Event Time</h4>
-              <h2>4 PM - 7 PM</h2>
+              <h2>9 AM - 12 PM</h2>
             </div>
             <div className="card">
               <h4>Format</h4>
@@ -291,7 +341,7 @@ function ChessBlitz() {
         <div className="ChessBlitz_PrizeDistribution">
           <h2>Prize Distribution</h2>
           <div className="main_category">
-            <h4>Main Category : Rs 57950</h4>
+            <h4>Main Category : </h4>
             <div className="cardBox">
               <div className="card">
                 <h4>1st</h4>
@@ -336,7 +386,7 @@ function ChessBlitz() {
             </div>
           </div>
           <div className="rated_category">
-            <h4>Rated Categories : Rs 9000</h4>
+            <h4>Rated Categories : </h4>
             <div className="twrapper">
               <table>
                 <tr>
@@ -383,30 +433,30 @@ function ChessBlitz() {
                 </tr>
                 <tr>
                   <td>1st</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
+                  <td>2 months Chess.com subscription</td>
+                  <td>2 months Chess.com subscription</td>
+                  <td>2 months Chess.com subscription</td>
+                  <td>2 months Chess.com subscription</td>
                 </tr>
                 <tr>
                   <td>2nd</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
+                  <td>1 month Chess.com subscription</td>
+                  <td>1 month Chess.com subscription</td>
+                  <td>1 month Chess.com subscription</td>
+                  <td>1 month Chess.com subscription</td>
                 </tr>
                 <tr>
                   <td>3rd</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
-                  <td>Chess Subscription</td>
+                  <td>1 month Chess.com subscription</td>
+                  <td>1 month Chess.com subscription</td>
+                  <td>1 month Chess.com subscription</td>
+                  <td>1 month Chess.com subscription</td>
                 </tr>
               </table>
             </div>
           </div>
           <div className="rated_category">
-            <h4>Other Categories : 4500</h4>
+            <h4>Other Categories : </h4>
             <div className="twrapper">
               <table>
                 <tr>
@@ -425,15 +475,99 @@ function ChessBlitz() {
                   <td>2nd</td>
                   <td>750</td>
                   <td>750</td>
-                  <td>Chess Subscription</td>
+                  <td>2 months Chess.com subscription</td>
                 </tr>
               </table>
+            </div>
+          </div>
+        </div>
+        <div className="ChessBlitz_Contact">
+          <h2>Contact</h2>
+          <div className="ContactBox">
+            <div className="emailBox">
+              <h4>Email</h4>
+              <p>rapidchess@shaastra.org</p>
+            </div>
+            <div className="emailBox">
+              <h4>Phone</h4>
+              <p>
+                <span>Shyam Sundar PB : </span>
+                <span>+91-7397259369</span>
+              </p>
+              <p>
+                <span>Aditya S Sadhu : </span>
+                <span>+91-9566129422</span>
+              </p>
             </div>
           </div>
         </div>
         <Footer
           designed={[{ name: "Rohit", mail: "cs19b038@smail.iitm.ac.in" }]}
         />
+        <div className={popup ? "ChessBlitz_Popup active" : "ChessBlitz_Popup"}>
+          <div className="formWrapper">
+            <button className="closeBtn" onClick={() => setPopup(false)}>
+              <FaTimes />
+            </button>
+            <form onSubmit={handleChessRegister}>
+              <h2>Register</h2>
+              <label>Chess.com Username</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <label>FIDE Rating</label>
+              <input
+                type="text"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+              />
+              <label>FIDE Title</label>
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <button type="submit">Register</button>
+            </form>
+            {isAdmin === true ? (
+              <button
+                style={{
+                  padding: "7px 24px",
+                  width: "fit-content",
+                  backgroundColor: "#311c1b",
+                  borderRadius: "4px",
+                }}
+                onClick={() => {
+                  fileDownload(
+                    data1?.getChessDetailsCSV!,
+                    `BlitzChess_regristants.csv`
+                  );
+                }}
+              >
+                Download Users Data CSV
+              </button>
+            ) : null}
+          </div>
+        </div>
+        <div
+          className={`AlertPopupsContainer ${
+            isAlert.isVisible ? "active" : ""
+          }`}
+        >
+          <button
+            onClick={() => {
+              setIsAlert({
+                isVisible: false,
+                message: "",
+              });
+            }}
+          >
+            <FaTimes />
+          </button>
+          <div className="alertBox">{isAlert.message}</div>
+        </div>
       </div>
     </CustomBox>
   );
