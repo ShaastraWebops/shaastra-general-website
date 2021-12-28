@@ -56,7 +56,7 @@ const EventPage = () => {
     const [earlybid , setEarlyBid] = useState("");
     const [earlyBid] = useEarlybidofferMutation();
     const today = new Date();
-    const deadline = new Date("December 27, 2021 23:59:59");
+    const deadline = new Date("December 30, 2021 23:59:59");
     if(error) console.log(error)
     if(loading)return( <Loader /> )
     const timeline = (data?.getEvent.registrationOpenTime) || (data?.getEvent.eventTimeFrom) ;
@@ -233,7 +233,7 @@ const EventPage = () => {
          {
            data?.getEvent.earlybidoffer && data?.getEvent?.vertical ==='WORKSHOPS' && <Text className='rainbow' p={4} style={{  borderRadius: 8 }} shadow="lg"  borderWidth="2px"
             borderRadius="md" fontWeight={"medium"} fontSize={"lg"} color={"gray.500"}>
-              Hurry up !! Early Bird Sale ends on <span style={{ "fontWeight" : 600}}>December 27th 2021 11:59 pm</span> 
+              Hurry up !! Early Bird Sale ends on <span style={{ "fontWeight" : 600}}>December 30th 2021 11:59 pm</span> 
             </Text>  
          }
           {

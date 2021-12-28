@@ -119,3 +119,7 @@ query getUsersDataCSV{
 query exportCSV($EventID: String!){
   exportCSV(EventID : $EventID)
 }
+
+query getChessDetailsCSV{
+  getChessDetailsCSV
+}

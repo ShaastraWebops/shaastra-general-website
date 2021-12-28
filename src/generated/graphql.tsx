@@ -42,6 +42,14 @@ export type AddTimingsInput = {
   time: Scalars['String'];
 };
 
+export type BlitzChess = {
+  id: Scalars['ID'];
+  rating: Scalars['String'];
+  title: Scalars['String'];
+  user: User;
+  username: Scalars['String'];
+};
+
 export type CreateEventFaqInput = {
   answer: Scalars['String'];
   question: Scalars['String'];
@@ -190,6 +198,7 @@ export type Mutation = {
   login?: Maybe<User>;
   logoutUser: Scalars['Boolean'];
   register: RegisterOutput;
+  registerChess: Scalars['Boolean'];
   resendVerificationMail: Scalars['Boolean'];
   resetPassword: Scalars['Boolean'];
   updateEventPay: Scalars['Boolean'];
@@ -282,6 +291,11 @@ export type MutationRegisterArgs = {
 };
 
 
+export type MutationRegisterChessArgs = {
+  data: RegisterBlitzChessInput;
+};
+
+
 export type MutationResendVerificationMailArgs = {
   data: RequestForgotPassInput;
 };
@@ -304,6 +318,8 @@ export type MutationVerifyUserArgs = {
 
 export type Query = {
   exportCSV: Scalars['String'];
+  getChessDetails: Array<BlitzChess>;
+  getChessDetailsCSV: Scalars['String'];
   getEvent: Event;
   getEvents: GetEventsOutput;
   getUsers?: Maybe<GetUsersOutput>;
@@ -398,6 +414,12 @@ export enum UserRole {
   Admin = 'ADMIN',
   User = 'USER'
 }
+
+export type RegisterBlitzChessInput = {
+  rating: Scalars['String'];
+  title: Scalars['String'];
+  username: Scalars['String'];
+};
 
 export type CreateUserMutationVariables = Exact<{
   CreateUserInput: CreateUserInput;
@@ -550,6 +572,13 @@ export type EarlybidofferMutationVariables = Exact<{
 
 export type EarlybidofferMutation = { earlybidoffer: boolean };
 
+export type RegisterChessMutationVariables = Exact<{
+  data: RegisterBlitzChessInput;
+}>;
+
+
+export type RegisterChessMutation = { registerChess: boolean };
+
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -587,6 +616,11 @@ export type ExportCsvQueryVariables = Exact<{
 
 
 export type ExportCsvQuery = { exportCSV: string };
+
+export type GetChessDetailsCsvQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetChessDetailsCsvQuery = { getChessDetailsCSV: string };
 
 
 export const CreateUserDocument = gql`
@@ -1268,6 +1302,37 @@ export function useEarlybidofferMutation(baseOptions?: ApolloReactHooks.Mutation
 export type EarlybidofferMutationHookResult = ReturnType<typeof useEarlybidofferMutation>;
 export type EarlybidofferMutationResult = ApolloReactCommon.MutationResult<EarlybidofferMutation>;
 export type EarlybidofferMutationOptions = ApolloReactCommon.BaseMutationOptions<EarlybidofferMutation, EarlybidofferMutationVariables>;
+export const RegisterChessDocument = gql`
+    mutation registerChess($data: registerBlitzChessInput!) {
+  registerChess(data: $data)
+}
+    `;
+export type RegisterChessMutationFn = ApolloReactCommon.MutationFunction<RegisterChessMutation, RegisterChessMutationVariables>;
+
+/**
+ * __useRegisterChessMutation__
+ *
+ * To run a mutation, you first call `useRegisterChessMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRegisterChessMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [registerChessMutation, { data, loading, error }] = useRegisterChessMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useRegisterChessMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<RegisterChessMutation, RegisterChessMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<RegisterChessMutation, RegisterChessMutationVariables>(RegisterChessDocument, options);
+      }
+export type RegisterChessMutationHookResult = ReturnType<typeof useRegisterChessMutation>;
+export type RegisterChessMutationResult = ApolloReactCommon.MutationResult<RegisterChessMutation>;
+export type RegisterChessMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterChessMutation, RegisterChessMutationVariables>;
 export const MeDocument = gql`
     query me {
   me {
@@ -1575,4 +1640,39 @@ export type ExportCsvLazyQueryHookResult = ReturnType<typeof useExportCsvLazyQue
 export type ExportCsvQueryResult = ApolloReactCommon.QueryResult<ExportCsvQuery, ExportCsvQueryVariables>;
 export function refetchExportCsvQuery(variables: ExportCsvQueryVariables) {
       return { query: ExportCsvDocument, variables: variables }
+    }
+export const GetChessDetailsCsvDocument = gql`
+    query getChessDetailsCSV {
+  getChessDetailsCSV
+}
+    `;
+
+/**
+ * __useGetChessDetailsCsvQuery__
+ *
+ * To run a query within a React component, call `useGetChessDetailsCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetChessDetailsCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetChessDetailsCsvQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetChessDetailsCsvQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>(GetChessDetailsCsvDocument, options);
+      }
+export function useGetChessDetailsCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>(GetChessDetailsCsvDocument, options);
+        }
+export type GetChessDetailsCsvQueryHookResult = ReturnType<typeof useGetChessDetailsCsvQuery>;
+export type GetChessDetailsCsvLazyQueryHookResult = ReturnType<typeof useGetChessDetailsCsvLazyQuery>;
+export type GetChessDetailsCsvQueryResult = ApolloReactCommon.QueryResult<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>;
+export function refetchGetChessDetailsCsvQuery(variables?: GetChessDetailsCsvQueryVariables) {
+      return { query: GetChessDetailsCsvDocument, variables: variables }
     }

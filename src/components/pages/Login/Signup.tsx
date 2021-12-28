@@ -107,7 +107,7 @@ const Signup = () => {
                     <Input placeholder="Name" marginBottom="4vh" type="text" onChange={(e:any) => {setName(e.target.value)}}></Input>
                     <Flex marginBottom="6vh">
                         <Input placeholder="Email ID" marginRight="2vw" type="email" onChange={(e:any) => {setEmail(e.target.value)}}></Input>
-                        <Input placeholder="Mobile number" type="text" onChange={(e:any) => {setNumber(e.target.value)}}></Input>
+                        <Input placeholder="Mobile number" type="text" value={number} onChange={(e:any) => {setNumber(e.target.value)}}></Input>
                     </Flex>
                     <Input placeholder="Password" marginBottom="4vh" type="password" onChange={(e:any) => {setPw(e.target.value)}}></Input>
                     <Input placeholder="Confirm password" marginBottom="6vh" type="password" onChange={(e:any) => {setConfirm(e.target.value)}}></Input>

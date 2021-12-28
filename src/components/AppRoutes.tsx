@@ -1,6 +1,11 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import {Link} from "@chakra-ui/react"
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import { Link } from "@chakra-ui/react";
 import Exhibitions from "./pages/Exhibitions/Exhibitions";
 import Home from "./pages/Home";
 import Envisage from "./pages/night/Envisage";
@@ -35,8 +40,9 @@ import TermsConditions from "./pages/Policies/TermsConditions";
 import Shipping from "./pages/Policies/Shipping";
 import Refund from "./pages/Policies/Refund";
 import HomeEW from "./pages/Events and Workshops/EWHome";
-import Shows from "./pages/night/ShowsNew"
-import Contact from "./pages/Contact"
+import Shows from "./pages/night/ShowsNew";
+import Contact from "./pages/Contact";
+import ChessBlitz from "./pages/Chess_blitz/ChessBlitz";
 interface Props {}
 
 const AppRoutes = (props: Props) => {
@@ -51,10 +57,24 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/contact" component={Contact}></Route>
       <Route exact path="/shaastra-juniors" component={ShaastraJuniorsPage} />
       {/* <Route exact path="/social-endeavours" component={Social} /> */}
-      <Route exact path="/social-endeavours" component={() => {window.location.href = "https://unmute.shaastra.org/"; return null}}>
+      <Route
+        exact
+        path="/social-endeavours"
+        component={() => {
+          window.location.href = "https://unmute.shaastra.org/";
+          return null;
+        }}
+      >
         {/* <Link to="https://unmute.shaastra.org/"></Link> */}
       </Route>
-      <Route exact path="/mind-trials" component={() => {window.location.href="https://mindtrials.shaastra.org/"; return null}}></Route>
+      <Route
+        exact
+        path="/mind-trials"
+        component={() => {
+          window.location.href = "https://mindtrials.shaastra.org/";
+          return null;
+        }}
+      ></Route>
       <Route exact path="/eventsworkshops" component={HomeEW} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" component={EventVertical}></Route>
@@ -70,6 +90,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />
       <Route exact path="/sponsors" component={Spons} />
+      <Route exact path="/chess-blitz" component={ChessBlitz} />
       {/* <Route exact path="/speakers" component={Speaker} /> */}
 
       <Route exact path="/login" component={Login}></Route>
