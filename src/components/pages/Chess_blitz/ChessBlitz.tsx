@@ -79,22 +79,6 @@ function ChessBlitz() {
       setIsAdmin(true);
     }
   }, []);
-  const handleChessRegister = async () => {
-    try {
-      await regitserChess({
-        variables: {
-          data: {
-            username,
-            rating,
-            title,
-          },
-        },
-      });
-    } catch (e) {
-      console.log(e);
-    }
-    //  catch((err) => console.log(err));
-  };
 
   /******** Callback Functions ********/
   const loadRazorpay = async (data: RegisterChessMutation) => {
@@ -141,87 +125,19 @@ function ChessBlitz() {
     const rzp1 = new (window as any).Razorpay(options);
     rzp1.open();
   };
-  // if (registerChessLoading) {
-  //   onClose = () => {};
-  //   return (
-  //     <Modal isOpen={true} onClose={onClose}>
-  //       <ModalOverlay />
-  //       <ModalContent backgroundColor="#e2e19c" color="black">
-  //         <ModalHeader>Loading...</ModalHeader>
-  //         <ModalCloseButton />
-  //       </ModalContent>
-  //     </Modal>
-  //   );
-  // } else if (capturePaymentLoading) {
-  //   onClose = () => {};
-  //   return (
-  //     <Modal isOpen={true} onClose={onClose}>
-  //       <ModalOverlay />
-  //       <ModalContent backgroundColor="#e2e19c" color="black">
-  //         <ModalHeader>
-  //           Don't close or reload the site, until you get the payment
-  //           confirmation. Loading...
-  //         </ModalHeader>
-  //         <ModalCloseButton />
-  //       </ModalContent>
-  //     </Modal>
-  //   );
-  // } else if (registerChessError) {
-  //   console.log(registerChessError);
-  //   onClose = () => {
-  //     window.location.reload();
-  //   };
-  //   return (
-  //     <Modal isOpen={true} onClose={onClose}>
-  //       <ModalOverlay />
-  //       <ModalContent backgroundColor="#f1aaaa" color="black">
-  //         <ModalHeader>{registerChessError.message}</ModalHeader>
-  //         <ModalCloseButton />
-  //       </ModalContent>
-  //     </Modal>
-  //   );
-  // } else if (capturePaymentError) {
-  //   onClose = () => {
-  //     window.location.reload();
-  //   };
-  //   return (
-  //     <Modal isOpen={true} onClose={onClose}>
-  //       <ModalOverlay />
-  //       <ModalContent backgroundColor="#f1aaaa" color="black">
-  //         <ModalHeader>Payment Failed</ModalHeader>
-  //         <ModalCloseButton />
-  //       </ModalContent>
-  //     </Modal>
-  //   );
-  // } else if (capturePaymentData?.capturePaymentChess) {
-  //   onClose = () => {
-  //     window.location.reload();
-  //   };
-  //   return (
-  //     <Modal isOpen={true} onClose={onClose}>
-  //       <ModalOverlay />
-  //       <ModalContent backgroundColor="#A7EAAA" color="black">
-  //         <ModalHeader>Registration Successful</ModalHeader>
-  //         <ModalCloseButton />
-  //       </ModalContent>
-  //     </Modal>
-  //   );
-  // }
-  //   }
-  // }, []);
 
-  // const handleChessRegister = async (e) => {
-  //   e.preventDefault();
-  //   await regitserChess({
-  //     variables: {
-  //       data: {
-  //         username,
-  //         rating,
-  //         title,
-  //       },
-  //     },
-  //   }).catch((err) => console.log(err));
-  // };
+  const handleChessRegister = async (e) => {
+    e.preventDefault();
+    await regitserChess({
+      variables: {
+        data: {
+          username,
+          rating,
+          title,
+        },
+      },
+    }).catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     if (registerChessLoading) {
