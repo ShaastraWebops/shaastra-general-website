@@ -372,7 +372,7 @@ function ChessBlitz() {
             </div>
           </div>
           <div className="rated_category">
-            <h4>Other Categories : </h4>
+            {/* <h4>Other Categories : </h4> */}
             <div className="twrapper">
               <table>
                 <tr>

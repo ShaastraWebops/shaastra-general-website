@@ -1,5 +1,5 @@
 import { Box, Flex, Stack , Image, Text, Button, Heading, Center, Container, useColorModeValue, Icon, FormLabel, Input } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { GetEventDocument, GetEventsDocument, useDeleteEventFaqMutation, useDeleteEventMutation, useDeleteTimingsMutation, useEarlybidofferMutation, useExportCsvQuery, useGetEventQuery } from '../../../generated/graphql'
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg"
@@ -52,7 +52,6 @@ const EventPage = () => {
       }else  return false
 
     })
-
     const [earlybid , setEarlyBid] = useState("");
     const [earlyBid] = useEarlybidofferMutation();
     const today = new Date();
@@ -87,8 +86,11 @@ const EventPage = () => {
             
             <Flex justifyContent={"flex-end"}>
               {
-                isAdmin ? (<Button
-                  padding={["0.5vw","0.5vw","0.5vw", "1.25vw"]}
+                isAdmin ? (
+                <Flex flexDirection={["column"]}>
+                <Heading size={"md"} padding={["0.5vw","0.5vw","0.5vw", "1.25vw"]}> Registered Users Count : {data?.getEvent.registeredUserCount}</Heading>
+                <Button
+                  padding={["0.5vw","0.5vw","0.5vw", "1.vw"]}
                   fontSize={["3vw","3vw","3vw", "1vw"]}
                         onClick={() => {
                           fileDownload(data1?.exportCSV!, `${data?.getEvent.name}_regristants.csv`);
@@ -96,7 +98,8 @@ const EventPage = () => {
                       >
                         <EditIcon m={2} />
                         Download Registered Usersdata
-                      </Button>) : (<RegisterNow isAdmin={isAdmin} data={data?.getEvent}/>)
+                      </Button>
+                      </Flex>) : (<RegisterNow isAdmin={isAdmin} data={data?.getEvent}/>)
               }
               </Flex>
           </Flex> 
