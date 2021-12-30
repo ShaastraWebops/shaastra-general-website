@@ -134,13 +134,22 @@ const EventPage = () => {
           <Flex justifyContent={"flex-end"}>
             {isAdmin ? (
               <Flex flexDirection={["column"]}>
-                <Heading
+                 {
+                  data?.getEvent.registrationType=== "INDIVIDUAL" ?       
+                  <Heading
                   size={"md"}
                   padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
-                >
-                  {" "}
-                  Registered Users Count : {data?.getEvent.registeredUserCount}
-                </Heading>
+                  >
+                  {" "} Registered Users Count : {data?.getEvent.registeredUserCount}
+                  </Heading>
+                  :  <Heading
+                  size={"md"}
+                  padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
+                  >
+                  {" "} Registered Teams Count : {data?.getEvent.registeredTeamCount}
+                  </Heading>
+
+                 }
                 <Button
                   padding={["0.5vw", "0.5vw", "0.5vw", "1.vw"]}
                   fontSize={["3vw", "3vw", "3vw", "1vw"]}
