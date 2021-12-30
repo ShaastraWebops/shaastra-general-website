@@ -119,12 +119,12 @@ const Shows = () => {
                     marginBottom={"4vh"}
                     fontFamily= "Neue Helvetica BQ"
                    >SHAASTRA NIGHTS</Heading>
-                   {/* <Box
+                   <Box
                     backgroundColor={"#00F7FF"} color={"black"}
                     fontFamily={"Montserrat"} fontWeight={"bold"}
                     padding={["2vw","1vw"]} zIndex={"2"}
                     borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
-                   >Register for shows</Box> */}
+                   > <a href="/signup">Register for shows</a> </Box>
                </Flex>
                <Flex
                 height="100vh" width="100vw"
