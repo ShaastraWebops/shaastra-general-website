@@ -152,6 +152,10 @@ const EditProfile = () => {
                                <FormLabel>Email</FormLabel>
                                <Input value={email} placeholder={user?.me?.email} onChange={(e:any) => {setEmail(e.target.value)}} type="email"></Input>
                            </FormControl>
+                           <FormControl marginBottom="4vh">
+                               <FormLabel>Mobile Number</FormLabel>
+                               <Input value={mobile} placeholder={user?.me?.mobile} onChange={(e:any) => {setMobile(e.target.value)}} type="text"></Input>
+                           </FormControl>
                            <Flex marginBottom="6vh">
                         <Select placeholder={user?.me?.college} marginRight="2vw" value={college} onChange={(e:any) => {setCollege(e.target.value)}}>
                             {

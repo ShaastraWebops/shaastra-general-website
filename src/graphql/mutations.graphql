@@ -94,14 +94,25 @@ mutation leaveTeam($id: String!) {
   leaveTeam(data: $id)
 }
 
-mutation addTimings($id : String! , $data : AddTimingsInput!){
-  addTimings(id : $id , data : $data)
+mutation addTimings($id: String!, $data: AddTimingsInput!) {
+  addTimings(id: $id, data: $data)
 }
 
-mutation deleteTimings($id : String!){
-  deleteTimings(id : $id )
+mutation deleteTimings($id: String!) {
+  deleteTimings(id: $id)
 }
 
-mutation earlybidoffer($id : String! , $amount : String!){
-  earlybidoffer(eventID : $id , amount : $amount)
+mutation earlybidoffer($id: String!, $amount: String!) {
+  earlybidoffer(eventID: $id, amount: $amount)
+}
+
+mutation registerChess($data: registerBlitzChessInput!) {
+  registerChess(data: $data) {
+
+    orderId
+  }
+}
+
+mutation capturePaymentChess($input: CapturePaymentChessInput!) {
+  capturePaymentChess(Input: $input)
 }

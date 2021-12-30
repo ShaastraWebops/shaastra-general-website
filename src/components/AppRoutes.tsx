@@ -51,7 +51,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/" component={Home} />
       <Route path="/envisage" component={Envisage} />
       <Route path="/project/:id" component={Project} />
-      <Route path="/shows" component={Show} />
+      <Route path="/shows" component={Shows} />
       <Route exact path="/exhibitions" component={Exhibitions} />
       <Route exact path="/team" component={Team} />
       <Route exact path="/contact" component={Contact}></Route>
@@ -90,7 +90,7 @@ const AppRoutes = (props: Props) => {
       <Route exact path="/tif" component={Tif} />
       <Route exact path="/summit" component={Summit} />
       <Route exact path="/sponsors" component={Spons} />
-      <Route exact path="/chess-blitz" component={ChessBlitz} />
+      <Route exact path="/blitz-chess" component={ChessBlitz} />
       {/* <Route exact path="/speakers" component={Speaker} /> */}
 
       <Route exact path="/login" component={Login}></Route>

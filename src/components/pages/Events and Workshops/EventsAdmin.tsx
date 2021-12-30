@@ -24,7 +24,7 @@ import { AddIcon, EditIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
 import {useHistory} from "react-router-dom"
 import CustomBox from '../../shared/CustomBox'
-import { useGetEventsQuery, useGetUsersDataCsvQuery, useGetUsersQuery } from "../../../generated/graphql";
+import { useGetEventsQuery, useGetPaidUsersCountQuery, useGetUsersDataCsvQuery, useGetUsersQuery } from "../../../generated/graphql";
 import EventVerticalComponent from "./EventVeticalComponent";
 import fileDownload from "js-file-download";
 
@@ -48,6 +48,7 @@ const EventsAdmin = () => {
         }
     })
     const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
+    const {data : data3} = useGetPaidUsersCountQuery();
 
     const history = useHistory()
 
@@ -86,6 +87,13 @@ const EventsAdmin = () => {
                             <option value="WORKSHOPS">Workshops</option>
                 </Select>
             </Flex>
+            {
+                vertical === "WORKSHOPS" && data3?.getPaidUsersCount && <Center>
+                <Flex>
+                <Heading as='h3' size={'lg'} p={2} m={2}>Total Paid Registrations for Workshops : {data3.getPaidUsersCount} </Heading>
+                </Flex>
+                </Center>
+            }
             <Box className="events-vertical">
                 <Stack
                  textAlign={'center'}
