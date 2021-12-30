@@ -1676,8 +1676,8 @@ export const colleges : any = [
         "Town": "Machilipatnam"
     },
     {
-        "University": "Kristu Jayanti College Autonomous Bengaluru",
-        "Town": "Bengaluru"
+        "University": "Kristu Jayanti College , Autonomous",
+        "Town": "Bangalore"
     },
     {
         "University": "KSGH Music and Performing Arts University",

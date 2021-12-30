@@ -224,7 +224,7 @@ const Home = (props: Props) => {
                 SALES
               </a>
               <br />
-              Till 30th December
+              Till 1st January
             </h3>
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;
@@ -283,7 +283,7 @@ const Home = (props: Props) => {
             The Sanskrit word ‘Shaastra’ means science and the festival
             accordingly consists of various engineering, science, and technology
             competitions, summits, lectures, video conferences, exhibitions,
-            demonstrations, and workshops. The festival is traditionally held
+            demonstrations and workshops. The festival is traditionally held
             over four days and four nights during the first week of January. It
             has so far seen twenty-one editions, having started in its current
             avatar in the year 2000.
