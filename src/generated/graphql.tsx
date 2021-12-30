@@ -621,7 +621,7 @@ export type GetEventsQueryVariables = Exact<{
 }>;
 
 
-export type GetEventsQuery = { getEvents: { events: Array<{ id: string, name: string, pic?: string | null | undefined, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number }> } };
+export type GetEventsQuery = { getEvents: { events: Array<{ id: string, name: string, pic?: string | null | undefined, vertical: string, description: string, requirements?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, registrationfee?: string | null | undefined }> } };
 
 export type GetEventQueryVariables = Exact<{
   EventID: Scalars['String'];
@@ -1532,6 +1532,7 @@ export const GetEventsDocument = gql`
       eventTimeTo
       registrationType
       teamSize
+      registrationfee
     }
   }
 }

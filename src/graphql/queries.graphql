@@ -1,5 +1,5 @@
-query me{
-  me{
+query me {
+  me {
     id
     name
     shaastraID
@@ -10,43 +10,41 @@ query me{
     address
     city
     state
-    registeredEvents{
+    registeredEvents {
       id
       name
       pic
       eventTimeFrom
       eventTimeTo
       registrationType
-      yourTeam{
+      yourTeam {
         id
         name
-        members{
+        members {
           name
           email
         }
       }
     }
-   
   }
 }
 
-
-mutation editEvent($data: EditEventInput!, $id: String!){
+mutation editEvent($data: EditEventInput!, $id: String!) {
   editEvent(data: $data, eventID: $id)
 }
 
-query getUsers($filter : GetUsersFilter!){
-  getUsers(filter : $filter){
-    count,
-    users{
+query getUsers($filter: GetUsersFilter!) {
+  getUsers(filter: $filter) {
+    count
+    users {
       name
       id
-      shaastraID,
+      shaastraID
       email
-      role,
-      isVerified,
+      role
+      isVerified
       verificationOTP
-      registeredEvents{
+      registeredEvents {
         id
         name
         teamSize
@@ -55,76 +53,76 @@ query getUsers($filter : GetUsersFilter!){
     }
   }
 }
-query getEvents($filter : String!){
-  getEvents(filter : $filter){
-    events{
-    id,
-  name,
-  pic,
-  vertical,
-  description,
-  requirements,
-  platform,
-  firstplace,
-  secondplace,
-  thirdplace,
-  participation,
-  registrationOpenTime,
-  registrationCloseTime,
-  eventTimeFrom,
-  eventTimeTo,
-  registrationType,
-  teamSize
-  }
+query getEvents($filter: String!) {
+  getEvents(filter: $filter) {
+    events {
+      id
+      name
+      pic
+      vertical
+      description
+      requirements
+      platform
+      firstplace
+      secondplace
+      thirdplace
+      participation
+      registrationOpenTime
+      registrationCloseTime
+      eventTimeFrom
+      eventTimeTo
+      registrationType
+      teamSize
+      registrationfee
+    }
   }
 }
-query getEvent($EventID: String!)
-{
-  getEvent(EventID: $EventID){
-    id,
-  name,  
-  vertical,
-  description,
-  requirements,
-  pic,
-  registrationfee,
-  platform,
-  firstplace,
-  secondplace,
-  thirdplace,
-  participation,
-  registrationOpenTime,
-  registrationCloseTime,
-  eventTimeFrom,
-  eventTimeTo,
-  registrationType,
-  teamSize,
-  earlybidoffer,
-  registeredUserCount
-  faqs{
-    id,
-    answer,
-    question
-  }
-  eventtimings{
+query getEvent($EventID: String!) {
+  getEvent(EventID: $EventID) {
     id
     name
-    time
-  }
+    vertical
+    description
+    requirements
+    pic
+    registrationfee
+    platform
+    firstplace
+    secondplace
+    thirdplace
+    participation
+    registrationOpenTime
+    registrationCloseTime
+    eventTimeFrom
+    eventTimeTo
+    registrationType
+    teamSize
+    earlybidoffer
+    registeredUserCount
+    faqs {
+      id
+      answer
+      question
+    }
+    eventtimings {
+      id
+      name
+      time
+    }
   }
 }
 
-query getUsersDataCSV{
+query getUsersDataCSV {
   getUsersDataCSV
 }
-query exportCSV($EventID: String!){
-  exportCSV(EventID : $EventID)
+query exportCSV($EventID: String!) {
+  exportCSV(EventID: $EventID)
 }
 
-query getChessDetailsCSV{
+query getChessDetailsCSV {
   getChessDetailsCSV
 }
 
-query getPaidUsersCount{
+query getPaidUsersCount {
   getPaidUsersCount
 }
