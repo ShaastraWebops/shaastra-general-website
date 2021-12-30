@@ -33,8 +33,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { useHistory } from "react-router-dom";
-import PayRegister from "./PayRegister";
-// import loadRazorpay from "../../../utils/razorpay";
+
 
 const RegisterNow = ({ isAdmin, data }) => {
   const [register, { data: data1, error, loading }] = useRegisterMutation();
@@ -72,10 +71,11 @@ const RegisterNow = ({ isAdmin, data }) => {
   const [teamreg, { data: data2, loading: loading2, error: error2 }] =
     useCreateTeamandRegisterMutation();
   const Teamregistration = async (eventID: string) => {
-
-    if(data.id === "ckxcweoy60013y6p76ppx07rt"){
-      const accept = prompt("Privacy Policy : \n The data or the problem that is being shared under HackOlympics 2.0 shall not be shared or reused by the participants or stakeholders with anyone or any third party without prior written permission of MTX. The breach of this clause shall be considered a direct dispute between the violating individual and MTX, and is liable to legal action from MTX.\n \n Please type \"Agree\" without quotes")
-      if(accept?.toLowerCase() === "agree"){
+    if (data.id === "ckxcweoy60013y6p76ppx07rt") {
+      const accept = prompt(
+        'Privacy Policy : \n The data or the problem that is being shared under HackOlympics 2.0 shall not be shared or reused by the participants or stakeholders with anyone or any third party without prior written permission of MTX. The breach of this clause shall be considered a direct dispute between the violating individual and MTX, and is liable to legal action from MTX.\n \n Please type "Agree" without quotes'
+      );
+      if (accept?.toLowerCase() === "agree") {
         await teamreg({
           variables: {
             createTeamAndRegisterData: {
@@ -85,21 +85,21 @@ const RegisterNow = ({ isAdmin, data }) => {
             },
           },
         }).catch((err) => console.log(err.message));
-      }else{
-        alert("Please agree the privacy policy")
+      } else {
+        alert("Please agree the privacy policy");
       }
-    }else{
-    await teamreg({
-      variables: {
-        createTeamAndRegisterData: {
-          eventID,
-          name: teamname!,
-          members,
+    } else {
+      await teamreg({
+        variables: {
+          createTeamAndRegisterData: {
+            eventID,
+            name: teamname!,
+            members,
+          },
         },
-      },
-    }).catch((err) => console.log(err.message));
-  };}
-  
+      }).catch((err) => console.log(err.message));
+    }
+  };
 
   if (loading || loading2) {
     onClose = () => {
@@ -129,10 +129,6 @@ const RegisterNow = ({ isAdmin, data }) => {
         </ModalContent>
       </Modal>
     );
-  }
-
-  if (data1?.register.eventPay) {
-    return <PayRegister data={data1.register.eventPay} />;
   }
 
   if (error || error2) {
@@ -168,12 +164,21 @@ const RegisterNow = ({ isAdmin, data }) => {
             </Alert>
           </Box>
         ) : (
-          <Box marginRight={"2vw"} marginTop="2vh" height={["fit-content","fit-content","fit-content","fit-content"]}>
+          <Box
+            marginRight={"2vw"}
+            marginTop="2vh"
+            height={[
+              "fit-content",
+              "fit-content",
+              "fit-content",
+              "fit-content",
+            ]}
+          >
             <Button
               backgroundColor={"rgb(171, 228, 156)"}
               color="black"
-              padding={["0.5vw","0.5vw","0.5vw", "1.25vw"]}
-              fontSize={["2vw","2vw","2vw", "1vw"]}
+              padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
+              fontSize={["2vw", "2vw", "2vw", "1vw"]}
               onClick={
                 data.registrationType === "INDIVIDUAL"
                   ? () => {

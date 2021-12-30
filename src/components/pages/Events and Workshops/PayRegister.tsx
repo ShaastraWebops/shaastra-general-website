@@ -1,10 +1,16 @@
 import React from "react";
 import {
+  GetEventQuery,
   RegisterMutation,
+  useRegisterMutation,
   useUpdateEventPayMutation,
 } from "../../../generated/graphql";
 import dotenv from "dotenv";
 import {
+  Alert,
+  AlertIcon,
+  Box,
+  Button,
   Modal,
   ModalCloseButton,
   ModalContent,
@@ -15,7 +21,8 @@ import {
 dotenv.config();
 
 interface Probs {
-  data: RegisterMutation["register"]["eventPay"];
+  data: GetEventQuery["getEvent"];
+  isAdmin: Boolean;
 }
 
 function loadScript(src: string) {
@@ -32,18 +39,29 @@ function loadScript(src: string) {
   });
 }
 
-/******** Callback Functions ********/
-const PayRegister = ({ data }: Probs) => {
+const PayRegister = ({ data, isAdmin }: Probs) => {
+  const [register, { data: data1, error, loading }] = useRegisterMutation({
+    /******** On create order completion, open Razorpay ********/
+    async onCompleted(data) {
+      if (data.register.eventPay) {
+        await loadRazorpay(data.register.eventPay);
+      }
+    },
+  });
+
   /******** Mutation Hook ********/
-  const [updateEventPayMutation, { data: updateEventPayData, loading, error }] =
-    useUpdateEventPayMutation();
+  const [
+    updateEventPayMutation,
+    {
+      data: updateEventPayData,
+      loading: updateEventPayLoading,
+      error: updateEventPayError,
+    },
+  ] = useUpdateEventPayMutation();
 
-  React.useEffect(() => {
-    loadRazorpay();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const loadRazorpay = async () => {
+  const loadRazorpay = async (
+    data: RegisterMutation["register"]["eventPay"]
+  ) => {
     /******** Load Razorpay Script ********/
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -97,6 +115,20 @@ const PayRegister = ({ data }: Probs) => {
     rzp1.open();
   };
 
+  /******** Register Handler ********/
+  const registerHandler = async () => {
+    try {
+      /******** Create OrderID ********/
+      await register({
+        variables: {
+          EventID: data.id,
+        },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   if (updateEventPayData?.updateEventPay) {
     const onClose = () => {
       window.location.reload();
@@ -112,25 +144,67 @@ const PayRegister = ({ data }: Probs) => {
     );
   }
 
-  if (error)
+  if (updateEventPayError || error)
     return (
       <Modal isOpen={true} onClose={() => window.location.reload()}>
         <ModalOverlay />
         <ModalContent backgroundColor="#f1aaaa" color="black">
-          <ModalHeader>Some error occurred.{error?.message}</ModalHeader>
+          <ModalHeader>Some error occurred</ModalHeader>
+          <ModalCloseButton />
+        </ModalContent>
+      </Modal>
+    );
+
+  if (loading || updateEventPayLoading)
+    return (
+      <Modal isOpen={true} onClose={() => window.location.reload()}>
+        <ModalOverlay />
+        <ModalContent backgroundColor="#addfd0" color="black">
+          <ModalHeader>
+            Don't refresh or close until you get a successfull message.
+            Loading...
+          </ModalHeader>
           <ModalCloseButton />
         </ModalContent>
       </Modal>
     );
 
   return (
-    <Modal isOpen={true} onClose={() => window.location.reload()}>
-      <ModalOverlay />
-      <ModalContent backgroundColor="#e2e19c" color="black">
-        <ModalHeader>Loading...</ModalHeader>
-        <ModalCloseButton />
-      </ModalContent>
-    </Modal>
+    <div>
+      {!isAdmin &&
+        (data.registrationType === "NONE" ? (
+          <Box marginRight={"2vw"} marginTop="2vh" height="1vw">
+            <Alert status="info" size={"xs"}>
+              <AlertIcon />
+              Registration is not required for this event
+            </Alert>
+          </Box>
+        ) : (
+          <Box
+            marginRight={"2vw"}
+            marginTop="2vh"
+            height={[
+              "fit-content",
+              "fit-content",
+              "fit-content",
+              "fit-content",
+            ]}
+          >
+            <Button
+              backgroundColor={"rgb(171, 228, 156)"}
+              color="black"
+              padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
+              fontSize={["2vw", "2vw", "2vw", "1vw"]}
+              onClick={registerHandler}
+              // onClick={
+              //   //() => IndividualReg(data.id)
+              // }
+            >
+              REGISTER NOW
+            </Button>
+          </Box>
+        ))}
+    </div>
   );
 };
 
