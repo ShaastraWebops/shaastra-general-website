@@ -196,7 +196,7 @@ $color-box-3: #27377c;
 }
 
 .sponsBox1 .card__collection .cards {
-  width: 250px;
+  width: 200px;
   height: 170px;
   display: block;
   background-size: cover;
@@ -397,7 +397,7 @@ $color-box-3: #27377c;
   // left: 50%;
   margin: 100px;
   height: 220px;
-  width: 300px;
+  width: 333px;
   transform-style: preserve-3d;
   perspective: 600px;
   transition: 0.5s;
@@ -539,7 +539,7 @@ $color-box-3: #27377c;
 .sponsBox1 #AMD{
   position: relative;
   width: 80%;
-  top: 1%;
+  top: 18%;
 }
 .sponsBox1 #binance{
   position: relative;
@@ -553,9 +553,22 @@ $color-box-3: #27377c;
 .sponsBox1 #ravi{
   position: relative;
   width: 74%;
+  top: 8%;
 }
 .sponsBox1 #sponsro{
   font-size: 19px;
   padding-top: 5px;
+  font-family: "Do Hyeon", sans-serif;
   letter-spacing: 1px;
+}
+.sponsBox1 #sponsro1{
+  font-size: 22px;
+  padding-top: 5px;
+  font-family: "Do Hyeon", sans-serif;
+  letter-spacing: 1px;
+}
+.sponsBox1 .flexx{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
 }

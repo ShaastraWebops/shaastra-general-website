@@ -348,7 +348,7 @@ const EventPage = () => {
                 >
                   Hurry up !! Early Bird Sale ends on{" "}
                   <span style={{ fontWeight: 600 }}>
-                    December 30th 2021 11:59 pm
+                    January 1st 2022 11:59 pm
                   </span>
                 </Text>
               )}

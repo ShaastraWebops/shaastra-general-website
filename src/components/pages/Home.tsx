@@ -224,7 +224,7 @@ const Home = (props: Props) => {
                 SALES
               </a>
               <br />
-              Till 30th December
+              Till 1st January
             </h3>
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;

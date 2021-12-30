@@ -80,773 +80,309 @@ function Spons() {
             </div>
             <br />
             <br />
+
             <div className="card__collection">
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Title Sponsor</p>
-                  <img
-                    src={TPL}
-                    className="img-responsive"
-                    id="tata"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.tataprojects.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/tata-projects/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/OfficialTPLCommunity/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
 
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Associate Title</p>
-
-                  <img src={mtx} className="img-responsive" id="mtx" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.mtxb2b.com/s/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/mtx-group/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/mtxb2b/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Platinum Sponsor</p>
-
-                  <img src={binance} className="img-responsive" id="binance" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.binance.com/en-IN">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/binance/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/binance/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Diamond Sponsor<br/>Powered by </p>
-
-                  <img
-                    src={AMD}
-                    className="img-responsive"
-                    id="AMD"
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.amd.com/en">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/amd/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/AMD/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Gold Sponsor</p>
-                  <img
-                    src={Wells}
-                    className="img-responsive"
-                    id="surana"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.wellsfargo.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/wellsfargo/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/wellsfargo/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Co Sponsor</p>
-
-                  <img src={logo2} className="img-responsive" id="ravi" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="http://www.ravikiraninfotech.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/ravikiraninfotech/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/ravikiraninfo/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Co Sponsor</p>
-
-                  <img src={Astra} className="img-responsive" id="Astra" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.astrazeneca.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/astrazeneca/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/astrazenecacareers/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Co Sponsor</p>
-
-                  <img src={LT} className="img-responsive" id="lt" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.larsentoubro.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/larsen-&-toubro-limited/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/LT-Construction-364964870240516/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">IDP Sponsor</p>
-
-                  <img
-                    src={CAT}
-                    className="img-responsive"
-                    alt=""
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.caterpillar.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/caterpillar-inc/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/caterpillarinc/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Platform Sponsor</p>
-
-                  <img
-                    src={MB}
-                    className="img-responsive"
-                    alt=""
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://mavex.club/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/mavex-club/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/mavex.in/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sposnor</p>
-
-                  <img src={KLA} className="img-responsive" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.kla-tencor.com/company">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/klacorp/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/KLAcorp/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sposnor</p>
-
-                  <img src={Salesforces} className="img-responsive" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.salesforce.com/in/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/salesforce/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/salesforce/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sposnor</p>
-
-                  <img
-                    src={MEB}
-                    className="img-responsive"
-                    id="mouser"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.mouser.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/mouser-electronics/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/mouserelectronics/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sposnor</p>
-
-                  <img
-                    src={ADB}
-                    className="img-responsive"
-                    id="autodesk"
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.autodesk.com/education/edu-software/overview?sorting=featured&filters=individual">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/autodesk/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/autodesk/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sposnor</p>
-
-                  <img
-                    src={surana}
-                    className="img-responsive"
-                    id="surana"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://suranaandsurana.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/surana-&-surana-internartional-attorneys/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/Surana-Surana-International-Attorneys-125263729279918">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sponsor</p>
-
-                  <img
-                    src={HW}
-                    className="img-responsive"
-                    id="inno"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.honeywell.com/us/en">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/honeywell/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/honeywellhome/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-
-
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sposnor</p>
-
-                  <img
-                    src={BS}
-                    className="img-responsive"
-                    id="Bs"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.business-standard.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/business-standard/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/bsindia/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Event Sponsor</p>
-
-                  <img
-                    src={WC}
-                    className="img-responsive"
-                    id="wow"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.wowchess.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/wowchess/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="#">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-              {/* <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={Atlasian} className="img-responsive" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.atlassian.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/atlassian/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/Atlassian/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              
-
-              
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={Boeing} className="img-responsive" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.boeing.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/boeing/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/Boeing/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              
-
-              
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img src={foxmula} className="img-responsive" id="foxmula" alt="" />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://foxmula.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/foxmula-official/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/foxmulaOfficial/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={HPCL}
-                    className="img-responsive"
-                    id="hpcl"
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.hindustanpetroleum.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="#">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="#">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={innovaccer}
-                    className="img-responsive"
-                    id="inno"
-                    alt=""
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://innovaccer.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/innovaccer/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/InnovAccer/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={kamal}
-                    className="img-responsive"
-                    id="kamal"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="#">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="#">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="#">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              
-
-              
-
-              
-
-
-
-              
-
-
-
-              
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <img
-                    src={subex}
-                    className="img-responsive"
-                    id="subex"
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.subex.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/subex-ltd/?originalSubdomain=in">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/SubexLimited/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              
-
-
-
-               */}
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Campus Ambassador Sponsor</p>
-
-                  <img
-                    src={CL}
-                    className="img-responsive"
-                    id="subex"
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(0)",
-                        }
-                        : {
-                          filter: "invert(1)",
-                        }
-                    }
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://www.cuvette.tech/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/cuvette-tech/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/cuvette.tech/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-
-              <div className="card" id="photo">
-                <div className="card-front">
-                  <p id="sponsro">Campus ambassador sponsor</p>
-
-                  <img
-                    src={ES}
-                    className="img-responsive"
-                    id="subex"
-                    style={
-                      theme == "black"
-                        ? {
-                          filter: "invert(1)",
-                        }
-                        : {
-                          filter: "invert(0)",
-                        }
-                    }
-                    alt=""
-                  />
-                </div>
-                <div className="card-back">
-                  <p className="text">
-                    <a href="https://easyshiksha.com/">
-                      <img src={www} id="www1" alt=""></img>
-                    </a>
-                    <a href="https://www.linkedin.com/company/easyshiksha/">
-                      <img alt="" src={linkedin} id="www2"></img>
-                    </a>
-                    <a href="https://www.facebook.com/EasyShikshaIndia/">
-                      <img alt="" src={facebook} id="www3"></img>
-                    </a>
-                  </p>
-                </div>
-              </div>
-              {/* <div className="card" id="photo">
-              <div className="card-front">
-                <img src={binance} className="img-responsive" alt="" />
-              </div>
-              <div className="card-back">
-                <p className="text">
-                  <a href="https://www.binance.com/en-IN/">
-                    <img src={www} id="www1" alt=""></img>
+              <div className="flexx">
+                <p id="sponsro">Title Sponsor</p>
+                <div className="card" id="photo">
+                  <a href="https://www.tataprojects.com/">
+                    <img
+                      src={TPL}
+                      className="img-responsive"
+                      id="tata"
+                      alt=""
+                    />
                   </a>
-                  <a href="https://www.linkedin.com/company/mahindragroup/?originalSubdomain=in">
-                    <img alt="" src={linkedin} id="www2"></img>
-                  </a>
-                  <a href="https://www.facebook.com/MahindraRise/">
-                    <img alt="" src={facebook} id="www3"></img>
-                  </a>
-                </p>
+                </div>
               </div>
-            </div> */}
 
+              <div className="flexx">
+                <p id="sponsro">Associate Title</p>
+                <div className="card" id="photo">
+                  <a href="https://www.mtxb2b.com/s/">
+                    <img src={mtx} className="img-responsive" id="mtx" alt="" />
+                  </a>
+                </div>
+              </div>
 
+              <div className="flexx">
+                <p id="sponsro">Platinum Sponsor</p>
+                <div className="card" id="photo">
+                  <a href="https://www.binance.com/en-IN">
+                    <img src={binance} className="img-responsive" id="binance" alt="" />
+                  </a>
+                </div>
+              </div>
 
+              <div className="flexx">
+                <p id="sponsro">Powered by </p>
+                <div className="card" id="photo">
+                  <a href="https://www.amd.com/en">
+                    <img
+                      src={AMD}
+                      className="img-responsive"
+                      id="AMD"
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
 
+              <div className="flexx">
+                <p id="sponsro">Gold Sponsor</p>
+                <div className="card" id="photo">
+                  <a href="https://www.wellsfargo.com/">
+                    <img
+                      src={Wells}
+                      className="img-responsive"
+                      id="surana"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <br />
 
+            </div><br />
+            <p id="sponsro1">Co Sponsors</p>
+            <div className="card__collection">
+              {/* <p>Co Sponsors</p> */}
+              <div className="flexx">
+                {/* <p id="sponsro">Co Sponsor</p> */}
+                <div className="card" id="photo">
+                  <a href="http://www.ravikiraninfotech.com/">
+                    <img src={logo2} className="img-responsive" id="ravi" alt="" />
+                  </a>
+                </div>
+              </div>
 
+              <div className="flexx">
+                {/* <p id="sponsro">Co Sponsor</p> */}
+                <div className="card" id="photo">
+                  <a href="https://www.astrazeneca.com/">
+                    <img src={Astra} className="img-responsive" id="Astra" alt="" />
+                  </a>
+                </div>
+              </div>
 
+              <div className="flexx">
+                {/* <p id="sponsro">Co Sponsor</p> */}
+                <div className="card" id="photo">
+                  <a href="https://www.larsentoubro.com/">
+                    <img src={LT} className="img-responsive" id="lt" alt="" />
+                  </a>
+                </div>
+              </div>
 
+            </div>
+            <div className="card__collection">
+              <div className="flexx">
+                <p id="sponsro">IDP Sponsor</p>
+                <div className="card" id="photo">
+                  <a href="https://www.caterpillar.com/">
+                    <img
+                      src={CAT}
+                      className="img-responsive"
+                      alt=""
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                    />
+                  </a>
+                </div>
+              </div>
 
+              <div className="flexx">
+                <p id="sponsro">Platform Sponsor</p>
+                <div className="card" id="photo">
+                  <a href="https://mavex.club/">
+                    <img
+                      src={MB}
+                      className="img-responsive"
+                      alt=""
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p id="sponsro1">Event Sponsors</p>
+            <div className="card__collection">
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.kla-tencor.com/company">
+                    <img src={KLA} className="img-responsive" alt="" />
+                  </a>
+                </div>
+              </div>
 
+              <div className="flexx">
+                {/* <p id="sponsro">Event Sponsor</p> */}
+                <div className="card" id="photo">
+                  <a href="https://www.salesforce.com/in/">
+                    <img src={Salesforces} className="img-responsive" alt="" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.mouser.com/">
+                    <img
+                      src={MEB}
+                      className="img-responsive"
+                      id="mouser"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.autodesk.com/education/edu-software/overview?sorting=featured&filters=individual">
+                    <img
+                      src={ADB}
+                      className="img-responsive"
+                      id="autodesk"
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://suranaandsurana.com/">
+                    <img
+                      src={surana}
+                      className="img-responsive"
+                      id="surana"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.honeywell.com/us/en">
+                    <img
+                      src={HW}
+                      className="img-responsive"
+                      id="inno"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.business-standard.com/">
+                    <img
+                      src={BS}
+                      className="img-responsive"
+                      id="Bs"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.wowchess.com/">
+                    <img
+                      src={WC}
+                      className="img-responsive"
+                      id="wow"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p id="sponsro1">Campus Ambassador Sponsors</p>
+            <div className="card__collection">
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.cuvette.tech/">
+                    <img
+                      src={CL}
+                      className="img-responsive"
+                      id="subex"
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(0)",
+                          }
+                          : {
+                            filter: "invert(1)",
+                          }
+                      }
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                {/* <p id="sponsro">Campus ambassador sponsor</p> */}
+                <div className="card" id="photo">
+                  <a href="https://easyshiksha.com/">
+                    <img
+                      src={ES}
+                      className="img-responsive"
+                      id="subex"
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
           <br />
@@ -872,8 +408,6 @@ function Spons() {
           <br />
           <br />
         </div>
-        {/* <Header /> */}
-
         <Footer
           designed={[{ name: "Mitesh", mail: "ce20b025@smail.iitm.ac.in" }]}
         />
