@@ -81,7 +81,7 @@ const EventPage = () => {
   const [earlybid, setEarlyBid] = useState("");
   const [earlyBid] = useEarlybidofferMutation();
   const today = new Date();
-  const deadline = new Date("December 30, 2021 23:59:59");
+  const deadline = new Date("January 1,2022 23:59:59");
   if (error) console.log(error);
   if (loading) return <Loader />;
   const timeline =
