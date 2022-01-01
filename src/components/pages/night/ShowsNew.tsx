@@ -49,11 +49,21 @@ import {
   import Reverb from "../../../images/night/Reverb.jpg"
   import Soda from "../../../images/night/Comedy Night.jpeg"
   import About from "../../../images/night/About Us_Background.png"
+  import Adeleida from "../../../images/night/adeleida.jpg"
+  import Formula from "../../../images/night/formula drone.jpg"
+  import Suhani from "../../../images/night/suhani shah.jpg"
+  import Sushil from "../../../images/night/sushil jaiswal.jpg"
+  import VivekD from "../../../images/night/vivek desai.jpg"
+  import Kenny from "../../../images/night/Kenny Sebastian.jpg"
+  import Maraiana from "../../../images/night/Mariana bo.jpg"
+  import Rishabh from "../../../images/night/Rishabh Rajan.jpg"
+  import Freestyle from "../../../images/night/Freestyl' Air.png"
 
   import Four from "../../../images/night/4.jpeg"
   import Dyskenetic from "../../../images/night/dyskenetic.jpeg"
   import Lizzie from "../../../images/night/lizzie.jpg"
   import Alex from "../../../images/night/alex mclen.jpg"
+  import Broken from "../../../images/night/broken symmetry.jpg"
 
   import ShowsBg from "../../../images/night/ShowsHome.mp4"
 
@@ -73,8 +83,8 @@ const Shows = () => {
     const [isLabelOpen8, setIsLabelOpen8] = React.useState(false)
     const [isLabelOpen9, setIsLabelOpen9] = React.useState(false)
     const [isLabelOpen10, setIsLabelOpen10] = React.useState(false)
-    // const [isLabelOpen, setIsLabelOpen] = React.useState(false)
-    // const [isLabelOpen, setIsLabelOpen] = React.useState(false)
+    const [isLabelOpen11, setIsLabelOpen11] = React.useState(false)
+    const [isLabelOpen12, setIsLabelOpen12] = React.useState(false)
     var message = `
     Sand Art and Light Show | Shaastra 2016  Performed by Vivek Patil\n\
     The renowned visual storyteller artist, headlined the first show. Putting together a trifecta of Light, Sand, and Speed Art, the show was a stunning visual experience.`
@@ -117,7 +127,7 @@ const Shows = () => {
                     fontSize={["8vw","4vw"]}
                     color={"white"}
                     marginBottom={"4vh"}
-                    fontFamily= "Neue Helvetica BQ"
+                    className="shows-new-heading"
                    >SHAASTRA NIGHTS</Heading>
                    <Box
                     backgroundColor={"#00F7FF"} color={"black"}
@@ -133,7 +143,7 @@ const Shows = () => {
                 flexDirection={"column"} justifyContent={"center"} alignItems={"center"} 
                >
                    <Image src={About} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
-                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={2}  fontFamily= "Neue Helvetica BQ">ABOUT US</Heading>
+                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={2}    className="shows-new-heading">ABOUT US</Heading>
                    <Text width="80%" fontSize={["4vw","1.5vw"]} zIndex={2}>
                     The flagship event of Shaastra, Shaastra Nights, has made the former a noteworthy leader amongst 
                     parallel fests in the country. Shaastra Nights provide a platform for exquisite performers to display 
@@ -150,7 +160,7 @@ const Shows = () => {
                  height="fit-content" width="100vw"
                  flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
                >
-                   <Heading marginBottom={"8vh"} fontSize={["8vw","3vw"]} color="white"  fontFamily= "Neue Helvetica BQ">
+                   <Heading marginBottom={"8vh"} fontSize={["8vw","3vw"]} color="white"   className="shows-new-heading">
                         PREVIOUS SHOWS
                    </Heading>
                    <Flex
@@ -201,7 +211,7 @@ const Shows = () => {
                        </Tooltip>
                    </Flex>
                    <Flex
-                     width={["90%","70%"]} margin="auto"
+                     width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                    >
@@ -222,6 +232,116 @@ const Shows = () => {
                                 borderRadius={'24px'} src={Soda} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
                        </Tooltip>
                    </Flex>
+                   <Flex
+                     width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                   >
+                       <Tooltip isOpen={isLabelOpen11} 
+                       label="Ukraine's best LED & NEON Show | Shaastra 2016 Performed by Adelaida - The professional dance troupe from Ukraine who performed in over 1000 events across the world brought forth a show that was full of light, energy, and charisma." 
+                        placement="right" padding="2vw" maxWidth={["40vw","18vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen11(true)}
+                                onMouseLeave={() => setIsLabelOpen11(false)}
+                                onClick={() => setIsLabelOpen11(true)} 
+                                borderRadius={'24px'} src={Adeleida} boxSize={["35vw","25vw"]} objectFit={"cover"} objectPosition={"top"}></Image>
+                       </Tooltip>
+                       <Tooltip isOpen={isLabelOpen12} 
+                       label="EDM Night | Shaastra 2018 Opening Show by Broken Symmetry - The audience grooved to the electric beats of our very own talent, Broken Symmetry." 
+                        placement="right" padding="2vw" maxWidth={["40vw","18vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen12(true)}
+                                onMouseLeave={() => setIsLabelOpen12(false)}
+                                onClick={() => setIsLabelOpen12(true)} 
+                                borderRadius={'24px'} src={Broken} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
+                       </Tooltip>
+                   </Flex>
+                   <Flex
+                     width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                   >
+                       <Tooltip isOpen={isLabelOpen7} 
+                       label="Formula DrOne | Shaastra 2017 India's top 8 drone pilots battled it out in this race held in association with the Indian Drone Racing League (IDRL), a pan-India community of drone racing pilots. It was the country's 1st night-drone-racing event!" 
+                        placement="right" padding="2vw" maxWidth={["45vw","18vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen7(true)}
+                                onMouseLeave={() => setIsLabelOpen7(false)}
+                                onClick={() => setIsLabelOpen7(true)} 
+                                borderRadius={'24px'} src={Formula} boxSize={["35vw","25vw"]} objectFit={"cover"} objectPosition={"top"}></Image>
+                       </Tooltip>
+                       <Tooltip isOpen={isLabelOpen8} 
+                       label="Tech Magic Show | Shaastra 2018 Performed by Suhani Shah - Pulling up from a mixed bag of tricks for her show, she held the crowd on their toes by staging grand illusions, along with one of her most famous tricks of predicting the future" 
+                        placement="right" padding="2vw" maxWidth={["45vw","20vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen8(true)}
+                                onMouseLeave={() => setIsLabelOpen8(false)}
+                                onClick={() => setIsLabelOpen8(true)} 
+                                borderRadius={'24px'} src={Suhani} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
+                       </Tooltip>
+                   </Flex>
+                   <Flex
+                     width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                   >
+                       <Tooltip isOpen={isLabelOpen9} 
+                       label="Virtual Magic Show | Shaastra Juniors 2020 Performed by Sushil Jaiswal - This Guinness world record holder, also known as the unlocker of brains, entertained the crowd with his breathtaking magic cum mentalism acts." 
+                        placement="right" padding="2vw" maxWidth={["58vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen9(true)}
+                                onMouseLeave={() => setIsLabelOpen9(false)}
+                                onClick={() => setIsLabelOpen9(true)} 
+                                borderRadius={'24px'} src={Sushil} boxSize={["35vw","25vw"]} objectFit={"cover"} objectPosition={"top"}></Image>
+                       </Tooltip>
+                       <Tooltip isOpen={isLabelOpen10} 
+                       label="Mentalist and Illusionist Performance | Shaastra 2020  Performed by Vivek Desai - The modern magician entertained the crowd with his unique fusion of mentalism and humor on the stage." 
+                        placement="right" padding="2vw" maxWidth={["40vw","20vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen10(true)}
+                                onMouseLeave={() => setIsLabelOpen10(false)}
+                                onClick={() => setIsLabelOpen10(true)} 
+                                borderRadius={'24px'} src={VivekD} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
+                       </Tooltip>
+                   </Flex>
+                   <Flex
+                     width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                   >
+                       <Tooltip isOpen={isLabelOpen1} 
+                       label="HARMONY | Shaastra 2021 Opening Show by Rishab Rajan - The celebrated Berklee College of Music faculty member amazed the crowd with his mystic techno-octaves." 
+                        placement="right" padding="2vw" maxWidth={["40vw","18vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen1(true)}
+                                onMouseLeave={() => setIsLabelOpen1(false)}
+                                onClick={() => setIsLabelOpen1(true)} 
+                                borderRadius={'24px'} src={Rishabh} boxSize={["35vw","25vw"]} objectFit={"cover"} objectPosition={"top"}></Image>
+                       </Tooltip>
+                       <Tooltip isOpen={isLabelOpen2} 
+                       label="EDM Night | Shaastra 2018 Headlining Show by Mariana BO Ranked among the top 100 DJs of 2017, the violinist and DJ extraordinaire produced electrifying moments which made the crowd alive and immersed in a sensory escapade."
+                        placement="right" padding="2vw" maxWidth={["40vw","20vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen2(true)}
+                                onMouseLeave={() => setIsLabelOpen2(false)}
+                                onClick={() => setIsLabelOpen2(true)} 
+                                borderRadius={'24px'} src={Maraiana} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
+                       </Tooltip>
+                   </Flex>
+                   <Flex
+                     width={["90%","70%"]} margin="auto" marginBottom={"4vh"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                   >
+                       <Tooltip isOpen={isLabelOpen3} 
+                       label="CHAOS | Shaastra 2021 Main Show by Kenny Sebastian - the Indian stand-up comedian, musician, and filmmaker burst the crowd into laughter with his narrative craft." 
+                        placement="right" padding="2vw" maxWidth={["58vw","15vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen3(true)}
+                                onMouseLeave={() => setIsLabelOpen3(false)}
+                                onClick={() => setIsLabelOpen3(true)} 
+                                borderRadius={'24px'} src={Kenny} boxSize={["35vw","25vw"]} objectFit={"cover"} objectPosition={"top"}></Image>
+                       </Tooltip>
+                       <Tooltip isOpen={isLabelOpen4} 
+                       label="Freestyl’Air - The French bike troupe showed off their daredevilry while performing stunts that only professionally trained athletes like themselves were capable of pulling off. They left the audience with their hearts beating in the air, quite literally!" 
+                        placement="right" padding="2vw" maxWidth={["40vw","20vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                        <Image onMouseEnter={() => setIsLabelOpen4(true)}
+                                onMouseLeave={() => setIsLabelOpen4(false)}
+                                onClick={() => setIsLabelOpen4(true)} 
+                                borderRadius={'24px'} src={Freestyle} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
+                       </Tooltip>
+                   </Flex>
                </Flex>
                <Flex width={"100vw"} height={"100vh"} marginTop={"0%"}
                id="reverb"
@@ -230,7 +350,7 @@ const Shows = () => {
                 backgroundImage={Reverb} backgroundPosition={"center"} backgroundRepeat={"no-repeat"} backgroundSize={"cover"}
                >
                    <Box position={"absolute"} top="0" left="0" content="" height="100vh" width="100vw" backgroundColor={"rgba(0, 0, 0, 0.6)"}></Box>
-                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={"2"}  fontFamily= "Neue Helvetica BQ">REVERB</Heading>
+                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={"2"}   className="shows-new-heading">REVERB</Heading>
                    <Text width="80%" fontSize={["4vw","1.5vw"]} fontFamily={"Montserrat"} zIndex={"2"}>
                     Our latest series, Reverb, aims to bridge the gap between technology and music by showcasing 
                     performances that are a juxtaposition of the same.
@@ -248,16 +368,16 @@ const Shows = () => {
                     alignItems={"center"}
                    >
                        <Tooltip isOpen={isLabelOpen7} 
-                       label="ALGORAVE | Presented by Reverb - Alex McLean, Lizzie Wilson, and Abhinay Khoparzi This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
-                        placement="right" padding="2vw"maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                       label="ALGORAVE | Presented by Reverb Alex McLean, Lizzie Wilson, and Abhinay Khoparzi - This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
+                        placement="right" padding="2vw"maxWidth={["50vw","20vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen7(true)}
                                 onMouseLeave={() => setIsLabelOpen7(false)}
                                 onClick={() => setIsLabelOpen7(true)} 
                                 borderRadius={'24px'} src={Four} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
                        </Tooltip>
                        <Tooltip isOpen={isLabelOpen8} 
-                       label="ALGORAVE | Presented by Reverb - Alex McLean, Lizzie Wilson, and Abhinay Khoparzi This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
-                        placement="right" padding="2vw" maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                       label="ALGORAVE | Presented by Reverb Alex McLean, Lizzie Wilson, and Abhinay Khoparzi - This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
+                        placement="right" padding="2vw" maxWidth={["50vw","20vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen8(true)}
                                 onMouseLeave={() => setIsLabelOpen8(false)}
                                 onClick={() => setIsLabelOpen8(true)} 
@@ -278,8 +398,8 @@ const Shows = () => {
                                 borderRadius={'24px'} src={Dyskenetic} boxSize={["35vw","25vw"]} objectFit={"cover"}></Image>
                        </Tooltip>
                        <Tooltip isOpen={isLabelOpen10} 
-                       label="ALGORAVE | Presented by Reverb - Alex McLean, Lizzie Wilson, and Abhinay Khoparzi This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
-                        placement="right" padding="2vw" maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
+                       label="ALGORAVE | Presented by Reverb Alex McLean, Lizzie Wilson, and Abhinay Khoparzi - This legendary collaboration among the 3 pioneering artists took coding from the obscurities of a screen to the dance floor." 
+                        placement="right" padding="2vw" maxWidth={["50vw","20vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}>
                         <Image onMouseEnter={() => setIsLabelOpen10(true)}
                                 onMouseLeave={() => setIsLabelOpen10(false)}
                                 onClick={() => setIsLabelOpen10(true)} 
