@@ -624,7 +624,7 @@ const Home = (props: Props) => {
                     </div>
                     <div className="contentBox">
                       <h3>Dr. Barry Barish</h3>
-                      <p>Noble Prize in Physics, 2017</p>
+                      <p>Nobel Prize in Physics, 2017</p>
                     </div>
                   </div>
                 </div>
