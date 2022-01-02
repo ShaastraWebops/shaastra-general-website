@@ -54,7 +54,9 @@ import Nothwind from "../../images/night/Nothwind1.jpg";
 import Vivek from "../../images/night/vivek patil.jpg";
 import Reverb from "../../images/night/Reverb.jpg";
 import Soda from "../../images/night/Comedy Night.jpeg";
-
+import Kenny from "../../images/night/Kenny Sebastian.jpg"
+import Maraiana from "../../images/night/Mariana bo.jpg"
+import Adeleida from "../../images/night/adeleida.jpg"
 
 interface Props {}
 
@@ -224,7 +226,7 @@ const Home = (props: Props) => {
                 SALES
               </a>
               <br />
-              Till 30th December
+              Till 1st January
             </h3>
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;
@@ -519,24 +521,34 @@ const Home = (props: Props) => {
               slidesPerView={"auto"}
             >
               <SwiperSlide>
-                <img src={Vivek} alt="" style={{ objectFit: "cover" }} />
+                <img src={Dan} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
-                    <h3>Vivek Patil</h3>
-                    <p>Sand Art Show</p>
-                    <p>Shaastra 2019</p>
+                    <h3>Dan Rhodes</h3>
+                    <p>Virtual Magic Show</p>
+                    <p>Shaastra Juniors 2020</p>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={Mirage} alt="" style={{ objectFit: "cover" }} />
+                <img src={Kenny} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
-                    <h3>Vilas Nayak</h3>
+                    <h3>Kenny Sebastian</h3>
+                    <p>CHAOS</p>
+                    <p>Shaastra 2021</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={Maraiana} alt="" style={{ objectFit: "cover" }} />
+                <div className="contentBox">
+                  <div className="left">
+                    <h3>Mariana Bo</h3>
                     <p>
-                      MIRAGE Laser Show
+                      EDM Night
                     </p>
-                    <p>Shaastra 2019</p>
+                    <p>Shaastra 2018</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -551,12 +563,12 @@ const Home = (props: Props) => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={Dan} alt="" style={{ objectFit: "cover" }} />
+                <img src={Adeleida} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
-                    <h3>Dan Rhodes</h3>
-                    <p>Virtual Magic Show</p>
-                    <p>Shaastra Juniors 2020</p>
+                    <h3>Adelaida</h3>
+                    <p>LED & NEON Show</p>
+                    <p>Shaastra 2016</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -570,16 +582,6 @@ const Home = (props: Props) => {
                   <div className="left">
                     <h3>Sonic Snares</h3>
                     <p>HARMONY</p>
-                    <p>Shaastra 2021</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Soda} alt="" style={{ objectFit: "cover" }} />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>SODA</h3>
-                    <p>CHAOS</p>
                     <p>Shaastra 2021</p>
                   </div>
                 </div>
@@ -622,7 +624,7 @@ const Home = (props: Props) => {
                     </div>
                     <div className="contentBox">
                       <h3>Dr. Barry Barish</h3>
-                      <p>Noble Prize in Physics, 2017</p>
+                      <p>Nobel Prize in Physics, 2017</p>
                     </div>
                   </div>
                 </div>

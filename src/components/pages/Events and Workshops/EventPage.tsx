@@ -81,7 +81,7 @@ const EventPage = () => {
   const [earlybid, setEarlyBid] = useState("");
   const [earlyBid] = useEarlybidofferMutation();
   const today = new Date();
-  const deadline = new Date("December 30, 2021 23:59:59");
+  const deadline = new Date("January 1,2022 23:59:59");
   if (error) console.log(error);
   if (loading) return <Loader />;
   const timeline =
@@ -134,13 +134,22 @@ const EventPage = () => {
           <Flex justifyContent={"flex-end"}>
             {isAdmin ? (
               <Flex flexDirection={["column"]}>
-                <Heading
+                 {
+                  data?.getEvent.registrationType=== "INDIVIDUAL" ?       
+                  <Heading
                   size={"md"}
                   padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
-                >
-                  {" "}
-                  Registered Users Count : {data?.getEvent.registeredUserCount}
-                </Heading>
+                  >
+                  {" "} Registered Users Count : {data?.getEvent.registeredUserCount}
+                  </Heading>
+                  :  <Heading
+                  size={"md"}
+                  padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
+                  >
+                  {" "} Registered Teams Count : {data?.getEvent.registeredTeamCount}
+                  </Heading>
+
+                 }
                 <Button
                   padding={["0.5vw", "0.5vw", "0.5vw", "1.vw"]}
                   fontSize={["3vw", "3vw", "3vw", "1vw"]}
@@ -348,7 +357,7 @@ const EventPage = () => {
                 >
                   Hurry up !! Early Bird Sale ends on{" "}
                   <span style={{ fontWeight: 600 }}>
-                    December 30th 2021 11:59 pm
+                    January 1st 2022 11:59 pm
                   </span>
                 </Text>
               )}

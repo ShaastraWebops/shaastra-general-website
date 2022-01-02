@@ -16,7 +16,9 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 
 dotenv.config();
 
@@ -40,6 +42,9 @@ function loadScript(src: string) {
 }
 
 const PayRegister = ({ data, isAdmin }: Probs) => {
+  const history = useHistory();
+  var { isOpen, onOpen, onClose } = useDisclosure();
+
   const [register, { data: data1, error, loading }] = useRegisterMutation({
     /******** On create order completion, open Razorpay ********/
     async onCompleted(data) {
@@ -144,16 +149,29 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
     );
   }
 
-  if (updateEventPayError || error)
+  if (updateEventPayError || error) {
+    error
+      ? (onClose = () => {
+          if (error.message === "Please login to continue") {
+            history.push("/login");
+          }
+          window.location.reload();
+        })
+      : (onClose = () => {
+          window.location.reload();
+        });
     return (
-      <Modal isOpen={true} onClose={() => window.location.reload()}>
+      <Modal isOpen={true} onClose={onClose}>
         <ModalOverlay />
         <ModalContent backgroundColor="#f1aaaa" color="black">
-          <ModalHeader>Some error occurred</ModalHeader>
+          <ModalHeader>
+            Some error occurred {updateEventPayError?.message} {error?.message}
+          </ModalHeader>
           <ModalCloseButton />
         </ModalContent>
       </Modal>
     );
+  }
 
   if (loading || updateEventPayLoading)
     return (
