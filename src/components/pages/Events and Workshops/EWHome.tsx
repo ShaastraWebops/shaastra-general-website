@@ -37,8 +37,8 @@ const Home = () => {
                     </Heading>
                 </Center>
                 <Flex color="white" flexDirection={["column", "row"]} height={["60vh", "fit-content"]} fontSize={["3vw","1.5vw"]} position={"relative"} zIndex={1} width="80%" margin="0 auto" marginTop={"4vh"} justifyContent={"space-between"} alignItems={"center"}>
-                    <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href="/events">Events</a></Flex>
-                    <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href="/events/workshops" >Workshops</a></Flex>
+                <a href="/events"><Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}>Events</Flex></a>
+                <a href="/events/workshops"><Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}>Workshops</Flex></a>
                     {/* <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href='/summit'>Summit</a></Flex> */}
                     {/* <Flex className='EWHome-circle' justifyContent={"center"} alignItems={"center"} borderRadius={"50%"} border="2px solid white" boxSize={["20vw","10vw"]}><a href="/tif">TIF</a></Flex> */}
                 </Flex>
