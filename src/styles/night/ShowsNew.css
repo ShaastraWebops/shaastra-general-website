@@ -37,3 +37,13 @@
         padding-top: 8vw;
     }
 } */
+
+@font-face {
+    font-family: horizonFont;
+    src: url("../../images/night/Horizon.ttf");
+  }
+
+  .shows-new-heading
+  {
+      font-family: horizonFont !important;
+  }
