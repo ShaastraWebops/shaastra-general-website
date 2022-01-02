@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
 
-export default function Pricing() {
+export default function Pricing(props) {
     return (
         <Center py={6}>
             <Box
@@ -34,20 +34,38 @@ export default function Pricing() {
                         px={3}
                         color={'green.500'}
                         rounded={'full'}>
-                        Hobby
+                        {props.ComboName}
                     </Text>
                     <Stack direction={'row'} align={'center'} justify={'center'}>
-                        <Text fontSize={'3xl'}>$</Text>
+                        <Text fontSize={'3xl'}>&#8377;</Text>
                         <Text fontSize={'6xl'} fontWeight={800}>
-                            79
+                            {props.DiscountedPrice}
                         </Text>
-                        <Text color={'gray.500'}>/month</Text>
                     </Stack>
+                    <Text color={'gray.500'} textDecorationLine={'line-through'}>&#8377;{props.ActualPrice}</Text>
                 </Stack>
 
                 <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
                     <List spacing={3}>
-                        <ListItem>
+                        <Text fontWeight={600} fontSize={'17px'}>
+                            {props.title}
+                        </Text>
+                        <Text paddingLeft={'20px'} fontWeight={600}>
+                            <ul>
+                                <li>
+                                    {props.WS1}
+                                    
+                                </li>
+                                <li>
+                                    {props.WS2}
+                                    
+                                </li>                                <li>
+                                    {props.WS3}
+                                    
+                                </li>
+                            </ul>
+                        </Text>
+                        {/* <ListItem>
                             <ListIcon as={CheckIcon} color="green.400" />
                             5.000 page views
                         </ListItem>
@@ -62,7 +80,7 @@ export default function Pricing() {
                         <ListItem>
                             <ListIcon as={CheckIcon} color="green.400" />
                             All features
-                        </ListItem>
+                        </ListItem> */}
                     </List>
 
                     <Button
@@ -78,7 +96,7 @@ export default function Pricing() {
                         _focus={{
                             bg: 'green.500',
                         }}>
-                        Start your trial
+                        Start Now
                     </Button>
                 </Box>
             </Box>
