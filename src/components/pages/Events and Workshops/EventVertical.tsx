@@ -37,9 +37,12 @@ const EventVertical = () => {
             filter : name.toUpperCase()
         }
     })
-    console.log(data?.getEvents.events)
-    const filter = () => {
-
+    var events;
+    if(data){
+          events = data?.getEvents.events;
+          var eventsShuffle = events.map((value) => ({ value, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ value }) => value)
     }
 
     return(
@@ -80,7 +83,7 @@ const EventVertical = () => {
                 <Button backgroundColor="white" className={search} color="black" onClick={filter}>Search</Button>
             </Flex> */}
             {
-                data?.getEvents.events.map((event)=>{
+               eventsShuffle?.map((event)=>{
                     if(event.vertical === "IGNITE" && event.id === "ckxdasopm0024wop7cxphcidu" ) return null
                         return(
                             <EventVerticalComponent data= {event} isAdmin = {false}/>

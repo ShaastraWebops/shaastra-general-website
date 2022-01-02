@@ -99,6 +99,7 @@ query getEvent($EventID: String!) {
     teamSize
     earlybidoffer
     registeredUserCount
+    registeredTeamCount
     faqs {
       id
       answer
