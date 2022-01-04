@@ -59,10 +59,13 @@ export default function Pricing(props) {
                                 <li>
                                     {props.WS2}
                                     
-                                </li>                                <li>
+                                </li>                                
+                                {props.title === "MAnagement Workshops" ? (
+                                    <li>
                                     {props.WS3}
-                                    
                                 </li>
+                                ):(<>
+                                </>)}
                             </ul>
                         </Text>
                         {/* <ListItem>
