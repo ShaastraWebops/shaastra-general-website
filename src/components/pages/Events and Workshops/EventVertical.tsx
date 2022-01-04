@@ -198,7 +198,7 @@ const EventVertical = () => {
                             <CardForWorkShop title="Data Science With Projects, Sustainibility using ML & DS" WS1="Intro to DS with Projects" WS2="Sustainibility using ML & DS" WS3="Art of Data Visualization" Price1="500" Price2="500" Price3="500" ActualPrice="1500" DiscountedPrice="1200" ComboName="Data Science Combo" />
                             <CardForWorkShop title="CC,Hacking,Discord bot" WS1="Intro to Cloud Computing" WS2="Hacking 101 with Microcontrollers" WS3="Making Discord bot from scratch" Price1="500" Price2="500" Price3="500" ActualPrice="1500" DiscountedPrice="1200" ComboName="Cybermatic Combo" />
                             <CardForWorkShop title="Arduino, embedded system,RTOS" WS1="Intro to Arduino and ioT" WS2="Intro to Embedded system Programming" WS3="Parallel Processing and Real-time OS" Price1="500" Price2="500" Price3="600" ActualPrice="1600" DiscountedPrice="1300" ComboName="Electronic Combo" />
-                            <CardForWorkShop title="PM 101, Consult 101" WS1="Product Management 101" WS2="Consult 101" Price1="500" Price2="500" Price3="350" ActualPrice="1000" DiscountedPrice="800" ComboName="Management Workshops" />
+                            <CardForWorkShop title="PM 101, Consult 101" WS3="Product Management 101" WS2="Consult 101" WS1="2 Workshops" Price1="500" Price2="500" Price3="350" ActualPrice="1000" DiscountedPrice="800" ComboName="Management Workshops" />
                         </Flex>
                     ) : (
                         <></>
