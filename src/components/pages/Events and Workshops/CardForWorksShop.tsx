@@ -32,7 +32,7 @@ export default function Pricing(props) {
                         bg={useColorModeValue('green.50', 'green.900')}
                         p={2}
                         px={3}
-                        color={'green.500'}
+                        color={'#301b1b'}
                         rounded={'full'}>
                         {props.ComboName}
                     </Text>
@@ -86,17 +86,17 @@ export default function Pricing(props) {
                     <Button
                         mt={10}
                         w={'full'}
-                        bg={'green.400'}
+                        bg={'#301b1b'}
                         color={'white'}
                         rounded={'xl'}
                         boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
                         _hover={{
-                            bg: 'green.500',
+                            bg: '#543535',
                         }}
                         _focus={{
-                            bg: 'green.500',
+                            bg: '#543535',
                         }}>
-                        Start Now
+                        Register Now
                     </Button>
                 </Box>
             </Box>

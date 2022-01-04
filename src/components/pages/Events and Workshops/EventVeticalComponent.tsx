@@ -262,13 +262,13 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
                   <Text>
                     {islarge
                       ? converter
-                          .makeHtml(description.props.children)
-                          .replace(/<[^>]+>/g, "")
-                          .slice(0, 400) + "...."
+                        .makeHtml(description.props.children)
+                        .replace(/<[^>]+>/g, "")
+                        .slice(0, 400) + "...."
                       : converter
-                          .makeHtml(description.props.children)
-                          .replace(/<[^>]+>/g, "")
-                          .slice(0, 100) + "...."}
+                        .makeHtml(description.props.children)
+                        .replace(/<[^>]+>/g, "")
+                        .slice(0, 100) + "...."}
                   </Text>
                   <Flex
                     height="fit-content"
@@ -286,17 +286,17 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
                           </Alert>
                         </Box>
                       ) : //    <Box marginTop="2vh"  height="1vw" >
-                      //    <Button backgroundColor={buttoncolor} color='black'
-                      //     onClick={
-                      //         data.registrationType === "INDIVIDUAL" ? ()=>{IndividualReg(data.id)} : onOpen
-                      //     }
-                      //    >REGISTER NOW</Button>
-                      //    </Box>
-                      data.registrationfee !== "0" ? (
-                        <PayRegister isAdmin={isAdmin} data={data!} />
-                      ) : (
-                        <RegisterNow isAdmin={isAdmin} data={data} />
-                      )
+                        //    <Button backgroundColor={buttoncolor} color='black'
+                        //     onClick={
+                        //         data.registrationType === "INDIVIDUAL" ? ()=>{IndividualReg(data.id)} : onOpen
+                        //     }
+                        //    >REGISTER NOW</Button>
+                        //    </Box>
+                        data.registrationfee !== "0" ? (
+                          <PayRegister isAdmin={isAdmin} data={data!} />
+                        ) : (
+                          <RegisterNow isAdmin={isAdmin} data={data} />
+                        )
                     ) : null}
                     <Box marginTop="2vh" height="1vw">
                       <Button
