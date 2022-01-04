@@ -433,13 +433,13 @@ function ChessBlitz() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
-              <label>FIDE Rating</label>
+              <label>FIDE Rating {"(optional)"}</label>
               <input
                 type="text"
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
               />
-              <label>FIDE Title</label>
+              <label>FIDE Title {"(optional)"}</label>
               <input
                 type="text"
                 value={title}
