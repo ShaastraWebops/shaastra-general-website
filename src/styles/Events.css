@@ -68,6 +68,13 @@
     color: #ea8a94 !important;
 }
 
+#referal{
+    width: 200px;
+    height: 7vh;
+    padding: 10px;
+    border: 2px dashed black;
+    border-radius: 5px;
+}
 
 .events-vertical input 
 {

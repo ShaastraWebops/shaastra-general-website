@@ -54,10 +54,22 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
   const button = useColorModeValue("dark", "light");
 
   const [islarge, setLarge] = useState(false);
-
+  const [referenceCode, setReferenceCode] = useState("");
+  const [courseName, setCourseName] = useState("");
+  const ReferelCode = (e) => {
+    setReferenceCode(e.target.value);
+    let datas = e.target.value;
+    sessionStorage.setItem("referalcode",`${datas}`);
+  }
+  const CourseNameCode = (e) => {
+    setCourseName(e.target.value);
+    let datas = e.target.value;
+    sessionStorage.setItem("coursename",`${datas}`);
+  }
   React.useEffect(() => {
     if (window.innerWidth < 900) {
       setLarge(false);
+      
     } else {
       setLarge(true);
     }
@@ -312,6 +324,29 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
                         View Details
                       </Button>
                     </Box>
+                  </Flex>
+                  <Flex marginTop="2vh" height="7vh" flexDirection={'row'} backgroundColor={'#fff'}>
+                    <Text>Have Referal Code ?</Text>
+                    <Input
+                      id="referal"
+                      width={'10px'}
+                      marginLeft={'18px'}
+                      border="2px solid black"
+                      height={'19px'}
+                      placeholder="Enter Referal Code"
+                      onChange={ReferelCode}
+                    >
+                    </Input>
+                    <Input
+                      id="referal"
+                      width={'10px'}
+                      marginLeft={'18px'}
+                      border="2px solid black"
+                      height={'19px'}
+                      placeholder="Enter Course Name"
+                      onChange={CourseNameCode}
+                    >
+                    </Input>
                   </Flex>
 
                   {/* <Modal isOpen={isOpen} onClose={onClose}>
