@@ -964,8 +964,11 @@ export type ComboOfferMutationFn = ApolloReactCommon.MutationFunction<ComboOffer
  * const [comboOfferMutation, { data, loading, error }] = useComboOfferMutation({
  *   variables: {
  *      combo: // value for 'combo'
+<<<<<<< HEAD
  *      workshopsIDs: // value for 'workshopsIDs'
  *      TShirtsDetails: // value for 'TShirtsDetails'
+=======
+>>>>>>> 98edca6e25d7c13026385f145442557151e4760a
  *   },
  * });
  */
