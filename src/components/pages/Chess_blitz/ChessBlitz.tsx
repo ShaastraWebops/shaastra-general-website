@@ -408,11 +408,11 @@ function ChessBlitz() {
               <h4>Phone</h4>
               <p>
                 <span>Shyam Sundar PB : </span>
-                <span>+91-7397259369</span>
+                <span>+91 7397259369</span>
               </p>
               <p>
                 <span>Aditya S Sadhu : </span>
-                <span>+91-9566129422</span>
+                <span>+91 9566129422</span>
               </p>
             </div>
           </div>
@@ -433,13 +433,13 @@ function ChessBlitz() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
-              <label>FIDE Rating</label>
+              <label>FIDE Rating {"(optional)"}</label>
               <input
                 type="text"
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
               />
-              <label>FIDE Title</label>
+              <label>FIDE Title {"(optional)"}</label>
               <input
                 type="text"
                 value={title}

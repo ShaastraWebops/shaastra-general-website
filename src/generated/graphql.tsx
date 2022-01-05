@@ -191,6 +191,8 @@ export type LoginInput = {
 };
 
 export type Mutation = {
+  ComboOffer: RegisterOutput;
+  ComboupdateEventPay: Scalars['Boolean'];
   addEvent: Event;
   addTimings: Scalars['Boolean'];
   capturePaymentChess: Scalars['Boolean'];
@@ -215,6 +217,16 @@ export type Mutation = {
   resetPassword: Scalars['Boolean'];
   updateEventPay: Scalars['Boolean'];
   verifyUser: Scalars['Boolean'];
+};
+
+
+export type MutationComboOfferArgs = {
+  combo: Scalars['String'];
+};
+
+
+export type MutationComboupdateEventPayArgs = {
+  data: UpdateEventPayInput;
 };
 
 
@@ -486,6 +498,13 @@ export type RegisterMutationVariables = Exact<{
 
 export type RegisterMutation = { register: { registered?: boolean | null | undefined, eventPay?: { orderId: string, amount: number, user: { name: string, email: string, mobile: string, address: string }, event: { id: string, name: string } } | null | undefined } };
 
+export type ComboOfferMutationVariables = Exact<{
+  combo: Scalars['String'];
+}>;
+
+
+export type ComboOfferMutation = { ComboOffer: { eventPay?: { orderId: string, amount: number, user: { name: string, email: string, mobile: string, address: string } } | null | undefined } };
+
 export type UpdateEventPayMutationVariables = Exact<{
   eventId: Scalars['String'];
   data: UpdateEventPayInput;
@@ -493,6 +512,13 @@ export type UpdateEventPayMutationVariables = Exact<{
 
 
 export type UpdateEventPayMutation = { updateEventPay: boolean };
+
+export type ComboupdateEventPayMutationVariables = Exact<{
+  data: UpdateEventPayInput;
+}>;
+
+
+export type ComboupdateEventPayMutation = { ComboupdateEventPay: boolean };
 
 export type CreateTeamandRegisterMutationVariables = Exact<{
   createTeamAndRegisterData: CreateTeamInput;
@@ -889,6 +915,48 @@ export function useRegisterMutation(baseOptions?: ApolloReactHooks.MutationHookO
 export type RegisterMutationHookResult = ReturnType<typeof useRegisterMutation>;
 export type RegisterMutationResult = ApolloReactCommon.MutationResult<RegisterMutation>;
 export type RegisterMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
+export const ComboOfferDocument = gql`
+    mutation ComboOffer($combo: String!) {
+  ComboOffer(combo: $combo) {
+    eventPay {
+      orderId
+      amount
+      user {
+        name
+        email
+        mobile
+        address
+      }
+    }
+  }
+}
+    `;
+export type ComboOfferMutationFn = ApolloReactCommon.MutationFunction<ComboOfferMutation, ComboOfferMutationVariables>;
+
+/**
+ * __useComboOfferMutation__
+ *
+ * To run a mutation, you first call `useComboOfferMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useComboOfferMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [comboOfferMutation, { data, loading, error }] = useComboOfferMutation({
+ *   variables: {
+ *      combo: // value for 'combo'
+ *   },
+ * });
+ */
+export function useComboOfferMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ComboOfferMutation, ComboOfferMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<ComboOfferMutation, ComboOfferMutationVariables>(ComboOfferDocument, options);
+      }
+export type ComboOfferMutationHookResult = ReturnType<typeof useComboOfferMutation>;
+export type ComboOfferMutationResult = ApolloReactCommon.MutationResult<ComboOfferMutation>;
+export type ComboOfferMutationOptions = ApolloReactCommon.BaseMutationOptions<ComboOfferMutation, ComboOfferMutationVariables>;
 export const UpdateEventPayDocument = gql`
     mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!) {
   updateEventPay(EventId: $eventId, data: $data)
@@ -921,6 +989,37 @@ export function useUpdateEventPayMutation(baseOptions?: ApolloReactHooks.Mutatio
 export type UpdateEventPayMutationHookResult = ReturnType<typeof useUpdateEventPayMutation>;
 export type UpdateEventPayMutationResult = ApolloReactCommon.MutationResult<UpdateEventPayMutation>;
 export type UpdateEventPayMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateEventPayMutation, UpdateEventPayMutationVariables>;
+export const ComboupdateEventPayDocument = gql`
+    mutation ComboupdateEventPay($data: UpdateEventPayInput!) {
+  ComboupdateEventPay(data: $data)
+}
+    `;
+export type ComboupdateEventPayMutationFn = ApolloReactCommon.MutationFunction<ComboupdateEventPayMutation, ComboupdateEventPayMutationVariables>;
+
+/**
+ * __useComboupdateEventPayMutation__
+ *
+ * To run a mutation, you first call `useComboupdateEventPayMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useComboupdateEventPayMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [comboupdateEventPayMutation, { data, loading, error }] = useComboupdateEventPayMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useComboupdateEventPayMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ComboupdateEventPayMutation, ComboupdateEventPayMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<ComboupdateEventPayMutation, ComboupdateEventPayMutationVariables>(ComboupdateEventPayDocument, options);
+      }
+export type ComboupdateEventPayMutationHookResult = ReturnType<typeof useComboupdateEventPayMutation>;
+export type ComboupdateEventPayMutationResult = ApolloReactCommon.MutationResult<ComboupdateEventPayMutation>;
+export type ComboupdateEventPayMutationOptions = ApolloReactCommon.BaseMutationOptions<ComboupdateEventPayMutation, ComboupdateEventPayMutationVariables>;
 export const CreateTeamandRegisterDocument = gql`
     mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!) {
   createTeamAndRegister(data: $createTeamAndRegisterData)
