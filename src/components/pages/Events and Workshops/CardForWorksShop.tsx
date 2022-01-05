@@ -34,7 +34,6 @@ export default function Pricing(props) {
                         bg={useColorModeValue('green.50', 'green.900')}
                         p={2}
                         px={3}
-                        color={'#301b1b'}
                         rounded={'full'}>
                         {props.ComboName}
                     </Text>
