@@ -47,7 +47,7 @@ export default function Pricing(props) {
                 </Stack>
 
                 <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
-                    <List spacing={3}>
+                    <List spacing={3} textAlign={"left"}>
                         <Text fontWeight={600} fontSize={'17px'}>
                             {props.title}
                         </Text>

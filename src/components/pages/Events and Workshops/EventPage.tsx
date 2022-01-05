@@ -342,7 +342,7 @@ const EventPage = () => {
                   </Flex>
                 );
               })}
-            {data?.getEvent.earlybidoffer &&
+            {/* {data?.getEvent.earlybidoffer &&
               data?.getEvent?.vertical === "WORKSHOPS" && (
                 <Text
                   className="rainbow"
@@ -360,7 +360,7 @@ const EventPage = () => {
                     January 1st 2022 11:59 pm
                   </span>
                 </Text>
-              )}
+              )} */}
             {data?.getEvent.registrationfee != "0" && (
               <Flex
                 marginTop="12px"
