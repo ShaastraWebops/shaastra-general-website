@@ -208,7 +208,7 @@ const Home = (props: Props) => {
                 13th <span id="dash"></span> 16th January
               </p>
             </div>
-            <h3 id="salesLink">
+            {/* <h3 id="salesLink">
               Early Bird Special Offer
               <br />
               <a
@@ -227,7 +227,7 @@ const Home = (props: Props) => {
               </a>
               <br />
               Till 1st January
-            </h3>
+            </h3> */}
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;
             </h3> */}

@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import CustomBox from '../../shared/CustomBox'
 import Footer from '../../shared/Footer'
+import CardForWorkShop from './CardForWorksShop';
 import { useColorModeValue } from '@chakra-ui/color-mode'
 
 function Workshops() {
