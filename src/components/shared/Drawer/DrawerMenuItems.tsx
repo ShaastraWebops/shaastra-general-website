@@ -158,6 +158,20 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
+          <Link to="/sales">Sales</Link>
+        </Box>
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          fontSize={28}
+          onMouseOver={() => setMenu("click")}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={2}
+          pr={12}
+          mb={4}
+        >
           <Link to="/blitz-chess">Blitz Chess</Link>
         </Box>
         <Box
@@ -382,10 +396,13 @@ export const DrawerMobileMenuItems = () => {
           <Link to="/">Home</Link>
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
-          <Link to="/exhibitions">Exhibitions</Link>
+          <Link to="/eventsworkshops">Events and Workshops</Link>
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
-          <Link to="/eventsworkshops">Events and Workshops</Link>
+          <Link to="/sales">Sales</Link>
+        </Box>
+        <Box fontSize={27} fontStyle={"normal"}>
+          <Link to="/exhibitions">Exhibitions</Link>
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/blitz-chess">Blitz Chess</Link>
