@@ -2,6 +2,8 @@ import React from "react";
 import {
   GetEventQuery,
   RegisterMutation,
+  useComboOfferMutation,
+  useComboupdateEventPayMutation,
   useRegisterMutation,
   useUpdateEventPayMutation,
 } from "../../../generated/graphql";
@@ -23,8 +25,8 @@ import { useHistory } from "react-router-dom";
 dotenv.config();
 
 interface Probs {
-  data: GetEventQuery["getEvent"];
   isAdmin: Boolean;
+  combo : string
 }
 
 function loadScript(src: string) {
@@ -41,15 +43,15 @@ function loadScript(src: string) {
   });
 }
 
-const PayRegister = ({ data, isAdmin }: Probs) => {
+const ComboPay = ({  isAdmin , combo }: Probs) => {
   const history = useHistory();
   var { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [register, { data: data1, error, loading }] = useRegisterMutation({
+  const [register, { data: data1, error, loading }] = useComboOfferMutation({
     /******** On create order completion, open Razorpay ********/
     async onCompleted(data) {
-      if (data.register.eventPay) {
-        await loadRazorpay(data.register.eventPay);
+      if (data.ComboOffer) {
+        await loadRazorpay(data.ComboOffer.eventPay!);
       }
     },
   });
@@ -62,10 +64,10 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
       loading: updateEventPayLoading,
       error: updateEventPayError,
     },
-  ] = useUpdateEventPayMutation();
+  ] = useComboupdateEventPayMutation();
 
   const loadRazorpay = async (
-    data: RegisterMutation["register"]["eventPay"]
+    data: any
   ) => {
     /******** Load Razorpay Script ********/
     const res = await loadScript(
@@ -81,7 +83,7 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
       key: process.env.REACT_APP_RAZORPAY_KEY,
       amount: data?.amount,
       currency: "INR",
-      name: data?.event.name,
+      name: combo ,
       image: "", //TODO: Add the shaastra link here
       order_id: data?.orderId,
 
@@ -90,7 +92,6 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
         try {
           await updateEventPayMutation({
             variables: {
-              eventId: data?.event.id!,
               data: {
                 orderId: response.razorpay_order_id,
                 payementId: response.razorpay_payment_id,
@@ -125,16 +126,16 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
     try {
       /******** Create OrderID ********/
       await register({
-        variables: {
-          EventID: data.id,
-        },
+        variables : {
+            combo
+        }
       });
     } catch (e) {
       console.log(e);
     }
   };
 
-  if (updateEventPayData?.updateEventPay) {
+  if (updateEventPayData?.ComboupdateEventPay) {
     const onClose = () => {
       window.location.reload();
     };
@@ -148,7 +149,7 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
       </Modal>
     );
   }
-
+  console.log(error)
   if (updateEventPayError || error) {
     error
       ? (onClose = () => {
@@ -165,7 +166,7 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
         <ModalOverlay />
         <ModalContent backgroundColor="#f1aaaa" color="black">
           <ModalHeader>
-            Some error occurred {updateEventPayError?.message} {error?.message}
+             {updateEventPayError?.message} {error?.message}
           </ModalHeader>
           <ModalCloseButton />
         </ModalContent>
@@ -190,14 +191,7 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
   return (
     <div>
       {!isAdmin &&
-        (data.registrationType === "NONE" ? (
-          <Box marginRight={"2vw"} marginTop="2vh" height="1vw">
-            <Alert status="info" size={"xs"}>
-              <AlertIcon />
-              Registration is not required for this event
-            </Alert>
-          </Box>
-        ) : (
+         (
           <Box
             marginRight={"2vw"}
             marginTop="2vh"
@@ -209,21 +203,26 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
             ]}
           >
             <Button
-              backgroundColor={"rgb(171, 228, 156)"}
-              color="black"
-              padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
-              fontSize={["2vw", "2vw", "2vw", "1vw"]}
+             mt={10}
+             w={'full'}
+             bg={'#301b1b'}
+             color={'white'}
+             rounded={'xl'}
+             boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+             _hover={{
+                 bg: '#543535',
+             }}
+             _focus={{
+                 bg: '#543535',
+             }}
               onClick={registerHandler}
-              // onClick={
-              //   //() => IndividualReg(data.id)
-              // }
             >
               REGISTER NOW
             </Button>
           </Box>
-        ))}
+        )}
     </div>
   );
 };
 
-export default PayRegister;
+export default ComboPay;

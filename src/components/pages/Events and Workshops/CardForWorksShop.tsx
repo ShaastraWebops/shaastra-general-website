@@ -1,3 +1,4 @@
+import * as React from 'react'
 import {
     Box,
     Center,
@@ -10,6 +11,7 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
+import ComboPay from './ComboPay';
 
 export default function Pricing(props) {
     return (
@@ -32,7 +34,6 @@ export default function Pricing(props) {
                         bg={useColorModeValue('green.50', 'green.900')}
                         p={2}
                         px={3}
-                        color={'#301b1b'}
                         rounded={'full'}>
                         {props.ComboName}
                     </Text>
@@ -83,7 +84,7 @@ export default function Pricing(props) {
                         </ListItem> */}
                     </List>
 
-                    <Button
+                    {/* <Button
                         mt={10}
                         w={'full'}
                         bg={'#301b1b'}
@@ -97,7 +98,8 @@ export default function Pricing(props) {
                             bg: '#543535',
                         }}>
                         Register Now
-                    </Button>
+                    </Button> */}
+                    <ComboPay isAdmin={false} combo={props.ComboName}/>
                 </Box>
             </Box>
         </Center>
