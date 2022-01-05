@@ -87,15 +87,13 @@ const EventVertical = () => {
                         }
                         <Text position={"relative"} zIndex={3} color="white" width="60vw" margin="auto" className="vertical-desp" fontWeight={"700"} fontSize={"1.2vw"}>{desp}</Text>
                     </Box>
-                    <Flex width={'90%'} justifyContent={'center'}>
+                 {/* <Flex width={'90%'} justifyContent={'center'}>
                         <Flex flexDirection={'column'} width={'100%'} justifyContent={'center'} alignItems={'center'} border={'1px black dashed'} borderRadius={'10px'}>
                             <Text paddingTop={'20px'} fontSize={'30px'} fontWeight={800} paddingBottom={'0px'}>Select Any 2 Course + T-Shirt</Text>
                             <Text paddingTop={'10px'} fontSize={'25px'} fontWeight={600} paddingBottom={'0px'}>At Only Discounted Price &#8377;1150</Text>
                             <Text paddingTop={'0px'} fontSize={'20px'} fontWeight={600} paddingBottom={'20px'} textDecorationLine={'line-through'}>&#8377;1350</Text>
                             <Input borderRadius={'0px'} variant='flushed' placeholder='Enter Your Address Here' className="specialinput" marginBottom={'20px'} />
                             <Flex justifyContent={'space-around'} width={'90%'}>
-                                {/* <Button background={'none'}> */}
-                                {/* </Button> */}
                                 <a href="#" onClick={SelectedTshirt}>
                                     <Image border={'2px solid #000'} src={tshirt1} alt="tshirt1" value="saved forever" name="saved forever" width={'170px'} borderRadius={'10px'} marginBottom={'10px'}></Image>
                                 </a>
@@ -189,7 +187,7 @@ const EventVertical = () => {
                                 Register Now
                             </Button>
                         </Flex>
-                    </Flex>
+                    </Flex> */}
 
                     {name === "workshops" ? (
                         <Flex flexWrap={'wrap'} width={'100%'} justifyContent={'space-around'}>

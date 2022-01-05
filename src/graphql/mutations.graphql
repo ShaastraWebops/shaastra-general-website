@@ -48,10 +48,28 @@ mutation register($EventID: String!) {
   }
 }
 
+mutation ComboOffer($combo: String!) {
+  ComboOffer(combo: $combo){
+    eventPay {
+      orderId
+      amount
+      user {
+        name
+        email
+        mobile
+        address
+      }
+  }
+}
+}
+
 mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!) {
   updateEventPay(EventId: $eventId, data: $data)
 }
 
+mutation ComboupdateEventPay($data: UpdateEventPayInput!) {
+  ComboupdateEventPay(data: $data)
+}
 mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!) {
   createTeamAndRegister(data: $createTeamAndRegisterData)
 }
