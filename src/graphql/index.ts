@@ -1,7 +1,7 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 
 const link = new HttpLink({
-  uri: "https://api.events.shaastra.org/graphql",
+  uri: "http://localhost:8000/graphql",
   credentials: "include",
 });
 
