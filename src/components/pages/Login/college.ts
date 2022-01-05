@@ -1136,6 +1136,10 @@ export const colleges : any = [
         "Town": "Bangalore"
     },
     {
+        "University": "Indian Institute of Science Education and Research, Berhampur",
+        "Town": "Berhampur"
+    },
+    {
         "University": "Indian Institute of Science Education and Research, Bhopal",
         "Town": "Bhopal"
     },
@@ -1150,6 +1154,10 @@ export const colleges : any = [
     {
         "University": "Indian Institute of Science Education and Research, Pune",
         "Town": "Pune"
+    },
+    {
+        "University": "Indian Institute of Science Education and Research, Tirupati",
+        "Town": "Tirupati"
     },
     {
         "University": "Indian Institute of Science Education and Research, Thiruvananthapuram",
@@ -1168,6 +1176,10 @@ export const colleges : any = [
         "Town": "Bhubaneswar"
     },
     {
+        "University": "Indian Institute of Technology Bhilai",
+        "Town": "Bhilai"
+    },
+    {
         "University": "Indian Institute of Technology Bombay",
         "Town": "Mumbai"
     },
@@ -1176,8 +1188,20 @@ export const colleges : any = [
         "Town": "New Delhi"
     },
     {
+        "University": "Indian Institute of Technology (ISM) Dhanbad",
+        "Town": "Dhanbad"
+    },
+    {
+        "University": "Indian Institute of Technology Dharwad",
+        "Town": "Dharwad"
+    },
+    {
         "University": "Indian Institute of Technology Gandhinagar",
         "Town": "Chandkheda"
+    },
+    {
+        "University": "Indian Institute of Technology Goa",
+        "Town": "Goa"
     },
     {
         "University": "Indian Institute of Technology Guwahati",
@@ -1190,6 +1214,10 @@ export const colleges : any = [
     {
         "University": "Indian Institute of Technology Indore",
         "Town": "Indore"
+    },
+    {
+        "University": "Indian Institute of Technology Jammu",
+        "Town": "Jammu"
     },
     {
         "University": "Indian Institute of Technology Jodhpur",
@@ -1212,6 +1240,10 @@ export const colleges : any = [
         "Town": "Mandi"
     },
     {
+        "University": "Indian Institute of Technology Palakkad",
+        "Town": "Palakkad"
+    },
+    {
         "University": "Indian Institute of Technology Patna",
         "Town": "Patna"
     },
@@ -1226,6 +1258,10 @@ export const colleges : any = [
     {
         "University": "Indian Institute of Technology, BHU",
         "Town": "Varanasi"
+    },
+    {
+        "University": "Indian Institute of Technology Tirupati",
+        "Town": "Tirupati"
     },
     {
         "University": "Indian Maritime University",
