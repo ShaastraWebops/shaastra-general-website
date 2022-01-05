@@ -48,8 +48,8 @@ mutation register($EventID: String!) {
   }
 }
 
-mutation ComboOffer($combo: String!) {
-  ComboOffer(combo: $combo){
+mutation ComboOffer($combo: String!,$workshopsIDs : [String!] , $TShirtsDetails : TShirtsDetails) {
+  ComboOffer(combo: $combo , TShirtsDetails: $TShirtsDetails ,workshopsIDs : $workshopsIDs ){
     eventPay {
       orderId
       amount

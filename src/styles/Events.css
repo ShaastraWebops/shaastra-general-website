@@ -68,12 +68,19 @@
     color: #ea8a94 !important;
 }
 
+#referal{
+    width: 200px;
+    height: 7vh;
+    padding: 10px;
+    border: 2px dashed black;
+    border-radius: 5px;
+}
 
 .events-vertical input 
 {
-    color: black ;
+    /* color: black ; */
     padding: 10px;
-    width: 70vw;
+    /* width: 70vw; */
     height: 4vh;
     border-radius: 12px;
 }
