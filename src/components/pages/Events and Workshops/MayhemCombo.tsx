@@ -15,6 +15,7 @@ import {
   Box,
   Button,
   Flex,
+  Heading,
   Image,
   Input,
   Modal,
@@ -63,6 +64,7 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
     const [city , setCity] = React.useState("");
     const [state , setState] = React.useState("");
     const [pincode , setPincode] = React.useState("");
+    const tag = useColorModeValue('green.50', 'green.900');
     const SelectedTshirt = (e) => {
         let value = e.target.name;
         setSelectedTshirt(value);
@@ -244,9 +246,19 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
       {!isAdmin &&
          (
             <Flex width={'100%'} justifyContent={'center'}>
-            <Flex flexDirection={'column'} width={'100%'} justifyContent={'center'} alignItems={'center'} border={'1px black dashed'} borderRadius={'10px'}>
-                <Text paddingTop={'20px'} fontSize={'30px'} fontWeight={800} paddingBottom={'0px'}>Select Any 2 Course + T-Shirt</Text>
-                <Text paddingTop={'10px'} fontSize={'25px'} fontWeight={600} paddingBottom={'0px'}>At Only Discounted Price &#8377;1150</Text>
+            <Flex flexDirection={'column'} width={'100%'} justifyContent={'center'} alignItems={'center'} border={`1px ${font} dashed`} borderRadius={'10px'}>
+                <Heading m={2} p={2}></Heading>
+                <Text
+                        fontSize={'lg'}
+                        fontWeight={500}
+                        bg={tag}
+                        p={2}
+                        px={3}
+                        rounded={'full'}>
+                        Mayhem Combo
+                    </Text>
+                <Text paddingTop={'20px'} fontSize={'30px'} fontWeight={800} paddingBottom={'0px'}>Select Any 2 Workshops + T-Shirt</Text>
+                <Text paddingTop={'10px'} fontSize={'25px'} fontWeight={600} paddingBottom={'0px'}>At Only Discounted Price &#8377;1049</Text>
                 <Text paddingTop={'0px'} fontSize={'20px'} fontWeight={600} paddingBottom={'20px'} textDecorationLine={'line-through'}>&#8377;1350</Text>
                 <Flex width={"100%"} flexDirection={['column']} alignItems={'center'}>
                <Input borderRadius={'0px'}  textColor={font} variant='flushed' placeholder='city' value={city} width={["90%"]} onChange={(e)=>{setCity(e.target.value)}}  marginBottom={'20px'} className="specialinput" />
@@ -264,7 +276,12 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
                     <Box  onClick={SelectedTshirt} p={2} style ={{ border : selectedTshirt === "Future T-shirt" ? "2px solid blue" : "black"}}>
                         <Image src={tshirt3} alt="tshirt3" value="Future T-shirt" name="Future T-shirt" width={'170px'} borderRadius={'10px'} marginBottom={'10px'}></Image>
                     </Box>
+                   
                 </Flex>
+                <Flex textAlign={"left"} width={"90%"}>
+                <Text p={2} m={2}>*Click on the tshirt</Text>
+                </Flex>
+                
                 <Flex width={'93%'} justifyContent={'center'}>
                     <Select placeholder='Select T-Shirt Size' value={size} onChange={(e)=> setSize(e.target.value)} marginBottom={'20px'}>
                         <option value='XS'>XS</option>

@@ -236,7 +236,8 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
-          <Link to="/mind-trials">Mind Trials</Link>
+          <a href="https://mindtrials.shaastra.org" target="_blank">Mind Trials</a>
+          {/* <Link to="https://mindtrials.shaastra.org" target="_blank">Mind Trials</Link> */}
         </Box>
         <Box
           className="menu-text"
@@ -293,7 +294,8 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
-          <Link to="/social-endeavours">Social Endeavours</Link>
+          <a href="https://unmute.shaastra.org" target="_blank">Social Endeavours</a>
+          {/* <Link to="https://unmute.shaastra.org" target="_blank">Social Endeavours</Link> */}
         </Box>
         {/* <Box
           className="menu-text"
@@ -423,7 +425,8 @@ export const DrawerMobileMenuItems = () => {
           </AccordionPanel>
         </AccordionItem>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
-          <Link to="/mind-trials">Mind Trials</Link>
+          {/* <Link to="/mind-trials">Mind Trials</Link> */}
+          <a href="https://mindtrials.shaastra.org" target="_blank">Mind Trials</a>
         </Box>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/summit">Summit</Link>
@@ -437,7 +440,8 @@ export const DrawerMobileMenuItems = () => {
           </Box>
         </AccordionItem>
         <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
-          <Link to="/social-endeavours">Social Endeavours</Link>
+          {/* <Link to="/social-endeavours">Social Endeavours</Link> */}
+          <a href="https://unmute.shaastra.org" target="_blank">Social Endeavours</a>
         </Box>
         {/* <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
           <Link to="/speakers">Speakers</Link>
