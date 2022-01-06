@@ -325,7 +325,7 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
                       </Button>
                     </Box>
                   </Flex>
-                  {/* <Flex marginTop="2vh" height="7vh" flexDirection={'row'}>
+                  <Flex marginTop="2vh" height="7vh" flexDirection={'row'}>
                     <Text>Have Referal Code ?</Text>
                     <Input
                       id="referal"
@@ -347,7 +347,7 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
                       onChange={CourseNameCode}
                     >
                     </Input>
-                  </Flex> */}
+                  </Flex>
 
                   {/* <Modal isOpen={isOpen} onClose={onClose}>
                                             <ModalOverlay />
