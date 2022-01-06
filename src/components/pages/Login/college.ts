@@ -2156,6 +2156,10 @@ export const colleges : any = [
         "Town": "Agartala"
     },
     {
+        "University": "National Institute of Technology, Andhra Pradesh",
+        "Town": "Tadepalligudem"
+    },
+    {
         "University": "National Institute of Technology, Arunachal Pradesh",
         "Town": "Yupia"
     },
