@@ -4,7 +4,7 @@ import {
     Center,
     Text,
     Stack,
-    List,
+    List,Flex,Input,
     ListItem,
     ListIcon,
     Button,
@@ -12,8 +12,20 @@ import {
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
 import ComboPay from './ComboPay';
-
+import {useState} from 'react';
 export default function Pricing(props) {
+    const [referenceCode, setReferenceCode] = useState("");
+    const [courseName, setCourseName] = useState("");
+    const ReferelCode = (e) => {
+      setReferenceCode(e.target.value);
+      let datas = e.target.value;
+      sessionStorage.setItem("referalcode",`${datas}`);
+    }
+    const CourseNameCode = (e) => {
+      setCourseName(e.target.value);
+      let datas = e.target.value;
+      sessionStorage.setItem("coursename",`${datas}`);
+    }
     return (
         <Center py={6}>
             <Box
@@ -100,6 +112,28 @@ export default function Pricing(props) {
                         Register Now
                     </Button> */}
                     <ComboPay isAdmin={false} combo={props.ComboName}/>
+                    <Flex marginTop="2vh" height="7vh" flexDirection={'row'}>
+                    {/* <Text>Have Referal Code ?</Text> */}
+                    <Input
+                      id="referal"
+                      width={'10px'}
+                      border="2px solid black"
+                      height={'19px'}
+                      placeholder="Referal Code"
+                      onChange={ReferelCode}
+                    >
+                    </Input>
+                    <Input
+                      id="referal"
+                      width={'10px'}
+                      marginLeft={'18px'}
+                      border="2px solid black"
+                      height={'19px'}
+                      placeholder="Course Name"
+                      onChange={CourseNameCode}
+                    >
+                    </Input>
+                  </Flex>
                 </Box>
             </Box>
         </Center>
