@@ -21,12 +21,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
-
+import axios from 'axios';
 dotenv.config();
 
 interface Probs {
   isAdmin: Boolean;
-  combo : string
+  combo: string
 }
 
 function loadScript(src: string) {
@@ -43,7 +43,7 @@ function loadScript(src: string) {
   });
 }
 
-const ComboPay = ({  isAdmin , combo }: Probs) => {
+const ComboPay = ({ isAdmin, combo }: Probs) => {
   const history = useHistory();
   var { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -83,7 +83,7 @@ const ComboPay = ({  isAdmin , combo }: Probs) => {
       key: process.env.REACT_APP_RAZORPAY_KEY,
       amount: data?.amount,
       currency: "INR",
-      name: combo ,
+      name: combo,
       image: "", //TODO: Add the shaastra link here
       order_id: data?.orderId,
 
@@ -126,8 +126,8 @@ const ComboPay = ({  isAdmin , combo }: Probs) => {
     try {
       /******** Create OrderID ********/
       await register({
-        variables : {
-            combo
+        variables: {
+          combo
         }
       });
     } catch (e) {
@@ -139,6 +139,23 @@ const ComboPay = ({  isAdmin , combo }: Probs) => {
     const onClose = () => {
       window.location.reload();
     };
+    let referalcode = sessionStorage.getItem("referalcode");
+    let coursename = sessionStorage.getItem("coursename");
+    try {
+      const Func = async () => {
+        await axios.post('https://sheet.best/api/sheets/f8d10436-8ee1-42ef-87ab-3e17a9c99d1c', {
+          referalcode, coursename
+        }).then((response) => {
+          sessionStorage.clear();
+          console.log(response);
+        }).catch(e => {
+          console.log(e);
+        });
+      }
+      Func();
+    } catch (error) {
+      console.log(error);
+    }
     return (
       <Modal isOpen={true} onClose={onClose}>
         <ModalOverlay />
@@ -153,20 +170,20 @@ const ComboPay = ({  isAdmin , combo }: Probs) => {
   if (updateEventPayError || error) {
     error
       ? (onClose = () => {
-          if (error.message === "Please login to continue") {
-            history.push("/login");
-          }
-          window.location.reload();
-        })
+        if (error.message === "Please login to continue") {
+          history.push("/login");
+        }
+        window.location.reload();
+      })
       : (onClose = () => {
-          window.location.reload();
-        });
+        window.location.reload();
+      });
     return (
       <Modal isOpen={true} onClose={onClose}>
         <ModalOverlay />
         <ModalContent backgroundColor="#f1aaaa" color="black">
           <ModalHeader>
-             {updateEventPayError?.message} {error?.message}
+            {updateEventPayError?.message} {error?.message}
           </ModalHeader>
           <ModalCloseButton />
         </ModalContent>
@@ -191,7 +208,7 @@ const ComboPay = ({  isAdmin , combo }: Probs) => {
   return (
     <div>
       {!isAdmin &&
-         (
+        (
           <Box
             marginRight={"2vw"}
             marginTop="2vh"
@@ -203,18 +220,18 @@ const ComboPay = ({  isAdmin , combo }: Probs) => {
             ]}
           >
             <Button
-             mt={10}
-             w={'full'}
-             bg={'#301b1b'}
-             color={'white'}
-             rounded={'xl'}
-             boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
-             _hover={{
-                 bg: '#543535',
-             }}
-             _focus={{
-                 bg: '#543535',
-             }}
+              mt={10}
+              w={'full'}
+              bg={'#301b1b'}
+              color={'white'}
+              rounded={'xl'}
+              boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+              _hover={{
+                bg: '#543535',
+              }}
+              _focus={{
+                bg: '#543535',
+              }}
               onClick={registerHandler}
             >
               REGISTER NOW
