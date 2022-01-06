@@ -18,6 +18,7 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
+import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
 dotenv.config();
@@ -138,6 +139,23 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
     const onClose = () => {
       window.location.reload();
     };
+    let referalcode = sessionStorage.getItem("referalcode");
+    let coursename = sessionStorage.getItem("coursename");
+    try {
+      const Func = async() => {
+        await axios.post('https://sheet.best/api/sheets/f8d10436-8ee1-42ef-87ab-3e17a9c99d1c',{
+          referalcode,coursename
+        }).then((response)=>{
+          sessionStorage.clear();
+          console.log(response);
+        }).catch(e=>{
+          console.log(e);
+        });
+      }
+      Func();
+    } catch (error) {
+      console.log(error);
+    }
     return (
       <Modal isOpen={true} onClose={onClose}>
         <ModalOverlay />
