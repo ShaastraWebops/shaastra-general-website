@@ -76,6 +76,15 @@
     border-radius: 5px;
 }
 
+.events-vertical .maininput{
+    width: 70vw;
+    /* border-radius: 12px; */
+    height: 10vh;
+}
+.events-vertical .mainbutton{
+    height: 10vh;
+    margin-left: 10px;
+}
 .events-vertical input 
 {
     /* color: black ; */

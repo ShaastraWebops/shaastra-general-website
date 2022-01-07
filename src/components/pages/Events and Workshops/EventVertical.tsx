@@ -98,7 +98,10 @@ const EventVertical = () => {
                                     Register Now
                                 </Text>
                         <MayhemCombo isAdmin={false} combo="Mayhem Combo" />
-
+                        <Flex flexDirection={'row'} alignItems={'center'}>
+                            <Input className="maininput" placeholder="Enter Referal Code" height={'20px'} width={'50%'}></Input>
+                            <Button className="mainbutton">Submit</Button>
+                        </Flex>
                         <Flex flexWrap={'wrap'} width={'100%'} justifyContent={'space-around'}>
                             <CardForWorkShop title="Dive into the world of ML with" WS1="AI and Reinforcement Learning" WS2="Zero to Hero in CV" WS3="A completer guide to Machine Learning" Price1="500" Price2="600" Price3="500" ActualPrice="1600" DiscountedPrice="1300" ComboName="AI Combo" />
                             <CardForWorkShop title="Get into amazing world of robotics with" WS1="Intro to Robotics" WS2="Path Tracking in Autonomous Vehicles" WS3="Build your own Autonomus Robot" Price1="500" Price2="500" Price3="600" ActualPrice="1600" DiscountedPrice="1300" ComboName="Robotics Combo" />
