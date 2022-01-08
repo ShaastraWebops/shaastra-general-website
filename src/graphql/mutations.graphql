@@ -78,6 +78,9 @@ mutation getPasswordOTP($email: String!) {
   getPasswordOTP(email: $email)
 }
 
+mutation updateReferral($referralcode: String!){
+  updateReferral(referralcode : $referralcode)
+}
 mutation addEvent($data: AddEventInput!) {
   addEvent(data: $data) {
     name

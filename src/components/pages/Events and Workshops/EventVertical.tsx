@@ -9,7 +9,10 @@ import {
     Image,
     Button,
     useColorModeValue,
-    Center
+    Center,
+    FormLabel,
+    Alert,
+    AlertIcon
 } from '@chakra-ui/react'
 import { useParams } from "react-router-dom"
 import CustomBox from '../../shared/CustomBox'
@@ -18,10 +21,11 @@ import CardForWorkShop from './CardForWorksShop';
 import EventsData from "./EventsData";
 import bg from "../../../images/EventsWorkshops/events/bg.jpg"
 import EventVerticalComponent from "./EventVeticalComponent"
-import { Event, useGetEventsQuery } from "../../../generated/graphql";
+import { Event, useGetEventsQuery, useUpdateReferralMutation } from "../../../generated/graphql";
 import bg2 from '../../../images/EventsWorkshops/events/bg2.jpg'
 import '../../../styles/eventWorkshops.css';
 import MayhemCombo from "./MayhemCombo";
+import { REFERRAL } from "./CAREFERRAL";
 const EventVertical = () => {
 
     const { name }: any = useParams()
@@ -31,6 +35,12 @@ const EventVertical = () => {
     const font = useColorModeValue("black", "white")
     const gradient = useColorModeValue("blackG", "whiteG")
     const button = useColorModeValue("dark", "light")
+
+    const [referral , setReferral] = React.useState("");
+    const [refErr , setRefErr] = React.useState("");
+    const [success , setSuccess] = React.useState("");
+
+    const [updatereferral] = useUpdateReferralMutation();
 
     const { data, loading, error } = useGetEventsQuery({
         variables: {
@@ -98,7 +108,7 @@ const EventVertical = () => {
                                     Register Now
                                 </Text>
                         <MayhemCombo isAdmin={false} combo="Mayhem Combo" />
-
+                        
                         <Flex flexWrap={'wrap'} width={'100%'} justifyContent={'space-around'}>
                             <CardForWorkShop title="Dive into the world of ML with" WS1="AI and Reinforcement Learning" WS2="Zero to Hero in CV" WS3="A completer guide to Machine Learning" Price1="500" Price2="600" Price3="500" ActualPrice="1600" DiscountedPrice="1300" ComboName="AI Combo" />
                             <CardForWorkShop title="Get into amazing world of robotics with" WS1="Intro to Robotics" WS2="Path Tracking in Autonomous Vehicles" WS3="Build your own Autonomus Robot" Price1="500" Price2="500" Price3="600" ActualPrice="1600" DiscountedPrice="1300" ComboName="Robotics Combo" />
@@ -107,6 +117,78 @@ const EventVertical = () => {
                             <CardForWorkShop title="Explore the exciting world of electronics with" WS1="Intro to Arduino and ioT" WS2="Intro to Embedded system Programming" WS3="Parallel Processing and Real-time OS" Price1="500" Price2="500" Price3="600" ActualPrice="1600" DiscountedPrice="1200" ComboName="Electronic Combo" />
                             <CardForWorkShop title="Start your career in consultancy and management with" WS3="Product Management 101" WS2="Consult 101" WS1="2 Workshops" Price1="500" Price2="500" Price3="350" ActualPrice="1000" DiscountedPrice="800" ComboName="Management Workshops" />
                         </Flex>
+                        <Flex width={["90%","90%","50%","50%"]}>
+                        <Text
+                                className="rainbow"
+                                p={3}
+                                style={{ borderRadius: 8 }}
+                                shadow="lg"
+                                borderWidth="2px"
+                                borderRadius="md"
+                                fontWeight={"medium"}
+                                fontSize={"lg"}
+                                color={"gray.500"}
+                                >
+                            Have a referral code ? Enter the referral code below to avail a <strong>5%</strong> discount 
+                            on the next workshop/combo you register
+                        </Text>
+                        </Flex>
+
+                        <Center flexDirection={["column","column","row","row"]} my={1} width={"50%"} p={2}>
+                        <FormLabel m={2}>Referral Code :</FormLabel>
+                        <Input
+                            width={["100%","100%","50%","50%"]}
+                            value={referral}
+                            placeholder="Enter Referal Code"
+                            onChange={(e) => setReferral(e.target.value)}
+                            type={"text"}
+                            borderBottom="5px solid white"
+                            m={2}
+                        />
+                        <Button
+                            m={1}
+                            onClick={async () => {
+                            console.log(REFERRAL.length)
+                            if(REFERRAL.includes(referral)){
+                                await updatereferral({
+                                    variables : {
+                                        referralcode : referral
+                                    }
+                                }).then(res => {
+                                    if(res.data?.updateReferral){
+                                        setSuccess("You can avail 5% discount on any of the workhop/combo")
+                                        setRefErr("")
+                                    }
+                                })
+                                .catch(err => setRefErr(err.message))
+                            }else{
+                                setRefErr("Referral code not valid")
+                            }
+                            
+                            }
+                        }
+                        >
+                            {" "}
+                            Submit
+                        </Button>
+                        </Center>
+                        {
+                            refErr && (
+                            <Alert status='error' width={"60%"} m={1}>
+                            <AlertIcon />
+                            {refErr}
+                             </Alert>
+                            )
+                        }
+                        {
+                            success && (
+                            <Alert status='success'width={"60%"} m={1}>
+                            <AlertIcon />
+                            {success}
+                             </Alert>
+                            )
+                        }
+
                         </React.Fragment>
                         
                     ) : (

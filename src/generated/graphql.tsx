@@ -216,6 +216,7 @@ export type Mutation = {
   resendVerificationMail: Scalars['Boolean'];
   resetPassword: Scalars['Boolean'];
   updateEventPay: Scalars['Boolean'];
+  updateReferral: Scalars['Boolean'];
   verifyUser: Scalars['Boolean'];
 };
 
@@ -343,6 +344,11 @@ export type MutationUpdateEventPayArgs = {
 };
 
 
+export type MutationUpdateReferralArgs = {
+  referralcode: Scalars['String'];
+};
+
+
 export type MutationVerifyUserArgs = {
   otp: Scalars['String'];
 };
@@ -440,10 +446,12 @@ export type User = {
   department: Scalars['String'];
   email: Scalars['String'];
   id: Scalars['ID'];
+  isUsedReferral: Scalars['Boolean'];
   isVerified: Scalars['Boolean'];
   mobile: Scalars['String'];
   name: Scalars['String'];
   passwordOTP?: Maybe<Scalars['String']>;
+  referralcode?: Maybe<Scalars['String']>;
   registeredEvents: Array<Event>;
   role: UserRole;
   shaastraID: Scalars['String'];
@@ -546,6 +554,13 @@ export type GetPasswordOtpMutationVariables = Exact<{
 
 
 export type GetPasswordOtpMutation = { getPasswordOTP: boolean };
+
+export type UpdateReferralMutationVariables = Exact<{
+  referralcode: Scalars['String'];
+}>;
+
+
+export type UpdateReferralMutation = { updateReferral: boolean };
 
 export type AddEventMutationVariables = Exact<{
   data: AddEventInput;
@@ -1101,6 +1116,37 @@ export function useGetPasswordOtpMutation(baseOptions?: ApolloReactHooks.Mutatio
 export type GetPasswordOtpMutationHookResult = ReturnType<typeof useGetPasswordOtpMutation>;
 export type GetPasswordOtpMutationResult = ApolloReactCommon.MutationResult<GetPasswordOtpMutation>;
 export type GetPasswordOtpMutationOptions = ApolloReactCommon.BaseMutationOptions<GetPasswordOtpMutation, GetPasswordOtpMutationVariables>;
+export const UpdateReferralDocument = gql`
+    mutation updateReferral($referralcode: String!) {
+  updateReferral(referralcode: $referralcode)
+}
+    `;
+export type UpdateReferralMutationFn = ApolloReactCommon.MutationFunction<UpdateReferralMutation, UpdateReferralMutationVariables>;
+
+/**
+ * __useUpdateReferralMutation__
+ *
+ * To run a mutation, you first call `useUpdateReferralMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateReferralMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateReferralMutation, { data, loading, error }] = useUpdateReferralMutation({
+ *   variables: {
+ *      referralcode: // value for 'referralcode'
+ *   },
+ * });
+ */
+export function useUpdateReferralMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<UpdateReferralMutation, UpdateReferralMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<UpdateReferralMutation, UpdateReferralMutationVariables>(UpdateReferralDocument, options);
+      }
+export type UpdateReferralMutationHookResult = ReturnType<typeof useUpdateReferralMutation>;
+export type UpdateReferralMutationResult = ApolloReactCommon.MutationResult<UpdateReferralMutation>;
+export type UpdateReferralMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateReferralMutation, UpdateReferralMutationVariables>;
 export const AddEventDocument = gql`
     mutation addEvent($data: AddEventInput!) {
   addEvent(data: $data) {
