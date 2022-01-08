@@ -124,7 +124,7 @@ const RegisterNow = ({ isAdmin, data }) => {
       <Modal isOpen={true} onClose={onClose}>
         <ModalOverlay />
         <ModalContent backgroundColor="#addfd0" color="black">
-          <ModalHeader>Registrated Successfully</ModalHeader>
+          <ModalHeader>Registered Successfully</ModalHeader>
           <ModalCloseButton />
         </ModalContent>
       </Modal>

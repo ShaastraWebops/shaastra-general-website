@@ -158,7 +158,7 @@ export const DrawerDesktopMenuItems = () => {
           pr={12}
           mb={4}
         >
-          <Link to="/sales">Sales</Link>
+          <a href="https://sales.shaastra.org" target={"_blank"}>Sales</a>
         </Box>
         <Box
           className="menu-text"
@@ -400,8 +400,9 @@ export const DrawerMobileMenuItems = () => {
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/eventsworkshops">Events and Workshops</Link>
         </Box>
-        <Box fontSize={27} fontStyle={"normal"}>
-          <Link to="/sales">Sales</Link>
+        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+          {/* <Link to="/mind-trials">Mind Trials</Link> */}
+          <a href="https://sales.shaastra.org" target="_blank">Sales</a>
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/exhibitions">Exhibitions</Link>

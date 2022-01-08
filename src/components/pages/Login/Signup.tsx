@@ -50,7 +50,8 @@ const Signup = () => {
     const [State, setState] = useState("Andaman and Nicobar Islands")
     const [city, setCity] = useState("")
     const [address, setAddress] = useState("")
-
+    const [wrongpw , setWrongPw] = useState(false)
+    const [fielderr , setFieldErr] = useState(false)
     const [createUser, {data, loading, error}] = useCreateUserMutation()
 
     var { isOpen, onOpen, onClose } = useDisclosure()
@@ -72,19 +73,63 @@ const Signup = () => {
         )
     }
     if(error)
-    {  onClose = () => {window.location.reload()}
-            return(
-                <Modal isOpen={true} onClose={onClose} isCentered>
+    {  
+            if(error.message === "User Already signed up.Please login to continue"){
+                onClose = () => {history.push("/login")}
+                return(
+                    <Modal isOpen={true} onClose={onClose} isCentered>
                     <ModalOverlay />
                     <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
                         <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
                         <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
-                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Some error occurred</Text>
+                            <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">{error.message}</Text>
                         </ModalBody>
                         <ModalCloseButton />
                     </ModalContent>
                 </Modal>
-            )
+                )
+            }else {
+                onClose = () => {window.location.reload()}
+                return(
+                    <Modal isOpen={true} onClose={onClose} isCentered>
+                        <ModalOverlay />
+                        <ModalContent color="black" paddingTop={["10vw","5vw"]} width={["fit-content", "auto"]}>
+                            <Image src={errorSVG} margin="auto" boxSize={["50vw","20vw"]}></Image>
+                            <ModalBody backgroundColor="#f1aaaa" width="100%" padding="2vw">
+                                <Text textAlign="center" fontSize={["4vw","2vw"]}  borderRadius="24px" margin="auto" color="#0a2d4d">Some error occurred</Text>
+                            </ModalBody>
+                            <ModalCloseButton />
+                        </ModalContent>
+                    </Modal>
+                )
+            }
+           
+    }
+    if(wrongpw){
+        const onClose = () => {window.location.reload()}
+        return(
+            <Modal isOpen={true} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent backgroundColor="#f1aaaa" color="black">
+                    <ModalHeader>Confirm password and Password should have the same values. 
+                        <br />
+                        Please enter the same password in both fields</ModalHeader>
+                    <ModalCloseButton />
+                </ModalContent>
+            </Modal>
+        )
+    }
+    if(fielderr){
+        const onClose = () => {window.location.reload()}
+        return(
+            <Modal isOpen={true} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent backgroundColor="#f1aaaa" color="black">
+                    <ModalHeader>Please fill all the details</ModalHeader>
+                    <ModalCloseButton />
+                </ModalContent>
+            </Modal>
+        )
     }
     if(loading)
     {
@@ -148,10 +193,13 @@ const Signup = () => {
                         </Select>
                     </Flex>
                     <Input placeholder="Address" type="text" onChange={(e:any) => {setAddress(e.target.value)}}></Input>
+                    <Text p={2} >*All the fields are required</Text>
                     <Button width="100%"  backgroundColor="#2467a1" color="white" marginTop="6vh"
                         onClick={async (e:any) => {
                             e.preventDefault();
-                            if(pw === confirm)
+                            if(!name || !email || !number || !pw || !confirm || !college || !branch || !State || !city ||!address){
+                                setFieldErr(true)
+                            }else if(pw === confirm)
                                 {
                                     try{
                                         await createUser(
@@ -169,18 +217,7 @@ const Signup = () => {
                                 }
                             else 
                                {
-                                const onClose = () => {window.location.reload()}
-                                return(
-                                    <Modal isOpen={true} onClose={onClose}>
-                                        <ModalOverlay />
-                                        <ModalContent backgroundColor="#f1aaaa" color="black">
-                                            <ModalHeader>Confirm password and Password should have the same values. 
-                                                <br />
-                                                Please enter the same password in both fields</ModalHeader>
-                                            <ModalCloseButton />
-                                        </ModalContent>
-                                    </Modal>
-                                )
+                               setWrongPw(true)
                                }
                         }}
                     >Sign Up</Button>
