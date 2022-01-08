@@ -78,16 +78,31 @@ const Profile = () => {
         }
     else if(error)
     {
-        onClose = () => {window.location.reload()}
-                return(
-                    <Modal isOpen={true} onClose={onClose}>
+        if(error.message === "Please login to continue")
+        {   onClose = () => {history.push("/login")}
+            return(
+                <Modal isOpen={true} onClose={onClose}>
                         <ModalOverlay />
                         <ModalContent backgroundColor="#f1aaaa" color="black">
-                            <ModalHeader>Error Occurred</ModalHeader>
+                            <ModalHeader>Please login to continue</ModalHeader>
                             <ModalCloseButton />
                         </ModalContent>
                     </Modal>
-                )
+            )
+        }else{
+            onClose = () => {history.push("/")}
+            return(
+                <Modal isOpen={true} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent backgroundColor="#f1aaaa" color="black">
+                        <ModalHeader>Error Occurred</ModalHeader>
+                        <ModalCloseButton />
+                    </ModalContent>
+                </Modal>
+            )
+
+        }
+                
     }
 
     return(
@@ -166,16 +181,18 @@ const Profile = () => {
                                     e.registrationType === RegistraionType.Individual ?
                                     <SwiperSlide >
                                             <Flex flexDirection="column" alignItems="center" justifyItems={"center"} textAlign="center"
-                                             color={'white'} boxShadow="5px"
+                                             color={'white'} boxShadow="5px" p={2}
                                             >
                                             <a href={`/eventpage/${e.id}`}>
-                                                <Image src={e.pic!} height={"12vw"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
+                                                <Image src={e.pic! ? e.pic : bg2} height={"12.5vw"} width={"100%"} borderTopRadius={"9px"} objectFit={"cover"}></Image>
                                                 <Box fontWeight={"600"} p={2}>
-                                                <Text fontSize="2xl">{e.name}</Text>
-                                                <Flex flexDirection={"column"}>
-                                                <Text>Events Starts From</Text>
-                                                <Text> {moment(parseInt(e.eventTimeFrom!)).format("MMMM Do YYYY")}</Text>
-                                                </Flex>
+                                                <Text fontSize={["xl"]}>{e.name}</Text>
+                                                { e.eventTimeFrom! &&
+                                                    <Flex flexDirection={"column"}>
+                                                    <Text>Events Starts From</Text>
+                                                    <Text> {moment(parseInt(e.eventTimeFrom!)).format("MMMM Do YYYY")}</Text>
+                                                    </Flex>
+                                                }
                                                 </Box>
                                                 </a>
                                             </Flex>
@@ -192,11 +209,13 @@ const Profile = () => {
                                                 <Image src={e.pic!} height={"12vw"} width={"100%"} borderTopRadius={"9px"} objectFit={"fill"}></Image>
                                                 </a>
                                                 <Box  fontWeight={"600"} p={2}>
-                                                <Text fontSize="2xl">{e.name}</Text>
-                                                <Flex flexDirection={"column"}>
-                                                <Text>Events Starts From</Text>
-                                                <Text> {moment(parseInt(e.eventTimeFrom!)).format("MMMM Do YYYY")}</Text>
-                                                </Flex>
+                                                <Text fontSize={["xl","2xl"]}>{e.name}</Text>
+                                                {
+                                                    e.eventTimeFrom && <Flex flexDirection={"column"}>
+                                                    <Text>Events Starts From</Text>
+                                                    <Text> {moment(parseInt(e.eventTimeFrom!)).format("MMMM Do YYYY")}</Text>
+                                                    </Flex>
+                                                }
                                                 </Box>
                                                 
                                             </Flex>
