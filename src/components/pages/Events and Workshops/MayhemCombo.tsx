@@ -70,6 +70,7 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
         setSelectedTshirt(value);
     }
     const [err , setError] = React.useState(false);
+    const [referral , setReferral] = React.useState("");
   const history = useHistory();
   var { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -118,6 +119,7 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
         try {
           await updateEventPayMutation({
             variables: {
+              referral,
               data: {
                 orderId: response.razorpay_order_id,
                 payementId: response.razorpay_payment_id,
@@ -151,12 +153,13 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
   const registerHandler = async () => {
     try {
       /******** Create OrderID ********/
-      if(!address || !city || !state || !size || !selectedTshirt){
+      if(!address || !city || !state || !size || !selectedTshirt || !w1 || !w2){
           setError(true)
       }else{
         await register({
             variables : {
                 combo,
+                referral,
                 TShirtsDetails : {
                     address,
                     city ,
@@ -348,6 +351,16 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
                         <option value='ckxnilxyt000j0bp7d9gp9a7e'>Consult 101</option>
                     </Select>
                 </Flex>
+                <Input
+                            width={["90%","90%","50%","50%"]}
+                            value={referral}
+                            mx={[0,0,3,3]}
+                            my={[2,2,0,0]}
+                            placeholder="Have a Referal Code?"
+                            onChange={(e) => setReferral(e.target.value)}
+                            type={"text"}
+                            borderBottom="2px solid white"
+                        />
                 <Button
                     mt={10}
                     w={'40%'}

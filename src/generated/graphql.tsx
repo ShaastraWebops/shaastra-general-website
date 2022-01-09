@@ -224,12 +224,14 @@ export type Mutation = {
 export type MutationComboOfferArgs = {
   TShirtsDetails?: InputMaybe<TShirtsDetails>;
   combo: Scalars['String'];
+  referral?: InputMaybe<Scalars['String']>;
   workshopsIDs?: InputMaybe<Array<Scalars['String']>>;
 };
 
 
 export type MutationComboupdateEventPayArgs = {
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -320,6 +322,7 @@ export type MutationLoginArgs = {
 
 export type MutationRegisterArgs = {
   EventID: Scalars['String'];
+  referral?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -341,6 +344,7 @@ export type MutationResetPasswordArgs = {
 export type MutationUpdateEventPayArgs = {
   EventId: Scalars['String'];
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -513,6 +517,7 @@ export type ResetPasswordMutation = { resetPassword: boolean };
 
 export type RegisterMutationVariables = Exact<{
   EventID: Scalars['String'];
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -522,6 +527,7 @@ export type ComboOfferMutationVariables = Exact<{
   combo: Scalars['String'];
   workshopsIDs?: InputMaybe<Array<Scalars['String']> | Scalars['String']>;
   TShirtsDetails?: InputMaybe<TShirtsDetails>;
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -530,6 +536,7 @@ export type ComboOfferMutation = { ComboOffer: { eventPay?: { orderId: string, a
 export type UpdateEventPayMutationVariables = Exact<{
   eventId: Scalars['String'];
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -537,6 +544,7 @@ export type UpdateEventPayMutation = { updateEventPay: boolean };
 
 export type ComboupdateEventPayMutationVariables = Exact<{
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -903,8 +911,8 @@ export type ResetPasswordMutationHookResult = ReturnType<typeof useResetPassword
 export type ResetPasswordMutationResult = ApolloReactCommon.MutationResult<ResetPasswordMutation>;
 export type ResetPasswordMutationOptions = ApolloReactCommon.BaseMutationOptions<ResetPasswordMutation, ResetPasswordMutationVariables>;
 export const RegisterDocument = gql`
-    mutation register($EventID: String!) {
-  register(EventID: $EventID) {
+    mutation register($EventID: String!, $referral: String) {
+  register(EventID: $EventID, referral: $referral) {
     registered
     eventPay {
       orderId
@@ -939,6 +947,7 @@ export type RegisterMutationFn = ApolloReactCommon.MutationFunction<RegisterMuta
  * const [registerMutation, { data, loading, error }] = useRegisterMutation({
  *   variables: {
  *      EventID: // value for 'EventID'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
@@ -950,11 +959,12 @@ export type RegisterMutationHookResult = ReturnType<typeof useRegisterMutation>;
 export type RegisterMutationResult = ApolloReactCommon.MutationResult<RegisterMutation>;
 export type RegisterMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
 export const ComboOfferDocument = gql`
-    mutation ComboOffer($combo: String!, $workshopsIDs: [String!], $TShirtsDetails: TShirtsDetails) {
+    mutation ComboOffer($combo: String!, $workshopsIDs: [String!], $TShirtsDetails: TShirtsDetails, $referral: String) {
   ComboOffer(
     combo: $combo
     TShirtsDetails: $TShirtsDetails
     workshopsIDs: $workshopsIDs
+    referral: $referral
   ) {
     eventPay {
       orderId
@@ -987,6 +997,7 @@ export type ComboOfferMutationFn = ApolloReactCommon.MutationFunction<ComboOffer
  *      combo: // value for 'combo'
  *      workshopsIDs: // value for 'workshopsIDs'
  *      TShirtsDetails: // value for 'TShirtsDetails'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
@@ -998,8 +1009,8 @@ export type ComboOfferMutationHookResult = ReturnType<typeof useComboOfferMutati
 export type ComboOfferMutationResult = ApolloReactCommon.MutationResult<ComboOfferMutation>;
 export type ComboOfferMutationOptions = ApolloReactCommon.BaseMutationOptions<ComboOfferMutation, ComboOfferMutationVariables>;
 export const UpdateEventPayDocument = gql`
-    mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!) {
-  updateEventPay(EventId: $eventId, data: $data)
+    mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!, $referral: String) {
+  updateEventPay(EventId: $eventId, data: $data, referral: $referral)
 }
     `;
 export type UpdateEventPayMutationFn = ApolloReactCommon.MutationFunction<UpdateEventPayMutation, UpdateEventPayMutationVariables>;
@@ -1019,6 +1030,7 @@ export type UpdateEventPayMutationFn = ApolloReactCommon.MutationFunction<Update
  *   variables: {
  *      eventId: // value for 'eventId'
  *      data: // value for 'data'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
@@ -1030,8 +1042,8 @@ export type UpdateEventPayMutationHookResult = ReturnType<typeof useUpdateEventP
 export type UpdateEventPayMutationResult = ApolloReactCommon.MutationResult<UpdateEventPayMutation>;
 export type UpdateEventPayMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateEventPayMutation, UpdateEventPayMutationVariables>;
 export const ComboupdateEventPayDocument = gql`
-    mutation ComboupdateEventPay($data: UpdateEventPayInput!) {
-  ComboupdateEventPay(data: $data)
+    mutation ComboupdateEventPay($data: UpdateEventPayInput!, $referral: String) {
+  ComboupdateEventPay(data: $data, referral: $referral)
 }
     `;
 export type ComboupdateEventPayMutationFn = ApolloReactCommon.MutationFunction<ComboupdateEventPayMutation, ComboupdateEventPayMutationVariables>;
@@ -1050,6 +1062,7 @@ export type ComboupdateEventPayMutationFn = ApolloReactCommon.MutationFunction<C
  * const [comboupdateEventPayMutation, { data, loading, error }] = useComboupdateEventPayMutation({
  *   variables: {
  *      data: // value for 'data'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
