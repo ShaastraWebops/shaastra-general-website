@@ -4,6 +4,7 @@ import "../../styles/button.scss";
 import "../../styles/spons.scss";
 import "../../styles/tooltip.scss";
 import Astra from "../../images/logo/static/Astra.svg";
+import Capermint from "../../images/logo/static/capermint.png";
 import Atlasian from "../../images/logo/static/Atlasian.svg";
 import Boeing from "../../images/logo/static/Boeing.svg";
 import CAT from "../../images/logo/static/CAT.svg";
@@ -14,8 +15,13 @@ import Salesforces from "../../images/logo/static/Salesforce.svg";
 import Wells from "../../images/logo/static/Wells_Fargo.svg";
 import foxmula from "../../images/logo/static/foxmula.png";
 import innovaccer from "../../images/logo/static/innovaccer.png";
+import SBI from '../../images/logo/static/SBI.png';
 import kamal from "../../images/logo/static/kamal_wears.png";
 import LT from "../../images/logo/static/L&T.png";
+import MW from "../../images/logo/static/MW.png";
+// import TOI from "../../images/logo/static/TOI.jpg";
+// import TOI from "../../images/logo/static/TOI.jpg";
+import TOI from "../../images/logo/static/Times.jpg";
 import mtx from "../../images/logo/static/mtx.png";
 import HW from "../../images/logo/static/HW.png";
 import AMD from "../../images/logo/static/AMD.png";
@@ -106,14 +112,14 @@ function Spons() {
                 </div>
               </div>
 
-              <div className="flexx">
+              {/* <div className="flexx">
                 <p id="sponsro">Platinum Sponsor</p>
                 <div className="card" id="photo">
                   <a href="https://www.binance.com/en-IN">
                     <img src={binance} className="img-responsive" id="binance" alt="" />
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flexx">
                 <p id="sponsro">Powered by </p>
@@ -145,18 +151,40 @@ function Spons() {
                     <img
                       src={Wells}
                       className="img-responsive"
-                      id="surana"
                       alt=""
                     />
                   </a>
                 </div>
               </div>
+
+              <div className="flexx">
+                <p id="sponsro">Platinum Sponsor</p>
+                <div className="card" id="photo">
+                  <a href="https://www.sbi.co.in/">
+                    <img src={SBI} className="img-responsive" id="binance" alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
               <br />
 
             </div><br />
+            <p id="sponsro1">Technology Sponsor</p>
+            <div className="flexx">
+              {/* <p id="sponsro">Co Sponsor</p> */}
+              <div className="card" id="photo">
+                <a href="https://www.boeing.com/">
+                  <img src={Boeing} className="img-responsive" id="Astra" alt="" />
+                </a>
+              </div>
+            </div>
             <p id="sponsro1">Co Sponsors</p>
+
             <div className="card__collection">
               {/* <p>Co Sponsors</p> */}
+
+
               <div className="flexx">
                 {/* <p id="sponsro">Co Sponsor</p> */}
                 <div className="card" id="photo">
@@ -185,7 +213,7 @@ function Spons() {
               </div>
 
             </div>
-            <div className="card__collection">
+            {/* <div className="card__collection">
               <div className="flexx">
                 <p id="sponsro">IDP Sponsor</p>
                 <div className="card" id="photo">
@@ -229,7 +257,7 @@ function Spons() {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
             <p id="sponsro1">Event Sponsors</p>
             <div className="card__collection">
               <div className="flexx">
@@ -323,6 +351,11 @@ function Spons() {
                 </div>
               </div>
 
+
+            </div>
+            <p id="sponsro1">Juniors Sponsor</p>
+
+            <div className="card__collection">
               <div className="flexx">
                 <div className="card" id="photo">
                   <a href="https://www.wowchess.com/">
@@ -384,6 +417,60 @@ function Spons() {
                 </div>
               </div>
             </div>
+            <p id="sponsro1">Shows Sponsor</p>
+            <div className="card__collection">
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://timesofindia.indiatimes.com/">
+                    <img
+                      src={TOI}
+                      className="img-responsive"
+                      id="inno"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p id="sponsro1">Workshops Sponsor</p>
+            <div className="card__collection">
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.mathworks.com/">
+                    <img
+                      src={MW}
+                      className="img-responsive"
+                      id="mathworks"
+                      alt=""
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(0)",
+                          }
+                          : {
+                            filter: "invert(1)",
+                          }
+                      }
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <a href="https://www.capermint.com/">
+                    <img
+                      src={Capermint}
+                      className="img-responsive"
+                      id="mathworks"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+            </div>
+            
           </div>
           <br />
           <br />

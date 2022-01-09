@@ -458,11 +458,13 @@ $color-box-3: #27377c;
 
 .sponsBox1 #inno{
   position: relative;
-  height: 50px;
   width: 278px;
-  top: 70px;
+  top: 60px;
 }
-
+.sponsBox1 #mathworks{
+  position: relative;
+  top: 30%;
+}
 .sponsBox1 #kamal{
   position: relative;
   height: 97px;
@@ -543,7 +545,8 @@ $color-box-3: #27377c;
 }
 .sponsBox1 #binance{
   position: relative;
-  top: 35%;
+  top: 25%;
+  width: 90%;
 }
 .sponsBox1 #hpcl{
   position: relative;
