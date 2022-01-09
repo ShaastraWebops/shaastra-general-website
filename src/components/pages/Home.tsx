@@ -56,7 +56,7 @@ import Reverb from "../../images/night/Reverb.jpg";
 import Soda from "../../images/night/Comedy Night.jpeg";
 import Kenny from "../../images/night/Kenny Sebastian.jpg"
 import Maraiana from "../../images/night/Mariana bo.jpg"
-import Adeleida from "../../images/night/adeleida.jpg"
+import Adeleida from "../../images/night/Adelaida.jpg"
 
 interface Props {}
 
@@ -546,7 +546,7 @@ const Home = (props: Props) => {
                 <img src={Maraiana} alt="" style={{ objectFit: "cover" }} />
                 <div className="contentBox">
                   <div className="left">
-                    <h3>Mariana Bo</h3>
+                    <h3>Mariana BO</h3>
                     <p>
                       EDM Night
                     </p>

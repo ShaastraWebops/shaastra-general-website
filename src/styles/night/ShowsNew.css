@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 /* .video-container-shows
 {
     width: 100vw;
@@ -45,5 +48,15 @@
 
   .shows-new-heading
   {
-      font-family: horizonFont !important;
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: 0.75vw;
+    word-spacing: 0.5vw;
   }
+
+.montserrat
+{
+    font-family: 'Montserrat' !important;
+}
+.reverb-swiper .swiper-slide img{
+    margin: auto !important;
+}
