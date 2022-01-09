@@ -24,7 +24,7 @@ import { AddIcon, EditIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
 import {useHistory} from "react-router-dom"
 import CustomBox from '../../shared/CustomBox'
-import { useGetEventsQuery, useGetPaidUsersCountQuery, useGetUsersDataCsvQuery, useGetUsersQuery } from "../../../generated/graphql";
+import { useGetEventsQuery, useGetPaidUsersCountQuery, useGetUsersDataCsvQuery, useGetUsersQuery, useTShirtDetailsCsvQuery } from "../../../generated/graphql";
 import EventVerticalComponent from "./EventVeticalComponent";
 import fileDownload from "js-file-download";
 
@@ -40,13 +40,7 @@ const EventsAdmin = () => {
     })
 
     var events = data?.getEvents.events;
-    // const {data : data1 , error : error1, loading:loading1} = useGetUsersQuery({
-    //     variables : {
-    //         filter : {
-    //             role : "USER"
-    //         }
-    //     }
-    // })
+    const {data : data1 , error : error1, loading:loading1} = useTShirtDetailsCsvQuery()
     // const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
     const {data : data3} = useGetPaidUsersCountQuery();
 
@@ -61,16 +55,16 @@ const EventsAdmin = () => {
             </Flex>
             <Center p ={3} flexDirection={"column"} marginBottom="3vh">
                 {/* <Heading m={2}>Registered Users count : {data1?.getUsers?.count}</Heading> */}
-                {/* <Button
+                <Button
                     p={2}
                     m={2}
                     onClick={() => {
-                      fileDownload(data2?.getUsersDataCSV !, `users_data.csv`);
+                      fileDownload(data1?.TShirtDetailsCSV !, `tshirt_details.csv`);
                     }}
                   >
                     <EditIcon m={2} />
-                    Download Registered Usersdata
-                  </Button> */}
+                    Download Tshirt Details
+                  </Button>
 
             </Center>
             <Button width="100%" padding="1.5vw" backgroundColor="#75c9b0" marginBottom="4vh" onClick={(e:any) => {history.push('/admin/add')}}>Add Event</Button>
