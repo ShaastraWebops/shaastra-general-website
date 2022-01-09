@@ -40,14 +40,14 @@ const EventsAdmin = () => {
     })
 
     var events = data?.getEvents.events;
-    const {data : data1 , error : error1, loading:loading1} = useGetUsersQuery({
-        variables : {
-            filter : {
-                role : "USER"
-            }
-        }
-    })
-    const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
+    // const {data : data1 , error : error1, loading:loading1} = useGetUsersQuery({
+    //     variables : {
+    //         filter : {
+    //             role : "USER"
+    //         }
+    //     }
+    // })
+    // const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
     const {data : data3} = useGetPaidUsersCountQuery();
 
     const history = useHistory()
@@ -60,8 +60,8 @@ const EventsAdmin = () => {
                 <Heading alignSelf="center" color="#ea8a94" fontSize="7xl">&</Heading>
             </Flex>
             <Center p ={3} flexDirection={"column"} marginBottom="3vh">
-                <Heading m={2}>Registered Users count : {data1?.getUsers?.count}</Heading>
-                <Button
+                {/* <Heading m={2}>Registered Users count : {data1?.getUsers?.count}</Heading> */}
+                {/* <Button
                     p={2}
                     m={2}
                     onClick={() => {
@@ -70,7 +70,7 @@ const EventsAdmin = () => {
                   >
                     <EditIcon m={2} />
                     Download Registered Usersdata
-                  </Button>
+                  </Button> */}
 
             </Center>
             <Button width="100%" padding="1.5vw" backgroundColor="#75c9b0" marginBottom="4vh" onClick={(e:any) => {history.push('/admin/add')}}>Add Event</Button>
