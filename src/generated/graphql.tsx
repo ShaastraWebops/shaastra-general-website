@@ -354,6 +354,7 @@ export type MutationVerifyUserArgs = {
 };
 
 export type Query = {
+  TShirtDetailsCSV: Scalars['String'];
   exportCSV: Scalars['String'];
   getChessDetails: Array<BlitzChess>;
   getChessDetailsCSV: Scalars['String'];
@@ -700,6 +701,11 @@ export type GetChessDetailsCsvQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetChessDetailsCsvQuery = { getChessDetailsCSV: string };
+
+export type TShirtDetailsCsvQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type TShirtDetailsCsvQuery = { TShirtDetailsCSV: string };
 
 export type GetPaidUsersCountQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1905,6 +1911,41 @@ export type GetChessDetailsCsvLazyQueryHookResult = ReturnType<typeof useGetChes
 export type GetChessDetailsCsvQueryResult = ApolloReactCommon.QueryResult<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>;
 export function refetchGetChessDetailsCsvQuery(variables?: GetChessDetailsCsvQueryVariables) {
       return { query: GetChessDetailsCsvDocument, variables: variables }
+    }
+export const TShirtDetailsCsvDocument = gql`
+    query TShirtDetailsCSV {
+  TShirtDetailsCSV
+}
+    `;
+
+/**
+ * __useTShirtDetailsCsvQuery__
+ *
+ * To run a query within a React component, call `useTShirtDetailsCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTShirtDetailsCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTShirtDetailsCsvQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useTShirtDetailsCsvQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>(TShirtDetailsCsvDocument, options);
+      }
+export function useTShirtDetailsCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>(TShirtDetailsCsvDocument, options);
+        }
+export type TShirtDetailsCsvQueryHookResult = ReturnType<typeof useTShirtDetailsCsvQuery>;
+export type TShirtDetailsCsvLazyQueryHookResult = ReturnType<typeof useTShirtDetailsCsvLazyQuery>;
+export type TShirtDetailsCsvQueryResult = ApolloReactCommon.QueryResult<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>;
+export function refetchTShirtDetailsCsvQuery(variables?: TShirtDetailsCsvQueryVariables) {
+      return { query: TShirtDetailsCsvDocument, variables: variables }
     }
 export const GetPaidUsersCountDocument = gql`
     query getPaidUsersCount {
