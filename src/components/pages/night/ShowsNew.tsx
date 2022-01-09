@@ -169,9 +169,8 @@ const Shows = () => {
                     alignItems={"center"}
                    >
                        <Tooltip size="400px" label={`
-                       Sand Art and Light Show | Shaastra 2016  Performed by Vivek Patil -
-                       The renowned visual storyteller artist, headlined the first show. Putting together a trifecta of Light, Sand, and Speed Art, the show was a stunning visual experience.`} 
-                        placement="right" padding="2vw" className="shows-tooltip" maxWidth={["50vw","25vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}
+                       Sand Art and Light Show | Shaastra 2016, Shaastra 2019 - Performed by Vivek Patil: The renowned visual storyteller artist, headlined the first show. Putting together a trifecta of Light, Sand, and Speed Art, the show was a stunning visual experience.`} 
+                        placement="right" padding="2vw" className="shows-tooltip" maxWidth={["50vw","32vw"]} fontSize={["2.75vw","1vw"]} backgroundColor={"#00F7FF"} color="black" font-fontFamily={"Roboto"}
                         isOpen={isLabelOpen1} 
                         >
                         <Image onMouseEnter={() => setIsLabelOpen1(true)}
