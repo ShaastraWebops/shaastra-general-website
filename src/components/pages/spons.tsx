@@ -5,6 +5,7 @@ import "../../styles/spons.scss";
 import "../../styles/tooltip.scss";
 import Astra from "../../images/logo/static/Astra.svg";
 import Capermint from "../../images/logo/static/capermint.png";
+import ACR from "../../images/logo/static/ACR.png";
 import Atlasian from "../../images/logo/static/Atlasian.svg";
 import Boeing from "../../images/logo/static/Boeing.svg";
 import CAT from "../../images/logo/static/CAT.svg";
@@ -258,6 +259,16 @@ function Spons() {
                 </div>
               </div>
             </div> */}
+            <p id="sponsro1">Price Money Sponsor</p>
+
+            <div className="flexx">
+                {/* <p id="sponsro">Co Sponsor</p> */}
+                <div className="card" id="photo">
+                  <a href="https://acr.iitm.ac.in/">
+                    <img src={ACR} className="img-responsive" id="acr" alt="" />
+                  </a>
+                </div>
+              </div>
             <p id="sponsro1">Event Sponsors</p>
             <div className="card__collection">
               <div className="flexx">
