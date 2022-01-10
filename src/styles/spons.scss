@@ -87,7 +87,13 @@
   scroll-behavior: smooth;
 }
 /* Tooltip text */
-
+.sponsBox1 #otherSponsors{
+  font-size: 23px;
+}
+.sponsBox1 #GF{
+  position: relative;
+  top: -10px;
+}
 .sponsBox1 .tooltip {
   position: relative;
   display: inline-block;

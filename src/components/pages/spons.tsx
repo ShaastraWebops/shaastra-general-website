@@ -500,6 +500,7 @@ function Spons() {
               </div>
 
             </div>
+              <p id="sponsro1">Other Sponsors</p>
             <div className="card__collection">
               <div className="flexx">
                 <div className="card" id="photo">
@@ -560,7 +561,7 @@ function Spons() {
                     <img
                       src={GF}
                       className="img-responsive"
-                      id="BN"
+                      id="GF"
                       alt=""
                     />
                   </a>
