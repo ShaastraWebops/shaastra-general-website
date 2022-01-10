@@ -254,7 +254,7 @@ const Team = (props: Props) => {
         shastraMailId: "harshitha@shaastra.org",
         contact: "6303344798",
       },
-      desc: "Being part of the team inspires and motivates me to work hard and be responsible:)",
+      desc: "I have been part of shaastra since my first year. It wasn't a smooth one, there were and are lots of ups and downs. At the end of every tenure, I evolve as a new and better person. I will cherish all my learnings i experienced being part of SHAASTRA.",
       imgURL: photos.ee18b138,
     },
     {
