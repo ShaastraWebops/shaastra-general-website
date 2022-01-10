@@ -28,8 +28,8 @@ mutation resetPassword($resetPasswordInput: ResetPasswordInput!) {
   resetPassword(data: $resetPasswordInput)
 }
 
-mutation register($EventID: String!) {
-  register(EventID: $EventID) {
+mutation register($EventID: String! , $referral : String) {
+  register(EventID: $EventID , referral : $referral) {
     registered
     eventPay {
       orderId
@@ -48,8 +48,8 @@ mutation register($EventID: String!) {
   }
 }
 
-mutation ComboOffer($combo: String!,$workshopsIDs : [String!] , $TShirtsDetails : TShirtsDetails) {
-  ComboOffer(combo: $combo , TShirtsDetails: $TShirtsDetails ,workshopsIDs : $workshopsIDs ){
+mutation ComboOffer($combo: String!,$workshopsIDs : [String!] , $TShirtsDetails : TShirtsDetails, $referral : String) {
+  ComboOffer(combo: $combo , TShirtsDetails: $TShirtsDetails ,workshopsIDs : $workshopsIDs,referral : $referral ){
     eventPay {
       orderId
       amount
@@ -63,12 +63,12 @@ mutation ComboOffer($combo: String!,$workshopsIDs : [String!] , $TShirtsDetails 
 }
 }
 
-mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!) {
-  updateEventPay(EventId: $eventId, data: $data)
+mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!,$referral : String) {
+  updateEventPay(EventId: $eventId, data: $data , referral : $referral)
 }
 
-mutation ComboupdateEventPay($data: UpdateEventPayInput!) {
-  ComboupdateEventPay(data: $data)
+mutation ComboupdateEventPay($data: UpdateEventPayInput!,$referral : String) {
+  ComboupdateEventPay(data: $data , referral : $referral)
 }
 mutation createTeamandRegister($createTeamAndRegisterData: CreateTeamInput!) {
   createTeamAndRegister(data: $createTeamAndRegisterData)

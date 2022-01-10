@@ -228,7 +228,7 @@ const Home = (props: Props) => {
               <br />
               Limited seats available!!
               <br />
-              Offer available until 10th January
+              Offer available until 12th January
             </h3>
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;

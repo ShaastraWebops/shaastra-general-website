@@ -11,6 +11,8 @@ import {
   AlertIcon,
   Box,
   Button,
+  Flex,
+  Input,
   Modal,
   ModalCloseButton,
   ModalContent,
@@ -45,8 +47,8 @@ function loadScript(src: string) {
 const PayRegister = ({ data, isAdmin }: Probs) => {
   const history = useHistory();
   var { isOpen, onOpen, onClose } = useDisclosure();
-
-  const [register, { data: data1, error, loading }] = useRegisterMutation({
+  const [referral , setReferral] = React.useState("");
+ const [register, { data: data1, error, loading }] = useRegisterMutation({
     /******** On create order completion, open Razorpay ********/
     async onCompleted(data) {
       if (data.register.eventPay) {
@@ -92,6 +94,7 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
           await updateEventPayMutation({
             variables: {
               eventId: data?.event.id!,
+              referral,
               data: {
                 orderId: response.razorpay_order_id,
                 payementId: response.razorpay_payment_id,
@@ -128,6 +131,7 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
       await register({
         variables: {
           EventID: data.id,
+          referral 
         },
       });
     } catch (e) {
@@ -139,23 +143,25 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
     const onClose = () => {
       window.location.reload();
     };
-    let referalcode = sessionStorage.getItem("referalcode");
-    let coursename = sessionStorage.getItem("coursename");
-    try {
-      const Func = async() => {
-        await axios.post('https://sheet.best/api/sheets/f8d10436-8ee1-42ef-87ab-3e17a9c99d1c',{
-          referalcode,coursename
-        }).then((response)=>{
-          sessionStorage.clear();
-          console.log(response);
-        }).catch(e=>{
-          console.log(e);
-        });
-      }
-      Func();
-    } catch (error) {
-      console.log(error);
-    }
+  //   if(referral){  
+  //   try {
+  //     const Func = async() => {
+  //       let coursename = data.name;
+  //       let referalcode = referral;
+  //       await axios.post('https://sheet.best/api/sheets/f8d10436-8ee1-42ef-87ab-3e17a9c99d1c',{
+  //         referalcode,coursename
+  //       }).then((response)=>{
+  //         sessionStorage.clear();
+  //         console.log(response);
+  //       }).catch(e=>{
+  //         console.log(e);
+  //       });
+  //     }
+  //     Func();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
     return (
       <Modal isOpen={true} onClose={onClose}>
         <ModalOverlay />
@@ -216,9 +222,10 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
             </Alert>
           </Box>
         ) : (
-          <Box
+          <Flex
             marginRight={"2vw"}
             marginTop="2vh"
+            flexDirection={['column','column','row','row']}
             height={[
               "fit-content",
               "fit-content",
@@ -226,6 +233,16 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
               "fit-content",
             ]}
           >
+                     <Input
+                            width={["100%","100%","50%","50%"]}
+                            value={referral}
+                            mx={[0,0,3,3]}
+                            my={[2,2,0,0]}
+                            placeholder="Have a Referal Code?"
+                            onChange={(e) => setReferral(e.target.value)}
+                            type={"text"}
+                            borderBottom="2px solid white"
+                        />
             <Button
               backgroundColor={"rgb(171, 228, 156)"}
               color="black"
@@ -238,7 +255,7 @@ const PayRegister = ({ data, isAdmin }: Probs) => {
             >
               REGISTER NOW
             </Button>
-          </Box>
+          </Flex>
         ))}
     </div>
   );
