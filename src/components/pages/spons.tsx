@@ -217,7 +217,15 @@ function Spons() {
                 {/* <p id="sponsro">Co Sponsor</p> */}
                 <div className="card" id="photo">
                   <a href="https://www.larsentoubro.com/">
-                    <img src={LT} className="img-responsive" id="lt" alt="" />
+                    <img src={LT} className="img-responsive"                       style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            color: "#fff",
+                          }
+                      } id="lt" alt="" />
                   </a>
                 </div>
               </div>
@@ -374,7 +382,7 @@ function Spons() {
               <div className="flexx">
                 <div className="card" id="photo">
                   {/* <p>Juspy</p> */}
-                  <a href="https://www.kla-tencor.com/company">
+                  <a href="#">
                     <img src={JUSPY} className="img-responsive" id="juspy" alt="" />
                   </a>
                 </div>
