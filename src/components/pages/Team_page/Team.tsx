@@ -246,7 +246,7 @@ const Team = (props: Props) => {
     },
     {
       mailId: "ee18b138@smail.iitm.ac.in",
-      name: "HARSHITHA",
+      name: "K Harshitha",
       dept: "Quality Management System",
       social_links: {
          linkedIn: "https://www.linkedin.com/in/harshitha-k-788492194/",
