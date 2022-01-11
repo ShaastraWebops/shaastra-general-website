@@ -154,9 +154,9 @@ const Shows = () => {
                             <SwiperSlide>
                                 <Image src={BiswaP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
                             </SwiperSlide>
-                            <SwiperSlide>
+                            {/* <SwiperSlide>
                                 <Image src={SuhaniP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
-                            </SwiperSlide>
+                            </SwiperSlide> */}
                         </Swiper>
                    </Box>
                    <Box  padding={["4vh 5vw","4vh 10vw"]} marginTop={"5vh"}

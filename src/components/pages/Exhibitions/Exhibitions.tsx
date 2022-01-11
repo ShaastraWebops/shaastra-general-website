@@ -69,7 +69,11 @@ const Exhibitions = ()=>{
             className = "Title"
             color={Titlecolor}> EXHIBITIONS </MotionText>
           </Center>
-  
+          <Flex justifyContent={"center"} height="fit-content" margin="auto" fontSize={["5vw","1.5vw"]}>
+            <Box padding={["4vw","1vw"]} zIndex={3} backgroundColor={Titlecolor} borderRadius={"12px"} color="white">
+            <a href="http://exhibition.shaastra.org/" target="_blank">Register Here</a>
+            </Box>
+          </Flex>
           </Heading>
           <Stack
           align={'center'}
