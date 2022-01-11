@@ -107,8 +107,8 @@ const Shows = () => {
                     backgroundColor={"black"} color="white"
                 >
                     <Text marginRight={"4vw"}> <a href="#homeShowNew">Home</a> </Text>
-                    <Text marginRight={"4vw"}> <a href="#about">About us</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#present">Upcoming shows</a> </Text>
+                    <Text marginRight={"4vw"}> <a href="#about">About us</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#previous">Previous shows</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#reverb">Reverb</a> </Text>
                     <Text > <a href="#contact">Contact Shaastra Nights</a> </Text>
@@ -136,23 +136,6 @@ const Shows = () => {
                     padding={["2vw","1vw"]} zIndex={"2"}
                     borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
                    > <a href="/signup" className="montserrat">Register for shows</a> </Box>
-               </Flex>
-               <Flex
-                height="100vh" width="100vw"
-                color="white"
-                id="about" position={"relative"}
-                flexDirection={"column"} justifyContent={"center"} alignItems={"center"} 
-               >
-                   <Image src={About} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
-                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={2}    className="shows-new-heading">ABOUT US</Heading>
-                   <Text width="80%" fontSize={["4vw","1.5vw"]} zIndex={2}>
-                    The flagship event of Shaastra, Shaastra Nights, has made the former a noteworthy leader amongst 
-                    parallel fests in the country. Shaastra Nights provide a platform for exquisite performers to display 
-                    their artistic prowess while giving the audience a once-in-a-lifetime opportunity to witness a confluence of 
-                    technology and culture. Shaastra Nights is non-ticketed - an attribute that distinguishes it from shows 
-                    akin; it enables students and the public to access quality entertainment at its finest. Behind the warranted 
-                    glitz and glamour, Shaastra Nights' true intentions shine - diversity and inclusivity.
-                   </Text>
                </Flex>
                <Flex
                 id="present"
@@ -210,10 +193,27 @@ const Shows = () => {
                              stealthily reading your thoughts - Suhani can do it all! 
                              <br /><br />
                              Brace yourselves for a magical evening this 
-                             Saturday, at <b>7.00 pm</b> only on <a href="http://shaastra2022.com/">shaastra2022.com</a>
+                             Saturday, at <b>7.00 pm</b> only on <b><a href="http://shaastra2022.com/">shaastra2022.com</a></b>
                          </Text>
                      </Flex>
                    </Box>
+               </Flex>
+               <Flex
+                height="100vh" width="100vw"
+                color="white"
+                id="about" position={"relative"}
+                flexDirection={"column"} justifyContent={"center"} alignItems={"center"} 
+               >
+                   <Image src={About} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
+                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={2}    className="shows-new-heading">ABOUT US</Heading>
+                   <Text width="80%" fontSize={["4vw","1.5vw"]} zIndex={2}>
+                    The flagship event of Shaastra, Shaastra Nights, has made the former a noteworthy leader amongst 
+                    parallel fests in the country. Shaastra Nights provide a platform for exquisite performers to display 
+                    their artistic prowess while giving the audience a once-in-a-lifetime opportunity to witness a confluence of 
+                    technology and culture. Shaastra Nights is non-ticketed - an attribute that distinguishes it from shows 
+                    akin; it enables students and the public to access quality entertainment at its finest. Behind the warranted 
+                    glitz and glamour, Shaastra Nights' true intentions shine - diversity and inclusivity.
+                   </Text>
                </Flex>
                <Flex
                  id="previous"
