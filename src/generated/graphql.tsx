@@ -224,12 +224,14 @@ export type Mutation = {
 export type MutationComboOfferArgs = {
   TShirtsDetails?: InputMaybe<TShirtsDetails>;
   combo: Scalars['String'];
+  referral?: InputMaybe<Scalars['String']>;
   workshopsIDs?: InputMaybe<Array<Scalars['String']>>;
 };
 
 
 export type MutationComboupdateEventPayArgs = {
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -320,6 +322,7 @@ export type MutationLoginArgs = {
 
 export type MutationRegisterArgs = {
   EventID: Scalars['String'];
+  referral?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -341,6 +344,7 @@ export type MutationResetPasswordArgs = {
 export type MutationUpdateEventPayArgs = {
   EventId: Scalars['String'];
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -354,6 +358,7 @@ export type MutationVerifyUserArgs = {
 };
 
 export type Query = {
+  TShirtDetailsCSV: Scalars['String'];
   exportCSV: Scalars['String'];
   getChessDetails: Array<BlitzChess>;
   getChessDetailsCSV: Scalars['String'];
@@ -512,6 +517,7 @@ export type ResetPasswordMutation = { resetPassword: boolean };
 
 export type RegisterMutationVariables = Exact<{
   EventID: Scalars['String'];
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -521,6 +527,7 @@ export type ComboOfferMutationVariables = Exact<{
   combo: Scalars['String'];
   workshopsIDs?: InputMaybe<Array<Scalars['String']> | Scalars['String']>;
   TShirtsDetails?: InputMaybe<TShirtsDetails>;
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -529,6 +536,7 @@ export type ComboOfferMutation = { ComboOffer: { eventPay?: { orderId: string, a
 export type UpdateEventPayMutationVariables = Exact<{
   eventId: Scalars['String'];
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -536,6 +544,7 @@ export type UpdateEventPayMutation = { updateEventPay: boolean };
 
 export type ComboupdateEventPayMutationVariables = Exact<{
   data: UpdateEventPayInput;
+  referral?: InputMaybe<Scalars['String']>;
 }>;
 
 
@@ -700,6 +709,11 @@ export type GetChessDetailsCsvQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetChessDetailsCsvQuery = { getChessDetailsCSV: string };
+
+export type TShirtDetailsCsvQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type TShirtDetailsCsvQuery = { TShirtDetailsCSV: string };
 
 export type GetPaidUsersCountQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -897,8 +911,8 @@ export type ResetPasswordMutationHookResult = ReturnType<typeof useResetPassword
 export type ResetPasswordMutationResult = ApolloReactCommon.MutationResult<ResetPasswordMutation>;
 export type ResetPasswordMutationOptions = ApolloReactCommon.BaseMutationOptions<ResetPasswordMutation, ResetPasswordMutationVariables>;
 export const RegisterDocument = gql`
-    mutation register($EventID: String!) {
-  register(EventID: $EventID) {
+    mutation register($EventID: String!, $referral: String) {
+  register(EventID: $EventID, referral: $referral) {
     registered
     eventPay {
       orderId
@@ -933,6 +947,7 @@ export type RegisterMutationFn = ApolloReactCommon.MutationFunction<RegisterMuta
  * const [registerMutation, { data, loading, error }] = useRegisterMutation({
  *   variables: {
  *      EventID: // value for 'EventID'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
@@ -944,11 +959,12 @@ export type RegisterMutationHookResult = ReturnType<typeof useRegisterMutation>;
 export type RegisterMutationResult = ApolloReactCommon.MutationResult<RegisterMutation>;
 export type RegisterMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
 export const ComboOfferDocument = gql`
-    mutation ComboOffer($combo: String!, $workshopsIDs: [String!], $TShirtsDetails: TShirtsDetails) {
+    mutation ComboOffer($combo: String!, $workshopsIDs: [String!], $TShirtsDetails: TShirtsDetails, $referral: String) {
   ComboOffer(
     combo: $combo
     TShirtsDetails: $TShirtsDetails
     workshopsIDs: $workshopsIDs
+    referral: $referral
   ) {
     eventPay {
       orderId
@@ -981,6 +997,7 @@ export type ComboOfferMutationFn = ApolloReactCommon.MutationFunction<ComboOffer
  *      combo: // value for 'combo'
  *      workshopsIDs: // value for 'workshopsIDs'
  *      TShirtsDetails: // value for 'TShirtsDetails'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
@@ -992,8 +1009,8 @@ export type ComboOfferMutationHookResult = ReturnType<typeof useComboOfferMutati
 export type ComboOfferMutationResult = ApolloReactCommon.MutationResult<ComboOfferMutation>;
 export type ComboOfferMutationOptions = ApolloReactCommon.BaseMutationOptions<ComboOfferMutation, ComboOfferMutationVariables>;
 export const UpdateEventPayDocument = gql`
-    mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!) {
-  updateEventPay(EventId: $eventId, data: $data)
+    mutation updateEventPay($eventId: String!, $data: UpdateEventPayInput!, $referral: String) {
+  updateEventPay(EventId: $eventId, data: $data, referral: $referral)
 }
     `;
 export type UpdateEventPayMutationFn = ApolloReactCommon.MutationFunction<UpdateEventPayMutation, UpdateEventPayMutationVariables>;
@@ -1013,6 +1030,7 @@ export type UpdateEventPayMutationFn = ApolloReactCommon.MutationFunction<Update
  *   variables: {
  *      eventId: // value for 'eventId'
  *      data: // value for 'data'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
@@ -1024,8 +1042,8 @@ export type UpdateEventPayMutationHookResult = ReturnType<typeof useUpdateEventP
 export type UpdateEventPayMutationResult = ApolloReactCommon.MutationResult<UpdateEventPayMutation>;
 export type UpdateEventPayMutationOptions = ApolloReactCommon.BaseMutationOptions<UpdateEventPayMutation, UpdateEventPayMutationVariables>;
 export const ComboupdateEventPayDocument = gql`
-    mutation ComboupdateEventPay($data: UpdateEventPayInput!) {
-  ComboupdateEventPay(data: $data)
+    mutation ComboupdateEventPay($data: UpdateEventPayInput!, $referral: String) {
+  ComboupdateEventPay(data: $data, referral: $referral)
 }
     `;
 export type ComboupdateEventPayMutationFn = ApolloReactCommon.MutationFunction<ComboupdateEventPayMutation, ComboupdateEventPayMutationVariables>;
@@ -1044,6 +1062,7 @@ export type ComboupdateEventPayMutationFn = ApolloReactCommon.MutationFunction<C
  * const [comboupdateEventPayMutation, { data, loading, error }] = useComboupdateEventPayMutation({
  *   variables: {
  *      data: // value for 'data'
+ *      referral: // value for 'referral'
  *   },
  * });
  */
@@ -1905,6 +1924,41 @@ export type GetChessDetailsCsvLazyQueryHookResult = ReturnType<typeof useGetChes
 export type GetChessDetailsCsvQueryResult = ApolloReactCommon.QueryResult<GetChessDetailsCsvQuery, GetChessDetailsCsvQueryVariables>;
 export function refetchGetChessDetailsCsvQuery(variables?: GetChessDetailsCsvQueryVariables) {
       return { query: GetChessDetailsCsvDocument, variables: variables }
+    }
+export const TShirtDetailsCsvDocument = gql`
+    query TShirtDetailsCSV {
+  TShirtDetailsCSV
+}
+    `;
+
+/**
+ * __useTShirtDetailsCsvQuery__
+ *
+ * To run a query within a React component, call `useTShirtDetailsCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTShirtDetailsCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTShirtDetailsCsvQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useTShirtDetailsCsvQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>(TShirtDetailsCsvDocument, options);
+      }
+export function useTShirtDetailsCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>(TShirtDetailsCsvDocument, options);
+        }
+export type TShirtDetailsCsvQueryHookResult = ReturnType<typeof useTShirtDetailsCsvQuery>;
+export type TShirtDetailsCsvLazyQueryHookResult = ReturnType<typeof useTShirtDetailsCsvLazyQuery>;
+export type TShirtDetailsCsvQueryResult = ApolloReactCommon.QueryResult<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>;
+export function refetchTShirtDetailsCsvQuery(variables?: TShirtDetailsCsvQueryVariables) {
+      return { query: TShirtDetailsCsvDocument, variables: variables }
     }
 export const GetPaidUsersCountDocument = gql`
     query getPaidUsersCount {

@@ -4,7 +4,17 @@ import "../../styles/button.scss";
 import "../../styles/spons.scss";
 import "../../styles/tooltip.scss";
 import Astra from "../../images/logo/static/Astra.svg";
+import JUSPY from "../../images/logo/static/JUSPY.png";
+import BW from "../../images/logo/static/BN.png";
+import BSC from "../../images/logo/static/BSC.png";
+import UC from "../../images/logo/static/UC.png";
+import MZ from "../../images/logo/static/MZ.svg";
+import GF from "../../images/logo/static/GF.png";
+import GOW from "../../images/logo/static/GOW.png";
+import GOB from "../../images/logo/static/GOB.png";
 import Capermint from "../../images/logo/static/capermint.png";
+import BN from "../../images/logo/static/BN.png";
+import ACR from "../../images/logo/static/ACR.png";
 import Atlasian from "../../images/logo/static/Atlasian.svg";
 import Boeing from "../../images/logo/static/Boeing.svg";
 import CAT from "../../images/logo/static/CAT.svg";
@@ -90,7 +100,7 @@ function Spons() {
             <div className="card__collection">
 
               <div className="flexx">
-                <p id="sponsro">Title Sponsor</p>
+                <p id="sponsro1">Title Sponsor</p>
                 <div className="card" id="photo">
                   <a href="https://www.tataprojects.com/">
                     <img
@@ -104,7 +114,7 @@ function Spons() {
               </div>
 
               <div className="flexx">
-                <p id="sponsro">Associate Title</p>
+                <p id="sponsro1">Associate Title Sponsor</p>
                 <div className="card" id="photo">
                   <a href="https://www.mtxb2b.com/s/">
                     <img src={mtx} className="img-responsive" id="mtx" alt="" />
@@ -113,7 +123,7 @@ function Spons() {
               </div>
 
               {/* <div className="flexx">
-                <p id="sponsro">Platinum Sponsor</p>
+                <p id="sponsro1">Platinum Sponsor</p>
                 <div className="card" id="photo">
                   <a href="https://www.binance.com/en-IN">
                     <img src={binance} className="img-responsive" id="binance" alt="" />
@@ -122,7 +132,7 @@ function Spons() {
               </div> */}
 
               <div className="flexx">
-                <p id="sponsro">Powered by </p>
+                <p id="sponsro1">Powered by </p>
                 <div className="card" id="photo">
                   <a href="https://www.amd.com/en">
                     <img
@@ -145,7 +155,7 @@ function Spons() {
               </div>
 
               <div className="flexx">
-                <p id="sponsro">Gold Sponsor</p>
+                <p id="sponsro1">Gold Sponsor</p>
                 <div className="card" id="photo">
                   <a href="https://www.wellsfargo.com/">
                     <img
@@ -158,7 +168,7 @@ function Spons() {
               </div>
 
               <div className="flexx">
-                <p id="sponsro">Platinum Sponsor</p>
+                <p id="sponsro1">Platinum Sponsor</p>
                 <div className="card" id="photo">
                   <a href="https://www.sbi.co.in/">
                     <img src={SBI} className="img-responsive" id="binance" alt=""
@@ -207,7 +217,15 @@ function Spons() {
                 {/* <p id="sponsro">Co Sponsor</p> */}
                 <div className="card" id="photo">
                   <a href="https://www.larsentoubro.com/">
-                    <img src={LT} className="img-responsive" id="lt" alt="" />
+                    <img src={LT} className="img-responsive"                       style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            color: "#fff",
+                          }
+                      } id="lt" alt="" />
                   </a>
                 </div>
               </div>
@@ -258,6 +276,16 @@ function Spons() {
                 </div>
               </div>
             </div> */}
+            <p id="sponsro1">Prize Money Sponsor</p>
+
+            <div className="flexx">
+              {/* <p id="sponsro">Co Sponsor</p> */}
+              <div className="card" id="photo">
+                <a href="https://acr.iitm.ac.in/">
+                  <img src={ACR} className="img-responsive" id="acr" alt="" />
+                </a>
+              </div>
+            </div>
             <p id="sponsro1">Event Sponsors</p>
             <div className="card__collection">
               <div className="flexx">
@@ -351,7 +379,14 @@ function Spons() {
                 </div>
               </div>
 
-
+              <div className="flexx">
+                <div className="card" id="photo">
+                  {/* <p>Juspy</p> */}
+                  <a href="#">
+                    <img src={JUSPY} className="img-responsive" id="juspy" alt="" />
+                  </a>
+                </div>
+              </div>
             </div>
             <p id="sponsro1">Juniors Sponsor</p>
 
@@ -416,6 +451,9 @@ function Spons() {
                   </a>
                 </div>
               </div>
+
+
+
             </div>
             <p id="sponsro1">Shows Sponsor</p>
             <div className="card__collection">
@@ -470,7 +508,112 @@ function Spons() {
               </div>
 
             </div>
-            
+              <p id="sponsro1">Other Sponsors</p>
+            <div className="card__collection">
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Confectionery Sponsor</p>
+                  <a href="#">
+                    <img
+                      src={BN}
+                      className="img-responsive"
+                      id="BN"
+                      alt=""
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Savings Sponsor</p>
+                  <a href="#">
+                    <img
+                      src={GOB}
+                      className="img-responsive"
+                      id="GOB"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Grooming Sponsor</p>
+                  <a href="#">
+                    <img
+                      src={BSC}
+                      className="img-responsive"
+                      id="BSC"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Desert Sponsor</p>
+                  <a href="#">
+                    <img
+                      src={GF}
+                      className="img-responsive"
+                      id="GF"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Snack Sponsor</p>
+                  <a href="#">
+                    <img
+                      src={UC}
+                      className="img-responsive"
+                      id="BN"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Industry Sponsor</p>
+                  <a href="#">
+                    <img
+                      src={MZ}
+                      className="img-responsive"
+                      id="MZ"
+                      alt=""
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                    />
+                  </a>
+                </div>
+              </div>
+
+            </div>
           </div>
           <br />
           <br />

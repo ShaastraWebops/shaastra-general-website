@@ -13,6 +13,8 @@ import {
   AlertIcon,
   Box,
   Button,
+  Flex,
+  Input,
   Modal,
   ModalCloseButton,
   ModalContent,
@@ -46,6 +48,7 @@ function loadScript(src: string) {
 const ComboPay = ({ isAdmin, combo }: Probs) => {
   const history = useHistory();
   var { isOpen, onOpen, onClose } = useDisclosure();
+  const [referral , setReferral] = React.useState("");
 
   const [register, { data: data1, error, loading }] = useComboOfferMutation({
     /******** On create order completion, open Razorpay ********/
@@ -92,6 +95,7 @@ const ComboPay = ({ isAdmin, combo }: Probs) => {
         try {
           await updateEventPayMutation({
             variables: {
+              referral,
               data: {
                 orderId: response.razorpay_order_id,
                 payementId: response.razorpay_payment_id,
@@ -127,6 +131,7 @@ const ComboPay = ({ isAdmin, combo }: Probs) => {
       /******** Create OrderID ********/
       await register({
         variables: {
+          referral,
           combo
         }
       });
@@ -209,18 +214,27 @@ const ComboPay = ({ isAdmin, combo }: Probs) => {
     <div>
       {!isAdmin &&
         (
-          <Box
-            marginRight={"2vw"}
-            marginTop="2vh"
-            height={[
-              "fit-content",
-              "fit-content",
-              "fit-content",
-              "fit-content",
-            ]}
-          >
+          <Flex
+          // marginRight={"2vw"}
+          marginTop="5"
+          flexDirection={['column']}
+          height={[
+            "fit-content",
+            "fit-content",
+            "fit-content",
+            "fit-content",
+          ]}
+        >
+            <Input
+                            width={["100%","100%","100%","100%"]}
+                            value={referral}
+                            placeholder="Have a Referal Code?"
+                            onChange={(e) => setReferral(e.target.value)}
+                            type={"text"}
+                            borderBottom="2px solid white"
+                        />
             <Button
-              mt={10}
+              mt={5}
               w={'full'}
               bg={'#301b1b'}
               color={'white'}
@@ -236,7 +250,7 @@ const ComboPay = ({ isAdmin, combo }: Probs) => {
             >
               REGISTER NOW
             </Button>
-          </Box>
+          </Flex>
         )}
     </div>
   );

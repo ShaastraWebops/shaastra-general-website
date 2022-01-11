@@ -124,6 +124,10 @@ query getChessDetailsCSV {
   getChessDetailsCSV
 }
 
+query TShirtDetailsCSV {
+  TShirtDetailsCSV
+}
+
 query getPaidUsersCount {
   getPaidUsersCount
 }

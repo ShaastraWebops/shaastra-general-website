@@ -44,7 +44,7 @@ import Workshop3 from "../../images/workshop_3.jpg";
 // import codetochaos1 from "../../images/logo/static/codetochaos.svg";
 import codetochaos1 from "../../images/logo/static/codetochaos2.svg";
 import codetochaos2 from "../../images/logo/static/codetochaos2.svg";
-
+import hero_logo from "../../images/white-ILU.png";
 import Dan from "../../images/night/Dan_img.jpg";
 import Gloves from "../../images/night/Gloves02.jpg";
 import Harmony from "../../images/night/Harmony-SonicSnares-2.jpg";
@@ -54,9 +54,9 @@ import Nothwind from "../../images/night/Nothwind1.jpg";
 import Vivek from "../../images/night/vivek patil.jpg";
 import Reverb from "../../images/night/Reverb.jpg";
 import Soda from "../../images/night/Comedy Night.jpeg";
-import Kenny from "../../images/night/Kenny Sebastian.jpg"
-import Maraiana from "../../images/night/Mariana bo.jpg"
-import Adeleida from "../../images/night/Adelaida.jpg"
+import Kenny from "../../images/night/Kenny Sebastian.jpg";
+import Maraiana from "../../images/night/Mariana bo.jpg";
+import Adeleida from "../../images/night/Adelaida.jpg";
 
 interface Props {}
 
@@ -72,7 +72,7 @@ const Home = (props: Props) => {
   const codetochoas = useColorModeValue(codetochaos1, codetochaos2);
 
   const [sideNavBar_marker, setSideNavBar_marker] = React.useState<number>(
-    170 / 7
+    190 / 8
   );
 
   const update_sidenav_marker = (e) => {
@@ -83,7 +83,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 0
     ) {
       if (window.innerWidth > 600) {
-        setSideNavBar_marker(170 / 7 + 0 * (170 / 7 + 30));
+        setSideNavBar_marker(190 / 8 + 0 * (190 / 8 + 30));
       } else {
         setSideNavBar_marker(screenWidthSpacing - 5);
       }
@@ -92,7 +92,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(170 / 7 + 1 * (170 / 7 + 30));
+        setSideNavBar_marker(190 / 8 + 1 * (190 / 8 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 1 * (screenWidthSpacing + 30)
@@ -102,7 +102,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 2 * window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(170 / 7 + 2 * (170 / 7 + 30));
+        setSideNavBar_marker(190 / 8 + 2 * (190 / 8 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 2 * (screenWidthSpacing + 30)
@@ -112,7 +112,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 3 * window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(170 / 7 + 3 * (170 / 7 + 30));
+        setSideNavBar_marker(190 / 8 + 3 * (190 / 8 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 3 * (screenWidthSpacing + 30)
@@ -122,7 +122,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 4 * window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(170 / 7 + 4 * (170 / 7 + 30));
+        setSideNavBar_marker(190 / 8 + 4 * (190 / 8 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 4 * (screenWidthSpacing + 30)
@@ -132,7 +132,7 @@ const Home = (props: Props) => {
       e.target.scrollTop >= 5 * window.innerHeight - 20
     )
       if (window.innerWidth > 600)
-        setSideNavBar_marker(170 / 7 + 5 * (170 / 7 + 30));
+        setSideNavBar_marker(190 / 8 + 5 * (190 / 8 + 30));
       else
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 5 * (screenWidthSpacing + 30)
@@ -150,6 +150,37 @@ const Home = (props: Props) => {
     left: 0,
     right: 100,
   });
+
+  const calculateTimeLeft = () => {
+    let difference = +new Date(`1/13/2022 0:0`) - +new Date();
+    let timeLeft = { days: 0, hrs: 0, mins: 0, secs: 0 };
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hrs: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        mins: Math.floor((difference / 1000 / 60) % 60),
+        secs: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+  const [time, setTime] = React.useState<{
+    days: number;
+    hrs: number;
+    mins: number;
+    secs: number;
+  }>({
+    days: 0,
+    hrs: 0,
+    mins: 0,
+    secs: 0,
+  });
+
+  React.useEffect(() => {
+    setInterval(() => setTime(calculateTimeLeft()), 1000);
+  }, []);
 
   return (
     <CustomBox>
@@ -175,20 +206,23 @@ const Home = (props: Props) => {
           <a href="#landing_page">
             <span>01</span>
           </a>
-          <a href="#who_are_we">
+          <a href="#hero_section">
             <span>02</span>
           </a>
-          <a href="#workshop_events">
+          <a href="#who_are_we">
             <span>03</span>
           </a>
-          <a href="#speakers">
+          <a href="#workshop_events">
             <span>04</span>
           </a>
-          <a href="#pastshows">
+          <a href="#speakers">
             <span>05</span>
           </a>
-          <a href="#testimonials">
+          <a href="#pastshows">
             <span>06</span>
+          </a>
+          <a href="#testimonials">
+            <span>07</span>
           </a>
         </div>
         <section
@@ -228,7 +262,7 @@ const Home = (props: Props) => {
               <br />
               Limited seats available!!
               <br />
-              Offer available until 10th January
+              Offer available until 12th January
             </h3>
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;
@@ -274,6 +308,51 @@ const Home = (props: Props) => {
             </a>
             {window.innerWidth > 600 ? <span></span> : <></>}
           </div>
+        </section>
+        <section id="hero_section" className="Home_HeroPage">
+          <div className="imgBox">
+            <img src={hero_logo} alt="" />
+          </div>
+          <div className="countdown">
+            <div className="card">
+              <div className="card-top" id="days">
+                {time.days}
+              </div>
+              <div className="card-bottom">
+                <p>DAYS</p>
+              </div>
+            </div>
+            <span></span>
+            <div className="card">
+              <div className="card-top" id="hours">
+                {time.hrs}
+              </div>
+              <div className="card-bottom">
+                <p>HOURS</p>
+              </div>
+            </div>
+            <span></span>
+            <div className="card">
+              <div className="card-top" id="mins">
+                {time.mins}
+              </div>
+              <div className="card-bottom">
+                <p>MINS</p>
+              </div>
+            </div>
+            <span></span>
+            <div className="card">
+              <div className="card-top" id="secs">
+                {time.secs}
+              </div>
+              <div className="card-bottom">
+                <p>SECS</p>
+              </div>
+            </div>
+          </div>
+          <a target="_blank" href="https://shaastra2022.com">
+            Visit Here
+          </a>
         </section>
         <section id="who_are_we" className="Home_whoAreWe">
           <img id="who_are_we_robo1" src={robo1} alt="" />
@@ -547,9 +626,7 @@ const Home = (props: Props) => {
                 <div className="contentBox">
                   <div className="left">
                     <h3>Mariana BO</h3>
-                    <p>
-                      EDM Night
-                    </p>
+                    <p>EDM Night</p>
                     <p>Shaastra 2018</p>
                   </div>
                 </div>

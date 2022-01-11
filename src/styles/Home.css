@@ -32,7 +32,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 350px;
+  height: 400px;
   z-index: 2;
 }
 .Home_sideNavBar::before {
@@ -152,6 +152,95 @@
     z-index: 3;
   }
 }
+.Home_HeroPage {
+  padding-left: 100px !important;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Home_HeroPage .imgBox {
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Home_HeroPage .imgBox img {
+  width: 100%;
+  object-fit: contain;
+}
+.Home_HeroPage .countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+.Home_HeroPage .countdown span {
+  width: 2px;
+  height: calc(100% - 40px);
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  margin: 0 25px;
+}
+.Home_HeroPage .countdown .card {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+.Home_HeroPage .countdown .card .card-top {
+  font-size: 96px;
+  font-weight: 500;
+  line-height: 1em;
+}
+.Home_HeroPage .countdown .card .card-bottom p {
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1em;
+}
+@media screen and (max-width: 600px) {
+  .Home_HeroPage {
+    padding: 0 !important;
+  }
+  .Home_HeroPage .imgBox {
+    width: calc(100% - 40px);
+  }
+  .Home_HeroPage .countdown {
+    width: 290px;
+    flex-wrap: wrap;
+    margin: 10px 0 25px 0;
+  }
+  .Home_HeroPage .countdown span {
+    height: 72px;
+    margin: 0 15px;
+  }
+  .Home_HeroPage .countdown span:nth-of-type(2) {
+    display: none;
+  }
+  .Home_HeroPage .countdown .card {
+    margin: 0 10px;
+    width: 100px;
+  }
+  .Home_HeroPage .countdown .card .card-top {
+    font-size: 84px;
+    font-weight: 500;
+    line-height: 1.2em;
+  }
+  .Home_HeroPage .countdown .card .card-bottom p {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.2em;
+  }
+}
 /* Home_landingPage */
 .Home_landingPage {
   display: flex;
@@ -221,6 +310,7 @@
   font-weight: 400;
   letter-spacing: 0.5px;
 }
+.Home_HeroPage a,
 .Home_landingPage .ContentBox a {
   display: inline-block;
   margin: 10px 0;
@@ -233,8 +323,14 @@
   width: fit-content;
   color: #fff;
 }
+.Home_HeroPage a:hover,
 .Home_landingPage .ContentBox a:hover {
   letter-spacing: 2px;
+}
+.Home_HeroPage a {
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding: 5px 40px 7px 40px !important;
 }
 #salesLink {
   position: relative;

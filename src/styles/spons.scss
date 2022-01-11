@@ -87,7 +87,13 @@
   scroll-behavior: smooth;
 }
 /* Tooltip text */
-
+.sponsBox1 #otherSponsors{
+  font-size: 23px;
+}
+.sponsBox1 #GF{
+  position: relative;
+  top: -10px;
+}
 .sponsBox1 .tooltip {
   position: relative;
   display: inline-block;
@@ -509,6 +515,32 @@ $color-box-3: #27377c;
   height: 140px;
   width: 278px;
   top: 33px;
+}
+.sponsBox1 #juspy{
+  position: relative;
+  top: 30px;
+}
+.sponsBox1 #MZ{
+  position: relative;
+  top: 20px;
+  width: 50%;
+}
+.sponsBox1 #BSC{
+  position: relative;
+  width: 45%;
+}
+.sponsBox1 #GOB{
+  position: relative;
+  top: -30%;
+}
+.sponsBox1 #BN{
+  position: relative;
+  top: 15px;
+}
+.sponsBox1 #acr{
+  position: relative;
+  width: 95%;
+  top: 38%;
 }
 .sponsBox1 #autodesk{
   position: relative;
