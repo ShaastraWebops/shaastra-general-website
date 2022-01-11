@@ -41,11 +41,28 @@ const EventVertical = () => {
         }
     })
     var events;
+    var sponseve;
+    var oevents
     if (data) {
         events = data?.getEvents.events;
-        var eventsShuffle = events.map((value) => ({ value, sort: Math.random() }))
-            .sort((a, b) => a.sort - b.sort)
-            .map(({ value }) => value)
+        // var eventsShuffle = events.map((value) => ({ value, sort: Math.random() }))
+        //     .sort((a, b) => a.sort - b.sort)
+        //     .map(({ value }) => value)
+
+        sponseve = events.filter((eve) =>{
+            if(eve.id === "ckxezt6nt002udbp76oar48e5" || eve.id === "cky6uehup00frfsp7br7sblfn"){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        oevents = events.filter((eve) =>{
+            if(eve.id === "ckxezt6nt002udbp76oar48e5" || eve.id === "cky6uehup00frfsp7br7sblfn"){
+                return false;
+            }else{
+                return true;
+            }
+        })
     }
 
    
@@ -192,7 +209,13 @@ const EventVertical = () => {
                 <Button backgroundColor="white" className={search} color="black" onClick={filter}>Search</Button>
             </Flex> */}
                     {
-                        eventsShuffle?.map((event) => {
+                       sponseve && sponseve.map((event) => {
+                            return (
+                                <EventVerticalComponent data={event} isAdmin={false} />
+                            )
+                        })
+                    }{
+                       oevents && oevents.map((event) => {
                             if (event.vertical === "IGNITE" && event.id === "ckxdasopm0024wop7cxphcidu") return null
                             return (
                                 <EventVerticalComponent data={event} isAdmin={false} />
