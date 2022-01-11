@@ -321,6 +321,7 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
                         <option value='ckxepkbtu00142bp7cjws6894'>Simulation of Mechanisms using MATLAB</option>
                         <option value='ckxevm6oi000gcup70lp17fa1'>Product Management 101</option>
                         <option value='ckxnilxyt000j0bp7d9gp9a7e'>Consult 101</option>
+                        <option value='cky6uehup00frfsp7br7sblfn'>Engineering Robotics with Mathworks</option>
                     </Select>
                 </Flex>
                 <Flex width={'93%'} justifyContent={'center'}>
@@ -349,6 +350,7 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
                         <option value='ckxepkbtu00142bp7cjws6894'>Simulation of Mechanisms using MATLAB</option>
                         <option value='ckxevm6oi000gcup70lp17fa1'>Product Management 101</option>
                         <option value='ckxnilxyt000j0bp7d9gp9a7e'>Consult 101</option>
+                        <option value='cky6uehup00frfsp7br7sblfn'>Engineering Robotics with Mathworks</option>
                     </Select>
                 </Flex>
                 <Input
