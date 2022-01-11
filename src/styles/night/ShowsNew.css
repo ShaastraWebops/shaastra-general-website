@@ -60,3 +60,7 @@
 .reverb-swiper .swiper-slide img{
     margin: auto !important;
 }
+.reverb-swiper .swiper-button-next, .reverb-swiper .swiper-button-prev
+{
+    color: white;
+}

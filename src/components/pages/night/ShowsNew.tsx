@@ -47,6 +47,11 @@ import bgPrev from "../../../images/night/bg-prev.jpg"
   import Rishabh from "../../../images/night/Rishabh Rajan.jpg"
   import Freestyle from "../../../images/night/Freestyl' Air.png"
 
+  import BiswaP from "../../../images/night/poster_biswa.png"
+  import SuhaniP from "../../../images/night/poster_suhani.png"
+  import Biswa from "../../../images/night/Biswa.jpg"
+  import SuhaniPresent from "../../../images/night/Suhani.jpg"
+
   import Four from "../../../images/night/4.jpeg"
   import Dyskenetic from "../../../images/night/dyskenetic.jpeg"
   import Lizzie from "../../../images/night/lizzie.jpg"
@@ -103,6 +108,7 @@ const Shows = () => {
                 >
                     <Text marginRight={"4vw"}> <a href="#homeShowNew">Home</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#about">About us</a> </Text>
+                    <Text marginRight={"4vw"}> <a href="#present">Present shows</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#previous">Previous shows</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#reverb">Reverb</a> </Text>
                     <Text > <a href="#contact">Contact Shaastra Nights</a> </Text>
@@ -147,6 +153,67 @@ const Shows = () => {
                     akin; it enables students and the public to access quality entertainment at its finest. Behind the warranted 
                     glitz and glamour, Shaastra Nights' true intentions shine - diversity and inclusivity.
                    </Text>
+               </Flex>
+               <Flex
+                id="present"
+                backgroundImage={bgPrev}
+                padding={"8vh 0"} objectFit={"cover"}
+                height="fit-content" width="100vw"
+                flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
+               >
+                   <Heading marginBottom={"8vh"} fontSize={["8vw","3vw"]} color="white"   className="shows-new-heading">
+                        PRESENT SHOWS
+                   </Heading>
+                   <Box   padding={["4vh 5vw","4vh 10vw"]} className="reverb-swiper" marginTop={"5vh"}
+                 height="fit-content" width="100vw">
+                        <Swiper navigation={true}
+                        >
+                            <SwiperSlide>
+                                <Image src={BiswaP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image src={SuhaniP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
+                            </SwiperSlide>
+                        </Swiper>
+                   </Box>
+                   <Box  padding={["4vh 5vw","4vh 10vw"]} marginTop={"5vh"}
+                 height="fit-content" width="100vw">
+                     <Flex width="100%" justifyContent={"space-between"} alignItems={"center"} direction={["column", "row"]}>
+                         <Image src={Biswa} boxSize={["55vw","25vw"]} objectFit={"cover"}></Image>
+                         <Text width={["80vw","40vw" ]} marginTop={["4vh", "0"]}
+                            fontSize={["4vw","1.25vw"]} color="white" font-fontFamily={"Roboto"}
+                         >
+                             <Heading> <b>CHAOS | 15.01.2022 </b></Heading>
+                             <br /><br />
+                             <em>“I didn't know what rock music was. I always thought rocking was an adjective. I always 
+                                 thought it was good, better, best, rocking”.</em>
+                            <br /><br />
+                            After the legendary Kenny Sebastian, next in line we have <em>“Mast Aadmi”</em> Biswa Kalyan Rath, here to 
+                            lighten up your mood at the end of an eventful day. He's all set to tickle your funny bones with 
+                            his riotous comedy act.
+                            <br /><br />
+                            Catch Biswa Kalyan Rath live in Chaos on <b>15th January, Saturday at 7 pm</b>, for a <b><em>“Mast”</em></b> evening.
+                         </Text>
+                     </Flex>
+                   </Box>
+                   <Box  padding={["4vh 5vw","4vh 10vw"]} marginTop={"5vh"}
+                 height="fit-content" width="100vw">
+                     <Flex width="100%" justifyContent={"space-between"} alignItems={"center"} direction={["column", "row"]}>
+                         <Image src={SuhaniPresent} boxSize={["55vw","25vw"]} objectFit={"cover"}></Image>
+                         <Text width={["80vw","40vw" ]} marginTop={["4vh", "0"]}
+                            fontSize={["4vw","1.25vw"]} color="white" font-fontFamily={"Roboto"}
+                         >
+                             <Heading> <b>SPECTRE | 14.01.2022 </b></Heading>
+                             <br /><br />
+                             Illusion, mentalism, phantasm - join us for a magical milieu on <b>14th Jan</b> with India’s only female 
+                             illusionist and magician, Suhani Shah. Tickling your minds, tingling your bones with laughter & 
+                             stealthily reading your thoughts - Suhani can do it all! 
+                             <br /><br />
+                             Brace yourselves for a magical evening this 
+                             Saturday, at <b>7.00 pm</b> only on <a href="http://shaastra2022.com/">shaastra2022.com</a>
+                         </Text>
+                     </Flex>
+                   </Box>
                </Flex>
                <Flex
                  id="previous"
