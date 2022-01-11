@@ -108,7 +108,7 @@ const Shows = () => {
                 >
                     <Text marginRight={"4vw"}> <a href="#homeShowNew">Home</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#about">About us</a> </Text>
-                    <Text marginRight={"4vw"}> <a href="#present">Present shows</a> </Text>
+                    <Text marginRight={"4vw"}> <a href="#present">Upcoming shows</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#previous">Previous shows</a> </Text>
                     <Text marginRight={"4vw"}> <a href="#reverb">Reverb</a> </Text>
                     <Text > <a href="#contact">Contact Shaastra Nights</a> </Text>
@@ -162,7 +162,7 @@ const Shows = () => {
                 flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
                >
                    <Heading marginBottom={"8vh"} fontSize={["8vw","3vw"]} color="white"   className="shows-new-heading">
-                        PRESENT SHOWS
+                        UPCOMING SHOWS
                    </Heading>
                    <Box   padding={["4vh 5vw","4vh 10vw"]} className="reverb-swiper" marginTop={"5vh"}
                  height="fit-content" width="100vw">
