@@ -12,6 +12,7 @@ import MZ from "../../images/logo/static/MZ.svg";
 import GF from "../../images/logo/static/GF.png";
 import GOW from "../../images/logo/static/GOW.png";
 import GOB from "../../images/logo/static/GOB.png";
+import YB from "../../images/logo/static/YB.png";
 import Capermint from "../../images/logo/static/capermint.png";
 import BN from "../../images/logo/static/BN.png";
 import ACR from "../../images/logo/static/ACR.png";
@@ -168,7 +169,7 @@ function Spons() {
               </div>
 
               <div className="flexx">
-                <p id="sponsro1">Platinum Sponsor</p>
+                <p id="sponsro1">Silver Sponsor</p>
                 <div className="card" id="photo">
                   <a href="https://www.sbi.co.in/">
                     <img src={SBI} className="img-responsive" id="binance" alt=""
@@ -513,7 +514,7 @@ function Spons() {
               <div className="flexx">
                 <div className="card" id="photo">
                   <p id="otherSponsors">Confectionery Sponsor</p>
-                  <a href="#">
+                  <a href="https://brownieheavenindia.com/">
                     <img
                       src={BN}
                       className="img-responsive"
@@ -536,7 +537,7 @@ function Spons() {
               <div className="flexx">
                 <div className="card" id="photo">
                   <p id="otherSponsors">Savings Sponsor</p>
-                  <a href="#">
+                  <a href="https://www.grabon.in/">
                     <img
                       src={GOB}
                       className="img-responsive"
@@ -550,7 +551,7 @@ function Spons() {
               <div className="flexx">
                 <div className="card" id="photo">
                   <p id="otherSponsors">Grooming Sponsor</p>
-                  <a href="#">
+                  <a href="https://bombayshavingcompany.com/">
                     <img
                       src={BSC}
                       className="img-responsive"
@@ -579,7 +580,7 @@ function Spons() {
               <div className="flexx">
                 <div className="card" id="photo">
                   <p id="otherSponsors">Snack Sponsor</p>
-                  <a href="#">
+                  <a href="https://www.unibicfoods.com/">
                     <img
                       src={UC}
                       className="img-responsive"
@@ -593,7 +594,7 @@ function Spons() {
               <div className="flexx">
                 <div className="card" id="photo">
                   <p id="otherSponsors">Industry Sponsor</p>
-                  <a href="#">
+                  <a href="https://www.matterize.it/">
                     <img
                       src={MZ}
                       className="img-responsive"
@@ -608,6 +609,20 @@ function Spons() {
                             filter: "invert(0)",
                           }
                       }
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Snack Sponsor</p>
+                  <a href="https://www.yogabars.in/">
+                    <img
+                      src={YB}
+                      className="img-responsive"
+                      id="YB"
+                      alt=""
                     />
                   </a>
                 </div>
