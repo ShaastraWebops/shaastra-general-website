@@ -26,6 +26,7 @@ import Salesforces from "../../images/logo/static/Salesforce.svg";
 import Wells from "../../images/logo/static/Wells_Fargo.svg";
 import foxmula from "../../images/logo/static/foxmula.png";
 import innovaccer from "../../images/logo/static/innovaccer.png";
+import wrap from "../../images/logo/static/wrapcart.jpg";
 import SBI from '../../images/logo/static/SBI.png';
 import kamal from "../../images/logo/static/kamal_wears.png";
 import LT from "../../images/logo/static/L&T.png";
@@ -616,12 +617,26 @@ function Spons() {
 
               <div className="flexx">
                 <div className="card" id="photo">
-                  <p id="otherSponsors">Snack Sponsor</p>
+                  <p id="otherSponsors">Nutrition sponsor</p>
                   <a href="https://www.yogabars.in/">
                     <img
                       src={YB}
                       className="img-responsive"
                       id="YB"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Gifting sponsor</p>
+                  <a href="https://www.wrapcart.com/">
+                    <img
+                      src={wrap}
+                      className="img-responsive"
+                      // id="YB"
                       alt=""
                     />
                   </a>
