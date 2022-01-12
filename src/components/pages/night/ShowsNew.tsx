@@ -114,8 +114,8 @@ const Shows = () => {
                     <Text > <a href="#contact">Contact Shaastra Nights</a> </Text>
                </Flex>
                <Flex 
-                flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
-                height="83vh" width="100vw" marginTop={"0vw"}
+                flexDirection={"column"} justifyContent={"space-between"} alignItems={"center"}
+                height="83vh" width="100vw" marginTop={"0vw"} paddingTop={"20vh"}
                 id="homeShowNew" position={"relative"}
                >
                    <Box className="video-container-shows" position={"absolute"} top={"0"} left="0">
@@ -130,13 +130,7 @@ const Shows = () => {
                     marginBottom={"4vh"}
                     className="shows-new-heading"
                    >SHAASTRA NIGHTS</Heading>
-                    <Box
-                    backgroundColor={"#00F7FF"} color={"black"}
-                    fontFamily={"Montserrat"} fontWeight={"bold"}
-                    padding={["2vw","1vw"]} zIndex={"2"}
-                    borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
-                   > <a href="#present" className="montserrat">View upcoming shows</a> </Box>
-                     <Image marginTop={["5vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image>
+                     <Image justifySelf={"flex-end"} marginTop={["15vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image>
                </Flex>
                <Flex
                 id="present"

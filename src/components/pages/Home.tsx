@@ -290,6 +290,14 @@ const Home = (props: Props) => {
 
   return (
     <CustomBox>
+      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216942538-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-216942538-1');
+      </script> */}
       <div onScroll={update_sidenav_marker} className={`Home ${plain}`}>
         <div
           style={
