@@ -26,7 +26,7 @@ import "swiper/swiper-bundle";
 import "swiper/swiper-bundle.esm.browser";
 
 import bgPrev from "../../../images/night/bg-prev.jpg"
-
+import arrow from "../../../images/night/arrow.gif"
   import Dan from "../../../images/night/Dan_img.jpg"
   import Gloves from "../../../images/night/Gloves02.jpg"
   import Harmony from "../../../images/night/Harmony-SonicSnares-2.jpg"
@@ -130,12 +130,13 @@ const Shows = () => {
                     marginBottom={"4vh"}
                     className="shows-new-heading"
                    >SHAASTRA NIGHTS</Heading>
-                   <Box
+                    <Box
                     backgroundColor={"#00F7FF"} color={"black"}
                     fontFamily={"Montserrat"} fontWeight={"bold"}
                     padding={["2vw","1vw"]} zIndex={"2"}
                     borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
-                   > <a href="/signup" className="montserrat">Register for shows</a> </Box>
+                   > <a href="#present" className="montserrat">View upcoming shows</a> </Box>
+                     <Image marginTop={["5vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image>
                </Flex>
                <Flex
                 id="present"
@@ -154,9 +155,9 @@ const Shows = () => {
                             <SwiperSlide>
                                 <Image src={BiswaP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
                             </SwiperSlide>
-                            {/* <SwiperSlide>
+                            <SwiperSlide>
                                 <Image src={SuhaniP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
-                            </SwiperSlide> */}
+                            </SwiperSlide>
                         </Swiper>
                    </Box>
                    <Box  padding={["4vh 5vw","4vh 10vw"]} marginTop={"5vh"}
@@ -197,6 +198,12 @@ const Shows = () => {
                          </Text>
                      </Flex>
                    </Box>
+                   <Box
+                    backgroundColor={"#00F7FF"} color={"black"}
+                    fontFamily={"Montserrat"} fontWeight={"bold"}
+                    padding={["2vw","1vw"]} zIndex={"2"}
+                    borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
+                   > <a href="/signup" className="montserrat">Register for shows</a> </Box>
                </Flex>
                <Flex
                 height="100vh" width="100vw"
@@ -406,7 +413,7 @@ const Shows = () => {
                 backgroundImage={Reverb} backgroundPosition={"center"} backgroundRepeat={"no-repeat"} backgroundSize={"cover"}
                >
                    <Box position={"absolute"} top="0" left="0" content="" height="100vh" width="100vw" backgroundColor={"rgba(0, 0, 0, 0.6)"}></Box>
-                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={"2"}   className="shows-new-heading">REVERB</Heading>
+                   <Heading marginBottom={"8vh"} marginTop={"2vh"} fontSize={["8vw","3vw"]} zIndex={"2"}   className="shows-new-heading">REVERB</Heading>
                    <Text width="80%" fontSize={["4vw","1.5vw"]} className="montserrat" fontFamily={"Montserrat"} zIndex={"2"}>
                     Our latest series, Reverb, aims to bridge the gap between technology and music by showcasing 
                     performances that are a juxtaposition of the same.
