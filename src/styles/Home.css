@@ -804,7 +804,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 120px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -823,7 +823,7 @@
 }
 .speaker_swiper_container .swiper-container .swiper-slide .contentBox h3 {
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.1em;
   font-weight: 600;
   letter-spacing: 2px;
@@ -896,6 +896,81 @@
 .Home_WorkshopsEvents a:hover {
   letter-spacing: 2px;
 }
+.Home_Speakers .Home_speakers_card_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.Home_Speakers .Home_speakers_card_container .Home_speakers_card {
+  width: fit-content;
+  height: fit-content;
+  background: #212121;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  border-radius: 8px;
+
+  background: transparent;
+}
+.Home_Speakers .Home_speakers_card_container .Home_speakers_card img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+
+  width: 350px;
+  height: 350px;
+  border: 2px solid #fff;
+}
+.Home_Speakers .Home_speakers_card_container .Home_speakers_card .contentBox {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Home_Speakers
+  .Home_speakers_card_container
+  .Home_speakers_card
+  .contentBox
+  h3 {
+  font-family: "Quicksand";
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+.Home_Speakers .Home_speakers_card_container .Home_speakers_card .contentBox p {
+  font-family: "Quicksand";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.Home_Speakers
+  .Home_speakers_card_container
+  .Home_speakers_card
+  .contentBox
+  p
+  span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 10px;
+}
 .Home .Footer.white {
   background-color: rgba(255, 255, 255, 0.2);
   border-top: 1px solid #fff4;
@@ -910,6 +985,42 @@
   .Home .Footer {
     padding: 0 0 0px 0 !important;
     backdrop-filter: none;
+  }
+  .Home_Speakers h1 {
+    margin: 10px 0;
+  }
+  .Home_Speakers a {
+    margin: 10px 0;
+  }
+  .Home_Speakers .Home_speakers_card_container {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .Home_Speakers .Home_speakers_card_container .Home_speakers_card {
+    margin: 0 10px;
+    border-radius: 8px;
+  }
+  .Home_Speakers .Home_speakers_card_container .Home_speakers_card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+  }
+  .Home_Speakers .Home_speakers_card_container .Home_speakers_card .contentBox {
+    padding-bottom: 0;
+  }
+  .Home_Speakers
+    .Home_speakers_card_container
+    .Home_speakers_card
+    .contentBox
+    h3 {
+    font-size: 18px;
+  }
+  .Home_Speakers
+    .Home_speakers_card_container
+    .Home_speakers_card
+    .contentBox
+    p {
+    font-size: 13px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -1054,6 +1165,38 @@
     z-index: 0;
   }
 }
+@media screen and (max-width: 325px) {
+  .Home_Speakers .Home_speakers_card_container .Home_speakers_card {
+    margin: 0 10px;
+    border-radius: 8px;
+  }
+  .Home_Speakers .Home_speakers_card_container .Home_speakers_card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 6px;
+  }
+  .Home_Speakers
+    .Home_speakers_card_container
+    .Home_speakers_card
+    .contentBox
+    h3 {
+    font-size: 14px;
+  }
+  .Home_Speakers
+    .Home_speakers_card_container
+    .Home_speakers_card
+    .contentBox
+    p {
+    font-size: 10px;
+  }
+  .Home_Speakers a {
+    font-size: 12px;
+    padding: 6px 24px;
+  }
+  .Home_Speakers h1 {
+    margin: 5px 0;
+  }
+}
 /* Home_Testimonials */
 .Home_Testimonials {
   display: flex;
@@ -1078,7 +1221,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   overflow-x: scroll;
   overflow-y: hidden;
 }
@@ -1355,6 +1498,7 @@
   }
   .Home_Testimonials .testimonial_card_container {
     height: 350px;
+    justify-content: flex-start;
     /* border: 1px solid red; */
   }
   .Home_Testimonials .testimonial_card_container::-webkit-scrollbar {
@@ -1452,7 +1596,7 @@
     /* padding-bottom: 50px; */
   }
   .Home_Speakers a {
-    margin-top: 40px;
+    /* margin-top: 40px; */
   }
   .Home_whoAreWe {
     padding: 0 30px;

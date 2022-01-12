@@ -18,7 +18,6 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/swiper-bundle";
 import "swiper/swiper-bundle.esm.browser";
 import { Link } from "react-router-dom";
-import atkins from "../../images/Peter_Atkins.jpg";
 import prevArrow from "../../images/prevArrow.svg";
 import robos1 from "../../images/homepage_illustrations/ROBOS.png";
 import robo1 from "../../images/homepage_illustrations/big.png";
@@ -28,12 +27,6 @@ import John_hennessy from "../../images/John_hennessy.jpg";
 import das_nobel from "../../images/das_nobel.jpeg";
 import Raghuram_Rajan from "../../images/Raghuram_Rajan.jpg";
 import Footer from "../shared/Footer";
-import Hennessy from "../../images/Speaker/hennessy.jpg";
-import Radhakrishnan from "../../images/Speaker/radhakrishnan.jpg";
-import Robo from "../../images/Speaker/robothespian1.jpg";
-import Soumya from "../../images/Speaker/soumya_swaminathan.jpg";
-import Capture from "../../images/Speaker/Capture.jpg";
-import Robert from "../../images/Speaker/robert.jpg";
 import Event1 from "../../images/events_1.jpg";
 import Event2 from "../../images/events_2.jpg";
 import Event3 from "../../images/events_3.jpg";
@@ -57,6 +50,18 @@ import Soda from "../../images/night/Comedy Night.jpeg";
 import Kenny from "../../images/night/Kenny Sebastian.jpg";
 import Maraiana from "../../images/night/Mariana bo.jpg";
 import Adeleida from "../../images/night/Adelaida.jpg";
+import SuhaniPresent from "../../images/night/Suhani.jpg";
+import Biswa from "../../images/night/Biswa.jpg";
+import StefanHell from "../../images/Speaker/newSpeakers/Stefan_W_Hell.jpg";
+import Andrew from "../../images/Speaker/newSpeakers/andrew.jpg";
+import CarolinaFernando from "../../images/Speaker/newSpeakers/CAROLINA_FERNANDO_RIVAS.jpg";
+import JaneGoodall from "../../images/Speaker/newSpeakers/JaneGoodall.jpg";
+import Mbanzi from "../../images/Speaker/newSpeakers/mbanzi.jpg";
+import Patterson from "../../images/Speaker/newSpeakers/patterson.jpg";
+import RameshChandraLahoti from "../../images/Speaker/newSpeakers/RameshChandraLahoti.jpg";
+import ShashiTharoor from "../../images/Speaker/newSpeakers/ShashiTharoor.jpg";
+import VinodDham from "../../images/Speaker/newSpeakers/VinodDham.jpg";
+import Wineland from "../../images/Speaker/newSpeakers/wineland.jpg";
 
 interface Props {}
 
@@ -67,6 +72,94 @@ const Home = (props: Props) => {
     DiceOutlineDarkAnimated,
     DiceOutlineLightAnimated
   );
+
+  const speakersData = [
+    {
+      "Speaker Name": "Dr. Shashi Tharoor",
+      Credentials:
+        "Hon'ble Member of Parliament, Chairman of Parliamentary Standing Committee on IT, Renowned Author",
+      Date: "15th January",
+      Time: "6:00 PM IST",
+      "Youtube Link": "https://youtu.be/16Jm_IaSyp4",
+      "Photo Link": ShashiTharoor,
+    },
+    {
+      "Speaker Name": "Carolina Marin & Fernando Rivas",
+      Credentials:
+        "Rio Olympics Gold Medallist, Former Badminton World Champion with her coach",
+      Date: "15th January",
+      Time: "4:30 PM IST",
+      "Youtube Link": "https://youtu.be/bQjeawwtUqM",
+      "Photo Link": CarolinaFernando,
+    },
+    {
+      "Speaker Name": "Dr. Jane Goodall, DBE",
+      Credentials:
+        "Renowned Ethologist and Conservationist, Founder of the Jane Goodall Institute & UN Messenger of Peace",
+      Date: "13th January",
+      Time: "4:30 PM IST",
+      "Youtube Link": "https://youtu.be/ggGzYj57vpE",
+      "Photo Link": JaneGoodall,
+    },
+    {
+      "Speaker Name": "Dr. David Patterson",
+      Credentials:
+        "Renowned Computer Scientist, Vice Chair of RISC-V Foundation, Turing Awardee 2017",
+      Date: "14th January",
+      Time: "9:00 AM IST",
+      "Youtube Link": "https://youtu.be/0TdUz4AhaZ0",
+      "Photo Link": Patterson,
+    },
+    {
+      "Speaker Name": "Dr. David Wineland",
+      Credentials: "Nobel Prize in Physics, 2012",
+      Date: "15th January",
+      Time: "9:00 AM IST",
+      "Youtube Link": "https://youtu.be/rvN7nbbmuow",
+      "Photo Link": Wineland,
+    },
+    {
+      "Speaker Name": "Mr. Vinod Dham",
+      Credentials:
+        'Father of the Pentium Chip", Founder Managing Director, Indo-US Venture Capitals',
+      Date: "16th January",
+      Time: "10:00 AM IST",
+      "Youtube Link": "https://youtu.be/yzSIH337kvg",
+      "Photo Link": VinodDham,
+    },
+    {
+      "Speaker Name": "Mr. Massimo Banzi",
+      Credentials: "Co Founder, Arduino",
+      Date: "14th January",
+      Time: "1:00 PM IST",
+      "Youtube Link": "https://youtu.be/i301BBMjmQw",
+      "Photo Link": Mbanzi,
+    },
+    {
+      "Speaker Name": "Dr. Stefan Hell",
+      Credentials: "Nobel Prize in Chemistry, 2014",
+      Date: "13th January",
+      Time: "3:30 PM IST",
+      "Youtube Link": "https://youtu.be/2dQWJ7KHfWM",
+      "Photo Link": StefanHell,
+    },
+    {
+      "Speaker Name": "Mr. Andrew Weinreich",
+      Credentials: "Founder of SixDegrees, the first social networking site",
+      Date: "16th January",
+      Time: "5:30 PM IST",
+      "Youtube Link": "https://youtu.be/kY5pWK24MRs",
+      "Photo Link": Andrew,
+    },
+    {
+      "Speaker Name": "Hon'ble Justice R.C. Lahoti",
+      Credentials: "Former Chief Justice of India",
+      Date: "14th January",
+      Time: "3:00 PM IST",
+      "Youtube Link": "https://youtu.be/al7Wn98g5tI",
+      "Photo Link": RameshChandraLahoti,
+    },
+  ];
 
   const plain = useColorModeValue("black", "white");
   const codetochoas = useColorModeValue(codetochaos1, codetochaos2);
@@ -137,11 +230,24 @@ const Home = (props: Props) => {
         setSideNavBar_marker(
           screenWidthSpacing - 5 + 5 * (screenWidthSpacing + 30)
         );
+    else if (
+      e.target.scrollTop < 7 * window.innerHeight - 20 &&
+      e.target.scrollTop >= 6 * window.innerHeight - 20
+    )
+      if (window.innerWidth > 600)
+        setSideNavBar_marker(190 / 8 + 6 * (190 / 8 + 30));
+      else
+        setSideNavBar_marker(
+          screenWidthSpacing - 5 + 5 * (screenWidthSpacing + 30)
+        );
   };
 
   const speaker_navigationPrevRef = React.useRef(null);
   const speaker_navigationNextRef = React.useRef(null);
   const speaker_paginationRef = React.useRef(null);
+  const shows_navigationPrevRef = React.useRef(null);
+  const shows_navigationNextRef = React.useRef(null);
+  const shows_paginationRef = React.useRef(null);
   const events_navigationPrevRef = React.useRef(null);
   const events_navigationNextRef = React.useRef(null);
   const events_paginationRef = React.useRef(null);
@@ -447,7 +553,7 @@ const Home = (props: Props) => {
           )}
         </section>
         <section id="speakers" className={`Home_Speakers ${plain}`}>
-          <h1 className={`${plain}`}>Previous Speakers</h1>
+          <h1 className={`${plain}`}>Speakers</h1>
           <div className={`speaker_swiper_container`}>
             <div className="swiper-prev-con" ref={speaker_navigationPrevRef}>
               <img src={prevArrow} alt="" />
@@ -469,105 +575,23 @@ const Home = (props: Props) => {
               }
               slidesPerView={"auto"}
             >
-              <SwiperSlide>
-                <img src={atkins} alt="" />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Peter Atkins</h3>
-                    <p>FRSC, Prolific Author of popular chemistry textbooks</p>
+              {speakersData.map((speaker) => (
+                <SwiperSlide>
+                  <img
+                    src={speaker["Photo Link"]}
+                    alt={speaker["Speaker Name"]}
+                  />
+                  <div className="contentBox">
+                    <div className="left">
+                      <h3>{speaker["Speaker Name"]}</h3>
+                      <p>{speaker["Credentials"]}</p>
+                    </div>
+                    <a target="_blank" href={speaker["Youtube Link"]}>
+                      <FaYoutube />
+                    </a>
                   </div>
-                  <a
-                    target="_blank"
-                    href="https://www.youtube.com/watch?v=0G_-1SGhYTA&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=3"
-                  >
-                    <FaYoutube />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Hennessy} alt="" />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Dr John Hennessy</h3>
-                    <p>
-                      Chairman of Alphabet Inc., Eminent Computer Scientist,
-                      Turing Award, 2017
-                    </p>
-                  </div>
-                  <a
-                    href="https://www.youtube.com/watch?v=_ebUDIsbqkc&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=2"
-                    target="_blank"
-                  >
-                    <FaYoutube />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Radhakrishnan} alt="" />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Dr K. Radhakrishnan</h3>
-                    <p>Former Chairman, ISRO</p>
-                  </div>
-                  <a
-                    href="https://www.youtube.com/watch?v=Wv_sea0tMrc&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X"
-                    target="_blank"
-                  >
-                    <FaYoutube />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Robo} alt="" />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>RoboThespian and Cleo</h3>
-                    <p>World’s First Acting Humanoid Robots</p>
-                  </div>
-                  <a href="https://youtu.be/kLhGfEybZi4" target="_blank">
-                    <FaYoutube />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Soumya} alt="" />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Dr Soumya Swaminathan,</h3>
-                    <p>Chief Scientist, World Health Organisation (WHO)</p>
-                  </div>
-                  <a href="https://youtu.be/2-_MZbCOP88" target="_blank">
-                    <FaYoutube />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Capture} alt="" />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Dr Joachim Frank</h3>
-                    <p>Nobel Prize in Chemistry, 2017</p>
-                  </div>
-                  <a href="https://youtu.be/cYs-FEUSNFw" target="_blank">
-                    <FaYoutube />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Robert} alt="" />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Mr Robert C. Martin</h3>
-                    <p>American Software Engineer, Popular Author</p>
-                  </div>
-                  <a
-                    href="https://www.youtube.com/watch?v=FlbDg_iBCkw&list=PLT4Wldw_lvk2vSGkMDcXazP3iJ3Wlvo4X&index=7"
-                    target="_blank"
-                  >
-                    <FaYoutube />
-                  </a>
-                </div>
-              </SwiperSlide>
+                </SwiperSlide>
+              ))}
             </Swiper>
             <div className="swiper-next-con" ref={speaker_navigationNextRef}>
               <img src={prevArrow} alt="" />
@@ -579,101 +603,119 @@ const Home = (props: Props) => {
           </div>
         </section>
         <section id="pastshows" className={`Home_Speakers ${plain}`}>
-          <h1 className={`${plain}`}>Previous Shows</h1>
-          <div className={`speaker_swiper_container`}>
-            <div className="swiper-prev-con" ref={speaker_navigationPrevRef}>
+          <h1 className={`${plain}`}>Shows</h1>
+          <div className="Home_speakers_card_container">
+            <div className="Home_speakers_card">
+              <img src={Biswa} alt="" style={{ objectFit: "cover" }} />
+              <div className="contentBox">
+                <h3>Biswa Kalyan Rath</h3>
+                <p>
+                  CHAOS <span></span> Shaastra 2022
+                </p>
+              </div>
+            </div>
+            <div className="Home_speakers_card">
+              <img src={SuhaniPresent} alt="" style={{ objectFit: "cover" }} />
+              <div className="contentBox">
+                <h3>Suhani Shah</h3>
+                <p>
+                  SPECTRE <span></span> Shaastra 2022
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* <div className={`speaker_swiper_container`}>
+            <div className="swiper-prev-con" ref={shows_navigationPrevRef}>
               <img src={prevArrow} alt="" />
             </div>
             <Swiper
               spaceBetween={50}
               navigation={{
-                prevEl: speaker_navigationPrevRef.current,
-                nextEl: speaker_navigationNextRef.current,
+                prevEl: shows_navigationPrevRef.current,
+                nextEl: shows_navigationNextRef.current,
               }}
               loop={true}
               pagination={
                 window.innerWidth < 600
                   ? {
-                      el: speaker_paginationRef.current,
+                      el: shows_paginationRef.current,
                       clickable: true,
                     }
                   : false
               }
               slidesPerView={"auto"}
             >
-              <SwiperSlide>
-                <img src={Dan} alt="" style={{ objectFit: "cover" }} />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Dan Rhodes</h3>
-                    <p>Virtual Magic Show</p>
-                    <p>Shaastra Juniors 2020</p>
+              
+                <SwiperSlide>
+                  <img src={Kenny} alt="" style={{ objectFit: "cover" }} />
+                  <div className="contentBox">
+                    <div className="left">
+                      <h3>Kenny Sebastian</h3>
+                      <p>CHAOS</p>
+                      <p>Shaastra 2021</p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Kenny} alt="" style={{ objectFit: "cover" }} />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Kenny Sebastian</h3>
-                    <p>CHAOS</p>
-                    <p>Shaastra 2021</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={Harmony}
+                    alt=""
+                    style={{ objectFit: "contain", background: "#000" }}
+                  />
+                  <div className="contentBox">
+                    <div className="left">
+                      <h3>Sonic Snares</h3>
+                      <p>HARMONY</p>
+                      <p>Shaastra 2021</p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Maraiana} alt="" style={{ objectFit: "cover" }} />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Mariana BO</h3>
-                    <p>EDM Night</p>
-                    <p>Shaastra 2018</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={Dan} alt="" style={{ objectFit: "cover" }} />
+                  <div className="contentBox">
+                    <div className="left">
+                      <h3>Dan Rhodes</h3>
+                      <p>Virtual Magic Show</p>
+                      <p>Shaastra Juniors 2020</p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Heimdall} alt="" style={{ objectFit: "cover" }} />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Heimdall</h3>
-                    <p>LASER HARP Live Performance </p>
-                    <p>Shaastra 2020</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={Heimdall} alt="" style={{ objectFit: "cover" }} />
+                  <div className="contentBox">
+                    <div className="left">
+                      <h3>Heimdall</h3>
+                      <p>LASER HARP Live Performance </p>
+                      <p>Shaastra 2020</p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={Adeleida} alt="" style={{ objectFit: "cover" }} />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Adelaida</h3>
-                    <p>LED & NEON Show</p>
-                    <p>Shaastra 2016</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={Maraiana} alt="" style={{ objectFit: "cover" }} />
+                  <div className="contentBox">
+                    <div className="left">
+                      <h3>Mariana BO</h3>
+                      <p>EDM Night</p>
+                      <p>Shaastra 2018</p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={Harmony}
-                  alt=""
-                  style={{ objectFit: "contain", background: "#000" }}
-                />
-                <div className="contentBox">
-                  <div className="left">
-                    <h3>Sonic Snares</h3>
-                    <p>HARMONY</p>
-                    <p>Shaastra 2021</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={Adeleida} alt="" style={{ objectFit: "cover" }} />
+                  <div className="contentBox">
+                    <div className="left">
+                      <h3>Adelaida</h3>
+                      <p>LED & NEON Show</p>
+                      <p>Shaastra 2016</p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
+                </SwiperSlide>
             </Swiper>
-            <div className="swiper-next-con" ref={speaker_navigationNextRef}>
+            <div className="swiper-next-con" ref={shows_navigationNextRef}>
               <img src={prevArrow} alt="" />
             </div>
-            <div
-              className="swiper-pagination"
-              ref={speaker_paginationRef}
-            ></div>
-          </div>
+            <div className="swiper-pagination" ref={shows_paginationRef}></div>
+          </div> */}
           <Link to="/shows">SEE MORE</Link>
         </section>
         <section id="testimonials" className={`Home_Testimonials ${plain}`}>
