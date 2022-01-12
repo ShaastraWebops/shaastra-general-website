@@ -36,7 +36,7 @@ import arrow from "../../../images/night/arrow.gif"
   import Vivek from "../../../images/night/vivek patil.jpg"
   import Reverb from "../../../images/night/Reverb.jpg"
   import Soda from "../../../images/night/Comedy Night.jpeg"
-  import About from "../../../images/night/About Us_Background.png"
+  import About from "../../../images/night/about.jpg"
   import Adeleida from "../../../images/night/Adelaida.jpg"
   import Formula from "../../../images/night/formula drone.jpg"
   import Suhani from "../../../images/night/suhani shah.jpg"
@@ -115,7 +115,7 @@ const Shows = () => {
                </Flex>
                <Flex 
                 flexDirection={"column"} justifyContent={"space-between"} alignItems={"center"}
-                height="83vh" width="100vw" marginTop={"0vw"} paddingTop={"20vh"}
+                height={"83vh"} width="100vw" marginTop={"0vw"} paddingTop={["30vh"]} paddingBottom={["20vh", "0vh"]}
                 id="homeShowNew" position={"relative"}
                >
                    <Box className="video-container-shows" position={"absolute"} top={"0"} left="0">
@@ -127,10 +127,10 @@ const Shows = () => {
                     zIndex={"2"}
                     fontSize={["8vw","4vw"]}
                     color={"white"}
-                    marginBottom={"4vh"}
+                    marginBottom={["0vh","4vh"]}
                     className="shows-new-heading"
                    >SHAASTRA NIGHTS</Heading>
-                     <Image justifySelf={"flex-end"} marginTop={["15vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image>
+                     <Image justifySelf={"flex-end"} marginTop={["0vh","15vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image>
                </Flex>
                <Flex
                 id="present"
