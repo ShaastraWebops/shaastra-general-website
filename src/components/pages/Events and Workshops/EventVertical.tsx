@@ -101,7 +101,7 @@ const EventVertical = () => {
                     </Box>
               
 
-                    {name === "workshops" ? (
+                    {/* {name === "workshops" ? (
                         <React.Fragment>
                                             <Text
                                 className="rainbow"
@@ -141,7 +141,7 @@ const EventVertical = () => {
                             <CardForWorkShop title="Gear up your computer skills with " WS1="Intro to Cloud Computing" WS2="Hacking 101 with Microcontrollers" WS3="Making Discord bot from scratch" Price1="500" Price2="500" Price3="500" ActualPrice="1500" DiscountedPrice="1200" ComboName="Cybermatic Combo" />
                             <CardForWorkShop title="Explore the exciting world of electronics with" WS1="Intro to Arduino and ioT" WS2="Intro to Embedded system Programming" WS3="Parallel Processing and Real-time OS" Price1="500" Price2="500" Price3="600" ActualPrice="1600" DiscountedPrice="1200" ComboName="Electronic Combo" />
                             <CardForWorkShop title="Start your career in consultancy and management with" WS3="Product Management 101" WS2="Consult 101" WS1="2 Workshops" Price1="500" Price2="500" Price3="350" ActualPrice="1000" DiscountedPrice="800" ComboName="Management Workshops" />
-                        </Flex>
+                        </Flex>  */}
                         
 
                         {/* <Center flexDirection={["column","column","row","row"]} my={1} width={"50%"} p={2}>
@@ -198,12 +198,12 @@ const EventVertical = () => {
                              </Alert>
                             )
                         } */}
-
+{/* 
                         </React.Fragment>
                         
                     ) : (
                         <></>
-                    )}
+                    )} */}
                     {/* <Flex width="100vw" justifyContent="space-evenly" alignItems="center">
                 <input type="text" className={search} />
                 <Button backgroundColor="white" className={search} color="black" onClick={filter}>Search</Button>

@@ -97,7 +97,9 @@ const EventPage = () => {
         paddingBottom={2}
       >
         <Center flexDirection={["column"]}>
-          <Image
+          {
+            data?.getEvent.id !== "ckxbguugt001gwdp70z7oft4v" ?
+            <Image
             h={["2%", "300px", "300px"]}
             width={"auto"}
             objectFit={"contain"}
@@ -106,6 +108,8 @@ const EventPage = () => {
             p={4}
             rounded={["3xl", "3xl"]}
           />
+            : <></>
+          }
           <Heading p={2} m={2}>
             {data?.getEvent.name}
           </Heading>

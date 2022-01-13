@@ -7,6 +7,11 @@ import client from "./graphql";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
 import { theme } from "./styles/themes/theme";
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-216942538-1"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(
   <React.StrictMode>

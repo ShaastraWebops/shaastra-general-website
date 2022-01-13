@@ -17,7 +17,7 @@ import {
     GridItem
   } from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react'
-  import SwiperCore, { Navigation, Pagination } from "swiper";
+  import SwiperCore, { Autoplay, Navigation, Pagination, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
@@ -26,7 +26,7 @@ import "swiper/swiper-bundle";
 import "swiper/swiper-bundle.esm.browser";
 
 import bgPrev from "../../../images/night/bg-prev.jpg"
-
+import arrow from "../../../images/night/arrow.gif"
   import Dan from "../../../images/night/Dan_img.jpg"
   import Gloves from "../../../images/night/Gloves02.jpg"
   import Harmony from "../../../images/night/Harmony-SonicSnares-2.jpg"
@@ -36,7 +36,7 @@ import bgPrev from "../../../images/night/bg-prev.jpg"
   import Vivek from "../../../images/night/vivek patil.jpg"
   import Reverb from "../../../images/night/Reverb.jpg"
   import Soda from "../../../images/night/Comedy Night.jpeg"
-  import About from "../../../images/night/About Us_Background.png"
+  import About from "../../../images/night/about.jpg"
   import Adeleida from "../../../images/night/Adelaida.jpg"
   import Formula from "../../../images/night/formula drone.jpg"
   import Suhani from "../../../images/night/suhani shah.jpg"
@@ -65,7 +65,7 @@ import bgPrev from "../../../images/night/bg-prev.jpg"
 
   import "../../../styles/night/ShowsNew.css"
 
-  SwiperCore.use([Navigation, Pagination]);
+  SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 const Shows = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -114,8 +114,8 @@ const Shows = () => {
                     <Text > <a href="#contact">Contact Shaastra Nights</a> </Text>
                </Flex>
                <Flex 
-                flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
-                height="83vh" width="100vw" marginTop={"0vw"}
+                flexDirection={"column"} justifyContent={"space-between"} alignItems={"center"}
+                height={"83vh"} width="100vw" marginTop={"0vw"} paddingTop={["30vh"]} paddingBottom={["20vh", "0vh"]}
                 id="homeShowNew" position={"relative"}
                >
                    <Box className="video-container-shows" position={"absolute"} top={"0"} left="0">
@@ -127,15 +127,10 @@ const Shows = () => {
                     zIndex={"2"}
                     fontSize={["8vw","4vw"]}
                     color={"white"}
-                    marginBottom={"4vh"}
+                    marginBottom={["0vh","4vh"]}
                     className="shows-new-heading"
                    >SHAASTRA NIGHTS</Heading>
-                   <Box
-                    backgroundColor={"#00F7FF"} color={"black"}
-                    fontFamily={"Montserrat"} fontWeight={"bold"}
-                    padding={["2vw","1vw"]} zIndex={"2"}
-                    borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
-                   > <a href="/signup" className="montserrat">Register for shows</a> </Box>
+                    <Link zIndex={3} href="#present"><Image justifySelf={"flex-end"} marginTop={["0vh","15vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image></Link>
                </Flex>
                <Flex
                 id="present"
@@ -150,15 +145,26 @@ const Shows = () => {
                    <Box   padding={["4vh 5vw","4vh 10vw"]} className="reverb-swiper" marginTop={"5vh"}
                  height="fit-content" width="100vw">
                         <Swiper navigation={true}
+                        autoplay={{delay: 4000}}
+                        effect="fade"
+                        fadeEffect= {
+                           { crossFade: true}
+                          }
                         >
                             <SwiperSlide>
                                 <Image src={BiswaP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
                             </SwiperSlide>
-                            {/* <SwiperSlide>
+                            <SwiperSlide>
                                 <Image src={SuhaniP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
-                            </SwiperSlide> */}
+                            </SwiperSlide>
                         </Swiper>
                    </Box>
+                   <Box
+                    backgroundColor={"#00F7FF"} color={"black"}
+                    fontFamily={"Montserrat"} fontWeight={"bold"}
+                    padding={["2vw","1vw"]} zIndex={"2"}
+                    borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
+                   > <a href="/signup" className="montserrat">Register for shows</a> </Box>
                    <Box  padding={["4vh 5vw","4vh 10vw"]} marginTop={"5vh"}
                  height="fit-content" width="100vw">
                      <Flex width="100%" justifyContent={"space-between"} alignItems={"center"} direction={["column", "row"]}>
@@ -204,7 +210,7 @@ const Shows = () => {
                 id="about" position={"relative"}
                 flexDirection={"column"} justifyContent={"center"} alignItems={"center"} 
                >
-                   <Image src={About} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
+                   <Image src={bgPrev} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
                    <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={2}    className="shows-new-heading">ABOUT US</Heading>
                    <Text width="80%" fontSize={["4vw","1.5vw"]} zIndex={2}>
                     The flagship event of Shaastra, Shaastra Nights, has made the former a noteworthy leader amongst 
@@ -406,7 +412,7 @@ const Shows = () => {
                 backgroundImage={Reverb} backgroundPosition={"center"} backgroundRepeat={"no-repeat"} backgroundSize={"cover"}
                >
                    <Box position={"absolute"} top="0" left="0" content="" height="100vh" width="100vw" backgroundColor={"rgba(0, 0, 0, 0.6)"}></Box>
-                   <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={"2"}   className="shows-new-heading">REVERB</Heading>
+                   <Heading marginBottom={"8vh"} marginTop={"2vh"} fontSize={["8vw","3vw"]} zIndex={"2"}   className="shows-new-heading">REVERB</Heading>
                    <Text width="80%" fontSize={["4vw","1.5vw"]} className="montserrat" fontFamily={"Montserrat"} zIndex={"2"}>
                     Our latest series, Reverb, aims to bridge the gap between technology and music by showcasing 
                     performances that are a juxtaposition of the same.

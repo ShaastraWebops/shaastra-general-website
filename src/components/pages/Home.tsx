@@ -17,7 +17,7 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/swiper-bundle";
 import "swiper/swiper-bundle.esm.browser";
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 import prevArrow from "../../images/prevArrow.svg";
 import robos1 from "../../images/homepage_illustrations/ROBOS.png";
 import robo1 from "../../images/homepage_illustrations/big.png";
@@ -62,6 +62,11 @@ import RameshChandraLahoti from "../../images/Speaker/newSpeakers/RameshChandraL
 import ShashiTharoor from "../../images/Speaker/newSpeakers/ShashiTharoor.jpg";
 import VinodDham from "../../images/Speaker/newSpeakers/VinodDham.jpg";
 import Wineland from "../../images/Speaker/newSpeakers/wineland.jpg";
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-216942538-1"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
+
 
 interface Props {}
 
@@ -72,6 +77,11 @@ const Home = (props: Props) => {
     DiceOutlineDarkAnimated,
     DiceOutlineLightAnimated
   );
+
+  React.useEffect(()=>{
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
+  });
 
   const speakersData = [
     {
@@ -290,6 +300,14 @@ const Home = (props: Props) => {
 
   return (
     <CustomBox>
+      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216942538-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-216942538-1');
+      </script> */}
       <div onScroll={update_sidenav_marker} className={`Home ${plain}`}>
         <div
           style={
@@ -348,7 +366,7 @@ const Home = (props: Props) => {
                 13th <span id="dash"></span> 16th January
               </p>
             </div>
-            <h3 id="salesLink">
+            {/* <h3 id="salesLink">
               Mayhem Combo Offer
               <br />
               <a
@@ -369,14 +387,11 @@ const Home = (props: Props) => {
               Limited seats available!!
               <br />
               Offer available until 12th January
-            </h3>
+            </h3> */}
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;
             </h3> */}
-            {localStorage.getItem("role") !== "Admin" &&
-              localStorage.getItem("role") !== "User" && (
-                <Link to="/signup">Register</Link>
-              )}
+             <a href="https://shaastra2022.com">Live Now</a>
           </div>
           <div className="imgBox">
             <img src={robos1} alt="" />
@@ -412,6 +427,14 @@ const Home = (props: Props) => {
             >
               <FaYoutubeSquare />
             </a>
+            <span></span>
+            <a
+              target="_blank"
+              href="https://forms.gle/JHqGdgWeUVLm6hwR8"
+            >
+              Feedback
+            </a>
+
             {window.innerWidth > 600 ? <span></span> : <></>}
           </div>
         </section>
@@ -456,9 +479,10 @@ const Home = (props: Props) => {
               </div>
             </div>
           </div>
-          <a target="_blank" href="https://shaastra2022.com">
-            Visit Here
-          </a>
+          {localStorage.getItem("role") !== "Admin" &&
+              localStorage.getItem("role") !== "User" && (
+                <a target="_blank" href="/signup">Register</a>
+              )}
         </section>
         <section id="who_are_we" className="Home_whoAreWe">
           <img id="who_are_we_robo1" src={robo1} alt="" />
@@ -842,4 +866,4 @@ const Home = (props: Props) => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
