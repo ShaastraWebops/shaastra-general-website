@@ -17,7 +17,7 @@ import {
     GridItem
   } from '@chakra-ui/react'
   import { useDisclosure } from '@chakra-ui/react'
-  import SwiperCore, { Navigation, Pagination } from "swiper";
+  import SwiperCore, { Autoplay, Navigation, Pagination, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
@@ -65,7 +65,7 @@ import arrow from "../../../images/night/arrow.gif"
 
   import "../../../styles/night/ShowsNew.css"
 
-  SwiperCore.use([Navigation, Pagination]);
+  SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 const Shows = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -130,7 +130,7 @@ const Shows = () => {
                     marginBottom={["0vh","4vh"]}
                     className="shows-new-heading"
                    >SHAASTRA NIGHTS</Heading>
-                     <Image justifySelf={"flex-end"} marginTop={["0vh","15vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image>
+                    <Link zIndex={3} href="#present"><Image justifySelf={"flex-end"} marginTop={["0vh","15vh"]} zIndex={3} boxSize={["20vw","10vw"]} src={arrow}></Image></Link>
                </Flex>
                <Flex
                 id="present"
@@ -145,6 +145,11 @@ const Shows = () => {
                    <Box   padding={["4vh 5vw","4vh 10vw"]} className="reverb-swiper" marginTop={"5vh"}
                  height="fit-content" width="100vw">
                         <Swiper navigation={true}
+                        autoplay={{delay: 4000}}
+                        effect="fade"
+                        fadeEffect= {
+                           { crossFade: true}
+                          }
                         >
                             <SwiperSlide>
                                 <Image src={BiswaP} boxSize={["60vw","30vw"]} objectFit={"cover"}></Image>
@@ -154,6 +159,12 @@ const Shows = () => {
                             </SwiperSlide>
                         </Swiper>
                    </Box>
+                   <Box
+                    backgroundColor={"#00F7FF"} color={"black"}
+                    fontFamily={"Montserrat"} fontWeight={"bold"}
+                    padding={["2vw","1vw"]} zIndex={"2"}
+                    borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
+                   > <a href="/signup" className="montserrat">Register for shows</a> </Box>
                    <Box  padding={["4vh 5vw","4vh 10vw"]} marginTop={"5vh"}
                  height="fit-content" width="100vw">
                      <Flex width="100%" justifyContent={"space-between"} alignItems={"center"} direction={["column", "row"]}>
@@ -192,12 +203,6 @@ const Shows = () => {
                          </Text>
                      </Flex>
                    </Box>
-                   <Box
-                    backgroundColor={"#00F7FF"} color={"black"}
-                    fontFamily={"Montserrat"} fontWeight={"bold"}
-                    padding={["2vw","1vw"]} zIndex={"2"}
-                    borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
-                   > <a href="/signup" className="montserrat">Register for shows</a> </Box>
                </Flex>
                <Flex
                 height="100vh" width="100vw"
@@ -205,7 +210,7 @@ const Shows = () => {
                 id="about" position={"relative"}
                 flexDirection={"column"} justifyContent={"center"} alignItems={"center"} 
                >
-                   <Image src={About} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
+                   <Image src={bgPrev} position={"absolute"} top="0" left="0" width="100vw" height="100vh" objectFit={"cover"}></Image>
                    <Heading marginBottom={"4vh"} fontSize={["8vw","3vw"]} zIndex={2}    className="shows-new-heading">ABOUT US</Heading>
                    <Text width="80%" fontSize={["4vw","1.5vw"]} zIndex={2}>
                     The flagship event of Shaastra, Shaastra Nights, has made the former a noteworthy leader amongst 
