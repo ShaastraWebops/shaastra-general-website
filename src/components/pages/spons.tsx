@@ -577,7 +577,7 @@ function Spons() {
 
               <div className="flexx">
                 <div className="card" id="photo">
-                  <p id="otherSponsors">Operation Sponsor</p>
+                  <p id="otherSponsors">Chess Platform sponsor</p>
                   <a href="https://www.chess.com/">
                     <img
                       src={Chess}
