@@ -356,7 +356,7 @@ const Home = (props: Props) => {
                 13th <span id="dash"></span> 16th January
               </p>
             </div>
-            <h3 id="salesLink">
+            {/* <h3 id="salesLink">
               Mayhem Combo Offer
               <br />
               <a
@@ -377,14 +377,11 @@ const Home = (props: Props) => {
               Limited seats available!!
               <br />
               Offer available until 12th January
-            </h3>
+            </h3> */}
             {/* <h3 id="salesLink" style={{ marginTop: "5px" }}>
               for&nbsp;
             </h3> */}
-            {localStorage.getItem("role") !== "Admin" &&
-              localStorage.getItem("role") !== "User" && (
-                <Link to="/signup">Register</Link>
-              )}
+             <a href="https://shaastra2022.com">Live Now</a>
           </div>
           <div className="imgBox">
             <img src={robos1} alt="" />
@@ -464,9 +461,10 @@ const Home = (props: Props) => {
               </div>
             </div>
           </div>
-          <a target="_blank" href="https://shaastra2022.com">
-            Visit Here
-          </a>
+          {localStorage.getItem("role") !== "Admin" &&
+              localStorage.getItem("role") !== "User" && (
+                <a target="_blank" href="/signup">Register</a>
+              )}
         </section>
         <section id="who_are_we" className="Home_whoAreWe">
           <img id="who_are_we_robo1" src={robo1} alt="" />
