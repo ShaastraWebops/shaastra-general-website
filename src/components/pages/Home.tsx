@@ -417,6 +417,14 @@ const Home = (props: Props) => {
             >
               <FaYoutubeSquare />
             </a>
+            <span></span>
+            <a
+              target="_blank"
+              href="https://forms.gle/JHqGdgWeUVLm6hwR8"
+            >
+              Feedback
+            </a>
+
             {window.innerWidth > 600 ? <span></span> : <></>}
           </div>
         </section>
