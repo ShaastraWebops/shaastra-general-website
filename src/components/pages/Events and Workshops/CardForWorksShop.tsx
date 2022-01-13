@@ -112,7 +112,7 @@ export default function Pricing(props) {
                         }}>
                         Register Now
                     </Button> */}
-                    <ComboPay isAdmin={false} combo={props.ComboName} />
+                    {/* <ComboPay isAdmin={false} combo={props.ComboName} /> */}
                     {/* <Flex marginTop="2vh" height="7vh" flexDirection={'row'}>
                         <Input
                             id="referal"

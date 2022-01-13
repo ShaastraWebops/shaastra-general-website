@@ -225,7 +225,7 @@ const ComboPay = ({ isAdmin, combo }: Probs) => {
             "fit-content",
           ]}
         >
-            {/* <Input
+            <Input
                             width={["100%","100%","100%","100%"]}
                             value={referral}
                             placeholder="Have a Referal Code?"
@@ -249,7 +249,7 @@ const ComboPay = ({ isAdmin, combo }: Probs) => {
               onClick={registerHandler}
             >
               REGISTER NOW
-            </Button> */}
+            </Button>
           </Flex>
         )}
     </div>

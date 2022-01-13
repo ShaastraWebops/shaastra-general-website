@@ -353,7 +353,7 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
                         <option value='cky6uehup00frfsp7br7sblfn'>Engineering Robotics with Mathworks</option>
                     </Select>
                 </Flex>
-                {/* <Input
+                <Input
                             width={["90%","90%","50%","50%"]}
                             value={referral}
                             mx={[0,0,3,3]}
@@ -362,8 +362,8 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
                             onChange={(e) => setReferral(e.target.value)}
                             type={"text"}
                             borderBottom="2px solid white"
-                        /> */}
-                {/* <Button
+                        />
+                <Button
                     mt={10}
                     w={'40%'}
                     marginBottom={'20px'}
@@ -380,7 +380,7 @@ const MayhemCombo = ({  isAdmin , combo }: Probs) => {
                     onClick={registerHandler}
                     >
                     Register Now
-                </Button> */}
+                </Button>
             </Flex>
         </Flex>
       
