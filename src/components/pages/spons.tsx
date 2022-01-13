@@ -4,6 +4,8 @@ import "../../styles/button.scss";
 import "../../styles/spons.scss";
 import "../../styles/tooltip.scss";
 import Astra from "../../images/logo/static/Astra.svg";
+import Chess from "../../images/logo/static/Chess.png";
+import Nescafe from "../../images/logo/static/Nescafe.png";
 import JUSPY from "../../images/logo/static/JUSPY.png";
 import BW from "../../images/logo/static/BN.png";
 import BSC from "../../images/logo/static/BSC.png";
@@ -219,15 +221,15 @@ function Spons() {
                 {/* <p id="sponsro">Co Sponsor</p> */}
                 <div className="card" id="photo">
                   <a href="https://www.larsentoubro.com/">
-                    <img src={LT} className="img-responsive"                       style={
-                        theme == "black"
-                          ? {
-                            filter: "invert(1)",
-                          }
-                          : {
-                            color: "#fff",
-                          }
-                      } id="lt" alt="" />
+                    <img src={LT} className="img-responsive" style={
+                      theme == "black"
+                        ? {
+                          filter: "invert(1)",
+                        }
+                        : {
+                          color: "#fff",
+                        }
+                    } id="lt" alt="" />
                   </a>
                 </div>
               </div>
@@ -510,8 +512,32 @@ function Spons() {
               </div>
 
             </div>
-              <p id="sponsro1">Other Sponsors</p>
+            <p id="sponsro1">Other Sponsors</p>
             <div className="card__collection">
+
+            <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Coffees Sponsor</p>
+                  <a href="https://www.nescafe.com/in/">
+                    <img
+                      src={Nescafe}
+                      className="img-responsive"
+                      id="Nescafe"
+                      alt=""
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(1)",
+                          }
+                          : {
+                            filter: "invert(0)",
+                          }
+                      }
+                    />
+                  </a>
+                </div>
+              </div>
+
               <div className="flexx">
                 <div className="card" id="photo">
                   <p id="otherSponsors">Confectionery Sponsor</p>
@@ -544,6 +570,29 @@ function Spons() {
                       className="img-responsive"
                       id="GOB"
                       alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Operation Sponsor</p>
+                  <a href="https://www.chess.com/">
+                    <img
+                      src={Chess}
+                      className="img-responsive"
+                      id="Chess"
+                      alt=""
+                      style={
+                        theme == "black"
+                          ? {
+                            filter: "invert(0)",
+                          }
+                          : {
+                            filter: "invert(1)",
+                          }
+                      }
                     />
                   </a>
                 </div>
