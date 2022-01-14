@@ -17,7 +17,7 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/swiper-bundle";
 import "swiper/swiper-bundle.esm.browser";
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 import prevArrow from "../../images/prevArrow.svg";
 import robos1 from "../../images/homepage_illustrations/ROBOS.png";
 import robo1 from "../../images/homepage_illustrations/big.png";
@@ -62,6 +62,11 @@ import RameshChandraLahoti from "../../images/Speaker/newSpeakers/RameshChandraL
 import ShashiTharoor from "../../images/Speaker/newSpeakers/ShashiTharoor.jpg";
 import VinodDham from "../../images/Speaker/newSpeakers/VinodDham.jpg";
 import Wineland from "../../images/Speaker/newSpeakers/wineland.jpg";
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-216942538-1"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
+
 
 interface Props {}
 
@@ -72,6 +77,11 @@ const Home = (props: Props) => {
     DiceOutlineDarkAnimated,
     DiceOutlineLightAnimated
   );
+
+  React.useEffect(()=>{
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
+  });
 
   const speakersData = [
     {
@@ -417,6 +427,14 @@ const Home = (props: Props) => {
             >
               <FaYoutubeSquare />
             </a>
+            <span></span>
+            <a
+              target="_blank"
+              href="https://forms.gle/JHqGdgWeUVLm6hwR8"
+            >
+              Feedback
+            </a>
+
             {window.innerWidth > 600 ? <span></span> : <></>}
           </div>
         </section>
@@ -848,4 +866,4 @@ const Home = (props: Props) => {
   );
 };
 
-export default Home;
+export default withRouter(Home);

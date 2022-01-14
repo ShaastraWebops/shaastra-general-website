@@ -4,7 +4,7 @@ import * as React from "react";
 import CustomBox from "../../shared/CustomBox";
 import EXHB2 from "../../../images/Exhibitions/exhb_2.png";
 import "../../../styles/Exhibitions.css";
-import {  exhibitions,CauroselImages, Titlevariants, AboutusVariants, AboutusData } from "./Exhibitionsdata";
+import {  currentexhibitions,exhibitions,CauroselImages, Titlevariants, AboutusVariants, AboutusData } from "./Exhibitionsdata";
 import Card from "./Card";
 import { motion ,useAnimation } from 'framer-motion';
 import Footer from "../../shared/Footer";
@@ -152,6 +152,33 @@ const Exhibitions = ()=>{
         {
 
           exhibitions.map( (item,index) => {
+            let i = index%3;
+            return(
+              <MotionBox
+              custom = {i}
+              animate = {animation}
+              className="ECard"
+              key= {index}
+              >
+              <Card data={item} />
+              </MotionBox>
+            )
+          })
+        }
+        </SimpleGrid>
+        <Heading
+              fontWeight={500}
+               m={[2,5]} 
+              className = "Title"
+              color={Titlecolor}
+              p={3}
+             lineHeight={1.1} fontSize={"4xl"}
+             >
+              Current EXHIBITIONS
+            </Heading>
+        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5} pb={20}> 
+        {
+            currentexhibitions.map( (item,index) => {
             let i = index%3;
             return(
               <MotionBox
