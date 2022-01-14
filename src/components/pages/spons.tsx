@@ -386,7 +386,7 @@ function Spons() {
               <div className="flexx">
                 <div className="card" id="photo">
                   {/* <p>Juspy</p> */}
-                  <a href="#">
+                  <a href="https://juspay.in/">
                     <img src={JUSPY} className="img-responsive" id="juspy" alt="" />
                   </a>
                 </div>
