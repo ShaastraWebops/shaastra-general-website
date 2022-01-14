@@ -199,7 +199,7 @@ const Shows = () => {
                              stealthily reading your thoughts - Suhani can do it all! 
                              <br /><br />
                              Brace yourselves for a magical evening this 
-                             Saturday, at <b>7.00 pm</b> only on <b><a href="http://shaastra2022.com/">shaastra2022.com</a></b>
+                             Friday, at <b>7.00 pm</b> only on <b><a href="http://shaastra2022.com/">shaastra2022.com</a></b>
                          </Text>
                      </Flex>
                    </Box>
