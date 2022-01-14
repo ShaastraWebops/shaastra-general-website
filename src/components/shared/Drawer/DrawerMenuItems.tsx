@@ -188,6 +188,20 @@ export const DrawerDesktopMenuItems = () => {
         >
           <Link to="/exhibitions">Exhibitions</Link>
         </Box>
+        <Box
+          className="menu-text"
+          _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
+          fontSize={28}
+          onMouseOver={() => setMenu("click")}
+          fontFamily={"monospace"}
+          fontStyle={"italic"}
+          pl={6}
+          p={2}
+          pr={12}
+          mb={4}
+        >
+          <a href="http://envisage-gamedev.github.io" target={"_blank"}>Envisage Games</a>
+        </Box>
         {/* <Box
           className="menu-text"
           _hover={{ color: "#cccccc", padding: "8px", letterSpacing: "7px" }}
@@ -406,6 +420,10 @@ export const DrawerMobileMenuItems = () => {
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/exhibitions">Exhibitions</Link>
+        </Box>
+        <Box p={2} pl={0} fontSize={27} fontStyle={"normal"}>
+          {/* <Link to="/mind-trials">Mind Trials</Link> */}
+          <a href="http://envisage-gamedev.github.io/" target="_blank">Envisage Games</a>
         </Box>
         <Box fontSize={27} fontStyle={"normal"}>
           <Link to="/blitz-chess">Blitz Chess</Link>
