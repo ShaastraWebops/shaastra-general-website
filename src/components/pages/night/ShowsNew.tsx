@@ -165,6 +165,10 @@ const Shows = () => {
                     padding={["2vw","1vw"]} zIndex={"2"}
                     borderRadius={["5px","12px"]} fontSize={["2.75vw", "1vw"]}
                    > <a href="/signup" className="montserrat">Register for shows</a> </Box>
+                   <Text
+                    width="70vw" margin="auto" fontSize={["4vw","1.4vw"]} marginTop={"4vh"}
+                   >If you have already registered on <a href="http://shaastra.org/">shaastra.org</a>, you need not register here again and can straightaway head to OAT at <b><a href="http://shaastra2022.com/" target={"_blank"}>shaastra2022.com </a></b> to watch the shows for free!
+Don't forget to catch Biswa Kalyan Rath live at <b>7 PM</b> today, 15th Jan!</Text>
                    <Box  padding={["4vh 5vw","4vh 10vw"]} marginTop={"5vh"}
                  height="fit-content" width="100vw">
                      <Flex width="100%" justifyContent={"space-between"} alignItems={"center"} direction={["column", "row"]}>
