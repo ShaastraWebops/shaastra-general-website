@@ -8,6 +8,7 @@ import Chess from "../../images/logo/static/Chess.png";
 import Nescafe from "../../images/logo/static/Nescafe.png";
 import JUSPY from "../../images/logo/static/JUSPY.png";
 import BW from "../../images/logo/static/BN.png";
+import NEW from "../../images/logo/static/NEW.png";
 import BSC from "../../images/logo/static/BSC.png";
 import UC from "../../images/logo/static/UC.png";
 import MZ from "../../images/logo/static/MZ.svg";
@@ -686,6 +687,20 @@ function Spons() {
                       src={wrap}
                       className="img-responsive"
                       // id="YB"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flexx">
+                <div className="card" id="photo">
+                  <p id="otherSponsors">Eatery Sponsor</p>
+                  <a href="https://www.wrapcart.com/">
+                    <img
+                      src={NEW}
+                      className="img-responsive"
+                      id="YB"
                       alt=""
                     />
                   </a>
