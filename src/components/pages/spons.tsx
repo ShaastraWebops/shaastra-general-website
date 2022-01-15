@@ -517,7 +517,7 @@ function Spons() {
 
             <div className="flexx">
                 <div className="card" id="photo">
-                  <p id="otherSponsors">Snack Sponsor</p>
+                  <p id="otherSponsors">Beverage Sponsor</p>
                   <a href="https://www.nescafe.com/in/">
                     <img
                       src={Nescafe}
@@ -666,7 +666,7 @@ function Spons() {
 
               <div className="flexx">
                 <div className="card" id="photo">
-                  <p id="otherSponsors">Beverage Sponsor</p>
+                  <p id="otherSponsors">Nutrition Sponsor</p>
                   <a href="https://www.yogabars.in/">
                     <img
                       src={YB}
