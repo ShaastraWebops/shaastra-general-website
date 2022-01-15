@@ -38,11 +38,13 @@
 .ChessBlitz_landing .contentBox button {
   padding: 10px 24px 12px 24px;
   line-height: 1em;
-  background-color: #311c1b;
+  /* background-color: #311c1b; */
+  background-color: #ff0630;
   border-radius: 4px;
+  color: #fff;
 }
 .ChessBlitz_landing .contentBox button:hover {
-  background: #210d0f;
+  background: #bd0029;
 }
 .ChessBlitz_Overview {
   width: 100%;

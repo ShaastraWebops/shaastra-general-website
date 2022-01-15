@@ -39,33 +39,33 @@ function loadScript(src: string) {
 
 function ChessBlitz() {
   const theme = useColorModeValue("white", "black");
-  const [username, setUsername] = useState("");
-  const [rating, setRating] = useState("");
-  const [title, setTitle] = useState("");
-  var { isOpen, onOpen, onClose } = useDisclosure();
+  // const [username, setUsername] = useState("");
+  // const [rating, setRating] = useState("");
+  // const [title, setTitle] = useState("");
+  // var { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [
-    regitserChess,
-    { loading: registerChessLoading, error: registerChessError },
-  ] = useRegisterChessMutation({
-    /******** On create order completion, open Razorpay ********/
-    async onCompleted(data) {
-      if (data.registerChess) {
-        await loadRazorpay(data);
-      }
-    },
-  });
+  // const [
+  //   regitserChess,
+  //   { loading: registerChessLoading, error: registerChessError },
+  // ] = useRegisterChessMutation({
+  //   /******** On create order completion, open Razorpay ********/
+  //   async onCompleted(data) {
+  //     if (data.registerChess) {
+  //       await loadRazorpay(data);
+  //     }
+  //   },
+  // });
 
-  const [
-    capturePaymentChessMutation,
-    {
-      data: capturePaymentData,
-      loading: capturePaymentLoading,
-      error: capturePaymentError,
-    },
-  ] = useCapturePaymentChessMutation();
+  // const [
+  //   capturePaymentChessMutation,
+  //   {
+  //     data: capturePaymentData,
+  //     loading: capturePaymentLoading,
+  //     error: capturePaymentError,
+  //   },
+  // ] = useCapturePaymentChessMutation();
 
-  const [popup, setPopup] = useState(false);
+  // const [popup, setPopup] = useState(false);
   const [isAlert, setIsAlert] = useState({
     isVisible: false,
     message: "",
@@ -81,110 +81,110 @@ function ChessBlitz() {
   }, []);
 
   /******** Callback Functions ********/
-  const loadRazorpay = async (data: RegisterChessMutation) => {
-    /******** Load Razorpay Script ********/
-    const res = await loadScript(
-      "https://checkout.razorpay.com/v1/checkout.js"
-    );
-    if (!res) {
-      alert("Razorpay SDK failed to load");
-      return;
-    }
+  // const loadRazorpay = async (data: RegisterChessMutation) => {
+  //   /******** Load Razorpay Script ********/
+  //   const res = await loadScript(
+  //     "https://checkout.razorpay.com/v1/checkout.js"
+  //   );
+  //   if (!res) {
+  //     alert("Razorpay SDK failed to load");
+  //     return;
+  //   }
 
-    /******** Razorpay Options ********/
-    const options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY,
-      amount: "20000",
-      currency: "INR",
-      name: "BlitzChess",
-      image: "", //TODO: Add the shaastra link here
-      order_id: data.registerChess.orderId,
+  //   /******** Razorpay Options ********/
+  //   const options = {
+  //     key: process.env.REACT_APP_RAZORPAY_KEY,
+  //     amount: "20000",
+  //     currency: "INR",
+  //     name: "BlitzChess",
+  //     image: "", //TODO: Add the shaastra link here
+  //     order_id: data.registerChess.orderId,
 
-      /******** Handler function to update the payment details ********/
-      handler: async function (response: any) {
-        try {
-          await capturePaymentChessMutation({
-            variables: {
-              input: {
-                orderId: response.razorpay_order_id,
-                payementId: response.razorpay_payment_id,
-                paymentSignature: response.razorpay_signature,
-              },
-            },
-          });
-        } catch (e) {
-          console.log(e);
-        }
-      },
-      theme: {
-        color: "#3399cc",
-      },
-    };
+  //     /******** Handler function to update the payment details ********/
+  //     handler: async function (response: any) {
+  //       try {
+  //         await capturePaymentChessMutation({
+  //           variables: {
+  //             input: {
+  //               orderId: response.razorpay_order_id,
+  //               payementId: response.razorpay_payment_id,
+  //               paymentSignature: response.razorpay_signature,
+  //             },
+  //           },
+  //         });
+  //       } catch (e) {
+  //         console.log(e);
+  //       }
+  //     },
+  //     theme: {
+  //       color: "#3399cc",
+  //     },
+  //   };
 
-    /******** Open Razorpay ********/
-    const rzp1 = new (window as any).Razorpay(options);
-    rzp1.open();
-  };
+  //   /******** Open Razorpay ********/
+  //   const rzp1 = new (window as any).Razorpay(options);
+  //   rzp1.open();
+  // };
 
-  const handleChessRegister = async (e) => {
-    e.preventDefault();
-    await regitserChess({
-      variables: {
-        data: {
-          username,
-          rating,
-          title,
-        },
-      },
-    }).catch((err) => console.log(err));
-  };
+  // const handleChessRegister = async (e) => {
+  //   e.preventDefault();
+  //   await regitserChess({
+  //     variables: {
+  //       data: {
+  //         username,
+  //         rating,
+  //         title,
+  //       },
+  //     },
+  //   }).catch((err) => console.log(err));
+  // };
 
-  useEffect(() => {
-    if (registerChessLoading) {
-      setIsAlert({
-        isVisible: true,
-        message: "Loading ...",
-      });
-    }
-  }, [registerChessLoading]);
+  // useEffect(() => {
+  //   if (registerChessLoading) {
+  //     setIsAlert({
+  //       isVisible: true,
+  //       message: "Loading ...",
+  //     });
+  //   }
+  // }, [registerChessLoading]);
 
-  useEffect(() => {
-    if (capturePaymentLoading) {
-      setIsAlert({
-        isVisible: true,
-        message:
-          "Don't close or reload the site, until you get the payment confirmation. Loading...",
-      });
-    }
-  }, [capturePaymentLoading]);
+  // useEffect(() => {
+  //   if (capturePaymentLoading) {
+  //     setIsAlert({
+  //       isVisible: true,
+  //       message:
+  //         "Don't close or reload the site, until you get the payment confirmation. Loading...",
+  //     });
+  //   }
+  // }, [capturePaymentLoading]);
 
-  useEffect(() => {
-    if (registerChessError) {
-      setIsAlert({
-        isVisible: true,
-        message: registerChessError.message,
-      });
-    }
-  }, [registerChessError]);
+  // useEffect(() => {
+  //   if (registerChessError) {
+  //     setIsAlert({
+  //       isVisible: true,
+  //       message: registerChessError.message,
+  //     });
+  //   }
+  // }, [registerChessError]);
 
-  useEffect(() => {
-    if (capturePaymentError) {
-      setIsAlert({
-        isVisible: true,
-        message: "Payment Failed",
-      });
-    }
-  }, [capturePaymentError]);
+  // useEffect(() => {
+  //   if (capturePaymentError) {
+  //     setIsAlert({
+  //       isVisible: true,
+  //       message: "Payment Failed",
+  //     });
+  //   }
+  // }, [capturePaymentError]);
 
-  useEffect(() => {
-    if (capturePaymentData?.capturePaymentChess) {
-      setIsAlert({
-        isVisible: true,
-        message: "Registration Successful",
-      });
-      setPopup(false);
-    }
-  }, [capturePaymentData]);
+  // useEffect(() => {
+  //   if (capturePaymentData?.capturePaymentChess) {
+  //     setIsAlert({
+  //       isVisible: true,
+  //       message: "Registration Successful",
+  //     });
+  //     // setPopup(false);
+  //   }
+  // }, [capturePaymentData]);
 
   useEffect(() => {
     let ticking;
@@ -217,7 +217,35 @@ function ChessBlitz() {
               pool of INR 85000, as well as various goodies. Don't miss out on
               your chance to play in the year's largest online blitz tournament!
             </p>
-            <button onClick={() => setPopup(true)}>Register now</button>
+            <button
+              onClick={() =>
+                setIsAlert({
+                  isVisible: true,
+                  message: "Registration has been closed!!",
+                })
+              }
+            >
+              Registration Closed
+            </button>
+            {isAdmin === true ? (
+              <button
+                style={{
+                  padding: "10px 20px",
+                  width: "fit-content",
+                  backgroundColor: "#311c1b",
+                  borderRadius: "4px",
+                  marginLeft: "20px",
+                }}
+                onClick={() => {
+                  fileDownload(
+                    data1?.getChessDetailsCSV!,
+                    `BlitzChess_regristants.csv`
+                  );
+                }}
+              >
+                Download Users Data CSV
+              </button>
+            ) : null}
           </div>
         </div>
         <div className="ChessBlitz_Overview">
@@ -420,7 +448,7 @@ function ChessBlitz() {
         <Footer
           designed={[{ name: "Rohit", mail: "cs19b038@smail.iitm.ac.in" }]}
         />
-        <div className={popup ? "ChessBlitz_Popup active" : "ChessBlitz_Popup"}>
+        {/* <div className={popup ? "ChessBlitz_Popup active" : "ChessBlitz_Popup"}>
           <div className="formWrapper">
             <button className="closeBtn" onClick={() => setPopup(false)}>
               <FaTimes />
@@ -466,7 +494,7 @@ function ChessBlitz() {
               </button>
             ) : null}
           </div>
-        </div>
+        </div> */}
         <div
           className={`AlertPopupsContainer ${
             isAlert.isVisible ? "active" : ""
