@@ -41,7 +41,7 @@ const EventsAdmin = () => {
 
     var events = data?.getEvents.events;
     const {data : data1 , error : error1, loading:loading1} = useTShirtDetailsCsvQuery()
-    // const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
+    const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
     const {data : data3} = useGetPaidUsersCountQuery();
 
     const history = useHistory()
@@ -64,6 +64,16 @@ const EventsAdmin = () => {
                   >
                     <EditIcon m={2} />
                     Download Tshirt Details
+                  </Button>
+                  <Button
+                    p={2}
+                    m={2}
+                    onClick={() => {
+                      fileDownload(data2?.getUsersDataCSV!, `users_details.csv`);
+                    }}
+                  >
+                    <EditIcon m={2} />
+                    Download users Details
                   </Button>
 
             </Center>
