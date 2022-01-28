@@ -169,12 +169,11 @@ const EventPage = () => {
                 </Button>
               </Flex>
             ) :
-            //  data?.getEvent.registrationfee !== "0" ? (
-            //   <PayRegister isAdmin={isAdmin} data={data?.getEvent!} />
-            // ) : (
-            //   <RegisterNow isAdmin={isAdmin} data={data?.getEvent} />
-            // )
-            null
+             data?.getEvent.registrationfee !== "0" ? (
+              data?.getEvent.vertical !== "WORKSHOPS" && <PayRegister isAdmin={isAdmin} data={data?.getEvent!} />
+            ) : (
+              data?.getEvent.vertical !== "WORKSHOPS" && <RegisterNow isAdmin={isAdmin} data={data?.getEvent} />
+            )
             }
           </Flex>
         </Flex>

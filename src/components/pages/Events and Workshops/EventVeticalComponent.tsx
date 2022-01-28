@@ -289,7 +289,7 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
                     alignContent={["center"]}
                     justifyContent={["center", "center"]}
                   >
-                    {/* {!isAdmin ? (
+                    {!isAdmin ? (
                       data.registrationType === "NONE" ? (
                         <Box marginTop="2vh" height="1vw" marginRight={"2vw"}>
                           <Alert status="info" size={"xs"}>
@@ -305,11 +305,11 @@ const EventVerticalComponent = ({ data, isAdmin }: any) => {
                         //    >REGISTER NOW</Button>
                         //    </Box>
                         data.registrationfee !== "0" ? (
-                          <PayRegister isAdmin={isAdmin} data={data!} />
+                          data.vertical !== "WORKSHOPS" && <PayRegister isAdmin={isAdmin} data={data!} />
                         ) : (
-                          <RegisterNow isAdmin={isAdmin} data={data} />
+                          data.vertical !== "WORKSHOPS" && <RegisterNow isAdmin={isAdmin} data={data} />
                         )
-                    ) : null} */}
+                    ) : null}
                     <Box marginTop="2vh" height="1vw">
                       <Button
                         fontSize={["3vw", "3vw", "3vw", "1vw"]}
