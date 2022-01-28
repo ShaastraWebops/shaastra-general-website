@@ -47,7 +47,7 @@ const Card = ({ data }) => {
               zIndex: 1
             }} >{data.title}</Text>
           <Box className="overview" bg={Descriptionbg} color="#ffffff" m={2} p={2}>
-            <Center flexDirection={'column'} h={'270px'}>
+            <Center flexDirection={'column'} h={Number(data.id) > 6 ? '375px' : '270'}>
               <Heading as={'h3'} mb={"2"} fontSize={"2xl"} >
                 {data.title}
               </Heading>

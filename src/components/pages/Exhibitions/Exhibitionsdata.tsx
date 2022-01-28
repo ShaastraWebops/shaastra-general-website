@@ -63,31 +63,31 @@ interface exhibitions {
 
 export const currentexhibitions: exhibitions[] = [
   {
-    id: "2",
+    id: "10",
     year: "13-01-22, 9 AM - 10 AM",
     title: "Sirena Technologies",
     description: `Sirena Technologies is making new strides in robotics. They have built the first Indian Humanoid Robot ‘Nino’, Nino-T a life size humanoid and have introduced SKIP (Sirena Knowledge and Information Program) for schools, which is crafted to enable students to learn cutting-edge trending technologies which include Humanoids, Artificial Intelligence, Internet of Things, Voice Recognition, Computer Vision, Mechatronics, 3D printing, Android programming and more.`,
     image: EXHB15
   },
   {
-    id: "3",
+    id: "9",
     year: "14-01-22,  9 AM - 10 AM",
     title: "Yaskawa Robotics",
     description: "Yaskawa Robotics is one of the top 10 leading robotics companies in the world.Yaskawa Motoman delivers high-quality industrial robots and fully-integrated robotic automation systems that enable various industries to attain higher standards.Yaskawa takes industrial automation to new levels through robotics. Their Motoman brand of robotic arms, part positioners, and easy-to-program controllers automate applications that were not thought possible a short time ago. ",
     image: EXHB16
   },
   {
-    id: "4",
+    id: "8",
     year: "14-01-22, 10 AM - 11 AM",
     title: "Devic Earth",
     description: "Devic Earth, a green-tech startup, had developed technology to clear pollutants using pulsed radio frequency energy. Pure Skies is the device developed by Devic Earth that aids in air purification. Devic Earth has delivered 150 million+ square feet of clean air so far. Devic Earth is working hard to ensure that its products exceed worldwide standards for product safety, fire and corrosion resistance, and IT security.  ",
     image: EXHB17
   },
   {
-    id: "1",
+    id: "7",
     year: "15-01-22, 10 AM - 11 AM",
     title: "Ather Energy",
-    description: `Ather Energy has changed the way India looks at electric vehicles. It is a pioneer in developing innovative and connected electric scooters. Their ingenious products and services are an amalgamation of clean design and engineering.The automobile industry is in the midst of a huge technological disruption.In parallel, the world around us is getting connected, enabling integration of devices and making our life experiences seamless. Intelligent vehicles will revolutionize our commute experience in the future and the Ather 450 stands at the cusp of this exciting reality.`,
+    description: `Ather Energy has changed the way India looks at electric vehicles. It is a pioneer in developing innovative and connected electric scooters. Their ingenious products and services are an amalgamation of clean design and engineering.The automobile industry is in the midst of a huge technological disruption.In parallel, the world around us is getting connected, enabling integration of devices and making our life experiences seamless.`,
     image: EXHB14
   },
 ];
@@ -127,7 +127,7 @@ export const exhibitions: exhibitions[] = [
     image: EXHB8
   },
   {
-    id: "4",
+    id: "5",
     year: "2019",
     title: "International Expo",
     description: `Shaastra for the first time ever, presents International Exhibitions, in association with the US Consulate General of Chennai. 
@@ -135,7 +135,7 @@ export const exhibitions: exhibitions[] = [
     image: EXHB7
   },
   {
-    id: "5",
+    id: "6",
     year: "2020",
     title: "Defence Expo",
     description: `The Defence Expo was an exhibition of the products of nascent defence technology start-ups,established

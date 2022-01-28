@@ -1,4 +1,4 @@
-import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center, TextProps, useColorModeValue, VStack} from "@chakra-ui/react";
+import { Text,Flex ,Stack , Box,BoxProps,Heading,Image,Container,SimpleGrid, Center, TextProps, useColorModeValue, VStack, Button} from "@chakra-ui/react";
 // import {ChevronLeftIcon,ChevronRightIcon} from "@chakra-ui/icons";
 import * as React from "react";
 import CustomBox from "../../shared/CustomBox";
@@ -69,12 +69,13 @@ const Exhibitions = ()=>{
             className = "Title"
             color={Titlecolor}> EXHIBITIONS </MotionText>
           </Center>
-          <Flex justifyContent={"center"} height="fit-content" margin="auto" fontSize={["5vw","1.5vw"]}>
-            <Box padding={["4vw","1vw"]} zIndex={3} backgroundColor={Titlecolor} borderRadius={"12px"} color="white">
-            <a href="http://exhibition.shaastra.org/" target="_blank">Register Here</a>
-            </Box>
-          </Flex>
+         
           </Heading>
+           <Flex justifyContent={"center"} height="fit-content" margin="auto" fontSize={["5vw","1.5vw"]}>
+            <Box>
+          <a href={"http://exhibition.shaastra.org/"} target={"_blank"}><Button colorScheme={"blue"} borderRadius={"2xl"} m={2}>Register Here</Button></a>
+          </Box>
+          </Flex>
           <Stack
           align={'center'}
           spacing={{ base: 8, md: 10 }}
@@ -137,21 +138,20 @@ const Exhibitions = ()=>{
       </Container>
            
       <Container mb={3} maxW={'7xl'} >
-      <VStack>
+      <VStack ref={ref}>
       <Heading
               fontWeight={500}
                m={[2,5]} 
               className = "Title"
               color={Titlecolor}
               p={3}
-             lineHeight={1.1} fontSize={"4xl"}
+             lineHeight={1.1} fontSize={["2xl","3xl","4xl","4xl"]}
              >
-              PREVIOUS EXHIBITIONS
+              CURRENT EXHIBITIONS
             </Heading>
-        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5} pb={20}> 
+        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]}  mb={3} pb={10}> 
         {
-
-          exhibitions.map( (item,index) => {
+            currentexhibitions.map( (item,index) => {
             let i = index%3;
             return(
               <MotionBox
@@ -166,19 +166,20 @@ const Exhibitions = ()=>{
           })
         }
         </SimpleGrid>
-        <Heading
+      <Heading
               fontWeight={500}
                m={[2,5]} 
               className = "Title"
               color={Titlecolor}
               p={3}
-             lineHeight={1.1} fontSize={"4xl"}
+             lineHeight={1.1} fontSize={["2xl","3xl","4xl","4xl"]}
              >
-              Current EXHIBITIONS
+              PREVIOUS EXHIBITIONS
             </Heading>
-        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]} ref={ref} mb={5} pb={20}> 
+        <SimpleGrid columns={[1,1,2,3]} spacing={[10,20]}  mb={5} pb={20}> 
         {
-            currentexhibitions.map( (item,index) => {
+
+          exhibitions.map( (item,index) => {
             let i = index%3;
             return(
               <MotionBox
