@@ -168,11 +168,14 @@ const EventPage = () => {
                   Download Registered Usersdata
                 </Button>
               </Flex>
-            ) : data?.getEvent.registrationfee !== "0" ? (
-              <PayRegister isAdmin={isAdmin} data={data?.getEvent!} />
-            ) : (
-              <RegisterNow isAdmin={isAdmin} data={data?.getEvent} />
-            )}
+            ) :
+            //  data?.getEvent.registrationfee !== "0" ? (
+            //   <PayRegister isAdmin={isAdmin} data={data?.getEvent!} />
+            // ) : (
+            //   <RegisterNow isAdmin={isAdmin} data={data?.getEvent} />
+            // )
+            null
+            }
           </Flex>
         </Flex>
 
