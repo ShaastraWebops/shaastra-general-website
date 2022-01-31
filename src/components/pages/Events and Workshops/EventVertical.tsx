@@ -25,6 +25,7 @@ import { Event, useGetEventsQuery, useUpdateReferralMutation } from "../../../ge
 import bg2 from '../../../images/EventsWorkshops/events/bg2.jpg'
 import '../../../styles/eventWorkshops.css';
 import MayhemCombo from "./MayhemCombo";
+import WorkshopRecordings from "./WorkshopRecordings";
 const EventVertical = () => {
 
     const { name }: any = useParams()
@@ -100,7 +101,7 @@ const EventVertical = () => {
                         <Text position={"relative"} zIndex={3} color="white" width="60vw" margin="auto" className="vertical-desp" fontWeight={"700"} fontSize={"1.2vw"}>{desp}</Text>
                     </Box>
               
-
+                    <WorkshopRecordings />
                     {/* {name === "workshops" ? (
                         <React.Fragment>
                                             <Text
