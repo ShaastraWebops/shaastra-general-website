@@ -169,7 +169,7 @@ const WorkshopRecordings = () => {
           paddingBottom={"20px"}
           textDecorationLine={"line-through"}
         >
-          &#8377;1500
+          &#8377;1200
         </Text>
         <Text
           paddingTop={"0px"}
