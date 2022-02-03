@@ -20,6 +20,7 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
@@ -52,6 +53,7 @@ const PayRecording = ({
   offerType,
 }: Probs) => {
   const history = useHistory();
+  const buttoncolor = useColorModeValue("#ea8a94", "white");
   var { isOpen, onOpen, onClose } = useDisclosure();
   const [registerRecording, { data: data1, error, loading }] =
     useRegisterRecordingMutation({
@@ -199,16 +201,10 @@ const PayRecording = ({
       mt={10}
       w={"40%"}
       marginBottom={"20px"}
-      bg={"#301b1b"}
-      color={"white"}
+      bg={buttoncolor}
+      color={"black"}
       rounded={"xl"}
       boxShadow={"0 5px 20px 0px rgb(72 187 120 / 43%)"}
-      _hover={{
-        bg: "#543535",
-      }}
-      _focus={{
-        bg: "#543535",
-      }}
       onClick={registerHandler}
     >
       Pay Now

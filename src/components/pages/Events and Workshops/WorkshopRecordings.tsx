@@ -43,7 +43,7 @@ const WorkshopRecordings = () => {
           fontWeight={600}
           paddingBottom={"0px"}
         >
-          At Price &#8377;500
+          At Price &#8377;400
         </Text>
         <Text
           paddingTop={"0px"}
