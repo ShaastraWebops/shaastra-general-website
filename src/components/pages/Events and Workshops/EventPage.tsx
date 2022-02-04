@@ -178,7 +178,7 @@ const EventPage = () => {
                   <EditIcon m={2} />
                   Download Registered Usersdata
                 </Button>
-                <Button
+               {data?.getEvent.vertical === "WORKSHOPS" && <Button
                  m={2}
                   padding={["0.5vw", "0.5vw", "0.5vw", "1.vw"]}
                   fontSize={["3vw", "3vw", "3vw", "1vw"]}
@@ -192,6 +192,7 @@ const EventPage = () => {
                   {loading2 ? <Spinner size='sm' m={2} /> : <EditIcon m={2} /> }
                   Download Recording Registrants data
                 </Button>
+            }
               </Flex>
             ) :
              data?.getEvent.registrationfee !== "0" ? (
