@@ -362,7 +362,6 @@ export type MutationUpdateEventPayArgs = {
 
 export type MutationUpdateRecordingPayArgs = {
   data: UpdateEventPayInput;
-  referral?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -388,6 +387,7 @@ export type Query = {
   getUsersCount: Scalars['Float'];
   getUsersDataCSV: Scalars['String'];
   me?: Maybe<User>;
+  recordingUsersCSV: Scalars['String'];
 };
 
 
@@ -412,6 +412,11 @@ export type QueryGetUsersArgs = {
   filter?: InputMaybe<GetUsersFilter>;
   limit?: InputMaybe<Scalars['Float']>;
   skip?: InputMaybe<Scalars['Float']>;
+};
+
+
+export type QueryRecordingUsersCsvArgs = {
+  EventID: Scalars['String'];
 };
 
 export type RegisterOutput = {
@@ -748,6 +753,13 @@ export type TShirtDetailsCsvQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type TShirtDetailsCsvQuery = { TShirtDetailsCSV: string };
+
+export type RecordingUsersCsvQueryVariables = Exact<{
+  EventID: Scalars['String'];
+}>;
+
+
+export type RecordingUsersCsvQuery = { recordingUsersCSV: string };
 
 export type GetPaidUsersCountQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2067,6 +2079,42 @@ export type TShirtDetailsCsvLazyQueryHookResult = ReturnType<typeof useTShirtDet
 export type TShirtDetailsCsvQueryResult = ApolloReactCommon.QueryResult<TShirtDetailsCsvQuery, TShirtDetailsCsvQueryVariables>;
 export function refetchTShirtDetailsCsvQuery(variables?: TShirtDetailsCsvQueryVariables) {
       return { query: TShirtDetailsCsvDocument, variables: variables }
+    }
+export const RecordingUsersCsvDocument = gql`
+    query recordingUsersCSV($EventID: String!) {
+  recordingUsersCSV(EventID: $EventID)
+}
+    `;
+
+/**
+ * __useRecordingUsersCsvQuery__
+ *
+ * To run a query within a React component, call `useRecordingUsersCsvQuery` and pass it any options that fit your needs.
+ * When your component renders, `useRecordingUsersCsvQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useRecordingUsersCsvQuery({
+ *   variables: {
+ *      EventID: // value for 'EventID'
+ *   },
+ * });
+ */
+export function useRecordingUsersCsvQuery(baseOptions: ApolloReactHooks.QueryHookOptions<RecordingUsersCsvQuery, RecordingUsersCsvQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<RecordingUsersCsvQuery, RecordingUsersCsvQueryVariables>(RecordingUsersCsvDocument, options);
+      }
+export function useRecordingUsersCsvLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<RecordingUsersCsvQuery, RecordingUsersCsvQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<RecordingUsersCsvQuery, RecordingUsersCsvQueryVariables>(RecordingUsersCsvDocument, options);
+        }
+export type RecordingUsersCsvQueryHookResult = ReturnType<typeof useRecordingUsersCsvQuery>;
+export type RecordingUsersCsvLazyQueryHookResult = ReturnType<typeof useRecordingUsersCsvLazyQuery>;
+export type RecordingUsersCsvQueryResult = ApolloReactCommon.QueryResult<RecordingUsersCsvQuery, RecordingUsersCsvQueryVariables>;
+export function refetchRecordingUsersCsvQuery(variables: RecordingUsersCsvQueryVariables) {
+      return { query: RecordingUsersCsvDocument, variables: variables }
     }
 export const GetPaidUsersCountDocument = gql`
     query getPaidUsersCount {

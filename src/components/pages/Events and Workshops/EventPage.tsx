@@ -12,6 +12,7 @@ import {
   Icon,
   FormLabel,
   Input,
+  Spinner,
 } from "@chakra-ui/react";
 import React, { Fragment, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
@@ -24,6 +25,7 @@ import {
   useEarlybidofferMutation,
   useExportCsvQuery,
   useGetEventQuery,
+  useRecordingUsersCsvQuery,
 } from "../../../generated/graphql";
 import bg from "../../../images/EventsWorkshops/events/bg.jpeg";
 import CustomBox from "../../shared/CustomBox";
@@ -65,6 +67,15 @@ const EventPage = () => {
     error: error1,
     loading: loading1,
   } = useExportCsvQuery({
+    variables: {
+      EventID: id!,
+    },
+  });
+  const {
+    data: data2,
+    error: error2,
+    loading: loading2,
+  } = useRecordingUsersCsvQuery({
     variables: {
       EventID: id!,
     },
@@ -160,12 +171,26 @@ const EventPage = () => {
                   onClick={() => {
                     fileDownload(
                       data1?.exportCSV!,
-                      `${data?.getEvent.name}_regristants.csv`
+                      `${data?.getEvent.name}_registrants.csv`
                     );
                   }}
                 >
                   <EditIcon m={2} />
                   Download Registered Usersdata
+                </Button>
+                <Button
+                 m={2}
+                  padding={["0.5vw", "0.5vw", "0.5vw", "1.vw"]}
+                  fontSize={["3vw", "3vw", "3vw", "1vw"]}
+                  onClick={() => {
+                    fileDownload(
+                      data2?.recordingUsersCSV!,
+                      `${data?.getEvent.name}_recording_registrants.csv`
+                    );
+                  }}
+                >
+                  {loading2 ? <Spinner size='sm' m={2} /> : <EditIcon m={2} /> }
+                  Download Recording Registrants data
                 </Button>
               </Flex>
             ) :

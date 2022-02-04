@@ -127,6 +127,9 @@ query getChessDetailsCSV {
 query TShirtDetailsCSV {
   TShirtDetailsCSV
 }
+query recordingUsersCSV($EventID: String!) {
+  recordingUsersCSV(EventID: $EventID)
+}
 
 query getPaidUsersCount {
   getPaidUsersCount
