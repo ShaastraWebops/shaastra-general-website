@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, VStack, Code, useColorModeValue, Flex } from "@chakra-ui/react";
+import { Text, VStack, Code, useColorModeValue, Flex, Button, Tooltip } from "@chakra-ui/react";
 import { ReactComponent as DiceOutlineDarkAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Dark_animated.svg";
 import { ReactComponent as DiceOutlineLightAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Light_animated.svg";
 import "../../styles/Home.css";
@@ -9,6 +9,7 @@ import {
   FaInstagram,
   FaYoutubeSquare,
   FaYoutube,
+  FaTshirt
 } from "react-icons/fa";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,7 +18,7 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/swiper-bundle";
 import "swiper/swiper-bundle.esm.browser";
-import { Link,withRouter } from "react-router-dom";
+import { Link,useHistory,withRouter } from "react-router-dom";
 import prevArrow from "../../images/prevArrow.svg";
 import robos1 from "../../images/homepage_illustrations/ROBOS.png";
 import robo1 from "../../images/homepage_illustrations/big.png";
@@ -77,7 +78,7 @@ const Home = (props: Props) => {
     DiceOutlineDarkAnimated,
     DiceOutlineLightAnimated
   );
-
+    const history = useHistory()
   React.useEffect(()=>{
     ReactGA.pageview(window.location.pathname + window.location.search);
 
@@ -392,6 +393,17 @@ const Home = (props: Props) => {
               for&nbsp;
             </h3> */}
              <a href="https://shaastra2022.com">Live Now</a>
+             <Tooltip label="Workshop Offer">
+              <Button padding="2vw" marginLeft="3vw" backgroundColor={"transparent"}
+              onHover={() => {
+                
+              }}
+              onClick={(e) => {
+                  e.preventDefault();
+                  history.push('/events/workshops')
+              }}
+              ><FaTshirt size="3vw"></FaTshirt></Button>
+            </Tooltip>
           </div>
           <div className="imgBox">
             <img src={robos1} alt="" />
