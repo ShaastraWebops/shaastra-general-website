@@ -58,7 +58,7 @@ const EventVertical = () => {
             }
         })
         oevents = events.filter((eve) =>{
-            if(eve.id === "ckxezt6nt002udbp76oar48e5" || eve.id === "cky6uehup00frfsp7br7sblfn"){
+            if(eve.id === "ckxezt6nt002udbp76oar48e5" || eve.id === "cky6uehup00frfsp7br7sblfn" || eve.id === "ckxljoxqa00639bp7gu9o1sz9"){
                 return false;
             }else{
                 return true;
