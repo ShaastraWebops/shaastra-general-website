@@ -338,6 +338,7 @@ export type MutationRegisterChessArgs = {
 
 
 export type MutationRegisterRecordingArgs = {
+  TShirtsDetails?: InputMaybe<TShirtsDetails>;
   offerType: Scalars['String'];
   workshopsIDs: Array<Scalars['String']>;
 };
@@ -560,6 +561,7 @@ export type ComboOfferMutation = { ComboOffer: { eventPay?: { orderId: string, a
 export type RegisterRecordingMutationVariables = Exact<{
   offerType: Scalars['String'];
   workshopsIDs: Array<Scalars['String']> | Scalars['String'];
+  TShirtsDetails?: InputMaybe<TShirtsDetails>;
 }>;
 
 
@@ -1055,8 +1057,12 @@ export type ComboOfferMutationHookResult = ReturnType<typeof useComboOfferMutati
 export type ComboOfferMutationResult = ApolloReactCommon.MutationResult<ComboOfferMutation>;
 export type ComboOfferMutationOptions = ApolloReactCommon.BaseMutationOptions<ComboOfferMutation, ComboOfferMutationVariables>;
 export const RegisterRecordingDocument = gql`
-    mutation RegisterRecording($offerType: String!, $workshopsIDs: [String!]!) {
-  registerRecording(offerType: $offerType, workshopsIDs: $workshopsIDs) {
+    mutation RegisterRecording($offerType: String!, $workshopsIDs: [String!]!, $TShirtsDetails: TShirtsDetails) {
+  registerRecording(
+    offerType: $offerType
+    workshopsIDs: $workshopsIDs
+    TShirtsDetails: $TShirtsDetails
+  ) {
     eventPay {
       orderId
       amount
@@ -1087,6 +1093,7 @@ export type RegisterRecordingMutationFn = ApolloReactCommon.MutationFunction<Reg
  *   variables: {
  *      offerType: // value for 'offerType'
  *      workshopsIDs: // value for 'workshopsIDs'
+ *      TShirtsDetails: // value for 'TShirtsDetails'
  *   },
  * });
  */

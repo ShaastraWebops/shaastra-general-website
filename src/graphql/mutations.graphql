@@ -73,8 +73,8 @@ mutation ComboOffer(
   }
 }
 
-mutation RegisterRecording($offerType: String!, $workshopsIDs: [String!]!) {
-  registerRecording(offerType: $offerType, workshopsIDs: $workshopsIDs) {
+mutation RegisterRecording($offerType: String!, $workshopsIDs: [String!]!,$TShirtsDetails: TShirtsDetails) {
+  registerRecording(offerType: $offerType, workshopsIDs: $workshopsIDs,TShirtsDetails: $TShirtsDetails) {
     eventPay {
       orderId
       amount

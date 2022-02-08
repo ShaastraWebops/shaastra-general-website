@@ -27,9 +27,19 @@ import { useHistory } from "react-router-dom";
 
 dotenv.config();
 
+interface Tshirt{
+  address: string;
+  city: string;
+  state: string;
+  pincode: string;
+  shirt: string;
+  size: string;
+}
+
 interface Probs {
   workshopIds: string[];
   offerType: string;
+  TShirtDetails ? : Tshirt
   // dataF: GetEventQuery["getEvent"];
   // isAdmin: Boolean;
 }
@@ -50,9 +60,10 @@ function loadScript(src: string) {
 
 const PayRecording = ({
   /*dataF, isAdmin,*/ workshopIds,
-  offerType,
+  offerType,TShirtDetails
 }: Probs) => {
   const history = useHistory();
+  const [err , setError] = React.useState(false);
   const buttoncolor = useColorModeValue("#ea8a94", "white");
   var { isOpen, onOpen, onClose } = useDisclosure();
   const [registerRecording, { data: data1, error, loading }] =
@@ -132,17 +143,42 @@ const PayRecording = ({
   const registerHandler = async () => {
     try {
       /******** Create OrderID ********/
-      await registerRecording({
+    if(offerType === "T_shirt"){
+      if(!TShirtDetails?.address || !TShirtDetails.city || !TShirtDetails.state || !TShirtDetails.size || !TShirtDetails.shirt || workshopIds[0] === '' || workshopIds[1] === ''){
+        setError(true)
+      }else{
+        await registerRecording({
         variables: {
           offerType: offerType,
           workshopsIDs: workshopIds,
+          TShirtsDetails : TShirtDetails
         },
       });
-    } catch (e) {
+    }}else{
+        await registerRecording({
+          variables: {
+            offerType: offerType,
+            workshopsIDs: workshopIds
+          },
+        });
+      
+    }
+    }catch (e) {
       console.log(e);
     }
   };
-
+  if (err)
+  return (
+    <Modal isOpen={true} onClose={() => window.location.reload()}>
+      <ModalOverlay />
+      <ModalContent backgroundColor="#f1aaaa" color="black">
+        <ModalHeader>
+         Please fill all the details
+        </ModalHeader>
+        <ModalCloseButton />
+      </ModalContent>
+    </Modal>
+  );
   if (updateEventPayData?.updateRecordingPay) {
     const onClose = () => {
       window.location.reload();
