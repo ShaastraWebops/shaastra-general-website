@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, VStack, Code, useColorModeValue, Flex, Button, Tooltip } from "@chakra-ui/react";
+import { Text, VStack, Code, useColorModeValue, Flex, Button, Tooltip, Icon } from "@chakra-ui/react";
 import { ReactComponent as DiceOutlineDarkAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Dark_animated.svg";
 import { ReactComponent as DiceOutlineLightAnimated } from "./../../images/logo/animated/non-looped/Text_Outline_Light_animated.svg";
 import "../../styles/Home.css";
@@ -393,8 +393,8 @@ const Home = (props: Props) => {
               for&nbsp;
             </h3> */}
              <a href="https://shaastra2022.com">Live Now</a>
-             <Tooltip label="Workshop Offer">
-              <Button padding="2vw" marginLeft="3vw" backgroundColor={"transparent"}
+             <Tooltip label="Get a Chance to win free TShirt">
+              <Button padding="3vw" marginLeft="3vw" backgroundColor={"transparent"}
               onHover={() => {
                 
               }}
@@ -402,7 +402,7 @@ const Home = (props: Props) => {
                   e.preventDefault();
                   history.push('/events/workshops')
               }}
-              ><FaTshirt size="3vw"></FaTshirt></Button>
+              ><Icon as={FaTshirt} className="rainbow" boxSize={["9vw","9vw","5vw","5vw"]}/></Button>
             </Tooltip>
           </div>
           <div className="imgBox">
