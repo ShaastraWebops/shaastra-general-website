@@ -95,7 +95,7 @@ const EventsAdmin = () => {
             {
                 vertical === "WORKSHOPS"  && <Center>
                 <Flex flexDirection={'column'}>
-                <Heading as='h3' size={'lg'} p={2} m={2}>Total Paid Registrations for Workshops : {data3?.getPaidUsersCount} </Heading>
+                {/* <Heading as='h3' size={'lg'} p={2} m={2}>Total Paid Registrations for Workshops : {data3?.getPaidUsersCount} </Heading> */}
                 <Heading as='h3' size={'lg'} p={2} m={2}>Total Recording Registrations for Workshops : {data4?.getAllRecordingUsersCount} </Heading>
                 </Flex>
                 </Center>
