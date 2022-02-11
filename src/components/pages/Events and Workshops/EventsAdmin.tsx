@@ -24,7 +24,7 @@ import { AddIcon, EditIcon, MinusIcon } from '@chakra-ui/icons';
 import { useState } from "react";
 import {useHistory} from "react-router-dom"
 import CustomBox from '../../shared/CustomBox'
-import { useGetEventsQuery, useGetPaidUsersCountQuery, useGetUsersDataCsvQuery, useGetUsersQuery, useTShirtDetailsCsvQuery } from "../../../generated/graphql";
+import { useGetAllRecordingUsersCountQuery, useGetEventsQuery, useGetPaidUsersCountQuery, useGetUsersDataCsvQuery, useGetUsersQuery, useTShirtDetailsCsvQuery } from "../../../generated/graphql";
 import EventVerticalComponent from "./EventVeticalComponent";
 import fileDownload from "js-file-download";
 
@@ -43,6 +43,7 @@ const EventsAdmin = () => {
     const {data : data1 , error : error1, loading:loading1} = useTShirtDetailsCsvQuery()
     const {data: data2,loading: loading2,error: error2,} = useGetUsersDataCsvQuery();
     const {data : data3} = useGetPaidUsersCountQuery();
+    const {data : data4} = useGetAllRecordingUsersCountQuery();
 
     const history = useHistory()
 
@@ -93,8 +94,9 @@ const EventsAdmin = () => {
             </Flex>
             {
                 vertical === "WORKSHOPS" && data3?.getPaidUsersCount && <Center>
-                <Flex>
+                <Flex flexDirection={'column'}>
                 <Heading as='h3' size={'lg'} p={2} m={2}>Total Paid Registrations for Workshops : {data3.getPaidUsersCount} </Heading>
+                <Heading as='h3' size={'lg'} p={2} m={2}>Total Recording Registrations for Workshops : {data4?.getAllRecordingUsersCount} </Heading>
                 </Flex>
                 </Center>
             }

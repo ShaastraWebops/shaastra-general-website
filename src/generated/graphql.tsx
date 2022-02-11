@@ -135,6 +135,7 @@ export type Event = {
   participation?: Maybe<Scalars['String']>;
   pic?: Maybe<Scalars['String']>;
   platform?: Maybe<Scalars['String']>;
+  recordingUserCount: Scalars['Float'];
   recordingUsers: Array<User>;
   registeredTeam: Array<Team>;
   registeredTeamCount: Scalars['Float'];
@@ -378,6 +379,7 @@ export type MutationVerifyUserArgs = {
 export type Query = {
   TShirtDetailsCSV: Scalars['String'];
   exportCSV: Scalars['String'];
+  getAllRecordingUsersCount: Scalars['Float'];
   getChessDetails: Array<BlitzChess>;
   getChessDetailsCSV: Scalars['String'];
   getEvent: Event;
@@ -732,7 +734,7 @@ export type GetEventQueryVariables = Exact<{
 }>;
 
 
-export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, earlybidoffer?: string | null | undefined, registeredUserCount: number, registeredTeamCount: number, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
+export type GetEventQuery = { getEvent: { id: string, name: string, vertical: string, description: string, requirements?: string | null | undefined, pic?: string | null | undefined, registrationfee?: string | null | undefined, platform?: string | null | undefined, firstplace?: string | null | undefined, secondplace?: string | null | undefined, thirdplace?: string | null | undefined, participation?: string | null | undefined, registrationOpenTime?: string | null | undefined, registrationCloseTime?: string | null | undefined, eventTimeFrom?: string | null | undefined, eventTimeTo?: string | null | undefined, registrationType: string, teamSize: number, earlybidoffer?: string | null | undefined, registeredUserCount: number, registeredTeamCount: number, recordingUserCount: number, faqs: Array<{ id: string, answer: string, question: string }>, eventtimings: Array<{ id: string, name: string, time: string }> } };
 
 export type GetUsersDataCsvQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -767,6 +769,11 @@ export type GetPaidUsersCountQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetPaidUsersCountQuery = { getPaidUsersCount: number };
+
+export type GetAllRecordingUsersCountQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllRecordingUsersCountQuery = { getAllRecordingUsersCount: number };
 
 
 export const CreateUserDocument = gql`
@@ -1902,6 +1909,7 @@ export const GetEventDocument = gql`
     earlybidoffer
     registeredUserCount
     registeredTeamCount
+    recordingUserCount
     faqs {
       id
       answer
@@ -2157,4 +2165,39 @@ export type GetPaidUsersCountLazyQueryHookResult = ReturnType<typeof useGetPaidU
 export type GetPaidUsersCountQueryResult = ApolloReactCommon.QueryResult<GetPaidUsersCountQuery, GetPaidUsersCountQueryVariables>;
 export function refetchGetPaidUsersCountQuery(variables?: GetPaidUsersCountQueryVariables) {
       return { query: GetPaidUsersCountDocument, variables: variables }
+    }
+export const GetAllRecordingUsersCountDocument = gql`
+    query getAllRecordingUsersCount {
+  getAllRecordingUsersCount
+}
+    `;
+
+/**
+ * __useGetAllRecordingUsersCountQuery__
+ *
+ * To run a query within a React component, call `useGetAllRecordingUsersCountQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllRecordingUsersCountQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAllRecordingUsersCountQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAllRecordingUsersCountQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetAllRecordingUsersCountQuery, GetAllRecordingUsersCountQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<GetAllRecordingUsersCountQuery, GetAllRecordingUsersCountQueryVariables>(GetAllRecordingUsersCountDocument, options);
+      }
+export function useGetAllRecordingUsersCountLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetAllRecordingUsersCountQuery, GetAllRecordingUsersCountQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<GetAllRecordingUsersCountQuery, GetAllRecordingUsersCountQueryVariables>(GetAllRecordingUsersCountDocument, options);
+        }
+export type GetAllRecordingUsersCountQueryHookResult = ReturnType<typeof useGetAllRecordingUsersCountQuery>;
+export type GetAllRecordingUsersCountLazyQueryHookResult = ReturnType<typeof useGetAllRecordingUsersCountLazyQuery>;
+export type GetAllRecordingUsersCountQueryResult = ApolloReactCommon.QueryResult<GetAllRecordingUsersCountQuery, GetAllRecordingUsersCountQueryVariables>;
+export function refetchGetAllRecordingUsersCountQuery(variables?: GetAllRecordingUsersCountQueryVariables) {
+      return { query: GetAllRecordingUsersCountDocument, variables: variables }
     }

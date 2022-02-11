@@ -80,8 +80,12 @@ const WorkshopRecordings = () => {
           my={3}
           >
           Hurry up !! <strong>25</strong> lucky winners who bought <br/>Merry combo @ 999/- Gets a free Tshirt
-              
+          <br />Registrations closes by <strong>20th February 2022</strong>
           </Text>
+          <Text fontSize={["2xl"]} fontWeight={'800'}>
+          Instructions To Access the Workshops : {" "}
+          <Link target={"_blank"} href="https://docs.google.com/document/d/10OBckngWWIwIUUZgEIxMKLiFFV9b1Xv-7iEtqLlKUXk/edit?usp=sharing" color={'blue'}>Click Here</Link>
+        </Text>
     <Flex
      my = {5}
       width={"100%"}
@@ -615,10 +619,7 @@ const WorkshopRecordings = () => {
                  <PayRecording workshopIds={[cw1,cw2]} offerType ={"T_shirt"} TShirtDetails = {tshirt}/>
             </Flex>
         </Flex>
-        <Text fontSize={["2xl"]} fontWeight={'800'}>
-          Instructions To Access the Workshops : {" "}
-          <Link target={"_blank"} href="https://docs.google.com/document/d/10OBckngWWIwIUUZgEIxMKLiFFV9b1Xv-7iEtqLlKUXk/edit?usp=sharing" color={'blue'}>Click Here</Link>
-        </Text>
+       
     </Flex>
   );
 };

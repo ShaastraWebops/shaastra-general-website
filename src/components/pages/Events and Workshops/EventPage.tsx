@@ -152,14 +152,14 @@ const EventPage = () => {
                  {
                   data?.getEvent.registrationType=== "INDIVIDUAL" ?       
                   <Heading
-                  size={"md"}
-                  padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
+                  size={"sm"}
+                  padding={["0.5vw", "0.5vw", "0.5vw", "1vw"]}
                   >
                   {" "} Registered Users Count : {data?.getEvent.registeredUserCount}
                   </Heading>
                   :  <Heading
-                  size={"md"}
-                  padding={["0.5vw", "0.5vw", "0.5vw", "1.25vw"]}
+                  size={"sm"}
+                  padding={["0.5vw", "0.5vw", "0.5vw", "1vw"]}
                   >
                   {" "} Registered Teams Count : {data?.getEvent.registeredTeamCount}
                   </Heading>
@@ -178,7 +178,15 @@ const EventPage = () => {
                   <EditIcon m={2} />
                   Download Registered Usersdata
                 </Button>
-               {data?.getEvent.vertical === "WORKSHOPS" && <Button
+               {data?.getEvent.vertical === "WORKSHOPS" && 
+               <Flex flexDirection={'column'}>
+                 <Heading
+                  size={"sm"}
+                  padding={["0.5vw", "0.5vw", "0.5vw", "1vw"]}
+                  >
+                  {" "} Recording Registrants Count : {data?.getEvent.recordingUserCount}
+                  </Heading>
+               <Button
                  m={2}
                   padding={["0.5vw", "0.5vw", "0.5vw", "1.vw"]}
                   fontSize={["3vw", "3vw", "3vw", "1vw"]}
@@ -192,6 +200,7 @@ const EventPage = () => {
                   {loading2 ? <Spinner size='sm' m={2} /> : <EditIcon m={2} /> }
                   Download Recording Registrants data
                 </Button>
+                </Flex>
             }
               </Flex>
             ) :

@@ -100,6 +100,7 @@ query getEvent($EventID: String!) {
     earlybidoffer
     registeredUserCount
     registeredTeamCount
+    recordingUserCount
     faqs {
       id
       answer
@@ -133,4 +134,8 @@ query recordingUsersCSV($EventID: String!) {
 
 query getPaidUsersCount {
   getPaidUsersCount
+}
+
+query getAllRecordingUsersCount {
+    getAllRecordingUsersCount
 }
