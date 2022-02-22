@@ -236,7 +236,7 @@ function Spons() {
               </div>
 
             </div>
-            {/* <div className="card__collection">
+            <div className="card__collection">
               <div className="flexx">
                 <p id="sponsro">IDP Sponsor</p>
                 <div className="card" id="photo">
@@ -259,28 +259,8 @@ function Spons() {
                 </div>
               </div>
 
-              <div className="flexx">
-                <p id="sponsro">Platform Sponsor</p>
-                <div className="card" id="photo">
-                  <a href="https://mavex.club/">
-                    <img
-                      src={MB}
-                      className="img-responsive"
-                      alt=""
-                      style={
-                        theme == "black"
-                          ? {
-                            filter: "invert(1)",
-                          }
-                          : {
-                            filter: "invert(0)",
-                          }
-                      }
-                    />
-                  </a>
-                </div>
-              </div>
-            </div> */}
+              
+            </div>
             <p id="sponsro1">Prize Money Sponsor</p>
 
             <div className="flexx">
